@@ -51,6 +51,20 @@ For ordinary tasks, use:
 3. one relevant skill
 4. directly relevant project files only
 
+## Current Work Updates
+
+After completing a task, update `docs/CURRENT_WORK.md` only if progress changed.
+
+Keep updates short:
+
+- move completed tasks to `Already completed`;
+- update `In progress` if something remains unfinished;
+- update `Next task` if the next step is clear.
+
+Do not add detailed implementation notes.
+Do not duplicate commit messages.
+Do not rewrite the full file.
+
 ## Good Prompt Examples
 
 ```text
