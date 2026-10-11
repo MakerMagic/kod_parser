@@ -7,6 +7,8 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+from .visual_inspection import render_html, visual_issues
+
 REPORT_MARKER = "<!-- blackstone-raw-backtest-report -->"
 INFORMATIONAL_WARNINGS = {
     "graphics_present:option_association_not_resolved",
@@ -133,6 +135,14 @@ def inspect_question(
             ],
         },
     }
+    result["visual_issues"] = [
+        {"reason": reason, "asset_path": reference}
+        for reason, reference in visual_issues(
+            question,
+            path,
+            {page.get("page_number"): page for page in dataset.get("pages", [])},
+        )
+    ]
     if include_pages:
         page_reference = question.get("page_reference") or {}
         start, end = page_reference.get("start_page"), page_reference.get("end_page")
@@ -151,6 +161,8 @@ def _warning_component(warning):
     if warning in INFORMATIONAL_WARNINGS:
         return None
     prefix = warning.split(":", 1)[0]
+    if prefix.startswith("visual_"):
+        return "images/graphics"
     components = {
         "source_assigned_by_parser_profile": "source metadata",
         "uncertain_metadata": "source metadata",
@@ -207,6 +219,7 @@ def collect_issues(dataset, raw_json):
                 ),
                 "reasons": list(dict.fromkeys(reason for _, reason in findings)),
                 "manual_review_required": True,
+                "asset_paths": [],
             }
         )
 
@@ -324,14 +337,25 @@ def collect_issues(dataset, raw_json):
                     findings.append(
                         ("page mapping", "raw_block_differs_from_stored_page_spans")
                     )
+        detected = visual_issues(question, raw_json, pages)
+        findings.extend(("images/graphics", reason) for reason, _ in detected)
         add("question", question, question.get("page_reference"), findings)
+        if findings:
+            rows[-1]["asset_paths"] = list(
+                dict.fromkeys(path for _, path in detected if path)
+            )
     # Report page failures even when no question could be attached to them.
     for page in pages.values():
         findings = [
             (component, warning)
             for warning in page.get("warnings") or []
-            if (component := _warning_component(warning)) == "page mapping"
+            if (component := _warning_component(warning))
+            in {"page mapping", "images/graphics"}
         ]
+        page_visuals = visual_issues(
+            {"visual_assets": page.get("visual_assets", [])}, raw_json, pages
+        )
+        findings.extend(("images/graphics", reason) for reason, _ in page_visuals)
         if findings:
             add(
                 "page",
@@ -341,6 +365,9 @@ def collect_issues(dataset, raw_json):
                     "end_page": page.get("page_number"),
                 },
                 findings,
+            )
+            rows[-1]["asset_paths"] = list(
+                dict.fromkeys(path for _, path in page_visuals if path)
             )
     return rows
 
@@ -380,8 +407,8 @@ def write_report(references, output):
         "",
         "Regenerate with `python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --output PATH_TO_THIS_REPORT`.",
         "",
-        "| Source file | Year/session/test | Question | Pages | Components | Reason | Manual review | Raw JSON |",
-        "|---|---|---|---|---|---|---|---|",
+        "| Source file | Year/session/test | Question | Pages | Components | Reason | Saved asset paths | Manual review | Raw JSON |",
+        "|---|---|---|---|---|---|---|---|---|",
     ]
     for row in issues:
         metadata = "; ".join(
@@ -401,6 +428,7 @@ def write_report(references, output):
             page_label,
             "; ".join(row["components"]),
             "; ".join(row["reasons"]),
+            "; ".join(row.get("asset_paths", [])) or "unavailable",
             "yes",
             row["raw_json"],
         ]
@@ -413,6 +441,8 @@ def write_report(references, output):
 
 
 def render_inspection(result, output_format):
+    if output_format == "html":
+        return render_html(result)
     if output_format == "json":
         return json.dumps(result, ensure_ascii=False, indent=2) + "\n"
     question = result["question"]
@@ -436,6 +466,13 @@ def render_inspection(result, output_format):
                 json.dumps(result["pages"], ensure_ascii=False, indent=2),
             ]
         )
+    if result.get("visual_issues"):
+        text.extend(
+            [
+                "VISUAL INSPECTION ISSUES",
+                json.dumps(result["visual_issues"], ensure_ascii=False, indent=2),
+            ]
+        )
     return "\n\n".join(text) + "\n"
 
 
@@ -456,7 +493,7 @@ def main(argv=None):
     for field in ("session", "paper", "variant", "section", "question_id"):
         inspect.add_argument("--" + field.replace("_", "-"))
     inspect.add_argument("--include-pages", action="store_true")
-    inspect.add_argument("--format", choices=("text", "json"), default="text")
+    inspect.add_argument("--format", choices=("text", "json", "html"), default="text")
     inspect.add_argument(
         "--output",
         type=Path,
@@ -493,6 +530,7 @@ def main(argv=None):
         )
         rendered = render_inspection(result, args.format)
         if args.output:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
             with args.output.open("x", encoding="utf-8") as handle:
                 handle.write(rendered)
         else:

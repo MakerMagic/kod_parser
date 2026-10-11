@@ -1,6 +1,8 @@
 """Read-only raw inspection, issue detection, and separate report regressions."""
 
 import json
+import struct
+import zlib
 from copy import deepcopy
 from pathlib import Path
 
@@ -12,6 +14,7 @@ from parsers.blackstone.backtest import (
     main,
     write_report,
 )
+from parsers.blackstone.visuals import _png_chunk
 
 
 @pytest.fixture
@@ -45,6 +48,27 @@ def raw_json(tmp_path):
     }
     block = question["raw"]["question_block"]
     question["raw"]["page_spans"][0]["end"] = len(block)
+    image = tmp_path / "assets" / "fixture.png"
+    image.parent.mkdir()
+    image.write_bytes(
+        b"\x89PNG\r\n\x1a\n"
+        + _png_chunk(b"IHDR", struct.pack(">IIBBBBB", 1, 1, 8, 2, 0, 0, 0))
+        + _png_chunk(b"IDAT", zlib.compress(b"\0\xff\xff\xff"))
+        + _png_chunk(b"IEND", b"")
+    )
+    question["visual_assets"] = [
+        {
+            "image_id": "fixture",
+            "path": "assets/fixture.png",
+            "page": 3,
+            "bbox": [10, 20, 30, 40],
+            "asset_index": 1,
+            "asset_type": "rendered_crop",
+            "belongs_to": "question",
+            "warnings": [],
+            "object_ids": ["p3_image"],
+        }
+    ]
     dataset = {
         "source": "blackstone",
         "year": 2020,
@@ -315,7 +339,7 @@ def test_parser_cli_emits_a_separate_issues_report(tmp_path, monkeypatch):
     }
     source = tmp_path / "fake.pdf"
     source.write_bytes(b"not reparsed in this CLI integration test")
-    monkeypatch.setattr(parser_cli, "parse_pdf", lambda path: deepcopy(raw))
+    monkeypatch.setattr(parser_cli, "parse_pdf", lambda path, **kwargs: deepcopy(raw))
     output = tmp_path / "raw"
     assert parser_cli.main([str(source), "--output-dir", str(output)]) == 1
     assert len(list(output.glob("*.raw.json"))) == 1

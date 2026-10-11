@@ -8,7 +8,9 @@ from pathlib import Path
 
 import pdfplumber
 
-PARSER_VERSION = "1"
+from .visuals import save_visuals
+
+PARSER_VERSION = "2"
 SOURCE_FIELDS = ("source", "year", "paper", "variant", "section", "document_role")
 NUMBER = re.compile(r"^(\d{1,3})(?:[ \t]+|$)")
 OPTION = re.compile(r"^([A-E])(?:[ \t]+|$)")
@@ -94,7 +96,45 @@ def _read_page(page):
     lines = []
     cursor = 0
     warnings = []
-    for line in page.extract_text_lines(return_chars=False):
+    for extracted in page.extract_text_lines(return_chars=True):
+        line = {key: value for key, value in extracted.items() if key != "chars"}
+        # Spatial word boxes keep adjacent diagram columns out of each other's crops.
+        line["word_boxes"] = []
+        word = []
+        for char in extracted["chars"]:
+            separator = char["text"].isspace() or char["text"] == "(cid:3)"
+            if word and (separator or char["x0"] > word[-1]["x1"] + 3):
+                line["word_boxes"].append(
+                    [
+                        min(c["x0"] for c in word),
+                        min(c["top"] for c in word),
+                        max(c["x1"] for c in word),
+                        max(c["bottom"] for c in word),
+                    ]
+                )
+                word = []
+            if not separator:
+                word.append(char)
+        if word:
+            line["word_boxes"].append(
+                [
+                    min(c["x0"] for c in word),
+                    min(c["top"] for c in word),
+                    max(c["x1"] for c in word),
+                    max(c["bottom"] for c in word),
+                ]
+            )
+        line["label_positions"] = [
+            {
+                "label": char["text"]
+                if char["text"] in {"A", "B", "C", "D", "E"}
+                else chr(int(re.search(r"\d+", char["text"])[0]) + 29),
+                "bbox": [char["x0"], char["top"], char["x1"], char["bottom"]],
+            }
+            for char in extracted["chars"]
+            if char["text"] in {"A", "B", "C", "D", "E"}
+            or re.fullmatch(r"\(cid:(?:36|37|38|39|40)\)", char["text"])
+        ]
         start = raw_text.find(line["text"], cursor)
         if start < 0:
             warnings.append("line_offset_unavailable:full_page_text_preserved")
@@ -122,6 +162,12 @@ def _read_page(page):
                     "bbox": [obj["x0"], obj["top"], obj["x1"], obj["bottom"]],
                     "kind": kind,
                     "object_type": obj["object_type"],
+                    "decorative": kind == "vector"
+                    and obj.get("fill")
+                    and not obj.get("stroke")
+                    and obj.get("non_stroking_color") in [(1, 1, 1), (0, 0, 0, 0), 1]
+                    and (obj["x1"] - obj["x0"]) * (obj["bottom"] - obj["top"])
+                    > page.width * page.height * 0.3,
                     "notes": ["reference_to_source_pdf:no_image_file_exported"],
                 }
             )
@@ -230,7 +276,14 @@ def _split_fields(block, lines):
     return question_text, block[options_start:], options, subpoints, warnings
 
 
-def parse_pdf(input_path, *, metadata=None, acquisition=None):
+def parse_pdf(
+    input_path,
+    *,
+    metadata=None,
+    acquisition=None,
+    asset_dir=None,
+    overwrite_assets=False,
+):
     """Parse an existing PDF path. Metadata never determines extraction behavior."""
     path = Path(input_path).resolve(strict=True)
     if path.suffix.lower() != ".pdf":
@@ -314,10 +367,20 @@ def parse_pdf(input_path, *, metadata=None, acquisition=None):
                 "start": start_offset,
                 "end": end_offset,
                 "text": page["raw_text"][start_offset:end_offset],
+                "bbox": [
+                    0,
+                    max(0, lines[begin]["top"] - 6),
+                    page["width"],
+                    lines[end]["top"] - 6 if end < len(lines) else page["height"] - 35,
+                ],
             }
             pending["segments"].append(segment)
             pending["lines"].extend(
-                {**line, "block_start": offset + line["start"] - start_offset}
+                {
+                    **line,
+                    "page": page["page_number"],
+                    "block_start": offset + line["start"] - start_offset,
+                }
                 for line in lines[begin:end]
             )
             top = lines[begin]["top"]
@@ -385,7 +448,14 @@ def parse_pdf(input_path, *, metadata=None, acquisition=None):
                 "warnings": question_warnings,
             }
         )
+    pending_questions = dataset["questions"]
     dataset["questions"] = questions
+    save_visuals(
+        dataset,
+        pending_questions,
+        asset_dir or Path("data/raw/blackstone/assets"),
+        overwrite=overwrite_assets,
+    )
     numbers = [question["question_number"] for question in questions]
     if numbers != list(range(1, len(numbers) + 1)):
         dataset["warnings"].append("nonsequential_or_duplicate_question_numbers")

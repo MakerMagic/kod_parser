@@ -53,7 +53,11 @@ def main(argv=None):
             )
     for path, explicit in files.items():
         try:
-            result = parse_pdf(path)
+            result = parse_pdf(
+                path,
+                asset_dir=args.output_dir / "assets",
+                overwrite_assets=args.overwrite,
+            )
             if not explicit and not result["extraction"]["recognized_question_paper"]:
                 print(f"Skipped unrecognized question paper: {path}", file=sys.stderr)
                 continue

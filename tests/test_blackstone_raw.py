@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LOCAL = ROOT / "acquisition" / "local"
 
 
-def write_pdf(path, pages, *, graphics=False):
+def write_pdf(path, pages, *, graphics=False, raster=False):
     """Build minimal ASCII test PDFs using only the standard library."""
     objects = [
         b"<< /Type /Catalog /Pages 2 0 R >>",
@@ -24,6 +24,13 @@ def write_pdf(path, pages, *, graphics=False):
         b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
     ]
     page_ids = []
+    if raster:
+        pixels = bytes([255, 0, 0, 255, 255, 255, 0, 0, 255, 0, 255, 0])
+        objects.append(
+            b"<< /Type /XObject /Subtype /Image /Width 2 /Height 2 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Length 12 >>\nstream\n"
+            + pixels
+            + b"\nendstream"
+        )
     for lines in pages:
         commands = []
         for x, y, text in lines:
@@ -31,11 +38,13 @@ def write_pdf(path, pages, *, graphics=False):
             commands.append(f"BT /F1 12 Tf {x} {y} Td ({escaped}) Tj ET")
         if graphics:
             commands.append("80 600 m 150 600 l S")
+        if raster:
+            commands.append("q 48 0 0 36 120 640 cm /Im1 Do Q")
         content = "\n".join(commands).encode("ascii")
         page_id = len(objects) + 1
         page_ids.append(page_id)
         objects.append(
-            f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 600 800] /Resources << /Font << /F1 3 0 R >> >> /Contents {page_id + 1} 0 R >>".encode()
+            f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 600 800] /Resources << /Font << /F1 3 0 R >> {'/XObject << /Im1 4 0 R >>' if raster else ''} >> /Contents {page_id + 1} 0 R >>".encode()
         )
         objects.append(
             f"<< /Length {len(content)} >>\nstream\n".encode()

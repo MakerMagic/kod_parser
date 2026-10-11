@@ -16,7 +16,7 @@ The output follows `docs/DATA_SCHEMA.md`: source metadata, input reference, acqu
 
 The source value `blackstone` identifies the selected parser profile. The current PDFs carry TSA/Cambridge provenance, so that original metadata is retained and the unverified Blackstone label is flagged. Acquisition is `unknown` unless provided by the caller. Missing year or section remains null; uncertain semantic question IDs remain null rather than being invented.
 
-This first version uses the repeated left number column and vertically arranged A-E labels. Grouped graphical labels are retained as options with empty text and explicit uncertainty warnings; their content stays in the raw options block. Page margins only affect structured interpretation; full page text remains available. Subpoints with explicit numeric punctuation are recorded; all remaining statements remain in question text and raw blocks. Raster and vector graphics are references to the original PDF, without image-file export or precise option association. Empty text, malformed options, duplicate numbering, count discrepancies, and encoding artifacts produce warnings.
+This parser uses the repeated left number column and vertically arranged A-E labels. Grouped graphical labels are retained as options with empty text and explicit uncertainty warnings; their content stays in the raw options block. Page margins only affect structured interpretation; full page text remains available. Subpoints with explicit numeric punctuation are recorded; all remaining statements remain in question text and raw blocks. Raster/vector regions and question-page layouts are saved as PNG crops under `OUTPUT_DIR/assets/<source-content-hash>/`, with references and spatial metadata in `visual_assets`, `visual_previews`, and existing `images` records. Confident option associations are also recorded in `options[].images`; ambiguous associations are flagged. Empty text, malformed options, duplicate numbering, count discrepancies, and encoding artifacts produce warnings.
 
 The 2012-2014 PDFs contain missing font maps. Raw `(cid:...)` tokens are retained. Their observed digit and A-E glyph markers are interpreted only for structural labels and explicitly marked for review; question and option wording is not repaired. No OCR, text normalization, answer matching, categorization, or final dataset export is performed.
 
@@ -32,7 +32,15 @@ python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --ou
 python -m pytest -q tests/test_blackstone_backtest.py tests/test_blackstone_raw.py
 ```
 
-Every parser CLI run that saves raw output now also generates a separate `OUTPUT_DIR/PARSING_ISSUES.md`. Use `--issues-report docs/PARSING_ISSUES.md` to choose the documentation location instead. Inspection supports stored paths/filenames/URLs, optional metadata selectors, JSON export, and complete stored page context. See [the backtest guide](../../docs/RAW_PARSER_BACKTEST.md) for commands and interpretation. General graphics-presence notices alone are informational; reports identify actual warnings or detectable structural inconsistencies. Raw JSON and the extraction implementation are unchanged.
+Every parser CLI run that saves raw output also generates a separate `OUTPUT_DIR/PARSING_ISSUES.md`. Use `--issues-report docs/PARSING_ISSUES.md` to choose the documentation location instead. Inspection supports stored paths/filenames/URLs, optional metadata selectors, text/JSON/HTML export, and complete stored page context. See [the backtest guide](../../docs/RAW_PARSER_BACKTEST.md) for commands, asset naming, and limitations. Reports include missing/failed visual assets; graphics presence alone is informational. Inspection does not modify raw JSON.
+
+```powershell
+python -m parsers.blackstone acquisition/local --overwrite --issues-report docs/PARSING_ISSUES.md
+python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA_2022.pdf" --year 2022 --question 50 --format html --output inspections/TSA_2022_q50.html
+python -m pytest -q tests/test_blackstone_raw.py tests/test_blackstone_backtest.py tests/test_blackstone_visuals.py
+```
+
+Double-click the new HTML file to view embedded graphics offline. The universal HTML view uses saved layout crops to preserve relative text/graphic position and also includes the full stored record. Existing text inspection remains the default. Exports require a new filename.
 
 If the repository virtual environment cannot launch in Codex, use its bundled Python with the existing package directory (no dependency changes):
 
@@ -43,3 +51,4 @@ $parserPython = 'C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/depen
 & $parserPython -m parsers.blackstone acquisition/local
 & $parserPython -m pytest -q tests/test_blackstone_raw.py
 ```
+python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA_2022.pdf" --year 2022 --question 38

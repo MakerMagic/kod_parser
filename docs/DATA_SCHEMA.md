@@ -246,6 +246,8 @@ Image records may include:
 
 If exact image extraction is not implemented yet, preserve enough information to show that an image exists or may exist.
 
+Blackstone raw output additionally stores `visual_assets` (ordered graphic crops) and `visual_previews` (ordered question-page layout crops). These are additive; existing raw text and object-level `images` remain preserved. Each saved asset includes `path` relative to the raw JSON directory, `page`, `bbox` in PDF points (top-origin), `asset_type`, `detected_types`, `asset_index`, `order_key`, source SHA/source/year/question number, original `object_ids`, component (`question`, `option`, or `unknown`), optional option label, pixel size, saved SHA, and warnings. Rendered regions use `rendered_crop`, not a claim that vector content was extracted as a standalone raster object. Failed saves retain metadata with null paths and warnings. Page-level assets retain unassigned document graphics. Option image references are added only when geometry supports the association. `raw.page_spans[].bbox` identifies the saved layout region; character spans and text are unchanged.
+
 ## 11. Traceability
 
 A final question should be traceable through the pipeline:
