@@ -16,6 +16,10 @@ Set up the first Blackstone raw parser using already available local input PDFs.
 - Codex skills added.
 - `AGENTS.md` added.
 - Initial folder structure prepared.
+- First Blackstone raw parser and CLI implemented in `parsers/blackstone/`.
+- Full page text, question spans, source metadata, options, graphics references, and warnings preserved in raw JSON.
+- Parser regression tests and local PDF validation added; no new dependencies.
+- All 16 local PDFs parsed into 800 numbered raw records; 18 tests pass. Unresolved extraction details remain flagged.
 
 ## Do not work on yet
 
@@ -27,4 +31,4 @@ Set up the first Blackstone raw parser using already available local input PDFs.
 
 ## Next task
 
-Implement or refactor the Blackstone parser so it reads local Blackstone PDFs from `data/input/blackstone/` and produces raw structured JSON in `data/raw/blackstone/`.
+Review raw extraction warnings, especially encoded fonts and graphical options. Improve those extraction cases before implementing later pipeline stages. Existing inputs are in `acquisition/local/`; the parser also accepts arbitrary PDF paths.
