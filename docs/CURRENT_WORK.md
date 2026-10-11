@@ -20,6 +20,8 @@ Set up the first Blackstone raw parser using already available local input PDFs.
 - Full page text, question spans, source metadata, options, graphics references, and warnings preserved in raw JSON.
 - Parser regression tests and local PDF validation added; no new dependencies.
 - All 16 local PDFs parsed into 800 numbered raw records; 18 tests pass. Unresolved extraction details remain flagged.
+- Raw question inspection and separate parsing-issues reports added, including automatic reporting after parser CLI runs.
+- Current issues snapshot stored in `docs/PARSING_ISSUES.md`; raw JSON remains unchanged by backtesting.
 
 ## Do not work on yet
 

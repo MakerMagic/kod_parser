@@ -8,6 +8,7 @@ from pathlib import Path
 from pdfminer.pdfdocument import PDFEncryptionError, PDFPasswordIncorrect
 from pdfminer.pdfparser import PDFSyntaxError
 
+from .backtest import write_report
 from .parser import parse_pdf
 
 
@@ -20,6 +21,11 @@ def main(argv=None):
         help="Existing PDFs or directories (searched recursively)",
     )
     parser.add_argument("--output-dir", type=Path, default=Path("data/raw/blackstone"))
+    parser.add_argument(
+        "--issues-report",
+        type=Path,
+        help="Separate Markdown issues report (default: OUTPUT_DIR/PARSING_ISSUES.md)",
+    )
     parser.add_argument(
         "--overwrite",
         action="store_true",
@@ -88,6 +94,17 @@ def main(argv=None):
     if not written:
         print("No raw outputs written", file=sys.stderr)
         failed = True
+    else:
+        report = args.issues_report or args.output_dir / "PARSING_ISSUES.md"
+        try:
+            issues = write_report([args.output_dir], report)
+            print(f"Parsing issues: {len(issues)} review rows -> {report}")
+        except (OSError, ValueError, TypeError) as error:
+            print(
+                f"Raw outputs written, but issues report failed: {error}",
+                file=sys.stderr,
+            )
+            failed = True
     return 1 if failed else 0
 
 

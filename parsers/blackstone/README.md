@@ -22,6 +22,18 @@ The 2012-2014 PDFs contain missing font maps. Raw `(cid:...)` tokens are retaine
 
 CLI failure status is nonzero for file failures, no output, no detected questions, or a known question-count mismatch. Other extraction warnings remain visible in JSON and CLI output and should be reviewed before later stages.
 
+## Raw inspection and unresolved issues
+
+Inspect the exact stored record, without rerunning the parser:
+
+```powershell
+python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA Oxford 2020.pdf" --year 2020 --question 12
+python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --output docs/PARSING_ISSUES.md
+python -m pytest -q tests/test_blackstone_backtest.py tests/test_blackstone_raw.py
+```
+
+Every parser CLI run that saves raw output now also generates a separate `OUTPUT_DIR/PARSING_ISSUES.md`. Use `--issues-report docs/PARSING_ISSUES.md` to choose the documentation location instead. Inspection supports stored paths/filenames/URLs, optional metadata selectors, JSON export, and complete stored page context. See [the backtest guide](../../docs/RAW_PARSER_BACKTEST.md) for commands and interpretation. General graphics-presence notices alone are informational; reports identify actual warnings or detectable structural inconsistencies. Raw JSON and the extraction implementation are unchanged.
+
 If the repository virtual environment cannot launch in Codex, use its bundled Python with the existing package directory (no dependency changes):
 
 ```powershell
