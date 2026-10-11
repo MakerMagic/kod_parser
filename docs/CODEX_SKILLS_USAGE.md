@@ -44,6 +44,13 @@ Read original docs only when:
 - adding a new pipeline stage;
 - resolving ambiguity not covered by the relevant skill.
 
+For ordinary tasks, use:
+
+1. `AGENTS.md`
+2. `docs/CURRENT_WORK.md`
+3. one relevant skill
+4. directly relevant project files only
+
 ## Good Prompt Examples
 
 ```text

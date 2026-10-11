@@ -92,6 +92,23 @@ tests / validators / pytest
 
 Do not read every `.md` file or every skill before each task.
 
+## Current Work Tracking
+
+Use `docs/CURRENT_WORK.md` to understand the current milestone, current focus, completed work, and next task.
+
+At the end of a completed task, update `docs/CURRENT_WORK.md` briefly if the task changed project progress.
+
+Keep updates short. Do not write long explanations.
+
+Update only relevant sections:
+
+- `Already completed`
+- `In progress`
+- `Next task`
+- `Do not work on yet`
+
+Do not rewrite the whole file unless explicitly requested.
+
 ## When to Read Full Documentation
 
 Read full project documentation only when changing architecture, schema, processing rules, development rules, or resolving ambiguity that the skills do not cover.
