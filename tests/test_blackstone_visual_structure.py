@@ -12,7 +12,11 @@ from parsers.blackstone.backtest import (
     inspect_question,
     render_inspection,
 )
-from parsers.blackstone.visual_structure import focused_crop, foreign_option_anchors
+from parsers.blackstone.visual_structure import (
+    focused_crop,
+    foreign_option_anchors,
+    option_anchor_is_left_of_visual,
+)
 
 
 def spatial_line(text, x, y, widths, start=0):
@@ -79,7 +83,7 @@ def test_six_image_choices_have_associations_and_source_order(tmp_path, labels_b
     drawing = []
     for x, y, _ in rows:
         bottom = y + 25 if labels_below else y - 60
-        drawing.append(f"{x} {bottom} 40 40 re S")
+        drawing.append(f"{x + 30} {bottom} 40 40 re S")
     source = write_pdf(
         tmp_path / "choices.pdf",
         [[(50, 740, "1 Which picture is correct?"), *rows]],
@@ -144,7 +148,7 @@ def test_close_choice_images_are_not_merged_across_label_cells(tmp_path):
                 (80, 390, "E"),
             ]
         ],
-        graphics_commands=["80 535 50 45 re S", "136 535 50 45 re S"],
+        graphics_commands=["110 535 30 45 re S", "166 535 30 45 re S"],
     )
     data = parse_pdf(source, asset_dir=tmp_path / "assets")
     assets = data["questions"][0]["visual_assets"]
@@ -164,7 +168,7 @@ def test_shared_choice_geometry_stays_unresolved_and_is_reported(tmp_path):
                 (80, 390, "E"),
             ]
         ],
-        graphics_commands=["80 535 110 45 re S"],
+        graphics_commands=["110 535 110 45 re S"],
     )
     data = parse_pdf(source, asset_dir=tmp_path / "assets")
     asset = data["questions"][0]["visual_assets"][0]
@@ -174,10 +178,7 @@ def test_shared_choice_geometry_stays_unresolved_and_is_reported(tmp_path):
         for row in collect_issues(data, tmp_path / "shared.raw.json")
         for reason in row["reasons"]
     ]
-    assert (
-        "visual_multiple_option_images_merged:shared_geometry_requires_review"
-        in reasons
-    )
+    assert "visual_component_association_uncertain" in reasons
 
 
 def test_tall_choices_with_left_labels_and_small_gap_stay_separate(tmp_path):
@@ -290,11 +291,78 @@ def test_2011_q50_option_a_excludes_b_and_inspection_detects_regression(tmp_path
     raw.write_text(json.dumps(data), encoding="utf-8")
     assert not [r for r in collect_issues(data, raw) if r["question_number"] == 50]
     a["bbox"][2] = b_anchor[2] + 1
+    a["bbox"][1] = b_anchor[1] - 1
+    a["graphic_bbox"][2] = b_anchor[2] + 1
+    a["graphic_bbox"][1] = b_anchor[1] - 1
     assert any(
         "foreign_option_letter_in_crop:A->B" in row["reasons"]
         for row in collect_issues(data, raw)
         if row["question_number"] == 50
     )
+
+
+@pytest.mark.skipif(
+    not (
+        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2011.pdf"
+    ).is_file(),
+    reason="Local TSA Oxford 2011 PDF unavailable",
+)
+def test_2011_q7_image_options_use_only_left_side_anchors(tmp_path):
+    source = (
+        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2011.pdf"
+    )
+    data = parse_pdf(source, asset_dir=tmp_path / "assets")
+    q = data["questions"][6]
+    assert q["question_number"] == 7
+    assert [option["label"] for option in q["options"]] == list("ABCDE")
+    assert all(len(option["images"]) == 1 for option in q["options"])
+    c = q["options"][2]
+    d = q["options"][3]
+    asset = c["images"][0]
+    assert option_anchor_is_left_of_visual(
+        {"bbox": c["label_bbox"]}, asset["graphic_bbox"]
+    )
+    assert not foreign_option_anchors(
+        asset["bbox"],
+        [
+            {
+                "label": option["label"],
+                "bbox": option["label_bbox"],
+                "page": option["page"],
+            }
+            for option in q["options"]
+        ],
+        asset["page"],
+        "C",
+    )
+    assert asset["bbox"][2] < d["label_bbox"][0]
+
+
+@pytest.mark.skipif(
+    not (
+        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2012.pdf"
+    ).is_file(),
+    reason="Local TSA Oxford 2012 PDF unavailable",
+)
+def test_2012_q3_text_enclosures_do_not_create_visual_association_issues(tmp_path):
+    source = (
+        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2012.pdf"
+    )
+    data = parse_pdf(source, asset_dir=tmp_path / "assets")
+    q = data["questions"][2]
+    assert q["question_number"] == 3
+    assert not q["visual_assets"]
+    assert not any(
+        warning.startswith("visual_component_association_uncertain")
+        for warning in q["warnings"]
+    )
+    issues = [
+        reason
+        for row in collect_issues(data, tmp_path / "2012.raw.json")
+        if row.get("question_number") == 3
+        for reason in row["reasons"]
+    ]
+    assert not any(reason.startswith("visual_") for reason in issues)
 
 
 def test_layout_reference_or_order_damage_is_reported(tmp_path):

@@ -7,7 +7,7 @@ import zlib
 from html import escape
 from pathlib import Path
 
-from .visual_structure import foreign_option_anchors
+from .visual_structure import foreign_option_anchors, option_anchor_is_left_of_visual
 from .visuals import valid_bbox
 
 
@@ -111,6 +111,24 @@ def visual_issues(question, raw_json, pages):
                 issues.append(
                     (
                         f"foreign_option_letter_in_crop:{option['label']}->{labels}",
+                        asset.get("path"),
+                    )
+                )
+            owner = next(
+                (
+                    anchor
+                    for anchor in option_anchors
+                    if anchor["label"] == option["label"]
+                    and anchor["page"] == asset.get("page")
+                ),
+                None,
+            )
+            if owner and not option_anchor_is_left_of_visual(
+                owner, asset.get("graphic_bbox", asset["bbox"])
+            ):
+                issues.append(
+                    (
+                        f"visual_option_anchor_not_left_of_image:{option['label']}",
                         asset.get("path"),
                     )
                 )

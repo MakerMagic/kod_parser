@@ -157,7 +157,7 @@ def test_image_only_option_regions_are_saved_and_associated(tmp_path):
                 (80, 480, "E Fifth"),
             ]
         ],
-        graphics=True,
+        graphics_commands=["110 625 m 180 625 l S"],
     )
     data = parse_pdf(
         source,

@@ -2,7 +2,7 @@
 
 import re
 
-from .visual_structure import focused_crop, words
+from .visual_structure import focused_crop, option_anchor_is_left_of_visual, words
 
 
 def contains(outer, inner, tolerance=0.1):
@@ -39,7 +39,8 @@ def image_choice_anchors(question, lines, pages):
             eligible = [
                 g
                 for g in groups
-                if -4 <= g["bbox"][0] - box[2] <= 60
+                if option_anchor_is_left_of_visual({"bbox": box}, g["bbox"])
+                and g["bbox"][0] - box[2] <= 60
                 and abs(g["bbox"][1] - box[1]) <= (50 if g.get("graph") else 20)
             ]
             if len(eligible) != 1:

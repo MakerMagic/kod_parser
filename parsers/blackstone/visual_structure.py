@@ -48,6 +48,11 @@ def foreign_option_anchors(crop, anchors, page, owner_label):
     ]
 
 
+def option_anchor_is_left_of_visual(anchor, visual):
+    """Image-choice labels are structural anchors only when left of the visual."""
+    return anchor["bbox"][2] <= visual[0] + 0.1
+
+
 def words(line):
     return list(zip(line.get("word_boxes", []), line.get("word_texts", [])))
 

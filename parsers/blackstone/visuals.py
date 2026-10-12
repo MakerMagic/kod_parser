@@ -12,7 +12,11 @@ from pathlib import Path
 import pypdfium2 as pdfium
 
 from .image_options import image_choice_anchors
-from .visual_structure import focused_crop, foreign_option_anchors
+from .visual_structure import (
+    focused_crop,
+    foreign_option_anchors,
+    option_anchor_is_left_of_visual,
+)
 
 DPI = 144
 PADDING = 12
@@ -119,6 +123,51 @@ def _graph_regions(images):
                 groups.remove(cap)
         main["graph"] = True
     return sorted(groups, key=lambda g: (g["bbox"][1], g["bbox"][0]))
+
+
+def _is_text_container(group, lines, page):
+    """Recognise invisible page frames around prose, not diagrams or tables."""
+    objects = group["objects"]
+    if any(image["kind"] != "vector" for image in objects):
+        return False
+    box = group["bbox"]
+    width, height = box[2] - box[0], box[3] - box[1]
+    if width <= 0 or height <= 0:
+        return False
+    edge_lines = 0
+    for image in objects:
+        if image["object_type"] != "line":
+            continue
+        x0, y0, x1, y1 = image["bbox"]
+        line_width, line_height = x1 - x0, y1 - y0
+        horizontal = line_width >= width * 0.35 and line_height <= 1
+        vertical = line_height >= height * 0.35 and line_width <= 1
+        if not horizontal and not vertical:
+            continue
+        on_edge = (
+            horizontal
+            and min(abs(y0 - box[1]), abs(y0 - box[3])) <= 1
+            or vertical
+            and min(abs(x0 - box[0]), abs(x0 - box[2])) <= 1
+        )
+        if not on_edge:
+            return False  # Interior rules are chart/table geometry.
+        edge_lines += 1
+    if edge_lines < 2:
+        return False
+    prose = [
+        line
+        for line in lines
+        if line["page"] == page
+        and box[0] - 5 <= line["x0"]
+        and line["x1"] <= box[2] + 5
+        and box[1] <= line["top"]
+        and line["bottom"] <= box[3]
+        # CID-encoded pages retain their raw token text, so use the spatial
+        # word segmentation rather than whitespace in the raw string.
+        and len(line.get("word_boxes", [])) >= 5
+    ]
+    return len(prose) >= 2
 
 
 def _graph_cell(group, anchors, page):
@@ -252,17 +301,20 @@ def _component(box, page_number, anchors):
     ]
     if len(contained_labels) > 1:
         return "unknown", None
-    # Label-only choices can sit above, below, or beside their image. Use local
-    # rows/columns, not the old assumption that every image follows its label.
+    # Labels identify image choices only from the visual's left edge.
     candidates = []
-    cx, cy = (box[0] + box[2]) / 2, (box[1] + box[3]) / 2
+    cy = (box[1] + box[3]) / 2
     for anchor in on_page:
         if not anchor.get("label_only"):
             continue
         a = anchor["bbox"]
-        ax, ay = (a[0] + a[2]) / 2, (a[1] + a[3]) / 2
+        # Image-choice labels are always printed to the left of their image.
+        # A right-side label is the anchor for the following option, never the
+        # owner of this visual region.
+        if not option_anchor_is_left_of_visual(anchor, box):
+            continue
+        ay = (a[1] + a[3]) / 2
         row = [other["bbox"] for other in on_page if abs(other["bbox"][1] - a[1]) < 8]
-        left = max(((b[0] + b[2]) / 2 for b in row if b[2] < a[0]), default=-math.inf)
         right = min(((b[0] + b[2]) / 2 for b in row if b[0] > a[2]), default=math.inf)
         previous = max(
             (
@@ -285,7 +337,7 @@ def _component(box, page_number, anchors):
             max(a[1] - box[3], box[1] - a[3], 0),
         )
         if (
-            (left + ax) / 2 < cx < (right + ax) / 2
+            box[2] <= right
             and (previous + ay) / 2 < cy < (following + ay) / 2
             and dx <= 50
             and dy <= 30
@@ -301,6 +353,10 @@ def _component(box, page_number, anchors):
     center = [(box[0] + box[2]) / 2, (box[1] + box[3]) / 2]
     for anchor in on_page:
         a = anchor["bbox"]
+        if not anchor.get("label_only") or not option_anchor_is_left_of_visual(
+            anchor, box
+        ):
+            continue
         right = min(
             (
                 other["bbox"][0]
@@ -371,12 +427,8 @@ def _associate_rows(groups, anchors, page, lines, options_start):
             if group.get("merge_warning"):
                 continue
             if (
-                max(
-                    anchor["bbox"][0] - group["bbox"][2],
-                    group["bbox"][0] - anchor["bbox"][2],
-                    0,
-                )
-                <= 100
+                option_anchor_is_left_of_visual(anchor, group["bbox"])
+                and group["bbox"][0] - anchor["bbox"][2] <= 100
             ):
                 group["option_override"] = anchor["label"]
 
@@ -560,7 +612,9 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                 if image["page"] == number
                             ]
                             for image in images:
-                                if not valid_bbox(image["bbox"], width, height):
+                                if not image.get("decorative") and not valid_bbox(
+                                    image["bbox"], width, height
+                                ):
                                     question["warnings"].append(
                                         f"visual_invalid_bbox:{image['image_id']}"
                                     )
@@ -571,6 +625,49 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                 and valid_bbox(image["bbox"], width, height)
                             ]
                             groups = _graph_regions(meaningful)
+                            # A border from the next question can touch the
+                            # preceding segment by a fraction of a point. Its
+                            # geometric centre identifies the owning segment
+                            # without applying a fixed-distance cutoff.
+                            outside_segment = [
+                                group
+                                for group in groups
+                                if not (
+                                    segment["bbox"][1]
+                                    <= (group["bbox"][1] + group["bbox"][3]) / 2
+                                    < segment["bbox"][3]
+                                )
+                            ]
+                            for group in outside_segment:
+                                for image in group["objects"]:
+                                    image["decorative"] = True
+                                    image["notes"].append(
+                                        "Belongs to an adjacent question segment."
+                                    )
+                            groups = [
+                                group
+                                for group in groups
+                                if segment["bbox"][1]
+                                <= (group["bbox"][1] + group["bbox"][3]) / 2
+                                < segment["bbox"][3]
+                            ]
+                            text_containers = [
+                                group
+                                for group in groups
+                                if _is_text_container(group, pending["lines"], number)
+                            ]
+                            if text_containers:
+                                for group in text_containers:
+                                    for image in group["objects"]:
+                                        image["decorative"] = True
+                                        image["notes"].append(
+                                            "Text enclosure/frame; not a visual asset."
+                                        )
+                                groups = [
+                                    group
+                                    for group in groups
+                                    if group not in text_containers
+                                ]
                             refined = []
                             for group in groups:
                                 box = group["bbox"]
@@ -764,7 +861,28 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                         asset["warnings"].append(
                                             "visual_option_anchor_ambiguous:manual_review"
                                         )
-                                    if foreign or len(matching) != 1:
+                                    if len(
+                                        matching
+                                    ) == 1 and not option_anchor_is_left_of_visual(
+                                        matching[0],
+                                        asset.get("graphic_bbox", asset["bbox"]),
+                                    ):
+                                        asset["warnings"].append(
+                                            "visual_option_anchor_not_left_of_image:manual_review"
+                                        )
+                                    if (
+                                        foreign
+                                        or len(matching) != 1
+                                        or any(
+                                            not option_anchor_is_left_of_visual(
+                                                anchor,
+                                                asset.get(
+                                                    "graphic_bbox", asset["bbox"]
+                                                ),
+                                            )
+                                            for anchor in matching
+                                        )
+                                    ):
                                         asset["belongs_to"] = "unknown"
                                         asset["option_label"] = None
                                 if asset["belongs_to"] == "unknown":

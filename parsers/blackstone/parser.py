@@ -171,12 +171,14 @@ def _read_page(page):
                     "bbox": [obj["x0"], obj["top"], obj["x1"], obj["bottom"]],
                     "kind": kind,
                     "object_type": obj["object_type"],
+                    # A white, fill-only vector has no visible mark to preserve.
+                    # In these PDFs such rectangles are clipping/background masks;
+                    # retaining small ones can incorrectly join neighbouring option
+                    # graphics and absorb the next option label.
                     "decorative": kind == "vector"
                     and obj.get("fill")
                     and not obj.get("stroke")
-                    and obj.get("non_stroking_color") in [(1, 1, 1), (0, 0, 0, 0), 1]
-                    and (obj["x1"] - obj["x0"]) * (obj["bottom"] - obj["top"])
-                    > page.width * page.height * 0.3,
+                    and obj.get("non_stroking_color") in [(1, 1, 1), (0, 0, 0, 0), 1],
                     "notes": ["reference_to_source_pdf:no_image_file_exported"],
                 }
             )
