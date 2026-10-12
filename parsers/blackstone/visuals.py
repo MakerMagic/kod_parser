@@ -11,6 +11,7 @@ from pathlib import Path
 
 import pypdfium2 as pdfium
 
+from .image_options import image_choice_anchors
 from .visual_structure import focused_crop
 
 DPI = 144
@@ -62,6 +63,96 @@ def _regions(images, gap=12):
                     changed = True
         groups.append(group)
     return sorted(groups, key=lambda g: (g["bbox"][1], g["bbox"][0]))
+
+
+def _is_graph(group):
+    """Require repeated horizontal guides plus plotted marks, not table rules."""
+    guides = marks = 0
+    for obj in group["objects"]:
+        x0, y0, x1, y1 = obj["bbox"]
+        width, height = x1 - x0, y1 - y0
+        guides += width > 50 and height < 1.2
+        marks += (
+            3 < width < 65
+            and height > max(18, width * 1.4)
+            or obj["object_type"] == "curve"
+            and 2 < width < 30
+            and 2 < height < 30
+            or obj["object_type"] == "line"
+            and width > 3
+            and height > 3
+        )
+    return guides >= 3 and marks >= 3
+
+
+def _graph_regions(images):
+    """Join a detached top guide to one bar graph, never to a table or neighbor."""
+    groups = _regions(images)
+    for main in [g for g in groups if _is_graph(g)]:
+        m = main["bbox"]
+        possible = [
+            cap
+            for cap in groups
+            if cap is not main
+            and len(cap["objects"]) == 1
+            and cap["objects"][0]["object_type"] == "line"
+            and cap["bbox"][2] - cap["bbox"][0] > 80
+            and cap["bbox"][3] - cap["bbox"][1] < 1.2
+            and 0 < m[1] - cap["bbox"][3] <= 20
+            and abs(m[0] - cap["bbox"][0]) <= 7
+            and abs(m[2] - cap["bbox"][2]) <= 7
+        ]
+        if len(possible) == 1:
+            cap = possible[0]
+            # The cap must have only this graph as a plausible owner.
+            owners = [
+                other
+                for other in groups
+                if other is not cap
+                and _is_graph(other)
+                and 0 < other["bbox"][1] - cap["bbox"][3] <= 20
+                and abs(other["bbox"][0] - cap["bbox"][0]) <= 7
+            ]
+            if len(owners) == 1:
+                main["objects"].extend(cap["objects"])
+                main["bbox"] = _union([m, cap["bbox"]])
+                groups.remove(cap)
+        main["graph"] = True
+    return sorted(groups, key=lambda g: (g["bbox"][1], g["bbox"][0]))
+
+
+def _graph_cell(group, anchors, page):
+    """A letter owns a graph only inside its column and before the next row."""
+    box = group["bbox"]
+    on_page = [a for a in anchors if a["page"] == page and a.get("label_only")]
+    candidates = []
+    for anchor in on_page:
+        label = anchor["bbox"]
+        if not (
+            0 <= box[0] - label[2] <= 100
+            and label[1] <= box[1]
+            and box[1] - label[1] <= 65
+        ):
+            continue
+        next_column = min(
+            (
+                a["bbox"][0]
+                for a in on_page
+                if abs(a["bbox"][1] - label[1]) < 8 and a["bbox"][0] > label[0] + 8
+            ),
+            default=math.inf,
+        )
+        next_row = min(
+            (
+                a["bbox"][1]
+                for a in on_page
+                if abs(a["bbox"][0] - label[0]) < 8 and a["bbox"][1] > label[1] + 8
+            ),
+            default=math.inf,
+        )
+        if box[0] < next_column and box[3] <= next_row:
+            candidates.append(anchor)
+    return candidates[0] if len(candidates) == 1 else None
 
 
 def _png_chunk(kind, data):
@@ -307,7 +398,26 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
     ):
         question["visual_assets"] = []
         question["visual_previews"] = []
-        anchors = _anchors(question, pending["lines"])
+        page_groups = {
+            p["page_number"]: (
+                _graph_regions(
+                    [
+                        i
+                        for i in question["images"]
+                        if i["page"] == p["page_number"]
+                        and not i.get("decorative")
+                        and valid_bbox(i["bbox"], p["width"], p["height"])
+                    ]
+                ),
+                p["width"],
+                p["height"],
+            )
+            for p in dataset["pages"]
+            if any(s["page"] == p["page_number"] for s in pending["segments"])
+        }
+        anchors = image_choice_anchors(
+            question, pending["lines"], page_groups
+        ) or _anchors(question, pending["lines"])
         for segment in pending["segments"]:
             by_page.setdefault(segment["page"], []).append(
                 (record_index, question, pending, segment, anchors)
@@ -460,10 +570,26 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                 if not image.get("decorative")
                                 and valid_bbox(image["bbox"], width, height)
                             ]
-                            groups = _regions(meaningful)
+                            groups = _graph_regions(meaningful)
                             refined = []
                             for group in groups:
                                 box = group["bbox"]
+                                graph_owner = (
+                                    _graph_cell(group, anchors, number)
+                                    if group.get("graph")
+                                    else None
+                                )
+                                if graph_owner:
+                                    group["option_override"] = graph_owner["label"]
+                                    refined.append(group)
+                                    continue
+                                if any(
+                                    a.get("object_ids")
+                                    == {o["image_id"] for o in group["objects"]}
+                                    for a in anchors
+                                ):
+                                    refined.append(group)
+                                    continue
                                 labels = [
                                     a
                                     for a in anchors
@@ -514,7 +640,13 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                             )
                             for group in groups:
                                 group["crop"], group["crop_context"] = focused_crop(
-                                    group, pending["lines"], number, width, height
+                                    group,
+                                    pending["lines"],
+                                    number,
+                                    width,
+                                    height,
+                                    groups,
+                                    anchors,
                                 )
                             # Stable visual row order, left-to-right within nearly aligned rows.
                             row_top = None
@@ -550,6 +682,8 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                     group["objects"],
                                 )
                                 asset.update(group["crop_context"])
+                                if group.get("graph"):
+                                    asset["visual_kind"] = "graph"
                                 if group.get("merge_warning"):
                                     asset["warnings"].append(group["merge_warning"])
                                 asset["belongs_to"], asset["option_label"] = _component(
@@ -560,6 +694,22 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                         "option",
                                         group["option_override"],
                                     )
+                                confirmed = [a for a in anchors if a.get("object_ids")]
+                                if confirmed:
+                                    owner = next(
+                                        (
+                                            a
+                                            for a in confirmed
+                                            if a["object_ids"]
+                                            == set(asset["object_ids"])
+                                        ),
+                                        None,
+                                    )
+                                    asset["belongs_to"], asset["option_label"] = (
+                                        ("option", owner["label"])
+                                        if owner
+                                        else ("question", None)
+                                    )
                                 if group.get("merge_warning"):
                                     asset["belongs_to"], asset["option_label"] = (
                                         "unknown",
@@ -568,6 +718,20 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                 if any(
                                     w.startswith("visual_option_labels_ambiguous:")
                                     for w in question["warnings"]
+                                ):
+                                    asset["belongs_to"], asset["option_label"] = (
+                                        "unknown",
+                                        None,
+                                    )
+                                if any(
+                                    w.startswith(
+                                        "visual_image_option_association_uncertain:"
+                                    )
+                                    for w in question["warnings"]
+                                ) and any(
+                                    a["page"] == number
+                                    and group["bbox"][1] >= a["bbox"][1] - 8
+                                    for a in anchors
                                 ):
                                     asset["belongs_to"], asset["option_label"] = (
                                         "unknown",

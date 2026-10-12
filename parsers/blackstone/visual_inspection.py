@@ -67,6 +67,23 @@ def visual_issues(question, raw_json, pages):
     orders = [asset.get("asset_index") for asset in question.get("visual_assets", [])]
     if orders and orders != list(range(1, len(orders) + 1)):
         issues.append(("visual_asset_order_inconsistent", None))
+    indexed = {a["image_id"]: a for a in question.get("visual_assets", [])}
+    for option in question.get("options", []):
+        if option.get("content_type") != "image":
+            continue
+        references = option.get("images", [])
+        if len(references) != 1 or any(
+            a.get("image_id") not in indexed
+            or indexed[a["image_id"]].get("option_label") != option["label"]
+            or indexed[a["image_id"]].get("page") != option.get("page")
+            for a in references
+        ):
+            issues.append(
+                (
+                    f"visual_image_option_mapping_inconsistent:{option['label']}",
+                    references[0].get("path") if references else None,
+                )
+            )
     blocks = question.get("layout_blocks")
     if blocks is not None:
         if [b.get("order") for b in blocks] != list(range(1, len(blocks) + 1)):
@@ -162,6 +179,17 @@ def render_html(result):
                 + escape("; ".join(asset["warnings"]))
                 + "</p>"
             )
+        if asset.get("axis_labels"):
+            parts.append(
+                "<p>Axis labels: "
+                + escape(
+                    "; ".join(
+                        f"{label['axis']}: {label['text']}"
+                        for label in asset["axis_labels"]
+                    )
+                )
+                + "</p>"
+            )
         try:
             data = read_png(resolve_asset(result["raw_json"], reference))
             encoded = base64.b64encode(data).decode("ascii")
@@ -228,7 +256,7 @@ def render_html(result):
     parts.append("<h2>Stored answer options</h2>")
     for option in question.get("options", []):
         parts.append(
-            f"<pre>{escape(str(option.get('label')))}: {escape(str(option.get('text')))}</pre>"
+            f"<pre>{escape(str(option.get('label')))}: {escape('[image-based option]' if option.get('content_type') == 'image' else str(option.get('text')))}</pre>"
         )
         for asset in option.get("images", []):
             figure(asset, f"Answer option {option.get('label')}")

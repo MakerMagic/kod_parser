@@ -265,3 +265,55 @@ def test_tsa_2022_question_50_vector_graphic(tmp_path):
         crop, graphic = asset["bbox"], asset["graphic_bbox"]
         assert crop[0] <= graphic[0] and crop[1] <= graphic[1]
         assert crop[2] >= graphic[2] and crop[3] >= graphic[3]
+    # Concrete 2022 regressions: short prose ending, legend bleeding, and
+    # rotated chart labels being stolen by the following answer chart.
+    q8, q20 = data["questions"][7], data["questions"][19]
+    assert [q["question_number"] for q in data["questions"]] == list(range(1, 51))
+    assert [o["label"] for o in q8["options"]] == list("ABCDE")
+    assert all(o["content_type"] == "image" and o["text"] == "" for o in q8["options"])
+    assert len(q8["visual_assets"]) == 7
+    assert q8["visual_assets"][1]["bbox"][3] < 311  # key excludes chart B
+    assert q8["visual_assets"][1]["option_label"] is None
+    for option in q8["options"]:
+        assert len(option["images"]) == 1
+        asset = option["images"][0]
+        assert asset["option_label"] == option["label"]
+        assert asset["placement"]["component"] == "option"
+        assert asset["page"] == option["page"] == 7
+        assert not asset["warnings"]
+        assert asset["visual_text"]
+    assert q8["options"][2]["images"][0]["bbox"][1] > 460.84
+    assert q8["options"][4]["images"][0]["bbox"][1] > 614.68
+    assert q8["options"][2]["images"][0]["bbox"][3] >= 614.68
+    assert q8["options"][4]["images"][0]["bbox"][3] >= 768.64
+    assert "A 100 B 100" in q8["raw"]["options_block"]
+    assert q8["raw"]["text_option_candidates"][0]["text"].startswith("100 B 100")
+    assert q20["visual_assets"][1]["bbox"][1] > 236.95
+    assert "been incorrectly plotted." in q20["raw"]["question_block"]
+    assert [o["text"].strip() for o in q20["options"]] == [
+        "Ffion",
+        "Gary",
+        "Huw",
+        "Ken",
+        "Mei",
+    ]
+    for q in (q8, q20):
+        for a in q["visual_assets"]:
+            for other in q["visual_assets"]:
+                if a is other:
+                    continue
+                b, g = a["bbox"], other["graphic_bbox"]
+                assert b[2] <= g[0] or b[0] >= g[2] or b[3] <= g[1] or b[1] >= g[3]
+    raw = tmp_path / "2022.raw.json"
+    raw.write_text(json.dumps(data), encoding="utf-8")
+    before = raw.read_bytes()
+    result = inspect_question([raw], source="TSA_2022.pdf", question_number=8)
+    html = render_inspection(result, "html")
+    visible = html.split("<summary>Full stored question record</summary>")[0]
+    assert "A 100 B 100" not in visible and "[image-based option]" in visible
+    assert all(f"Answer option {label}" in visible for label in "ABCDE")
+    assert render_inspection(result, "json") and render_inspection(result, "text")
+    assert raw.read_bytes() == before
+    assert not [
+        r for r in collect_issues(data, raw) if r.get("question_number") in (8, 20)
+    ]

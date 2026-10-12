@@ -258,6 +258,26 @@ Components are `stimulus`, `question_body`, `subpart`, `option`, `intermediate`,
 
 Assets retain existing coarse `belongs_to` values and add `placement` with component/label and neighboring `after_raw_span` / `before_raw_span`. Crop evidence adds `graphic_bbox`, `crop_method`, and full-line `included_text_spans` / `excluded_text_spans`; these evidence spans do not assert that every word on a shared diagram-label row belongs to one crop. Label-only options keep empty text plus saved `options[].images`; confidently saved images resolve only the corresponding empty-image warnings. A contiguous option sequence may extend beyond E. Existing raw fields remain unchanged, and legacy JSON without layout blocks is still inspectable.
 
+For strongly evidenced repeated image choices, `options[].content_type="image"`
+and `text=""`; `images` holds the associated asset (including order, page, bounds,
+label, path, and warnings). Options also retain `page`, `label_bbox`, and
+`association_method`. `raw.text_option_candidates` preserves the initial textual
+interpretation before visual association; `raw.question_block`, `options_block`,
+and page text/spans are unchanged. Chart/axis text is not ordinary answer text.
+Each asset's `visual_text` retains contained extracted tokens, spatial bounds,
+and `source_line_span` into the original question block. Rotated glyph bounds
+may cover a complete baseline label even when extraction splits its text over
+several lines. Legacy records without these additive fields remain supported.
+
+Detected graph crops additionally use `visual_kind="graph"` and optional
+`axis_labels` entries (`axis`, correctly ordered `text`, `bbox`, `page`,
+`orientation`, `source_line_spans`). Vertical label text follows the PDF glyph
+stream and transformation matrix, while the original reversed extraction stays
+in `raw.question_block`. If graph-owned extracted lines are removed from the
+derived `question_text`, its unmodified former value is saved as
+`raw.text_question_candidate`; `layout_blocks` still preserve the exact raw
+lines and mark them `visual_label`. No original page/question block is deleted.
+
 A final question should be traceable through the pipeline:
 
 ```text

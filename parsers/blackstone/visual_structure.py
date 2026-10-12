@@ -1,5 +1,6 @@
 """Focused visual boundaries and additive, raw-span-backed question layout."""
 
+import math
 import re
 
 ASSET_PADDING = 4
@@ -32,20 +33,141 @@ def words(line):
     return list(zip(line.get("word_boxes", []), line.get("word_texts", [])))
 
 
-def focused_crop(group, lines, page, width, height):
+def rotated_label_bounds(chars, *, with_runs=False):
+    """Join transformed glyphs in PDF stream order along their own baseline."""
+    result, runs, run = {}, [], []
+
+    def finish():
+        if run:
+            box = bounds([[c["x0"], c["top"], c["x1"], c["bottom"]] for c in run])
+            record = {
+                "text": "".join(c["text"] for c in run),
+                "bbox": box,
+                "vertical": all(c.get("upright") is False for c in run)
+                and abs(run[0]["matrix"][0]) < 0.1,
+                "keys": {(c["x0"], c["top"], c["text"]) for c in run},
+            }
+            runs.append(record)
+            for c in run:
+                result[(c["x0"], c["top"], c["text"])] = box
+            run.clear()
+
+    for char in chars:
+        matrix = char.get("matrix", (1, 0, 0, 1, 0, 0))
+        if abs(matrix[1]) < 0.01:
+            finish()
+            continue
+        if run:
+            previous = run[-1]["matrix"]
+            length = math.hypot(matrix[0], matrix[1])
+            dx, dy = matrix[4] - previous[4], matrix[5] - previous[5]
+            along = (dx * matrix[0] + dy * matrix[1]) / length
+            across = abs(dx * matrix[1] - dy * matrix[0]) / length
+            same_orientation = all(
+                abs(a - b) < 0.02 for a, b in zip(matrix[:4], previous[:4])
+            )
+            advance = max(length * 1.3, run[-1].get("adv", 0) * 1.5)
+            if not same_orientation or across > 1 or not 0 < along <= advance:
+                finish()
+        run.append(char)
+    finish()
+    return (result, runs) if with_runs else result
+
+
+def _prose_lines(lines, graphic):
+    """Paragraph membership includes short wrapped endings, not just long lines."""
+    outside = [
+        line
+        for line in lines
+        if (line["bottom"] <= graphic[1] or line["top"] >= graphic[3])
+        and not re.match(
+            r"^(?:Figure|Fig\.|Table|Chart|Diagram)\s+\d+\b",
+            line["text"],
+            re.IGNORECASE,
+        )
+    ]
+    prose = {
+        id(line)
+        for line in outside
+        if len(line["text"].split()) >= 5
+        and line["text"].rstrip().endswith((".", "?", ":"))
+    }
+    # A wrapped paragraph may end in only two or three words. Grow through
+    # aligned, closely spaced prose, but never through a visual's internal text.
+    changed = True
+    while changed:
+        changed = False
+        for line in outside:
+            if id(line) in prose:
+                continue
+            for other in outside:
+
+                def indent(item):
+                    tokens = words(item)
+                    if len(tokens) > 1 and tokens[0][1].isdigit():
+                        return tokens[1][0][0]
+                    return item["x0"]
+
+                if abs(indent(other) - indent(line)) >= 8:
+                    continue
+                gap = max(other["top"] - line["bottom"], line["top"] - other["bottom"])
+                if not 0 <= gap <= 8:
+                    continue
+                if id(other) in prose or (
+                    len(other["text"].split()) >= 8
+                    and line["text"].rstrip().endswith((".", "?", ":"))
+                ):
+                    prose.update((id(line), id(other)))
+                    changed = True
+                    break
+    return prose
+
+
+def _distance(a, b):
+    return max(a[0] - b[2], b[0] - a[2], 0) ** 2 + max(a[1] - b[3], b[1] - a[3], 0) ** 2
+
+
+def focused_crop(group, lines, page, width, height, neighbors=(), anchors=()):
     """Keep internal labels; external prose is a barrier, not a label source.
 
     Full line context is used before selecting nearby words, so a short fragment
     of a long sentence cannot masquerade as a diagram label. Raw text is untouched.
     """
     graphic = group["bbox"]
+    graph = bool(group.get("graph"))
+    page_lines = [line for line in lines if line["page"] == page]
+    prose_lines = _prose_lines(page_lines, graphic)
+    others = [g["bbox"] for g in neighbors if g is not group and g["bbox"] != graphic]
     kept, excluded, warnings = [], [], []
     included_spans, excluded_spans = [], []
     for line in lines:
         if line["page"] != page:
             continue
         box = [line["x0"], line["top"], line["x1"], line["bottom"]]
-        nearby = [(b, t) for b, t in words(line) if overlaps(graphic, b, LABEL_REACH)]
+        nearby = []
+        for b, t in words(line):
+            if graph and any(
+                anchor["page"] == page and anchor["label"] == t and anchor["bbox"] == b
+                for anchor in anchors
+            ):
+                continue
+            # Rotated axis numerals can extend well below the drawn axes. Their
+            # nearest graphic owns them, even when another chart is just below.
+            axis_row = all(
+                re.fullmatch(r"[\d.,%+−-]+|[A-Z]", value) for _, value in words(line)
+            )
+            reach = (
+                min(40, max(34, (graphic[2] - graphic[0]) * 0.16))
+                if graph
+                else 34
+                if axis_row and re.fullmatch(r"[\d.,%+−-]+", t)
+                else LABEL_REACH
+            )
+            if not overlaps(graphic, b, reach):
+                continue
+            if any(_distance(b, other) < _distance(b, graphic) for other in others):
+                continue
+            nearby.append((b, t))
         if not nearby:
             continue
         outside = box[3] <= graphic[1] or box[1] >= graphic[3]
@@ -56,45 +178,32 @@ def focused_crop(group, lines, page, width, height):
                 r"^(?:Figure|Fig\.|Table|Chart|Diagram)\s+\d+\b", text, re.IGNORECASE
             )
         )
-        continuation = (
-            outside
-            and count >= 5
-            and not named_caption
-            and not text.rstrip().endswith((".", "?", ":"))
-            and any(
-                other["page"] == page
-                and other is not line
-                and abs(other["x0"] - line["x0"]) < 8
-                and 0
-                <= max(other["top"] - line["bottom"], line["top"] - other["bottom"])
-                <= 8
-                and len(words(other)) >= 5
-                and other["text"].rstrip().endswith((".", "?", ":"))
-                and (other["bottom"] <= graphic[1] or other["top"] >= graphic[3])
-                for other in lines
-            )
-        )
-        prose = (
-            outside
-            and not named_caption
-            and count >= 5
-            and (text.rstrip().endswith((".", "?", ":")) or continuation)
-        )
+        prose = id(line) in prose_lines
         span = {"start": line["block_start"], "end": line["block_start"] + len(text)}
         if prose:
             excluded.extend(b for b, _ in nearby)
             excluded_spans.append(span)
             continue
         # Capture only local labels on rows shared by adjacent diagrams.
-        kept.extend(
-            b for b, _ in (words(line) if outside and named_caption else nearby)
-        )
+        if outside and named_caption:
+            nearby = [
+                (b, t)
+                for b, t in words(line)
+                if not any(
+                    _distance(b, other) < _distance(b, graphic) for other in others
+                )
+            ]
+        kept.extend(b for b, _ in nearby)
         included_spans.append(span)
-        if outside and count >= 7:
+        if (
+            outside
+            and count >= 7
+            and not all(re.fullmatch(r"[\d.,%+−-]+", t) for _, t in nearby)
+        ):
             warnings.append(
                 "visual_caption_boundary_uncertain:external_caption_preserved"
             )
-            if not named_caption and len(nearby) < count:
+            if len(nearby) < count:
                 warnings.append(
                     "visual_caption_may_be_incomplete:local_text_preserved_in_layout"
                 )
@@ -113,9 +222,39 @@ def focused_crop(group, lines, page, width, height):
             crop[3] = min(crop[3], max(expanded[3], box[1] - 1))
         if overlaps(crop, box) and box[1] < crop[3] and box[3] > crop[1]:
             warnings.append("visual_crop_contains_unrelated_text:boundary_overlap")
+    # Padding cannot cross into a neighboring graphic. If actual content bounds
+    # overlap, retain it and report ambiguity instead of clipping real content.
+    for box in others:
+        if not overlaps(crop, box):
+            continue
+        if box[2] <= expanded[0]:
+            crop[0] = max(crop[0], (box[2] + expanded[0]) / 2)
+        elif box[0] >= expanded[2]:
+            crop[2] = min(crop[2], (box[0] + expanded[2]) / 2)
+        elif box[3] <= expanded[1]:
+            crop[1] = max(crop[1], (box[3] + expanded[1]) / 2)
+        elif box[1] >= expanded[3]:
+            crop[3] = min(crop[3], (box[1] + expanded[3]) / 2)
+        else:
+            warnings.append("visual_neighbor_boundary_uncertain:content_bounds_overlap")
+    if graph:
+        for anchor in anchors:
+            if anchor["page"] != page or not overlaps(crop, anchor["bbox"]):
+                continue
+            box = anchor["bbox"]
+            if box[3] <= graphic[1]:
+                crop[1] = max(crop[1], box[3] + 0.5)
+            elif box[1] >= graphic[3]:
+                crop[3] = min(crop[3], box[1] - 0.5)
+            elif box[2] <= graphic[0]:
+                crop[0] = max(crop[0], box[2] + 0.5)
+            elif box[0] >= graphic[2]:
+                crop[2] = min(crop[2], box[0] - 0.5)
+            else:
+                warnings.append("visual_option_boundary_overlaps_graph:manual_review")
     return crop, {
         "graphic_bbox": graphic[:],
-        "crop_method": "pdf_objects_text_barriers",
+        "crop_method": "pdf_objects_paragraph_barriers_text_ownership",
         "included_text_spans": included_spans,
         "excluded_text_spans": excluded_spans,
         "warnings": list(dict.fromkeys(warnings)),
@@ -171,7 +310,7 @@ def add_layout(question, pending):
         word_list = words(line)
         if word_list:
             coverage = []
-            for word, _ in word_list:
+            for word, word_text in word_list:
                 matches = [
                     a["image_id"]
                     for a in assets
@@ -181,6 +320,16 @@ def add_layout(question, pending):
                     and a["bbox"][2] >= word[2]
                     and a["bbox"][3] >= word[3]
                 ]
+                # An image-choice anchor is represented by its option heading,
+                # not by repeating a mixed extracted row such as 'A 100 B 100'.
+                for option in question["options"]:
+                    if (
+                        option.get("content_type") == "image"
+                        and option.get("page") == line["page"]
+                        and option.get("label_bbox") == word
+                        and option["label"] == word_text
+                    ):
+                        matches.extend(a["image_id"] for a in option["images"])
                 coverage.append(matches)
             if all(coverage):
                 linked = list(dict.fromkeys(i for matches in coverage for i in matches))

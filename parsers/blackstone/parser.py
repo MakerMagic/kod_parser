@@ -8,10 +8,11 @@ from pathlib import Path
 
 import pdfplumber
 
-from .visual_structure import add_layout
+from .image_options import attach_visual_text
+from .visual_structure import add_layout, bounds, rotated_label_bounds
 from .visuals import save_visuals
 
-PARSER_VERSION = "3"
+PARSER_VERSION = "4"
 SOURCE_FIELDS = ("source", "year", "paper", "variant", "section", "document_role")
 NUMBER = re.compile(r"^(\d{1,3})(?:[ \t]+|$)")
 OPTION = re.compile(r"^([A-Z])(?:[ \t]+|$)")
@@ -94,6 +95,19 @@ def _metadata(pages, pdf_metadata, supplied):
 
 def _read_page(page):
     raw_text = page.extract_text(layout=False) or ""
+    rotated, oriented_runs = rotated_label_bounds(page.chars, with_runs=True)
+
+    def word_bounds(chars):
+        return bounds(
+            [
+                rotated.get(
+                    (c["x0"], c["top"], c["text"]),
+                    [c["x0"], c["top"], c["x1"], c["bottom"]],
+                )
+                for c in chars
+            ]
+        )
+
     lines = []
     cursor = 0
     warnings = []
@@ -106,27 +120,13 @@ def _read_page(page):
         for char in extracted["chars"]:
             separator = char["text"].isspace() or char["text"] == "(cid:3)"
             if word and (separator or char["x0"] > word[-1]["x1"] + 3):
-                line["word_boxes"].append(
-                    [
-                        min(c["x0"] for c in word),
-                        min(c["top"] for c in word),
-                        max(c["x1"] for c in word),
-                        max(c["bottom"] for c in word),
-                    ]
-                )
+                line["word_boxes"].append(word_bounds(word))
                 line["word_texts"].append("".join(c["text"] for c in word))
                 word = []
             if not separator:
                 word.append(char)
         if word:
-            line["word_boxes"].append(
-                [
-                    min(c["x0"] for c in word),
-                    min(c["top"] for c in word),
-                    max(c["x1"] for c in word),
-                    max(c["bottom"] for c in word),
-                ]
-            )
+            line["word_boxes"].append(word_bounds(word))
             line["word_texts"].append("".join(c["text"] for c in word))
         line["label_positions"] = [
             {
@@ -139,6 +139,10 @@ def _read_page(page):
             if len(char["text"]) == 1
             and "A" <= char["text"] <= "Z"
             or re.fullmatch(r"\(cid:(?:36|37|38|39|40)\)", char["text"])
+        ]
+        line_keys = {(c["x0"], c["top"], c["text"]) for c in extracted["chars"]}
+        line["oriented_runs"] = [
+            run for run in oriented_runs if run["vertical"] and run["keys"] & line_keys
         ]
         start = raw_text.find(line["text"], cursor)
         if start < 0:
@@ -487,6 +491,7 @@ def parse_pdf(
         overwrite=overwrite_assets,
     )
     for question, pending in zip(questions, pending_questions):
+        attach_visual_text(question, pending["lines"])
         add_layout(question, pending)
     numbers = [question["question_number"] for question in questions]
     if numbers != list(range(1, len(numbers) + 1)):
