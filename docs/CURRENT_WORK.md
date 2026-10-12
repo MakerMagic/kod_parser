@@ -24,7 +24,9 @@ Save and inspect Blackstone raw graphics without changing text extraction or dow
 - Current issues snapshot stored in `docs/PARSING_ISSUES.md`; raw JSON remains unchanged by backtesting.
 - Raster/vector crops and question-page layout PNGs saved with ordered raw JSON references; universal self-contained HTML inspection added alongside text/JSON inspection.
 - All 16 local PDFs reparsed with visual assets; original page/question/option text and identity fields verified unchanged. Visual extraction/missing-file issues are included in the refreshed report.
-- Current validation: 47 tests and lint/format checks pass; all 1,763 referenced PNGs validated and all 800 questions have layouts. Actual 2022 questions 50/38 visually checked; one specimen coordinate mismatch uses a flagged full-page fallback.
+- Focused crops now exclude external prose while retaining diagram/table labels. Ordered raw-span-backed layout blocks and option image associations are shown in HTML; duplicate/shared choice geometry remains unresolved.
+- Current validation: 61 tests and lint/format checks pass. Attached 2010 questions 7/12, image-choice questions 14/20, and previously good 2022 question 50 have regression checks; original text/options/subparts remain preserved across all 800 records.
+- All 16 PDFs regenerated with the refined geometry/association rules; saved-asset references and read-only text/JSON/HTML inspection validated.
 
 ## Do not work on yet
 
@@ -36,4 +38,4 @@ Save and inspect Blackstone raw graphics without changing text extraction or dow
 
 ## Next task
 
-Manually review saved diagram crops and option associations using `docs/RAW_PARSER_BACKTEST.md`, then investigate remaining encoded-font and ambiguous-layout warnings before later stages. Existing inputs are in `acquisition/local/`; the parser also accepts arbitrary PDF paths.
+Review flagged captions, shared geometry, letter-puzzle option markers, and encoded fonts using `docs/RAW_PARSER_BACKTEST.md`; compare structured HTML with original layout previews before later stages. Existing inputs remain in `acquisition/local/`.

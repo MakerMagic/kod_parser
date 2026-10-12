@@ -67,6 +67,27 @@ def visual_issues(question, raw_json, pages):
     orders = [asset.get("asset_index") for asset in question.get("visual_assets", [])]
     if orders and orders != list(range(1, len(orders) + 1)):
         issues.append(("visual_asset_order_inconsistent", None))
+    blocks = question.get("layout_blocks")
+    if blocks is not None:
+        if [b.get("order") for b in blocks] != list(range(1, len(blocks) + 1)):
+            issues.append(("visual_layout_order_inconsistent", None))
+        ids = {a["image_id"] for a in question.get("visual_assets", [])}
+        placed = [b.get("asset_id") for b in blocks if b.get("type") == "visual"]
+        if set(placed) != ids or len(placed) != len(ids):
+            issues.append(("visual_layout_asset_reference_inconsistent", None))
+        raw = question.get("raw", {}).get("question_block", "")
+        for block in blocks:
+            if block.get("type") != "text":
+                continue
+            span = block.get("raw_span") or {}
+            start, end = span.get("start"), span.get("end")
+            if (
+                not isinstance(start, int)
+                or not isinstance(end, int)
+                or not 0 <= start <= end <= len(raw)
+                or raw[start:end] != block.get("text")
+            ):
+                issues.append(("visual_layout_raw_span_inconsistent", None))
     for asset in assets:
         reference = asset.get("path")
         for warning in asset.get("warnings", []):
@@ -83,6 +104,27 @@ def visual_issues(question, raw_json, pages):
             and asset.get("belongs_to") == "unknown"
         ):
             issues.append(("visual_component_association_uncertain", reference))
+        if asset.get("asset_type") == "rendered_crop" and valid_bbox(
+            asset.get("bbox"), float("inf"), float("inf")
+        ):
+            crop = asset["bbox"]
+            objects = [
+                i
+                for i in meaningful
+                if i.get("image_id") in asset.get("object_ids", [])
+            ]
+            if any(
+                not (
+                    crop[0] <= i["bbox"][0]
+                    and crop[1] <= i["bbox"][1]
+                    and crop[2] >= i["bbox"][2]
+                    and crop[3] >= i["bbox"][3]
+                )
+                for i in objects
+            ):
+                issues.append(
+                    ("visual_crop_may_be_incomplete:object_outside_crop", reference)
+                )
         try:
             read_png(resolve_asset(raw_json, reference))
         except FileNotFoundError:
@@ -114,6 +156,12 @@ def render_html(result):
         parts.append(
             f"<figure><figcaption>{escape(heading)} - page {escape(str(asset.get('page')))}; {escape(str(reference))}</figcaption>"
         )
+        if asset.get("warnings"):
+            parts.append(
+                "<p class='issue'>Manual review: "
+                + escape("; ".join(asset["warnings"]))
+                + "</p>"
+            )
         try:
             data = read_png(resolve_asset(result["raw_json"], reference))
             encoded = base64.b64encode(data).decode("ascii")
@@ -126,13 +174,42 @@ def render_html(result):
             )
         parts.append("</figure>")
 
+    blocks = question.get("layout_blocks")
+    if blocks:
+        parts.append(
+            "<h2>Stored question structure</h2><p>Geometric reading order; component labels are structural estimates. Visual-label text is preserved inside the image and in the raw record.</p>"
+        )
+        assets_by_id = {a["image_id"]: a for a in question.get("visual_assets", [])}
+        for block in blocks:
+            if block["component"] == "visual_label":
+                continue
+            location = block["component"].replace("_", " ")
+            if block.get("label"):
+                location += " " + str(block["label"])
+            parts.append(
+                f"<section data-component='{escape(block['component'], quote=True)}'><small>{escape(location)} · page {escape(str(block['page']))}</small>"
+            )
+            if block["type"] == "visual":
+                asset = assets_by_id.get(block["asset_id"])
+                if asset:
+                    figure(asset, f"{location} — asset {asset['asset_index']}")
+                else:
+                    parts.append("<p class='issue'>Unresolved visual reference</p>")
+            else:
+                parts.append(f"<pre>{escape(block['text'])}</pre>")
+            parts.append("</section>")
+
     previews = question.get("visual_previews", [])
     if not previews:
         parts.append(
             "<p class='issue'>No saved layout preview. Re-run parsing to save visual assets.</p>"
         )
+    if blocks:
+        parts.append("<details><summary>Original saved layout previews</summary>")
     for preview in sorted(previews, key=lambda asset: asset.get("asset_index", 0)):
         figure(preview, "Question layout as saved during parsing")
+    if blocks:
+        parts.append("</details>")
     if question.get("visual_assets"):
         parts.append(
             "<details><summary>Individual saved graphics / image-based options</summary>"
@@ -153,6 +230,8 @@ def render_html(result):
         parts.append(
             f"<pre>{escape(str(option.get('label')))}: {escape(str(option.get('text')))}</pre>"
         )
+        for asset in option.get("images", []):
+            figure(asset, f"Answer option {option.get('label')}")
     for heading, value in (
         ("Full stored question record", question),
         ("Source / document metadata", result["document"]),

@@ -8,12 +8,13 @@ from pathlib import Path
 
 import pdfplumber
 
+from .visual_structure import add_layout
 from .visuals import save_visuals
 
-PARSER_VERSION = "2"
+PARSER_VERSION = "3"
 SOURCE_FIELDS = ("source", "year", "paper", "variant", "section", "document_role")
 NUMBER = re.compile(r"^(\d{1,3})(?:[ \t]+|$)")
-OPTION = re.compile(r"^([A-E])(?:[ \t]+|$)")
+OPTION = re.compile(r"^([A-Z])(?:[ \t]+|$)")
 # These markers occur in the local papers with missing ToUnicode font maps.
 # Interpret only structural glyphs; keep every CID token in the extracted text.
 CID_NUMBER = re.compile(r"^((?:\(cid:(?:19|2[0-8])\))+)(?:\(cid:3\))*[ \t]*")
@@ -100,6 +101,7 @@ def _read_page(page):
         line = {key: value for key, value in extracted.items() if key != "chars"}
         # Spatial word boxes keep adjacent diagram columns out of each other's crops.
         line["word_boxes"] = []
+        line["word_texts"] = []
         word = []
         for char in extracted["chars"]:
             separator = char["text"].isspace() or char["text"] == "(cid:3)"
@@ -112,6 +114,7 @@ def _read_page(page):
                         max(c["bottom"] for c in word),
                     ]
                 )
+                line["word_texts"].append("".join(c["text"] for c in word))
                 word = []
             if not separator:
                 word.append(char)
@@ -124,15 +127,17 @@ def _read_page(page):
                     max(c["bottom"] for c in word),
                 ]
             )
+            line["word_texts"].append("".join(c["text"] for c in word))
         line["label_positions"] = [
             {
                 "label": char["text"]
-                if char["text"] in {"A", "B", "C", "D", "E"}
+                if len(char["text"]) == 1 and "A" <= char["text"] <= "Z"
                 else chr(int(re.search(r"\d+", char["text"])[0]) + 29),
                 "bbox": [char["x0"], char["top"], char["x1"], char["bottom"]],
             }
             for char in extracted["chars"]
-            if char["text"] in {"A", "B", "C", "D", "E"}
+            if len(char["text"]) == 1
+            and "A" <= char["text"] <= "Z"
             or re.fullmatch(r"\(cid:(?:36|37|38|39|40)\)", char["text"])
         ]
         start = raw_text.find(line["text"], cursor)
@@ -205,6 +210,9 @@ def _split_fields(block, lines):
         line
         for line in lines[1:]
         if re.fullmatch(r"[A-E](?:[ \t]+[A-E])+", line["text"])
+        or re.fullmatch(r"[A-Z](?:[ \t]+[A-Z])+", line["text"])
+        and line["text"].split()
+        == list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"[: len(line["text"].split())])
     ]
     if grouped_rows:
         start = grouped_rows[0]["block_start"]
@@ -212,8 +220,19 @@ def _split_fields(block, lines):
             line
             for line in lines
             if line["block_start"] >= start
-            and re.fullmatch(r"[A-E](?:[ \t]+[A-E])*", line["text"])
+            and re.fullmatch(r"[A-Z](?:[ \t]+[A-Z])*", line["text"])
         ]
+        candidate_labels = [
+            label for line in label_rows for label in line["text"].split()
+        ]
+        if len(candidate_labels) < 5 or candidate_labels != list(
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[: len(candidate_labels)]
+        ):
+            label_rows = [
+                line
+                for line in label_rows
+                if re.fullmatch(r"[A-E](?:[ \t]+[A-E])*", line["text"])
+            ]
         labels = [label for line in label_rows for label in line["text"].split()]
         options = [
             {
@@ -227,13 +246,16 @@ def _split_fields(block, lines):
             for label in labels
         ]
         warnings = ["multi_column_options:text_and_image_association_unresolved"]
-        if labels != list("ABCDE"):
+        if len(labels) < 5 or labels != list(
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[: len(labels)]
+        ):
             warnings.append(f"incomplete_or_ambiguous_options:{','.join(labels)}")
         return block[text_start:start], block[start:], options, [], warnings
     candidates = [
         (line, marker)
         for line in lines[1:]
         if (marker := _marker(line["text"], "option"))
+        and (marker[0] <= "E" or re.fullmatch(r"[F-Z]", line["text"]))
     ]
     if candidates:
         left = min(line["x0"] for line, _ in candidates)
@@ -243,6 +265,14 @@ def _split_fields(block, lines):
     # Take the last A-led sequence, avoiding prose starting with "A ...".
     starts = [i for i, (_, marker) in enumerate(candidates) if marker[0] == "A"]
     selected = candidates[starts[-1] :] if starts else candidates
+    # F and later labels require a contiguous choice sequence; an "I ..."
+    # sentence in an option is not a new choice merely because it is uppercase.
+    confirmed = []
+    for candidate in selected:
+        label = candidate[1][0]
+        if label <= "E" or confirmed and ord(label) == ord(confirmed[-1][1][0]) + 1:
+            confirmed.append(candidate)
+    selected = confirmed
     warnings = []
     options = []
     options_start = selected[0][0]["block_start"] if selected else len(block)
@@ -265,7 +295,7 @@ def _split_fields(block, lines):
             }
         )
     labels = [option["label"] for option in options]
-    if labels != list("ABCDE"):
+    if len(labels) < 5 or labels != list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"[: len(labels)]):
         warnings.append(f"incomplete_or_ambiguous_options:{','.join(labels) or 'none'}")
     if first[2] or any(marker[2] for _, marker in selected):
         warnings.append("cid_structural_markers_interpreted:requires_review")
@@ -456,6 +486,8 @@ def parse_pdf(
         asset_dir or Path("data/raw/blackstone/assets"),
         overwrite=overwrite_assets,
     )
+    for question, pending in zip(questions, pending_questions):
+        add_layout(question, pending)
     numbers = [question["question_number"] for question in questions]
     if numbers != list(range(1, len(numbers) + 1)):
         dataset["warnings"].append("nonsequential_or_duplicate_question_numbers")
@@ -548,5 +580,24 @@ def validate_raw(dataset):
         for option in question["options"]:
             if not {"label", "text", "images", "warnings"} <= option.keys():
                 raise ValueError("Missing raw option fields")
-            if not isinstance(option["text"], str) or option["label"] not in "ABCDE":
+            if (
+                not isinstance(option["text"], str)
+                or len(option["label"]) != 1
+                or option["label"] not in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            ):
                 raise ValueError("Invalid raw option label or text")
+        if "layout_blocks" in question:
+            blocks = question["layout_blocks"]
+            if [b["order"] for b in blocks] != list(range(1, len(blocks) + 1)):
+                raise ValueError("Invalid raw layout order")
+            asset_ids = {a["image_id"] for a in question["visual_assets"]}
+            for layout in blocks:
+                if layout["type"] == "text":
+                    span = layout["raw_span"]
+                    if (
+                        not 0 <= span["start"] <= span["end"] <= len(reconstructed)
+                        or reconstructed[span["start"] : span["end"]] != layout["text"]
+                    ):
+                        raise ValueError("Layout text does not match raw question span")
+                elif layout["type"] != "visual" or layout["asset_id"] not in asset_ids:
+                    raise ValueError("Invalid raw layout visual reference")

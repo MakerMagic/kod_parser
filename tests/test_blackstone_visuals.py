@@ -253,3 +253,15 @@ def test_tsa_2022_question_50_vector_graphic(tmp_path):
         (tmp_path / asset["path"]).exists() for asset in question["visual_assets"]
     )
     assert [o["label"] for o in question["options"]] == list("ABCDE")
+    # This previously good crop must still preserve all towns and five sign tables.
+    assert len(question["visual_assets"]) == 6
+    first = question["visual_assets"][0]
+    label_lines = "\n".join(
+        question["raw"]["question_block"][s["start"] : s["end"]]
+        for s in first["included_text_spans"]
+    )
+    assert "Queensgate" in label_lines and "Tunborough" in label_lines
+    for asset in question["visual_assets"]:
+        crop, graphic = asset["bbox"], asset["graphic_bbox"]
+        assert crop[0] <= graphic[0] and crop[1] <= graphic[1]
+        assert crop[2] >= graphic[2] and crop[3] >= graphic[3]

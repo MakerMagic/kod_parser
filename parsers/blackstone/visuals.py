@@ -6,9 +6,12 @@ import struct
 import zlib
 from contextlib import closing
 from hashlib import sha256
+from itertools import pairwise
 from pathlib import Path
 
 import pypdfium2 as pdfium
+
+from .visual_structure import focused_crop
 
 DPI = 144
 PADDING = 12
@@ -42,7 +45,7 @@ def _near(a, b, gap=12):
     )
 
 
-def _regions(images):
+def _regions(images, gap=12):
     """Connected PDF objects, not one screenshot per vector stroke."""
     groups = []
     for image in images:
@@ -52,7 +55,7 @@ def _regions(images):
         while changed:
             changed = False
             for existing in groups[:]:
-                if _near(group["bbox"], existing["bbox"]):
+                if _near(group["bbox"], existing["bbox"], gap=gap):
                     group["objects"].extend(existing["objects"])
                     group["bbox"] = _union([group["bbox"], existing["bbox"]])
                     groups.remove(existing)
@@ -103,6 +106,12 @@ def _save_crop(bitmap, pixels, bbox, page_size, path, overwrite):
 
 
 def _anchors(question, lines):
+    labels_in_record = [option["label"] for option in question["options"]]
+    if len(labels_in_record) != len(set(labels_in_record)):
+        question["warnings"].append(
+            "visual_option_labels_ambiguous:duplicate_structural_labels"
+        )
+        return []
     start = len(question["raw"]["question_block"]) - len(
         question["raw"]["options_block"]
     )
@@ -112,10 +121,10 @@ def _anchors(question, lines):
     for line in lines:
         if line["block_start"] < start:
             continue
-        if grouped and not re.fullmatch(r"[A-E](?:[ \t]+[A-E])*", line["text"]):
+        if grouped and not re.fullmatch(r"[A-Z](?:[ \t]+[A-Z])*", line["text"]):
             continue
         match = re.match(
-            r"^(?:[A-E](?:\s+|$)|\(cid:(?:36|37|38|39|40)\))", line["text"]
+            r"^(?:[A-Z](?:\s+|$)|\(cid:(?:36|37|38|39|40)\))", line["text"]
         )
         if not match:
             continue
@@ -126,12 +135,76 @@ def _anchors(question, lines):
         )
         for position in positions:
             if position["label"] in labels:
-                anchors.append({**position, "page": line["page"]})
+                anchors.append(
+                    {
+                        **position,
+                        "page": line["page"],
+                        "label_only": bool(
+                            re.fullmatch(
+                                r"(?:[A-Z]|\(cid:(?:36|37|38|39|40)\))(?:\s+(?:[A-Z]|\(cid:(?:36|37|38|39|40)\)))*",
+                                line["text"],
+                            )
+                        ),
+                    }
+                )
     return anchors
 
 
 def _component(box, page_number, anchors):
     on_page = [anchor for anchor in anchors if anchor["page"] == page_number]
+    contained_labels = [
+        a
+        for a in on_page
+        if a.get("label_only")
+        and box[0] <= (a["bbox"][0] + a["bbox"][2]) / 2 <= box[2]
+        and max(a["bbox"][1] - box[3], box[1] - a["bbox"][3], 0) <= 30
+    ]
+    if len(contained_labels) > 1:
+        return "unknown", None
+    # Label-only choices can sit above, below, or beside their image. Use local
+    # rows/columns, not the old assumption that every image follows its label.
+    candidates = []
+    cx, cy = (box[0] + box[2]) / 2, (box[1] + box[3]) / 2
+    for anchor in on_page:
+        if not anchor.get("label_only"):
+            continue
+        a = anchor["bbox"]
+        ax, ay = (a[0] + a[2]) / 2, (a[1] + a[3]) / 2
+        row = [other["bbox"] for other in on_page if abs(other["bbox"][1] - a[1]) < 8]
+        left = max(((b[0] + b[2]) / 2 for b in row if b[2] < a[0]), default=-math.inf)
+        right = min(((b[0] + b[2]) / 2 for b in row if b[0] > a[2]), default=math.inf)
+        previous = max(
+            (
+                (b["bbox"][1] + b["bbox"][3]) / 2
+                for b in on_page
+                if b["bbox"][3] < a[1] - 8
+            ),
+            default=-math.inf,
+        )
+        following = min(
+            (
+                (b["bbox"][1] + b["bbox"][3]) / 2
+                for b in on_page
+                if b["bbox"][1] > a[3] + 8
+            ),
+            default=math.inf,
+        )
+        dx, dy = (
+            max(a[0] - box[2], box[0] - a[2], 0),
+            max(a[1] - box[3], box[1] - a[3], 0),
+        )
+        if (
+            (left + ax) / 2 < cx < (right + ax) / 2
+            and (previous + ay) / 2 < cy < (following + ay) / 2
+            and dx <= 50
+            and dy <= 30
+        ):
+            candidates.append((math.hypot(dx, dy), anchor["label"]))
+    if candidates:
+        candidates.sort()
+        if len(candidates) > 1 and candidates[1][0] - candidates[0][0] < 5:
+            return "unknown", None
+        return "option", candidates[0][1]
     if not on_page or box[1] < min(a["bbox"][1] for a in on_page) - 8:
         return "question", None
     center = [(box[0] + box[2]) / 2, (box[1] + box[3]) / 2]
@@ -157,6 +230,64 @@ def _component(box, page_number, anchors):
         ):
             return "option", anchor["label"]
     return "unknown", None
+
+
+def _associate_rows(groups, anchors, page, lines, options_start):
+    """Match complete image rows one-to-one instead of greedily stealing a label.
+
+    Left-aligned labels can be far from their own wide chart and closer to the
+    preceding chart. A complete, separated row supplies stronger evidence than
+    nearest-label distance; incomplete or overlapping rows keep the fallback.
+    """
+    rows = []
+    for anchor in sorted(
+        (a for a in anchors if a["page"] == page and a.get("label_only")),
+        key=lambda a: (a["bbox"][1], a["bbox"][0]),
+    ):
+        if not rows or abs(anchor["bbox"][1] - rows[-1][0]["bbox"][1]) > 8:
+            rows.append([])
+        rows[-1].append(anchor)
+    candidates = {index: [] for index in range(len(rows))}
+    for group in groups:
+        box = group["bbox"]
+        nearby = [
+            (abs(box[1] - row[0]["bbox"][1]), index)
+            for index, row in enumerate(rows)
+            if max(row[0]["bbox"][1] - box[3], box[1] - row[0]["bbox"][3], 0) <= 30
+        ]
+        nearby = [
+            (distance, index)
+            for distance, index in nearby
+            if not any(
+                line["page"] == page
+                and line["block_start"] < options_start
+                and len(line.get("word_boxes", [])) >= 5
+                and line["text"].rstrip().endswith(("?", "."))
+                and box[3] <= line["top"] <= line["bottom"] <= rows[index][0]["bbox"][1]
+                for line in lines
+            )
+        ]
+        if nearby:
+            candidates[min(nearby)[1]].append(group)
+    for index, row in enumerate(rows):
+        images = sorted(candidates[index], key=lambda g: g["bbox"][0])
+        labels = sorted(row, key=lambda a: a["bbox"][0])
+        if len(images) != len(labels) or len(images) < 2:
+            continue
+        if any(a["bbox"][2] > b["bbox"][0] + 3 for a, b in pairwise(images)):
+            continue
+        for group, anchor in zip(images, labels):
+            if group.get("merge_warning"):
+                continue
+            if (
+                max(
+                    anchor["bbox"][0] - group["bbox"][2],
+                    group["bbox"][0] - anchor["bbox"][2],
+                    0,
+                )
+                <= 100
+            ):
+                group["option_override"] = anchor["label"]
 
 
 def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
@@ -330,23 +461,61 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                 and valid_bbox(image["bbox"], width, height)
                             ]
                             groups = _regions(meaningful)
+                            refined = []
                             for group in groups:
                                 box = group["bbox"]
-                                # Include nearby labels as well as strokes; padding avoids tight diagram crops.
-                                nearby = [
-                                    word
-                                    for line in pending["lines"]
-                                    if line["page"] == number
-                                    for word in line.get("word_boxes", [])
-                                    if _near(box, word, gap=16)
+                                labels = [
+                                    a
+                                    for a in anchors
+                                    if a["page"] == number
+                                    and a.get("label_only")
+                                    and box[0]
+                                    <= (a["bbox"][0] + a["bbox"][2]) / 2
+                                    <= box[2]
+                                    and max(
+                                        a["bbox"][1] - box[3], box[1] - a["bbox"][3], 0
+                                    )
+                                    <= 30
                                 ]
-                                expanded = _union([box, *nearby])
-                                group["crop"] = [
-                                    max(0, expanded[0] - PADDING),
-                                    max(0, expanded[1] - PADDING),
-                                    min(width, expanded[2] + PADDING),
-                                    min(height, expanded[3] + PADDING),
-                                ]
+                                object_choices = {
+                                    choice
+                                    for image in group["objects"]
+                                    if (
+                                        component_choice := _component(
+                                            image["bbox"], number, anchors
+                                        )
+                                    )[0]
+                                    == "option"
+                                    and (choice := component_choice[1]) is not None
+                                }
+                                multiple_choices = (
+                                    len(labels) > 1 or len(object_choices) > 1
+                                )
+                                split = (
+                                    _regions(group["objects"], gap=3)
+                                    if multiple_choices
+                                    else [group]
+                                )
+                                if multiple_choices and len(split) == 1:
+                                    split[0]["merge_warning"] = (
+                                        "visual_multiple_option_images_merged:shared_geometry_requires_review"
+                                    )
+                                refined.extend(split)
+                            groups = sorted(
+                                refined, key=lambda g: (g["bbox"][1], g["bbox"][0])
+                            )
+                            _associate_rows(
+                                groups,
+                                anchors,
+                                number,
+                                pending["lines"],
+                                len(question["raw"]["question_block"])
+                                - len(question["raw"]["options_block"]),
+                            )
+                            for group in groups:
+                                group["crop"], group["crop_context"] = focused_crop(
+                                    group, pending["lines"], number, width, height
+                                )
                             # Stable visual row order, left-to-right within nearly aligned rows.
                             row_top = None
                             row = []
@@ -380,9 +549,30 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                     ),
                                     group["objects"],
                                 )
+                                asset.update(group["crop_context"])
+                                if group.get("merge_warning"):
+                                    asset["warnings"].append(group["merge_warning"])
                                 asset["belongs_to"], asset["option_label"] = _component(
                                     group["bbox"], number, anchors
                                 )
+                                if group.get("option_override"):
+                                    asset["belongs_to"], asset["option_label"] = (
+                                        "option",
+                                        group["option_override"],
+                                    )
+                                if group.get("merge_warning"):
+                                    asset["belongs_to"], asset["option_label"] = (
+                                        "unknown",
+                                        None,
+                                    )
+                                if any(
+                                    w.startswith("visual_option_labels_ambiguous:")
+                                    for w in question["warnings"]
+                                ):
+                                    asset["belongs_to"], asset["option_label"] = (
+                                        "unknown",
+                                        None,
+                                    )
                                 if asset["belongs_to"] == "unknown":
                                     asset["warnings"].append(
                                         "visual_component_association_uncertain"
@@ -410,6 +600,13 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                     for option in question["options"]:
                                         if option["label"] == asset["option_label"]:
                                             option["images"].append(asset)
+                                            if asset["path"]:
+                                                option["warnings"] = [
+                                                    w
+                                                    for w in option["warnings"]
+                                                    if w
+                                                    != "empty_option_text:may_be_image_only"
+                                                ]
                             view_box = _union(
                                 [segment["bbox"], *[group["crop"] for group in groups]]
                             )
@@ -434,6 +631,23 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                     assigned_ids.add(image["image_id"])
                             for asset in [*question["visual_assets"], view]:
                                 question["warnings"].extend(asset["warnings"])
+                            if question["options"] and all(
+                                o["images"] and all(a["path"] for a in o["images"])
+                                for o in question["options"]
+                            ):
+                                question["warnings"] = [
+                                    w
+                                    for w in question["warnings"]
+                                    if w
+                                    != "multi_column_options:text_and_image_association_unresolved"
+                                ]
+                                for option in question["options"]:
+                                    option["warnings"] = [
+                                        w
+                                        for w in option["warnings"]
+                                        if w
+                                        != "multi_column_option:content_preserved_in_raw_options_block"
+                                    ]
                         unassigned = [
                             image
                             for image in page_record["images"]

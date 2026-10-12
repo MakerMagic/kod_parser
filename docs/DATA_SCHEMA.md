@@ -250,6 +250,14 @@ Blackstone raw output additionally stores `visual_assets` (ordered graphic crops
 
 ## 11. Traceability
 
+### Blackstone visual placement (additive)
+
+`layout_blocks` is an optional, ordered question-level list. Text blocks contain `type="text"`, unchanged `text`, `page`, `bbox`, and `raw_span` indexing `raw.question_block`. Visual blocks contain `type="visual"`, `asset_id` referencing `visual_assets[].image_id`, `page`, and the underlying graphic's bounds. Every block has `block_id`, contiguous `order`, `component`, and nullable `label`.
+
+Components are `stimulus`, `question_body`, `subpart`, `option`, `intermediate`, `visual_label`, or `unknown`. Stimulus/stem distinctions are structural estimates, not semantic categorization. `visual_label` text remains in the raw record and is displayed within the saved crop; `asset_ids` identifies the crops containing it. An intermediate graphic is explicitly located between differing components rather than assigned to a passage or option without evidence.
+
+Assets retain existing coarse `belongs_to` values and add `placement` with component/label and neighboring `after_raw_span` / `before_raw_span`. Crop evidence adds `graphic_bbox`, `crop_method`, and full-line `included_text_spans` / `excluded_text_spans`; these evidence spans do not assert that every word on a shared diagram-label row belongs to one crop. Label-only options keep empty text plus saved `options[].images`; confidently saved images resolve only the corresponding empty-image warnings. A contiguous option sequence may extend beyond E. Existing raw fields remain unchanged, and legacy JSON without layout blocks is still inspectable.
+
 A final question should be traceable through the pipeline:
 
 ```text

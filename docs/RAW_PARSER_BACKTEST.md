@@ -43,6 +43,22 @@ Assets live under `OUTPUT_DIR/assets/<source-content-hash>/`. Names such as `bla
 
 `visual_assets` stores rendered regions with original object IDs/types, coordinates, source identity, component/option association, order, PNG size/hash, and warnings. `visual_previews` stores question-page layout crops. Original `images` records retain object bounds and point to saved regions. PDFium renders raster and vector content together at 144 DPI; no OCR or text cleanup is applied. Region grouping uses nearby objects, local labels, and padding. White page backgrounds use layout previews rather than isolated crops. Unassigned document graphics are retained at page level.
 
+### Focused crops and structured placement
+
+Individual crops use PDF object bounds, nearby label words, and four-point padding. Internal table/diagram text is retained. External sentence/paragraph lines form barriers: a few nearby words from a long sentence can no longer pull the whole sentence into a crop. Short local labels and numbered figure/table captions are retained; ambiguous long captions are flagged. Padding is constrained by excluded prose. Layout previews still include surrounding question text. No new image-processing dependency is required.
+
+`layout_blocks` records text and graphic blocks in page/top/left reading order, with exact raw text spans. Each visual asset's `placement` records a component and neighboring raw spans: stimulus, question body, subpart, option, intermediate, or unknown. These are geometric/structural estimates; the original saved layout remains the reference for ambiguous multi-column reading order. HTML now shows this structured sequence first, including explicit component labels, and displays option images under the corresponding stored answer option. Original layouts and complete raw JSON remain available in expandable sections. Old JSON uses the previous inspection fallback.
+
+Label-only choices are associated using local row/column anchors, including labels above, beside, or below images. Clear associations populate `options[].images` without inventing text. Contiguous labels beyond E are supported; prose starting with "I" does not create an extra option. Anchor-separated close diagrams are regrouped with a smaller gap. Connected/shared geometry spanning several choices remains saved but unresolved, not arbitrarily cut or assigned.
+
+Filename bounds hashes change when cropping changes. Previously generated, unreferenced PNGs and embedded HTML previews are not deleted automatically; use the current JSON references and export to a new HTML filename to inspect the latest results.
+
+Complete, separated image rows are matched one-to-one in horizontal order, avoiding greedy nearest-letter errors on wide charts. Question prose between a graphic and the labels blocks this row match. Duplicate parsed labels remain unresolved; letter-valued text choices such as `A V` retain their original text rather than becoming additional image-choice labels.
+
+Reports also flag excessive prose overlap, possible incomplete crops/captions, shared multi-option graphics, unknown placement, and inconsistent layout spans/references/order. Resolved image-only choices are not marked empty solely because text is absent. Remaining limits include heuristic caption identification, overlapping/shared frames, missing font maps, text-only diagrams without detected PDF objects, and ambiguous reading order. Full layouts preserve context for manual review.
+
+Manual regression examples: 2010 questions 7 (digital clock) and 12 (sale table) must exclude surrounding prose in individual crops while keeping it in layout/raw text. 2022 question 50 must retain all town labels and five sign tables; 2022 question 38 must retain chart legends. Inspect these with the same command, changing source/year/question and using a new HTML output filename.
+
 Grouping and option association are geometric heuristics: nearby diagrams may share a crop, diagonal/overlapping layouts can be ambiguous, and subpart association is not inferred without reliable anchors. A disagreement between extraction and renderer page coordinates falls back to a complete rendered page with explicit warnings, rather than risking a partial crop. Use layout previews and the original PDF to check completeness and order. Unknown associations, inconsistent bounds/order, failed saves, uncovered graphics, and missing/corrupt PNGs appear in the issues report with saved paths and manual-review status. Graphics presence alone is not an error; header/footer context outside questions is not flagged merely for being unassigned. Legacy JSON without saved visual references requires reparsing. Report regeneration detects subsequently missing assets; HTML also shows these problems inline.
 
 Narrow external reference: [render_q38.py](https://github.com/LegionHH/parsing/blob/main/render_q38.py) illustrates rendered PDF crops; [split_q38.py](https://github.com/LegionHH/parsing/blob/main/split_q38.py) illustrates padded option crops. Only these general visual ideas informed this implementation; no code, fixed coordinates, dependencies, architecture, or unrelated parsing logic was copied.
@@ -62,7 +78,8 @@ Compare flagged records against the original PDF: wording and context, numbering
 ## Tests
 
 ```powershell
-python -m pytest -q tests/test_blackstone_backtest.py tests/test_blackstone_raw.py tests/test_blackstone_visuals.py
+python -m pytest -q tests/test_blackstone_backtest.py tests/test_blackstone_raw.py tests/test_blackstone_visuals.py tests/test_blackstone_visual_structure.py
 ```
 
 If the existing virtual environment cannot launch, use the bundled-runtime setup in `parsers/blackstone/README.md` and replace `python` in these commands with `& $parserPython`.
+python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA_2022.pdf" --year 2022 --question 20 --format html --output inspections/TSA_2022_q20.html

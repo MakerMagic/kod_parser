@@ -40,7 +40,13 @@ python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --s
 python -m pytest -q tests/test_blackstone_raw.py tests/test_blackstone_backtest.py tests/test_blackstone_visuals.py
 ```
 
-Double-click the new HTML file to view embedded graphics offline. The universal HTML view uses saved layout crops to preserve relative text/graphic position and also includes the full stored record. Existing text inspection remains the default. Exports require a new filename.
+Double-click the new HTML file to view embedded graphics offline. HTML shows the stored `layout_blocks` text/visual sequence with component labels and option images, alongside expandable original layouts and the full record. Existing text/JSON inspection remains available. Exports require a new filename.
+
+Individual assets now use focused PDF bounds, local labels, paragraph barriers, and four-point padding; broader layout previews remain separate. Table text, diagram labels, and captions are preserved, with warnings for ambiguous boundaries. Label-only choices are associated using nearby row/column anchors, including labels above/below their image. `options[].images` and `visual_assets[].placement` expose those associations. Shared graphics spanning several choices stay unresolved rather than guessed. See the backtest guide for schema details and manual regression examples.
+
+```powershell
+python -m pytest -q tests/test_blackstone_visual_structure.py tests/test_blackstone_visuals.py
+```
 
 If the repository virtual environment cannot launch in Codex, use its bundled Python with the existing package directory (no dependency changes):
 

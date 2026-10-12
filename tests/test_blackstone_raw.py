@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LOCAL = ROOT / "acquisition" / "local"
 
 
-def write_pdf(path, pages, *, graphics=False, raster=False):
+def write_pdf(path, pages, *, graphics=False, raster=False, graphics_commands=()):
     """Build minimal ASCII test PDFs using only the standard library."""
     objects = [
         b"<< /Type /Catalog /Pages 2 0 R >>",
@@ -40,6 +40,7 @@ def write_pdf(path, pages, *, graphics=False, raster=False):
             commands.append("80 600 m 150 600 l S")
         if raster:
             commands.append("q 48 0 0 36 120 640 cm /Im1 Do Q")
+        commands.extend(graphics_commands)
         content = "\n".join(commands).encode("ascii")
         page_id = len(objects) + 1
         page_ids.append(page_id)
