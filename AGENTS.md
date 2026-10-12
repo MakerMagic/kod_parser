@@ -61,6 +61,30 @@ Each stage must remain independently replaceable and testable.
 
 Raw extracted data must be preserved before cleaning or normalization. Cleaning must happen later and write to a separate output layer.
 
+## Code Navigation and Token Efficiency
+
+Do not reread the entire codebase before each task.
+
+Before editing, inspect only:
+
+- the target file or folder;
+- directly related test files;
+- directly related schema/model files, if needed;
+- the relevant skill or short project status file.
+
+When useful, maintain short navigation notes in `docs/CURRENT_WORK.md` under `Code navigation`.
+
+Keep navigation notes brief and practical, for example:
+
+- where the current parser entry point is;
+- where tests for the current module are located;
+- where output files are expected;
+- which files were recently modified.
+
+Do not write long implementation explanations.
+
+Do not scan unrelated folders unless the task requires it.
+
 ## Current Development Milestone
 
 Current milestone:
