@@ -378,6 +378,139 @@ def _cell(value):
     return str(value).replace("|", "\\|").replace("\n", "<br>").replace("\r", "")
 
 
+def _issue_category(reason):
+    """Classify an observed warning, not an expected-but-undetected problem."""
+    code = reason.split(":", 1)[0]
+    if code.startswith("option ") and ": " in reason:
+        code = reason.split(": ", 1)[1].split(":", 1)[0]
+    if code == "foreign_option_letter_in_crop":
+        return "Foreign Option Letter in Crop"
+    if code == "overlapping_option_visual_assets" or code.startswith(
+        "visual_neighbor_boundary_uncertain"
+    ):
+        return "Overlapping Visual Assets"
+    if code.startswith(
+        (
+            "visual_crop_",
+            "visual_caption_",
+            "visual_option_boundary_",
+            "visual_question_boundary_overlap",
+        )
+    ):
+        return "Incomplete or Uncertain Visual Crop"
+    if code.startswith(
+        (
+            "visual_image_option_",
+            "visual_multiple_option_",
+            "visual_option_",
+            "multi_column_option",
+            "incomplete_or_ambiguous_options",
+        )
+    ):
+        return "Option Association Issues"
+    if code.startswith(
+        (
+            "visual_component_association_uncertain",
+            "visual_question_association_uncertain",
+        )
+    ):
+        return "Visual Asset Unassigned"
+    if code.startswith(
+        (
+            "visual_asset_file_missing",
+            "visual_asset_not_displayable",
+            "visual_asset_not_saved",
+            "visual_asset_path_invalid",
+            "visual_assets_unavailable",
+            "visual_save_failed",
+            "visual_detected_object_not_saved",
+        )
+    ):
+        return "Missing/Corrupt Asset"
+    if code.startswith("visual_"):
+        return "Visual Structure Issues"
+    if code.startswith(
+        (
+            "font_encoding_artifacts",
+            "cid_structural_markers_interpreted",
+            "missing_or_empty_question_text",
+            "missing_or_empty_raw_question_block",
+        )
+    ):
+        return "Question Text Parsing Issues"
+    if code.startswith(
+        (
+            "missing_or_invalid_page_reference",
+            "referenced_page_not_stored",
+            "page_reference_differs_from_raw_page_spans",
+            "invalid_raw_page_span",
+            "raw_block_differs_from_stored_page_spans",
+            "unassigned_encoded_page",
+            "line_offset_unavailable",
+        )
+    ):
+        return "Page/Range Mapping Issues"
+    if code.startswith(
+        (
+            "missing_or_invalid_question_number",
+            "duplicate_question_number",
+            "nonsequential_or_duplicate_question_numbers",
+            "question_count_mismatch",
+            "no_questions_detected",
+        )
+    ):
+        return "Duplicate/Invalid Question Number"
+    if code.startswith(
+        (
+            "source_assigned_by_parser_profile",
+            "uncertain_metadata",
+            "source_question_key_mismatch",
+            "source_file_reference_unavailable",
+            "metadata_unavailable",
+            "question_id_unavailable",
+            "unrecognized_document",
+        )
+    ):
+        return "Source Metadata Issues"
+    return "Other / Unclassified"
+
+
+def _categorize_rows(issues):
+    grouped = {}
+    for row in issues:
+        page = row.get("page_reference") or {}
+        key = (
+            row["raw_json"],
+            row["scope"],
+            row["question_number"],
+            page.get("start_page"),
+            page.get("end_page"),
+        )
+        for reason in row["reasons"]:
+            category = _issue_category(reason)
+            bucket = grouped.setdefault(category, {})
+            if key not in bucket:
+                bucket[key] = {**row, "reasons": [], "asset_paths": []}
+            if reason not in bucket[key]["reasons"]:
+                bucket[key]["reasons"].append(reason)
+            for path in row.get("asset_paths", []):
+                if path not in bucket[key]["asset_paths"]:
+                    bucket[key]["asset_paths"].append(path)
+
+    def order(row):
+        page = row.get("page_reference") or {}
+        return (
+            row["year"] if isinstance(row["year"], int) else float("inf"),
+            str(row["source_file"] or "").casefold(),
+            row["question_number"] if isinstance(row["question_number"], int) else -1,
+            page.get("start_page") or -1,
+            row["scope"],
+            row["raw_json"],
+        )
+
+    return {name: sorted(grouped[name].values(), key=order) for name in sorted(grouped)}
+
+
 def write_report(references, output):
     """Refresh only a separate generated Markdown report, never raw JSON."""
     files = raw_files(references)
@@ -407,34 +540,44 @@ def write_report(references, output):
         "",
         "Regenerate with `python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --output PATH_TO_THIS_REPORT`.",
         "",
-        "| Source file | Year/session/test | Question | Pages | Components | Reason | Saved asset paths | Manual review | Raw JSON |",
-        "|---|---|---|---|---|---|---|---|---|",
     ]
-    for row in issues:
-        metadata = "; ".join(
-            f"{field}={row[field] if row[field] is not None else 'unavailable'}"
-            for field in ("year", "session", "paper", "variant", "section")
+    for category, rows in _categorize_rows(issues).items():
+        text.extend(
+            [
+                f"## {category}",
+                "",
+                "| Source file | Year/session/test | Question | Pages | Components | Reason | Saved asset paths | Manual review | Raw JSON |",
+                "|---|---|---|---|---|---|---|---|---|",
+            ]
         )
-        page = row["page_reference"] or {}
-        page_label = (
-            f"{page.get('start_page')}–{page.get('end_page')}" if page else None
-        )
-        values = [
-            row["source_file"],
-            metadata,
-            row["question_number"]
-            if row["scope"] == "question"
-            else f"{row['scope']} (no question number)",
-            page_label,
-            "; ".join(row["components"]),
-            "; ".join(row["reasons"]),
-            "; ".join(row.get("asset_paths", [])) or "unavailable",
-            "yes",
-            row["raw_json"],
-        ]
-        text.append("| " + " | ".join(_cell(value) for value in values) + " |")
+        for row in rows:
+            metadata = "; ".join(
+                f"{field}={row[field] if row[field] is not None else 'unavailable'}"
+                for field in ("year", "session", "paper", "variant", "section")
+            )
+            page = row["page_reference"] or {}
+            page_label = (
+                f"{page.get('start_page')}–{page.get('end_page')}" if page else None
+            )
+            values = [
+                row["source_file"],
+                metadata,
+                row["question_number"]
+                if row["scope"] == "question"
+                else f"{row['scope']} (no question number)",
+                page_label,
+                "; ".join(row["components"]),
+                "; ".join(row["reasons"]),
+                "; ".join(row.get("asset_paths", [])) or "unavailable",
+                "yes",
+                row["raw_json"],
+            ]
+            text.append("| " + " | ".join(_cell(value) for value in values) + " |")
+        text.append("")
     if not issues:
         text.extend(["", "No unresolved cases detected by these checks."])
+    elif text[-1] == "":
+        text.pop()
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("\n".join(text) + "\n", encoding="utf-8")
     return issues

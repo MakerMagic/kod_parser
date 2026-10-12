@@ -12,7 +12,7 @@ from pathlib import Path
 import pypdfium2 as pdfium
 
 from .image_options import image_choice_anchors
-from .visual_structure import focused_crop
+from .visual_structure import focused_crop, foreign_option_anchors
 
 DPI = 144
 PADDING = 12
@@ -639,6 +639,10 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                 - len(question["raw"]["options_block"]),
                             )
                             for group in groups:
+                                crop_owner = (
+                                    group.get("option_override")
+                                    or _component(group["bbox"], number, anchors)[1]
+                                )
                                 group["crop"], group["crop_context"] = focused_crop(
                                     group,
                                     pending["lines"],
@@ -647,6 +651,7 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                     height,
                                     groups,
                                     anchors,
+                                    owner_label=crop_owner,
                                 )
                             # Stable visual row order, left-to-right within nearly aligned rows.
                             row_top = None
@@ -737,6 +742,31 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                         "unknown",
                                         None,
                                     )
+                                if asset["belongs_to"] == "option":
+                                    owner = asset["option_label"]
+                                    matching = [
+                                        anchor
+                                        for anchor in anchors
+                                        if anchor["page"] == number
+                                        and anchor["label"] == owner
+                                    ]
+                                    foreign = foreign_option_anchors(
+                                        asset["bbox"], anchors, number, owner
+                                    )
+                                    if foreign:
+                                        labels = ",".join(
+                                            dict.fromkeys(a["label"] for a in foreign)
+                                        )
+                                        asset["warnings"].append(
+                                            f"foreign_option_letter_in_crop:{owner}->{labels}"
+                                        )
+                                    if len(matching) != 1:
+                                        asset["warnings"].append(
+                                            "visual_option_anchor_ambiguous:manual_review"
+                                        )
+                                    if foreign or len(matching) != 1:
+                                        asset["belongs_to"] = "unknown"
+                                        asset["option_label"] = None
                                 if asset["belongs_to"] == "unknown":
                                     asset["warnings"].append(
                                         "visual_component_association_uncertain"
@@ -764,6 +794,17 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                     for option in question["options"]:
                                         if option["label"] == asset["option_label"]:
                                             option["images"].append(asset)
+                                            matching = [
+                                                anchor
+                                                for anchor in anchors
+                                                if anchor["page"] == number
+                                                and anchor["label"] == option["label"]
+                                            ]
+                                            if len(matching) == 1:
+                                                option.setdefault(
+                                                    "label_bbox", matching[0]["bbox"]
+                                                )
+                                                option.setdefault("page", number)
                                             if asset["path"]:
                                                 option["warnings"] = [
                                                     w

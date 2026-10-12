@@ -12,7 +12,7 @@ from parsers.blackstone.backtest import (
     inspect_question,
     render_inspection,
 )
-from parsers.blackstone.visual_structure import focused_crop
+from parsers.blackstone.visual_structure import focused_crop, foreign_option_anchors
 
 
 def spatial_line(text, x, y, widths, start=0):
@@ -96,6 +96,16 @@ def test_six_image_choices_have_associations_and_source_order(tmp_path, labels_b
     assert [a["option_label"] for a in question["visual_assets"]] == list(letters)
     assert [a["asset_index"] for a in question["visual_assets"]] == list(range(1, 7))
     assert all(len(o["images"]) == 1 and not o["warnings"] for o in question["options"])
+    anchors = [
+        {"label": o["label"], "bbox": o["label_bbox"], "page": o["page"]}
+        for o in question["options"]
+    ]
+    assert all(
+        not foreign_option_anchors(
+            o["images"][0]["bbox"], anchors, o["page"], o["label"]
+        )
+        for o in question["options"]
+    )
     assert all(
         a["placement"]["component"] == "option" for a in question["visual_assets"]
     )
@@ -188,6 +198,19 @@ def test_tall_choices_with_left_labels_and_small_gap_stay_separate(tmp_path):
     data = parse_pdf(source, asset_dir=tmp_path / "assets")
     assets = data["questions"][0]["visual_assets"]
     assert len(assets) == 2 and [a["option_label"] for a in assets] == ["A", "B"]
+    options = data["questions"][0]["options"]
+    anchors = [
+        {"label": o["label"], "bbox": o["label_bbox"], "page": o["page"]}
+        for o in options
+        if o.get("images")
+    ]
+    assert all(
+        not foreign_option_anchors(
+            o["images"][0]["bbox"], anchors, o["page"], o["label"]
+        )
+        for o in options
+        if o.get("images")
+    )
 
 
 def test_wide_chart_rows_match_left_labels_one_to_one(tmp_path):
@@ -214,6 +237,63 @@ def test_wide_chart_rows_match_left_labels_one_to_one(tmp_path):
     data = parse_pdf(source, asset_dir=tmp_path / "assets")
     assert [a["option_label"] for a in data["questions"][0]["visual_assets"]] == list(
         "ABCDE"
+    )
+    options = data["questions"][0]["options"]
+    anchors = [
+        {"label": o["label"], "bbox": o["label_bbox"], "page": o["page"]}
+        for o in options
+        if o.get("images")
+    ]
+    assert all(
+        not foreign_option_anchors(
+            o["images"][0]["bbox"], anchors, o["page"], o["label"]
+        )
+        for o in options
+        if o.get("images")
+    )
+
+
+@pytest.mark.skipif(
+    not (
+        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2011.pdf"
+    ).is_file(),
+    reason="Local TSA Oxford 2011 PDF unavailable",
+)
+def test_2011_q50_option_a_excludes_b_and_inspection_detects_regression(tmp_path):
+    source = (
+        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2011.pdf"
+    )
+    data = parse_pdf(source, asset_dir=tmp_path / "assets")
+    validate_raw(data)
+    q = data["questions"][49]
+    assert q["question_number"] == 50
+    assert (
+        q["raw"]["question_block"]
+        and q["raw"]["options_block"].strip() == "A B\nC D\nE"
+    )
+    assert [o["label"] for o in q["options"]] == list("ABCDE")
+    assert all(len(o["images"]) == 1 for o in q["options"])
+    anchors = [
+        {"label": o["label"], "bbox": o["label_bbox"], "page": o["page"]}
+        for o in q["options"]
+    ]
+    for option in q["options"]:
+        asset = option["images"][0]
+        assert not foreign_option_anchors(
+            asset["bbox"], anchors, asset["page"], option["label"]
+        )
+        assert (tmp_path / asset["path"]).is_file()
+    a = q["options"][0]["images"][0]
+    b_anchor = q["options"][1]["label_bbox"]
+    assert a["bbox"][2] < b_anchor[0]
+    raw = tmp_path / "2011.raw.json"
+    raw.write_text(json.dumps(data), encoding="utf-8")
+    assert not [r for r in collect_issues(data, raw) if r["question_number"] == 50]
+    a["bbox"][2] = b_anchor[2] + 1
+    assert any(
+        "foreign_option_letter_in_crop:A->B" in row["reasons"]
+        for row in collect_issues(data, raw)
+        if row["question_number"] == 50
     )
 
 

@@ -94,6 +94,17 @@ Complete, separated image rows are matched one-to-one in horizontal order, avoid
 
 Reports also flag excessive prose overlap, possible incomplete crops/captions, shared multi-option graphics, unknown placement, and inconsistent layout spans/references/order. Resolved image-only choices are not marked empty solely because text is absent. Remaining limits include heuristic caption identification, overlapping/shared frames, missing font maps, text-only diagrams without detected PDF objects, and ambiguous reading order. Full layouts preserve context for manual review.
 
+Structural option letters now act as crop barriers for every image-choice layout,
+not just graphs. The parser retains an option's own anchor, excludes other
+option anchors from nearby-label expansion, and checks the final crop before
+linking it to an answer. When a foreign letter lies inside the graphic itself,
+the full visual is saved but its option association is left unresolved with
+`foreign_option_letter_in_crop`. Saved `options[].label_bbox` and `page` support
+the same read-only check during inspection. Letters printed *inside* a diagram
+are not treated as option anchors. Also review significant overlap between
+different option visuals. TSA 2011 Q50 option A is a concrete regression: its
+focused PNG must not include B.
+
 Manual regression examples: 2010 questions 7 (digital clock) and 12 (sale table) must exclude surrounding prose in individual crops while keeping it in layout/raw text. 2022 question 50 must retain all town labels and five sign tables; 2022 question 38 must retain chart legends. Inspect these with the same command, changing source/year/question and using a new HTML output filename.
 
 For the latest regressions, export 2022 questions 8 and 20 to new HTML files
@@ -117,6 +128,13 @@ python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --ou
 ```
 
 Reports list source file, available year/session/paper/variant/section, question number, pages, affected components, reasons, saved asset paths, manual-review status, and raw JSON location. Document-level issues use an explicit document row rather than inventing a question number. Shared source/year issues are reported once per document.
+
+The generated report groups detected reasons under `##` category headings
+(for example Foreign Option Letter in Crop, Option Association Issues, and
+Question Text Parsing Issues). Only nonempty categories appear. A question may
+appear in several categories, but its reasons are combined into one row within
+each category; rows are sorted by year, source, question, and page. The raw
+inspection and JSON are unchanged by report generation.
 
 Review rows come from actual parser warnings, explicit unresolved/low-confidence flags, empty essential text, duplicate/invalid numbers, or inconsistent page references/spans. General graphics-presence notices, blank-page notices, empty subpoint lists, and absent answers/explanations alone are not treated as faults. Numeric confidence values are preserved by inspection but no new confidence threshold is invented. A report with no issues is not proof of correctness.
 

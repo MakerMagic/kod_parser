@@ -29,6 +29,25 @@ def overlaps(a, b, gap=0):
     )
 
 
+def intersects(a, b):
+    """Positive-area overlap; touching PDF bounds are not a contained letter."""
+    return (
+        min(a[2], b[2]) > max(a[0], b[0]) + 0.1
+        and min(a[3], b[3]) > max(a[1], b[1]) + 0.1
+    )
+
+
+def foreign_option_anchors(crop, anchors, page, owner_label):
+    """Only structural option anchors count, never letters inside a graphic."""
+    return [
+        anchor
+        for anchor in anchors
+        if anchor["page"] == page
+        and anchor["label"] != owner_label
+        and intersects(crop, anchor["bbox"])
+    ]
+
+
 def words(line):
     return list(zip(line.get("word_boxes", []), line.get("word_texts", [])))
 
@@ -127,7 +146,9 @@ def _distance(a, b):
     return max(a[0] - b[2], b[0] - a[2], 0) ** 2 + max(a[1] - b[3], b[1] - a[3], 0) ** 2
 
 
-def focused_crop(group, lines, page, width, height, neighbors=(), anchors=()):
+def focused_crop(
+    group, lines, page, width, height, neighbors=(), anchors=(), owner_label=None
+):
     """Keep internal labels; external prose is a barrier, not a label source.
 
     Full line context is used before selecting nearby words, so a short fragment
@@ -144,10 +165,26 @@ def focused_crop(group, lines, page, width, height, neighbors=(), anchors=()):
         if line["page"] != page:
             continue
         box = [line["x0"], line["top"], line["x1"], line["bottom"]]
+        line_anchors = [
+            anchor
+            for anchor in anchors
+            if anchor["page"] == page
+            and any(anchor["bbox"] == word for word, _ in words(line))
+        ]
+        # An external line led by another option's anchor is that option's
+        # content, not a caption for this visual (e.g. "C Third" below B).
+        if (
+            line_anchors
+            and not any(a["label"] == owner_label for a in line_anchors)
+            and (box[3] <= graphic[1] or box[1] >= graphic[3])
+        ):
+            continue
         nearby = []
         for b, t in words(line):
-            if graph and any(
-                anchor["page"] == page and anchor["label"] == t and anchor["bbox"] == b
+            if any(
+                anchor["page"] == page
+                and anchor["label"] != owner_label
+                and anchor["bbox"] == b
                 for anchor in anchors
             ):
                 continue
@@ -237,21 +274,24 @@ def focused_crop(group, lines, page, width, height, neighbors=(), anchors=()):
             crop[3] = min(crop[3], (box[1] + expanded[3]) / 2)
         else:
             warnings.append("visual_neighbor_boundary_uncertain:content_bounds_overlap")
-    if graph:
-        for anchor in anchors:
-            if anchor["page"] != page or not overlaps(crop, anchor["bbox"]):
-                continue
-            box = anchor["bbox"]
-            if box[3] <= graphic[1]:
-                crop[1] = max(crop[1], box[3] + 0.5)
-            elif box[1] >= graphic[3]:
-                crop[3] = min(crop[3], box[1] - 0.5)
-            elif box[2] <= graphic[0]:
-                crop[0] = max(crop[0], box[2] + 0.5)
-            elif box[0] >= graphic[2]:
-                crop[2] = min(crop[2], box[0] - 0.5)
-            else:
-                warnings.append("visual_option_boundary_overlaps_graph:manual_review")
+    for anchor in foreign_option_anchors(crop, anchors, page, owner_label):
+        box = anchor["bbox"]
+        # A structural letter outside the actual visual is a crop barrier.
+        # Trim padding only; never clip graphic objects or retained labels.
+        candidates = []
+        if box[2] + 1 <= expanded[0]:
+            candidates.append((expanded[0] - box[2], 0, box[2] + 1))
+        if box[0] - 1 >= expanded[2]:
+            candidates.append((box[0] - expanded[2], 2, box[0] - 1))
+        if box[3] + 1 <= expanded[1]:
+            candidates.append((expanded[1] - box[3], 1, box[3] + 1))
+        if box[1] - 1 >= expanded[3]:
+            candidates.append((box[1] - expanded[3], 3, box[1] - 1))
+        if candidates:
+            _, edge, value = min(candidates)
+            crop[edge] = max(crop[edge], value) if edge < 2 else min(crop[edge], value)
+        if intersects(crop, box):
+            warnings.append("visual_option_anchor_boundary_uncertain:manual_review")
     return crop, {
         "graphic_bbox": graphic[:],
         "crop_method": "pdf_objects_paragraph_barriers_text_ownership",

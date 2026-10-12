@@ -7,6 +7,7 @@ import zlib
 from html import escape
 from pathlib import Path
 
+from .visual_structure import foreign_option_anchors
 from .visuals import valid_bbox
 
 
@@ -68,14 +69,26 @@ def visual_issues(question, raw_json, pages):
     if orders and orders != list(range(1, len(orders) + 1)):
         issues.append(("visual_asset_order_inconsistent", None))
     indexed = {a["image_id"]: a for a in question.get("visual_assets", [])}
+    option_anchors = [
+        {"label": option["label"], "bbox": option["label_bbox"], "page": option["page"]}
+        for option in question.get("options", [])
+        if isinstance(option.get("label_bbox"), list)
+        and len(option["label_bbox"]) == 4
+        and isinstance(option.get("page"), int)
+    ]
+    image_options = []
     for option in question.get("options", []):
-        if option.get("content_type") != "image":
-            continue
         references = option.get("images", [])
+        if option.get("content_type") != "image" and not (
+            references and not str(option.get("text") or "").strip()
+        ):
+            continue
+        image_options.append(option)
         if len(references) != 1 or any(
             a.get("image_id") not in indexed
             or indexed[a["image_id"]].get("option_label") != option["label"]
-            or indexed[a["image_id"]].get("page") != option.get("page")
+            or option.get("page") is not None
+            and indexed[a["image_id"]].get("page") != option["page"]
             for a in references
         ):
             issues.append(
@@ -84,6 +97,50 @@ def visual_issues(question, raw_json, pages):
                     references[0].get("path") if references else None,
                 )
             )
+        for reference in references:
+            asset = indexed.get(reference.get("image_id"))
+            if not asset or not valid_bbox(
+                asset.get("bbox"), float("inf"), float("inf")
+            ):
+                continue
+            foreign = foreign_option_anchors(
+                asset["bbox"], option_anchors, asset.get("page"), option["label"]
+            )
+            if foreign:
+                labels = ",".join(dict.fromkeys(a["label"] for a in foreign))
+                issues.append(
+                    (
+                        f"foreign_option_letter_in_crop:{option['label']}->{labels}",
+                        asset.get("path"),
+                    )
+                )
+    for index, option in enumerate(image_options):
+        for other in image_options[index + 1 :]:
+            for left in option.get("images", []):
+                for right in other.get("images", []):
+                    if left.get("page") != right.get("page"):
+                        continue
+                    a = left.get("graphic_bbox", left.get("bbox"))
+                    b = right.get("graphic_bbox", right.get("bbox"))
+                    if not valid_bbox(a, float("inf"), float("inf")) or not valid_bbox(
+                        b, float("inf"), float("inf")
+                    ):
+                        continue
+                    intersection = max(0, min(a[2], b[2]) - max(a[0], b[0])) * max(
+                        0, min(a[3], b[3]) - max(a[1], b[1])
+                    )
+                    smallest = min(
+                        (a[2] - a[0]) * (a[3] - a[1]),
+                        (b[2] - b[0]) * (b[3] - b[1]),
+                    )
+                    if smallest and intersection / smallest > 0.05:
+                        issues.extend(
+                            (
+                                f"overlapping_option_visual_assets:{option['label']},{other['label']}",
+                                path,
+                            )
+                            for path in (left.get("path"), right.get("path"))
+                        )
     blocks = question.get("layout_blocks")
     if blocks is not None:
         if [b.get("order") for b in blocks] != list(range(1, len(blocks) + 1)):

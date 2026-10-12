@@ -85,7 +85,14 @@ def image_choice_anchors(question, lines, pages):
     for anchor in candidates:
         groups, width, height = pages[anchor["page"]]
         anchor["crop"], evidence = focused_crop(
-            anchor["group"], lines, anchor["page"], width, height, groups, candidates
+            anchor["group"],
+            lines,
+            anchor["page"],
+            width,
+            height,
+            groups,
+            candidates,
+            owner_label=anchor["label"],
         )
         if evidence["warnings"]:
             question["warnings"].append(

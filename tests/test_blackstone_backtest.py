@@ -245,6 +245,52 @@ def test_report_detects_actual_issues_and_never_changes_raw_data(raw_json, tmp_p
     assert unrelated.read_text(encoding="utf-8") == "Manual documentation"
 
 
+def test_report_groups_detected_reasons_without_duplicate_category_rows(
+    raw_json, tmp_path
+):
+    path, data = raw_json
+    question = data["questions"][0]
+    question["warnings"].append("font_encoding_artifacts:raw_tokens_preserved")
+    question["visual_assets"][0]["warnings"] = [
+        "foreign_option_letter_in_crop:A->B",
+        "visual_caption_may_be_incomplete:local_text_preserved_in_layout",
+        "visual_crop_may_be_incomplete:object_outside_crop",
+    ]
+    second = deepcopy(question)
+    second["question_number"] = 13
+    second["visual_assets"][0]["warnings"] = []
+    second["warnings"] = ["incomplete_or_ambiguous_options:A,B"]
+    data["questions"].append(second)
+    path.write_text(json.dumps(data), encoding="utf-8")
+    before = path.read_bytes()
+    report = tmp_path / "categorized.md"
+    rows = write_report([path], report)
+    text = report.read_text(encoding="utf-8")
+    headings = [line for line in text.splitlines() if line.startswith("## ")]
+    assert headings == sorted(headings)
+    assert "## Foreign Option Letter in Crop" in headings
+    assert "## Incomplete or Uncertain Visual Crop" in headings
+    assert "## Option Association Issues" in headings
+    assert "## Question Text Parsing Issues" in headings
+    assert "## Missing/Corrupt Asset" not in headings
+    sections = [section for section in text.split("## ")[1:]]
+    assert all(
+        sum(line.startswith("|---|") for line in section.splitlines()) == 1
+        for section in sections
+    )
+    crop_section = next(
+        s for s in sections if s.startswith("Incomplete or Uncertain Visual Crop")
+    )
+    assert crop_section.count(" | 12 | 3–3 | ") == 1
+    assert "visual_caption_may_be_incomplete" in crop_section
+    assert "visual_crop_may_be_incomplete" in crop_section
+    assert "assets/fixture.png" in crop_section
+    association = next(s for s in sections if s.startswith("Option Association Issues"))
+    assert association.index(" | 12 | ") < association.index(" | 13 | ")
+    assert all(row["manual_review_required"] for row in rows)
+    assert path.read_bytes() == before
+
+
 def test_presence_of_graphics_empty_subpoints_and_missing_answers_are_not_faults(
     raw_json,
 ):
@@ -255,6 +301,24 @@ def test_presence_of_graphics_empty_subpoints_and_missing_answers_are_not_faults
     del question["answer"]
     del question["explanation"]
     assert collect_issues(data, path) == []
+
+
+def test_legacy_image_option_without_anchor_metadata_is_not_falsely_rejected(raw_json):
+    path, data = raw_json
+    question = data["questions"][0]
+    asset = question["visual_assets"][0]
+    asset["belongs_to"] = "option"
+    asset["option_label"] = "A"
+    option = question["options"][0]
+    option["text"] = ""
+    option["images"] = [asset]
+    assert "page" not in option and "label_bbox" not in option
+    reasons = [
+        reason for row in collect_issues(data, path) for reason in row["reasons"]
+    ]
+    assert not any(
+        "visual_image_option_mapping_inconsistent" in reason for reason in reasons
+    )
 
 
 def test_shared_metadata_issues_are_document_rows_not_every_question(raw_json):

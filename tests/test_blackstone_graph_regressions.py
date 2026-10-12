@@ -9,6 +9,7 @@ import pytest
 from parsers.blackstone import parse_pdf, validate_raw
 from parsers.blackstone.backtest import inspect_question, render_inspection
 from parsers.blackstone.visual_inspection import read_png
+from parsers.blackstone.visual_structure import foreign_option_anchors
 
 SOURCE = Path(__file__).parents[1] / "acquisition/local/TSA Oxford 2021.pdf"
 SOURCE_2020 = Path(__file__).parents[1] / "acquisition/local/TSA Oxford 2020.pdf"
@@ -59,13 +60,18 @@ def test_q26_one_complete_graph_per_option(oxford_2021):
             and asset["graphic_bbox"][3] >= objects[image_id]["bbox"][3]
             for image_id in asset["object_ids"]
         )
-        assert not any(
-            letter["page"] == asset["page"]
-            and asset["bbox"][0] < letter["label_bbox"][2]
-            and asset["bbox"][2] > letter["label_bbox"][0]
-            and asset["bbox"][1] < letter["label_bbox"][3]
-            and asset["bbox"][3] > letter["label_bbox"][1]
-            for letter in q["options"]
+        assert not foreign_option_anchors(
+            asset["bbox"],
+            [
+                {
+                    "label": letter["label"],
+                    "bbox": letter["label_bbox"],
+                    "page": letter["page"],
+                }
+                for letter in q["options"]
+            ],
+            asset["page"],
+            option["label"],
         )
     assert q["options"][0]["images"][0]["graphic_bbox"][1] < 380
     assert q["options"][4]["images"][0]["graphic_bbox"][1] > 630
