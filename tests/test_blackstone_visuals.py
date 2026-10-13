@@ -282,6 +282,7 @@ def test_tsa_2022_question_50_vector_graphic(tmp_path):
         assert asset["page"] == option["page"] == 7
         assert not asset["warnings"]
         assert asset["visual_text"]
+        assert asset["visual_kind"] == "graph"  # Charts must not become tables.
     assert q8["options"][2]["images"][0]["bbox"][1] > 460.84
     assert q8["options"][4]["images"][0]["bbox"][1] > 614.68
     assert q8["options"][2]["images"][0]["bbox"][3] >= 614.68

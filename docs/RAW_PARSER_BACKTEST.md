@@ -2,10 +2,35 @@
 
 Run commands from the repository root. These utilities read existing raw JSON; inspection does not reopen the PDF or rerun extraction.
 
+## PowerShell setup
+
+Run this once in the same PowerShell session. This repository's `.venv` launcher
+is currently broken; the installed Codex Python can use its existing packages:
+
+```powershell
+$env:PYTHONPATH = (Resolve-Path '.venv\Lib\site-packages').Path
+$env:PYTHONIOENCODING = 'utf-8'
+$parserPython = Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+& $parserPython --version
+```
+
+If using another working Python with the required packages, set `$parserPython`
+to its executable instead. All commands below use PowerShell's `&` call operator;
+no Bash line-continuation syntax is required.
+
 ## Parse and report
 
 ```powershell
-python -m parsers.blackstone acquisition/local --overwrite --issues-report docs/PARSING_ISSUES.md
+& $parserPython -m parsers.blackstone 'acquisition\local' --output-dir 'data\raw\blackstone' --overwrite --issues-report 'docs\PARSING_ISSUES.md'
+```
+
+This reruns extraction from the local acquisition directory, replacing the
+parser's raw JSON/assets explicitly. It does not download files or delete old
+unreferenced PNGs. To start an isolated run instead, choose a new output directory:
+
+```powershell
+$freshOutput = 'inspections\fresh-raw-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff')
+& $parserPython -m parsers.blackstone 'acquisition\local' --output-dir $freshOutput
 ```
 
 Parsing saves raw JSON, visual assets, and a separate Markdown issues report. Without `--issues-report`, the report is `PARSING_ISSUES.md` inside the selected raw output directory. It covers all `*.raw.json` files in that directory, including previous outputs. Use a separate output directory to isolate a run. Raw page/question/options text remains unchanged; structured image-option text can be corrected using geometric evidence. Rerun with `--overwrite` to upgrade older outputs.
@@ -13,7 +38,7 @@ Parsing saves raw JSON, visual assets, and a separate Markdown issues report. Wi
 ## Inspect a stored question
 
 ```powershell
-python -m parsers.blackstone.backtest inspect --raw-json "data/raw/blackstone/TSA Oxford 2020-ca4ee526afb0.raw.json" --source "TSA Oxford 2020.pdf" --year 2020 --question 12
+& $parserPython -m parsers.blackstone.backtest inspect --raw-json 'data\raw\blackstone' --source 'TSA Oxford 2020.pdf' --year 2020 --question 12
 ```
 
 `--raw-json` accepts explicit JSON files or a directory of `*.raw.json` files. `--source` accepts the stored PDF filename, path, input URL/reference, or recorded acquisition origin. URLs are compared as stored strings and are never fetched. A supplied path must match the recorded path; it does not fall back to the filename.
@@ -25,7 +50,8 @@ The default text view includes document metadata, every stored question field, a
 For an exact JSON representation of the question plus its document context:
 
 ```powershell
-python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA Oxford 2020.pdf" --year 2020 --question 12 --format json --output question-12-inspection.json
+$inspectionJson = 'inspections\question-12-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.json'
+& $parserPython -m parsers.blackstone.backtest inspect --raw-json 'data\raw\blackstone' --source 'TSA Oxford 2020.pdf' --year 2020 --question 12 --format json --output $inspectionJson
 ```
 
 Exports require a new file. Existing files, including raw JSON, are never overwritten by inspection.
@@ -33,8 +59,10 @@ Exports require a new file. Existing files, including raw JSON, are never overwr
 ## Visual inspection (all questions)
 
 ```powershell
-python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA_2022.pdf" --year 2022 --question 50
-python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA_2022.pdf" --year 2022 --question 50 --format html --output inspections/TSA_2022_q50.html
+& $parserPython -m parsers.blackstone.backtest inspect --raw-json 'data\raw\blackstone' --source 'TSA_2022.pdf' --year 2022 --question 50
+$inspectionHtml = 'inspections\TSA_2017_q20-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.html'
+& $parserPython -m parsers.blackstone.backtest inspect --raw-json 'data\raw\blackstone' --source 'TSA Oxford 2017.pdf' --year 2017 --question 20 --format html --output $inspectionHtml
+Invoke-Item -LiteralPath $inspectionHtml
 ```
 
 Open the exported HTML in any browser (double-click it). It embeds saved PNGs, works offline, and needs neither the PDF nor an asset folder after export. This universal view includes page-ordered question layout crops, individual graphic crops, stored text/options, issues, and the complete raw record. Layout crops preserve the position of graphics among text, subparts, and answers; individual assets use page/top/left order. Console and JSON inspection remain available. Inspection only reads raw JSON and saved assets, never rerenders the PDF or changes raw output.
@@ -46,6 +74,17 @@ Assets live under `OUTPUT_DIR/assets/<source-content-hash>/`. Names such as `bla
 ### Focused crops and structured placement
 
 Individual crops use PDF object bounds, nearby label words, and four-point padding. Internal table/diagram text is retained. External sentence/paragraph lines form barriers: a few nearby words from a long sentence can no longer pull the whole sentence into a crop. Short local labels and numbered figure/table captions are retained; ambiguous long captions are flagged. Padding is constrained by excluded prose. Layout previews still include surrounding question text. No new image-processing dependency is required.
+
+Table detection accepts stroked lines and thin filled rectangle rules only when
+they form a repeated intersecting grid with text in multiple rows and columns.
+Separators and outer borders alone are not tables. PDF color-space metadata
+distinguishes white backgrounds from black spot-color ink, preserving Q20's
+2017 grid. Its full 12-row table now has a focused crop; separate answer-chart
+ambiguities remain reported. Borderless tables and unusual grid structures may
+still require review. Attached footnotes/named captions retain the conservative
+label-aware crop and its warnings rather than being cut off at the grid border.
+Long/multiple external notes may still be incomplete in individual crops (for
+example 2021 Q19); use the full layout/raw text and retain manual review.
 
 Wrapped paragraphs now include short endings such as "been incorrectly plotted."
 in the exclusion barrier. Nearby text belongs to the closest graphic, rather
@@ -124,7 +163,7 @@ Narrow external reference: [render_q38.py](https://github.com/LegionHH/parsing/b
 ## Refresh the issues report without reparsing
 
 ```powershell
-python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --output docs/PARSING_ISSUES.md
+& $parserPython -m parsers.blackstone.backtest report --raw-json 'data\raw\blackstone' --output 'docs\PARSING_ISSUES.md'
 ```
 
 Reports list source file, available year/session/paper/variant/section, question number, pages, affected components, reasons, saved asset paths, manual-review status, and raw JSON location. Document-level issues use an explicit document row rather than inventing a question number. Shared source/year issues are reported once per document.
@@ -136,6 +175,11 @@ appear in several categories, but its reasons are combined into one row within
 each category; rows are sorted by year, source, question, and page. The raw
 inspection and JSON are unchanged by report generation.
 
+Heading counts are unique displayed **records**, including document/page rows,
+not just numbered questions. Multiple reasons on one record are combined within
+each category. Source provenance notices remain unresolved unless the PDF
+actually verifies the source; correcting a count does not resolve provenance.
+
 Review rows come from actual parser warnings, explicit unresolved/low-confidence flags, empty essential text, duplicate/invalid numbers, or inconsistent page references/spans. General graphics-presence notices, blank-page notices, empty subpoint lists, and absent answers/explanations alone are not treated as faults. Numeric confidence values are preserved by inspection but no new confidence threshold is invented. A report with no issues is not proof of correctness.
 
 Compare flagged records against the original PDF: wording and context, numbering, option labels and continuation lines, subparts, diagrams and their associations, page spans, and exam metadata. Font artifacts and grouped diagram options remain extraction limitations; the utility does not repair them or track manual review decisions. Reports are reproducible snapshots and refresh only files bearing their generated-report marker; unrelated Markdown files are protected.
@@ -143,8 +187,5 @@ Compare flagged records against the original PDF: wording and context, numbering
 ## Tests
 
 ```powershell
-python -m pytest -q tests/test_blackstone_backtest.py tests/test_blackstone_raw.py tests/test_blackstone_visuals.py tests/test_blackstone_visual_structure.py
+& $parserPython -m pytest -q tests/test_blackstone_backtest.py tests/test_blackstone_raw.py tests/test_blackstone_visuals.py tests/test_blackstone_visual_structure.py tests/test_blackstone_image_options.py
 ```
-
-If the existing virtual environment cannot launch, use the bundled-runtime setup in `parsers/blackstone/README.md` and replace `python` in these commands with `& $parserPython`.
-python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA_2022.pdf" --year 2022 --question 20 --format html --output inspections/TSA_2022_q20.html

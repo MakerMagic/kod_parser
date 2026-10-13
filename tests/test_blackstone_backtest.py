@@ -275,12 +275,12 @@ def test_report_groups_detected_reasons_without_duplicate_category_rows(
     text = report.read_text(encoding="utf-8")
     headings = [line for line in text.splitlines() if line.startswith("## ")]
     assert headings == sorted(headings)
-    assert "## Foreign Option Letter in Crop (1 questions)" in headings
-    assert "## Incomplete or Uncertain Visual Crop (1 questions)" in headings
-    assert "## Option Association Issues (2 questions)" in headings
-    assert "## Question Text Parsing Issues (1 questions)" in headings
+    assert "## Foreign Option Letter in Crop (1 record)" in headings
+    assert "## Incomplete or Uncertain Visual Crop (1 record)" in headings
+    assert "## Option Association Issues (2 records)" in headings
+    assert "## Question Text Parsing Issues (1 record)" in headings
     assert not any("Missing/Corrupt Asset" in heading for heading in headings)
-    assert "### CID text unresolved (1 questions)" in text
+    assert "### CID text unresolved (1 question)" in text
     assert text.count("cid_question_and_options_unresolved") == 1
     sections = [
         section
@@ -303,6 +303,26 @@ def test_report_groups_detected_reasons_without_duplicate_category_rows(
     )
     assert association.index(" | 12 | ") < association.index(" | 13 | ")
     assert all(row["manual_review_required"] for row in rows)
+    assert path.read_bytes() == before
+
+
+def test_document_metadata_count_matches_unique_displayed_records(raw_json, tmp_path):
+    path, data = raw_json
+    data["warnings"] = [
+        "source_assigned_by_parser_profile:not_verified_in_document",
+        "uncertain_metadata:year",
+        "uncertain_metadata:year",
+    ]
+    path.write_text(json.dumps(data), encoding="utf-8")
+    before = path.read_bytes()
+    report = tmp_path / "metadata.md"
+    write_report([path], report)
+    text = report.read_text(encoding="utf-8")
+    section = text.split("## Source Metadata Issues (1 record)\n", 1)[1]
+    section = section.split("\n## ", 1)[0]
+    assert section.count("| document (no question number) |") == 1
+    assert section.count("uncertain_metadata:year") == 1
+    assert "source_assigned_by_parser_profile:not_verified_in_document" in section
     assert path.read_bytes() == before
 
 

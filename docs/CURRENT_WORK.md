@@ -1,14 +1,13 @@
 # Current Work
-
+- Define and implement raw → clean normalization rules.
+- Add cleaning regression tests.
 ## Current milestone
 
-Blackstone PDF → raw structured JSON.
+Blackstone raw structured JSON → Blackstone clean structured JSON.
 
 ## Current focus
 
-- Visual option/image cropping reliability.
-- Table/text-heavy visual parsing.
-- Issue classification and regression testing.
+Implement deterministic normalization and cleaning of Blackstone raw question data while preserving raw records unchanged.
 
 ## Already completed
 
@@ -37,16 +36,19 @@ Blackstone PDF → raw structured JSON.
 - Verified the shifted CID font encoding in the 2012–2014 Oxford papers and decoded structured question/option text while preserving original CID page/question spans. Reparsed those three papers; the CID question-and-all-options issue count fell from 148 to 0. The generated issues report now shows per-category counts and a CID subcategory; 52 parser/backtest/visual tests pass.
 - Page-margin white vector frames no longer become question visuals or merge into tables. Closed table borders now define focused crops, and a single enclosing option contour can resolve false per-edge ownership. All 16 PDFs were reparsed; the 2015 question-level issue count fell from 50 to 0, while the genuinely merged 2016 Q32 remains flagged. All 800 question numbers, page references, raw blocks, text, options, and subpoints matched the pre-change baseline; 80 focused tests pass.
 
+- PDF drawing color spaces now preserve black spot-color grids, including the complete 2017 Q20 table. Category counts include unique document/page/question records; Source Metadata correctly shows 16 records without hiding provenance warnings. PowerShell parsing/inspection/report/test commands were verified. All 16 papers were reparsed; all 800 raw/text/numbering/page/option records matched the baseline, and representative existing crop pixels/associations stayed unchanged. 86 tests plus lint/format checks pass.
+
 ## Do not work on yet
 
 - answer matching;
 - categorization;
-- final dataset export;
-- new acquisition mechanisms;
+- final dataset generation;
 - additional sources.
 
 ## Next task
 
--Review remaining flagged captions and shared/ambiguous layouts (including 2019 Q32), letter-puzzle option markers, and the isolated 2021 CID artifact using `docs/RAW_PARSER_BACKTEST.md`; compare structured HTML with original layout previews before later stages. Existing inputs remain in `acquisition/local/`.
-- Investigate visual option parsing issues in Blackstone/TSA outputs.
-- Review remaining genuinely shared/ambiguous visual groups and non-enclosed text-heavy visuals; compare stored crops with source PDFs before further confidence changes.
+- Inspect representative raw records and identify recurring normalization needs.
+- Implement cleaning for text, options, subpoints, metadata, and image references.
+- Preserve raw data and unresolved uncertainty.
+- Write cleaned records separately to `data/clean/blackstone/`.
+- Add regression tests for cleaning rules.

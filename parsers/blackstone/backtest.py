@@ -548,7 +548,7 @@ def write_report(references, output):
         "",
         f"Scanned {len(files)} raw files and {questions} stored questions. {question_rows} question records require review; {len(issues) - question_rows} document/page issues are listed separately.",
         "",
-        "This is a generated snapshot of detectable issues, not a correctness score. Shared source/year warnings appear once per document. General graphics-presence notices and blank-page notices alone do not mark a question unresolved. No issue row means no issue detected by these checks, not verified correctness.",
+        "This is a generated snapshot of detectable issues, not a correctness score. Category counts include every unique displayed question, document, or page record. Shared source/year warnings appear once per document. General graphics-presence notices and blank-page notices alone do not mark a question unresolved. No issue row means no issue detected by these checks, not verified correctness.",
         "",
         "Regenerate with `python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --output PATH_TO_THIS_REPORT`.",
         "",
@@ -596,7 +596,8 @@ def write_report(references, output):
         text.append("")
 
     for category, rows in _categorize_rows(issues).items():
-        text.extend([f"## {category} ({question_count(rows)} questions)", ""])
+        noun = "record" if len(rows) == 1 else "records"
+        text.extend([f"## {category} ({len(rows)} {noun})", ""])
         if category == "Question Text Parsing Issues":
             cid_rows = [
                 row
@@ -606,9 +607,9 @@ def write_report(references, output):
             other_rows = [row for row in rows if row not in cid_rows]
             if other_rows:
                 append_table(other_rows)
-            text.append(
-                f"### CID text unresolved ({question_count(cid_rows)} questions)"
-            )
+            cid_count = question_count(cid_rows)
+            noun = "question" if cid_count == 1 else "questions"
+            text.append(f"### CID text unresolved ({cid_count} {noun})")
             text.append("")
             if cid_rows:
                 append_table(cid_rows)

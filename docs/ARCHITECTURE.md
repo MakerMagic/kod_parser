@@ -226,10 +226,16 @@ later pipeline stages
 Current milestone:
 
 ```text
-Blackstone PDF → raw structured JSON
-```
+Blackstone raw structured JSON → Blackstone clean structured JSON
 
-Do not implement answer matching, categorization, final dataset generation, or new acquisition mechanisms unless explicitly requested.
+The current work is normalization/cleaning of already parsed raw data.
+Cleaning must:
+- consume structured raw data, not PDFs;
+- preserve raw data unchanged;
+- write cleaned data to a separate output layer;
+- remain deterministic and independently testable;
+- preserve uncertainty instead of hiding extraction problems.
+Do not implement answer matching, categorization, or final dataset generation unless explicitly requested.
 
 ## 8. Architecture Safeguards
 

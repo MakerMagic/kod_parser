@@ -298,21 +298,53 @@ acquisition information
 
 Acquisition metadata supports debugging but must not become semantic question identity.
 
-## 12. Raw vs Clean Data
+## Clean Data
 
-Raw data:
+Clean data is a normalized representation derived from raw structured data.
 
-- preserves original extracted content;
-- may contain messy text;
-- may contain extraction artifacts;
-- may contain uncertainty warnings.
+A clean record should preserve the same logical question identity as its corresponding raw record.
 
-Clean data:
+Conceptually:
 
-- may normalize whitespace;
-- may standardize fields;
-- may fix known extraction artifacts;
-- must not overwrite raw data.
+```json
+{
+  "question_id": "blackstone_2020_section_1_q1",
+  "source": "blackstone",
+  "year": 2020,
+  "section": "section_1",
+  "question_number": 1,
+
+  "raw_reference": "...",
+
+  "question_text": "...",
+  "subpoints": [],
+  "options": [],
+  "images": [],
+
+  "warnings": []
+}
+
+The exact schema may evolve, but clean data must remain traceable to raw data.
+Raw vs Clean
+Raw data preserves:
+- original extracted text;
+- extraction layout/artifacts;
+- parser warnings;
+- uncertain content;
+- debugging information.
+Clean data may contain:
+- normalized whitespace;
+- normalized line breaks;
+- standardized option/subpoint structure;
+- standardized metadata values;
+- normalized image references;
+- reliably removed extraction artifacts.
+Clean data must not:
+- replace or delete the raw record;
+- change semantic meaning;
+- invent missing information;
+- remove unresolved uncertainty;
+- contain matching or categorization results unless the pipeline has reached those stages.
 
 ## 13. Forbidden Schema Patterns
 

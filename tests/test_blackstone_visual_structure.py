@@ -14,11 +14,13 @@ from parsers.blackstone.backtest import (
     render_inspection,
 )
 from parsers.blackstone.parser import _white_page_enclosure_stroke
+from parsers.blackstone.pdf_graphics import is_white
 from parsers.blackstone.visual_structure import (
     focused_crop,
     foreign_option_anchors,
     option_anchor_is_left_of_visual,
 )
+from parsers.blackstone.visuals import _is_table
 
 
 def spatial_line(text, x, y, widths, start=0):
@@ -38,6 +40,127 @@ def spatial_line(text, x, y, widths, start=0):
         "word_boxes": boxes,
         "word_texts": text.split(),
     }
+
+
+def test_spot_color_tint_is_not_mistaken_for_white():
+    assert not is_white(1, "Separation")
+    assert not is_white(1, "DeviceN")
+    assert not is_white(1)
+    assert is_white(1, "DeviceGray")
+    assert is_white((1, 1, 1), "DeviceRGB")
+    assert is_white((0, 0, 0, 0), "DeviceCMYK")
+    assert not is_white((0, 0, 0, 1), "DeviceCMYK")
+
+
+def test_table_requires_intersecting_grid_and_text_in_multiple_cells():
+    objects = [
+        {"object_type": "line", "bbox": box}
+        for box in (
+            [100, 100, 300, 100],
+            [100, 150, 300, 150],
+            [100, 200, 300, 200],
+            [100, 100, 100, 200],
+            [200, 100, 200, 200],
+            [300, 100, 300, 200],
+        )
+    ]
+    group = {"bbox": [100, 100, 300, 200], "objects": objects}
+    lines = [
+        spatial_line("Jan 10", 120, 120, [20, 12]),
+        spatial_line("Feb 20", 220, 170, [20, 12]),
+    ]
+    assert _is_table(group, lines, 1)
+    assert not _is_table(group, [], 1)  # Empty geometry is not a text table.
+    assert not _is_table({**group, "graph": True}, lines, 1)
+    assert not _is_table({**group, "objects": objects[:3]}, lines, 1)
+    assert not _is_table(
+        {**group, "objects": [objects[i] for i in (0, 2, 3, 5)]}, lines, 1
+    )  # A border around prose is not a table.
+
+
+def test_spot_color_rectangle_grid_saves_a_focused_table(tmp_path):
+    source = write_pdf(
+        tmp_path / "spot-grid.pdf",
+        [
+            [
+                (50, 750, "1 Compare the values in the table."),
+                (160, 615, "Jan 10"),
+                (260, 615, "Jan 20"),
+                (160, 555, "Feb 30"),
+                (260, 555, "Feb 40"),
+                (50, 490, "Which value is largest?"),
+                *[
+                    (80, 450 - i * 20, f"{label} {i + 1}")
+                    for i, label in enumerate("ABCDE")
+                ],
+            ]
+        ],
+        extra_resources=(
+            "/ColorSpace << /Ink [/Separation /Black /DeviceCMYK "
+            "<< /FunctionType 2 /Domain [0 1] /C0 [0 0 0 0] "
+            "/C1 [0 0 0 1] /N 1 >>] >>"
+        ),
+        graphics_commands=[
+            "1 g 20 20 50 10 re f",  # A genuinely white decoration stays excluded.
+            "/Ink cs 1 scn",
+            *[f"{x} 520 0.6 120 re f" for x in (150, 250, 350)],
+            *[f"150 {y} 200 0.6 re f" for y in (520, 580, 640)],
+        ],
+    )
+    data = parse_pdf(source, asset_dir=tmp_path / "assets")
+    validate_raw(data)
+    question = data["questions"][0]
+    assert question["question_number"] == 1
+    assert [o["label"] for o in question["options"]] == list("ABCDE")
+    assert "Jan 10 Jan 20" in question["raw"]["question_block"]
+    assert "Which value is largest?" in question["question_text"]
+    assert len(question["visual_assets"]) == 1
+    asset = question["visual_assets"][0]
+    assert asset["visual_kind"] == "table"
+    assert asset["crop_method"] == "pdf_closed_border"
+    assert asset["bbox"][1] > 140 and asset["bbox"][3] < 300
+    assert not asset["warnings"]
+    assert (tmp_path / asset["path"]).is_file()
+    assert any(i["decorative"] for i in data["pages"][0]["images"])
+
+
+def test_2017_q20_spot_color_table_and_existing_chart_warnings(tmp_path):
+    source = (
+        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2017.pdf"
+    )
+    if not source.is_file():
+        pytest.skip("Local 2017 PDF unavailable")
+    data = parse_pdf(source, asset_dir=tmp_path / "assets")
+    validate_raw(data)
+    assert [q["question_number"] for q in data["questions"]] == list(range(1, 51))
+    question = data["questions"][19]
+    assert [o["label"] for o in question["options"]] == list("ABCDE")
+    tables = [a for a in question["visual_assets"] if a.get("visual_kind") == "table"]
+    assert len(tables) == 1
+    table = tables[0]
+    assert table["crop_method"] == "pdf_closed_border"
+    assert not table["warnings"]
+    assert table["option_label"] is None
+    assert table["bbox"][1] > 100 and table["bbox"][3] < 312
+    text = "\n".join(
+        question["raw"]["question_block"][span["start"] : span["end"]]
+        for span in table["included_text_spans"]
+    )
+    assert "Jan 2012 124.1 Jan 2007 161.2" in text
+    assert "Dec 2012 123.1 Dec 2007 139.8" in text
+    assert "After the financial crash" not in text
+    assert "Which one of the following" not in text
+    # The table fix must not erase unresolved answer-chart problems.
+    assert any(a["warnings"] for a in question["visual_assets"] if a is not table)
+    raw = tmp_path / "2017.raw.json"
+    raw.write_text(json.dumps(data), encoding="utf-8")
+    before = raw.read_bytes()
+    result = inspect_question([raw], source=source.name, year=2017, question_number=20)
+    html = render_inspection(result, "html")
+    assert "data:image/png;base64," in html and table["image_id"] in html
+    assert render_inspection(result, "text") and render_inspection(result, "json")
+    assert raw.read_bytes() == before
+    assert any(r.get("question_number") == 20 for r in collect_issues(data, raw))
 
 
 def test_white_page_margin_stroke_is_not_a_dark_diagram_stroke():
@@ -441,9 +564,37 @@ def test_local_closed_border_tables_keep_internal_text_without_surrounding_prose
         assert not asset["warnings"]
         assert asset["included_text_spans"]
         assert (tmp_path / asset["path"]).is_file()
+        if (year, number) in ((2013, 31), (2014, 12)):
+            assert asset["visual_kind"] == "table"
     if year == 2014:
         # A different, non-table visual on the same paper must remain saved.
         assert data["questions"][6]["visual_assets"]
+
+
+def test_2021_q19_table_notes_keep_existing_conservative_crop(tmp_path):
+    source = (
+        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2021.pdf"
+    )
+    if not source.is_file():
+        pytest.skip("Local 2021 PDF unavailable")
+    data = parse_pdf(source, asset_dir=tmp_path / "assets")
+    question = data["questions"][18]
+    asset = question["visual_assets"][0]
+    assert asset["visual_kind"] == "table"
+    assert asset["crop_method"] == "pdf_objects_paragraph_barriers_text_ownership"
+    assert asset["bbox"][3] > 310
+    assert (
+        "visual_caption_boundary_uncertain:external_caption_preserved"
+        in asset["warnings"]
+    )
+    text = "\n".join(
+        question["raw"]["question_block"][span["start"] : span["end"]]
+        for span in asset["included_text_spans"]
+    )
+    assert "* Family of 4 can be" in text
+    # The existing conservative crop retains the first note, but does not fully
+    # capture the second. Keep its review warning and verbatim raw/layout text.
+    assert "Family of 5 can be" in question["raw"]["question_block"]
 
 
 def test_2015_text_frames_no_longer_flag_every_question(tmp_path):

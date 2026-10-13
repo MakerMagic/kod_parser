@@ -4,6 +4,7 @@ import math
 import re
 import struct
 import zlib
+from bisect import bisect_right
 from contextlib import closing
 from hashlib import sha256
 from itertools import pairwise
@@ -16,6 +17,7 @@ from .visual_structure import (
     focused_crop,
     foreign_option_anchors,
     option_anchor_is_left_of_visual,
+    words,
 )
 
 DPI = 144
@@ -170,6 +172,81 @@ def _is_text_container(group, lines, page, page_width):
     return len(prose) >= 2
 
 
+def _rule_segments(group):
+    """Read PDF lines and thin filled rectangles as possible grid rules."""
+    box = group["bbox"]
+    thickness = max(1, min(3, min(box[2] - box[0], box[3] - box[1]) * 0.02))
+    rules = []
+    for image in group["objects"]:
+        if image["object_type"] not in ("line", "rect"):
+            continue
+        x0, y0, x1, y1 = image["bbox"]
+        width, height = x1 - x0, y1 - y0
+        if height <= thickness and width >= max(6 * height, thickness * 2):
+            rules.append(("h", (y0 + y1) / 2, x0, x1))
+        elif width <= thickness and height >= max(6 * width, thickness * 2):
+            rules.append(("v", (x0 + x1) / 2, y0, y1))
+    return rules
+
+
+def _is_table(group, lines, page):
+    """Require a repeated intersecting grid and text in multiple cells."""
+    if group.get("graph"):
+        return False
+    box = group["bbox"]
+    width, height = box[2] - box[0], box[3] - box[1]
+    if width <= 0 or height <= 0:
+        return False
+    tolerance = max(1.5, min(width, height) * 0.01)
+    axes = {"h": [], "v": []}
+    for axis, positions in axes.items():
+        clustered = []
+        for _, coordinate, start, end in sorted(
+            rule for rule in _rule_segments(group) if rule[0] == axis
+        ):
+            if not clustered or coordinate - clustered[-1][0] > tolerance:
+                clustered.append([coordinate, []])
+            clustered[-1][1].append((start, end))
+        length = width if axis == "h" else height
+        for coordinate, spans in clustered:
+            covered, stop = 0, -math.inf
+            for start, end in sorted(spans):
+                covered += max(0, end - max(start, stop))
+                stop = max(stop, end)
+            if covered >= length * 0.75:
+                positions.append((coordinate, min(s[0] for s in spans), stop))
+    if min(len(axes["h"]), len(axes["v"])) < 3:
+        return False
+    intersections = sum(
+        left - tolerance <= x <= right + tolerance
+        and top - tolerance <= y <= bottom + tolerance
+        for y, left, right in axes["h"]
+        for x, top, bottom in axes["v"]
+    )
+    if intersections < len(axes["h"]) * len(axes["v"]) * 0.9:
+        return False
+    horizontal = [rule[0] for rule in axes["h"]]
+    vertical = [rule[0] for rule in axes["v"]]
+    cells = []
+    for line in lines:
+        if line["page"] != page:
+            continue
+        for word, _ in words(line):
+            if (
+                box[0] <= word[0] <= word[2] <= box[2]
+                and box[1] <= word[1] <= word[3] <= box[3]
+            ):
+                cells.append(
+                    (
+                        bisect_right(horizontal, (word[1] + word[3]) / 2),
+                        bisect_right(vertical, (word[0] + word[2]) / 2),
+                    )
+                )
+    return len(cells) >= 4 and all(
+        len({cell[axis] for cell in cells}) >= 2 for axis in (0, 1)
+    )
+
+
 def _closed_box(group):
     """Find a drawn outer border; internal table cells remain one visual."""
     if group.get("graph"):
@@ -180,20 +257,17 @@ def _closed_box(group):
         return False
     tolerance = max(2, min(width, height) * 0.02)
     edges = {side: [] for side in ("top", "bottom", "left", "right")}
-    for image in group["objects"]:
-        if image["object_type"] != "line":
-            continue
-        x0, y0, x1, y1 = image["bbox"]
-        if x1 - x0 > tolerance and y1 - y0 <= tolerance:
-            if abs(y0 - box[1]) <= tolerance:
-                edges["top"].append((x0, x1))
-            if abs(y1 - box[3]) <= tolerance:
-                edges["bottom"].append((x0, x1))
-        if y1 - y0 > tolerance and x1 - x0 <= tolerance:
-            if abs(x0 - box[0]) <= tolerance:
-                edges["left"].append((y0, y1))
-            if abs(x1 - box[2]) <= tolerance:
-                edges["right"].append((y0, y1))
+    for axis, coordinate, start, end in _rule_segments(group):
+        if axis == "h":
+            if abs(coordinate - box[1]) <= tolerance:
+                edges["top"].append((start, end))
+            if abs(coordinate - box[3]) <= tolerance:
+                edges["bottom"].append((start, end))
+        else:
+            if abs(coordinate - box[0]) <= tolerance:
+                edges["left"].append((start, end))
+            if abs(coordinate - box[2]) <= tolerance:
+                edges["right"].append((start, end))
 
     def coverage(intervals, length):
         covered = 0
@@ -207,6 +281,28 @@ def _closed_box(group):
         coverage(edges[side], width if side in ("top", "bottom") else height)
         for side in edges
     )
+
+
+def _table_has_external_notes(group, lines, page):
+    """A table border must not exclude attached footnotes or named captions."""
+    if not group.get("table"):
+        return False
+    box = group["bbox"]
+    for line in lines:
+        if line["page"] != page or not re.match(
+            r"^(?:\*+\s*\S|Note\b|Source\s*:|(?:Table|Figure|Fig\.)\s+\d+\b)",
+            line["text"],
+            re.IGNORECASE,
+        ):
+            continue
+        gap = max(box[1] - line["bottom"], line["top"] - box[3], 0)
+        if (
+            (line["bottom"] <= box[1] or line["top"] >= box[3])
+            and gap <= 3 * (line["bottom"] - line["top"])
+            and (line["x0"] < box[2] and line["x1"] > box[0])
+        ):
+            return True
+    return False
 
 
 def _graph_cell(group, anchors, page):
@@ -738,7 +834,8 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                             text_containers = [
                                 group
                                 for group in groups
-                                if _is_text_container(
+                                if not _is_table(group, pending["lines"], number)
+                                and _is_text_container(
                                     group, pending["lines"], number, width
                                 )
                             ]
@@ -828,7 +925,14 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                 - len(question["raw"]["options_block"]),
                             )
                             for group in groups:
-                                group["closed_box"] = _closed_box(group)
+                                group["table"] = _is_table(
+                                    group, pending["lines"], number
+                                )
+                                group["closed_box"] = _closed_box(group) and not (
+                                    _table_has_external_notes(
+                                        group, pending["lines"], number
+                                    )
+                                )
                                 crop_owner = (
                                     group.get("option_override")
                                     or _component(group["bbox"], number, anchors)[1]
@@ -879,6 +983,8 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                 asset.update(group["crop_context"])
                                 if group.get("graph"):
                                     asset["visual_kind"] = "graph"
+                                elif group.get("table"):
+                                    asset["visual_kind"] = "table"
                                 if group.get("merge_warning"):
                                     asset["warnings"].append(group["merge_warning"])
                                 asset["belongs_to"], asset["option_label"] = _component(

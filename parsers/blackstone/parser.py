@@ -10,10 +10,11 @@ import pdfplumber
 
 from .cid_text import decode_cids, supports_shifted_cids
 from .image_options import attach_visual_text
+from .pdf_graphics import is_white, load_color_layout
 from .visual_structure import add_layout, bounds, rotated_label_bounds
 from .visuals import save_visuals
 
-PARSER_VERSION = "6"
+PARSER_VERSION = "7"
 SOURCE_FIELDS = ("source", "year", "paper", "variant", "section", "document_role")
 NUMBER = re.compile(r"^(\d{1,3})(?:[ \t]+|$)")
 OPTION = re.compile(r"^([A-Z])(?:[ \t]+|$)")
@@ -100,7 +101,7 @@ def _white_page_enclosure_stroke(obj, page):
         obj.get("object_type") != "line"
         or not obj.get("stroke")
         or obj.get("fill")
-        or obj.get("stroking_color") not in ((1, 1, 1), (0, 0, 0, 0), 1)
+        or not is_white(obj.get("stroking_color"), obj.get("scs"))
     ):
         return False
     x0, x1 = obj["x0"], obj["x1"]
@@ -115,10 +116,10 @@ def _white_page_enclosure_stroke(obj, page):
         return False
     # White strokes over a dark filled diagram can be meaningful. These paper
     # margin marks sit on the white page itself, with no visible backdrop.
-    white = ((1, 1, 1), (0, 0, 0, 0), 1)
     for backdrop in [*page.images, *page.rects, *page.curves]:
         if backdrop not in page.images and (
-            not backdrop.get("fill") or backdrop.get("non_stroking_color") in white
+            not backdrop.get("fill")
+            or is_white(backdrop.get("non_stroking_color"), backdrop.get("ncs"))
         ):
             continue
         if (
@@ -132,6 +133,7 @@ def _white_page_enclosure_stroke(obj, page):
 
 
 def _read_page(page):
+    load_color_layout(page)
     raw_text = page.extract_text(layout=False) or ""
     rotated, oriented_runs = rotated_label_bounds(page.chars, with_runs=True)
 
@@ -216,8 +218,7 @@ def _read_page(page):
                     and (
                         obj.get("fill")
                         and not obj.get("stroke")
-                        and obj.get("non_stroking_color")
-                        in [(1, 1, 1), (0, 0, 0, 0), 1]
+                        and is_white(obj.get("non_stroking_color"), obj.get("ncs"))
                         or _white_page_enclosure_stroke(obj, page)
                     ),
                     "notes": ["reference_to_source_pdf:no_image_file_exported"],
