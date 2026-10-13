@@ -35,6 +35,7 @@ Blackstone PDF → raw structured JSON.
 - Image-choice crops now exclude neighboring structural option letters; a crop that cannot be separated remains saved but unassigned and appears in QA. 2011 Q50 A no longer contains B. The issues report is grouped by nonempty categories with deterministic row order. All 16 local PDFs were reparsed and the report refreshed; vertical/grid/graph controls remain associated. Current validation: 76 tests, lint, and format checks pass.
 - Image-answer association now accepts only a left-side option anchor. Invisible white vector masks and text-enclosure page frames no longer become visual assets; 2011 Q7 and text-only 2012 Q3 were regenerated and the aggregate issues report refreshed. Current validation: 78 tests plus lint/format checks pass.
 - Verified the shifted CID font encoding in the 2012–2014 Oxford papers and decoded structured question/option text while preserving original CID page/question spans. Reparsed those three papers; the CID question-and-all-options issue count fell from 148 to 0. The generated issues report now shows per-category counts and a CID subcategory; 52 parser/backtest/visual tests pass.
+- Page-margin white vector frames no longer become question visuals or merge into tables. Closed table borders now define focused crops, and a single enclosing option contour can resolve false per-edge ownership. All 16 PDFs were reparsed; the 2015 question-level issue count fell from 50 to 0, while the genuinely merged 2016 Q32 remains flagged. All 800 question numbers, page references, raw blocks, text, options, and subpoints matched the pre-change baseline; 80 focused tests pass.
 
 ## Do not work on yet
 
@@ -48,7 +49,4 @@ Blackstone PDF → raw structured JSON.
 
 -Review remaining flagged captions and shared/ambiguous layouts (including 2019 Q32), letter-puzzle option markers, and the isolated 2021 CID artifact using `docs/RAW_PARSER_BACKTEST.md`; compare structured HTML with original layout previews before later stages. Existing inputs remain in `acquisition/local/`.
 - Investigate visual option parsing issues in Blackstone/TSA outputs.
-- Fix false uncertainty for correctly cropped image options without making confidence logic overconfident.
-- Improve cropping of text-heavy visuals/tables, especially 2013–2014 cases, while preserving correct existing crops.
-- Investigate the 2015 issue flood and identify whether there is a shared systemic root cause.
-- Add regression tests for fixed cases and cases that must remain flagged.
+- Review remaining genuinely shared/ambiguous visual groups and non-enclosed text-heavy visuals; compare stored crops with source PDFs before further confidence changes.

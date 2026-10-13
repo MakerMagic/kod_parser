@@ -2,6 +2,7 @@
 
 import json
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 from test_blackstone_raw import write_pdf
@@ -12,6 +13,7 @@ from parsers.blackstone.backtest import (
     inspect_question,
     render_inspection,
 )
+from parsers.blackstone.parser import _white_page_enclosure_stroke
 from parsers.blackstone.visual_structure import (
     focused_crop,
     foreign_option_anchors,
@@ -36,6 +38,34 @@ def spatial_line(text, x, y, widths, start=0):
         "word_boxes": boxes,
         "word_texts": text.split(),
     }
+
+
+def test_white_page_margin_stroke_is_not_a_dark_diagram_stroke():
+    page = SimpleNamespace(width=600, height=800, images=[], rects=[], curves=[])
+    stroke = {
+        "object_type": "line",
+        "stroke": True,
+        "fill": False,
+        "stroking_color": (0, 0, 0, 0),
+        "x0": 44,
+        "x1": 44,
+        "top": 760,
+        "bottom": 775,
+    }
+    assert _white_page_enclosure_stroke(stroke, page)
+    assert not _white_page_enclosure_stroke({**stroke, "x0": 200, "x1": 200}, page)
+    assert not _white_page_enclosure_stroke({**stroke, "stroking_color": 0}, page)
+    page.rects = [
+        {
+            "x0": 40,
+            "x1": 50,
+            "top": 755,
+            "bottom": 780,
+            "fill": True,
+            "non_stroking_color": 0,
+        }
+    ]
+    assert not _white_page_enclosure_stroke(stroke, page)
 
 
 def test_focused_crop_rejects_prose_but_preserves_internal_table_text_and_caption():
@@ -260,12 +290,28 @@ def test_wide_chart_rows_match_left_labels_one_to_one(tmp_path):
     ).is_file(),
     reason="Local TSA Oxford 2011 PDF unavailable",
 )
-def test_2011_q50_option_a_excludes_b_and_inspection_detects_regression(tmp_path):
+def test_2011_q25_contour_and_q50_option_boundaries(tmp_path):
     source = (
         Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2011.pdf"
     )
     data = parse_pdf(source, asset_dir=tmp_path / "assets")
     validate_raw(data)
+    q25 = data["questions"][24]
+    assert [option["label"] for option in q25["options"]] == list("ABCDE")
+    assert all(len(option["images"]) == 1 for option in q25["options"])
+    for label in ("A", "B"):
+        asset = q25["options"][ord(label) - ord("A")]["images"][0]
+        assert asset["option_label"] == label
+        assert not asset["warnings"]
+    assert not any(
+        warning.startswith(
+            (
+                "visual_multiple_option_images_merged",
+                "visual_component_association_uncertain",
+            )
+        )
+        for warning in q25["warnings"]
+    )
     q = data["questions"][49]
     assert q["question_number"] == 50
     assert (
@@ -363,6 +409,90 @@ def test_2012_q3_text_enclosures_do_not_create_visual_association_issues(tmp_pat
         for reason in row["reasons"]
     ]
     assert not any(reason.startswith("visual_") for reason in issues)
+
+
+@pytest.mark.parametrize(
+    ("year", "questions"),
+    [(2013, (25, 31)), (2014, (12,))],
+)
+def test_local_closed_border_tables_keep_internal_text_without_surrounding_prose(
+    tmp_path, year, questions
+):
+    source = (
+        Path(__file__).resolve().parents[1]
+        / "acquisition"
+        / "local"
+        / f"TSA Oxford {year}.pdf"
+    )
+    if not source.is_file():
+        pytest.skip("Local table PDF unavailable")
+    data = parse_pdf(source, asset_dir=tmp_path / "assets")
+    validate_raw(data)
+    assert [q["question_number"] for q in data["questions"]] == list(range(1, 51))
+    for number in questions:
+        question = data["questions"][number - 1]
+        assert [option["label"] for option in question["options"]] == list("ABCDE")
+        assert question["raw"]["question_block"]
+        assert question["visual_assets"]
+        asset = question["visual_assets"][0]
+        graphic, crop = asset["graphic_bbox"], asset["bbox"]
+        assert asset["crop_method"] == "pdf_closed_border"
+        assert all(abs(abs(crop[i] - graphic[i]) - 4) < 0.01 for i in range(4))
+        assert not asset["warnings"]
+        assert asset["included_text_spans"]
+        assert (tmp_path / asset["path"]).is_file()
+    if year == 2014:
+        # A different, non-table visual on the same paper must remain saved.
+        assert data["questions"][6]["visual_assets"]
+
+
+def test_2015_text_frames_no_longer_flag_every_question(tmp_path):
+    source = (
+        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2015.pdf"
+    )
+    if not source.is_file():
+        pytest.skip("Local 2015 PDF unavailable")
+    data = parse_pdf(source, asset_dir=tmp_path / "assets")
+    validate_raw(data)
+    assert [q["question_number"] for q in data["questions"]] == list(range(1, 51))
+    assert all(
+        q["question_text"] and q["raw"]["question_block"] for q in data["questions"]
+    )
+    assert all(
+        [o["label"] for o in q["options"]] == list("ABCDE") for q in data["questions"]
+    )
+    assert all(not data["questions"][index]["visual_assets"] for index in (0, 1))
+    assert data["questions"][24]["visual_assets"]  # Genuine Q25 graphic survives.
+    assert data["questions"][49]["visual_assets"]  # Genuine Q50 raster survives.
+    rows = collect_issues(data, tmp_path / "2015.raw.json")
+    question_issues = [row for row in rows if row["scope"] == "question"]
+    assert not question_issues
+
+
+def test_2016_q32_two_diagrams_stay_unresolved(tmp_path):
+    source = (
+        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2016.pdf"
+    )
+    if not source.is_file():
+        pytest.skip("Local 2016 PDF unavailable")
+    data = parse_pdf(source, asset_dir=tmp_path / "assets")
+    validate_raw(data)
+    q = data["questions"][31]
+    assert [option["label"] for option in q["options"]] == list("ABCDE")
+    assert q["raw"]["question_block"]
+    merged = [
+        asset
+        for asset in q["visual_assets"]
+        if "visual_multiple_option_images_merged:shared_geometry_requires_review"
+        in asset["warnings"]
+    ]
+    assert merged and all(asset["belongs_to"] == "unknown" for asset in merged)
+    assert any(
+        "visual_multiple_option_images_merged:shared_geometry_requires_review"
+        in row["reasons"]
+        for row in collect_issues(data, tmp_path / "2016.raw.json")
+        if row["question_number"] == 32
+    )
 
 
 def test_layout_reference_or_order_damage_is_reported(tmp_path):

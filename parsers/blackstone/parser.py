@@ -13,7 +13,7 @@ from .image_options import attach_visual_text
 from .visual_structure import add_layout, bounds, rotated_label_bounds
 from .visuals import save_visuals
 
-PARSER_VERSION = "5"
+PARSER_VERSION = "6"
 SOURCE_FIELDS = ("source", "year", "paper", "variant", "section", "document_role")
 NUMBER = re.compile(r"^(\d{1,3})(?:[ \t]+|$)")
 OPTION = re.compile(r"^([A-Z])(?:[ \t]+|$)")
@@ -94,6 +94,43 @@ def _metadata(pages, pdf_metadata, supplied):
     return result, recognized, warnings
 
 
+def _white_page_enclosure_stroke(obj, page):
+    """Ignore white margin frames, not local white marks within a diagram."""
+    if (
+        obj.get("object_type") != "line"
+        or not obj.get("stroke")
+        or obj.get("fill")
+        or obj.get("stroking_color") not in ((1, 1, 1), (0, 0, 0, 0), 1)
+    ):
+        return False
+    x0, x1 = obj["x0"], obj["x1"]
+    top, bottom = obj["top"], obj["bottom"]
+    horizontal_frame = x1 - x0 >= page.width * 0.75
+    vertical_frame = (
+        bottom > top
+        and x1 - x0 <= page.width * 0.01
+        and (x0 <= page.width * 0.1 or x1 >= page.width * 0.9)
+    )
+    if not (horizontal_frame or vertical_frame):
+        return False
+    # White strokes over a dark filled diagram can be meaningful. These paper
+    # margin marks sit on the white page itself, with no visible backdrop.
+    white = ((1, 1, 1), (0, 0, 0, 0), 1)
+    for backdrop in [*page.images, *page.rects, *page.curves]:
+        if backdrop not in page.images and (
+            not backdrop.get("fill") or backdrop.get("non_stroking_color") in white
+        ):
+            continue
+        if (
+            backdrop["x0"] <= x0
+            and x1 <= backdrop["x1"]
+            and backdrop["top"] <= top
+            and bottom <= backdrop["bottom"]
+        ):
+            return False
+    return True
+
+
 def _read_page(page):
     raw_text = page.extract_text(layout=False) or ""
     rotated, oriented_runs = rotated_label_bounds(page.chars, with_runs=True)
@@ -172,14 +209,17 @@ def _read_page(page):
                     "bbox": [obj["x0"], obj["top"], obj["x1"], obj["bottom"]],
                     "kind": kind,
                     "object_type": obj["object_type"],
-                    # A white, fill-only vector has no visible mark to preserve.
-                    # In these PDFs such rectangles are clipping/background masks;
-                    # retaining small ones can incorrectly join neighbouring option
-                    # graphics and absorb the next option label.
+                    # White fills and page-margin enclosure strokes are PDF
+                    # background/layout marks, not question graphics. Keep their
+                    # raw object references but exclude them from crop grouping.
                     "decorative": kind == "vector"
-                    and obj.get("fill")
-                    and not obj.get("stroke")
-                    and obj.get("non_stroking_color") in [(1, 1, 1), (0, 0, 0, 0), 1],
+                    and (
+                        obj.get("fill")
+                        and not obj.get("stroke")
+                        and obj.get("non_stroking_color")
+                        in [(1, 1, 1), (0, 0, 0, 0), 1]
+                        or _white_page_enclosure_stroke(obj, page)
+                    ),
                     "notes": ["reference_to_source_pdf:no_image_file_exported"],
                 }
             )
@@ -423,12 +463,11 @@ def parse_pdf(
                 }
                 for line in lines[begin:end]
             )
-            top = lines[begin]["top"]
-            bottom = lines[end]["top"] if end < len(lines) else page["height"] - 35
             pending["images"].extend(
                 {**image, "belongs_to": "question"}
                 for image in page["images"]
-                if image["bbox"][1] < bottom and image["bbox"][3] > top
+                if image["bbox"][1] < segment["bbox"][3]
+                and image["bbox"][3] >= segment["bbox"][1]
             )
     questions = []
     for pending in dataset["questions"]:

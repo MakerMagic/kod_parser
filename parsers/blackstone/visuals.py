@@ -125,14 +125,14 @@ def _graph_regions(images):
     return sorted(groups, key=lambda g: (g["bbox"][1], g["bbox"][0]))
 
 
-def _is_text_container(group, lines, page):
+def _is_text_container(group, lines, page, page_width):
     """Recognise invisible page frames around prose, not diagrams or tables."""
     objects = group["objects"]
     if any(image["kind"] != "vector" for image in objects):
         return False
     box = group["bbox"]
     width, height = box[2] - box[0], box[3] - box[1]
-    if width <= 0 or height <= 0:
+    if width <= 0 or height <= 0 or width < page_width * 0.7:
         return False
     edge_lines = 0
     for image in objects:
@@ -168,6 +168,45 @@ def _is_text_container(group, lines, page):
         and len(line.get("word_boxes", [])) >= 5
     ]
     return len(prose) >= 2
+
+
+def _closed_box(group):
+    """Find a drawn outer border; internal table cells remain one visual."""
+    if group.get("graph"):
+        return False
+    box = group["bbox"]
+    width, height = box[2] - box[0], box[3] - box[1]
+    if width <= 0 or height <= 0:
+        return False
+    tolerance = max(2, min(width, height) * 0.02)
+    edges = {side: [] for side in ("top", "bottom", "left", "right")}
+    for image in group["objects"]:
+        if image["object_type"] != "line":
+            continue
+        x0, y0, x1, y1 = image["bbox"]
+        if x1 - x0 > tolerance and y1 - y0 <= tolerance:
+            if abs(y0 - box[1]) <= tolerance:
+                edges["top"].append((x0, x1))
+            if abs(y1 - box[3]) <= tolerance:
+                edges["bottom"].append((x0, x1))
+        if y1 - y0 > tolerance and x1 - x0 <= tolerance:
+            if abs(x0 - box[0]) <= tolerance:
+                edges["left"].append((y0, y1))
+            if abs(x1 - box[2]) <= tolerance:
+                edges["right"].append((y0, y1))
+
+    def coverage(intervals, length):
+        covered = 0
+        end = -math.inf
+        for start, stop in sorted(intervals):
+            covered += max(0, stop - max(start, end))
+            end = max(end, stop)
+        return covered >= length * 0.9
+
+    return all(
+        coverage(edges[side], width if side in ("top", "bottom") else height)
+        for side in edges
+    )
 
 
 def _graph_cell(group, anchors, page):
@@ -377,6 +416,51 @@ def _component(box, page_number, anchors):
         ):
             return "option", anchor["label"]
     return "unknown", None
+
+
+def _single_option_contour(group, anchors, page):
+    """Trust one enclosing shape inside one anchor cell, not edge-by-edge votes."""
+    box = group["bbox"]
+    component, label = _component(box, page, anchors)
+    if component != "option" or foreign_option_anchors(box, anchors, page, label):
+        return False
+    owners = [
+        anchor
+        for anchor in anchors
+        if anchor["page"] == page
+        and anchor["label"] == label
+        and anchor.get("label_only")
+        and option_anchor_is_left_of_visual(anchor, box)
+    ]
+    if len(owners) != 1:
+        return False
+    owner = owners[0]["bbox"]
+    if box[1] < owner[1] - (owner[3] - owner[1]) / 2:
+        return False
+    same_column = [
+        a["bbox"]
+        for a in anchors
+        if a["page"] == page
+        and a["label"] != label
+        and abs(a["bbox"][0] - owner[0]) <= (owner[2] - owner[0]) * 2
+    ]
+    if any(owner[3] < other[1] <= box[3] for other in same_column):
+        return False
+    same_row = [
+        a["bbox"]
+        for a in anchors
+        if a["page"] == page
+        and a["label"] != label
+        and abs(a["bbox"][1] - owner[1]) <= owner[3] - owner[1]
+    ]
+    if any(owner[2] < other[0] <= box[2] for other in same_row):
+        return False
+    width, height = box[2] - box[0], box[3] - box[1]
+    return any(
+        image["bbox"][2] - image["bbox"][0] >= width * 0.9
+        and image["bbox"][3] - image["bbox"][1] >= height * 0.9
+        for image in group["objects"]
+    )
 
 
 def _associate_rows(groups, anchors, page, lines, options_start):
@@ -654,7 +738,9 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                             text_containers = [
                                 group
                                 for group in groups
-                                if _is_text_container(group, pending["lines"], number)
+                                if _is_text_container(
+                                    group, pending["lines"], number, width
+                                )
                             ]
                             if text_containers:
                                 for group in text_containers:
@@ -719,7 +805,13 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                     if multiple_choices
                                     else [group]
                                 )
-                                if multiple_choices and len(split) == 1:
+                                if (
+                                    multiple_choices
+                                    and len(split) == 1
+                                    and not _single_option_contour(
+                                        group, anchors, number
+                                    )
+                                ):
                                     split[0]["merge_warning"] = (
                                         "visual_multiple_option_images_merged:shared_geometry_requires_review"
                                     )
@@ -736,6 +828,7 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                 - len(question["raw"]["options_block"]),
                             )
                             for group in groups:
+                                group["closed_box"] = _closed_box(group)
                                 crop_owner = (
                                     group.get("option_override")
                                     or _component(group["bbox"], number, anchors)[1]

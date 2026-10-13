@@ -162,6 +162,36 @@ def focused_crop(
     graphic = group["bbox"]
     graph = bool(group.get("graph"))
     page_lines = [line for line in lines if line["page"] == page]
+    if group.get("closed_box"):
+        # A complete drawn border is a stronger boundary than nearby prose.
+        # Its internal words (including table cells) are already inside it.
+        included = [
+            {
+                "start": line["block_start"],
+                "end": line["block_start"] + len(line["text"]),
+            }
+            for line in page_lines
+            if any(
+                graphic[0] - 1 <= box[0]
+                and box[2] <= graphic[2] + 1
+                and graphic[1] - 1 <= box[1]
+                and box[3] <= graphic[3] + 1
+                for box, _ in words(line)
+            )
+        ]
+        crop = [
+            max(0, graphic[0] - ASSET_PADDING),
+            max(0, graphic[1] - ASSET_PADDING),
+            min(width, graphic[2] + ASSET_PADDING),
+            min(height, graphic[3] + ASSET_PADDING),
+        ]
+        return crop, {
+            "graphic_bbox": graphic[:],
+            "crop_method": "pdf_closed_border",
+            "included_text_spans": included,
+            "excluded_text_spans": [],
+            "warnings": [],
+        }
     prose_lines = _prose_lines(page_lines, graphic)
     others = [g["bbox"] for g in neighbors if g is not group and g["bbox"] != graphic]
     kept, excluded, warnings = [], [], []
