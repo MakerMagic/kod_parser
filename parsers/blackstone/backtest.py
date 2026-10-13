@@ -275,6 +275,17 @@ def collect_issues(dataset, raw_json):
             component = _warning_component(warning)
             if component:
                 findings.append((component, warning))
+        if (
+            "(cid:" in str(question.get("question_text") or "")
+            and question.get("options")
+            and all(
+                "(cid:" in str(option.get("text") or "")
+                for option in question["options"]
+            )
+        ):
+            findings.append(
+                ("question/option text", "cid_question_and_options_unresolved")
+            )
         number = question.get("question_number")
         if type(number) is not int or number < 1:
             findings.append(("question number", "missing_or_invalid_question_number"))
@@ -433,6 +444,7 @@ def _issue_category(reason):
         (
             "font_encoding_artifacts",
             "cid_structural_markers_interpreted",
+            "cid_question_and_options_unresolved",
             "missing_or_empty_question_text",
             "missing_or_empty_raw_question_block",
         )
@@ -541,11 +553,19 @@ def write_report(references, output):
         "Regenerate with `python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --output PATH_TO_THIS_REPORT`.",
         "",
     ]
-    for category, rows in _categorize_rows(issues).items():
+
+    def question_count(rows):
+        return len(
+            {
+                (row["raw_json"], row["question_number"])
+                for row in rows
+                if row["scope"] == "question"
+            }
+        )
+
+    def append_table(rows):
         text.extend(
             [
-                f"## {category}",
-                "",
                 "| Source file | Year/session/test | Question | Pages | Components | Reason | Saved asset paths | Manual review | Raw JSON |",
                 "|---|---|---|---|---|---|---|---|---|",
             ]
@@ -574,6 +594,28 @@ def write_report(references, output):
             ]
             text.append("| " + " | ".join(_cell(value) for value in values) + " |")
         text.append("")
+
+    for category, rows in _categorize_rows(issues).items():
+        text.extend([f"## {category} ({question_count(rows)} questions)", ""])
+        if category == "Question Text Parsing Issues":
+            cid_rows = [
+                row
+                for row in rows
+                if "cid_question_and_options_unresolved" in row["reasons"]
+            ]
+            other_rows = [row for row in rows if row not in cid_rows]
+            if other_rows:
+                append_table(other_rows)
+            text.append(
+                f"### CID text unresolved ({question_count(cid_rows)} questions)"
+            )
+            text.append("")
+            if cid_rows:
+                append_table(cid_rows)
+            else:
+                text.extend(["No affected questions.", ""])
+        else:
+            append_table(rows)
     if not issues:
         text.extend(["", "No unresolved cases detected by these checks."])
     elif text[-1] == "":

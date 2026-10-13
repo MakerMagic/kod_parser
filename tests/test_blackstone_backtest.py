@@ -1,6 +1,7 @@
 """Read-only raw inspection, issue detection, and separate report regressions."""
 
 import json
+import re
 import struct
 import zlib
 from copy import deepcopy
@@ -250,6 +251,9 @@ def test_report_groups_detected_reasons_without_duplicate_category_rows(
 ):
     path, data = raw_json
     question = data["questions"][0]
+    question["question_text"] = "(cid:55)(cid:75)(cid:72)"
+    for option in question["options"]:
+        option["text"] = "(cid:55)(cid:75)(cid:72)"
     question["warnings"].append("font_encoding_artifacts:raw_tokens_preserved")
     question["visual_assets"][0]["warnings"] = [
         "foreign_option_letter_in_crop:A->B",
@@ -258,6 +262,9 @@ def test_report_groups_detected_reasons_without_duplicate_category_rows(
     ]
     second = deepcopy(question)
     second["question_number"] = 13
+    second["question_text"] = "Readable question"
+    for option in second["options"]:
+        option["text"] = "Readable option"
     second["visual_assets"][0]["warnings"] = []
     second["warnings"] = ["incomplete_or_ambiguous_options:A,B"]
     data["questions"].append(second)
@@ -268,24 +275,32 @@ def test_report_groups_detected_reasons_without_duplicate_category_rows(
     text = report.read_text(encoding="utf-8")
     headings = [line for line in text.splitlines() if line.startswith("## ")]
     assert headings == sorted(headings)
-    assert "## Foreign Option Letter in Crop" in headings
-    assert "## Incomplete or Uncertain Visual Crop" in headings
-    assert "## Option Association Issues" in headings
-    assert "## Question Text Parsing Issues" in headings
-    assert "## Missing/Corrupt Asset" not in headings
-    sections = [section for section in text.split("## ")[1:]]
+    assert "## Foreign Option Letter in Crop (1 questions)" in headings
+    assert "## Incomplete or Uncertain Visual Crop (1 questions)" in headings
+    assert "## Option Association Issues (2 questions)" in headings
+    assert "## Question Text Parsing Issues (1 questions)" in headings
+    assert not any("Missing/Corrupt Asset" in heading for heading in headings)
+    assert "### CID text unresolved (1 questions)" in text
+    assert text.count("cid_question_and_options_unresolved") == 1
+    sections = [
+        section
+        for section in re.split(r"(?=^## )", text, flags=re.MULTILINE)
+        if section.startswith("## ")
+    ]
     assert all(
-        sum(line.startswith("|---|") for line in section.splitlines()) == 1
+        sum(line.startswith("|---|") for line in section.splitlines()) >= 1
         for section in sections
     )
     crop_section = next(
-        s for s in sections if s.startswith("Incomplete or Uncertain Visual Crop")
+        s for s in sections if s.startswith("## Incomplete or Uncertain Visual Crop")
     )
     assert crop_section.count(" | 12 | 3–3 | ") == 1
     assert "visual_caption_may_be_incomplete" in crop_section
     assert "visual_crop_may_be_incomplete" in crop_section
     assert "assets/fixture.png" in crop_section
-    association = next(s for s in sections if s.startswith("Option Association Issues"))
+    association = next(
+        s for s in sections if s.startswith("## Option Association Issues")
+    )
     assert association.index(" | 12 | ") < association.index(" | 13 | ")
     assert all(row["manual_review_required"] for row in rows)
     assert path.read_bytes() == before

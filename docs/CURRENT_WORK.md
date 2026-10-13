@@ -6,7 +6,9 @@ Blackstone PDF → raw structured JSON.
 
 ## Current focus
 
-Save and inspect Blackstone raw graphics without changing text extraction or downstream stages.
+- Visual option/image cropping reliability.
+- Table/text-heavy visual parsing.
+- Issue classification and regression testing.
 
 ## Already completed
 
@@ -32,6 +34,7 @@ Save and inspect Blackstone raw graphics without changing text extraction or dow
 - Graph-specific grouping now joins detached chart guides, respects one-letter/one-image option cells, and reconstructs rotated axis labels from PDF glyph order. 2021 Q26/Q37/Q38 were reparsed; Q32 option PNGs and 2017 Q13's rotated-text visual remain bit-identical, 2022 Q8/Q20/Q50 controls pass, and 2020 Q25 is an additional axis-label control. Current validation: 73 tests plus lint/format checks pass; the issues report was refreshed.
 - Image-choice crops now exclude neighboring structural option letters; a crop that cannot be separated remains saved but unassigned and appears in QA. 2011 Q50 A no longer contains B. The issues report is grouped by nonempty categories with deterministic row order. All 16 local PDFs were reparsed and the report refreshed; vertical/grid/graph controls remain associated. Current validation: 76 tests, lint, and format checks pass.
 - Image-answer association now accepts only a left-side option anchor. Invisible white vector masks and text-enclosure page frames no longer become visual assets; 2011 Q7 and text-only 2012 Q3 were regenerated and the aggregate issues report refreshed. Current validation: 78 tests plus lint/format checks pass.
+- Verified the shifted CID font encoding in the 2012–2014 Oxford papers and decoded structured question/option text while preserving original CID page/question spans. Reparsed those three papers; the CID question-and-all-options issue count fell from 148 to 0. The generated issues report now shows per-category counts and a CID subcategory; 52 parser/backtest/visual tests pass.
 
 ## Do not work on yet
 
@@ -43,4 +46,9 @@ Save and inspect Blackstone raw graphics without changing text extraction or dow
 
 ## Next task
 
-Review flagged captions and shared/ambiguous layouts (including 2019 Q32), letter-puzzle option markers, and encoded fonts using `docs/RAW_PARSER_BACKTEST.md`; compare structured HTML with original layout previews before later stages. Existing inputs remain in `acquisition/local/`.
+-Review remaining flagged captions and shared/ambiguous layouts (including 2019 Q32), letter-puzzle option markers, and the isolated 2021 CID artifact using `docs/RAW_PARSER_BACKTEST.md`; compare structured HTML with original layout previews before later stages. Existing inputs remain in `acquisition/local/`.
+- Investigate visual option parsing issues in Blackstone/TSA outputs.
+- Fix false uncertainty for correctly cropped image options without making confidence logic overconfident.
+- Improve cropping of text-heavy visuals/tables, especially 2013–2014 cases, while preserving correct existing crops.
+- Investigate the 2015 issue flood and identify whether there is a shared systemic root cause.
+- Add regression tests for fixed cases and cases that must remain flagged.

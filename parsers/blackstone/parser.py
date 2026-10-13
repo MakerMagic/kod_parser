@@ -8,11 +8,12 @@ from pathlib import Path
 
 import pdfplumber
 
+from .cid_text import decode_cids, supports_shifted_cids
 from .image_options import attach_visual_text
 from .visual_structure import add_layout, bounds, rotated_label_bounds
 from .visuals import save_visuals
 
-PARSER_VERSION = "4"
+PARSER_VERSION = "5"
 SOURCE_FIELDS = ("source", "year", "paper", "variant", "section", "document_role")
 NUMBER = re.compile(r"^(\d{1,3})(?:[ \t]+|$)")
 OPTION = re.compile(r"^([A-Z])(?:[ \t]+|$)")
@@ -327,10 +328,13 @@ def parse_pdf(
     digest = sha256(path.read_bytes()).hexdigest()
     pages = []
     all_lines = []
+    cid_pages = set()
     with pdfplumber.open(path) as document:
         pdf_metadata = dict(document.metadata or {})
         for page in document.pages:
             record, lines = _read_page(page)
+            if supports_shifted_cids(record["raw_text"], len(page.chars)):
+                cid_pages.add(record["page_number"])
             pages.append(record)
             all_lines.append(_body_lines(record, lines))
             page.close()
@@ -495,6 +499,30 @@ def parse_pdf(
     for question, pending in zip(questions, pending_questions):
         attach_visual_text(question, pending["lines"])
         add_layout(question, pending)
+        if any(segment["page"] in cid_pages for segment in pending["segments"]):
+            question["question_text"] = decode_cids(question["question_text"])
+            for option in question["options"]:
+                option["text"] = decode_cids(option["text"])
+            for subpoint in question["subpoints"]:
+                subpoint["text"] = decode_cids(subpoint["text"])
+            question["raw"]["extraction_notes"].append(
+                "Structured text decoded from a verified shifted CID font; "
+                "original CID tokens remain in raw.question_block and pages[].raw_text."
+            )
+            if not (
+                "(cid:" in question["question_text"]
+                or any("(cid:" in option["text"] for option in question["options"])
+            ):
+                question["warnings"] = [
+                    warning
+                    for warning in question["warnings"]
+                    if not warning.startswith(
+                        (
+                            "font_encoding_artifacts:",
+                            "cid_structural_markers_interpreted:",
+                        )
+                    )
+                ]
     numbers = [question["question_number"] for question in questions]
     if numbers != list(range(1, len(numbers) + 1)):
         dataset["warnings"].append("nonsequential_or_duplicate_question_numbers")

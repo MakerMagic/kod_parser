@@ -11,6 +11,7 @@ import pytest
 
 from parsers.blackstone import parse_pdf, validate_raw
 from parsers.blackstone.__main__ import main
+from parsers.blackstone.cid_text import decode_cids, supports_shifted_cids
 
 ROOT = Path(__file__).resolve().parents[1]
 LOCAL = ROOT / "acquisition" / "local"
@@ -328,14 +329,60 @@ def test_real_local_pdf():
     assert any(q["images"] for q in data["questions"])
 
 
-@pytest.mark.skipif(
-    not (LOCAL / "TSA Oxford 2013.pdf").exists(), reason="Local encoded PDF unavailable"
+def test_shifted_cid_decoder_is_gated_and_preserves_unknown_glyphs():
+    sample = "(cid:55)(cid:75)(cid:72)(cid:3)(cid:133)(cid:20)(cid:19)(cid:19)"
+    assert supports_shifted_cids(sample * 4 + "(cid:87)(cid:75)(cid:72)", 43)
+    assert not supports_shifted_cids("(cid:57)" * 31, 900)
+    assert decode_cids(sample) == "The £100"
+    assert decode_cids("(cid:131)(cid:177)(cid:182)(cid:999)") == "°–’(cid:999)"
+
+
+@pytest.mark.parametrize(
+    ("year", "expected"),
+    [
+        (
+            2012,
+            {
+                3: ("When the government", "Farmers' profits"),
+                4: ("One in ten adults", "Good piercers"),
+                5: ("In the UK 45%", "Most women"),
+            },
+        ),
+        (
+            2013,
+            {1: ("This week a controversial chef", "There is no logical difference")},
+        ),
+        (2014, {1: ("In the past 15 years", "If people do not gain")}),
+    ],
 )
-def test_real_encoded_font_pdf_retains_raw_tokens():
-    data = parse_pdf(LOCAL / "TSA Oxford 2013.pdf")
+def test_encoded_font_pdf_recovers_readable_fields_and_retains_raw_tokens(
+    year, expected, tmp_path
+):
+    source = LOCAL / f"TSA Oxford {year}.pdf"
+    if not source.is_file():
+        pytest.skip("Local encoded PDF unavailable")
+    data = parse_pdf(source, asset_dir=tmp_path / "assets")
+    validate_raw(data)
     assert [q["question_number"] for q in data["questions"]] == list(range(1, 51))
-    first = data["questions"][0]
-    assert "(cid:" in first["raw"]["question_block"]
-    assert "(cid:" in first["question_text"]
-    assert [o["label"] for o in first["options"]] == list("ABCDE")
-    assert "cid_structural_markers_interpreted:requires_review" in first["warnings"]
+    for number, (question_start, option_start) in expected.items():
+        question = data["questions"][number - 1]
+        assert question["question_text"].startswith(question_start)
+        assert question["options"][0]["text"].startswith(option_start)
+        assert [option["label"] for option in question["options"]] == list("ABCDE")
+        assert "(cid:" in question["raw"]["question_block"]
+        assert "(cid:" not in question["question_text"]
+        assert all("(cid:" not in option["text"] for option in question["options"])
+        assert any(
+            "original CID tokens remain" in note
+            for note in question["raw"]["extraction_notes"]
+        )
+        assert not any(
+            "font_encoding_artifacts" in warning for warning in question["warnings"]
+        )
+    if year == 2013:
+        from collections import Counter
+
+        page_density = Counter(
+            q["page_reference"]["start_page"] for q in data["questions"]
+        )
+        assert {1, 2, 3} <= set(page_density.values())
