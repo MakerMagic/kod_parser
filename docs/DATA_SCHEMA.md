@@ -324,6 +324,8 @@ Conceptually:
   "warnings": []
 }
 
+```
+
 The exact schema may evolve, but clean data must remain traceable to raw data.
 Raw vs Clean
 Raw data preserves:
@@ -358,3 +360,33 @@ Do not:
 - invent missing metadata;
 - silently drop uncertain fields;
 - add answer, explanation, or category fields during question-only raw parsing unless the source document contains them.
+
+## Blackstone clean schema v1
+
+`processors/normalization/blackstone/` writes `*.clean.json` to
+`data/clean/blackstone/`. It does not modify the raw schema or raw files.
+
+Dataset fields: `stage="clean"`, `schema_version="1"`, `cleaning` (processor,
+version and declared rules), `raw_reference` (absolute JSON path/SHA-256),
+`document` (unchanged source/input/acquisition/extraction metadata), `questions`.
+
+Each clean question retains its original identity/source key/page mapping and:
+
+- `question_text`: conservative normalization of the whole structured raw text;
+- `main_body`: ordered text/visual blocks with raw block IDs/spans/page/bounds;
+- `main_question`: one evidenced prompt, or null with a cleaning issue;
+- `options` / `subpoints`: original order/labels/associations with normalized text;
+- `visual_assets`, `visual_previews`, `images`: original visual references;
+- `raw_reference`: raw path/hash, `/questions/N` pointer, original question ID;
+- `raw_record`: complete unchanged raw question snapshot, including unknown fields;
+- `raw_warnings`, `warnings`, `raw_document_warnings`: unchanged upstream warnings;
+- `availability`: separate raw/clean/metadata and option missing/null/empty states;
+- `content_accounting`: every nonempty structured text line maps to body, prompt,
+  or a visual, with original structured-field offsets and available raw evidence;
+- `transformations`: changed field names and before/after hashes;
+- `cleaning_issues`: only clean-stage uncertainty or detected reference conflicts.
+
+Asset paths resolve relative to `raw_reference.path`'s parent, never the clean
+JSON folder. A missing reference remains an issue, not an invented asset.
+Raw-provided answers/explanations remain preserved; none are generated/matched.
+Inspecting/reporting checks live raw hashes and saved PNGs without writing JSON.

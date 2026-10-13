@@ -90,8 +90,10 @@ Do not scan unrelated folders unless the task requires it.
 Current milestone:
 
 ```text
-Blackstone PDF → raw structured JSON
+Blackstone raw structured JSON → Blackstone clean structured JSON
 ```
+
+Cleaning lives in `processors/normalization/blackstone/` and writes only to `data/clean/blackstone/`. Keep raw JSON immutable; unresolved raw issues remain in `docs/RAW_PARSING_ISSUES.md`. Do not reopen PDFs or redesign the parser during cleaning work.
 
 Do not implement answer matching, categorization, final dataset generation, or new acquisition mechanisms unless explicitly requested.
 

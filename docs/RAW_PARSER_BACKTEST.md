@@ -21,7 +21,7 @@ no Bash line-continuation syntax is required.
 ## Parse and report
 
 ```powershell
-& $parserPython -m parsers.blackstone 'acquisition\local' --output-dir 'data\raw\blackstone' --overwrite --issues-report 'docs\PARSING_ISSUES.md'
+& $parserPython -m parsers.blackstone 'acquisition\local' --output-dir 'data\raw\blackstone' --overwrite --issues-report 'docs\RAW_PARSING_ISSUES.md'
 ```
 
 This reruns extraction from the local acquisition directory, replacing the
@@ -29,11 +29,11 @@ parser's raw JSON/assets explicitly. It does not download files or delete old
 unreferenced PNGs. To start an isolated run instead, choose a new output directory:
 
 ```powershell
-$freshOutput = 'inspections\fresh-raw-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff')
+$freshOutput = 'inspections_raw\fresh-raw-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff')
 & $parserPython -m parsers.blackstone 'acquisition\local' --output-dir $freshOutput
 ```
 
-Parsing saves raw JSON, visual assets, and a separate Markdown issues report. Without `--issues-report`, the report is `PARSING_ISSUES.md` inside the selected raw output directory. It covers all `*.raw.json` files in that directory, including previous outputs. Use a separate output directory to isolate a run. Raw page/question/options text remains unchanged; structured image-option text can be corrected using geometric evidence. Rerun with `--overwrite` to upgrade older outputs.
+Parsing saves raw JSON, visual assets, and a separate Markdown issues report. Without `--issues-report`, the report is `RAW_PARSING_ISSUES.md` inside the selected raw output directory. It covers all `*.raw.json` files in that directory, including previous outputs. Use a separate output directory to isolate a run. Raw page/question/options text remains unchanged; structured image-option text can be corrected using geometric evidence. Rerun with `--overwrite` to upgrade older outputs.
 
 ## Inspect a stored question
 
@@ -50,7 +50,7 @@ The default text view includes document metadata, every stored question field, a
 For an exact JSON representation of the question plus its document context:
 
 ```powershell
-$inspectionJson = 'inspections\question-12-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.json'
+$inspectionJson = 'inspections_raw\question-12-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.json'
 & $parserPython -m parsers.blackstone.backtest inspect --raw-json 'data\raw\blackstone' --source 'TSA Oxford 2020.pdf' --year 2020 --question 12 --format json --output $inspectionJson
 ```
 
@@ -60,7 +60,7 @@ Exports require a new file. Existing files, including raw JSON, are never overwr
 
 ```powershell
 & $parserPython -m parsers.blackstone.backtest inspect --raw-json 'data\raw\blackstone' --source 'TSA_2022.pdf' --year 2022 --question 50
-$inspectionHtml = 'inspections\TSA_2017_q20-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.html'
+$inspectionHtml = 'inspections_raw\TSA_2017_q20-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.html'
 & $parserPython -m parsers.blackstone.backtest inspect --raw-json 'data\raw\blackstone' --source 'TSA Oxford 2017.pdf' --year 2017 --question 20 --format html --output $inspectionHtml
 Invoke-Item -LiteralPath $inspectionHtml
 ```
@@ -147,7 +147,7 @@ focused PNG must not include B.
 Manual regression examples: 2010 questions 7 (digital clock) and 12 (sale table) must exclude surrounding prose in individual crops while keeping it in layout/raw text. 2022 question 50 must retain all town labels and five sign tables; 2022 question 38 must retain chart legends. Inspect these with the same command, changing source/year/question and using a new HTML output filename.
 
 For the latest regressions, export 2022 questions 8 and 20 to new HTML files
-(for example `inspections/TSA_2022_q08_cropfix.html`). Q8 must show a separate
+(for example `inspections_raw/TSA_2022_q08_cropfix.html`). Q8 must show a separate
 table and shared key, then five isolated A–E charts with complete axes/years;
 no chart may contain a piece of its neighbor. Q20's scatter plot must exclude
 the paragraph ending above it. Compare the expanded original layout with the
@@ -163,7 +163,7 @@ Narrow external reference: [render_q38.py](https://github.com/LegionHH/parsing/b
 ## Refresh the issues report without reparsing
 
 ```powershell
-& $parserPython -m parsers.blackstone.backtest report --raw-json 'data\raw\blackstone' --output 'docs\PARSING_ISSUES.md'
+& $parserPython -m parsers.blackstone.backtest report --raw-json 'data\raw\blackstone' --output 'docs\RAW_PARSING_ISSUES.md'
 ```
 
 Reports list source file, available year/session/paper/variant/section, question number, pages, affected components, reasons, saved asset paths, manual-review status, and raw JSON location. Document-level issues use an explicit document row rather than inventing a question number. Shared source/year issues are reported once per document.

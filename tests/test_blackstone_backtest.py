@@ -442,7 +442,7 @@ def test_parser_cli_emits_a_separate_issues_report(tmp_path, monkeypatch):
     output = tmp_path / "raw"
     assert parser_cli.main([str(source), "--output-dir", str(output)]) == 1
     assert len(list(output.glob("*.raw.json"))) == 1
-    assert "no_questions_detected" in (output / "PARSING_ISSUES.md").read_text(
+    assert "no_questions_detected" in (output / "RAW_PARSING_ISSUES.md").read_text(
         encoding="utf-8"
     )
 

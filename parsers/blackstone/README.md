@@ -28,15 +28,15 @@ Inspect the exact stored record, without rerunning the parser:
 
 ```powershell
 python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA Oxford 2020.pdf" --year 2020 --question 12
-python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --output docs/PARSING_ISSUES.md
+python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --output docs/RAW_PARSING_ISSUES.md
 python -m pytest -q tests/test_blackstone_backtest.py tests/test_blackstone_raw.py
 ```
 
-Every parser CLI run that saves raw output also generates a separate `OUTPUT_DIR/PARSING_ISSUES.md`. Use `--issues-report docs/PARSING_ISSUES.md` to choose the documentation location instead. Inspection supports stored paths/filenames/URLs, optional metadata selectors, text/JSON/HTML export, and complete stored page context. See [the backtest guide](../../docs/RAW_PARSER_BACKTEST.md) for commands, asset naming, and limitations. Reports include missing/failed visual assets; graphics presence alone is informational. Inspection does not modify raw JSON.
+Every parser CLI run that saves raw output also generates a separate `OUTPUT_DIR/RAW_PARSING_ISSUES.md`. Use `--issues-report docs/RAW_PARSING_ISSUES.md` to choose the documentation location instead. Inspection supports stored paths/filenames/URLs, optional metadata selectors, text/JSON/HTML export, and complete stored page context. See [the backtest guide](../../docs/RAW_PARSER_BACKTEST.md) for commands, asset naming, and limitations. Reports include missing/failed visual assets; graphics presence alone is informational. Inspection does not modify raw JSON.
 
 ```powershell
-python -m parsers.blackstone acquisition/local --overwrite --issues-report docs/PARSING_ISSUES.md
-python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA_2022.pdf" --year 2022 --question 50 --format html --output inspections/TSA_2022_q50.html
+python -m parsers.blackstone acquisition/local --overwrite --issues-report docs/RAW_PARSING_ISSUES.md
+python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA_2022.pdf" --year 2022 --question 50 --format html --output inspections_raw/TSA_2022_q50.html
 python -m pytest -q tests/test_blackstone_raw.py tests/test_blackstone_backtest.py tests/test_blackstone_visuals.py
 ```
 

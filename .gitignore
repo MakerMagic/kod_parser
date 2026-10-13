@@ -11,4 +11,5 @@ data/final/
 
 
 .vscode/
-inspections/
+inspections_raw/
+inspections_clean/

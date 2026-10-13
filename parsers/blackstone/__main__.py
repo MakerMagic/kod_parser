@@ -24,7 +24,7 @@ def main(argv=None):
     parser.add_argument(
         "--issues-report",
         type=Path,
-        help="Separate Markdown issues report (default: OUTPUT_DIR/PARSING_ISSUES.md)",
+        help="Separate Markdown issues report (default: OUTPUT_DIR/RAW_PARSING_ISSUES.md)",
     )
     parser.add_argument(
         "--overwrite",
@@ -99,7 +99,7 @@ def main(argv=None):
         print("No raw outputs written", file=sys.stderr)
         failed = True
     else:
-        report = args.issues_report or args.output_dir / "PARSING_ISSUES.md"
+        report = args.issues_report or args.output_dir / "RAW_PARSING_ISSUES.md"
         try:
             issues = write_report([args.output_dir], report)
             print(f"Parsing issues: {len(issues)} review rows -> {report}")
