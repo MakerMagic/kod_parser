@@ -328,10 +328,12 @@ def test_saved_correct_graph_table_and_diagram_options_keep_all_answer_pixels(
     assert [o["label"] for o in q["options"]] == [
         o["label"] for o in data["questions"][number - 1]["options"]
     ]
+    assert [o["label"] for o in q["options"]] == list("ABCDE")
+    assert all(o["content_type"] == "image" and not o["text"] for o in q["options"])
     if year == 2013:
-        assert "incomplete_or_ambiguous_options:A,C,E" in q["raw_warnings"]
-    else:
-        assert [o["label"] for o in q["options"]] == list("ABCDE")
+        # Raw geometry now resolves the CID label row; cleaning must preserve
+        # that upstream result rather than expect the old A/C/E misassociation.
+        assert "incomplete_or_ambiguous_options:A,C,E" not in q["raw_warnings"]
     assert not any(
         i["code"] == "clean_option_crop_unresolved" for i in q["cleaning_issues"]
     )

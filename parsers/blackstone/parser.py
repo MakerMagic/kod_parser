@@ -14,7 +14,7 @@ from .pdf_graphics import is_white, load_color_layout
 from .visual_structure import add_layout, bounds, rotated_label_bounds
 from .visuals import save_visuals
 
-PARSER_VERSION = "8"
+PARSER_VERSION = "10"
 SOURCE_FIELDS = ("source", "year", "paper", "variant", "section", "document_role")
 NUMBER = re.compile(r"^(\d{1,3})(?:[ \t]+|$)")
 OPTION = re.compile(r"^([A-Z])(?:[ \t]+|$)")
@@ -157,7 +157,14 @@ def _read_page(page):
         line["word_boxes"] = []
         line["word_texts"] = []
         word = []
+        # Some PDFs paint the same glyph repeatedly at identical coordinates.
+        # extract_text_lines already emits one logical character, but its chars
+        # retain every paint operation. Deduplicate only the spatial view.
+        glyphs = {}
         for char in extracted["chars"]:
+            key = (char["text"], char["x0"], char["top"], char["x1"], char["bottom"])
+            glyphs.setdefault(key, char)
+        for char in glyphs.values():
             separator = char["text"].isspace() or char["text"] == "(cid:3)"
             if word and (separator or char["x0"] > word[-1]["x1"] + 3):
                 line["word_boxes"].append(word_bounds(word))
@@ -175,7 +182,7 @@ def _read_page(page):
                 else chr(int(re.search(r"\d+", char["text"])[0]) + 29),
                 "bbox": [char["x0"], char["top"], char["x1"], char["bottom"]],
             }
-            for char in extracted["chars"]
+            for char in glyphs.values()
             if len(char["text"]) == 1
             and "A" <= char["text"] <= "Z"
             or re.fullmatch(r"\(cid:(?:36|37|38|39|40)\)", char["text"])
@@ -354,6 +361,44 @@ def _split_fields(block, lines):
     return question_text, block[options_start:], options, subpoints, warnings
 
 
+def _project_body_exclusions(question, pending, excluded, graph_spans):
+    """Keep raw substrings intact but exclude verified page admin from the body."""
+    block = question["raw"]["question_block"]
+    original = question["raw"].get("text_question_candidate", question["question_text"])
+    end = len(block) - len(question["raw"]["options_block"])
+    start = end - len(original)
+    if start < 0 or block[start:end] != original:
+        return
+    omitted, offset = [], 0
+    for segment in pending["segments"]:
+        for line in excluded.get(segment["page"], []):
+            begin = offset + line["start"] - segment["start"]
+            finish = begin + len(line["text"])
+            if start <= begin < finish <= end:
+                if finish < end and block[finish] == "\n":
+                    finish += 1
+                omitted.append((begin - start, finish - start))
+        offset += len(segment["text"]) + 1
+    if not omitted:
+        return
+    # Graph label exclusions have already been established by full containment.
+    # Reapply their exact spans, never search/replace a repeated digit or word.
+    intervals = sorted([*omitted, *(graph_spans or [])])
+    pieces, cursor = [], 0
+    for begin, finish in intervals:
+        if begin > cursor:
+            pieces.append(original[cursor:begin])
+        cursor = max(cursor, finish)
+    pieces.append(original[cursor:])
+    question["raw"].setdefault("text_question_candidate", original)
+    question["raw"]["extraction_notes"].append(
+        "Structured body excludes verified page-number/footer administration by "
+        "PDF geometry and exact spans; original text remains in raw.question_block, "
+        "raw.text_question_candidate and pages[].raw_text."
+    )
+    question["question_text"] = "".join(pieces)
+
+
 def parse_pdf(
     input_path,
     *,
@@ -369,6 +414,7 @@ def parse_pdf(
     digest = sha256(path.read_bytes()).hexdigest()
     pages = []
     all_lines = []
+    excluded = {}
     cid_pages = set()
     with pdfplumber.open(path) as document:
         pdf_metadata = dict(document.metadata or {})
@@ -376,8 +422,25 @@ def parse_pdf(
             record, lines = _read_page(page)
             if supports_shifted_cids(record["raw_text"], len(page.chars)):
                 cid_pages.add(record["page_number"])
+                # Interpret layout with the same verified font map as structured
+                # fields. Never change raw line text, offsets or PDF geometry.
+                for line in lines:
+                    line["readable_text"] = decode_cids(line["text"])
+                    line["word_texts"] = [decode_cids(t) for t in line["word_texts"]]
             pages.append(record)
-            all_lines.append(_body_lines(record, lines))
+            body_lines = _body_lines(record, lines)
+            all_lines.append(body_lines)
+            excluded[record["page_number"]] = [
+                line
+                for line in lines
+                if line not in body_lines
+                and (
+                    ADMIN.match(line["text"])
+                    or line["text"] == str(record["page_number"])
+                    and line["top"] > record["height"] * 0.85
+                    and line["x0"] > record["width"] * 0.4
+                )
+            ]
             page.close()
     source, recognized, warnings = _metadata(pages, pdf_metadata, metadata or {})
     dataset = {
@@ -537,8 +600,9 @@ def parse_pdf(
         overwrite=overwrite_assets,
     )
     for question, pending in zip(questions, pending_questions):
-        attach_visual_text(question, pending["lines"])
+        graph_spans = attach_visual_text(question, pending["lines"])
         add_layout(question, pending)
+        _project_body_exclusions(question, pending, excluded, graph_spans)
         if any(segment["page"] in cid_pages for segment in pending["segments"]):
             question["question_text"] = decode_cids(question["question_text"])
             for option in question["options"]:

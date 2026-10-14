@@ -3,6 +3,13 @@
 Run from the repository root. Cleaning reads stored raw JSON/PNG assets only;
 it never opens PDFs, acquires files, matches answers, or categorizes questions.
 
+Raw CID visual-option recovery now supplies distinct A–E image references for
+the affected 2012–2014 layouts. Regenerate clean output with the command below
+after reparsing; cleaning does not guess missing raw associations. For 2012 Q8,
+the answer mapping and focused cylinder crop are corrected, but
+`layout_alignment_unresolved` still requires review of decoded body text against
+CID-backed raw layout. Do not interpret correct answers as a resolved body issue.
+
 ## PowerShell commands
 
 Use a working Python with the existing dependencies. For this checkout:
@@ -41,7 +48,7 @@ Selectors include `--session`, `--paper`, `--variant`, `--section`, and
 
 ```powershell
 & $parserPython -m processors.normalization.blackstone.backtest report --clean-json 'data\clean\blackstone' --output 'docs\CLEANING_ISSUES.md'
-& $parserPython -m pytest -q tests/test_blackstone_cleaning.py tests/test_blackstone_option_asset_crops.py tests/test_blackstone_backtest.py
+& $parserPython -m pytest -q tests/test_blackstone_cleaning.py tests/test_blackstone_clean_structure.py tests/test_blackstone_option_asset_crops.py tests/test_blackstone_backtest.py
 ```
 
 Raw workflows retain their existing module/commands. The raw report is now
@@ -78,9 +85,9 @@ The HTML header shows question number/year, followed by:
 1. **Main Body**: one section for all context text, tables, diagrams, subpoints,
    and intermediate support. Text/visual order follows stored layout when it
    can be aligned to the readable structured text.
-2. **Main Question**: one complete explicit prompt, separated only when there
-   is a single supported candidate. Otherwise null, with all text retained in
-   Main Body and a cleaning issue.
+2. **Main Question**: one complete supported request, including its conditional
+   preface and attached parenthetical answer instructions. Otherwise null, with
+   all text retained in Main Body and a cleaning issue.
 3. **Main Answers**: original option order, cleaned text, and image references
    (including mixed text/images). Image-only answers use saved derived clean PNGs
    without a repeated option letter, when safe removal was verified.
@@ -97,7 +104,60 @@ ordering issue rather than guessing insertion points. Supporting context that
 was after the prompt remains ordered within Main Body; raw block coordinates
 and the original screenshot preserve its exact source position.
 
+### Prompt tails and structured blocks
+
+Existing unambiguous prompts retain their selection. The sentence-aware fallback
+requires stored, distinct answer labels, question grammar, a completed tail and
+no competing request. It handles prepositional/conditional openings, prompts
+embedded after a setup sentence, and balanced parenthetical notes after `?`.
+Period-ended requests additionally require imperative/interrogative grammar.
+Data introductions, repeated table rows, quoted/reported questions, unbalanced
+notes and incomplete answer-completion stems are not promoted just for ending
+with punctuation. The raw text and uncertainty stay available.
+
+Body/question text gains a blank line before an introduced block only when
+at least two consecutive rows have compatible list, price, numeric or data
+structure. Short table headings may precede those rows; ordinary intervening
+prose blocks the rule. Recognized rows retain their line breaks. A colon alone
+does not trigger spacing; existing blank lines are retained, and this rule does
+not change answer-option or subpoint formatting.
+
+The original Body / Prompt issue group supplied 65 resolved analogues out of
+75 cases: trailing notes (2011 Q43/Q44, 2012 Q19/Q26, 2017 Q14/Q44), embedded
+requests (2008 Q34, 2009 Q32, 2016 Q31/Q38), and qualified/conditional openings.
+Detached notes in 2013 Q12 and 2016 Q50 also now stay with the prompt. Formatting
+controls include 2011 Q37, 2010 Q8/Q31, 2020 Q7 and specimen Q19; compare the
+stored Original Screenshot. Ten incomplete/corrupt/implicit stems remain flagged.
+
+```powershell
+$cleanHtml = 'inspections_clean\TSA_2011_q43-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.html'
+& $parserPython -m processors.normalization.blackstone.backtest inspect --clean-json 'data\clean\blackstone' --source 'TSA Oxford 2011.pdf' --year 2011 --question 43 --format html --output $cleanHtml
+Invoke-Item -LiteralPath $cleanHtml
+```
+
+Use `--question 37` and a new output filename for the price-block comparison.
+
 ## Traceability and limitations
+
+Raw→clean alignment uses the stored body/visual associations, not the legacy
+graphics detection note. A standalone initial question-number block is metadata;
+only that exact anchor is skipped during alignment. An equal number elsewhere
+in the body is retained. Older raw JSON containing interleaved page footers must
+be reparsed first; cleaning does not silently skip unmatched structured text.
+Q25/Q36 from 2020 retain body images and text choices, rather than becoming
+image-answer questions. Test these alongside 2017 Q13, 2019 Q14/Q42 and 2021 Q38.
+CID mapping/count mismatches and genuinely unknown visuals remain separate issues.
+
+```powershell
+& $parserPython -m parsers.blackstone 'acquisition\local\TSA Oxford 2020.pdf' --output-dir 'data\raw\blackstone' --overwrite --issues-report 'docs\RAW_PARSING_ISSUES.md'
+& $parserPython -m processors.normalization.blackstone --raw-json 'data\raw\blackstone' --output-dir 'data\clean\blackstone' --issues-report 'docs\CLEANING_ISSUES.md' --overwrite
+$cleanHtml = 'inspections_clean\TSA_2020_q25-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.html'
+& $parserPython -m processors.normalization.blackstone.backtest inspect --clean-json 'data\clean\blackstone' --source 'TSA Oxford 2020.pdf' --year 2020 --question 25 --format html --output $cleanHtml
+Invoke-Item -LiteralPath $cleanHtml
+```
+
+Use question 36 with a new output filename for the patio comparison. Regression
+coverage for these cases lives in `tests/test_blackstone_body_alignment.py`.
 
 `*.clean.json` is separate, deterministic schema v1. Each record stores the
 unchanged question ID/source key/page mapping, complete `raw_record` snapshot,
@@ -107,6 +167,10 @@ coordinates. Assets retain their original paths, IDs, order, associations,
 coordinates, and warnings; paths resolve relative to the **raw JSON**, not clean
 JSON. Keep the original raw JSON/assets available; HTML embeds the images it
 successfully reads and remains standalone after export.
+An embedded prompt may partition one original line into two accounting entries
+with the same line index and disjoint, contiguous structured spans. Each keeps
+the original source-block evidence; every supplied line remains fully accounted
+for, without deleting its contextual prefix.
 
 ### Derived answer crops
 
@@ -138,7 +202,7 @@ unique records. It does not copy raw warnings or claim they are solved. Missing
 assets and changed/missing raw references are checked again during inspection
 and report regeneration. Neither operation modifies raw or clean JSON.
 
-Review ambiguous/multiple/imperative or embedded prompts, unaligned layouts,
+Review unresolved implicit/multiple/corrupt prompts, unaligned layouts,
 displaced punctuation (2020 Q12), and the remaining CID token (2021 Q7).
 Unknown/shared raw visuals remain unresolved; cleaning cannot restore missing
 content, fix crop boundaries, repair equations, or rerender missing screenshots.

@@ -18,6 +18,9 @@ RULES = [
     "conservative_prose_wraps",
     "explicit_single_prompt",
     "raw_layout_alignment",
+    "sentence_aware_prompt_tail",
+    "introduced_structured_blocks",
+    "wrapped_structured_introductions",
 ]
 METADATA = ("source", "year", "session", "paper", "variant", "section", "document_role")
 EXPECTED = (
@@ -90,18 +93,36 @@ def clean_dataset(dataset, raw_json, *, raw_sha256=None):
             if entry not in issues:
                 issues.append(entry)
 
-        def text(value, field, *, join_lines=True, changes=changes, issue=issue):
+        def text(
+            value,
+            field,
+            *,
+            join_lines=True,
+            separate_blocks=False,
+            changes=changes,
+            issue=issue,
+        ):
             reason = artifact_reason(value)
             if reason:
                 issue("encoding_artifact_unresolved", field, reason)
-            cleaned = normalize_text(value, join_lines=join_lines)
+            cleaned = normalize_text(
+                value, join_lines=join_lines, separate_blocks=separate_blocks
+            )
             if cleaned != value:
                 changes.append(
                     {
                         "field": field,
                         "before_sha256": _hash(value),
                         "after_sha256": _hash(cleaned),
-                        "rules": RULES[:4],
+                        "rules": RULES[:4]
+                        + (
+                            [
+                                "introduced_structured_blocks",
+                                "wrapped_structured_introductions",
+                            ]
+                            if separate_blocks
+                            else []
+                        ),
                     }
                 )
             return cleaned
@@ -153,7 +174,9 @@ def clean_dataset(dataset, raw_json, *, raw_sha256=None):
                 "raw": availability(raw, EXPECTED),
                 "metadata": availability(document, METADATA),
             },
-            "question_text": text(raw.get("question_text"), "question_text"),
+            "question_text": text(
+                raw.get("question_text"), "question_text", separate_blocks=True
+            ),
             "options": deepcopy(safe["options"])
             if isinstance(raw.get("options"), list)
             else None,
@@ -298,7 +321,13 @@ def validate_clean(dataset):
                 raise ValueError(f"Cleaning changed identity/page mapping: {field}")
         if question["raw_warnings"] != raw.get("warnings"):
             raise ValueError("Cleaning dropped raw warnings")
-        if question["question_text"] != normalize_text(raw.get("question_text")):
+        if question["question_text"] != normalize_text(
+            raw.get("question_text"),
+            separate_blocks="introduced_structured_blocks"
+            in dataset["cleaning"]["rules"],
+            wrapped_lead_ins="wrapped_structured_introductions"
+            in dataset["cleaning"]["rules"],
+        ):
             raise ValueError("Question text is not the declared conservative transform")
         pointers.append(reference["json_pointer"])
     if len(pointers) != len(set(pointers)):

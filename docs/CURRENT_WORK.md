@@ -42,12 +42,20 @@ Implement deterministic normalization and cleaning of Blackstone raw question da
 
 - Raw graph-cell top-guide handling now recognizes 2017 Q20's five A–E images without weakening foreign-letter boundaries; only that paper was reparsed. Cleaning saves separate geometry-verified answer crops and uses them in HTML: 246 derivatives audited (83 glyph removals, 163 unchanged copies), with every other answer pixel preserved. All 4,055 raw PNGs remain byte-identical; all 800 raw core text/identity/page/option records are preserved. Full suite: 138 passed; final clean/unsafe-crop checks: 49 passed; lint/format pass. Shared/unassigned raw visuals remain unresolved.
 
+- Sentence-aware cleaning resolves 65 of 75 missing prompts, retains attached notes (including 2011 Q43), and separates introduced structured blocks in 59 records (including 2011 Q37). All 800 records were audited: 723 existing prompts unchanged, two detached-note corrections, unchanged options/assets/raw snapshots, complete fragment accounting and stable repeat formatting. All 4,071 raw files remain byte-identical. Full suite: 170 passed; lint/format pass. Ten incomplete/implicit/corrupt prompt cases remain reported.
+
+- Traced 2020 Q25/Q36 to body graphics, not failed image answers. Raw body projection now excludes verified interleaved page administration while preserving original text; clean alignment recognizes exact initial number-only anchors. Reparsed 2017–2021 and regenerated all 800 clean records: eight layout alignments recovered, six additional clean issue-free records (739→745). All 4,055 raw PNGs, raw page/question/option blocks and image associations remain unchanged; Q25's caption review and genuinely shared/unassigned visuals remain flagged. Full suite: 185 passed; lint/format pass. Regression coverage: `tests/test_blackstone_body_alignment.py`.
+
+- Verified CID spatial interpretation and identical-glyph deduplication now resolve the 2012 Q8 answer group/crop and analogous 2012–2014 choices; specimen Q36 also recovers C–E images. All 800 records were regenerated, with original raw text/identity fields and all 1,520 previously referenced PNGs unchanged. Reports: 19 raw question reviews, 54 unique clean reviews; 36 separate CID/body alignments and genuine shared visuals remain unresolved. Full suite: 201 passed; lint/format checks pass.
+
 ## Code navigation
 
 - Clean transformation/CLI: `processors/normalization/blackstone/`; tests: `tests/test_blackstone_cleaning.py`.
 - Derived answer PNGs: `option_assets.py` / `png_pixels.py` in the clean module; regression tests: `tests/test_blackstone_option_asset_crops.py`.
+- Body/prompt and introduced-block rules: `structure.py` / `text.py`; regressions: `tests/test_blackstone_clean_structure.py`.
 - Clean output: `data/clean/blackstone/*.clean.json`; commands: `docs/CLEANING_BACKTEST.md`.
 - Reports: `docs/RAW_PARSING_ISSUES.md` and `docs/CLEANING_ISSUES.md`; raw inspection commands remain unchanged.
+- CID spatial word/paragraph regressions: `tests/test_blackstone_cid_visual_layout.py`.
 
 ## Do not work on yet
 
@@ -58,5 +66,5 @@ Implement deterministic normalization and cleaning of Blackstone raw question da
 
 ## Next task
 
-- Backtest the 115 unique clean review records: 75 ambiguous prompt splits plus remaining ordering/option/encoding findings (categories overlap).
+- Backtest the 54 unique clean review records: 36 CID/raw-layout alignment mismatches, 10 ambiguous/incomplete prompt splits and other ordering/option/encoding findings (categories overlap). Do not force genuinely unknown visuals into options.
 - Extend rules only after comparing multiple affected and unaffected records against original screenshots. Preserve raw uncertainty; do not solve upstream crop/association issues in cleaning.

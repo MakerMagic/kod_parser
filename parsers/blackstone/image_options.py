@@ -68,7 +68,25 @@ def image_choice_anchors(question, lines, pages):
         )
         for a in candidates
     ]
-    if any(min(s[i] for s in sizes) < max(s[i] for s in sizes) * 0.65 for i in (0, 1)):
+    similar = all(
+        min(s[i] for s in sizes) >= max(s[i] for s in sizes) * 0.65 for i in (0, 1)
+    )
+    # Shape choices can have different widths. A complete label-only answer
+    # region plus a repeated height/width is stronger evidence than dimensions
+    # alone. Still require unique groups, left anchors, full text containment,
+    # safe crop boundaries and repeated alignment below.
+    label_only_region = all(
+        not line.get("readable_text", line["text"]).strip()
+        or re.fullmatch(
+            r"[A-Z](?:\s+[A-Z])*", line.get("readable_text", line["text"]).strip()
+        )
+        for line in lines
+        if line["block_start"] >= start
+    )
+    shared_dimension = any(
+        min(s[i] for s in sizes) >= max(s[i] for s in sizes) * 0.85 for i in (0, 1)
+    )
+    if not similar and not (label_only_region and shared_dimension):
         return []
     if not all(
         any(
@@ -279,8 +297,12 @@ def attach_visual_text(question, lines):
             spans.append((begin - start, end - start))
     if spans:
         question["raw"]["text_question_candidate"] = original
+        removed = []
         for begin, end in sorted(set(spans), reverse=True):
             if end < len(original) and original[end] == "\n":
                 end += 1
+            removed.append((begin, end))
             original = original[:begin] + original[end:]
         question["question_text"] = original
+        return sorted(removed)
+    return []

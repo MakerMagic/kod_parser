@@ -2,8 +2,9 @@
 
 import re
 from copy import deepcopy
+from itertools import pairwise
 
-from .text import normalize_text
+from .text import _row_kind, artifact_reason, normalize_text
 
 PROMPT = re.compile(
     r"^(?:Which|What|How|Why|Who|Where|When|Is|Are|Does|Do|Can|Could|"
@@ -44,6 +45,148 @@ def prompt_range(lines):
     return complete[0] if len(complete) == 1 else None
 
 
+def _question_marks(text):
+    depth, positions = 0, []
+    for i, char in enumerate(text):
+        depth += char == "("
+        depth -= char == ")"
+        if depth < 0:
+            return None
+        if char == "?" and depth == 0:
+            positions.append(i)
+    return positions if depth == 0 else None
+
+
+def _explanatory_tail(text):
+    """Only balanced parenthetical notes and punctuation may follow the prompt."""
+    text = text.strip()
+    while text.startswith("("):
+        depth = 0
+        for i, char in enumerate(text):
+            depth += char == "("
+            depth -= char == ")"
+            if depth == 0:
+                text = text[i + 1 :].lstrip(" .;\n\t")
+                break
+        else:
+            return False
+    return not text
+
+
+def _prompt_grammar(text):
+    sentence = re.sub(r"\s+", " ", text).strip()
+    if PROMPT.match(sentence):
+        return True
+    word = re.search(
+        r"\b(?:which|what|how|who|where|when|why)\b", sentence, re.IGNORECASE
+    )
+    if not word or not sentence[0].isupper():
+        return False
+    prefix = sentence[: word.start()]
+    if re.search(
+        r"\b(?:ask(?:ed|s)?|wonder(?:ed|s)?|said|says|reported|discussed)\b",
+        prefix,
+        re.IGNORECASE,
+    ):
+        return False
+    if re.match(
+        r"^(?:If|Assuming|Given|According to|Based (?:on|upon)|Using|Depending on|Approximately)\b",
+        prefix,
+    ):
+        return True
+    return bool(
+        re.match(r"^(?:At|By|During|For|From|In|Of|On|To|Over|After|Before)\b", prefix)
+        and not re.search(
+            r"\b(?:is|are|was|were|has|have|had|will|would|can|could|should|must)\b",
+            prefix,
+            re.IGNORECASE,
+        )
+    )
+
+
+def _statement_request(text):
+    """Period-ended requests need imperative or interrogative grammar evidence."""
+    sentence = re.sub(r"\s+", " ", text).strip()
+    if re.match(r"^(?:Select|Choose|Identify|Determine|Calculate)\b", sentence):
+        return len(sentence.split()) >= 4
+    word = re.search(
+        r"\b(?:which|what|how|who|where|when|why)\b", sentence, re.IGNORECASE
+    )
+    if not word:
+        return False
+    clause = sentence[word.end() :]
+    verb = re.search(
+        r"\b(?:is|are|was|were|can|could|should|would|will|must|do|does|did|has|have)\b",
+        clause,
+        re.IGNORECASE,
+    )
+    return bool(
+        verb
+        and not re.search(
+            r"\b(?:I|we|he|she|they|you|it)\b", clause[: verb.start()], re.IGNORECASE
+        )
+    )
+
+
+def tail_prompt_span(text, options):
+    """Fallback for a unique sentence-aware answer request at the text tail."""
+    labels = [o.get("label") for o in options]
+    if (
+        len(labels) < 2
+        or any(not isinstance(label, str) or not label.strip() for label in labels)
+        or len(set(labels)) != len(labels)
+    ):
+        return None
+    if artifact_reason(text):
+        return None
+    marks = _question_marks(text)
+    if marks is None or len(marks) > 1:
+        return None
+    end = len(text.rstrip())
+    if marks:
+        terminal = marks[0]
+        if not _explanatory_tail(text[terminal + 1 :]):
+            return None
+    else:
+        # Imperative/interrogative statements require an actual terminator,
+        # not an unfinished stem that the options are expected to complete.
+        if not text[:end].endswith((".", ")")):
+            return None
+        terminal = end - 1
+    starts = {
+        0,
+        *(m.end() for m in re.finditer(r"[.!?]\s+|\n[ \t]*", text[: terminal + 1])),
+    }
+    candidates = []
+    for start in sorted(starts):
+        while start < end and text[start].isspace():
+            start += 1
+        candidate = text[start:end]
+        core = text[start : terminal + 1]
+        if not candidate or not _prompt_grammar(core):
+            continue
+        if re.search(r"[.!]\s+[A-Z]", core):
+            continue  # Do not absorb a complete preceding setup sentence.
+        rows = [line.strip() for line in core.splitlines() if line.strip()]
+        if re.search(r":\s*\n", core) or any(
+            _row_kind(a) and _row_kind(a) == _row_kind(b) for a, b in pairwise(rows)
+        ):
+            continue  # A lead-in/data block is body context, not a long prompt.
+        if not marks and not _statement_request(core):
+            continue
+        candidates.append(start)
+    if not candidates:
+        return None
+    # Wrapped fragments are one request only without a paragraph/sentence
+    # boundary between them. Competing requests remain unresolved.
+    first = candidates[0]
+    if any(
+        re.search(r"[.!?]\s+|\n\s*\n", text[first:start]) for start in candidates[1:]
+    ):
+        return None
+    return first, end
+
+
 def _line_mapping(question, lines):
     raw = question.get("raw") or {}
     block = raw.get("question_block", "")
@@ -72,6 +215,10 @@ def _line_mapping(question, lines):
     for b in blocks:
         value = b.get("text", "")
         if b["raw_span"]["start"] == 0:
+            # A standalone question-number anchor is metadata. It is absent
+            # from structured body text, unlike a numeric line inside the body.
+            if value.strip() == str(question.get("question_number")):
+                continue
             value = re.sub(rf"^{question.get('question_number')}\s+", "", value)
         if cursor < len(lines) and normalize_text(
             value, join_lines=False
@@ -94,7 +241,16 @@ def build_structure(question, issue):
         lines = []
     else:
         lines = text_lines(text)
-    prompt = prompt_range(lines)
+    legacy = prompt_range(lines)
+    prompt = (
+        (lines[legacy[0]]["span"]["start"], lines[legacy[1] - 1]["span"]["end"])
+        if legacy
+        else tail_prompt_span(text, question.get("options") or [])
+        if lines
+        else None
+    )
+    if legacy and text[prompt[1] :].strip() and _explanatory_tail(text[prompt[1] :]):
+        prompt = prompt[0], len(text.rstrip())
     if prompt is None:
         issue(
             "ambiguous_body_question_split",
@@ -111,21 +267,43 @@ def build_structure(question, issue):
     layout = question.get("layout_blocks") or []
     body, accounting, used = [], [], set()
 
-    def destination(i):
-        return "main_question" if prompt and prompt[0] <= i < prompt[1] else "main_body"
-
-    def add_text(indices, evidence=None):
-        target = destination(indices[0])
-        original = "\n".join(lines[i]["text"] for i in indices)
-        if target != "main_question":
-            body.append(
-                {
-                    "type": "text",
-                    "text": original,
-                    "source_blocks": evidence or [],
-                    "line_indices": indices,
-                }
+    def add_line(i, evidence=None, *, visual=False, owners=None):
+        span = lines[i]["span"]
+        cuts = sorted(
+            {
+                span["start"],
+                span["end"],
+                *(p for p in (prompt or ()) if span["start"] < p < span["end"]),
+            }
+        )
+        for start, end in pairwise(cuts):
+            target = (
+                "main_question"
+                if prompt and prompt[0] <= start and end <= prompt[1]
+                else "main_body"
             )
+            if visual and target != "main_question":
+                target = "visual"
+            entry = {
+                "line_index": i,
+                "structured_span": {"start": start, "end": end},
+                "destination": target,
+            }
+            if evidence:
+                entry.update(
+                    source_block=evidence,
+                    asset_ids=owners if target == "visual" else [],
+                )
+            accounting.append(entry)
+            if target == "main_body" and text[start:end].strip():
+                body.append(
+                    {
+                        "type": "text",
+                        "text": text[start:end],
+                        "source_blocks": [evidence] if evidence else [],
+                        "line_indices": [i],
+                    }
+                )
 
     def add_asset(asset, block=None):
         identifier = asset["image_id"]
@@ -159,14 +337,7 @@ def build_structure(question, issue):
                 "Readable structured text cannot be fully aligned to raw layout; text and all assets retained, visual insertion order requires review.",
             )
         for i in range(len(lines)):
-            add_text([i])
-            accounting.append(
-                {
-                    "line_index": i,
-                    "structured_span": lines[i]["span"],
-                    "destination": destination(i),
-                }
-            )
+            add_line(i)
         for asset in question.get("visual_assets", []):
             add_asset(asset)
     else:
@@ -201,20 +372,8 @@ def build_structure(question, issue):
                 block.get("component") == "visual_label"
                 and owners
                 and all(a in assets for a in owners)
-                and destination(i) != "main_question"
             )
-            target = "visual" if visual_text else destination(i)
-            accounting.append(
-                {
-                    "line_index": i,
-                    "structured_span": lines[i]["span"],
-                    "destination": target,
-                    "source_block": evidence,
-                    "asset_ids": owners if visual_text else [],
-                }
-            )
-            if not visual_text:
-                add_text([i], [evidence])
+            add_line(i, evidence, visual=visual_text, owners=owners)
         for asset in question.get("visual_assets", []):
             if asset["image_id"] not in used and asset["image_id"] not in option_ids:
                 issue(
@@ -244,19 +403,23 @@ def build_structure(question, issue):
     for i, block in enumerate(merged, start=1):
         block["order"] = i
         if block["type"] == "text":
-            block["text"] = normalize_text(block["text"])
-    if sorted(a["line_index"] for a in accounting) != list(range(len(lines))):
-        raise ValueError(
-            "Cleaning structure failed to account for all supplied text lines"
+            block["text"] = normalize_text(block["text"], separate_blocks=True)
+    for i, line in enumerate(lines):
+        parts = sorted(
+            (a["structured_span"] for a in accounting if a["line_index"] == i),
+            key=lambda p: p["start"],
         )
+        if (
+            not parts
+            or parts[0]["start"] != line["span"]["start"]
+            or parts[-1]["end"] != line["span"]["end"]
+            or any(a["end"] != b["start"] for a, b in pairwise(parts))
+        ):
+            raise ValueError(
+                "Cleaning structure failed to partition every supplied text line"
+            )
     return (
         merged,
-        normalize_text(
-            text[
-                lines[prompt[0]]["span"]["start"] : lines[prompt[1] - 1]["span"]["end"]
-            ]
-        )
-        if prompt
-        else None,
+        normalize_text(text[prompt[0] : prompt[1]]) if prompt else None,
         accounting,
     )

@@ -35,6 +35,20 @@ $freshOutput = 'inspections_raw\fresh-raw-' + (Get-Date -Format 'yyyyMMdd_HHmmss
 
 Parsing saves raw JSON, visual assets, and a separate Markdown issues report. Without `--issues-report`, the report is `RAW_PARSING_ISSUES.md` inside the selected raw output directory. It covers all `*.raw.json` files in that directory, including previous outputs. Use a separate output directory to isolate a run. Raw page/question/options text remains unchanged; structured image-option text can be corrected using geometric evidence. Rerun with `--overwrite` to upgrade older outputs.
 
+Structured body text excludes already-filtered page administration using exact
+source spans: explicit copyright/turn-over text, or a centered footer matching
+the PDF page number within the existing footer zone. Raw page text, question and
+option blocks remain untouched; `raw.text_question_candidate` and extraction
+notes retain the original body interpretation. Body numbers and image/axis
+labels are not removed by searching for matching numeric strings.
+
+`graphics_present:option_association_not_resolved` is a legacy initial detection
+note, already treated as informational by raw QA. It is not an eligibility gate
+and does not mean every graphic is an answer. Check `belongs_to`, `option_label`,
+`placement`, option image references and specific visual warnings. For example,
+2020 Q25's flight charts and Q36's patio diagram belong to the body; their answers
+are text. Foreign-letter/shared-geometry warnings still require review.
+
 ## Inspect a stored question
 
 ```powershell
@@ -72,6 +86,21 @@ Assets live under `OUTPUT_DIR/assets/<source-content-hash>/`. Names such as `bla
 `visual_assets` stores rendered regions with original object IDs/types, coordinates, source identity, component/option association, order, PNG size/hash, and warnings. `visual_previews` stores question-page layout crops. Original `images` records retain object bounds and point to saved regions. PDFium renders raster and vector content together at 144 DPI; no OCR or text cleanup is applied. Region grouping uses nearby objects, local labels, and padding. White page backgrounds use layout previews rather than isolated crops. Unassigned document graphics are retained at page level.
 
 ### Focused crops and structured placement
+
+On pages with a verified shifted CID font, visual decisions use decoded words
+and prose alongside the original PDF coordinates. Identical overprinted glyphs
+are deduplicated only in this spatial view. Raw line text, source spans and page
+text stay verbatim. This prevents encoded A/B/C rows from becoming three images
+under A and prevents encoded question prose from being included as a caption.
+
+Image-only sets require a complete ordered label sequence, unique left-anchored
+visual groups, repeated alignment, safe crop boundaries and containment of every
+non-anchor answer word. Different-width silhouettes may qualify with a complete
+label-only answer region and one consistent dimension. External answer text or
+conflicting anchors still prevents image-only classification. Original text
+interpretations remain in `raw.text_option_candidates`; visual-internal words
+stay with the image, not in ordinary option text. A correct raw answer mapping
+does not imply that separate clean body-layout alignment issues are resolved.
 
 Individual crops use PDF object bounds, nearby label words, and four-point padding. Internal table/diagram text is retained. External sentence/paragraph lines form barriers: a few nearby words from a long sentence can no longer pull the whole sentence into a crop. Short local labels and numbered figure/table captions are retained; ambiguous long captions are flagged. Padding is constrained by excluded prose. Layout previews still include surrounding question text. No new image-processing dependency is required.
 

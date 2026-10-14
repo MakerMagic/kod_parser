@@ -106,15 +106,15 @@ def _prose_lines(lines, graphic):
         if (line["bottom"] <= graphic[1] or line["top"] >= graphic[3])
         and not re.match(
             r"^(?:Figure|Fig\.|Table|Chart|Diagram)\s+\d+\b",
-            line["text"],
+            line.get("readable_text", line["text"]),
             re.IGNORECASE,
         )
     ]
     prose = {
         id(line)
         for line in outside
-        if len(line["text"].split()) >= 5
-        and line["text"].rstrip().endswith((".", "?", ":"))
+        if len(line.get("readable_text", line["text"]).split()) >= 5
+        and line.get("readable_text", line["text"]).rstrip().endswith((".", "?", ":"))
     }
     # A wrapped paragraph may end in only two or three words. Grow through
     # aligned, closely spaced prose, but never through a visual's internal text.
@@ -138,8 +138,10 @@ def _prose_lines(lines, graphic):
                 if not 0 <= gap <= 8:
                     continue
                 if id(other) in prose or (
-                    len(other["text"].split()) >= 8
-                    and line["text"].rstrip().endswith((".", "?", ":"))
+                    len(other.get("readable_text", other["text"]).split()) >= 8
+                    and line.get("readable_text", line["text"])
+                    .rstrip()
+                    .endswith((".", "?", ":"))
                 ):
                     prose.update((id(line), id(other)))
                     changed = True
@@ -243,7 +245,7 @@ def focused_crop(
         if not nearby:
             continue
         outside = box[3] <= graphic[1] or box[1] >= graphic[3]
-        text = line["text"]
+        text = line.get("readable_text", line["text"])
         count = len(words(line))
         named_caption = bool(
             re.match(
@@ -251,7 +253,10 @@ def focused_crop(
             )
         )
         prose = id(line) in prose_lines
-        span = {"start": line["block_start"], "end": line["block_start"] + len(text)}
+        span = {
+            "start": line["block_start"],
+            "end": line["block_start"] + len(line["text"]),
+        }
         if prose:
             excluded.extend(b for b, _ in nearby)
             excluded_spans.append(span)
