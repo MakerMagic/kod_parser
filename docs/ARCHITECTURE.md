@@ -1,5 +1,7 @@
 # System Architecture
 
+
+
 ## 1. Purpose
 
 This repository implements a modular document-processing pipeline for TSA and related examination materials.
@@ -27,6 +29,51 @@ categorization
 ↓
 validation / export
 ```
+
+Question data and answer/explanation data are processed independently before matching.
+
+```text
+question input
+↓
+question parser
+↓
+question raw
+↓
+question clean
+       \
+        \
+         → matcher → merged data
+        /
+       /
+answer/explanation input
+↓
+answer parser
+↓
+answer raw
+↓
+answer clean
+
+Matching must not parse PDFs directly.
+Answer Parser Is Source-Specific
+The current 2008–2016 explained-answer parser may rely on structural markers specific to that document, including:
+- year headings;
+- SECTION 1;
+- END OF SECTION;
+- END OF PAPER;
+- Question {number}: {answer} headers.
+These rules must remain isolated from future answer parsers.
+Do not design a universal answer parser around this single document format.
+Matching Layer
+The matching layer consumes structured question data and structured answer/explanation data.
+It must:
+- match using examination identity;
+- preserve unmatched records;
+- detect ambiguity;
+- preserve question and answer traceability;
+- preserve explanation structure;
+- report conflicts rather than guess.
+Matching output belongs under:
+data/merged/
 
 ## 3. Main Architecture Rule
 

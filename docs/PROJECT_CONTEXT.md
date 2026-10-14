@@ -1,5 +1,16 @@
 # Project Context
 
+
+Current milestone:
+
+```text
+clean Blackstone questions
++
+parsed/cleaned TSA 2008–2016 answers and explanations
+↓
+matching / merged dataset
+The current goal is not only to attach a correct answer to each question, but also to preserve and match the corresponding explanation.
+
 ## 1. What This Project Is
 
 This project is a modular data-processing system for examination materials, initially focused on TSA.
@@ -112,15 +123,30 @@ Different parser implementations are acceptable, but downstream outputs should r
 
 Current milestone:
 
+The current goal is not only to attach a correct answer to each question, but to preserve and match the corresponding explanation as well.
+
+Do not implement categorization, final export, or additional sources unless explicitly requested.
+
+## Answer and Explanation Data
+
+Questions and answers/explanations may come from different documents and may require different parsers.
+
+The current answer source is:
+
 ```text
-Blackstone input PDF → blackstone_raw.json
-```
+TSA-2008-2016-Explained-Answers.pdf
 
-Here, “Blackstone input PDF” means an already available document.
-
-The existing Blackstone downloader may remain as acquisition utility, but it must stay separate from parser logic.
-
-Do not implement cleaning, answer matching, categorization, final export, or additional sources unless explicitly requested.
+It contains both:
+- explicit correct answers;
+- detailed explanations.
+Both must be preserved before matching.
+Explanation structure may include:
+- multiple paragraphs;
+- general reasoning for the correct answer;
+- optional discussion of incorrect answer choices;
+- bullet lists;
+- content continuing across pages.
+Future answer/explanation documents may have substantially different layouts, so current parsing assumptions must remain source-specific.
 
 ## 7. Main Design Principles
 

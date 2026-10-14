@@ -1,13 +1,10 @@
-# Current Work
-- Define and implement raw → clean normalization rules.
-- Add cleaning regression tests.
 ## Current milestone
 
-Blackstone raw structured JSON → Blackstone clean structured JSON.
+Blackstone clean questions + TSA 2008–2016 explained answers → matched structured dataset.
 
 ## Current focus
 
-Implement deterministic normalization and cleaning of Blackstone raw question data while preserving raw records unchanged.
+Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then match them to existing clean Blackstone questions.
 
 ## Already completed
 
@@ -69,5 +66,8 @@ Implement deterministic normalization and cleaning of Blackstone raw question da
 
 ## Next task
 
-- Backtest the 18 unique clean review records: 10 ambiguous/incomplete prompt splits and unresolved visual/option/encoding/expression findings (categories overlap). The 36 CID/raw-layout alignments are verified resolved; do not force genuinely unknown visuals into body/options.
-- Extend rules only after comparing multiple affected and unaffected records against original screenshots. Preserve raw uncertainty; do not solve upstream crop/association issues in cleaning.
+- Parse Section 1 answers/explanations for 2008–2016.
+- Validate year/section boundaries and explanation structure.
+- Implement question ↔ answer/explanation matching.
+- Create matching issue reporting and backtesting documentation.
+- Regression-test matched, unmatched, ambiguous, and structured-explanation cases.

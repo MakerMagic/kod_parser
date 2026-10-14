@@ -13,6 +13,83 @@ These must not be conflated.
 
 A parser must not depend on how the file was acquired.
 
+An answer/explanation record should conceptually preserve:
+
+```json
+{
+  "year": 2012,
+  "section": "section_1",
+  "question_number": 1,
+  "correct_answer": "B",
+  "explanation": {
+    "paragraphs": [],
+    "choice_analysis": [],
+    "raw_text": "..."
+  },
+  "page_start": 1,
+  "page_end": 2,
+  "warnings": []
+}
+
+Exact canonical field names may evolve, but the following must remain separate:
+- correct answer;
+- explanation;
+- explanation structure;
+- source metadata;
+- warnings.
+Explanation Structure
+Explanation content should preserve meaningful structure when reliably identifiable.
+Possible components include:
+- paragraphs;
+- bullet lists;
+- choice-specific analysis;
+- transition text.
+Optional analysis of incorrect choices may conceptually be stored as:
+[
+  {
+    "label": "A",
+    "text": "..."
+  },
+  {
+    "label": "C",
+    "text": "..."
+  }
+]
+
+Do not invent a choice association when the structure is ambiguous.
+Do not flatten meaningful bullet lists or paragraph boundaries unnecessarily.
+Matching Metadata
+A merged record should explicitly preserve matching state.
+Conceptually:
+{
+  "matching": {
+    "status": "matched",
+    "question_reference": "...",
+    "answer_reference": "...",
+    "warnings": []
+  }
+}
+
+Possible statuses may include:
+matched
+unmatched_question
+unmatched_answer
+ambiguous
+conflict
+
+Do not silently discard unmatched or ambiguous records.
+Merged Data Requirements
+A merged record must preserve:
+- original question identity;
+- question content;
+- correct answer;
+- explanation;
+- explanation structure;
+- question-source traceability;
+- answer-source traceability;
+- matching warnings.
+Matching must not destroy the independently processed source records.
+
 ## 2. Input File Record
 
 An input file record may contain:

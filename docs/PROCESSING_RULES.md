@@ -59,6 +59,78 @@ They may be acquired through the same or different mechanisms as question PDFs.
 
 Answer/explanation parsing should depend on document format, not acquisition method.
 
+## Answer / Explanation Matching 2008-2016 Parsing
+
+Before matching, parse:
+
+```text
+TSA-2008-2016-Explained-Answers.pdf
+
+The parser must treat the document as a multi-year, multi-section source.
+Year handling
+A year heading appears before the corresponding material.
+The active year should remain in effect until a new valid year heading is encountered.
+Do not hard-code page numbers.
+Section handling
+Parse only:
+SECTION 1
+
+END OF SECTION marks the end of the relevant Section 1 content.
+Section 2 must be skipped completely.
+END OF PAPER may be used as a structural signal before transition to the next year.
+Do not depend on font family, font size, or visual styling as the primary semantic signal.
+Answer Entry Structure
+A new answer entry begins from a structure conceptually equivalent to:
+Question {question_number}: {correct_answer}
+
+The explanation continues until the next valid question entry or structural section/year boundary.
+The parser must support explanations that continue across page boundaries.
+Explanation Preservation
+Explanation parsing should preserve:
+- paragraph boundaries;
+- multi-paragraph explanations;
+- bullet lists;
+- optional incorrect-choice analysis;
+- original ordering.
+Common transition phrases may help detect incorrect-choice analysis, for example:
+Let us look at why the other answer choices are wrong:
+
+or:
+In this case, it is also useful to arrive at the answer by eliminating the other answers:
+
+These phrases may be useful signals but must not become the only supported structure.
+Do not assume every explanation contains incorrect-choice analysis.
+Matching Rules
+Matching starts only after both sides exist as structured data.
+Preferred conceptual matching key:
+source + year + paper/variant + section + question_number
+
+Matching must:
+- validate identity fields;
+- detect missing candidates;
+- detect multiple candidates;
+- preserve unmatched records;
+- preserve warnings;
+- attach both correct answer and explanation when matched.
+Do not:
+- match directly from PDF text;
+- match by filename alone;
+- silently select one ambiguous candidate;
+- repair parser errors inside the matcher;
+- suppress unresolved warnings.
+Matching Backtesting
+Matching backtesting must allow inspection of:
+1. question identity;
+2. question text/options;
+3. correct answer;
+4. explanation;
+5. incorrect-choice analysis, if present;
+6. question source metadata;
+7. answer source metadata;
+8. matching status;
+9. matching warnings.
+The correct answer and explanation must appear in separate inspection sections.
+
 ## 5. Cleaning
 
 Cleaning starts only after raw structured data has been successfully produced.

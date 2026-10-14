@@ -90,12 +90,18 @@ Do not scan unrelated folders unless the task requires it.
 Current milestone:
 
 ```text
-Blackstone raw structured JSON → Blackstone clean structured JSON
-```
+Blackstone clean questions
++
+TSA 2008–2016 explained answers
+↓
+answer/explanation parsing
+↓
+matching / merged structured data
 
-Cleaning lives in `processors/normalization/blackstone/` and writes only to `data/clean/blackstone/`. Keep raw JSON immutable; unresolved raw issues remain in `docs/RAW_PARSING_ISSUES.md`. Do not reopen PDFs or redesign the parser during cleaning work.
+Before matching questions, parse and structure answers and explanations from:
+TSA-2008-2016-Explained-Answers.pdf
 
-Do not implement answer matching, categorization, final dataset generation, or new acquisition mechanisms unless explicitly requested.
+Do not implement categorization, final dataset generation, or unrelated source support unless explicitly requested.
 
 ## Context and Skill Usage
 
@@ -134,6 +140,8 @@ Update only relevant sections:
 - `Do not work on yet`
 
 Do not rewrite the whole file unless explicitly requested.
+
+
 
 ## When to Read Full Documentation
 
