@@ -79,8 +79,9 @@ def test_cid_choice_groups_have_one_correct_anchor_and_image(cid_papers, year, n
     ]
     assert cleaned["raw_record"] == q
     if year == 2012 and number == 8:
-        # The separate decoded/raw body alignment problem is NOT suppressed.
-        assert "layout_alignment_unresolved" in {
+        # Clean now proves decoded/raw equality per span, including blank CID
+        # lines. Incorrect/unverified encodings have separate negative coverage.
+        assert "layout_alignment_unresolved" not in {
             i["code"] for i in cleaned["cleaning_issues"]
         }
 

@@ -5,10 +5,9 @@ it never opens PDFs, acquires files, matches answers, or categorizes questions.
 
 Raw CID visual-option recovery now supplies distinct A–E image references for
 the affected 2012–2014 layouts. Regenerate clean output with the command below
-after reparsing; cleaning does not guess missing raw associations. For 2012 Q8,
-the answer mapping and focused cylinder crop are corrected, but
-`layout_alignment_unresolved` still requires review of decoded body text against
-CID-backed raw layout. Do not interpret correct answers as a resolved body issue.
+after reparsing; cleaning does not guess missing raw associations. Clean layout
+alignment now verifies each decoded/raw line, including the previously unresolved
+2012 Q8 body layout. Incorrect or unverified encodings still require review.
 
 ## PowerShell commands
 
@@ -97,12 +96,24 @@ The HTML header shows question number/year, followed by:
 7. **Visual Inspection Issues**: raw/document/visual warnings plus clean issues.
 
 Raw visual-label text is represented by its crop, not repeated as answer text.
-Already decoded CID structured lines are aligned only when upstream recorded
-a verified decode and the raw/readable line counts agree; cleaning does not
-decode CID tokens. Failed alignment retains readable text and assets with an
-ordering issue rather than guessing insertion points. Supporting context that
+For CID-backed layout, cleaning requires the upstream verified-font declaration,
+checks every block's exact original raw span, and reuses that existing decoder
+only as an equality view against already-readable structured lines. It does not
+infer a new font map, replace question text, or align merely by equal line counts.
+Exact blank/space blocks and the initial number anchor are not content lines.
+Failed alignment retains readable text and assets with an ordering issue rather
+than guessing insertion points. Supporting context that
 was after the prompt remains ordered within Main Body; raw block coordinates
 and the original screenshot preserve its exact source position.
+
+Stored visual-contained text is accounted for under its existing asset rather
+than repeated in Main Body. Ownership must already be supplied by raw layout,
+with consistent page/bounds and a non-ambiguous body asset. Unknown owners or
+questionable crop geometry retain the text with `visual_text_ownership_unresolved`.
+An external-caption warning alone does not invalidate known internal table cells;
+the raw warning remains visible. Surrounding prose and Main Question stay intact.
+For example, 2012 Q19 displays its introduction plus table once; Q38 retains its
+already-correct raw body image and now has source-backed clean placement.
 
 ### Prompt tails and structured blocks
 

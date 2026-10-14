@@ -3,6 +3,9 @@
 import re
 from copy import deepcopy
 from itertools import pairwise
+from math import isfinite
+
+from parsers.blackstone.cid_text import decode_cids
 
 from .text import _row_kind, artifact_reason, normalize_text
 
@@ -208,18 +211,31 @@ def _line_mapping(question, lines):
         for note in raw.get("extraction_notes", [])
         if isinstance(note, str)
     )
-    # Use upstream's already decoded structured lines, never infer a CID map.
-    if decoded and len(blocks) == len(lines):
-        return {b["block_id"]: i for i, b in enumerate(blocks)}
+    # Reuse the upstream VERIFIED map only as an equality view of raw evidence.
+    # Never guess a font map or trust equal line counts: CID-only spaces and
+    # graph-owned lines omitted upstream make counts differ legitimately.
     mapping, cursor = {}, 0
     for b in blocks:
         value = b.get("text", "")
+        if decoded:
+            span = b["raw_span"]
+            end = span.get("end")
+            if (
+                not isinstance(value, str)
+                or type(end) is not int
+                or not 0 <= span["start"] <= end <= boundary
+                or block[span["start"] : end] != value
+            ):
+                return None
+            value = decode_cids(value)
         if b["raw_span"]["start"] == 0:
             # A standalone question-number anchor is metadata. It is absent
             # from structured body text, unlike a numeric line inside the body.
             if value.strip() == str(question.get("question_number")):
                 continue
             value = re.sub(rf"^{question.get('question_number')}\s+", "", value)
+        if not value.strip():
+            continue  # An exact blank/decoded space is not a supplied text line.
         if cursor < len(lines) and normalize_text(
             value, join_lines=False
         ) == normalize_text(lines[cursor]["text"], join_lines=False):
@@ -373,6 +389,63 @@ def build_structure(question, issue):
                 and owners
                 and all(a in assets for a in owners)
             )
+            if visual_text:
+                # Trust existing ownership only with consistent page/bounds
+                # and unambiguous body assets, never merely nearby matching text.
+                owned = [assets[a] for a in owners]
+                box = block.get("bbox")
+                boxes = [a.get("bbox") for a in owned]
+                visual_text = (
+                    isinstance(box, list)
+                    and len(box) == 4
+                    and all(isinstance(b, list) and len(b) == 4 for b in boxes)
+                    and all(
+                        type(v) in (int, float) and isfinite(v)
+                        for b in [box, *boxes]
+                        for v in b
+                    )
+                    and all(
+                        a.get("page") == block.get("page")
+                        and a.get("belongs_to") == "question"
+                        and (a.get("placement") or {}).get("component")
+                        not in ("unknown", "option")
+                        and not any(
+                            w.startswith(
+                                (
+                                    "visual_component_association_uncertain",
+                                    "visual_multiple_option_images_merged",
+                                    "visual_coordinate_space",
+                                    "visual_crop_",
+                                    "visual_neighbor_boundary_uncertain",
+                                    "visual_question_boundary_overlap",
+                                )
+                            )
+                            for w in a.get("warnings", [])
+                        )
+                        for a in owned
+                    )
+                    and min(b[0] for b in boxes) <= box[0]
+                    and min(b[1] for b in boxes) <= box[1]
+                    and max(b[2] for b in boxes) >= box[2]
+                    and max(b[3] for b in boxes) >= box[3]
+                )
+            span = lines[i]["span"]
+            has_body_text = bool(text[span["start"] : span["end"]].strip())
+            if prompt:
+                has_body_text = bool(
+                    text[span["start"] : min(span["end"], prompt[0])].strip()
+                    or text[max(span["start"], prompt[1]) : span["end"]].strip()
+                )
+            if (
+                block.get("component") == "visual_label"
+                and not visual_text
+                and has_body_text
+            ):
+                issue(
+                    "visual_text_ownership_unresolved",
+                    "main_body",
+                    "Stored visual-text ownership lacks safe body asset/page/bounds evidence; text retained for review.",
+                )
             add_line(i, evidence, visual=visual_text, owners=owners)
         for asset in question.get("visual_assets", []):
             if asset["image_id"] not in used and asset["image_id"] not in option_ids:

@@ -48,6 +48,8 @@ Implement deterministic normalization and cleaning of Blackstone raw question da
 
 - Verified CID spatial interpretation and identical-glyph deduplication now resolve the 2012 Q8 answer group/crop and analogous 2012–2014 choices; specimen Q36 also recovers C–E images. All 800 records were regenerated, with original raw text/identity fields and all 1,520 previously referenced PNGs unchanged. Reports: 19 raw question reviews, 54 unique clean reviews; 36 separate CID/body alignments and genuine shared visuals remain unresolved. Full suite: 201 passed; lint/format checks pass.
 
+- Clean layout now verifies CID blocks by exact raw spans and the upstream verified map, not line counts. This fixes 2012 Q19 table duplication and Q38 placement plus all 36 analogous alignments (18 visual-text duplication cases); no raw parser/asset changes were needed. All 800 clean records regenerated: unique reviews 54→18, unchanged prompts/options/derivatives and previously-correct body content/order. Raw files/report remain byte-identical; unknown/shared visuals retain warnings. Full suite: 223 passed; lint/format checks pass.
+
 ## Code navigation
 
 - Clean transformation/CLI: `processors/normalization/blackstone/`; tests: `tests/test_blackstone_cleaning.py`.
@@ -56,6 +58,7 @@ Implement deterministic normalization and cleaning of Blackstone raw question da
 - Clean output: `data/clean/blackstone/*.clean.json`; commands: `docs/CLEANING_BACKTEST.md`.
 - Reports: `docs/RAW_PARSING_ISSUES.md` and `docs/CLEANING_ISSUES.md`; raw inspection commands remain unchanged.
 - CID spatial word/paragraph regressions: `tests/test_blackstone_cid_visual_layout.py`.
+- Clean visual ownership/CID span alignment: `tests/test_blackstone_clean_visual_body.py`.
 
 ## Do not work on yet
 
@@ -66,5 +69,5 @@ Implement deterministic normalization and cleaning of Blackstone raw question da
 
 ## Next task
 
-- Backtest the 54 unique clean review records: 36 CID/raw-layout alignment mismatches, 10 ambiguous/incomplete prompt splits and other ordering/option/encoding findings (categories overlap). Do not force genuinely unknown visuals into options.
+- Backtest the 18 unique clean review records: 10 ambiguous/incomplete prompt splits and unresolved visual/option/encoding/expression findings (categories overlap). The 36 CID/raw-layout alignments are verified resolved; do not force genuinely unknown visuals into body/options.
 - Extend rules only after comparing multiple affected and unaffected records against original screenshots. Preserve raw uncertainty; do not solve upstream crop/association issues in cleaning.

@@ -18,6 +18,7 @@ RULES = [
     "conservative_prose_wraps",
     "explicit_single_prompt",
     "raw_layout_alignment",
+    "verified_cid_layout_equality",
     "sentence_aware_prompt_tail",
     "introduced_structured_blocks",
     "wrapped_structured_introductions",
