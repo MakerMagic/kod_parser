@@ -5,6 +5,7 @@ from pathlib import Path
 
 from parsers.blackstone.visual_inspection import read_png, resolve_asset
 
+from .option_assets import is_image_option, resolve_clean_asset
 from .storage import clean_files, load_clean, protect_output
 
 MARKER = "<!-- blackstone-cleaning-issues-report -->"
@@ -13,13 +14,15 @@ CATEGORIES = {
     "encoding_artifact_unresolved": "Unresolved Encoding",
     "isolated_symbol_ordering_unresolved": "Text / Expression Ordering",
     "broken_image_reference": "Broken Image References",
+    "broken_clean_image_reference": "Broken Image References",
+    "clean_option_crop_unresolved": "Clean Answer Image Derivation",
     "original_screenshot_unavailable": "Original Screenshot Availability",
     "raw_reference_changed": "Raw Traceability",
     "raw_reference_unavailable": "Raw Traceability",
 }
 
 
-def current_issues(question):
+def current_issues(question, *, clean_json=None):
     issues = list(question["cleaning_issues"])
 
     def add(code, field, reason, path=None):
@@ -52,6 +55,39 @@ def current_issues(question):
             add(
                 "broken_image_reference", "visual_assets", str(error), asset.get("path")
             )
+    for option in question["options"] or []:
+        if not is_image_option(option):
+            continue
+        for asset in option.get("images") or []:
+            derived = asset.get("clean_asset")
+            if not derived:
+                if not any(
+                    i["code"] == "clean_option_crop_unresolved"
+                    and i["asset_path"] == asset.get("path")
+                    for i in issues
+                ):
+                    add(
+                        "clean_option_crop_unresolved",
+                        "options",
+                        "No saved clean crop; rerun cleaning or review missing anchor geometry.",
+                        asset.get("path"),
+                    )
+            elif clean_json is not None:
+                try:
+                    data = read_png(resolve_clean_asset(clean_json, derived["path"]))
+                    if sha256(data).hexdigest() != derived["sha256"]:
+                        raise ValueError("Derived asset hash mismatch")
+                    if derived.get("raw_asset_id") != asset.get(
+                        "image_id"
+                    ) or derived.get("raw_asset_path") != asset.get("path"):
+                        raise ValueError("Derived/raw asset trace mismatch")
+                except (OSError, ValueError, KeyError) as error:
+                    add(
+                        "broken_clean_image_reference",
+                        "options",
+                        str(error),
+                        derived.get("path"),
+                    )
     return issues
 
 
@@ -65,7 +101,7 @@ def write_report(references, output):
     groups = {}
     for path, dataset in datasets:
         for question in dataset["questions"]:
-            for issue in current_issues(question):
+            for issue in current_issues(question, clean_json=path):
                 code = issue["code"]
                 category = CATEGORIES.get(
                     code,

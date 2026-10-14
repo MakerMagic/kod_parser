@@ -124,7 +124,7 @@ def test_spot_color_rectangle_grid_saves_a_focused_table(tmp_path):
     assert any(i["decorative"] for i in data["pages"][0]["images"])
 
 
-def test_2017_q20_spot_color_table_and_existing_chart_warnings(tmp_path):
+def test_2017_q20_spot_color_table_and_complete_answer_charts(tmp_path):
     source = (
         Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2017.pdf"
     )
@@ -150,8 +150,12 @@ def test_2017_q20_spot_color_table_and_existing_chart_warnings(tmp_path):
     assert "Dec 2012 123.1 Dec 2007 139.8" in text
     assert "After the financial crash" not in text
     assert "Which one of the following" not in text
-    # The table fix must not erase unresolved answer-chart problems.
-    assert any(a["warnings"] for a in question["visual_assets"] if a is not table)
+    assert len(question["visual_assets"]) == 6
+    for option in question["options"]:
+        assert option["content_type"] == "image"
+        assert len(option["images"]) == 1
+        assert option["images"][0]["option_label"] == option["label"]
+        assert not option["images"][0]["warnings"]
     raw = tmp_path / "2017.raw.json"
     raw.write_text(json.dumps(data), encoding="utf-8")
     before = raw.read_bytes()
@@ -160,7 +164,7 @@ def test_2017_q20_spot_color_table_and_existing_chart_warnings(tmp_path):
     assert "data:image/png;base64," in html and table["image_id"] in html
     assert render_inspection(result, "text") and render_inspection(result, "json")
     assert raw.read_bytes() == before
-    assert any(r.get("question_number") == 20 for r in collect_issues(data, raw))
+    assert not any(r.get("question_number") == 20 for r in collect_issues(data, raw))
 
 
 def test_white_page_margin_stroke_is_not_a_dark_diagram_stroke():

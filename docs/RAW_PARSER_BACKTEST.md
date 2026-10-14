@@ -79,8 +79,8 @@ Table detection accepts stroked lines and thin filled rectangle rules only when
 they form a repeated intersecting grid with text in multiple rows and columns.
 Separators and outer borders alone are not tables. PDF color-space metadata
 distinguishes white backgrounds from black spot-color ink, preserving Q20's
-2017 grid. Its full 12-row table now has a focused crop; separate answer-chart
-ambiguities remain reported. Borderless tables and unusual grid structures may
+2017 grid. Its full 12-row table has a focused crop; Q20's five answer charts are
+now associated one-to-one. Borderless tables and unusual grid structures may
 still require review. Attached footnotes/named captions retain the conservative
 label-aware crop and its warnings rather than being cut off at the grid border.
 Long/multiple external notes may still be incomplete in individual crops (for
@@ -119,6 +119,14 @@ its raw spans. Graph-owned extracted lines are excluded from derived
 `question_text` (the former value is kept in `raw.text_question_candidate`),
 while `raw.question_block`, page text and `layout_blocks` retain the original
 evidence. HTML displays corrected axis labels beside the crop.
+
+A graph guide slightly above its letter can still belong to that option when
+the offset is within half the actual glyph height and the complete graphic
+fits its row/column cell. Graph evidence is retained after separating adjacent
+choices. A raw crop may contain its own left-side anchor; a foreign structural
+letter, conflicting cell or shared geometry still blocks confident assignment.
+Raw PNGs deliberately retain original content; option-letter removal happens
+only in separately saved clean derivatives, not in the raw parser.
 
 Regression examples: 2021 Q26 should show five separate A–E graph options,
 one PNG each, without a following option letter; Q32's five table-choice PNGs

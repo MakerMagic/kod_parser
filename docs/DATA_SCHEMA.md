@@ -386,7 +386,14 @@ Each clean question retains its original identity/source key/page mapping and:
 - `transformations`: changed field names and before/after hashes;
 - `cleaning_issues`: only clean-stage uncertainty or detected reference conflicts.
 
-Asset paths resolve relative to `raw_reference.path`'s parent, never the clean
-JSON folder. A missing reference remains an issue, not an invented asset.
+Original asset paths resolve relative to `raw_reference.path`'s parent.
+Image-only options may additionally store `options[].images[].clean_asset`:
+derived PNG path (`path_base="clean_json_parent"`), SHA-256, original raw asset
+ID/path/SHA-256, page/option label, removal operation, removed letter rectangle,
+and pixel crop bounds/size. Only this derived path resolves relative to the
+clean JSON folder. Raw references, `visual_assets` and `raw_record` stay unchanged.
+`cleaning.asset_rules` declares the independent derived-asset rule. Unsafe or
+unavailable derivation remains a cleaning issue; no original image is overwritten.
+A missing reference remains an issue, not an invented asset.
 Raw-provided answers/explanations remain preserved; none are generated/matched.
 Inspecting/reporting checks live raw hashes and saved PNGs without writing JSON.

@@ -14,7 +14,7 @@ from .pdf_graphics import is_white, load_color_layout
 from .visual_structure import add_layout, bounds, rotated_label_bounds
 from .visuals import save_visuals
 
-PARSER_VERSION = "7"
+PARSER_VERSION = "8"
 SOURCE_FIELDS = ("source", "year", "paper", "variant", "section", "document_role")
 NUMBER = re.compile(r"^(\d{1,3})(?:[ \t]+|$)")
 OPTION = re.compile(r"^([A-Z])(?:[ \t]+|$)")

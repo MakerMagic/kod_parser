@@ -60,6 +60,7 @@ def raw_case(tmp_path):
             "page": 3,
             "asset_index": 1,
             "bbox": [100, 100, 200, 150],
+            "graphic_bbox": [100, 100, 200, 150],
             "belongs_to": owner,
             "option_label": label,
             "warnings": [],
@@ -140,6 +141,8 @@ def raw_case(tmp_path):
                 "label": "A",
                 "text": "",
                 "content_type": "image",
+                "label_bbox": [80, 100, 90, 112],
+                "page": 3,
                 "images": [deepcopy(answer)],
             },
             {

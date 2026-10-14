@@ -314,7 +314,9 @@ def _graph_cell(group, anchors, page):
         label = anchor["bbox"]
         if not (
             0 <= box[0] - label[2] <= 100
-            and label[1] <= box[1]
+            # A top guide may be just above the printed letter's glyph bounds.
+            # Tolerance follows the actual anchor height, not a question offset.
+            and label[1] - (label[3] - label[1]) / 2 <= box[1]
             and box[1] - label[1] <= 65
         ):
             continue
@@ -334,7 +336,11 @@ def _graph_cell(group, anchors, page):
             ),
             default=math.inf,
         )
-        if box[0] < next_column and box[3] <= next_row:
+        if (
+            box[2] <= next_column
+            and box[3] <= next_row
+            and not foreign_option_anchors(box, on_page, page, anchor["label"])
+        ):
             candidates.append(anchor)
     return candidates[0] if len(candidates) == 1 else None
 
@@ -916,6 +922,14 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                             groups = sorted(
                                 refined, key=lambda g: (g["bbox"][1], g["bbox"][0])
                             )
+                            # Splitting a shared row must not discard graph
+                            # evidence and send its strokes through greedy votes.
+                            for group in groups:
+                                if _is_graph(group):
+                                    group["graph"] = True
+                                    owner = _graph_cell(group, anchors, number)
+                                    if owner and not group.get("merge_warning"):
+                                        group["option_override"] = owner["label"]
                             _associate_rows(
                                 groups,
                                 anchors,
@@ -1164,6 +1178,18 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                     != "multi_column_options:text_and_image_association_unresolved"
                                 ]
                                 for option in question["options"]:
+                                    if (
+                                        not option["text"].strip()
+                                        and len(option["images"]) == 1
+                                        and not option["images"][0]["warnings"]
+                                        and option["images"][0]["option_label"]
+                                        == option["label"]
+                                    ):
+                                        option["content_type"] = "image"
+                                        option.setdefault(
+                                            "association_method",
+                                            "validated_left_anchor_visual_group",
+                                        )
                                     option["warnings"] = [
                                         w
                                         for w in option["warnings"]

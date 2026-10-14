@@ -40,9 +40,12 @@ Implement deterministic normalization and cleaning of Blackstone raw question da
 
 - Initial conservative Blackstone cleaning added under `processors/normalization/blackstone/`: separate clean JSON, complete raw snapshots/hashes/pointers, preserved warnings/assets, ordered body/prompt/options, and offline HTML comparison. All 800 clean records generated and audited; raw JSON and the renamed raw issues report remain byte-identical. Raw QA exports moved to `inspections_raw/`; clean QA uses `inspections_clean/`. Full suite: 117 passed; final cleaning/backtest safeguards: 51 passed; lint/format pass.
 
+- Raw graph-cell top-guide handling now recognizes 2017 Q20's five A–E images without weakening foreign-letter boundaries; only that paper was reparsed. Cleaning saves separate geometry-verified answer crops and uses them in HTML: 246 derivatives audited (83 glyph removals, 163 unchanged copies), with every other answer pixel preserved. All 4,055 raw PNGs remain byte-identical; all 800 raw core text/identity/page/option records are preserved. Full suite: 138 passed; final clean/unsafe-crop checks: 49 passed; lint/format pass. Shared/unassigned raw visuals remain unresolved.
+
 ## Code navigation
 
 - Clean transformation/CLI: `processors/normalization/blackstone/`; tests: `tests/test_blackstone_cleaning.py`.
+- Derived answer PNGs: `option_assets.py` / `png_pixels.py` in the clean module; regression tests: `tests/test_blackstone_option_asset_crops.py`.
 - Clean output: `data/clean/blackstone/*.clean.json`; commands: `docs/CLEANING_BACKTEST.md`.
 - Reports: `docs/RAW_PARSING_ISSUES.md` and `docs/CLEANING_ISSUES.md`; raw inspection commands remain unchanged.
 
@@ -55,5 +58,5 @@ Implement deterministic normalization and cleaning of Blackstone raw question da
 
 ## Next task
 
-- Backtest the 116 unique clean review records: 75 ambiguous prompt splits, 44 unaligned layouts, and remaining reference/option/encoding findings (categories overlap).
+- Backtest the 115 unique clean review records: 75 ambiguous prompt splits plus remaining ordering/option/encoding findings (categories overlap).
 - Extend rules only after comparing multiple affected and unaffected records against original screenshots. Preserve raw uncertainty; do not solve upstream crop/association issues in cleaning.

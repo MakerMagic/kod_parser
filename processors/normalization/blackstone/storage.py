@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from .cleaner import validate_clean
+from .option_assets import prepare_option_assets
 
 
 def clean_files(references):
@@ -41,6 +42,8 @@ def write_clean(dataset, output, *, overwrite=False):
     output = protect_output(output, [dataset["raw_reference"]["path"]])
     if not output.name.endswith(".clean.json"):
         raise ValueError("Clean output must end in .clean.json")
+    if output.exists() and not overwrite:
+        raise FileExistsError(output)
     if output.exists() and overwrite:
         previous = load_clean(output)
         if previous["raw_reference"]["path"] != dataset["raw_reference"]["path"]:
@@ -48,6 +51,8 @@ def write_clean(dataset, output, *, overwrite=False):
                 "Refusing to overwrite output belonging to another raw input"
             )
     output.parent.mkdir(parents=True, exist_ok=True)
+    dataset = prepare_option_assets(dataset, output)
+    validate_clean(dataset)
     with output.open("w" if overwrite else "x", encoding="utf-8") as handle:
         json.dump(dataset, handle, ensure_ascii=False, indent=2)
         handle.write("\n")

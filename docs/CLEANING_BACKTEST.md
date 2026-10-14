@@ -18,6 +18,15 @@ For a repeat run, add `--overwrite`; it replaces only clean JSON belonging to
 the same raw input. Output inside a raw input directory is rejected. Input
 may be one or more explicit raw JSON files or directories of `*.raw.json`.
 
+Regenerate clean JSON and derived answer PNGs after upgrading the cleaner:
+
+```powershell
+& $parserPython -m processors.normalization.blackstone --raw-json 'data\raw\blackstone' --output-dir 'data\clean\blackstone' --issues-report 'docs\CLEANING_ISSUES.md' --overwrite
+$cleanHtml = 'inspections_clean\TSA_2017_q20-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.html'
+& $parserPython -m processors.normalization.blackstone.backtest inspect --clean-json 'data\clean\blackstone' --source 'TSA Oxford 2017.pdf' --year 2017 --question 20 --format html --output $cleanHtml
+Invoke-Item -LiteralPath $cleanHtml
+```
+
 ```powershell
 & $parserPython -m processors.normalization.blackstone.backtest inspect --clean-json 'data\clean\blackstone' --source 'TSA_2022.pdf' --year 2022 --question 8
 $cleanHtml = 'inspections_clean\TSA_2022_q08-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.html'
@@ -32,14 +41,14 @@ Selectors include `--session`, `--paper`, `--variant`, `--section`, and
 
 ```powershell
 & $parserPython -m processors.normalization.blackstone.backtest report --clean-json 'data\clean\blackstone' --output 'docs\CLEANING_ISSUES.md'
-& $parserPython -m pytest -q tests/test_blackstone_cleaning.py tests/test_blackstone_backtest.py
+& $parserPython -m pytest -q tests/test_blackstone_cleaning.py tests/test_blackstone_option_asset_crops.py tests/test_blackstone_backtest.py
 ```
 
 Raw workflows retain their existing module/commands. The raw report is now
 `docs/RAW_PARSING_ISSUES.md` (parser default: `OUTPUT_DIR/RAW_PARSING_ISSUES.md`).
 Existing raw QA exports moved to `inspections_raw/`; the raw guide already had
 a clear name, [RAW_PARSER_BACKTEST.md](RAW_PARSER_BACKTEST.md). Explicit legacy
-report paths still work. No raw JSON or referenced PNG was renamed or edited.
+report paths still work. Cleaning never edits raw JSON or referenced raw PNGs.
 
 ## Initial rules and evidence
 
@@ -72,8 +81,9 @@ The HTML header shows question number/year, followed by:
 2. **Main Question**: one complete explicit prompt, separated only when there
    is a single supported candidate. Otherwise null, with all text retained in
    Main Body and a cleaning issue.
-3. **Main Answers**: original option order, cleaned text, and preserved option
-   image references (including mixed text/images).
+3. **Main Answers**: original option order, cleaned text, and image references
+   (including mixed text/images). Image-only answers use saved derived clean PNGs
+   without a repeated option letter, when safe removal was verified.
 4. **Original Screenshot**: all full-question page crops saved by raw parsing.
 5. **Source / Document Metadata**.
 6. **Missing / Null Field Availability** (also lists empty/unavailable fields).
@@ -97,6 +107,31 @@ coordinates. Assets retain their original paths, IDs, order, associations,
 coordinates, and warnings; paths resolve relative to the **raw JSON**, not clean
 JSON. Keep the original raw JSON/assets available; HTML embeds the images it
 successfully reads and remains standalone after export.
+
+### Derived answer crops
+
+Cleaning uses existing raw option anchors, crop bounds, page size and render DPI;
+it does not reopen PDFs or infer new option associations. A verified, left-side
+letter is removed only in a bounded glyph window with a white isolation ring.
+Small font-overhang expansion must not intersect graph primitives, axis labels,
+captions or other stored text. Only fully white outer margins are then trimmed;
+all remaining answer pixels are preserved, including labels to the letter's left.
+If the letter was already outside the raw crop, its pixels are copied unchanged.
+Raw CID glyph strings are retained; the already associated anchor's exact bounds
+identify its glyph without performing a new text-decoding rule in cleaning.
+
+Derived files live in `data/clean/blackstone/assets/<source-hash>/`, with raw asset
+ID and derived-content hash in the filename. `options[].images[].path` remains the
+raw reference; optional `clean_asset` adds the clean-relative path, both hashes,
+raw asset ID/path, removed glyph rectangle, and pixel crop bounds. Original
+screenshots and body graphics still use raw assets. Inspection never creates
+assets; regenerate cleaning first. Missing derived files are reported, not
+silently replaced. An unsafe derivation shows the explicitly labelled raw
+fallback and `clean_option_crop_unresolved` in **Clean Answer Image Derivation**.
+
+Foreign letters, multiple visuals/ambiguous associations, raw crop warnings,
+overlapping text, non-white/touching glyphs, inconsistent scale or unsupported PNG
+formats remain unresolved. No raw warning is suppressed by clean derivation.
 
 `CLEANING_ISSUES.md` groups only clean-stage discoveries by category and counts
 unique records. It does not copy raw warnings or claim they are solved. Missing

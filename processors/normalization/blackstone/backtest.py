@@ -11,6 +11,7 @@ from parsers.blackstone.backtest import _source_matches
 from parsers.blackstone.visual_inspection import read_png, resolve_asset, visual_issues
 
 from .issues import current_issues, write_report
+from .option_assets import is_image_option, resolve_clean_asset
 from .storage import clean_files, load_clean, protect_output
 
 
@@ -52,7 +53,7 @@ def inspect_question(references, *, source, question_number, **selectors):
         "clean_json": str(path),
         "document": dataset["document"],
         "question": q,
-        "cleaning_issues": current_issues(q),
+        "cleaning_issues": current_issues(q, clean_json=path),
         "raw_visual_issues": raw_visual,
     }
 
@@ -80,14 +81,26 @@ def render_html(result):
         else:
             parts.append(f"<p class='text'>{escape(str(value))}</p>")
 
-    def figure(asset, caption):
+    def figure(asset, caption, *, answer=False):
+        derived = asset.get("clean_asset") if answer else None
+        shown = derived or asset
         parts.append(
-            f"<figure><figcaption>{escape(caption)} · page {escape(str(asset.get('page')))} · {escape(str(asset.get('path')))}</figcaption>"
+            f"<figure><figcaption>{escape(caption)} · page {escape(str(shown.get('page')))} · {escape(str(shown.get('path')))}</figcaption>"
         )
         try:
             data = read_png(
-                resolve_asset(q["raw_reference"]["path"], asset.get("path"))
+                resolve_clean_asset(result["clean_json"], derived["path"])
+                if derived
+                else resolve_asset(q["raw_reference"]["path"], asset.get("path"))
             )
+            if derived:
+                parts.append(
+                    "<small>Derived clean crop; original raw asset retained in the record.</small>"
+                )
+            elif answer:
+                parts.append(
+                    "<p class='issue'>Clean option crop unavailable/unresolved; original raw asset shown without silent modification.</p>"
+                )
             parts.append(
                 f"<img src='data:image/png;base64,{base64.b64encode(data).decode('ascii')}' alt='{escape(caption, quote=True)}'>"
             )
@@ -134,7 +147,9 @@ def render_html(result):
         else:
             text(option.get("text"))
         for asset in option.get("images") or []:
-            figure(asset, f"Option {option.get('label')}")
+            figure(
+                asset, f"Option {option.get('label')}", answer=is_image_option(option)
+            )
         parts.append("</article>")
     parts.append(
         "</section><section id='original-screenshot'><h2>Original Screenshot</h2>"
