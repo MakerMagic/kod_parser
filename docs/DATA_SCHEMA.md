@@ -474,3 +474,41 @@ unavailable derivation remains a cleaning issue; no original image is overwritte
 A missing reference remains an issue, not an invented asset.
 Raw-provided answers/explanations remain preserved; none are generated/matched.
 Inspecting/reporting checks live raw hashes and saved PNGs without writing JSON.
+
+## Explained-answer intermediate and matched schema v1
+
+The independent source parser in `parsers/explained_answers/` writes
+`*.answers.json` under `data/raw/explained_answers/`. This is a common structured
+intermediate for matching, not an extension of question-only raw records.
+
+Dataset: `stage="answer_raw"`, `schema_version="1"`, source parser profile/version,
+`source_document` (path, filename, SHA-256, PDF metadata), preserved `pages`
+(default extraction, geometric layout text/lines/bounds), structural `boundaries`,
+`answers`, and `issues`. Each answer retains its content-hash-backed ID,
+year/section/question number/correct answer, source document/page range, warnings,
+and `raw` header/source excerpt/exact spans into `pages.layout_text`. Absent
+paper/variant metadata is null. `visual_previews` retain page/bounds/PNG hash/path,
+relative to the answer JSON parent, including graphical/image-only explanations.
+
+`explanation` contains ordered `blocks`, `main_explanation`, main `paragraphs`,
+`bulleted_blocks`, `choice_analysis`, and `other_lists`. All paragraphs/items keep
+ordered page/line/span/bbox references. List roles distinguish ordinary lists,
+incorrect choices with explicit option labels, and incorrect choices whose labels
+remain unmapped. Unavailable text is empty plus a warning, never guessed from an
+image. Default raw extraction and readable geometric extraction are both retained.
+
+`processors/matching/` consumes intermediates independently of their PDF format.
+It writes separate `*.matched.json` in `data/merged/blackstone/` with
+`stage="matched"`, `schema_version="1"`, matching method/scope, readiness results,
+hashed input references, `records`, and matching-specific `issues`.
+
+Each merged record preserves exact identity, status (`matched`, `conflict`,
+`ambiguous`, `unmatched_question`, or `unmatched_answer`), selected correct answer
+only for a successful match, complete clean-question/raw-question and answer
+snapshots, question document metadata, both input JSON paths/hashes/pointers, and
+candidate snapshots when ambiguous. Matching metadata distinguishes exact core
+identity from unverified paper/variant metadata and retained upstream review.
+Conflicting/unmatched explanations are preserved even when no answer is assigned.
+Raw/clean JSON and PNGs remain immutable. Inspection validates live references;
+reports group only matching findings with unique-record counts and direct upstream
+causes. See `MATCHING_2008-2016_BACKTEST.md` for commands and limitations.

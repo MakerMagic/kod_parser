@@ -47,7 +47,13 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 - Clean layout now verifies CID blocks by exact raw spans and the upstream verified map, not line counts. This fixes 2012 Q19 table duplication and Q38 placement plus all 36 analogous alignments (18 visual-text duplication cases); no raw parser/asset changes were needed. All 800 clean records regenerated: unique reviews 54→18, unchanged prompts/options/derivatives and previously-correct body content/order. Raw files/report remain byte-identical; unknown/shared visuals retain warnings. Full suite: 223 passed; lint/format checks pass.
 
+- Readiness verified for 450 unique 2008–2016 clean questions. Independent local answer-source parsing and exact-key matching added: 450 SECTION 1 answers, 449 matches, one preserved 2014 Q50 option conflict. Paragraphs, lists, cross-page content, source PNGs, raw/clean snapshots/hashes/pointers, grouped matching issues, and offline HTML/text/JSON inspection are retained. No question raw/clean code or outputs changed.
+- Six matching/source QA questions remain: 2014 Q50; image-only 2008 Q12 explanation; unmapped 2016 Q9/Q21/Q33 elimination items; encoded 2016 Q38 list markers. All 223 existing regressions passed; final 24 source/matching tests pass on rebuilt, frozen inputs. PowerShell commands and unchanged raw/clean content hashes verified.
+
 ## Code navigation
+
+- Explained-answer source parser/CLI: `parsers/explained_answers/`; tests: `tests/test_explained_answers.py`.
+- Generic matching/readiness/report/inspection: `processors/matching/`; tests: `tests/test_matching.py`; commands: `docs/MATCHING_2008-2016_BACKTEST.md`.
 
 - Clean transformation/CLI: `processors/normalization/blackstone/`; tests: `tests/test_blackstone_cleaning.py`.
 - Derived answer PNGs: `option_assets.py` / `png_pixels.py` in the clean module; regression tests: `tests/test_blackstone_option_asset_crops.py`.
@@ -59,15 +65,11 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Do not work on yet
 
-- answer matching;
 - categorization;
 - final dataset generation;
 - additional sources.
 
 ## Next task
 
-- Parse Section 1 answers/explanations for 2008–2016.
-- Validate year/section boundaries and explanation structure.
-- Implement question ↔ answer/explanation matching.
-- Create matching issue reporting and backtesting documentation.
-- Regression-test matched, unmatched, ambiguous, and structured-explanation cases.
+- Review the six matching/source QA cases in `MATCHING_2008-2016_ISSUES.md`, retaining the 2014 Q50 upstream conflict until separately verified.
+- Expand manual explanation/screenshot fidelity checks before any downstream stage.
