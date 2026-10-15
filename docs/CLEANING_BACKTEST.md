@@ -100,10 +100,23 @@ The pinned composite is a clean-stage effective representation only.
 - Strip line-edge whitespace and collapse common spaces/tabs/NBSP. Repeated
   trailing whitespace was inspected across 2012 Q3/Q4/Q5, with unaffected
   2010/2022 controls.
-- Join only long prose lines followed by lowercase continuation, retaining
-  paragraph gaps, numbered/bulleted items, numeric rows, standalone symbols,
-  and hyphen-ended lines. Wrapped 2008 Q3 options and multiple prose papers
-  supplied evidence; table/list/math controls remain separate.
+- Retain established lowercase wrap rules. In question/body/prompt prose only,
+  also join capitalized continuations when exact raw-span alignment, same-page
+  consecutive text blocks, component continuity, normal relative line spacing,
+  indentation and compatible text heights support a wrap. An unfinished phrase
+  plus a grammatical connector or a filled source line is required; neither
+  capitalization nor missing punctuation alone authorizes joining. No country/
+  name dictionary is used. Options/subpoints retain their existing rules.
+- Preserve blank paragraphs, list/data rows, graphics, question boundaries and
+  hyphen-ended lines. A newly joined name cannot enable an additional lowercase
+  join that the previous rules would have rejected. Potential continuations
+  without verified text/geometry remain unchanged, with
+  `prose_line_wrap_unresolved` when syntactic evidence warrants review.
+- The declared `geometry_backed_capitalized_prose_wraps` rule is reproducible
+  from raw JSON alone; older clean rule sets remain readable. Regenerate clean
+  JSON using the repeat command above, not by reparsing PDFs. Check 2019 Q33
+  (`into the Netherlands and Switzerland`), 2012 Q16, 2016 Q12 and specimen Q18;
+  their unrelated missing-prompt warnings are not resolved by text joining.
 - Trim existing option labels; preserve their order, multiline content,
   subpoint labels, visual references, and all original warnings. Never regroup
   options or infer an image association. Image-only options keep empty text.

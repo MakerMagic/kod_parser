@@ -11,6 +11,7 @@ from .storage import clean_files, load_clean, protect_output
 
 MARKER = "<!-- blackstone-cleaning-issues-report -->"
 CATEGORIES = {
+    "prose_line_wrap_unresolved": "Prose Line / Paragraph Boundaries",
     "ambiguous_body_question_split": "Body / Prompt Separation",
     "encoding_artifact_unresolved": "Unresolved Encoding",
     "isolated_symbol_ordering_unresolved": "Text / Expression Ordering",

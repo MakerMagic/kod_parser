@@ -7,7 +7,7 @@ from pathlib import Path
 
 from parsers.blackstone.visual_inspection import read_png, resolve_asset
 
-from .structure import build_structure
+from .structure import build_structure, question_line_context
 from .text import artifact_reason, normalize_text
 
 VERSION = "1"
@@ -22,6 +22,7 @@ RULES = [
     "sentence_aware_prompt_tail",
     "introduced_structured_blocks",
     "wrapped_structured_introductions",
+    "geometry_backed_capitalized_prose_wraps",
 ]
 METADATA = ("source", "year", "session", "paper", "variant", "section", "document_role")
 EXPECTED = (
@@ -102,12 +103,22 @@ def clean_dataset(dataset, raw_json, *, raw_sha256=None):
             separate_blocks=False,
             changes=changes,
             issue=issue,
+            raw=raw,
         ):
             reason = artifact_reason(value)
             if reason:
                 issue("encoding_artifact_unresolved", field, reason)
             cleaned = normalize_text(
-                value, join_lines=join_lines, separate_blocks=separate_blocks
+                value,
+                join_lines=join_lines,
+                separate_blocks=separate_blocks,
+                contextual_wraps=field == "question_text",
+                line_context=question_line_context(raw)
+                if field == "question_text"
+                else None,
+                on_unresolved=lambda reason: issue(
+                    "prose_line_wrap_unresolved", field, reason
+                ),
             )
             if cleaned != value:
                 changes.append(
@@ -116,6 +127,11 @@ def clean_dataset(dataset, raw_json, *, raw_sha256=None):
                         "before_sha256": _hash(value),
                         "after_sha256": _hash(cleaned),
                         "rules": RULES[:4]
+                        + (
+                            ["geometry_backed_capitalized_prose_wraps"]
+                            if field == "question_text"
+                            else []
+                        )
                         + (
                             [
                                 "introduced_structured_blocks",
@@ -328,6 +344,11 @@ def validate_clean(dataset):
             in dataset["cleaning"]["rules"],
             wrapped_lead_ins="wrapped_structured_introductions"
             in dataset["cleaning"]["rules"],
+            contextual_wraps="geometry_backed_capitalized_prose_wraps"
+            in dataset["cleaning"]["rules"],
+            line_context=question_line_context(raw)
+            if "geometry_backed_capitalized_prose_wraps" in dataset["cleaning"]["rules"]
+            else None,
         ):
             raise ValueError("Question text is not the declared conservative transform")
         pointers.append(reference["json_pointer"])

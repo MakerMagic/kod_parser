@@ -60,6 +60,8 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 - Independent 2017–2019 answer-key parsing verified all 150 answers against PDFium: 148 matches, two preserved upstream option conflicts (2018 Q20, 2019 Q32). Grouped issues and offline row/question HTML QA added. Explicit Q44 2022 clean-body pin retains the supplied composite across a complete raw→clean→matching rerun; raw assets, other 49 clean questions and legacy matching results remain unchanged. Validation: 214 focused tests, 18 final source/pin checks, lint and PowerShell syntax checks pass.
 
+- Cleaning-only capitalized-wrap fix regenerated all 800 clean questions: 77 prose records improved (71 bodies, six prompts), including 2019 Q33 and analogous existing issue records. Exact raw layout/relative geometry supplies evidence, not proper-name dictionaries. All content, paragraph gaps, identities/options/warnings/assets remain preserved; 5,303 raw/reference hashes unchanged. Dependent matching snapshots refreshed without changing statuses/issues. Validation: 179 focused regressions and stored clean/matched HTML checks pass; unrelated incomplete prompts/visuals remain unresolved.
+
 ## Code navigation
 
 - Answer-only profile: `parsers/blackstone_answer_keys/`; tests: `tests/test_blackstone_answer_keys.py`; commands/report: `MATCHING_2017-2019_BACKTEST.md` / `MATCHING_2017-2019_ISSUES.md`.
@@ -74,6 +76,7 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 - Clean transformation/CLI: `processors/normalization/blackstone/`; tests: `tests/test_blackstone_cleaning.py`.
 - Derived answer PNGs: `option_assets.py` / `png_pixels.py` in the clean module; regression tests: `tests/test_blackstone_option_asset_crops.py`.
 - Body/prompt and introduced-block rules: `structure.py` / `text.py`; regressions: `tests/test_blackstone_clean_structure.py`.
+- Capitalized prose-wrap geometry/alignment: `text.py` / `structure.question_line_context`; regressions: `tests/test_blackstone_prose_wraps.py`.
 - Clean output: `data/clean/blackstone/*.clean.json`; commands: `docs/CLEANING_BACKTEST.md`.
 - Reports: `docs/RAW_PARSING_ISSUES.md` and `docs/CLEANING_ISSUES.md`; raw inspection commands remain unchanged.
 - CID spatial word/paragraph regressions: `tests/test_blackstone_cid_visual_layout.py`.

@@ -258,9 +258,13 @@ def test_all_36_alignment_cases_and_already_correct_controls(corpus):
                 q["raw_record"] == b["raw_record"]
                 and q["raw_warnings"] == b["raw_warnings"]
             )
-            assert (
-                q["question_text"] == b["question_text"]
-                and q["main_question"] == b["main_question"]
+            # The frozen visual-only baseline predates the prose-wrap fix.
+            # Content and structure remain exact; known PDF wraps may change.
+            assert " ".join(q["question_text"].split()) == " ".join(
+                b["question_text"].split()
+            )
+            assert " ".join((q["main_question"] or "").split()) == " ".join(
+                (b["main_question"] or "").split()
             )
             assert [(o["label"], o["text"]) for o in q["options"]] == [
                 (o["label"], o["text"]) for o in b["options"]
@@ -278,10 +282,18 @@ def test_all_36_alignment_cases_and_already_correct_controls(corpus):
                 # Exact alignment can add previously missing source-block
                 # evidence; already-correct displayed content/order must not change.
                 assert [
-                    {k: v for k, v in block.items() if k != "source_blocks"}
+                    {
+                        k: " ".join(v.split()) if k == "text" else v
+                        for k, v in block.items()
+                        if k != "source_blocks"
+                    }
                     for block in q["main_body"]
                 ] == [
-                    {k: v for k, v in block.items() if k != "source_blocks"}
+                    {
+                        k: " ".join(v.split()) if k == "text" else v
+                        for k, v in block.items()
+                        if k != "source_blocks"
+                    }
                     for block in b["main_body"]
                 ]
                 assert not q["cleaning_issues"]

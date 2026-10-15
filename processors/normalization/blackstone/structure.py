@@ -257,6 +257,7 @@ def build_structure(question, issue):
         lines = []
     else:
         lines = text_lines(text)
+    prose_context = question_line_context(question)
     legacy = prompt_range(lines)
     prompt = (
         (lines[legacy[0]]["span"]["start"], lines[legacy[1] - 1]["span"]["end"])
@@ -476,7 +477,17 @@ def build_structure(question, issue):
     for i, block in enumerate(merged, start=1):
         block["order"] = i
         if block["type"] == "text":
-            block["text"] = normalize_text(block["text"], separate_blocks=True)
+            block["text"] = normalize_text(
+                block["text"],
+                separate_blocks=True,
+                contextual_wraps=True,
+                line_context=[prose_context[i] for i in block["line_indices"]]
+                if prose_context
+                else None,
+                on_unresolved=lambda reason: issue(
+                    "prose_line_wrap_unresolved", "main_body", reason
+                ),
+            )
     for i, line in enumerate(lines):
         parts = sorted(
             (a["structured_span"] for a in accounting if a["line_index"] == i),
@@ -493,6 +504,48 @@ def build_structure(question, issue):
             )
     return (
         merged,
-        normalize_text(text[prompt[0] : prompt[1]]) if prompt else None,
+        normalize_text(
+            text[prompt[0] : prompt[1]],
+            contextual_wraps=True,
+            line_context=[
+                prose_context[i]
+                for i, line in enumerate(lines)
+                if line["span"]["end"] > prompt[0] and line["span"]["start"] < prompt[1]
+            ]
+            if prose_context
+            else None,
+            on_unresolved=lambda reason: issue(
+                "prose_line_wrap_unresolved", "main_question", reason
+            ),
+        )
+        if prompt
+        else None,
         accounting,
     )
+
+
+def question_line_context(question):
+    """Use the existing exact span/CID alignment, without reopening the PDF."""
+    value = question.get("question_text")
+    if not isinstance(value, str):
+        return None
+    layout = question.get("layout_blocks", [])
+    if not isinstance(layout, list) or any(not isinstance(b, dict) for b in layout):
+        return None
+    lines = text_lines(value)
+    mapping = _line_mapping(question, lines)
+    if mapping is None:
+        return None
+    by_id = {b["block_id"]: b for b in question.get("layout_blocks", [])}
+    context = [None] * len(lines)
+    for identifier, index in mapping.items():
+        block = by_id[identifier]
+        context[index] = {
+            **{
+                key: deepcopy(block.get(key))
+                for key in ("page", "bbox", "component", "order")
+            },
+            "text": lines[index]["text"],
+            "initial_question_anchor": block.get("raw_span", {}).get("start") == 0,
+        }
+    return context
