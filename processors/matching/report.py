@@ -19,9 +19,27 @@ def write_report(data, output):
         groups[issue["code"]].setdefault(key, [])
         if issue not in groups[issue["code"]][key]:
             groups[issue["code"]][key].append(issue)
+    years = data.get("matching", {}).get("years")
+    if not years:
+        years = sorted(
+            {
+                r["identity"]["year"]
+                for r in data["records"]
+                if r.get("identity", {}).get("year") is not None
+            }
+        )
+    scope = (
+        str(years[0])
+        if len(years) == 1
+        else f"{min(years)}–{max(years)}"
+        if years and sorted(years) == list(range(min(years), max(years) + 1))
+        else ", ".join(map(str, years))
+        if years
+        else "scope unavailable"
+    )
     lines = [
         MARKER,
-        "# Matching 2008–2016 issues",
+        f"# Matching {scope} issues",
         "",
         f"Records: {len(data['records'])}. Readiness: {data['readiness']['ready']}. Matching issues only; raw/clean warnings are preserved in merged snapshots and shown during inspection, not silently resolved.",
         "",

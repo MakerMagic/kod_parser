@@ -22,8 +22,18 @@ def main(argv=None):
         "--issues-report", type=Path, default=Path("docs/MATCHING_2008-2016_ISSUES.md")
     )
     cli.add_argument("--question-source", default="blackstone")
+    cli.add_argument("--years", nargs="+", type=int, default=list(range(2008, 2017)))
     cli.add_argument("--overwrite", action="store_true")
     args = cli.parse_args(argv)
+    if set(args.years) != set(range(2008, 2017)) and (
+        args.output.resolve()
+        == Path("data/merged/blackstone/tsa_2008-2016.matched.json").resolve()
+        or args.issues_report.resolve()
+        == Path("docs/MATCHING_2008-2016_ISSUES.md").resolve()
+    ):
+        cli.error(
+            "Set separate --output and --issues-report paths for the selected years"
+        )
     from processors.normalization.blackstone.storage import clean_files
 
     from .core import answer_files
@@ -41,7 +51,7 @@ def main(argv=None):
     data = match_records(
         args.clean_json,
         args.answers_json,
-        years=set(range(2008, 2017)),
+        years=set(args.years),
         question_source=args.question_source,
     )
     for output in (args.output, args.issues_report):

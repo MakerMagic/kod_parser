@@ -63,7 +63,10 @@ def inspect_question(
                 ),
                 "sha256": asset["sha256"],
             }
-            for asset in a.get("visual_previews", [])
+            for asset in [
+                *a.get("visual_previews", []),
+                *a.get("explanation", {}).get("visual_assets", []),
+            ]
         ]
     for ref in refs:
         if ref is None:
@@ -79,11 +82,21 @@ def inspect_question(
                     "reason": str(error),
                 }
             )
-    return {
+    result = {
         "matched_json": str(Path(path).resolve()),
         "record": record,
         "live_inspection_issues": live,
     }
+    source_issues = [
+        issue
+        for issue in data["issues"]
+        if issue not in record["issues"]
+        and issue.get("year") == year
+        and issue.get("question_number") == question_number
+    ]
+    if source_issues:
+        result["source_parsing_issues"] = source_issues
+    return result
 
 
 def render_html(result):
@@ -143,12 +156,66 @@ def render_html(result):
         )
     section("correct-answer", "Correct Answer", text(r.get("correct_answer")))
     explanation = (a or {}).get("explanation", {})
+    assets = {
+        asset["asset_index"]: asset for asset in explanation.get("visual_assets", [])
+    }
+
+    def visual(asset):
+        try:
+            png = read_png(resolve_asset(r["answer_reference"]["path"], asset["path"]))
+            if sha256(png).hexdigest() != asset["sha256"]:
+                raise ValueError("Saved explanation visual differs from stored hash")
+            return (
+                f"<figure data-asset-index='{asset['asset_index']}'><figcaption>Explanation visual {asset['asset_index']}, page {asset['page']}</figcaption>"
+                f"<img alt='Explanation visual {asset['asset_index']}' src='data:image/png;base64,{base64.b64encode(png).decode('ascii')}'></figure>"
+            )
+        except (OSError, ValueError, KeyError) as error:
+            return (
+                "<p class='issue'>Explanation visual unavailable: "
+                + escape(str(error))
+                + "</p>"
+            )
+
+    def explanation_block(block):
+        if block["type"] == "visual":
+            asset = assets.get(block["asset_index"])
+            return (
+                visual(asset)
+                if asset
+                else "<p class='issue'>Explanation visual reference unresolved.</p>"
+            )
+        if block["type"] == "list":
+            return (
+                "<ul>"
+                + "".join(
+                    f"<li class='text'>{escape(item['text'])}</li>"
+                    for item in block["items"]
+                )
+                + "</ul>"
+            )
+        return (
+            ""
+            if block.get("role") == "list_marker_artifact"
+            else text(block.get("text"))
+        )
+
     section(
         "main-explanation",
         "Main Explanation",
-        "".join(text(p["text"]) for p in explanation.get("paragraphs", []))
+        (
+            "".join(explanation_block(b) for b in explanation.get("blocks", []))
+            if "visual_assets" in explanation
+            else "".join(text(p["text"]) for p in explanation.get("paragraphs", []))
+        )
         or text(None),
     )
+    if "visual_assets" in explanation:
+        section(
+            "explanation-visuals",
+            "Explanation Visuals",
+            "".join(visual(asset) for asset in assets.values())
+            or "<p>No separate visual assets detected; source previews remain available.</p>",
+        )
     wrong = []
     for block in explanation.get("bulleted_blocks", []):
         if block.get("role", "").startswith("incorrect_choices"):
@@ -173,11 +240,12 @@ def render_html(result):
                 )
                 + "</ul>"
             )
-    section(
-        "incorrect-explanations",
-        "Incorrect Answer Explanations",
-        "".join(wrong) or text(None),
-    )
+    if "visual_assets" not in explanation or wrong:
+        section(
+            "incorrect-explanations",
+            "Incorrect Answer Explanations",
+            "".join(wrong) or text(None),
+        )
     other = []
     for block in explanation.get("other_lists", []):
         other.append(
@@ -188,7 +256,8 @@ def render_html(result):
             )
             + "</ul>"
         )
-    section("other-lists", "Other Explanation Lists", "".join(other) or text(None))
+    if "visual_assets" not in explanation:
+        section("other-lists", "Other Explanation Lists", "".join(other) or text(None))
     section(
         "explanation-order",
         "Original Explanation Block Order",
@@ -246,6 +315,11 @@ def render_html(result):
         dump(
             {
                 "matching": r["issues"],
+                **(
+                    {"source_parsing": result["source_parsing_issues"]}
+                    if result.get("source_parsing_issues")
+                    else {}
+                ),
                 "answer_parsing": (a or {}).get("warnings"),
                 "raw_question": (q or {}).get("raw_warnings"),
                 "raw_document": (q or {}).get("raw_document_warnings"),

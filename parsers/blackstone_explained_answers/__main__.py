@@ -1,0 +1,41 @@
+"""Parse an existing local Blackstone 2021/2022 solutions PDF; never match here."""
+
+import argparse
+import json
+from hashlib import sha256
+from pathlib import Path
+
+from .parser import parse_pdf
+
+
+def main(argv=None):
+    cli = argparse.ArgumentParser(description=__doc__)
+    cli.add_argument("pdf", type=Path)
+    cli.add_argument("--output-dir", type=Path, required=True)
+    cli.add_argument("--overwrite", action="store_true")
+    args = cli.parse_args(argv)
+    source = args.pdf.resolve(strict=True)
+    output_dir = args.output_dir.resolve()
+    if output_dir.is_relative_to(source.parent):
+        cli.error("Raw output must be separate from the source directory")
+    digest = sha256(source.read_bytes()).hexdigest()
+    output = output_dir / f"{source.stem}-{digest[:12]}.answers.json"
+    if output.exists() and not args.overwrite:
+        cli.error("Answer output exists; use --overwrite or a separate directory")
+    if output.exists():
+        existing = json.loads(output.read_text(encoding="utf-8"))
+        if (
+            existing.get("stage") != "answer_raw"
+            or existing.get("parser", {}).get("profile")
+            != "blackstone_section1_explained_answers"
+        ):
+            cli.error("Refusing to replace unrelated JSON")
+    data = parse_pdf(source, asset_dir=output_dir / "assets", overwrite=args.overwrite)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"{len(data['answers'])} SECTION 1 answers -> {output}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

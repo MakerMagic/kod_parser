@@ -516,3 +516,21 @@ Conflicting/unmatched explanations are preserved even when no answer is assigned
 Raw/clean JSON and PNGs remain immutable. Inspection validates live references;
 reports group only matching findings with unique-record counts and direct upstream
 causes. See `MATCHING_2008-2016_BACKTEST.md` for commands and limitations.
+
+### Blackstone 2021/2022 answer-source profile
+
+`parsers/blackstone_explained_answers/` produces the same `answer_raw` v1 contract,
+independently of the legacy layout. Additive page fields retain `header_line_refs`,
+`content_top`, `section` and raster/vector `objects`. Raw `header_line_refs` and
+`explanation_line_refs` account for paired headers and complete explanation text.
+Original default/geometric page extraction remains preserved.
+
+`explanation.visual_assets` stores ordered rendered crops with source PDF/hash,
+year/question, page/bbox/graphic bbox, object IDs/types, asset index/ID, relative
+path/hash/dimensions and warnings. Ordered `type="visual"` blocks reference
+`asset_index` and retain contained text's raw line references. Wider previews
+keep their existing meaning. Unassigned regions are saved as `issues[].visual_asset`
+without inventing ownership. Legacy records without these fields remain supported.
+Matching accepts explicit `--years` with unchanged legacy defaults and separate
+new-year outputs/reports. Source issues remain traceable in merged QA; missing or
+conflicting saved assets fail readiness.

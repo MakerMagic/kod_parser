@@ -54,7 +54,11 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 - Verified 2016 Q9/Q21/Q33 against source previews: intact numbered elimination lists do not supply individual option letters and are no longer falsely reported as parsing failures (profile v3); no letters inferred. Answer/matched outputs and issues regenerated: three genuine QA cases remain (2016 Q38 encoded score text, 2008 Q12, 2014 Q50). All 450 explanation contents/page extractions and question raw/clean files are unchanged; 72 source/matching regressions pass.
 
+- Added independent Blackstone 2021/2022 explanation parsing with anchored boundaries, excluded page headers, cross-page paragraphs/lists, ordered visual crops and year-scoped matching/HTML QA. Real Q48 2021 table verified; 50/50 matches in 2021, 48/50 in 2022. Missing Q46 source header/answer and Q45 boundary remain reported. All 99 answer declarations agree with independent PDFium extraction; 87 focused regressions pass (final matching/visual rerun: 32). Legacy parser/outputs and question raw/clean hashes remain unchanged.
+
 ## Code navigation
+
+- Independent 2021/2022 Blackstone explanation profile: `parsers/blackstone_explained_answers/`; regression tests: `tests/test_blackstone_explained_answers.py`. Year-scoped matching/HTML commands: `docs/MATCHING_2021_BACKTEST.md` and `docs/MATCHING_2022_BACKTEST.md`.
 
 - Explained-answer source parser/CLI: `parsers/explained_answers/`; tests: `tests/test_explained_answers.py`.
 - Generic matching/readiness/report/inspection: `processors/matching/`; tests: `tests/test_matching.py`; commands: `docs/MATCHING_2008-2016_BACKTEST.md`.
@@ -75,5 +79,6 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Next task
 
+- Resolve 2022 Q45/Q46 only from verified source evidence: the supplied explanation PDF omits Q46's number/correct-answer declaration, so Q45's intervening content stays boundary-unresolved and Q46 remains unmatched.
 - Review the three remaining matching/source QA cases in `MATCHING_2008-2016_ISSUES.md`, retaining the 2014 Q50 upstream conflict until separately verified.
 - Expand manual explanation/screenshot fidelity checks before any downstream stage.

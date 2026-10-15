@@ -6,7 +6,7 @@ from copy import deepcopy
 from hashlib import sha256
 from pathlib import Path
 
-from parsers.blackstone.visual_inspection import resolve_asset
+from parsers.blackstone.visual_inspection import read_png, resolve_asset
 from processors.normalization.blackstone.option_assets import resolve_clean_asset
 from processors.normalization.blackstone.storage import clean_files, load_clean
 
@@ -162,6 +162,12 @@ def validate_answer_input(data, path):
     source = data["source_document"]
     if file_reference(source["path"])["sha256"] != source["sha256"]:
         raise ValueError("Answer source PDF hash changed")
+    for issue in data.get("issues", []):
+        asset = issue.get("visual_asset")
+        if asset:
+            png = read_png(resolve_asset(path, asset["path"]))
+            if sha256(png).hexdigest() != asset["sha256"]:
+                raise ValueError("Unassigned explanation visual changed/missing")
     for answer in data["answers"]:
         if answer["source_document"] != source:
             raise ValueError("Answer record/source document conflict")
@@ -177,12 +183,23 @@ def validate_answer_input(data, path):
                 raise TypeError(f"Invalid explanation structure: {field}")
         if not isinstance(explanation["main_explanation"], str):
             raise TypeError("Invalid main explanation")
-        for asset in answer.get("visual_previews", []):
+        for asset in [
+            *answer.get("visual_previews", []),
+            *explanation.get("visual_assets", []),
+        ]:
             if (
                 file_reference(resolve_asset(path, asset["path"]))["sha256"]
                 != asset["sha256"]
             ):
                 raise ValueError("Answer explanation preview changed/missing")
+            read_png(resolve_asset(path, asset["path"]))
+        assets = explanation.get("visual_assets", [])
+        indices = [asset["asset_index"] for asset in assets]
+        if indices != list(range(1, len(assets) + 1)):
+            raise ValueError("Explanation visual order is invalid")
+        visual_blocks = [b for b in explanation["blocks"] if b.get("type") == "visual"]
+        if [b["asset_index"] for b in visual_blocks] != indices:
+            raise ValueError("Explanation visual block/asset references conflict")
         if not explanation["blocks"] and not answer.get("visual_previews"):
             raise ValueError("Explanation has neither text nor a source preview")
 
@@ -247,6 +264,37 @@ def match_records(
     for path, data in answer_inputs:
         ref = file_reference(path)
         output["inputs"].append({"kind": "answer_intermediate", **ref})
+        relevant = any(years is None or a.get("year") in years for a in data["answers"])
+        for issue in data.get("issues", []) if relevant else []:
+            if (
+                years is not None
+                and issue.get("year") is not None
+                and issue["year"] not in years
+            ):
+                continue
+            issue_key = (
+                issue.get("year"),
+                issue.get("section", section),
+                issue.get("question_number"),
+            )
+            candidates = questions.get(issue_key, [])
+            output["issues"].append(
+                {
+                    **issue,
+                    "manual_review_required": True,
+                    "source_json": str(path),
+                    "answer_source": data["source_document"],
+                    "question_source": candidates[0]["document"].get("input")
+                    if len(candidates) == 1
+                    else None,
+                    "answer_pages": issue.get("answer_pages")
+                    or (
+                        {"start_page": issue["page"], "end_page": issue["page"]}
+                        if issue.get("page")
+                        else None
+                    ),
+                }
+            )
         for i, a in enumerate(data["answers"]):
             item = {
                 "record": a,
