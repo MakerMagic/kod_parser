@@ -3,6 +3,7 @@
 import json
 from pathlib import Path
 
+from .body_assets import prepare_body_assets
 from .cleaner import validate_clean
 from .option_assets import prepare_option_assets
 
@@ -52,6 +53,7 @@ def write_clean(dataset, output, *, overwrite=False):
             )
     output.parent.mkdir(parents=True, exist_ok=True)
     dataset = prepare_option_assets(dataset, output)
+    dataset = prepare_body_assets(dataset, output)
     validate_clean(dataset)
     with output.open("w" if overwrite else "x", encoding="utf-8") as handle:
         json.dump(dataset, handle, ensure_ascii=False, indent=2)

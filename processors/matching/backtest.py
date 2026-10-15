@@ -56,6 +56,7 @@ def inspect_question(
         ]
     if a:
         refs.append(a["source_document"])
+        refs.extend(a["source_document"].get("related_sources", []))
         refs += [
             {
                 "path": str(
@@ -156,6 +157,7 @@ def render_html(result):
         )
     section("correct-answer", "Correct Answer", text(r.get("correct_answer")))
     explanation = (a or {}).get("explanation", {})
+    answer_only = explanation.get("availability") == "not_supplied_by_source_format"
     assets = {
         asset["asset_index"]: asset for asset in explanation.get("visual_assets", [])
     }
@@ -203,11 +205,24 @@ def render_html(result):
         "main-explanation",
         "Main Explanation",
         (
-            "".join(explanation_block(b) for b in explanation.get("blocks", []))
-            if "visual_assets" in explanation
-            else "".join(text(p["text"]) for p in explanation.get("paragraphs", []))
+            "<p><strong>Manually supplied by the user; not extracted from the source PDF.</strong></p>"
+            if (a or {}).get("provenance", {}).get("origin") == "user_supplied_manual"
+            else ""
         )
-        or text(None),
+        + (
+            "<p>No explanation is available: this source format supplies answers only.</p>"
+            if answer_only
+            else (
+                (
+                    "".join(explanation_block(b) for b in explanation.get("blocks", []))
+                    if "visual_assets" in explanation
+                    else "".join(
+                        text(p["text"]) for p in explanation.get("paragraphs", [])
+                    )
+                )
+                or text(None)
+            )
+        ),
     )
     if "visual_assets" in explanation:
         section(
@@ -275,6 +290,8 @@ def render_html(result):
             "source": (a or {}).get("source_document"),
             "pages": (a or {}).get("page_reference"),
             "answer_reference": r.get("answer_reference"),
+            **({"parsed_answer_key_row": a["raw"]} if answer_only else {}),
+            **({"provenance": a["provenance"]} if (a or {}).get("provenance") else {}),
         }
     )
     for asset in (a or {}).get("visual_previews", []):
@@ -284,11 +301,19 @@ def render_html(result):
         except (OSError, ValueError) as error:
             answer_source += "<p class='issue'>" + escape(str(error)) + "</p>"
     answer_source += (
-        "<details><summary>Raw explanation excerpt</summary>"
+        (
+            "<details><summary>Raw answer-key row</summary>"
+            if answer_only
+            else "<details><summary>Raw explanation excerpt</summary>"
+        )
         + text((a or {}).get("raw", {}).get("source_excerpt"))
         + "</details>"
     )
-    section("answer-source", "Answer / Explanation Source", answer_source)
+    section(
+        "answer-source",
+        "Answer-Key Source" if answer_only else "Answer / Explanation Source",
+        answer_source,
+    )
     section(
         "matching-metadata",
         "Matching Metadata",

@@ -7,6 +7,10 @@ from hashlib import sha256
 from pathlib import Path
 
 from parsers.blackstone.visual_inspection import read_png, resolve_asset
+from processors.normalization.blackstone.body_assets import (
+    resolve_question_asset,
+    validate_pinned_asset,
+)
 from processors.normalization.blackstone.option_assets import resolve_clean_asset
 from processors.normalization.blackstone.storage import clean_files, load_clean
 
@@ -109,7 +113,8 @@ def readiness(references, *, years=None, question_source=None):
                     ],
                 ]
                 for asset in assets:
-                    verify(resolve_asset(raw, asset["path"]), asset["sha256"])
+                    verify(resolve_question_asset(raw, path, asset), asset["sha256"])
+                    validate_pinned_asset(asset)
                     if asset.get("clean_asset"):
                         clean = asset["clean_asset"]
                         verify(
@@ -161,7 +166,10 @@ def validate_answer_input(data, path):
         raise ValueError("Unsupported answer intermediate contract")
     source = data["source_document"]
     if file_reference(source["path"])["sha256"] != source["sha256"]:
-        raise ValueError("Answer source PDF hash changed")
+        raise ValueError("Answer source document hash changed")
+    for related in source.get("related_sources", []):
+        if file_reference(related["path"])["sha256"] != related["sha256"]:
+            raise ValueError("Related answer source document hash changed")
     for issue in data.get("issues", []):
         asset = issue.get("visual_asset")
         if asset:
@@ -183,6 +191,23 @@ def validate_answer_input(data, path):
                 raise TypeError(f"Invalid explanation structure: {field}")
         if not isinstance(explanation["main_explanation"], str):
             raise TypeError("Invalid main explanation")
+        if explanation.get("availability") == "not_supplied_by_source_format" and (
+            source.get("explanations_supplied") is not False
+            or any(
+                explanation[field]
+                for field in (
+                    "main_explanation",
+                    "blocks",
+                    "paragraphs",
+                    "bulleted_blocks",
+                    "choice_analysis",
+                    "other_lists",
+                    "visual_assets",
+                )
+                if field in explanation
+            )
+        ):
+            raise ValueError("Answer-only explanation availability/content conflict")
         for asset in [
             *answer.get("visual_previews", []),
             *explanation.get("visual_assets", []),
@@ -265,6 +290,10 @@ def match_records(
         ref = file_reference(path)
         output["inputs"].append({"kind": "answer_intermediate", **ref})
         relevant = any(years is None or a.get("year") in years for a in data["answers"])
+        relevant = relevant or any(
+            years is None or issue.get("year") in years
+            for issue in data.get("issues", [])
+        )
         for issue in data.get("issues", []) if relevant else []:
             if (
                 years is not None
@@ -336,6 +365,17 @@ def match_records(
             )
         else:
             q, a = qs[0]["record"], ans[0]["record"]
+            if (
+                a.get("target_question_key") is not None
+                and a["target_question_key"] != q["source_question_key"]
+            ):
+                issues.append(
+                    finding(
+                        "identity_metadata_conflict",
+                        "Explicit answer target conflicts with the cleaned source question key",
+                        key,
+                    )
+                )
             correct = a.get("correct_answer")
             if not isinstance(correct, str) or not correct:
                 issues.append(

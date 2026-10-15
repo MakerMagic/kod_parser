@@ -58,6 +58,42 @@ report paths still work. Cleaning never edits raw JSON or referenced raw PNGs.
 
 ## Initial rules and evidence
 
+### Explicit pinned body visual: 2022 Q44
+
+The user's original combined sixteen-card PNG is versioned under
+`processors/normalization/blackstone/pinned_sources/`, with an explicit mapping
+in `body_visuals.json`. It is bound to the source PDF SHA-256, full question key,
+page and approved source asset indices. This is one approved exception, not a
+general graphics-merging rule. Cleaning writes an exact PNG copy under
+`data/clean/blackstone/assets/pinned/` and replaces only those sixteen consecutive
+body blocks with one combined visual. The separate game-history table remains.
+Original raw assets, original raw snapshot, warnings and source-block references
+remain unchanged. `body_visual_overrides` and asset `provenance` record the
+approval, mapping/image hashes and all replaced raw references. Pinned paths use
+`path_base="clean_json_parent"`; original asset paths still resolve from raw JSON.
+
+The mapping is applied on every clean write, so raw reparse followed by cleaning
+and matching regeneration retains the composite. Missing/changed images, source
+hash mismatch or changed body grouping keep the original structure and report
+`pinned_body_visual_unresolved`; inspection also checks live pinned references.
+Do not edit one generated JSON file or delete the preserved source-derived assets.
+
+```powershell
+& $parserPython -m parsers.blackstone 'acquisition\local\TSA_2022.pdf' --output-dir 'data\raw\blackstone' --issues-report 'docs\RAW_PARSING_ISSUES.md' --overwrite
+& $parserPython -m processors.normalization.blackstone --raw-json 'data\raw\blackstone\TSA_2022-aeb958e80a18.raw.json' --output-dir 'data\clean\blackstone' --issues-report 'docs\CLEANING_ISSUES.md' --overwrite
+$cleanHtml = 'inspections_clean\TSA_2022_q44-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.html'
+& $parserPython -m processors.normalization.blackstone.backtest inspect --clean-json 'data\clean\blackstone' --source 'TSA_2022.pdf' --year 2022 --question 44 --format html --output $cleanHtml
+Invoke-Item -LiteralPath $cleanHtml
+& $parserPython -m pytest -q tests/test_blackstone_pinned_body.py
+```
+
+After a clean rerun, rebuild the dependent 2022 matched output using both answer
+inputs in [MATCHING_2022_BACKTEST.md](MATCHING_2022_BACKTEST.md), then inspect Q44.
+The raw parser deliberately retains its original sixteen source-derived crops.
+The pinned composite is a clean-stage effective representation only.
+
+### Conservative text rules
+
 - NFC composes canonical Unicode equivalents; it does not apply NFKC, replace
   mathematical symbols, guess CID maps, or remove hyphens. Accents/composed
   controls and valid `½`, `×`, `−`, and currency characters are regression tested.

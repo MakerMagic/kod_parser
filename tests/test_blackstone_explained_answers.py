@@ -230,6 +230,7 @@ def test_gaps_duplicates_and_malformed_answers_are_preserved_not_inferred(tmp_pa
                 (40, 735, "1) The correct answer is A"),
                 (40, 715, "First explanation."),
                 (40, 675, "Unlabelled intervening material."),
+                (40, 655, "The correct answer is B"),
                 (40, 635, "3) The correct answer is Z"),
                 (40, 615, "Third explanation."),
                 (40, 575, "3) The correct answer is C"),
@@ -445,7 +446,7 @@ def test_actual_cross_page_explanations_and_source_visual_inventory(actual_sourc
         ]
         assert "0.6 * x + 0.3 * y = 3" in answers[6]["explanation"]["main_explanation"]
         assert "Both equations match" in answers[37]["explanation"]["main_explanation"]
-        assert "source_question_number_gap" in str(answers[45]["warnings"])
+        assert not answers[45]["warnings"]
         assert any(
             i["code"] == "answer_header_missing" and i["question_number"] == 46
             for i in data["issues"]
@@ -467,11 +468,7 @@ def test_generated_year_matching_and_html_are_traceable_read_only(year, numbers)
         status: sum(r["status"] == status for r in data["records"])
         for status in ("matched", "conflict", "unmatched_question")
     }
-    assert counts == (
-        {"matched": 50, "conflict": 0, "unmatched_question": 0}
-        if year == 2021
-        else {"matched": 48, "conflict": 1, "unmatched_question": 1}
-    )
+    assert counts == {"matched": 50, "conflict": 0, "unmatched_question": 0}
     for number in numbers:
         result = inspect_question(path, year=year, question_number=number)
         if year == 2022 and number == 46:
@@ -508,6 +505,6 @@ def test_generated_year_matching_and_html_are_traceable_read_only(year, numbers)
     assert f"# Matching {year} issues" in report and "(0 records)" not in report
     if year == 2022:
         assert (
-            "| 2022 | section_1 | 45 |" in report
+            "| 2022 | section_1 | 45 |" not in report
             and "| 2022 | section_1 | 46 |" in report
         )

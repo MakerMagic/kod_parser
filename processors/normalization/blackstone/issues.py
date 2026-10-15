@@ -3,8 +3,9 @@
 from hashlib import sha256
 from pathlib import Path
 
-from parsers.blackstone.visual_inspection import read_png, resolve_asset
+from parsers.blackstone.visual_inspection import read_png
 
+from .body_assets import resolve_question_asset, validate_pinned_asset
 from .option_assets import is_image_option, resolve_clean_asset
 from .storage import clean_files, load_clean, protect_output
 
@@ -50,8 +51,12 @@ def current_issues(question, *, clean_json=None):
     assets.extend(a for o in question["options"] or [] for a in o.get("images") or [])
     for asset in assets:
         try:
-            read_png(resolve_asset(raw, asset.get("path")))
-        except (OSError, ValueError) as error:
+            data = read_png(resolve_question_asset(raw, clean_json, asset))
+            if asset.get("path_base") == "clean_json_parent":
+                if sha256(data).hexdigest() != asset["sha256"]:
+                    raise ValueError("Pinned output hash mismatch")
+                validate_pinned_asset(asset)
+        except (OSError, ValueError, KeyError) as error:
             add(
                 "broken_image_reference", "visual_assets", str(error), asset.get("path")
             )

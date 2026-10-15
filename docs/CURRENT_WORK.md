@@ -56,9 +56,17 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 - Added independent Blackstone 2021/2022 explanation parsing with anchored boundaries, excluded page headers, cross-page paragraphs/lists, ordered visual crops and year-scoped matching/HTML QA. Real Q48 2021 table verified; 50/50 matches in 2021, 48/50 in 2022. Missing Q46 source header/answer and Q45 boundary remain reported. All 99 answer declarations agree with independent PDFium extraction; 87 focused regressions pass (final matching/visual rerun: 32). Legacy parser/outputs and question raw/clean hashes remain unchanged.
 
+- Verified 2022 Q45's complete expected prose/list/prose against the PDF and final HTML; numbering gaps no longer falsely invalidate the previous explanation, while orphan declarations remain flagged. Confirmed list lead-ins are separated in Q45/Q37 without losing text. User corrected Q46's year to 2022 and supplied an exact manual explanation/C answer: versioned single-question source, separate manual intermediate, target-key/hash checks and visible provenance; 50/50 2022 matches. The real PDF header omission stays reported. All 96 focused tests pass; all 99 existing answer raw/identity/asset records and protected legacy/question raw/clean files remain unchanged.
+
+- Independent 2017–2019 answer-key parsing verified all 150 answers against PDFium: 148 matches, two preserved upstream option conflicts (2018 Q20, 2019 Q32). Grouped issues and offline row/question HTML QA added. Explicit Q44 2022 clean-body pin retains the supplied composite across a complete raw→clean→matching rerun; raw assets, other 49 clean questions and legacy matching results remain unchanged. Validation: 214 focused tests, 18 final source/pin checks, lint and PowerShell syntax checks pass.
+
 ## Code navigation
 
+- Answer-only profile: `parsers/blackstone_answer_keys/`; tests: `tests/test_blackstone_answer_keys.py`; commands/report: `MATCHING_2017-2019_BACKTEST.md` / `MATCHING_2017-2019_ISSUES.md`.
+- Explicit clean-body pins: clean module `body_assets.py` / `pinned_sources/`; tests: `tests/test_blackstone_pinned_body.py`.
+
 - Independent 2021/2022 Blackstone explanation profile: `parsers/blackstone_explained_answers/`; regression tests: `tests/test_blackstone_explained_answers.py`. Year-scoped matching/HTML commands: `docs/MATCHING_2021_BACKTEST.md` and `docs/MATCHING_2022_BACKTEST.md`.
+- Explicit manual source import: `parsers/manual_explanations.py`; approved Q46 source: `processors/matching/manual_sources/tsa_2022_q046.json`; continuation/manual regressions: `tests/test_blackstone_explanation_continuation.py`.
 
 - Explained-answer source parser/CLI: `parsers/explained_answers/`; tests: `tests/test_explained_answers.py`.
 - Generic matching/readiness/report/inspection: `processors/matching/`; tests: `tests/test_matching.py`; commands: `docs/MATCHING_2008-2016_BACKTEST.md`.
@@ -79,6 +87,9 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Next task
 
-- Resolve 2022 Q45/Q46 only from verified source evidence: the supplied explanation PDF omits Q46's number/correct-answer declaration, so Q45's intervening content stays boundary-unresolved and Q46 remains unmatched.
+- Review the two upstream option-label conflicts blocking 2017–2019 matches; do not force their correct-answer association. Keep the Q44 manual composite scoped to the approved source/key.
+- User confirmed 2018 Q20 = B and 2019 Q32 = C; these agree with source keys and are shown in the issues report without clearing the upstream option conflicts.
+
+- Keep the supplied PDF's Q46 header omission traceable; replace the approved 2022 manual supplement only with verified source evidence. Do not turn it into an automatic missing-explanation fallback.
 - Review the three remaining matching/source QA cases in `MATCHING_2008-2016_ISSUES.md`, retaining the 2014 Q50 upstream conflict until separately verified.
 - Expand manual explanation/screenshot fidelity checks before any downstream stage.

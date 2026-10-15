@@ -135,7 +135,7 @@ def parse_pdf(path, *, asset_dir, overwrite=False):
     data = {
         "stage": "answer_raw",
         "schema_version": "1",
-        "parser": {"profile": "blackstone_section1_explained_answers", "version": "1"},
+        "parser": {"profile": "blackstone_section1_explained_answers", "version": "2"},
         "source_document": source,
         "pages": pages,
         "boundaries": [
@@ -219,6 +219,14 @@ def parse_pdf(path, *, asset_dir, overwrite=False):
             if boundary["correct_answer"]
             else ["malformed_question_header:correct_answer_unavailable"],
         }
+        # A skipped ordinal is a missing-record issue, not itself evidence that
+        # this explanation's confirmed boundaries or list continuation failed.
+        # Actual orphan answer declarations still make ownership ambiguous.
+        for line in body:
+            if ANSWER.fullmatch(line["text"].strip()):
+                answer["warnings"].append(
+                    f"explanation_boundary_unresolved:orphan_correct_answer_declaration:page_{line['page']}_line_{line['line_id']}"
+                )
         next_line = rows[end] if end < len(rows) else None
         first_page = header_rows[0]["page"]
         last_page = next_line["page"] if next_line else pages[-1]["page"]
@@ -285,9 +293,6 @@ def parse_pdf(path, *, asset_dir, overwrite=False):
         if current["question_number"] > previous["question_number"] + 1:
             missing = list(
                 range(previous["question_number"] + 1, current["question_number"])
-            )
-            previous["warnings"].append(
-                f"explanation_boundary_unresolved:source_question_number_gap:{missing}:intervening_content_preserved"
             )
             for number in missing:
                 data["issues"].append(

@@ -267,6 +267,32 @@ def test_report_counts_unique_records_and_preserves_details(match_case, tmp_path
     assert "(0 records)" not in text
 
 
+def test_report_shows_known_answer_without_resolving_option_conflict(
+    match_case, tmp_path
+):
+    data = match(match_case)
+    record = data["records"][0]
+    record["status"] = "conflict"
+    record["correct_answer"] = None
+    data["issues"] = [
+        {
+            "code": "correct_answer_option_conflict",
+            "year": 2008,
+            "section": "section_1",
+            "question_number": 12,
+            "reason": "Question options still malformed",
+            "manual_review_required": True,
+        }
+    ]
+    before = deepcopy(data)
+    output = tmp_path / "issues.md"
+    write_report(data, output)
+    text = output.read_text(encoding="utf-8")
+    assert "Source answer (not match approval)" in text
+    assert "| A | Question options still malformed | yes |" in text
+    assert data == before
+
+
 def test_actual_scope_identity_and_review_when_local_outputs_present():
     root = Path(__file__).resolve().parents[1]
     merged = root / "data/merged/blackstone/tsa_2008-2016.matched.json"

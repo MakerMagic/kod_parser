@@ -9,6 +9,28 @@ def reference(line):
     return {key: line[key] for key in ("page", "line_id", "start", "end", "bbox")}
 
 
+def standalone_list_lead(lines, index):
+    """Separate a complete lead-in only when real aligned list items follow."""
+    if index == 0 or index + 2 >= len(lines):
+        return False
+    previous, line, first = lines[index - 1], lines[index], lines[index + 1]
+    if not (
+        line["text"].rstrip().endswith(":")
+        and line["text"][:1].isupper()
+        and previous["text"].rstrip().endswith((".", "!", "?", ")"))
+        and ITEM.match(first["text"])
+    ):
+        return False
+    scale = max(1, line["bbox"][3] - line["bbox"][1])
+    content_x = first.get("content_x", first["bbox"][0] + scale * 0.75)
+    for following in lines[index + 2 :]:
+        if ITEM.match(following["text"]):
+            return abs(following["bbox"][0] - first["bbox"][0]) <= scale * 0.4
+        if abs(following["bbox"][0] - content_x) > scale * 0.6:
+            return False
+    return False
+
+
 def structure(lines, correct_answer):
     del correct_answer  # No letter inference from ordinary source lists.
     blocks, warnings = [], []
@@ -74,6 +96,7 @@ def structure(lines, correct_answer):
                 paragraph_break = (
                     not blocks
                     or blocks[-1]["type"] != "paragraph"
+                    or standalone_list_lead(lines, index)
                     or previous
                     and previous["page"] == line["page"]
                     and line["bbox"][1] - previous["bbox"][3] > height * 0.7

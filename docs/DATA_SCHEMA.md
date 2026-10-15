@@ -468,7 +468,8 @@ Image-only options may additionally store `options[].images[].clean_asset`:
 derived PNG path (`path_base="clean_json_parent"`), SHA-256, original raw asset
 ID/path/SHA-256, page/option label, removal operation, removed letter rectangle,
 and pixel crop bounds/size. Only this derived path resolves relative to the
-clean JSON folder. Raw references, `visual_assets` and `raw_record` stay unchanged.
+clean JSON folder. Raw references, `visual_assets` and `raw_record` stay unchanged
+by option crop derivation.
 `cleaning.asset_rules` declares the independent derived-asset rule. Unsafe or
 unavailable derivation remains a cleaning issue; no original image is overwritten.
 A missing reference remains an issue, not an invented asset.
@@ -534,3 +535,43 @@ without inventing ownership. Legacy records without these fields remain supporte
 Matching accepts explicit `--years` with unchanged legacy defaults and separate
 new-year outputs/reports. Source issues remain traceable in merged QA; missing or
 conflicting saved assets fail readiness.
+
+### Explicit manual explanation supplement
+
+`parsers.manual_explanations` imports one user-approved structured JSON source
+only when explicitly invoked. It writes a separate `answer_raw` v1 intermediate;
+it does not patch PDF-derived answers. The single current approved source is
+`processors/matching/manual_sources/tsa_2022_q046.json` (2022, not the corrected
+2026 typo). `provenance` records manual origin, approval, text JSON pointer/hash
+and answer origin; `source_document.related_sources` retains the associated PDF
+reference/hash. Raw text is exact user text, with no invented PDF spans or pages.
+Optional `target_question_key` must equal the matched clean source key. Missing
+questions are never auto-filled, and duplicate answer candidates remain ambiguous.
+Manual origin is shown explicitly in HTML inspection and source metadata.
+
+### Answer-only ruled key profile (2017–2019)
+
+`parsers/blackstone_answer_keys/` independently produces `answer_raw` v1.
+`source_document.document_role="answer_key"` and `explanations_supplied=false`
+declare the actual source content. Explanation text is empty, structural lists
+are empty and `explanation.availability="not_supplied_by_source_format"`;
+this is distinct from failed explanation extraction. Generic validation rejects
+contradictory populated explanation fields. `raw.cells`, `cell_bboxes`, `row_bbox`,
+`row_index`, `line_refs` and exact `source_excerpt` preserve the table row.
+`visual_previews[].role="answer_key_row"` identifies saved row screenshots,
+not explanation images. Invalid/ambiguous rows retain raw content but have null
+correct answers; duplicate identities remain candidates, never force-matched.
+
+### Explicit pinned clean body visuals
+
+The single approved 2022 Q44 mapping and supplied PNG live in the clean module's
+`pinned_sources/`. The raw parser/schema remain unchanged. Clean `visual_assets`
+retains every original asset and adds a manual composite with
+`path_base="clean_json_parent"`, `provenance.origin="user_supplied_pinned_body_visual"`,
+source PDF/hash/question key, mapping/image file references/hashes and complete
+`replaced_raw_assets`. `main_body` uses one composite visual block in place of
+the approved sixteen consecutive blocks, preserving all other content and order.
+`body_visual_overrides` records the explicit approval/provenance; original raw
+snapshots, warnings and source block references remain. `cleaning.body_asset_rules`
+declares the rule. Group/source/image conflicts keep original body blocks and a
+cleaning issue; readiness and inspection validate both pinned source and saved copy.

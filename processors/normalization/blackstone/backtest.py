@@ -8,8 +8,9 @@ from html import escape
 from pathlib import Path
 
 from parsers.blackstone.backtest import _source_matches
-from parsers.blackstone.visual_inspection import read_png, resolve_asset, visual_issues
+from parsers.blackstone.visual_inspection import read_png, visual_issues
 
+from .body_assets import resolve_question_asset
 from .issues import current_issues, write_report
 from .option_assets import is_image_option, resolve_clean_asset
 from .storage import clean_files, load_clean, protect_output
@@ -91,11 +92,20 @@ def render_html(result):
             data = read_png(
                 resolve_clean_asset(result["clean_json"], derived["path"])
                 if derived
-                else resolve_asset(q["raw_reference"]["path"], asset.get("path"))
+                else resolve_question_asset(
+                    q["raw_reference"]["path"], result["clean_json"], asset
+                )
             )
             if derived:
                 parts.append(
                     "<small>Derived clean crop; original raw asset retained in the record.</small>"
+                )
+            elif (
+                asset.get("provenance", {}).get("origin")
+                == "user_supplied_pinned_body_visual"
+            ):
+                parts.append(
+                    "<small>User-supplied pinned composite; original raw assets retained for traceability.</small>"
                 )
             elif answer:
                 parts.append(

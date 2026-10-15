@@ -52,8 +52,8 @@ def write_report(data, output):
         lines += [
             f"## {category.replace('_', ' ').title()} ({len(rows)} records)",
             "",
-            "| Year | Section | Question | Question source | Answer source / pages | Reason / upstream cause | Review |",
-            "|---|---|---|---|---|---|---|",
+            "| Year | Section | Question | Question source | Answer source / pages | Source answer (not match approval) | Reason / upstream cause | Review |",
+            "|---|---|---|---|---|---|---|---|",
         ]
         for key, findings in sorted(
             rows.items(),
@@ -88,8 +88,20 @@ def write_report(data, output):
                     "filename", first.get("source_json", "unavailable")
                 )
             ).replace("|", "\\|")
+            source_answers = {
+                r["answer"]["correct_answer"]
+                for r in data["records"]
+                if r.get("identity")
+                == {"year": key[0], "section": key[1], "question_number": key[2]}
+                and (r.get("answer") or {}).get("correct_answer")
+            }
+            source_answer = (
+                next(iter(source_answers))
+                if len(source_answers) == 1
+                else "unavailable / ambiguous"
+            )
             lines.append(
-                f"| {key[0]} | {key[1]} | {key[2]} | {question_source} | {answer_source}; {first.get('answer_pages', 'unavailable')} | {reason} | yes |"
+                f"| {key[0]} | {key[1]} | {key[2]} | {question_source} | {answer_source}; {first.get('answer_pages', 'unavailable')} | {source_answer} | {reason} | yes |"
             )
         lines.append("")
     path = Path(output)

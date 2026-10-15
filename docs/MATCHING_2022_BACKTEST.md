@@ -8,7 +8,8 @@ $env:PYTHONPATH = (Resolve-Path '.venv\Lib\site-packages').Path
 $env:PYTHONIOENCODING = 'utf-8'
 $matchingPython = Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
 & $matchingPython -m parsers.blackstone_explained_answers 'acquisition\local\TSA-2022-Explained-Answers-blackstone.pdf' --output-dir 'data\raw\blackstone_explained_answers\2022' --overwrite
-& $matchingPython -m processors.matching --clean-json 'data\clean\blackstone' --answers-json 'data\raw\blackstone_explained_answers\2022' --years 2022 --output 'data\merged\blackstone\tsa_2022.matched.json' --issues-report 'docs\MATCHING_2022_ISSUES.md' --overwrite
+& $matchingPython -m parsers.manual_explanations 'processors\matching\manual_sources\tsa_2022_q046.json' --output 'data\raw\manual_explanations\2022\tsa_2022_q046.answers.json' --overwrite
+& $matchingPython -m processors.matching --clean-json 'data\clean\blackstone' --answers-json 'data\raw\blackstone_explained_answers\2022' 'data\raw\manual_explanations\2022' --years 2022 --output 'data\merged\blackstone\tsa_2022.matched.json' --issues-report 'docs\MATCHING_2022_ISSUES.md' --overwrite
 ```
 
 ## Inspect a cross-page explanation
@@ -20,7 +21,7 @@ $matchingHtml = 'inspections_matching\TSA_2022_q18-' + (Get-Date -Format 'yyyyMM
 Invoke-Item -LiteralPath $matchingHtml
 ```
 
-Use Q45/Q46 to inspect the unresolved source gap, or `--format json` for the
+Use Q45/Q46 to inspect the complete PDF explanation/manual supplement, or `--format json` for the
 complete record. Inspection is read-only; HTML requires a new filename. Offline
 HTML shows cleaned question structure, correct answer, ordered explanation,
 Explanation Visuals, original screenshots, source metadata and issues.
@@ -40,20 +41,33 @@ is available; see [visual storage/traceability](MATCHING_2021_BACKTEST.md).
 Cross-page controls: Q18 pages 2–3, Q27 pages 3–4, Q37 pages 4–5. Q6/Q37 test
 real lists followed by ordinary explanation prose/equations.
 
-The actual source jumps from header 45 to 47. Intervening sports-points text
-has no question number/correct-answer declaration. It remains in Q45's source
-block with a blocking boundary warning, **not confidently assigned to Q45**.
-Q46 has no answer record; neither its answer nor boundary is inferred from
-meaning. Current result: 49 parsed answers, 48 matches, Q45 conflict, Q46
-unmatched. Both affected questions remain in categorized issues. A corrected or
-independently verified source is needed to resolve the gap. Parsing does not
-verify the mathematical/logical correctness of source explanations.
+The source jumps from header 45 to 47. The user confirmed Q45's complete expected
+content, including the sports-points paragraphs/list. No text was lost: the former
+blocking warning incorrectly inferred a broken explanation boundary from the
+ordinal gap alone. Missing ordinals now remain missing-record issues; actual
+orphan answer declarations, malformed headers and duplicate order still require
+review. A standalone list lead-in is separated only when real aligned items
+follow; a colon alone does not create a list. Prose after a list remains prose.
+
+Q46 is supplied **manually for 2022**, after the user corrected the initial 2026
+typo. Its exact text and explicit C answer live in the versioned
+`processors/matching/manual_sources/tsa_2022_q046.json`. The explicit import command
+writes a separate one-record intermediate, never patches PDF-derived JSON and
+never fills another missing question automatically. Matching validates its exact
+target question key; duplicate candidates are not overridden. The manual source,
+its hash, related PDF hash and origin/approval remain in provenance. No PDF pages
+or extraction coordinates are fabricated; manual page references are null. HTML
+labels the explanation as manually supplied and shows provenance in Source.
+
+Current result: 49 PDF answers plus one approved manual answer, **50 matches**.
+The PDF's missing Q46 header remains truthfully documented in `MATCHING_2022_ISSUES.md`;
+it is not a failed manual import. Parsing does not verify source reasoning.
 
 ## Issues and tests
 
 ```powershell
 & $matchingPython -m processors.matching.backtest report --matched-json 'data\merged\blackstone\tsa_2022.matched.json' --output 'docs\MATCHING_2022_ISSUES.md'
-& $matchingPython -m pytest -q tests/test_blackstone_explained_answers.py tests/test_explained_answers.py tests/test_explanation_classification.py tests/test_matching.py
+& $matchingPython -m pytest -q tests/test_blackstone_explanation_continuation.py tests/test_blackstone_explained_answers.py tests/test_explained_answers.py tests/test_explanation_classification.py tests/test_matching.py
 ```
 
 Categories count unique records and retain source/page/reason/review details;
