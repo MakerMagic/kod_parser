@@ -154,9 +154,17 @@ def render_html(result):
         if block.get("role", "").startswith("incorrect_choices"):
             wrong.append(text(block.get("transition")))
             if block["role"] == "incorrect_choices_unmapped":
-                wrong.append(
-                    "<p class='issue'>Individual option mapping unresolved; no labels inferred.</p>"
-                )
+                if any(
+                    "choice_transition_without_unique_incorrect_labels" in warning
+                    for warning in (a or {}).get("warnings", [])
+                ):
+                    wrong.append(
+                        "<p class='issue'>Individual option mapping unresolved; no labels inferred.</p>"
+                    )
+                else:
+                    wrong.append(
+                        "<p>Items retained in source order; individual option letters are not inferred.</p>"
+                    )
             wrong.append(
                 "<ul>"
                 + "".join(

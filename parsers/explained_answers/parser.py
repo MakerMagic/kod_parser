@@ -26,7 +26,7 @@ def parse_pdf(path, *, asset_dir, overwrite=False):
     data = {
         "stage": "answer_raw",
         "schema_version": "1",
-        "parser": {"profile": "tsa_2008_2016_explained_answers", "version": "1"},
+        "parser": {"profile": "tsa_2008_2016_explained_answers", "version": "3"},
         "source_document": {"path": str(path), "filename": path.name, "sha256": digest},
         "pages": [],
         "boundaries": [],

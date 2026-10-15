@@ -496,6 +496,10 @@ ordered page/line/span/bbox references. List roles distinguish ordinary lists,
 incorrect choices with explicit option labels, and incorrect choices whose labels
 remain unmapped. Unavailable text is empty plus a warning, never guessed from an
 image. Default raw extraction and readable geometric extraction are both retained.
+An ordered paragraph block may have role `list_marker_artifact` when a standalone
+marker is verified between a lead-in and a genuine list. Its text and source-line
+references remain intact; only the readable paragraph/list projections exclude
+that marker. Unknown symbols and encoded meaningful item text are not discarded.
 
 `processors/matching/` consumes intermediates independently of their PDF format.
 It writes separate `*.matched.json` in `data/merged/blackstone/` with

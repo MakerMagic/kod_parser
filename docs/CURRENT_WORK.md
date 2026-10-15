@@ -50,6 +50,10 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 - Readiness verified for 450 unique 2008–2016 clean questions. Independent local answer-source parsing and exact-key matching added: 450 SECTION 1 answers, 449 matches, one preserved 2014 Q50 option conflict. Paragraphs, lists, cross-page content, source PNGs, raw/clean snapshots/hashes/pointers, grouped matching issues, and offline HTML/text/JSON inspection are retained. No question raw/clean code or outputs changed.
 - Six matching/source QA questions remain: 2014 Q50; image-only 2008 Q12 explanation; unmapped 2016 Q9/Q21/Q33 elimination items; encoded 2016 Q38 list markers. All 223 existing regressions passed; final 24 source/matching tests pass on rebuilt, frozen inputs. PowerShell commands and unchanged raw/clean content hashes verified.
 
+- Explanation classifier v2 restores Q38 post-list prose and complete Q9/Q21/Q33 incorrect-answer sections; 18 additional diamond-labelled sections and Q43's standalone marker are recovered. All 450 raw excerpts/identities/answer letters/previews and correct control projections are preserved; 37 projections improve. Canonical answer/matching outputs and issues were regenerated, with 449 matches and the existing 2014 Q50 conflict unchanged. All 66 source/matching regressions pass; numbered-option mapping and encoded score text remain flagged.
+
+- Verified 2016 Q9/Q21/Q33 against source previews: intact numbered elimination lists do not supply individual option letters and are no longer falsely reported as parsing failures (profile v3); no letters inferred. Answer/matched outputs and issues regenerated: three genuine QA cases remain (2016 Q38 encoded score text, 2008 Q12, 2014 Q50). All 450 explanation contents/page extractions and question raw/clean files are unchanged; 72 source/matching regressions pass.
+
 ## Code navigation
 
 - Explained-answer source parser/CLI: `parsers/explained_answers/`; tests: `tests/test_explained_answers.py`.
@@ -71,5 +75,5 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Next task
 
-- Review the six matching/source QA cases in `MATCHING_2008-2016_ISSUES.md`, retaining the 2014 Q50 upstream conflict until separately verified.
+- Review the three remaining matching/source QA cases in `MATCHING_2008-2016_ISSUES.md`, retaining the 2014 Q50 upstream conflict until separately verified.
 - Expand manual explanation/screenshot fidelity checks before any downstream stage.

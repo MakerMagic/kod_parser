@@ -3,13 +3,10 @@
 
 Records: 450. Readiness: True. Matching issues only; raw/clean warnings are preserved in merged snapshots and shown during inspection, not silently resolved.
 
-## Bullet Structure Ambiguous (4 records)
+## Bullet Structure Ambiguous (1 records)
 
 | Year | Section | Question | Question source | Answer source / pages | Reason / upstream cause | Review |
 |---|---|---|---|---|---|---|
-| 2016 | section_1 | 9 | TSA Oxford 2016.pdf | TSA-2008-2016-Explained-Answers.pdf; {'start_page': 291, 'end_page': 292} | bullet_structure_ambiguous:choice_transition_without_unique_incorrect_labels | yes |
-| 2016 | section_1 | 21 | TSA Oxford 2016.pdf | TSA-2008-2016-Explained-Answers.pdf; {'start_page': 295, 'end_page': 296} | bullet_structure_ambiguous:choice_transition_without_unique_incorrect_labels | yes |
-| 2016 | section_1 | 33 | TSA Oxford 2016.pdf | TSA-2008-2016-Explained-Answers.pdf; {'start_page': 300, 'end_page': 300} | bullet_structure_ambiguous:choice_transition_without_unique_incorrect_labels | yes |
 | 2016 | section_1 | 38 | TSA Oxford 2016.pdf | TSA-2008-2016-Explained-Answers.pdf; {'start_page': 302, 'end_page': 304} | bullet_structure_ambiguous:unexpected_encoded_list_marker_preserved:page_303_line_2; bullet_structure_ambiguous:unexpected_encoded_list_marker_preserved:page_303_line_3; bullet_structure_ambiguous:unexpected_encoded_list_marker_preserved:page_303_line_4; bullet_structure_ambiguous:unexpected_encoded_list_marker_preserved:page_303_line_5 | yes |
 
 ## Correct Answer Option Conflict (1 records)

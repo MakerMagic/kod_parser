@@ -81,7 +81,20 @@ and spaces; default extracted page text is preserved separately. Every explanati
 line has a source-page/line/span reference; paragraphs, hanging list continuations,
 and cross-page content remain structured. Repeated lettered list items plus an
 elimination transition support incorrect-option analysis. Ordinary lists remain
-ordinary; absent/conflicting option labels stay unmapped with a warning.
+ordinary; conflicting or structurally ambiguous option labels stay unmapped with
+a warning. An explicit elimination lead-in plus an aligned, consecutive source
+ordinal list (1, 2, ...) is retained without inventing A–E labels; absent letters
+in this verified source layout are not a parsing failure (parser profile v3).
+
+Classifier v2 confirms list starts using local repeated markers/indentation or
+an independently supported introduction. Continuation is bounded to the marker
+and content columns (including numbered and reverse-hanging layouts), so ordinary
+prose cannot join an item merely because it is further right. Incorrect-choice
+context survives matching list chunks and paragraph/page continuations, but ends
+at independent prose or a new list introduction. A standalone marker before a
+confirmed list is retained in the ordered raw blocks with role
+`list_marker_artifact`, not displayed as explanation text. Unconfirmed symbols
+and encoded markers remain preserved and reported.
 
 Generic matching uses `(year, section, question_number)` within the explicitly
 selected Blackstone question collection. Known paper/variant/exam conflicts are
@@ -92,10 +105,19 @@ changing generic matching. This is not fuzzy matching or proof of source accurac
 Verified first run: 450 SECTION 1 answer records across nine years; 449 matched
 and 2014 Q50 blocked by missing clean answer labels (only A/C available).
 2008 Q12 has an image-only explanation: its preview is preserved but readable
-explanation text remains unavailable. 2016 Q9/Q21/Q33 elimination bullets lack
-extractable individual labels; their text/lists are preserved separately without
-inventing option mapping. 2016 Q38 contains corrupted PDF list markers; their
-original text is preserved and reported for review against its source preview.
+explanation text remains unavailable. 2016 Q9/Q21/Q33 now retain complete four-item
+incorrect-answer sections and no generic lists; the source numbers them 1–4 rather
+than naming options, so individual letter mappings are unavailable by source
+design, not a parsing issue. Q38's
+post-list prose is restored to Main Explanation; its real five-score list is
+retained, and the standalone diamond is ignored structurally with raw traceability.
+Eighteen analogous diamond-prefixed elimination sections are recovered without
+changing the already-correct 2016 Q1 / 2014 Q6 / 2015 Q31 projections.
+2016 Q38 still contains corrupted PDF list markers and score operators (for
+example, `Pip=28°54` instead of the visible `Pip=28*54`); the original extraction
+is preserved and remains reported for review against its source preview.
 Existing clean prompt/visual issues remain unresolved.
 Compare screenshots, formulas, paragraphs, list boundaries, and both source PDFs
 before treating a matched record as fidelity-approved.
+
+$matchingHtml = 'inspections_matching\TSA_2016_q9-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.html'; & $matchingPython -m processors.matching.backtest inspect --matched-json 'data\merged\blackstone\tsa_2008-2016.matched.json' --year 2016 --question 9 --format html --output $matchingHtml; if (Test-Path $matchingHtml) { Invoke-Item -LiteralPath $matchingHtml }
