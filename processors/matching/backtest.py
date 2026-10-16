@@ -110,6 +110,22 @@ def inspect_question(
         "record": record,
         "live_inspection_issues": live,
     }
+    generation_entries = [
+        entry
+        for entry in data.get("explanation_pilot", {}).get("audit", [])
+        if entry.get("identity") == record["identity"]
+    ]
+    if len(generation_entries) == 1:
+        entry = generation_entries[0]
+        result["explanation_generation_history"] = entry.get("generation_attempts") or [
+            {"candidate": entry.get("candidate"), "metadata": entry.get("metadata")}
+        ]
+        result["explanation_provider_events"] = entry.get("events", [])
+        result["explanation_semantic_review"] = entry.get("semantic_review")
+        result["explanation_candidate"] = entry.get("candidate")
+        result["explanation_generation_metrics"] = data.get(
+            "explanation_pilot", {}
+        ).get("metrics")
     source_issues = [
         issue
         for issue in data["issues"]
@@ -212,7 +228,7 @@ def render_html(result):
             return (
                 "<ul>"
                 + "".join(
-                    f"<li class='text' data-option='{escape(item.get('label') or 'unresolved')}'>{escape(item['text'])}</li>"
+                    f"<li class='text' data-option='{escape(item.get('label') or 'unresolved')}'>{escape((item['label'] + ': ') if item.get('label') and not re.match(r'^' + re.escape(item['label']) + r'\s*[-–—.:)]', item['text']) else '')}{escape(item['text'])}</li>"
                     for item in block["items"]
                 )
                 + "</ul>"
@@ -280,6 +296,80 @@ def render_html(result):
             }
         ),
     )
+    generation = r.get("ai_explanation")
+    if generation:
+        metrics = result.get("explanation_generation_metrics")
+        availability = (
+            text(
+                f"Generation availability: {metrics['received_output']}/{metrics['selected']}\n"
+                f"Explanation quality among completed returned outputs: {metrics['accepted']}/{metrics['quality_evaluated']} accepted (provider failures excluded)\n"
+                f"Overall completed: {metrics['accepted']}/{metrics['selected']}"
+            )
+            if metrics
+            else ""
+        )
+        first_status = generation.get(
+            "first_attempt_validation_status",
+            generation.get("validation_status", "unavailable"),
+        )
+        final_status = (
+            "rejected"
+            if generation.get("quality_review_status") == "rejected"
+            else generation.get("validation_status", "unavailable")
+        )
+        section(
+            "generation-validation",
+            "Generation Validation",
+            availability
+            + text(
+                f"Provider: {generation.get('provider', 'unavailable')}\n"
+                f"Model: {generation.get('model', 'unavailable')}\n"
+                f"First-attempt validation status: {first_status}\n"
+                f"Retry attempted: {bool(generation.get('retry_attempted', False))}\n"
+                f"Retry result: {generation.get('retry_result', 'not_attempted')}\n"
+                f"Deferred provider retry cycles (this run): {generation.get('deferred_retry_cycles', 0)}\n"
+                f"Provider failure: {generation.get('failure_code', 'none')}\n"
+                f"Final validation status: {final_status}\n"
+                f"Semantic-review status: {generation.get('semantic_review_status', 'not_recorded')}\n"
+                f"Generation status: {generation.get('generation_status', 'unavailable')}"
+            )
+            + text(
+                "First-attempt rejection reasons: "
+                + ", ".join(generation.get("first_attempt_validation_errors", []))
+            )
+            + text(
+                "Final rejection reasons: "
+                + "; ".join(
+                    generation.get("quality_review_reasons", [])
+                    or generation.get("validation_errors", [])
+                    or (
+                        [generation["failure_code"]]
+                        if generation.get("failure_code")
+                        else []
+                    )
+                )
+            )
+            + "<details><summary>Generation attempt history</summary>"
+            + dump(result.get("explanation_generation_history", []))
+            + dump(result.get("explanation_provider_events", []))
+            + dump(result.get("explanation_semantic_review"))
+            + "</details>",
+        )
+        candidate = result.get("explanation_candidate")
+        if candidate and generation.get("semantic_review_status") in (
+            "pending",
+            "rejected",
+        ):
+            section(
+                "semantic-review-candidate",
+                "Candidate — Not Accepted: Semantic Review",
+                text(candidate.get("main_reasoning"))
+                + "".join(
+                    text(f"{item['label']}: {item['reason']}")
+                    for item in candidate.get("incorrect_options", [])
+                    if isinstance(item, dict) and "label" in item and "reason" in item
+                ),
+            )
 
     section(
         "main-explanation",

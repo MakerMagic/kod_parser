@@ -15,7 +15,7 @@ $matchingPython = Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primar
 
 & $matchingPython -m processors.matching.ai_explanations audit `
   --matched-json 'data\merged\blackstone\tsa_2017-2019.matched.json' `
-  --report 'docs\MATCHING_2017-2019_AI_EXPLANATIONS_ISSUES.md'
+  --report 'docs\ai_explanations\MATCHING_2017-2019_AI_EXPLANATIONS_ISSUES.md'
 ```
 
 The candidate JSON is a reviewed generation result with this shape:
@@ -38,7 +38,7 @@ Apply only validated candidates to a separate snapshot:
   --matched-json 'data\merged\blackstone\tsa_2017-2019.matched.json' `
   --candidates-json 'data\reviewed\tsa_2017-2019_text_only.json' `
   --output 'data\ai_explanations\blackstone\tsa_2017-2019.ai-explained.matched.json' `
-  --report 'docs\MATCHING_2017-2019_AI_EXPLANATIONS_ISSUES.md' `
+  --report 'docs\ai_explanations\MATCHING_2017-2019_AI_EXPLANATIONS_ISSUES.md' `
   --overwrite
 ```
 

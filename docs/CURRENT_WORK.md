@@ -4,6 +4,12 @@ Blackstone clean questions + TSA 2008–2016 explained answers → matched struc
 
 ## Current focus
 
+AI/Gemini generation is stopped. Offline canonical 2017–2019 Markdown exports now list 50 known-key/no-explanation questions per year, including the preserved 2018 Q20 / 2019 Q32 option conflicts. Reproduce with `processors.matching.export_without_explanations`; see `docs/questions_without_explanations/README.md`. The 17 AI-only Markdown files moved to `docs/ai_explanations/` with updated destinations/references; no generation logic or source data changed.
+
+Gemini-only rate-limit classification/backoff/jitter and configurable successful-request cooldown added; prompt, validator, generic generator/scheduler/backtest hashes unchanged. Configured 3.5 Flash Q1–Q5 pilot: first API call returned 429 with provider retry delay 23,643 seconds; remaining calls correctly withheld, 0/5 outputs and five resumable provider failures, no quality rejections. Validation: 139 tests, Ruff and five read-only HTML/text/JSON inspections passed. No fallback/full batch. Report and backtests: `docs/ai_explanations/EXPLANATION_FLASH35_RUN.md`.
+
+Semantic explanation safeguards added: explicit coexistence/assumption prompt rules and a documented, candidate-bound reasoning-review gate before acceptance. Q5 calibration, the same Q1–Q5 pilot and Q9/Q16/Q17 sample returned no output after rate-limited retries on the unchanged configured model. Q5's semantic error is NOT verified fixed. Interrupted sample preserved; connection-close transport handling regression added. Validation: 115 tests, Ruff, read-only HTML/text/JSON and PowerShell syntax checks passed. Canonical/source explanations unchanged; no full batch started. Actual outcomes and backtests: `docs/ai_explanations/EXPLANATION_SEMANTIC_REVIEW.md`.
+
 Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then match them to existing clean Blackstone questions.
 
 ## Already completed
@@ -69,6 +75,10 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Code navigation
 
+- Semantic triage/review evidence: `processors/explanations/validator.py`; candidate-bound approval: `generator.approve_after_quality_review`; regressions: `tests/test_explanation_semantics.py`. Structural pass alone stays pending, not accepted.
+
+- Deferred-provider queue: `processors/explanations/scheduler.py`; orchestration/resume/metrics: `generator.py`; regressions: `tests/test_explanation_deferred.py`.
+
 - Answer-only profile: `parsers/blackstone_answer_keys/`; tests: `tests/test_blackstone_answer_keys.py`; commands/report: `MATCHING_2017-2019_BACKTEST.md` / `MATCHING_2017-2019_ISSUES.md`.
 - Explicit clean-body pins: clean module `body_assets.py` / `pinned_sources/`; tests: `tests/test_blackstone_pinned_body.py`.
 
@@ -94,6 +104,8 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 - additional sources.
 
 ## Next task
+
+- Review the 2017–2019 no-explanation Markdown exports. AI/Gemini generation remains stopped until explicitly requested again; historical commands under `docs/ai_explanations/` are not an active next step.
 
 - Independent CLEAN limitation: 2016 Q37 retains the declarative "When I looked..." sentence in Main Question, despite correct RAW ordering between the two now-complete diagrams. Grouping does not resolve this body/prompt classification; review separately without a question-specific exception.
 - Review the two upstream option-label conflicts blocking 2017–2019 matches; do not force their correct-answer association. Keep the Q44 manual composite scoped to the approved source/key.
