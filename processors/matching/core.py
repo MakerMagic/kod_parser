@@ -14,6 +14,9 @@ from processors.normalization.blackstone.body_assets import (
 from processors.normalization.blackstone.option_assets import resolve_clean_asset
 from processors.normalization.blackstone.storage import clean_files, load_clean
 
+from .explanation import build_final_explanation
+from .manual_replacements import select_manual_replacement
+
 
 def file_reference(path, pointer=None):
     path = Path(path).resolve()
@@ -339,6 +342,9 @@ def match_records(
                 answers[key].append(item)
     for key in sorted(set(questions) | set(answers)):
         qs, ans = questions[key], answers[key]
+        ans, superseded = select_manual_replacement(
+            ans, qs[0]["record"]["source_question_key"] if len(qs) == 1 else None
+        )
         issues = []
         if len(qs) > 1 or len(ans) > 1:
             status = "ambiguous"
@@ -424,6 +430,23 @@ def match_records(
                     ("explanation_boundary_unresolved", "malformed_question_header")
                 ):
                     issues.append(finding(warning.split(":")[0], warning, key))
+        final_explanation = build_final_explanation(
+            a_item["record"] if a_item else None,
+            a_item["reference"] if a_item else None,
+        )
+        issues.extend(
+            finding(
+                item["code"],
+                item["reason"],
+                key,
+                **(
+                    {"source_pointer": item["source_pointer"]}
+                    if item.get("source_pointer")
+                    else {}
+                ),
+            )
+            for item in final_explanation["issues"]
+        )
         for issue in issues:
             issue["question_source"] = (
                 q_item["document"].get("input") if q_item else None
@@ -440,6 +463,7 @@ def match_records(
             else None,
             "question": deepcopy(q_item["record"]) if q_item else None,
             "answer": deepcopy(a_item["record"]) if a_item else None,
+            "final_explanation": final_explanation,
             "question_reference": q_item["reference"] if q_item else None,
             "answer_reference": a_item["reference"] if a_item else None,
             "question_document": deepcopy(q_item["document"]) if q_item else None,
@@ -470,6 +494,8 @@ def match_records(
             },
             "issues": issues,
         }
+        if superseded:
+            record["superseded_answer_candidates"] = deepcopy(superseded)
         output["records"].append(record)
         output["issues"].extend(issues)
     for side, item, code in invalid:
@@ -488,6 +514,10 @@ def match_records(
                 "status": "conflict",
                 "question": item["record"] if side == "question" else None,
                 "answer": item["record"] if side == "answer" else None,
+                "final_explanation": build_final_explanation(
+                    item["record"] if side == "answer" else None,
+                    item["reference"] if side == "answer" else None,
+                ),
                 "correct_answer": None,
                 "question_reference": item["reference"] if side == "question" else None,
                 "answer_reference": item["reference"] if side == "answer" else None,

@@ -1,5 +1,9 @@
 # TSA 2021 matching inspection
 
+All inspections include the derived [Final Explanation](MATCHING_2008-2016_BACKTEST.md#final-explanation-all-matching-source-formats)
+alongside original components; Q48's table is included at its source-block position.
+Re-run matching only to persist the new field; original answer JSON/assets remain unchanged.
+
 Run in PowerShell from the repository root. Parsing and matching are separate;
 question raw/clean files and legacy answer outputs are not modified.
 

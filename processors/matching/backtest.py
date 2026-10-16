@@ -13,6 +13,7 @@ from parsers.blackstone.visual_inspection import read_png, resolve_asset, visual
 from processors.normalization.blackstone.backtest import render_html as clean_html
 from processors.normalization.blackstone.issues import current_issues
 
+from .explanation import build_final_explanation
 from .report import write_report
 from .storage import load_matched, protect_output
 
@@ -42,6 +43,11 @@ def inspect_question(
             else "No selected record"
         )
     record = found[0]
+    # Older matched files remain inspectable, without writing back to them.
+    record.setdefault(
+        "final_explanation",
+        build_final_explanation(record.get("answer"), record.get("answer_reference")),
+    )
     live = []
     refs = [record.get("question_reference"), record.get("answer_reference")]
     q, a = record.get("question"), record.get("answer")
@@ -67,6 +73,22 @@ def inspect_question(
             for asset in [
                 *a.get("visual_previews", []),
                 *a.get("explanation", {}).get("visual_assets", []),
+            ]
+        ]
+    for candidate in record.get("superseded_answer_candidates", []):
+        original = candidate["record"]
+        refs += [candidate["reference"], original["source_document"]]
+        refs.extend(original["source_document"].get("related_sources", []))
+        refs += [
+            {
+                "path": str(
+                    resolve_asset(candidate["reference"]["path"], asset["path"])
+                ),
+                "sha256": asset["sha256"],
+            }
+            for asset in [
+                *original.get("visual_previews", []),
+                *original["explanation"].get("visual_assets", []),
             ]
         ]
     for ref in refs:
@@ -190,16 +212,59 @@ def render_html(result):
             return (
                 "<ul>"
                 + "".join(
-                    f"<li class='text'>{escape(item['text'])}</li>"
+                    f"<li class='text' data-option='{escape(item.get('label') or 'unresolved')}'>{escape(item['text'])}</li>"
                     for item in block["items"]
                 )
                 + "</ul>"
+            )
+        if block["type"] != "paragraph":
+            return (
+                "<p class='issue'>Unsupported explanation block; retained below.</p>"
+                + dump(block)
             )
         return (
             ""
             if block.get("role") == "list_marker_artifact"
             else text(block.get("text"))
         )
+
+    final = r.get("final_explanation") or build_final_explanation(
+        a, r.get("answer_reference")
+    )
+    final_content = (
+        "<p><strong>Manually supplied by the user; not extracted from the source PDF.</strong></p>"
+        if (a or {}).get("provenance", {}).get("origin") == "user_supplied_manual"
+        else ""
+    )
+    if final["status"] == "unavailable" or (
+        not final["blocks"] and not final["unplaced_components"]
+    ):
+        final_content += text(
+            "No explanation is available: this source format supplies answers only."
+            if final.get("reason") == "not_supplied_by_source_format"
+            else "Explanation unavailable; see original components/source and issues below."
+        )
+    if final["status"] == "uncertain":
+        final_content += "<p class='issue'>Final Explanation requires review; unresolved content/order has not been repaired or guessed.</p>"
+    final_content += "".join(explanation_block(block) for block in final["blocks"])
+    if final["unplaced_components"]:
+        final_content += (
+            "<details open><summary>Unplaced components — order not asserted</summary>"
+            + dump(final["unplaced_components"])
+            + "</details>"
+        )
+    final_content += (
+        "<details><summary>Combination provenance / warnings</summary>"
+        + dump(
+            {
+                k: v
+                for k, v in final.items()
+                if k not in ("blocks", "unplaced_components")
+            }
+        )
+        + "</details>"
+    )
+    section("final-explanation", "Final Explanation", final_content)
 
     section(
         "main-explanation",
@@ -255,12 +320,11 @@ def render_html(result):
                 )
                 + "</ul>"
             )
-    if "visual_assets" not in explanation or wrong:
-        section(
-            "incorrect-explanations",
-            "Incorrect Answer Explanations",
-            "".join(wrong) or text(None),
-        )
+    section(
+        "incorrect-explanations",
+        "Incorrect Answer Explanations",
+        "".join(wrong) or text(None),
+    )
     other = []
     for block in explanation.get("other_lists", []):
         other.append(
@@ -271,13 +335,39 @@ def render_html(result):
             )
             + "</ul>"
         )
-    if "visual_assets" not in explanation:
-        section("other-lists", "Other Explanation Lists", "".join(other) or text(None))
+    section("other-lists", "Other Explanation Lists", "".join(other) or text(None))
     section(
         "explanation-order",
         "Original Explanation Block Order",
         dump(explanation.get("blocks")),
     )
+    for candidate in r.get("superseded_answer_candidates", []):
+        original = candidate["record"]
+        content = "<p>Manually superseded, not a claimed parser fix. Original content and warnings are preserved.</p>"
+        content += dump(
+            {
+                "reference": candidate["reference"],
+                "source": original["source_document"],
+                "pages": original["page_reference"],
+                "warnings": original["warnings"],
+                "explanation": original["explanation"],
+            }
+        )
+        for asset in original.get("visual_previews", []):
+            try:
+                png = read_png(
+                    resolve_asset(candidate["reference"]["path"], asset["path"])
+                )
+                if sha256(png).hexdigest() != asset["sha256"]:
+                    raise ValueError("Original source preview hash differs")
+                content += f"<figure><figcaption>Original source page {asset['page']}</figcaption><img alt='Original superseded explanation' src='data:image/png;base64,{base64.b64encode(png).decode('ascii')}'></figure>"
+            except (OSError, ValueError) as error:
+                content += "<p class='issue'>" + escape(str(error)) + "</p>"
+        section(
+            "superseded-explanation",
+            "Original PDF Explanation — Manually Superseded",
+            content,
+        )
     section(
         "original-screenshot",
         "Original Question Screenshot",
@@ -346,6 +436,19 @@ def render_html(result):
                     else {}
                 ),
                 "answer_parsing": (a or {}).get("warnings"),
+                **(
+                    {
+                        "superseded_source_warnings": [
+                            {
+                                "source": c["reference"],
+                                "warnings": c["record"]["warnings"],
+                            }
+                            for c in r["superseded_answer_candidates"]
+                        ]
+                    }
+                    if r.get("superseded_answer_candidates")
+                    else {}
+                ),
                 "raw_question": (q or {}).get("raw_warnings"),
                 "raw_document": (q or {}).get("raw_document_warnings"),
                 "cleaning": (q or {}).get("cleaning_issues"),

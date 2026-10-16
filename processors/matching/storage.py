@@ -32,6 +32,7 @@ def protect_output(data, output, *, merged_json=None):
         for doc in (
             record.get("question_document"),
             (record.get("answer") or {}).get("source_document"),
+            *[c["document"] for c in record.get("superseded_answer_candidates", [])],
             *[c["document"] for c in record.get("question_candidates", [])],
             *[c["document"] for c in record.get("answer_candidates", [])],
         ):

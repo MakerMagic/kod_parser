@@ -518,6 +518,40 @@ Raw/clean JSON and PNGs remain immutable. Inspection validates live references;
 reports group only matching findings with unique-record counts and direct upstream
 causes. See `MATCHING_2008-2016_BACKTEST.md` for commands and limitations.
 
+### Derived Final Explanation
+
+Each merged record adds `final_explanation` without changing its original
+`answer.explanation` snapshot or any raw/clean inputs. It contains `status`
+(`available`, `uncertain`, `unavailable`), `ordering`, ordered `blocks`,
+`source_reference`, `source_warnings`, `issues`, `unplaced_components`,
+`omitted_artifacts` and `deduplicated_blocks`. `reason` explains unavailable
+content. Availability describes reconstruction, not verification of the source's
+reasoning; existing source warnings keep the view uncertain.
+
+Blocks retain original paragraph/list/visual types, roles, text, option labels,
+line/page references and asset indices. Added `source_pointer` values are relative
+to the answer snapshot; `source_reference` identifies its original JSON/hash/record
+pointer. Visual paths still resolve relative to the original answer JSON, never
+the merged output. Manual-source provenance remains in the unchanged answer.
+
+Unique original block ordinals determine reading order, with source-span conflict
+checks. Non-overlapping source spans are the fallback when ordinals are absent;
+a single block needs no inferred order. Component projections are checked for
+coverage, not concatenated. Exact block aliases are represented once; repeated
+text at different source positions remains. Transition metadata is used only if
+that transition is not already represented by an earlier paragraph. Verified
+`list_marker_artifact` blocks are omitted from readable flow but retained with
+their pointers. No other text or symbols are removed.
+
+Ambiguous order produces no invented combined sequence: original pieces stay in
+`unplaced_components`, with `final_explanation_order_uncertain`. Missing/conflicting
+projection content and unplaced/missing visual references produce
+`final_explanation_content_unplaced` / `final_explanation_visual_unresolved`.
+These findings enter matching reports without changing exact-key match status.
+Answer-only sources explicitly remain unavailable; source previews alone are not
+silently promoted to decoded explanation content. Older matched files can be
+inspected with an in-memory derived view, without changing their stored JSON.
+
 ### Blackstone 2021/2022 answer-source profile
 
 `parsers/blackstone_explained_answers/` produces the same `answer_raw` v1 contract,
@@ -540,14 +574,31 @@ conflicting saved assets fail readiness.
 
 `parsers.manual_explanations` imports one user-approved structured JSON source
 only when explicitly invoked. It writes a separate `answer_raw` v1 intermediate;
-it does not patch PDF-derived answers. The single current approved source is
-`processors/matching/manual_sources/tsa_2022_q046.json` (2022, not the corrected
-2026 typo). `provenance` records manual origin, approval, text JSON pointer/hash
+it does not patch PDF-derived answers. Approved definitions live under
+`processors/matching/manual_sources/`: the missing Q46 2022 supplement (2022,
+not the corrected 2026 typo), and explicit 2008 Q12 / 2016 Q38 replacements.
+`provenance` records manual origin, approval, text JSON pointer/hash
 and answer origin; `source_document.related_sources` retains the associated PDF
 reference/hash. Raw text is exact user text, with no invented PDF spans or pages.
 Optional `target_question_key` must equal the matched clean source key. Missing
-questions are never auto-filled, and duplicate answer candidates remain ambiguous.
+questions are never auto-filled, and ordinary duplicate answer candidates remain ambiguous.
 Manual origin is shown explicitly in HTML inspection and source metadata.
+
+Optional `explanation_blocks` preserves manually specified paragraphs/lists;
+coverage validation checks all supplied text and list `raw_text` markers. Optional
+hashed `evidence` files become related sources. An explicit
+`provenance.replaces_explanation` pins an original answer ID, PDF hash and SHA-256
+of its canonical sorted-key explanation JSON. Matching can select exactly one
+approved replacement over exactly one pinned original, only with a unique clean
+question, exact target key, consistent metadata and an unchanged correct answer.
+Unverified/duplicate replacements do not resolve ambiguity. The original complete
+candidate, warnings, references and previews stay in
+`superseded_answer_candidates`; it is not deleted or rewritten. Optional
+`preserved_source_fragments` must match original block text exactly and remain
+present in the replacement. The selected manual snapshot drives the component
+sections and Final Explanation; the original stays visible in a separate audit
+section. Superseded source findings remain in a separate report history table,
+not falsely labelled as parser fixes.
 
 ### Answer-only ruled key profile (2017–2019)
 

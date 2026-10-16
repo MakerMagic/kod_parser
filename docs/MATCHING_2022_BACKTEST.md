@@ -1,5 +1,9 @@
 # TSA 2022 matching inspection
 
+All inspections include the derived [Final Explanation](MATCHING_2008-2016_BACKTEST.md#final-explanation-all-matching-source-formats)
+alongside original components. Q45 preserves prose → bullets → concluding prose;
+Q46 keeps its manual-origin notice. Re-run matching only to persist the new field.
+
 Run from the repository root in PowerShell. Parsing and matching are separate;
 question raw/clean files and 2008–2016 outputs stay unchanged.
 

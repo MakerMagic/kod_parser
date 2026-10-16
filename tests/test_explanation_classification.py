@@ -371,12 +371,18 @@ def test_whole_source_html_inspection_shows_fixed_ownership_without_mutation():
     baseline = path.read_bytes()
     for number in (9, 21, 33, 38):
         result = inspect_question(path, year=2016, question_number=number)
-        raw = json.loads(
-            Path(result["record"]["answer_reference"]["path"]).read_text(
-                encoding="utf-8"
-            )
+        record = result["record"]
+        candidate = (
+            record["superseded_answer_candidates"][0]
+            if record.get("superseded_answer_candidates")
+            else {"record": record["answer"], "reference": record["answer_reference"]}
         )
-        answer = result["record"]["answer"]
+        # Check PDF classification against the preserved PDF candidate, not a
+        # manually supplied explanation with deliberately no PDF line spans.
+        raw = json.loads(
+            Path(candidate["reference"]["path"]).read_text(encoding="utf-8")
+        )
+        answer = candidate["record"]
         projected, notes = structure(input_lines(raw, answer), answer["correct_answer"])
         assert answer["explanation"] == projected
         assert answer["warnings"] == notes
@@ -426,14 +432,27 @@ def test_verified_numbered_sections_leave_generated_issues_but_real_issues_remai
     data = json.loads(path.read_text(encoding="utf-8"))
     identities = {(i.get("year"), i.get("question_number")) for i in data["issues"]}
     assert not identities.intersection({(2016, 9), (2016, 21), (2016, 33)})
-    assert {(2016, 38), (2008, 12), (2014, 50)} <= identities
+    assert (2014, 50) in identities
+    assert not identities.intersection({(2016, 38), (2008, 12)})
+    archived = {
+        (r["identity"]["year"], r["identity"]["question_number"]): r
+        for r in data["records"]
+        if r.get("superseded_answer_candidates")
+    }
+    assert set(archived) == {(2016, 38), (2008, 12)}
+    for record in archived.values():
+        assert record["answer"]["provenance"]["origin"] == "user_supplied_manual"
+        assert record["superseded_answer_candidates"][0]["record"]["warnings"]
     output = tmp_path / "issues.md"
     write_report(data, output)
     report = output.read_text(encoding="utf-8")
-    assert "## Bullet Structure Ambiguous (1 records)" in report
+    assert "## Manually Superseded Source Findings (2 records)" in report
+    assert (
+        "bullet_structure_ambiguous:unexpected_encoded_list_marker_preserved" in report
+    )
     for number in (9, 21, 33):
         assert f"| 2016 | section_1 | {number} |" not in report
-    assert "| 2016 | section_1 | 38 |" in report
+    assert "| 2016 | 38 |" in report
     assert report == (ROOT / "docs/MATCHING_2008-2016_ISSUES.md").read_text(
         encoding="utf-8"
     )

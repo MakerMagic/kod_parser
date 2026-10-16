@@ -254,6 +254,13 @@ def test_all_36_alignment_cases_and_already_correct_controls(corpus):
             continue
         old = json.loads(baseline.read_text(encoding="utf-8"))
         for q, b in zip(data["questions"], old["questions"]):
+            if q["raw_record"] != b["raw_record"]:
+                # This frozen cleaning baseline predates subsequent RAW visual
+                # grouping fixes. Compare the cleaner on identical old inputs;
+                # current RAW-to-clean grouping has its own regression tests.
+                original = json.loads(raw.read_text(encoding="utf-8"))
+                original["questions"] = [deepcopy(b["raw_record"])]
+                q = clean_dataset(original, raw)["questions"][0]
             assert (
                 q["raw_record"] == b["raw_record"]
                 and q["raw_warnings"] == b["raw_warnings"]

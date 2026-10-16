@@ -1,0 +1,28 @@
+{
+  "origin": "user_supplied_manual",
+  "approval": "single_question",
+  "supplied_by": "user",
+  "verification": "User supplied the explanation and explicitly confirmed Pip=28*54 and Eve=27*56, retaining 1*2 modulo 3. The existing final takeaway paragraph is preserved verbatim from the pinned source record rather than silently dropped. No change to the source answer or PDF extraction is claimed.",
+  "year": 2016,
+  "section": "section_1",
+  "question_number": 38,
+  "correct_answer": "E",
+  "correct_answer_origin": "Unchanged E from the original source header Question 38: E; this supplement changes explanation content only.",
+  "target_question_key": {"source": "blackstone", "year": 2016, "paper": "4502/11", "variant": null, "section": "section_1", "question_number": 38},
+  "related_source_document": {"path": "../../../acquisition/local/TSA-2008-2016-Explained-Answers.pdf", "sha256": "5941891603c9c0b6f787d368226418f6b3e5341079df248ff828c6d4e785573d"},
+  "replaces_explanation": {"answer_id": "5941891603c9c0b6f787_2016_section_1_q38_r438", "source_sha256": "5941891603c9c0b6f787d368226418f6b3e5341079df248ff828c6d4e785573d", "explanation_sha256": "58ff1796d01473102bb18863d58bef86244c45a1ecf740fad66cef5d129a3995"},
+  "preserved_source_fragments": [{"order": 5, "text": "This is an important takeaway for the TSA, you will very rarely need to engage\nin tedious computation; there is often a much simpler shortcut."}],
+  "explanation_text": "This question has a straightforward method: calculate the scores of each\nparticipant and identify the odd one out. The scores can be calculated as follows:\n• Pip=28*54\n- Eve=27*56\n- Bob=24*63\n- Viv-22*68\n-  Nan=21*72\nBefore you start trying to remember the day of year 4\nwhen you were taught\nhow to do long multiplication by hand, stare at those products for a bit. It should\nbecome clear that four of these are a multiple of 3 (found by summing the digits)\nwhile one is not. Viv’s answer is equivalent to 1*2 modulo 3 while the other\nanswers are 0 modulo 3. This must therefore be the odd one out.\n\nThis is an important takeaway for the TSA, you will very rarely need to engage\nin tedious computation; there is often a much simpler shortcut.",
+  "explanation_blocks": [
+    {"type": "paragraph", "role": "main", "text": "This question has a straightforward method: calculate the scores of each\nparticipant and identify the odd one out. The scores can be calculated as follows:"},
+    {"type": "list", "role": "other", "items": [
+      {"text": "Pip=28*54", "raw_text": "• Pip=28*54"},
+      {"text": "Eve=27*56", "raw_text": "- Eve=27*56"},
+      {"text": "Bob=24*63", "raw_text": "- Bob=24*63"},
+      {"text": "Viv-22*68", "raw_text": "- Viv-22*68"},
+      {"text": "Nan=21*72", "raw_text": "-  Nan=21*72"}
+    ]},
+    {"type": "paragraph", "role": "main", "text": "Before you start trying to remember the day of year 4\nwhen you were taught\nhow to do long multiplication by hand, stare at those products for a bit. It should\nbecome clear that four of these are a multiple of 3 (found by summing the digits)\nwhile one is not. Viv’s answer is equivalent to 1*2 modulo 3 while the other\nanswers are 0 modulo 3. This must therefore be the odd one out."},
+    {"type": "paragraph", "role": "main", "text": "This is an important takeaway for the TSA, you will very rarely need to engage\nin tedious computation; there is often a much simpler shortcut.", "origin": "preserved_source_fragment", "source_block_order": 5}
+  ]
+}

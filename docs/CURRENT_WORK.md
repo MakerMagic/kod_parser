@@ -8,6 +8,10 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Already completed
 
+- RAW structural grouping fixes 2019 Q36's detached dimension and 2016 Q37's fragmented mushroom arrays (3→2 / 48→2 assets). Isolated reparsing of all 800 questions changed only these two records' visual fields; text/identity/options and original PNGs remain preserved. Affected RAW/CLEAN and dependent matching snapshots/reports regenerated; existing issue counts and ambiguous cases remain unchanged. Full suite: 457 passed; focused lint/format checks passed; regenerated PNG crops visually checked.
+- Matching derives ordered `final_explanation` blocks without modifying source components. With the approved manual supplements, 550 explanations are available and 150 answer-only records remain explicitly unavailable. HTML retains component debugging sections; original raw/clean inputs and assets stay immutable.
+- Added pinned manual explanations for 2008 Q12 (supplied screenshot) and 2016 Q38 (confirmed notation, structured list, existing final takeaway retained). Original PDF candidates/warnings/previews remain archived and visible in a manual-supersession report table, not claimed parser fixes. Only these two of the 450 legacy merged records changed; 163 matching/explanation regressions pass.
+
 - Python environment created.
 - GitHub repository connected.
 - Basic project documentation added.
@@ -90,9 +94,10 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Next task
 
+- Independent CLEAN limitation: 2016 Q37 retains the declarative "When I looked..." sentence in Main Question, despite correct RAW ordering between the two now-complete diagrams. Grouping does not resolve this body/prompt classification; review separately without a question-specific exception.
 - Review the two upstream option-label conflicts blocking 2017–2019 matches; do not force their correct-answer association. Keep the Q44 manual composite scoped to the approved source/key.
 - User confirmed 2018 Q20 = B and 2019 Q32 = C; these agree with source keys and are shown in the issues report without clearing the upstream option conflicts.
 
 - Keep the supplied PDF's Q46 header omission traceable; replace the approved 2022 manual supplement only with verified source evidence. Do not turn it into an automatic missing-explanation fallback.
-- Review the three remaining matching/source QA cases in `MATCHING_2008-2016_ISSUES.md`, retaining the 2014 Q50 upstream conflict until separately verified.
+- Review the remaining 2014 Q50 upstream option conflict in `MATCHING_2008-2016_ISSUES.md`. Keep 2008 Q12 / 2016 Q38's original source failures traceable alongside their approved manual explanations.
 - Expand manual explanation/screenshot fidelity checks before any downstream stage.

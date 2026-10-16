@@ -56,6 +56,16 @@ Existing raw QA exports moved to `inspections_raw/`; the raw guide already had
 a clear name, [RAW_PARSER_BACKTEST.md](RAW_PARSER_BACKTEST.md). Explicit legacy
 report paths still work. Cleaning never edits raw JSON or referenced raw PNGs.
 
+The RAW grouping upgrade for 2019 Q36 / 2016 Q37 needs regeneration, not a clean
+merging rule. Inspect these with the same CLI selectors (`--year 2019 --question
+36` / `--year 2016 --question 37`, and the corresponding source filename). Main
+Body contains one complete pattern plus a separate table for Q36, and two
+complete mushroom diagrams for Q37. RAW correctly places the sentence between
+Q37's diagrams; an independent, pre-existing CLEAN split still places "When I
+looked..." in Main Question rather than between those diagrams. That presentation
+issue remains unresolved, not a successful grouping fix. Old unreferenced raw
+PNGs remain for traceability; regenerated JSON determines the displayed assets.
+
 ## Initial rules and evidence
 
 ### Explicit pinned body visual: 2022 Q44

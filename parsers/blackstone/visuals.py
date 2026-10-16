@@ -13,6 +13,7 @@ from pathlib import Path
 import pypdfium2 as pdfium
 
 from .image_options import image_choice_anchors
+from .visual_grouping import group_body_components
 from .visual_structure import (
     focused_crop,
     foreign_option_anchors,
@@ -857,6 +858,9 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                     for group in groups
                                     if group not in text_containers
                                 ]
+                            groups = group_body_components(
+                                groups, pending["lines"], number, anchors
+                            )
                             refined = []
                             for group in groups:
                                 box = group["bbox"]
@@ -995,6 +999,10 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                     group["objects"],
                                 )
                                 asset.update(group["crop_context"])
+                                asset["notes"].extend(group.get("grouping_notes", []))
+                                asset["warnings"].extend(
+                                    group.get("grouping_warnings", [])
+                                )
                                 if group.get("graph"):
                                     asset["visual_kind"] = "graph"
                                 elif group.get("table"):

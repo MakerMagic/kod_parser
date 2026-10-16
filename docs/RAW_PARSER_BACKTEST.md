@@ -87,6 +87,29 @@ Assets live under `OUTPUT_DIR/assets/<source-content-hash>/`. Names such as `bla
 
 ### Focused crops and structured placement
 
+Disconnected body geometry is grouped **before** focused cropping, without
+increasing the general proximity radius. A detached dimension annotation needs a
+shaft with paired arrowheads, a local measurement, matching extents, a unique
+nearby owner and no intervening prose or graphic. Complete regular point lattices
+also need one centre label and measurement evidence; prose separates successive
+drawings. These extra rules operate only before known answer anchors, leaving
+image-option grouping unchanged. Original object IDs/bounds remain traceable;
+grouping evidence is recorded in asset `notes`.
+
+For example, 2019 Q36 now stores the pattern and both dimensions in one crop,
+while its price table remains separate. The two mushroom arrays in 2016 Q37
+remain two separate diagrams, not individual point crops. Missing structural
+evidence is not replaced by a wider crop. A dimension with multiple plausible
+owners stays separate and reports `visual_grouping_uncertain` under Visual
+Structure Issues. This does not claim to solve arbitrary disconnected drawings.
+
+After a raw reparse, regenerate the corresponding clean files with the existing
+clean CLI; do not combine old crops in HTML or modify generated JSON manually.
+
+```powershell
+& $parserPython -m pytest -q tests/test_blackstone_visual_grouping.py tests/test_blackstone_visual_structure.py tests/test_blackstone_visuals.py
+```
+
 On pages with a verified shifted CID font, visual decisions use decoded words
 and prose alongside the original PDF coordinates. Identical overprinted glyphs
 are deduplicated only in this spatial view. Raw line text, source spans and page

@@ -104,6 +104,26 @@ def write_report(data, output):
                 f"| {key[0]} | {key[1]} | {key[2]} | {question_source} | {answer_source}; {first.get('answer_pages', 'unavailable')} | {source_answer} | {reason} | yes |"
             )
         lines.append("")
+    superseded = [r for r in data["records"] if r.get("superseded_answer_candidates")]
+    if superseded:
+        lines += [
+            f"## Manually Superseded Source Findings ({len(superseded)} records)",
+            "",
+            "Audit history, not active explanation failures. Explicit pinned manual supplements are selected; the original parser is not claimed fixed. Original records/warnings/previews remain in superseded_answer_candidates and HTML inspection.",
+            "",
+            "| Year | Question | Original source / pages | Preserved warnings | Manual source |",
+            "|---|---|---|---|---|",
+        ]
+        for record in sorted(
+            superseded,
+            key=lambda r: (r["identity"]["year"], r["identity"]["question_number"]),
+        ):
+            original = record["superseded_answer_candidates"][0]["record"]
+            warnings = "; ".join(original["warnings"]).replace("|", "\\|")
+            lines.append(
+                f"| {record['identity']['year']} | {record['identity']['question_number']} | {original['source_document']['filename']}; {original['page_reference']} | {warnings or 'none'} | {record['answer']['source_document']['filename']} |"
+            )
+        lines.append("")
     path = Path(output)
     if path.suffix.lower() != ".md":
         raise ValueError("Matching report must be Markdown")

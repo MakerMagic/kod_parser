@@ -5,6 +5,7 @@ Never infer missing explanations or modify PDF-derived answer intermediates.
 
 import argparse
 import json
+import re
 from copy import deepcopy
 from hashlib import sha256
 from pathlib import Path
@@ -33,6 +34,13 @@ def parse_manual(path):
     if sha256(Path(related["path"]).read_bytes()).hexdigest() != related["sha256"]:
         raise ValueError("Related explanation source has changed")
     related["filename"] = Path(related["path"]).name
+    evidence = []
+    for item in data.get("evidence", []):
+        item = deepcopy(item)
+        item["path"] = str((path.parent / item["path"]).resolve(strict=True))
+        if sha256(Path(item["path"]).read_bytes()).hexdigest() != item["sha256"]:
+            raise ValueError("Manual explanation evidence has changed")
+        evidence.append(item)
     digest = sha256(original).hexdigest()
     source = {
         "path": str(path),
@@ -40,7 +48,7 @@ def parse_manual(path):
         "sha256": digest,
         "media_type": "application/json",
         "origin": data["origin"],
-        "related_sources": [related],
+        "related_sources": [related, *evidence],
     }
     provenance = {
         k: data[k]
@@ -57,6 +65,12 @@ def parse_manual(path):
         "sha256": digest,
         "json_pointer": "/explanation_text",
     }
+    if data.get("replaces_explanation"):
+        provenance["replaces_explanation"] = deepcopy(data["replaces_explanation"])
+    if data.get("preserved_source_fragments"):
+        provenance["preserved_source_fragments"] = deepcopy(
+            data["preserved_source_fragments"]
+        )
     paragraph = {
         "type": "paragraph",
         "role": "main",
@@ -64,6 +78,25 @@ def parse_manual(path):
         "line_refs": [],
         "order": 1,
     }
+    blocks = deepcopy(data.get("explanation_blocks", [paragraph]))
+    raw_parts = []
+    for order, block in enumerate(blocks, 1):
+        block.update(order=order, line_refs=[])
+        if block["type"] == "paragraph" and block.get("role") == "main":
+            raw_parts.append(block["text"])
+        elif block["type"] == "list" and block.get("role") == "other":
+            for item in block["items"]:
+                raw = item.get("raw_text", item["text"])
+                if re.sub(r"^[-•]\s*", "", raw) != item["text"]:
+                    raise ValueError("Manual list item differs from supplied text")
+                item["line_refs"] = []
+                raw_parts.append(raw)
+        else:
+            raise ValueError("Unsupported manual explanation block")
+    if " ".join(" ".join(raw_parts).split()) != " ".join(text.split()):
+        raise ValueError("Manual blocks must preserve the entire supplied explanation")
+    paragraphs = [b for b in blocks if b["type"] == "paragraph"]
+    lists = [b for b in blocks if b["type"] == "list"]
     answer = {
         "answer_id": f"manual_{digest[:20]}_{data['year']}_{data['section']}_q{data['question_number']}",
         **{
@@ -88,12 +121,12 @@ def parse_manual(path):
             "source_excerpt": text,
         },
         "explanation": {
-            "main_explanation": text,
-            "blocks": [paragraph],
-            "paragraphs": [paragraph],
-            "bulleted_blocks": [],
+            "main_explanation": "\n\n".join(p["text"] for p in paragraphs),
+            "blocks": blocks,
+            "paragraphs": paragraphs,
+            "bulleted_blocks": lists,
             "choice_analysis": [],
-            "other_lists": [],
+            "other_lists": lists,
             "visual_assets": [],
         },
         "visual_previews": [],

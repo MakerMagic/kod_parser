@@ -21,7 +21,9 @@ First parse the local worked-solutions source into an answer intermediate:
 Then match the existing clean questions to that intermediate:
 
 ```powershell
-& $matchingPython -m processors.matching --clean-json 'data\clean\blackstone' --answers-json 'data\raw\explained_answers' --question-source blackstone --output 'data\merged\blackstone\tsa_2008-2016.matched.json' --issues-report 'docs\MATCHING_2008-2016_ISSUES.md' --overwrite
+& $matchingPython -m parsers.manual_explanations 'processors\matching\manual_sources\tsa_2008_q012.json' --output 'data\raw\manual_explanations\2008\tsa_2008_q012.answers.json' --overwrite
+& $matchingPython -m parsers.manual_explanations 'processors\matching\manual_sources\tsa_2016_q038.json' --output 'data\raw\manual_explanations\2016\tsa_2016_q038.answers.json' --overwrite
+& $matchingPython -m processors.matching --clean-json 'data\clean\blackstone' --answers-json 'data\raw\explained_answers' 'data\raw\manual_explanations\2008' 'data\raw\manual_explanations\2016' --question-source blackstone --output 'data\merged\blackstone\tsa_2008-2016.matched.json' --issues-report 'docs\MATCHING_2008-2016_ISSUES.md' --overwrite
 ```
 
 Omit `--overwrite` on first runs if desired. Answer JSON names include a PDF
@@ -50,6 +52,28 @@ works offline; missing/changed references appear as live inspection issues.
 Inspection exports require a new filename; reports may replace only generated
 matching reports.
 
+### Approved manual supplements
+
+2008 Q12 is manually transcribed from the supplied screenshot, retained under
+`processors/matching/manual_sources/evidence/`. 2016 Q38 uses the supplied text
+and the explicitly confirmed `Pip=28*54`, `Eve=27*56`, `1*2 modulo 3` notation;
+its existing final takeaway is retained verbatim. Source JSON records manual
+approval and preserved-source provenance. Lists remain lists, not flattened text.
+
+These are explicit replacements, not a preference for arbitrary manual answers.
+Exactly one manual record must pin exactly one original answer ID, PDF hash and
+explanation fingerprint; year/section/question, clean source key and correct
+answer must agree. Other duplicates/conflicts stay unresolved. If source parsing
+changes the pinned explanation, inspect and renew approval rather than bypassing
+the conflict. The documented import/matching commands reproduce the replacements.
+
+Original PDF answers, warnings and previews remain in
+`superseded_answer_candidates`, shown in **Original PDF Explanation — Manually
+Superseded**. The issues report retains a separate manual-supersession audit table;
+this is not a claim that the source parser was fixed. Source and manual JSON/PNG
+hashes are checked during readiness/inspection. Q46 2022 retains its separate,
+missing-record supplement and is not affected by this replacement mechanism.
+
 The universal HTML view contains question identity, Main Body, Main Question,
 Main Answers, Correct Answer, Main Explanation, Incorrect Answer Explanations,
 Other Explanation Lists, Original Question Screenshot, Answer/Explanation Source,
@@ -57,6 +81,35 @@ Matching Metadata, and Issues. Original explanation block order and question fie
 availability are also retained. Question presentation reuses the clean renderer
 including its derived answer crops; answer-source previews show full explanation
 context, including diagrams or text without an extractable text layer.
+
+## Final Explanation (all matching source formats)
+
+Every HTML inspection now includes **Final Explanation** before the original
+explanation sections. It interleaves paragraphs, generic lists, incorrect-option
+lists and saved explanation visuals in source block order, including prose after
+lists. Original sections and the original block dump remain for comparison.
+No explanation text, option mapping, or transitions are invented.
+
+Re-run **matching only** with the existing command above to store the additive
+`record.final_explanation`; answer parsing and cleaning need not be rerun.
+The 2017–2019/2021/2022 commands in their respective guides produce the same field.
+Text/JSON inspection includes it as well. Old outputs derive it in memory during
+inspection; their files are not modified. Use, for example, the HTML command above
+with `--year 2016 --question 22` to compare all three component types, or the 2022
+guide's command with Q45 for prose → list → prose.
+
+Component fields are projections, not separate text to append. Their content is
+checked against ordered source blocks. Exact aliases/duplicated transition
+metadata are not repeated, while genuine repeated source text remains. Source
+warnings stay visible. If order/content cannot be reconciled, the view is marked
+uncertain and unplaced pieces are shown separately without asserting an order;
+new combination issues are grouped in the normal matching report. Inspect source
+previews before resolving such issues. `available` is not a claim that the PDF's
+explanation is factually correct. Answer-only years show explicit unavailability.
+
+```powershell
+& $matchingPython -m pytest -q tests/test_final_explanation.py tests/test_matching.py
+```
 
 ## Reports and regression tests
 

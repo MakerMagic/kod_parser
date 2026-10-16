@@ -1,5 +1,9 @@
 # TSA 2017–2019 answer-key matching
 
+The universal [Final Explanation](MATCHING_2008-2016_BACKTEST.md#final-explanation-all-matching-source-formats)
+section explicitly shows unavailability for these answer-only sources. Matching
+does not turn answer-key row screenshots into explanation visuals.
+
 Run from the repository root in PowerShell. These sources supply **answers only**:
 empty explanation fields mean unavailable in this format, not failed extraction.
 Parsing and matching are separate commands; no source files are acquired.
