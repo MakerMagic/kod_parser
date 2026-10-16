@@ -265,6 +265,21 @@ def render_html(result):
         + "</details>"
     )
     section("final-explanation", "Final Explanation", final_content)
+    section(
+        "explanation-provenance",
+        "Explanation Provenance",
+        text(
+            "Explanation by AI: "
+            + ("True" if final.get("explanation_by_ai") else "False")
+        )
+        + dump(
+            {
+                "explanation_by_ai": bool(final.get("explanation_by_ai")),
+                "source_type": final.get("source_type", "source_or_manual"),
+                "generation": r.get("ai_explanation"),
+            }
+        ),
+    )
 
     section(
         "main-explanation",

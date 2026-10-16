@@ -45,6 +45,10 @@ def build_final_explanation(answer, answer_reference=None):
         "source_reference": deepcopy(answer_reference),
         "source_warnings": deepcopy((answer or {}).get("warnings", [])),
         "issues": [],
+        # Every source/manual explanation is explicitly non-AI.  An approved
+        # text-only overlay replaces this derived view with True provenance.
+        "explanation_by_ai": False,
+        "source_type": "source_or_manual",
     }
     if not answer:
         result["reason"] = "no_unique_answer_selected"

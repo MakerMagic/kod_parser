@@ -1,0 +1,163 @@
+<!-- tsa-ai-explanation-report -->
+# Text-only AI explanation generation
+
+This report is an eligibility and validation audit. A skipped or failed item has not acquired an AI explanation.
+
+## Eligible Pending Generation (93 questions)
+
+- 2017 section_1 Q1: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q2: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q3: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q4: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q5: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q8: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q9: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q10: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q11: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q12: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q15: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q16: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q17: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q18: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q21: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q22: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q23: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q25: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q27: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q28: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q29: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q30: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q33: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q34: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q36: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q39: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q40: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q41: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q42: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q43: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q45: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q46: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q47: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q48: Matched, text-only question with complete text options and a unique answer.
+- 2017 section_1 Q49: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q1: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q2: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q3: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q4: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q5: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q6: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q9: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q10: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q11: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q15: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q16: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q17: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q18: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q21: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q22: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q23: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q27: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q28: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q29: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q33: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q34: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q35: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q37: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q39: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q40: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q41: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q42: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q45: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q46: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q47: Matched, text-only question with complete text options and a unique answer.
+- 2018 section_1 Q48: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q1: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q3: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q4: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q5: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q9: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q10: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q11: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q12: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q15: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q16: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q17: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q18: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q21: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q22: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q23: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q27: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q28: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q29: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q33: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q34: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q35: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q39: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q41: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q45: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q46: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q47: Matched, text-only question with complete text options and a unique answer.
+- 2019 section_1 Q48: Matched, text-only question with complete text options and a unique answer.
+
+## Skipped Missing Or Uncertain Correct Answer (2 questions)
+
+- 2018 section_1 Q20: The matching record is not an exact usable match.
+- 2019 section_1 Q32: The matching record is not an exact usable match.
+
+## Skipped Visual Dependency (55 questions)
+
+- 2017 section_1 Q6: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q7: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q13: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q14: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q19: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q20: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q24: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q26: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q31: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q32: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q35: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q37: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q38: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q44: A visual asset or visual reference is needed by this question.
+- 2017 section_1 Q50: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q7: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q8: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q12: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q13: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q14: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q19: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q24: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q25: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q26: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q30: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q31: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q32: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q36: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q38: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q43: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q44: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q49: A visual asset or visual reference is needed by this question.
+- 2018 section_1 Q50: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q2: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q6: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q7: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q8: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q13: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q14: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q19: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q20: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q24: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q25: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q26: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q30: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q31: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q36: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q37: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q38: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q40: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q42: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q43: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q44: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q49: A visual asset or visual reference is needed by this question.
+- 2019 section_1 Q50: A visual asset or visual reference is needed by this question.

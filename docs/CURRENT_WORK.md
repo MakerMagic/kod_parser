@@ -65,6 +65,7 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 - Independent 2017–2019 answer-key parsing verified all 150 answers against PDFium: 148 matches, two preserved upstream option conflicts (2018 Q20, 2019 Q32). Grouped issues and offline row/question HTML QA added. Explicit Q44 2022 clean-body pin retains the supplied composite across a complete raw→clean→matching rerun; raw assets, other 49 clean questions and legacy matching results remain unchanged. Validation: 214 focused tests, 18 final source/pin checks, lint and PowerShell syntax checks pass.
 
 - Cleaning-only capitalized-wrap fix regenerated all 800 clean questions: 77 prose records improved (71 bodies, six prompts), including 2019 Q33 and analogous existing issue records. Exact raw layout/relative geometry supplies evidence, not proper-name dictionaries. All content, paragraph gaps, identities/options/warnings/assets remain preserved; 5,303 raw/reference hashes unchanged. Dependent matching snapshots refreshed without changing statuses/issues. Validation: 179 focused regressions and stored clean/matched HTML checks pass; unrelated incomplete prompts/visuals remain unresolved.
+- Text-only AI-explanation work now starts from the restored answer-key-only 2017–2019 snapshot. A separate strict eligibility/validation overlay and QA report exist; no discarded generated explanation was retained or restored. Eligible records remain pending a quality-validated generation source rather than receiving generic text.
 
 ## Code navigation
 
