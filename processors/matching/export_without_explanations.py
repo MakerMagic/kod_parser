@@ -124,7 +124,7 @@ def asset_lines(asset, question, record, output, *, answer=False):
             "",
         ]
     path = Path(base).parent / selected["path"]
-    label = f"Visual {asset.get('image_id', asset.get('asset_id', ''))}; page {asset.get('page', 'unknown')}"
+    label = f"Visual {asset.get('image_id', asset.get('asset_id', ''))}"
     lines = [
         "!" + link(label, path, output),
         "",
@@ -133,16 +133,6 @@ def asset_lines(asset, question, record, output, *, answer=False):
     ]
     if not path.is_file():
         lines += ["**Missing asset file; reference preserved.**", ""]
-    if selected is not asset and asset.get("path"):
-        lines += [
-            "Raw asset: "
-            + link(
-                asset["path"],
-                Path(question["raw_reference"]["path"]).parent / asset["path"],
-                output,
-            ),
-            "",
-        ]
     return lines
 
 
@@ -158,8 +148,6 @@ def render_year(year, rows, omitted, data, source, output):
         "",
         f"Matched records checked: {matched}. Excluded: {len(omitted)}. Unresolved question structure is retained, not repaired.",
         "",
-        "Matched input: " + link(source.name, source, output),
-        "",
     ]
     if omitted:
         lines += [
@@ -167,7 +155,7 @@ def render_year(year, rows, omitted, data, source, output):
             + "; ".join(f"Q{q}: {reason}" for q, reason in omitted),
             "",
         ]
-    for record, correct, key_sources in rows:
+    for record, correct, _key_sources in rows:
         question = record.get("question") or {}
         ident = record["identity"]
         lines += [
@@ -233,23 +221,7 @@ def render_year(year, rows, omitted, data, source, output):
             "",
             f"- Match status: {record.get('status', 'unavailable')}",
             f"- Question record: `{question.get('question_id', 'unavailable')}`",
-            f"- Source PDF: {(record.get('question_document') or {}).get('input', {}).get('filename', 'unavailable')}",
         ]
-        for label, ref in (
-            ("Clean record", record.get("question_reference")),
-            ("Raw record", question.get("raw_reference")),
-            ("Answer record", record.get("answer_reference")),
-        ):
-            if ref and ref.get("path"):
-                lines.append(
-                    f"- {label}: "
-                    + link(Path(ref["path"]).name, ref["path"], output)
-                    + f"; pointer `{ref.get('json_pointer', 'unavailable')}`"
-                )
-        for answer in key_sources:
-            lines.append(
-                f"- Answer-key source: {answer['source_document'].get('filename', 'unavailable')}; row `{answer.get('raw', {}).get('source_excerpt', '')}`"
-            )
         issues = [
             f"{i.get('code', 'issue')}: {i.get('reason', '')}"
             for i in record.get("issues", []) + question.get("cleaning_issues", [])
@@ -273,18 +245,6 @@ def render_year(year, rows, omitted, data, source, output):
             ]
         for issue in dict.fromkeys(issues):
             lines.append("- Review: " + text(issue))
-        if issues:
-            for preview in question.get("visual_previews", []):
-                lines += [
-                    "",
-                    "Original question layout: "
-                    + link(
-                        preview["path"],
-                        Path(question["raw_reference"]["path"]).parent
-                        / preview["path"],
-                        output,
-                    ),
-                ]
         lines += ["", "---", ""]
     return "\n".join(lines)
 

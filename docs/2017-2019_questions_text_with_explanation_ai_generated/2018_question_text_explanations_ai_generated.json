@@ -1,0 +1,448 @@
+{
+  "explanations": [
+    {
+      "number": 1,
+      "main_reasoning": "Medical technology has extended human life, but the argument claims that living longer also increases the risk of experiencing dementia and physical infirmity. The author presents these conditions as sources of suffering and argues that older people should be allowed assistance in dying if they prefer death to such a decline. The statistics about dementia and the inevitability of increasing physical infirmity are used to justify this proposal. Therefore, B expresses the main conclusion: euthanasia should be available to people who have reached old age and choose it.",
+      "incorrect_options": {
+        "A": "The passage discusses technology that extends life, not technology that already enables people to determine precisely when they die. This claim is not established.",
+        "C": "The author identifies both death and age-related deterioration as sources of fear but does not compare their relative intensity or establish which is worse.",
+        "D": "The argument proposes assisted dying as a response to age-related suffering. It does not conclude that developing cures for dementia and infirmity is the necessary solution.",
+        "E": "The passage discusses the problems associated with old age but makes no recommendation to prioritise younger people's healthcare over that of older people."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q1"
+    },
+    {
+      "number": 2,
+      "main_reasoning": "Let g be the number of girls and b the number of boys. Since there are 24 pupils, g + b = 24. Each girl plants 3 roses, while every 3 boys collectively plant 1 birch tree, so the total number of plants is 3g + b/3 = 24.\n\nMultiplying the second equation by 3 gives 9g + b = 72. Subtracting g + b = 24 gives 8g = 48, so g = 6. Therefore, b = 24 − 6 = 18.\n\nThe difference is 18 − 6 = 12 pupils. Therefore, D is correct.",
+      "incorrect_options": {
+        "A": "A difference of 3 would require 13.5 boys and 10.5 girls, which is impossible because pupil counts must be whole numbers.",
+        "B": "A difference of 6 would mean 15 boys and 9 girls. They would plant 5 birch trees and 27 roses, giving 32 plants rather than 24.",
+        "C": "A difference of 8 would mean 16 boys and 8 girls. The girls alone would plant all 24 plants, leaving no allowance for the boys' birch trees.",
+        "E": "A difference of 18 would mean 21 boys and 3 girls. They would plant 7 birch trees and 9 roses, totalling only 16 plants."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q2"
+    },
+    {
+      "number": 3,
+      "main_reasoning": "The family must choose between two alternatives: maize, which previously commanded a higher market price but requires substantial fertiliser, and soybeans, which are expected to earn less. Because the family cannot obtain credit to purchase the necessary fertiliser, the more attractive alternative is not financially feasible. They therefore choose the less profitable option.\n\nE follows the same reasoning: tourists have two ways to exchange money, with the bank offering a better rate, but insufficient time makes using the bank impractical. They consequently choose the less favourable hotel exchange rate. Both arguments explain selecting an inferior alternative because a practical constraint prevents choosing the preferred one.",
+      "incorrect_options": {
+        "A": "The argument predicts that a trip may not happen because the students lack sufficient funds. It does not describe choosing a less desirable alternative when the preferred option is unavailable.",
+        "B": "The borrower prefers the credit union because of its service ratings, but no obstacle prevents applying there. The reasoning involves preference rather than a forced compromise.",
+        "C": "The argument infers that a necessary requirement must have been satisfied because the outcome occurred. It does not involve selecting between alternatives under a constraint.",
+        "D": "The argument incorrectly treats meeting a necessary condition for promotion as sufficient to guarantee promotion. It concerns conditional reasoning, not choosing a less favourable available option."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q3"
+    },
+    {
+      "number": 4,
+      "main_reasoning": "The passage presents fish farming as generally less environmentally damaging than cattle farming, but distinguishes between different kinds of farmed fish. Non-carnivorous fish such as silver carp can feed on grass, plankton and detritus, whereas carnivorous species such as salmon are fed wild-caught fish. Farming salmon therefore contributes to the depletion of wild fish stocks.\n\nIncreasing the proportion of non-carnivorous farmed fish would reduce reliance on wild-caught fish for feed and consequently lessen this particular environmental pressure. Therefore, D is the most reliable conclusion.",
+      "incorrect_options": {
+        "A": "The passage identifies environmental disadvantages of farming carnivorous fish, but it does not establish that every farmer producing these species must abandon them entirely.",
+        "B": "The production figures compare fish and beef output in one year. They do not establish how the relative sizes of these industries will change in the future.",
+        "C": "The passage identifies environmental damage caused by farming certain fish, so it does not justify the absolute claim that fish farming will always be environmentally preferable to cattle farming.",
+        "E": "The passage supports reducing specific environmental harms from fish farming. It does not establish a general recommendation covering every type of farming activity."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q4"
+    },
+    {
+      "number": 5,
+      "main_reasoning": "The argument claims that university recruitment procedures are failing to identify or appoint some outstanding researchers and lecturers. It then concludes that including independent human resources consultants on selection committees will improve recruitment.\n\nFor this reform to address the identified problem, the consultants must possess the ability to recognise suitable candidates for teaching positions. If they cannot identify such candidates, their participation would not necessarily correct the recruitment failures described. Therefore, B is the necessary assumption connecting the proposed reform with the expected improvement.",
+      "incorrect_options": {
+        "A": "The argument does not require academics to be motivated by egotism. Recruitment failures could arise for other reasons, and consultants might improve candidate assessment regardless of academics' motives.",
+        "C": "The examples show that impressive publication records did not secure appointments, but they do not establish that having strong publications actually reduces a candidate's chances.",
+        "D": "The argument values both research achievement and teaching ability. It does not require universities to prioritise teaching quality over research excellence.",
+        "E": "The two unsuccessful applicants came from Germany and Spain, but the passage does not establish a systematic disadvantage affecting graduates of those countries."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q5"
+    },
+    {
+      "number": 6,
+      "main_reasoning": "The original mixture contains 1 part concentrate and 4 parts water, so concentrate makes up 1/5 of the 500ml bottle: 500 ÷ 5 = 100ml.\n\nAfter 100ml of well-mixed squash is spilled, 400ml remains. Its concentrate content is 400 × 1/5 = 80ml. Jake then adds 100ml of pure concentrate to restore the bottle to 500ml.\n\nThe final concentrate volume is 80 + 100 = 180ml. Therefore, the concentration is (180 ÷ 500) × 100 = 36%. The correct answer is D.",
+      "incorrect_options": {
+        "A": "18% is below the original concentration of 20%, even though Jake adds pure concentrate to the remaining mixture. The concentration must increase, not decrease.",
+        "B": "20% is the concentration before the spill and refill. It fails to account for adding 100ml of pure concentrate.",
+        "C": "28% corresponds to 140ml of concentrate in a 500ml bottle, whereas the remaining mixture and refill contain 180ml.",
+        "E": "40% would require 200ml of concentrate in the final bottle, but the calculated amount is only 180ml."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q6"
+    },
+    {
+      "number": 9,
+      "main_reasoning": "The argument maintains that shooting is necessary for conservation because humans have disrupted ecosystems by eliminating predators, introducing foreign species and damaging habitats. It presents shooting overpopulated or invasive animals as a way to manage these problems.\n\nE challenges the necessity of shooting by proposing that reintroducing top predators is a more effective conservation method. If restoring predators can control animal populations more effectively, conservation may be achieved without relying on shooting as the necessary solution. This directly weakens the argument's claim of necessity, although it does not dispute shooting's possible economic benefits.",
+      "incorrect_options": {
+        "A": "Increased wildflowers and bee populations on shooting estates would provide additional evidence that the management of these estates can benefit conservation.",
+        "B": "Selling shot animals for food describes another use of the animals but does not establish that shooting is unnecessary or ineffective for conservation.",
+        "C": "International visitors participating in sport shooting could contribute to rural economies, supporting the economic part of the argument rather than undermining its conservation claims.",
+        "D": "Threats to native species from introduced foreign species support the argument's concern that such species require management to protect native populations."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q9"
+    },
+    {
+      "number": 10,
+      "main_reasoning": "The author argues that laws restricting term-time holidays are unnecessary, using the experience of one daughter who missed school for holidays yet subsequently achieved excellent academic results. However, the fact that one child experienced no apparent educational harm does not establish that term-time absences are harmless for children generally.\n\nDifferent children may have different learning needs and may be affected differently by missing lessons. The argument therefore generalises from one favourable personal example to a broad policy conclusion. This is the flaw identified by D.",
+      "incorrect_options": {
+        "A": "The author mentions past experience but does not claim that term-time holidays should be permitted simply because they were previously acceptable. The argument relies on the daughter's outcome.",
+        "B": "The headmistress's approval supports the description of the individual case, but the wider conclusion is based primarily on the daughter's success rather than the headmistress's authority.",
+        "C": "The author uses the daughter's good grades to suggest the holidays did not harm her education. The argument does not need to claim that the holidays caused those grades.",
+        "E": "Learning French is presented as one benefit of the holidays, but the author also cites subsequent academic success. The conclusion does not depend specifically on French learning compensating for missed schoolwork."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q10"
+    },
+    {
+      "number": 11,
+      "main_reasoning": "The passage argues against the government's proposal to provide tax breaks to married couples. Although evidence suggests that children of married parents tend to fare better, the author identifies several problems with using financial incentives to encourage marriage: disadvantages for people whose relationships ended or who cannot find partners, the limited financial incentive for unhappy couples, and the unsupported assumption that remaining in an unhappy marriage benefits children.\n\nThese criticisms all support the overall judgement that the proposed tax-break policy is flawed. Therefore, E expresses the main conclusion.",
+      "incorrect_options": {
+        "A": "The possibility that an unhappy relationship harms children is one reason used to criticise the policy, not the author's overall conclusion about the tax break.",
+        "B": "The tendency for children of married parents to fare better is introduced as evidence motivating the government's proposal. It is not the conclusion the author seeks to establish.",
+        "C": "The inadequacy of the financial incentive for unhappy couples is one supporting criticism, not the complete argument against the policy.",
+        "D": "The policy's disadvantage to some single people is another reason for opposing it, but the argument also raises concerns about incentives and children's welfare."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q11"
+    },
+    {
+      "number": 15,
+      "main_reasoning": "The passage distinguishes economics from natural sciences by emphasising the consistent predictive success attributed to sciences such as chemistry and physics. Although economics uses quantitative data and is sometimes presented as an exact science, the author points to economists' widespread failure to predict the 2008 financial crisis and the collapse of a hedge fund established by prominent economists.\n\nThese examples challenge the claim that economics possesses the same forecasting reliability as the natural sciences. Therefore, C follows: economics is not a science in the same sense as chemistry or physics, particularly regarding consistent predictive success.",
+      "incorrect_options": {
+        "A": "The passage questions the impression created by awarding a Nobel Prize in economics, but it does not conclude that the award itself should be abolished.",
+        "B": "The argument challenges the idea that human affairs can be predicted as reliably as physical phenomena. It does not claim that human existence is separate from the physical world.",
+        "D": "The failure to predict major events demonstrates limitations in economic forecasting, not that economists are incapable of making any accurate market predictions.",
+        "E": "The passage notes economists' use of quantitative data but questions whether this makes economics an exact science. It does not claim that quantitative analysis is useless."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q15"
+    },
+    {
+      "number": 16,
+      "main_reasoning": "The passage argues that driving while dangerously tired is a preventable road safety risk and concludes that people should avoid driving when they have had insufficient sleep or rest to drive safely.\n\nFor this recommendation to work as a practical means of preventing accidents, drivers must be capable of recognising when their tiredness makes driving unsafe. If drivers cannot identify dangerous fatigue, they cannot reliably act on the instruction to avoid driving when insufficiently rested. Therefore, B is the underlying assumption linking the proposed precaution to the prevention of fatigue-related accidents.",
+      "incorrect_options": {
+        "A": "The reported differences in falling asleep at the wheel do not establish that women are generally more careful. The argument does not require any explanation of those differences.",
+        "C": "The passage identifies fatigue as a serious risk but does not compare its severity with mobile phone use. The recommendation does not depend on fatigue being more dangerous.",
+        "D": "The argument recommends avoiding unsafe driving, but it does not require every professional long-distance driver to be able to avoid fatigue in all circumstances.",
+        "E": "The argument does not depend on whether previous road safety campaigns have adequately emphasised tiredness. Its recommendation follows from the stated safety risk."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q16"
+    },
+    {
+      "number": 17,
+      "main_reasoning": "The argument attributes rising cases of rickets mainly to children spending more time indoors, where they receive less sunlight and consequently produce less vitamin D. It concludes that addressing the problem requires broader changes than simply providing vitamin supplements.\n\nB weakens this explanation by stating that diet has a much greater influence on vitamin D intake than sunlight. If dietary factors are substantially more important, reduced outdoor activity may be less significant as the cause of vitamin D deficiency than the passage suggests. This challenges the argument's emphasis on an indoor lifestyle as the central explanation for increasing rickets cases.",
+      "incorrect_options": {
+        "A": "An increase in parkland could challenge the claim that outdoor spaces are becoming less available, but it does not establish that children actually spend more time outdoors or receive enough sunlight.",
+        "C": "A few hundred annual cases could still represent a significant increase from an earlier level. The absolute number does not directly challenge the proposed cause.",
+        "D": "Historical air pollution and smog provide a possible explanation for earlier cases of rickets, but they do not establish that today's reduced outdoor activity is unrelated to vitamin D deficiency.",
+        "E": "Difficulty accessing or consistently taking vitamin supplements would make supplementation a less reliable solution, supporting rather than weakening the argument that more than vitamin pills may be needed."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q17"
+    },
+    {
+      "number": 18,
+      "main_reasoning": "Four girls each collected 24 − 2 = 22 shells. Each then gives 3 shells to the youngest girl, leaving each of the four with 22 − 3 = 19 shells.\n\nTo make all five totals equal, the youngest girl must also finish with 19 shells. She receives 4 × 3 = 12 shells from the others, so the number she originally collected is 19 − 12 = 7. Therefore, B is correct.",
+      "incorrect_options": {
+        "A": "If the youngest girl originally had 4 shells, receiving 12 more would leave her with 16, which is 3 fewer than each other girl.",
+        "C": "Starting with 10 shells would give the youngest girl 22 after the transfers, exceeding the others' final totals of 19.",
+        "D": "Starting with 12 shells would produce a final total of 24, which is 5 more than each other girl retains.",
+        "E": "19 is the number of shells each girl must have after redistribution, not the youngest girl's original collection. Starting with 19 would leave her with 31 after receiving the additional shells."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q18"
+    }
+    {
+      "number": 21,
+      "main_reasoning": "The original justification for giving teenagers mobile phones was that they could improve safety, particularly in situations such as abduction. The argument now recommends restricting phones because internet access exposes teenagers to stalking and cyberbullying.\n\nHowever, introducing new risks does not establish that the original safety benefits have disappeared. Mobile phones could still protect teenagers in certain situations while exposing them to different dangers. The argument fails to consider both effects before recommending restrictions. Therefore, A identifies the flaw.",
+      "incorrect_options": {
+        "B": "Bullying through other devices might limit the effectiveness of restricting phones, but this is a separate practical objection. The central flaw is the failure to consider the phones' continuing safety benefits.",
+        "C": "The passage does not claim that phones prevent every attack. Their failure to prevent some incidents would not establish that they provide no protection in other situations.",
+        "D": "Even if most teenagers were unaffected by stalking or cyberbullying, those risks could still be significant. The flaw concerns overlooking existing benefits, not the precise proportion affected.",
+        "E": "Alternative ways of protecting children might exist, but the argument does not depend on phones being the only safety measure. The problem is that their original benefits are disregarded."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q21"
+    },
+    {
+      "number": 22,
+      "main_reasoning": "The supermarket scheme establishes that customers spending £40 a week receive vouchers. The argument then concludes that spending only £15 means receiving no vouchers. However, the stated rule guarantees vouchers to customers meeting the threshold without explicitly ruling out vouchers for other customers.\n\nB follows the same reasoning: completing a main course guarantees dessert, but the argument concludes that someone who has not completed it will receive no dessert. Both arguments incorrectly infer that failing a stated sufficient condition makes the outcome impossible. Therefore, B is the closest parallel.",
+      "incorrect_options": {
+        "A": "Introducing new gym customers satisfies the stated condition for receiving a discount. The conclusion applies the rule directly rather than denying the benefit because the condition is absent.",
+        "C": "Being 30 satisfies the stated age requirement of 18–30 inclusive. The conclusion correctly applies the eligibility rule to someone within that range.",
+        "D": "An income of £9000 satisfies the stated requirement of earning below £10000. The conclusion follows from meeting the condition rather than failing it.",
+        "E": "The argument treats experience as necessary for appreciating good wine, then draws a conclusion about preferring poor wine. That additional preference is not established by the condition."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q22"
+    },
+    {
+      "number": 23,
+      "main_reasoning": "The argument condemns house-buying television programmes because they display attractive properties that many viewers cannot afford. Rather than merely generating interest, these programmes are claimed to create envy and feelings of worthlessness through comparison with unattainable lifestyles.\n\nE illustrates the same principle: magazines displaying seemingly perfect people can encourage harmful comparisons with unrealistic ideals, producing dissatisfaction and potentially damaging consequences. Both arguments criticise media content for encouraging people to compare themselves unfavourably with idealised images.",
+      "incorrect_options": {
+        "A": "This describes the housing circumstances of viewers but does not establish that watching attractive properties causes envy or feelings of inadequacy.",
+        "B": "This presents exposure to desirable lifestyles as potentially motivating positive action. The original argument instead emphasises the harmful psychological effects of such comparisons.",
+        "C": "This contrasts the public's perception of celebrity life with celebrities' actual anxieties. It does not identify harmful self-comparison among people viewing that lifestyle.",
+        "D": "This compares the financial merits of renting and buying property. Its reasoning concerns housing costs, not the emotional harm caused by idealised media representations."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q23"
+    },
+    {
+      "number": 27,
+      "main_reasoning": "The argument identifies long-term unemployment as a problem requiring different responses for different individuals. Some unemployed people want to work but need assistance, while others have less motivation to seek employment.\n\nBecause these differences make uniform policies inadequate, effective employment support requires individually tailored approaches. The author argues that implementing such approaches depends on having more highly skilled job-centre staff. Therefore, the principal recommendation is to invest in improving staff skills, as expressed in D.",
+      "incorrect_options": {
+        "A": "Long-term unemployment is introduced as a serious problem, but the passage's main purpose is to recommend a particular solution rather than establish its relative importance.",
+        "B": "Differences in motivation among unemployed people provide evidence for using tailored support. They are a supporting premise, not the policy conclusion.",
+        "C": "The passage suggests tailored approaches require more skilled staff, but it does not compare their total costs with uniform approaches or claim that cheaper solutions should be preferred.",
+        "E": "The possible disincentive created by welfare benefits is presented as one side of a debate that the author considers inadequate. It is not the author's main conclusion."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q27"
+    },
+    {
+      "number": 28,
+      "main_reasoning": "The argument states that dismissing a minister involved in a scandal demonstrates the Prime Minister's commitment to integrity and moral principles, even when the minister is personally valued or performs well. It further claims that voters will perceive such a decision as evidence of integrity, which is valuable for remaining in power.\n\nTherefore, when the Prime Minister is uncertain whether to dismiss a minister, the electoral benefit of appearing principled provides a reason to favour dismissal. This supports A: it is in the Prime Minister's electoral interests to err on the side of sacking.",
+      "incorrect_options": {
+        "B": "The passage discusses the electoral value of being perceived as principled but does not establish that politicians currently suffer from unusually low public trust.",
+        "C": "No evidence is provided that ministers are frequently dismissed for minor misconduct or that such dismissals damage the country's interests.",
+        "D": "The passage recognises legitimate considerations favouring retaining ministers. It supports a tendency towards dismissal, not an absolute rule requiring dismissal after every scandal.",
+        "E": "The argument identifies remaining in power as an important political objective, but it does not claim politicians pursue that objective regardless of every other consideration."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q28"
+    },
+    {
+      "number": 29,
+      "main_reasoning": "The librarian observes that book borrowing has declined while computer use has increased, accompanied by complaints about insufficient computer availability. She responds by removing books and spending the library's entire available budget on additional computers.\n\nThis decision assumes that the library should adapt its resources to students' demonstrated preferences rather than attempt to influence those preferences or preserve existing resources for other purposes. Without that principle, increased computer demand would not automatically justify reallocating resources away from books. Therefore, A is the underlying assumption.",
+      "incorrect_options": {
+        "B": "Declining library borrowing does not necessarily mean students are reading less, since they might obtain books elsewhere. The decision to provide more computers does not require assuming an overall decline in reading.",
+        "C": "The librarian treats complaints about unavailable computers as evidence of demand. Assuming those complaints were unjustified would weaken rather than support her response.",
+        "D": "The argument does not establish or require that computers improve educational achievement. It bases resource allocation on usage and expressed demand.",
+        "E": "The librarian can respond to existing demand without assuming that providing more computers will necessarily increase total library usage."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q29"
+    },
+    {
+      "number": 30,
+      "main_reasoning": "Let a, b and c be the numbers of 9p, 14p and 20p coupons. Their total value is 150p, so 9a + 14b + 20c = 150, with b > a > c.\n\nSince the total is even, a must be even. Also, b ≥ a + 1, so 9a + 14(a + 1) ≤ 150, restricting a to 2 or 4. If a = 4, then 7b + 10c = 57, requiring b to end in 1, which is incompatible with b > 4 and the total value. Thus a = 2. The equation becomes 7b + 10c = 66, giving b = 8 and c = 1.\n\nThe counts satisfy 8 > 2 > 1, and the value is 8(14) + 2(9) + 1(20) = 150p. Total coupons = 8 + 2 + 1 = 11. Therefore, C is correct.",
+      "incorrect_options": {
+        "A": "With 9 coupons, the value equation permits counts of 0 nine-penny, 5 fourteen-penny and 4 twenty-penny coupons, but these violate the required ordering.",
+        "B": "With 10 coupons, the compatible value counts are 4 nine-penny, 1 fourteen-penny and 5 twenty-penny coupons. The fourteen-penny count is not the largest.",
+        "D": "With 12 coupons, the value equation gives 6 nine-penny, 4 fourteen-penny and 2 twenty-penny coupons. This violates b > a.",
+        "E": "With 13 coupons, the value equation gives 10 nine-penny, 0 fourteen-penny and 3 twenty-penny coupons, contradicting the required ordering."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q30"
+    },
+    {
+      "number": 33,
+      "main_reasoning": "The passage acknowledges research suggesting that seven daily portions of fruit and vegetables maximise health, but argues against raising the existing five-portion target. Fewer than a third of UK adults, and even fewer children, currently meet the lower target. Furthermore, the passage states that dietary changes are sustained more successfully when introduced gradually.\n\nThese considerations suggest that increasing the official target could be ineffective or counterproductive. Therefore, C expresses the main conclusion: the current guidance should be maintained rather than increased.",
+      "incorrect_options": {
+        "A": "The research suggests seven portions may maximise health, not that consuming fewer than seven necessarily prevents someone from being healthy.",
+        "B": "The passage states that fewer than a third meet the current target, but it does not establish that everyone else deliberately ignores the guidance. Failure to meet a target does not necessarily indicate disregard.",
+        "D": "The argument suggests that raising the target may be counterproductive under current circumstances. It does not establish that all ambitious dietary targets are inherently unrealistic.",
+        "E": "The passage acknowledges recent research but argues that practical considerations favour retaining existing advice. It does not establish that the current guidance failed to consider the research."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q33"
+    },
+    {
+      "number": 34,
+      "main_reasoning": "The argument notes that welfare restrictions became tougher two years ago and that the number of benefit recipients subsequently fell by 20%. It then recommends further restrictions, treating the reduction as evidence that the policy worked and that additional restrictions will produce further reductions.\n\nHowever, the sequence of events does not establish that the restrictions caused the entire decline. Other factors could have contributed to the reduction in recipient numbers. Without establishing the actual cause, the argument cannot reliably predict that stricter rules will produce the desired result. Therefore, C identifies the flaw.",
+      "incorrect_options": {
+        "A": "The passage claims that some people remain on benefits without seeking employment, but it does not require assuming that every recipient is content with this situation.",
+        "B": "The language may suggest criticism of benefit recipients, but the decisive reasoning flaw concerns attributing the decline in recipient numbers to the restrictions without excluding other causes.",
+        "D": "The argument associates long-term welfare dependency with an unproductive workforce, but its policy inference specifically depends on the unexplained relationship between restrictions and reduced recipient numbers.",
+        "E": "The passage does not establish that every recipient is personally responsible for requiring benefits. Nevertheless, the specific failure in the proposed policy argument is its unsupported causal inference."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q34"
+    },
+    {
+      "number": 35,
+      "main_reasoning": "The passage acknowledges Shakespeare's reputation and linguistic skill but questions whether these qualities alone explain his greatness, especially since many plays lack substantial plot or character development.\n\nIt proposes that his exceptional status instead derives chiefly from a small group of works: the four great tragedies. These plays are distinguished by their exploration of fundamental aspects of human existence, which enables them to affect audiences deeply. Therefore, D expresses the main conclusion: Shakespeare's greatness derives from a small number of his plays, particularly the great tragedies.",
+      "incorrect_options": {
+        "A": "The enduring appeal of Shakespeare's treatment of appearances and reality is acknowledged as a characteristic of his writing, but the author argues that another feature better explains his greatness.",
+        "B": "The apparent agreement about Shakespeare's greatness establishes the issue that the passage seeks to explain. It is the starting point rather than the conclusion.",
+        "C": "The emotional and intellectual impact of Shakespeare's tragedies explains why these particular plays account for his greatness. It is supporting reasoning rather than the complete conclusion.",
+        "E": "The passage notes limited development of plot and character in many plays but does not conclude that these limitations have no effect on Shakespeare's reputation."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q35"
+    },
+    {
+      "number": 37,
+      "main_reasoning": "The green light returns exactly 3 minutes after money is inserted, so consecutive customers can pay at 3-minute intervals. The first person inserts money immediately upon the booth opening, at 0 minutes.\n\nAs sixth in the queue, the narrator must wait for five earlier customers to insert their money. Their payment times are 0, 3, 6, 9 and 12 minutes. The narrator can therefore insert money at 5 × 3 = 15 minutes after arrival. The photograph-taking and development times do not change the stated payment interval. Therefore, A is correct.",
+      "incorrect_options": {
+        "B": "18 minutes is when the seventh customer could insert money. The narrator is sixth and therefore pays at 15 minutes.",
+        "C": "21 minutes corresponds to the eighth payment opportunity, two positions after the narrator's.",
+        "D": "25 minutes is not one of the permitted payment times, which occur at multiples of 3 minutes from the booth opening.",
+        "E": "30 minutes corresponds to the eleventh payment opportunity, five places later than the narrator's position."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q37"
+    },
+    {
+      "number": 39,
+      "main_reasoning": "The passage identifies a particular danger in the current arrangement: when autoflight computers encounter unexpected situations, they may transfer control to pilots who are confused about their responsibilities and overwhelmed by alerts. Crashes are described as most likely during this breakdown in coordination.\n\nA draws the inference that further development towards fully pilotless aircraft could reduce this danger by removing the problematic transfer between automated and human control. It is a prediction rather than a guarantee of safety, but it most directly follows from the identified weakness of the current combined system.",
+      "incorrect_options": {
+        "B": "The passage identifies situations that existing systems cannot handle, but it provides no basis for claiming that further automation could eliminate every possible cause of an aircraft crash.",
+        "C": "The passage locates the greatest danger in exceptional situations involving failed coordination. It does not claim that combining human and computer control is unsafe in most ordinary situations.",
+        "D": "The passage discusses onboard flight computers and pilots but provides no information about controlling aircraft remotely from the ground.",
+        "E": "The identified danger concerns unexpected situations, unclear control responsibilities and excessive alerts. The passage does not attribute crashes to incorrectly entered data or establish that such errors will always occur."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q39"
+    },
+    {
+      "number": 40,
+      "main_reasoning": "The argument recommends replacing detailed literary analysis with memorisation and recitation because it believes children should develop an appreciation of poetry before studying its technical features.\n\nFor memorisation to be a suitable replacement, learning poems by heart must help children appreciate them. Otherwise, removing detailed analysis in favour of recitation would not necessarily achieve the objective of making poetry more enjoyable or valuable to students. Therefore, E is the underlying assumption linking the proposed teaching method to its intended benefit.",
+      "incorrect_options": {
+        "A": "The possibility that literary analysis improves appreciation could favour retaining analysis. The argument does not require this benefit to exist before recommending memorisation.",
+        "B": "The passage contrasts an existing emphasis on analysis with a new requirement to memorise poems, but the argument does not depend on proving that no children currently memorise poetry.",
+        "C": "The availability of advanced literary study is mentioned as a possible later stage. The recommendation to develop appreciation first does not depend on the continued existence of every particular qualification.",
+        "D": "Imagery and alliteration are examples of techniques studied in literary analysis. The argument does not require either technique to be present in every poem."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q40"
+    },
+    {
+      "number": 41,
+      "main_reasoning": "The argument claims that unpaid internships unfairly favour wealthier young people because entry-level jobs often require experience that less affluent applicants cannot afford to obtain through extended periods of unpaid work.\n\nC weakens this reasoning by establishing that internships vary considerably in duration, with some lasting only one or two days. Short placements may not require applicants to sacrifice paid employment for an extended period, reducing the force of the financial barrier described. This does not eliminate all inequality, but it challenges the assumption that obtaining relevant unpaid experience necessarily requires a prolonged financial sacrifice.",
+      "incorrect_options": {
+        "A": "The opportunity to obtain useful references explains why internships can be valuable for employment. It does not weaken the concern that some applicants cannot afford to undertake them.",
+        "B": "Concentrating opportunities in expensive or distant locations could create additional accessibility barriers rather than undermine the argument about unequal opportunities.",
+        "D": "Some interns repeatedly failing to obtain paid work raises doubts about the effectiveness of internships, but it does not demonstrate that poorer applicants have equal access to them.",
+        "E": "Programmes helping applicants find internships may improve access to vacancies, but they do not necessarily remove the financial difficulty of working without pay."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q41"
+    },
+    {
+      "number": 42,
+      "main_reasoning": "Six numbers containing ten distinct digits must consist of two single-digit and four two-digit numbers. Because all ten digits are different, the four two-digit numbers must use distinct tens digits. Within the lottery's range of 1–49, those tens digits must be 1, 2, 3 and 4. Therefore, the largest number is at least 40.\n\nThe two distinct single-digit numbers must include one no greater than 8, so the smallest number is at most 8. Hence the range cannot be less than 40 − 8 = 32.\n\nThis minimum is achievable with 8, 9, 15, 26, 37 and 40. Their ten digits are all different, and the range is 40 − 8 = 32. Therefore, E is correct.",
+      "incorrect_options": {
+        "A": "A range of 21 is smaller than the proven minimum of 32, which follows from the necessary presence of a number at least 40 and another at most 8.",
+        "B": "A range of 23 cannot accommodate the required four distinct two-digit tens digits and two distinct single-digit numbers.",
+        "C": "A range of 27 is below the minimum separation of 32 between the largest and smallest numbers.",
+        "D": "31 is one less than the theoretical minimum. The required largest number is at least 40 and the smallest is at most 8, giving a difference of at least 32."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q42"
+    },
+    {
+      "number": 45,
+      "main_reasoning": "The argument claims that charities relieve the negative consequences of market economies without correcting the underlying system responsible for those consequences. By concealing the system's harmful effects and allowing it to continue, charities are said to perpetuate the very problems they seek to solve.\n\nThe author then applies a moral principle: supporting a system that perpetuates harmful outcomes is immoral. Since charitable giving allegedly sustains such a system, the author concludes that giving to charity cannot be morally justified. Therefore, D expresses the main conclusion.",
+      "incorrect_options": {
+        "A": "The claim that charity does not address the underlying cause is part of the argument explaining why charitable activity allegedly perpetuates problems. It is not the final moral conclusion.",
+        "B": "The passage connects the existence of charities to problems created by market economies, but it does not conclude that charitable giving is necessary or desirable.",
+        "C": "The alleged perpetuation of market-related harms is an intermediate conclusion used to justify the broader judgement about the morality of charitable giving.",
+        "E": "The claim that charities conceal the negative consequences of the market is supporting evidence for the argument that they sustain the system."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q45"
+    },
+    {
+      "number": 46,
+      "main_reasoning": "The original argument states that understanding the true meaning of Pushkin's poetry requires being able to read the original Russian. It then treats the doctoral thesis's acute insight as evidence that the writer possesses this understanding and concludes that the writer must know Russian.\n\nD follows the same structure: a pedestrian-only high street requires a bypass, and the town has pedestrian-only shopping, so the argument concludes that the bypass must exist. Both infer a necessary condition from the presence of an outcome that supposedly requires it.",
+      "incorrect_options": {
+        "A": "A clear sky is presented as necessary for astronomy, but the argument treats having a clear sky as sufficient to guarantee stargazing. This reverses the direction of the original reasoning.",
+        "B": "Putting the dustbin out before 8 a.m. is stated as necessary for collection, but the argument incorrectly treats satisfying that requirement as sufficient to guarantee collection.",
+        "C": "The Mensa argument infers the absence of a required qualification from non-membership. Failure to obtain membership does not establish that the IQ requirement was not met.",
+        "E": "Having 45 flying hours is required before taking the test, and having only 18 hours establishes that this requirement is unmet. It reasons from the absence of a necessary condition, rather than inferring its presence from an observed outcome."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q46"
+    },
+    {
+      "number": 47,
+      "main_reasoning": "The argument accepts that prisoners may benefit from rehabilitation through work but condemns using them as cheap labour if this means they receive lower pay or worse treatment than ordinary workers. The objection is therefore not to prisoners working, but to their labour being valued differently merely because of their prisoner status.\n\nA expresses the general principle underlying this criticism: work should receive equivalent value and treatment regardless of who performs it. This explains why unequal treatment of prisoners and regular workers would make the arrangement unacceptable.",
+      "incorrect_options": {
+        "B": "Public safety is mentioned as a concern, but the argument explicitly identifies workers' rights as an additional and ultimately decisive objection to the arrangement.",
+        "C": "Rehabilitation is recognised as a legitimate purpose of prison work, but the argument does not require employers to receive no benefit. Its objection concerns unfair treatment and compensation.",
+        "D": "The passage does not establish that prisoners are replacing regular employees. Its concern is that prisoners may be treated less favourably for performing work.",
+        "E": "The passage raises safety concerns but does not establish that prisoners necessarily lack relevant skills or that only particular professional groups should maintain public services."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q47"
+    },
+    {
+      "number": 48,
+      "main_reasoning": "The journey consists of three sections. The first 15km at 60km/h takes 15 ÷ 60 = 0.25 hours, or 15 minutes. The motorway section takes 5 hours in total, including the two 15-minute rest stops. The final 20km at 40km/h takes 20 ÷ 40 = 0.5 hours, or 30 minutes.\n\nTotal journey time = 15 minutes + 5 hours + 30 minutes = 5 hours 45 minutes. Subtracting this duration from the arrival time of 12:00 midday gives a departure time of 06:15. Therefore, D is correct.",
+      "incorrect_options": {
+        "A": "05:18 would give a journey lasting 6 hours 42 minutes, exceeding the stated total by 57 minutes.",
+        "B": "05:25 would give 6 hours 35 minutes of travel, which is 50 minutes longer than the calculated duration.",
+        "C": "05:45 would imply a 6-hour-15-minute journey, adding 30 minutes to the stated duration. The two rest stops are already included in the motorway's 5 hours.",
+        "E": "06:45 would provide only 5 hours 15 minutes before arrival, which is 30 minutes shorter than the required journey."
+      },
+      "question_record": "blackstone_2018_4502/11_section_1_q48"
+    }
+  ],
+  "not_generated": [
+    {
+      "number": 7,
+      "reason": "image-related: The question requires a statistical table showing annual movements of skilled professionals into and out of Baytree Island. The numerical data are contained in an image, so the greatest annual net loss cannot be verified from text alone.",
+      "question_record": "blackstone_2018_4502/11_section_1_q7"
+    },
+    {
+      "number": 8,
+      "reason": "image-related: The departure clock and partially obscured arrival clock are shown as images. Their visual digit patterns are necessary to determine the arrival time.",
+      "question_record": "blackstone_2018_4502/11_section_1_q8"
+    },
+    {
+      "number": 12,
+      "reason": "image-related: The annual share values needed to calculate and compare percentage increases are contained in an image-based table. Only the starting and final values are available in the text.",
+      "question_record": "blackstone_2018_4502/11_section_1_q12"
+    },
+    {
+      "number": 13,
+      "reason": "image-related: The wallpaper specifications and prices are provided in an image-based table. Without the roll lengths, prices and other relevant details, the lowest-cost option cannot be calculated.",
+      "question_record": "blackstone_2018_4502/11_section_1_q13"
+    },
+    {
+      "number": 14,
+      "reason": "image-related: The question explicitly relies on a diagram showing the construction and folding of the book's sheets and blocks. Although page counts are supplied, the illustrated construction is part of the information required for the intended solution.",
+      "question_record": "blackstone_2018_4502/11_section_1_q14"
+    },
+    {
+      "number": 19,
+      "reason": "image-related: The five nominated players' performance records are presented in an image. Their missed training sessions, unsuccessful penalty kicks and goal totals are required to apply the selection criteria.",
+      "question_record": "blackstone_2018_4502/11_section_1_q19"
+    },
+    {
+      "number": 20,
+      "reason": "image-related and incomplete question structure: The cube net and five suggested views are image-based. Additionally, the main question is unavailable, several answer options have missing content, option labels are duplicated, and the known correct answer B is not properly represented in the extracted options.",
+      "question_record": "blackstone_2018_4502/11_section_1_q20"
+    }
+    {
+      "number": 24,
+      "reason": "image-related: The question requires counting illuminated segments in a digital clock. The numerical segment patterns are supplied as images.",
+      "question_record": "blackstone_2018_4502/11_section_1_q24"
+    },
+    {
+      "number": 25,
+      "reason": "image-related: The candidate vote totals and second-choice distributions are contained in an image-based table. These values are necessary to apply the supplementary vote system.",
+      "question_record": "blackstone_2018_4502/11_section_1_q25"
+    },
+    {
+      "number": 26,
+      "reason": "image-related: The positions and heights of the boxes, together with Amy's view and Ben's proposed views, are represented through images. Their geometry is required to determine the impossible view.",
+      "question_record": "blackstone_2018_4502/11_section_1_q26"
+    },
+    {
+      "number": 31,
+      "reason": "image-related: The book descriptions, prices and selection criteria are provided in an image-based table. Without these details, the purchase and remaining money cannot be calculated.",
+      "question_record": "blackstone_2018_4502/11_section_1_q31"
+    },
+    {
+      "number": 32,
+      "reason": "image-related: The broken logo pieces and all proposed completed logos are illustrated. Their shapes must be compared to identify the impossible reconstruction.",
+      "question_record": "blackstone_2018_4502/11_section_1_q32"
+    },
+    {
+      "number": 36,
+      "reason": "image-related: The wholesale costs, retail prices and other item data are provided in an image-based table. These numerical values are required to compare profits.",
+      "question_record": "blackstone_2018_4502/11_section_1_q36"
+    },
+    {
+      "number": 38,
+      "reason": "image-related: The map, labelled locations and reference list are provided through images. These are required to identify Longwood's location.",
+      "question_record": "blackstone_2018_4502/11_section_1_q38"
+    },
+    {
+      "number": 43,
+      "reason": "image-related: The parking tariff table is an image. Without the ticket durations and prices, the cheapest combination and maximum saving cannot be calculated.",
+      "question_record": "blackstone_2018_4502/11_section_1_q43"
+    },
+    {
+      "number": 44,
+      "reason": "image-related: The target cube and its five proposed nets are represented by images. Face arrangement and folding relationships must be inspected visually.",
+      "question_record": "blackstone_2018_4502/11_section_1_q44"
+    },
+    {
+      "number": 49,
+      "reason": "image-related: The wood dimensions and prices are supplied in an image-based table. These details are required to determine the cheapest arrangement of five complete shelves.",
+      "question_record": "blackstone_2018_4502/11_section_1_q49"
+    },
+    {
+      "number": 50,
+      "reason": "image-related and incomplete option content: The bump charts are visual, and options A and B have unavailable content in the supplied record. A complete comparison cannot be performed from the text alone.",
+      "question_record": "blackstone_2018_4502/11_section_1_q50"
+    }
+  ]
+}

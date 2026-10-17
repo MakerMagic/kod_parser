@@ -7,8 +7,6 @@ Only the correct-answer key is available for these records; no source/manual or 
 
 Matched records checked: 50. Excluded: 0. Unresolved question structure is retained, not repaired.
 
-Matched input: [tsa_2017-2019.matched.json](<../../data/merged/blackstone/tsa_2017-2019.matched.json>)
-
 ## Question 1
 
 Year: 2019; section: section_1
@@ -49,11 +47,6 @@ Expensive property is costing London the diversity it needs to prosper.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q1`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/0`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/0`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/0`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `1 E`
 
 ---
 
@@ -66,7 +59,7 @@ Year: 2019; section: section_1
 Each region in the country of Bolandia sets its own tax rate which applies to the whole of an individual’s annual income.  
 Below is a table showing tax information relating to six different people.
 
-![Visual blackstone_2019_q002_r002_p003_asset_01_f1128a30ac; page 3](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q002_r002_p003_asset_01_f1128a30ac.png>)
+![Visual blackstone_2019_q002_r002_p003_asset_01_f1128a30ac](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q002_r002_p003_asset_01_f1128a30ac.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q002_r002_p003_asset_01_f1128a30ac.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q002_r002_p003_asset_01_f1128a30ac.png>)
 
@@ -102,14 +95,7 @@ Roz
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q2`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/1`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/1`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/1`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `2 C`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q002_r002_p003_view_01_aae7330da1.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q002_r002_p003_view_01_aae7330da1.png>)
 
 ---
 
@@ -154,11 +140,6 @@ Strong self-discipline may not be an effect of the training but rather a capacit
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q3`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/2`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/2`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/2`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `3 E`
 
 ---
 
@@ -203,11 +184,6 @@ Young people are likely to develop harmful behaviours later in life.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q4`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/3`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/3`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/3`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `4 B`
 
 ---
 
@@ -251,11 +227,6 @@ Offering students a model of adulthood is a more satisfying role than helping th
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q5`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/4`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/4`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/4`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `5 A`
 
 ---
 
@@ -267,7 +238,7 @@ Year: 2019; section: section_1
 
 Below is a greyscale image of the flag of Canada. The flag consists of two red strips on the left and the right, a white square in the middle, and a red maple leaf in the centre.
 
-![Visual blackstone_2019_q006_r006_p006_asset_01_970a468805; page 6](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q006_r006_p006_asset_01_970a468805.png>)
+![Visual blackstone_2019_q006_r006_p006_asset_01_970a468805](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q006_r006_p006_asset_01_970a468805.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q006_r006_p006_asset_01_970a468805.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q006_r006_p006_asset_01_970a468805.png>)
 
@@ -306,14 +277,7 @@ What is the ratio of red to white in the flag?
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q6`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/5`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/5`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/5`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `6 D`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q006_r006_p006_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q006_r006_p006_view_01_5467457654.png>)
 
 ---
 
@@ -325,7 +289,7 @@ Year: 2019; section: section_1
 
 The table below shows the breakdown of marks awarded to students taking an exam.
 
-![Visual blackstone_2019_q007_r007_p007_asset_01_93374c42b2; page 7](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q007_r007_p007_asset_01_93374c42b2.png>)
+![Visual blackstone_2019_q007_r007_p007_asset_01_93374c42b2](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q007_r007_p007_asset_01_93374c42b2.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q007_r007_p007_asset_01_93374c42b2.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q007_r007_p007_asset_01_93374c42b2.png>)
 
@@ -364,14 +328,7 @@ Mrs De Vere and Mr Robson
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q7`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/6`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/6`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/6`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `7 E`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q007_r007_p007_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q007_r007_p007_view_01_5467457654.png>)
 
 ---
 
@@ -383,11 +340,11 @@ Year: 2019; section: section_1
 
 The bar chart shows the total numbers of tickets sold for a concert over three nights. number of tickets sold
 
-![Visual blackstone_2019_q008_r008_p008_asset_01_b09422fd34; page 8](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q008_r008_p008_asset_01_b09422fd34.png>)
+![Visual blackstone_2019_q008_r008_p008_asset_01_b09422fd34](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q008_r008_p008_asset_01_b09422fd34.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q008_r008_p008_asset_01_b09422fd34.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q008_r008_p008_asset_01_b09422fd34.png>)
 
-![Visual blackstone_2019_q008_r008_p008_asset_02_22b909c930; page 8](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q008_r008_p008_asset_02_22b909c930.png>)
+![Visual blackstone_2019_q008_r008_p008_asset_02_22b909c930](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q008_r008_p008_asset_02_22b909c930.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q008_r008_p008_asset_02_22b909c930.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q008_r008_p008_asset_02_22b909c930.png>)
 
@@ -425,14 +382,7 @@ The highest total sales income could have been for Friday or Saturday.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q8`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/7`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/7`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/7`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `8 E`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q008_r008_p008_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q008_r008_p008_view_01_5467457654.png>)
 
 ---
 
@@ -477,11 +427,6 @@ It assumes that correct spelling is a necessary requirement for gaining employme
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q9`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/8`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/8`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/8`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `9 B`
 
 ---
 
@@ -525,11 +470,6 @@ Male contributors to the website experienced a similar drop in their code change
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q10`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/9`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/9`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/9`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `10 E`
 
 ---
 
@@ -573,11 +513,6 @@ Young people should be encouraged to find a sport they enjoy.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q11`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/10`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/10`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/10`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `11 D`
 
 ---
 
@@ -622,11 +557,6 @@ For how many seconds in each minute do neither of the lamps shine when they are 
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q12`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/11`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/11`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/11`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `12 C`
 
 ---
 
@@ -638,7 +568,7 @@ Year: 2019; section: section_1
 
 The following table compares five selected commuting routes in different European countries with respect to the length of the journey and the monthly cost of a season ticket as a percentage of average monthly wages.
 
-![Visual blackstone_2019_q013_r013_p011_asset_01_8f359898d2; page 11](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q013_r013_p011_asset_01_8f359898d2.png>)
+![Visual blackstone_2019_q013_r013_p011_asset_01_8f359898d2](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q013_r013_p011_asset_01_8f359898d2.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q013_r013_p011_asset_01_8f359898d2.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q013_r013_p011_asset_01_8f359898d2.png>)
 
@@ -674,14 +604,7 @@ Drogheda–Dublin
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q13`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/12`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/12`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/12`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `13 C`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q013_r013_p011_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q013_r013_p011_view_01_5467457654.png>)
 
 ---
 
@@ -693,11 +616,11 @@ Year: 2019; section: section_1
 
 Peter has drawn two diagrams showing information about the two cars owned by his parents:
 
-![Visual blackstone_2019_q014_r014_p012_asset_01_08f861435f; page 12](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q014_r014_p012_asset_01_08f861435f.png>)
+![Visual blackstone_2019_q014_r014_p012_asset_01_08f861435f](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q014_r014_p012_asset_01_08f861435f.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q014_r014_p012_asset_01_08f861435f.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q014_r014_p012_asset_01_08f861435f.png>)
 
-![Visual blackstone_2019_q014_r014_p012_asset_02_eae08e6ad4; page 12](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q014_r014_p012_asset_02_eae08e6ad4.png>)
+![Visual blackstone_2019_q014_r014_p012_asset_02_eae08e6ad4](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q014_r014_p012_asset_02_eae08e6ad4.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q014_r014_p012_asset_02_eae08e6ad4.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q014_r014_p012_asset_02_eae08e6ad4.png>)
 
@@ -733,14 +656,7 @@ The slower car is smaller.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q14`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/13`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/13`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/13`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `14 B`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q014_r014_p012_view_01_801d84c16d.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q014_r014_p012_view_01_801d84c16d.png>)
 
 ---
 
@@ -785,11 +701,6 @@ Natural flood management methods are most effective in hilly upland areas.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q15`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/14`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/14`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/14`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `15 B`
 
 ---
 
@@ -833,11 +744,6 @@ The government could use its increased levels of North Sea oil revenue to reduce
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q16`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/15`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/15`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/15`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `16 A`
 
 ---
 
@@ -881,11 +787,6 @@ Wealthier couples are four times more likely to marry than poorer couples.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q17`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/16`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/16`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/16`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `17 E`
 
 ---
 
@@ -930,11 +831,6 @@ If they each maintain their running speed throughout the session, how many more 
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q18`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/17`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/17`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/17`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `18 B`
 
 ---
 
@@ -946,7 +842,7 @@ Year: 2019; section: section_1
 
 The table below shows the amount of waste recycled each year, in thousands of tonnes, over a three-year period in 20 countries.
 
-![Visual blackstone_2019_q019_r019_p015_asset_01_2fd0598a32; page 15](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q019_r019_p015_asset_01_2fd0598a32.png>)
+![Visual blackstone_2019_q019_r019_p015_asset_01_2fd0598a32](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q019_r019_p015_asset_01_2fd0598a32.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q019_r019_p015_asset_01_2fd0598a32.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q019_r019_p015_asset_01_2fd0598a32.png>)
 
@@ -982,14 +878,7 @@ What is the biggest percentage increase in recycling in the table from year 1 to
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q19`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/18`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/18`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/18`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `19 E`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q019_r019_p015_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q019_r019_p015_view_01_5467457654.png>)
 
 ---
 
@@ -1001,7 +890,7 @@ Year: 2019; section: section_1
 
 The see-through glass block below can be viewed from six sides, including from above and below.
 
-![Visual blackstone_2019_q020_r020_p016_asset_01_e3e4617c75; page 16](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_01_e3e4617c75.png>)
+![Visual blackstone_2019_q020_r020_p016_asset_01_e3e4617c75](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_01_e3e4617c75.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_01_e3e4617c75.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_01_e3e4617c75.png>)
 
@@ -1013,43 +902,33 @@ Which one of the following is not a possible view?
 
 #### A
 
-![Visual blackstone_2019_q020_r020_p016_asset_02_40441d59af; page 16](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_02_40441d59af_clean_9c18d07bc1db.png>)
+![Visual blackstone_2019_q020_r020_p016_asset_02_40441d59af](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_02_40441d59af_clean_9c18d07bc1db.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_02_40441d59af_clean_9c18d07bc1db.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_02_40441d59af_clean_9c18d07bc1db.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_02_40441d59af.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_02_40441d59af.png>)
-
 #### B
 
-![Visual blackstone_2019_q020_r020_p016_asset_03_d81b472a4d; page 16](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_03_d81b472a4d_clean_22a3fee86990.png>)
+![Visual blackstone_2019_q020_r020_p016_asset_03_d81b472a4d](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_03_d81b472a4d_clean_22a3fee86990.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_03_d81b472a4d_clean_22a3fee86990.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_03_d81b472a4d_clean_22a3fee86990.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_03_d81b472a4d.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_03_d81b472a4d.png>)
-
 #### C
 
-![Visual blackstone_2019_q020_r020_p016_asset_04_6fe2d2342f; page 16](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_04_6fe2d2342f_clean_c7e5114b7519.png>)
+![Visual blackstone_2019_q020_r020_p016_asset_04_6fe2d2342f](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_04_6fe2d2342f_clean_c7e5114b7519.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_04_6fe2d2342f_clean_c7e5114b7519.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_04_6fe2d2342f_clean_c7e5114b7519.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_04_6fe2d2342f.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_04_6fe2d2342f.png>)
-
 #### D
 
-![Visual blackstone_2019_q020_r020_p016_asset_05_9443a26dc4; page 16](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_05_9443a26dc4_clean_ec140f4baf1e.png>)
+![Visual blackstone_2019_q020_r020_p016_asset_05_9443a26dc4](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_05_9443a26dc4_clean_ec140f4baf1e.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_05_9443a26dc4_clean_ec140f4baf1e.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_05_9443a26dc4_clean_ec140f4baf1e.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_05_9443a26dc4.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_05_9443a26dc4.png>)
-
 #### E
 
-![Visual blackstone_2019_q020_r020_p016_asset_06_b3935e2608; page 16](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_06_b3935e2608_clean_085823b215ec.png>)
+![Visual blackstone_2019_q020_r020_p016_asset_06_b3935e2608](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_06_b3935e2608_clean_085823b215ec.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_06_b3935e2608_clean_085823b215ec.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_06_b3935e2608_clean_085823b215ec.png>)
-
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_06_b3935e2608.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_06_b3935e2608.png>)
 
 **Correct answer:** E
 
@@ -1057,14 +936,7 @@ Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_asset_06_
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q20`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/19`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/19`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/19`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `20 E`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q020_r020_p016_view_01_5467457654.png>)
 
 ---
 
@@ -1109,11 +981,6 @@ The argument implies that conservation tourism will inevitably lead to the extin
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q21`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/20`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/20`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/20`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `21 A`
 
 ---
 
@@ -1159,11 +1026,6 @@ If the snake that bit this victim was venomous, then the wound would be very inf
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q22`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/21`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/21`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/21`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `22 E`
 
 ---
 
@@ -1207,11 +1069,6 @@ People who have benefitted from grants or bursaries for university education sho
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q23`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/22`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/22`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/22`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `23 B`
 
 ---
 
@@ -1223,13 +1080,13 @@ Year: 2019; section: section_1
 
 A digital display consists of seven segments which light up in different combinations to produce digits. For example, to display the digit ‘1’ the two right-hand segments light up as shown:
 
-![Visual blackstone_2019_q024_r024_p018_asset_01_5f0342d354; page 18](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q024_r024_p018_asset_01_5f0342d354.png>)
+![Visual blackstone_2019_q024_r024_p018_asset_01_5f0342d354](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q024_r024_p018_asset_01_5f0342d354.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q024_r024_p018_asset_01_5f0342d354.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q024_r024_p018_asset_01_5f0342d354.png>)
 
 The display is used to show, in sequence, each of the digits 1 to 9.
 
-![Visual blackstone_2019_q024_r024_p018_asset_02_c2226edecb; page 18](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q024_r024_p018_asset_02_c2226edecb.png>)
+![Visual blackstone_2019_q024_r024_p018_asset_02_c2226edecb](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q024_r024_p018_asset_02_c2226edecb.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q024_r024_p018_asset_02_c2226edecb.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q024_r024_p018_asset_02_c2226edecb.png>)
 
@@ -1265,15 +1122,8 @@ What is the maximum and minimum number of times that any one segment lights up d
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q24`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/23`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/23`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/23`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `24 C`
 - Review: graphics\_present:option\_association\_not\_resolved
 - Review: visual\_option\_anchor\_boundary\_uncertain:manual\_review
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q024_r024_p018_view_01_0fe929a466.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q024_r024_p018_view_01_0fe929a466.png>)
 
 ---
 
@@ -1286,7 +1136,7 @@ Year: 2019; section: section_1
 Sandi is planning a trip to the old city of Pordson. She wants to stay for four nights in order to visit all of the attractions, and one of the nights must be the Saturday so that she can attend a special music concert.  
 The table below shows the prices per night and details of the deals for the five main hotels in Pordson.
 
-![Visual blackstone_2019_q025_r025_p019_asset_01_f6618853aa; page 19](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q025_r025_p019_asset_01_f6618853aa.png>)
+![Visual blackstone_2019_q025_r025_p019_asset_01_f6618853aa](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q025_r025_p019_asset_01_f6618853aa.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q025_r025_p019_asset_01_f6618853aa.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q025_r025_p019_asset_01_f6618853aa.png>)
 
@@ -1328,14 +1178,7 @@ What is the minimum that Sandi will need to spend on a hotel bill for her stay i
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q25`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/24`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/24`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/24`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `25 C`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q025_r025_p019_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q025_r025_p019_view_01_5467457654.png>)
 
 ---
 
@@ -1348,15 +1191,15 @@ Year: 2019; section: section_1
 A solid cube has 6 different shapes drawn on each of its 6 faces. A plan view showing all the shapes is given below. It is placed on the path drawn below with the triangular shape facing up.  
 The cube is rolled, one face at a time, forward along the route shown, from start position until it reaches the end position.
 
-![Visual blackstone_2019_q026_r026_p020_asset_01_034c12c55b; page 20](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_01_034c12c55b.png>)
+![Visual blackstone_2019_q026_r026_p020_asset_01_034c12c55b](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_01_034c12c55b.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_01_034c12c55b.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_01_034c12c55b.png>)
 
-![Visual blackstone_2019_q026_r026_p020_asset_02_12de63f5c4; page 20](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_02_12de63f5c4.png>)
+![Visual blackstone_2019_q026_r026_p020_asset_02_12de63f5c4](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_02_12de63f5c4.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_02_12de63f5c4.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_02_12de63f5c4.png>)
 
-![Visual blackstone_2019_q026_r026_p020_asset_03_2618dff6a1; page 20](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_03_2618dff6a1.png>)
+![Visual blackstone_2019_q026_r026_p020_asset_03_2618dff6a1](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_03_2618dff6a1.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_03_2618dff6a1.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_03_2618dff6a1.png>)
 
@@ -1368,43 +1211,33 @@ Which one of the following shapes is facing up when it reaches the end position?
 
 #### A
 
-![Visual blackstone_2019_q026_r026_p020_asset_04_c91a8b0f5e; page 20](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_04_c91a8b0f5e_clean_ef9d74537803.png>)
+![Visual blackstone_2019_q026_r026_p020_asset_04_c91a8b0f5e](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_04_c91a8b0f5e_clean_ef9d74537803.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_04_c91a8b0f5e_clean_ef9d74537803.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_04_c91a8b0f5e_clean_ef9d74537803.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_04_c91a8b0f5e.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_04_c91a8b0f5e.png>)
-
 #### B
 
-![Visual blackstone_2019_q026_r026_p020_asset_05_f3a48969d6; page 20](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_05_f3a48969d6_clean_e99ba706116f.png>)
+![Visual blackstone_2019_q026_r026_p020_asset_05_f3a48969d6](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_05_f3a48969d6_clean_e99ba706116f.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_05_f3a48969d6_clean_e99ba706116f.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_05_f3a48969d6_clean_e99ba706116f.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_05_f3a48969d6.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_05_f3a48969d6.png>)
-
 #### C
 
-![Visual blackstone_2019_q026_r026_p020_asset_06_adceecac63; page 20](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_06_adceecac63_clean_71b222e8d475.png>)
+![Visual blackstone_2019_q026_r026_p020_asset_06_adceecac63](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_06_adceecac63_clean_71b222e8d475.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_06_adceecac63_clean_71b222e8d475.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_06_adceecac63_clean_71b222e8d475.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_06_adceecac63.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_06_adceecac63.png>)
-
 #### D
 
-![Visual blackstone_2019_q026_r026_p020_asset_07_99791ef8b2; page 20](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_07_99791ef8b2_clean_0e852a51a5af.png>)
+![Visual blackstone_2019_q026_r026_p020_asset_07_99791ef8b2](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_07_99791ef8b2_clean_0e852a51a5af.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_07_99791ef8b2_clean_0e852a51a5af.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_07_99791ef8b2_clean_0e852a51a5af.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_07_99791ef8b2.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_07_99791ef8b2.png>)
-
 #### E
 
-![Visual blackstone_2019_q026_r026_p020_asset_08_b1cc784b3c; page 20](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_08_b1cc784b3c_clean_83b7d504d911.png>)
+![Visual blackstone_2019_q026_r026_p020_asset_08_b1cc784b3c](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_08_b1cc784b3c_clean_83b7d504d911.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_08_b1cc784b3c_clean_83b7d504d911.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_08_b1cc784b3c_clean_83b7d504d911.png>)
-
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_08_b1cc784b3c.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_08_b1cc784b3c.png>)
 
 **Correct answer:** D
 
@@ -1412,14 +1245,7 @@ Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_asset_08_
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q26`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/25`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/25`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/25`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `26 D`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q026_r026_p020_view_01_5467457654.png>)
 
 ---
 
@@ -1463,11 +1289,6 @@ Nature will find a way to adapt, but climate change is potentially devastating f
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q27`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/26`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/26`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/26`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `27 B`
 
 ---
 
@@ -1513,11 +1334,6 @@ Pain is a necessary part of the healing process.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q28`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/27`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/27`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/27`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `28 B`
 
 ---
 
@@ -1561,11 +1377,6 @@ Fear of losing a driving licence is greater than fear of financial hardship.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q29`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/28`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/28`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/28`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `29 A`
 
 ---
 
@@ -1577,7 +1388,7 @@ Year: 2019; section: section_1
 
 Alex and Sue are playing a game with a set of nine cards, numbered from 1 to 9. A 3 × 3 grid of cards is dealt onto the table. The cards for the next round have just been dealt and are as shown below.
 
-![Visual blackstone_2019_q030_r030_p023_asset_01_408d3a03df; page 23](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q030_r030_p023_asset_01_408d3a03df.png>)
+![Visual blackstone_2019_q030_r030_p023_asset_01_408d3a03df](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q030_r030_p023_asset_01_408d3a03df.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q030_r030_p023_asset_01_408d3a03df.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q030_r030_p023_asset_01_408d3a03df.png>)
 
@@ -1616,14 +1427,7 @@ play second
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q30`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/29`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/29`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/29`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `30 E`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q030_r030_p023_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q030_r030_p023_view_01_5467457654.png>)
 
 ---
 
@@ -1637,7 +1441,7 @@ The single ferry to Pepper Island starts each day from mainland Seatown and cros
 MAY  
 M T W T F S S
 
-![Visual blackstone_2019_q031_r031_p024_asset_01_ad59f7cc5e; page 24](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_01_ad59f7cc5e.png>)
+![Visual blackstone_2019_q031_r031_p024_asset_01_ad59f7cc5e](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_01_ad59f7cc5e.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_01_ad59f7cc5e.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_01_ad59f7cc5e.png>)
 
@@ -1646,13 +1450,13 @@ Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_01_ad59
 15 16 17 18 19 20 21  
 22 23 24 25 26 27 28
 
-![Visual blackstone_2019_q031_r031_p024_asset_02_185ec758ff; page 24](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_02_185ec758ff.png>)
+![Visual blackstone_2019_q031_r031_p024_asset_02_185ec758ff](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_02_185ec758ff.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_02_185ec758ff.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_02_185ec758ff.png>)
 
 29 30 31
 
-![Visual blackstone_2019_q031_r031_p024_asset_03_078f157461; page 24](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_03_078f157461.png>)
+![Visual blackstone_2019_q031_r031_p024_asset_03_078f157461](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_03_078f157461.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_03_078f157461.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_asset_03_078f157461.png>)
 
@@ -1691,16 +1495,9 @@ What is the maximum number of crossings the ferry can make in May?
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q31`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/30`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/30`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/30`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `31 B`
 - Review: graphics\_present:option\_association\_not\_resolved
 - Review: visual\_caption\_boundary\_uncertain:external\_caption\_preserved
 - Review: visual\_caption\_may\_be\_incomplete:local\_text\_preserved\_in\_layout
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q031_r031_p024_view_01_5467457654.png>)
 
 ---
 
@@ -1717,63 +1514,63 @@ In April, 11 of these people changed their votes, as follows:
 5 people changed their vote from Andrew to Roger  
 1 person changed their vote from Roger to James
 
-![Visual blackstone_2019_q032_r032_p025_asset_01_06ff561e19; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_01_06ff561e19.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_01_06ff561e19](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_01_06ff561e19.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_01_06ff561e19.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_01_06ff561e19.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_02_26adcd6090; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_02_26adcd6090.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_02_26adcd6090](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_02_26adcd6090.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_02_26adcd6090.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_02_26adcd6090.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_03_fab54d3ee4; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_03_fab54d3ee4.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_03_fab54d3ee4](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_03_fab54d3ee4.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_03_fab54d3ee4.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_03_fab54d3ee4.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_04_d1840553eb; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_04_d1840553eb.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_04_d1840553eb](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_04_d1840553eb.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_04_d1840553eb.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_04_d1840553eb.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_05_839ced432d; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_05_839ced432d.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_05_839ced432d](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_05_839ced432d.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_05_839ced432d.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_05_839ced432d.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_06_5350f76480; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_06_5350f76480.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_06_5350f76480](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_06_5350f76480.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_06_5350f76480.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_06_5350f76480.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_07_a0669184e6; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_07_a0669184e6.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_07_a0669184e6](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_07_a0669184e6.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_07_a0669184e6.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_07_a0669184e6.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_08_47a59403bc; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_08_47a59403bc.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_08_47a59403bc](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_08_47a59403bc.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_08_47a59403bc.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_08_47a59403bc.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_09_01359892ff; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_09_01359892ff.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_09_01359892ff](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_09_01359892ff.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_09_01359892ff.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_09_01359892ff.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_10_918dd2475c; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_10_918dd2475c.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_10_918dd2475c](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_10_918dd2475c.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_10_918dd2475c.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_10_918dd2475c.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_11_8a69f7fc6a; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_11_8a69f7fc6a.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_11_8a69f7fc6a](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_11_8a69f7fc6a.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_11_8a69f7fc6a.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_11_8a69f7fc6a.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_12_4b40cb2e9e; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_12_4b40cb2e9e.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_12_4b40cb2e9e](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_12_4b40cb2e9e.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_12_4b40cb2e9e.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_12_4b40cb2e9e.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_13_3c04429b2f; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_13_3c04429b2f.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_13_3c04429b2f](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_13_3c04429b2f.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_13_3c04429b2f.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_13_3c04429b2f.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_14_9a18517f1f; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_14_9a18517f1f.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_14_9a18517f1f](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_14_9a18517f1f.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_14_9a18517f1f.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_14_9a18517f1f.png>)
 
-![Visual blackstone_2019_q032_r032_p025_asset_15_067017bfdb; page 25](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_15_067017bfdb.png>)
+![Visual blackstone_2019_q032_r032_p025_asset_15_067017bfdb](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_15_067017bfdb.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_15_067017bfdb.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_asset_15_067017bfdb.png>)
 
@@ -1807,11 +1604,6 @@ March April March April
 
 - Match status: conflict
 - Question record: `blackstone_2019_4502/11_section_1_q32`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/31`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/31`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/31`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `32 C`
 - Review: correct\_answer\_option\_conflict: Correct label is absent/duplicated in clean options; upstream structure needs review
 - Review: visual\_placement\_unresolved: Asset has no reliable displayed option/body placement; preserved without reassignment.
 - Review: incomplete\_or\_ambiguous\_options:A,D
@@ -1821,8 +1613,6 @@ March April March April
 - Review: visual\_caption\_may\_be\_incomplete:local\_text\_preserved\_in\_layout
 - Review: visual\_component\_association\_uncertain
 - Review: Known source answer key shown without resolving the missing/ambiguous option mapping.
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q032_r032_p025_view_01_5467457654.png>)
 
 ---
 
@@ -1867,11 +1657,6 @@ Facebook.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q33`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/32`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/32`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/32`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `33 A`
 
 ---
 
@@ -1916,11 +1701,6 @@ The risks posed by using a mobile phone while driving may be much greater than t
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q34`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/33`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/33`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/33`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `34 A`
 
 ---
 
@@ -1964,11 +1744,6 @@ Hypocrisy is a serious moral weakness.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q35`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/34`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/34`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/34`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `35 D`
 
 ---
 
@@ -1980,14 +1755,14 @@ Year: 2019; section: section_1
 
 Nathan is making a pair of trousers for his young son. The diagram shows the pattern for one piece. Four such pieces are needed.
 
-![Visual blackstone_2019_q036_r036_p028_asset_01_1adf3f43e5; page 28](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q036_r036_p028_asset_01_1adf3f43e5.png>)
+![Visual blackstone_2019_q036_r036_p028_asset_01_1adf3f43e5](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q036_r036_p028_asset_01_1adf3f43e5.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q036_r036_p028_asset_01_1adf3f43e5.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q036_r036_p028_asset_01_1adf3f43e5.png>)
 
 [diagram not to scale]  
 For simplicity he assumes that he will need a 15cm × 38cm rectangle for each piece. The material comes in three widths with prices as shown:
 
-![Visual blackstone_2019_q036_r036_p028_asset_02_aad9bbb5fc; page 28](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q036_r036_p028_asset_02_aad9bbb5fc.png>)
+![Visual blackstone_2019_q036_r036_p028_asset_02_aad9bbb5fc](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q036_r036_p028_asset_02_aad9bbb5fc.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q036_r036_p028_asset_02_aad9bbb5fc.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q036_r036_p028_asset_02_aad9bbb5fc.png>)
 
@@ -2025,14 +1800,7 @@ What is the lowest price he can pay?
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q36`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/35`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/35`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/35`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `36 B`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q036_r036_p028_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q036_r036_p028_view_01_5467457654.png>)
 
 ---
 
@@ -2045,7 +1813,7 @@ Year: 2019; section: section_1
 Arthur plans to modernise his bathroom. His design requires a 1600mm × 700mm bath. He wants side grips to help him get out of the bath, and because he doesn’t want to choose the taps before ordering the bath he must have one which doesn’t have pre-drilled tap holes.  
 A list from the bath catalogue is shown below:
 
-![Visual blackstone_2019_q037_r037_p029_asset_01_cf20412222; page 29](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q037_r037_p029_asset_01_cf20412222.png>)
+![Visual blackstone_2019_q037_r037_p029_asset_01_cf20412222](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q037_r037_p029_asset_01_cf20412222.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q037_r037_p029_asset_01_cf20412222.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q037_r037_p029_asset_01_cf20412222.png>)
 
@@ -2081,14 +1849,7 @@ How much will Arthur save by choosing the cheapest steel bath that fits his requ
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q37`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/36`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/36`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/36`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `37 C`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q037_r037_p029_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q037_r037_p029_view_01_5467457654.png>)
 
 ---
 
@@ -2100,11 +1861,11 @@ Year: 2019; section: section_1
 
 The Head of Year 6 is planning an end-of-term treat for her students. The pie chart represents the numbers of votes cast by the children for each of the five possible outings.
 
-![Visual blackstone_2019_q038_r038_p030_asset_01_2e0cbc82a1; page 30](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q038_r038_p030_asset_01_2e0cbc82a1.png>)
+![Visual blackstone_2019_q038_r038_p030_asset_01_2e0cbc82a1](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q038_r038_p030_asset_01_2e0cbc82a1.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q038_r038_p030_asset_01_2e0cbc82a1.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q038_r038_p030_asset_01_2e0cbc82a1.png>)
 
-![Visual blackstone_2019_q038_r038_p030_asset_02_2e45bb8484; page 30](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q038_r038_p030_asset_02_2e45bb8484.png>)
+![Visual blackstone_2019_q038_r038_p030_asset_02_2e45bb8484](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q038_r038_p030_asset_02_2e45bb8484.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q038_r038_p030_asset_02_2e45bb8484.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q038_r038_p030_asset_02_2e45bb8484.png>)
 
@@ -2140,15 +1901,8 @@ Which one of the following rows (A–E) could show the actual number of votes ca
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q38`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/37`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/37`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/37`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `38 E`
 - Review: graphics\_present:option\_association\_not\_resolved
 - Review: visual\_option\_anchor\_boundary\_uncertain:manual\_review
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q038_r038_p030_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q038_r038_p030_view_01_5467457654.png>)
 
 ---
 
@@ -2192,11 +1946,6 @@ The vocabulary and grammar of a language naturally evolve over time, and the sam
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q39`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/38`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/38`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/38`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `39 C`
 
 ---
 
@@ -2240,11 +1989,6 @@ People who experience less stress at work are better parents.
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q40`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/39`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/39`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/39`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `40 B`
 
 ---
 
@@ -2290,11 +2034,6 @@ Police officers whose views are not evidence-based are more likely to have compl
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q41`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/40`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/40`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/40`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `41 E`
 
 ---
 
@@ -2306,7 +2045,7 @@ Year: 2019; section: section_1
 
 The drawing below shows an allotment shed.
 
-![Visual blackstone_2019_q042_r042_p033_asset_01_f54bb42b22; page 33](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q042_r042_p033_asset_01_f54bb42b22.png>)
+![Visual blackstone_2019_q042_r042_p033_asset_01_f54bb42b22](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q042_r042_p033_asset_01_f54bb42b22.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q042_r042_p033_asset_01_f54bb42b22.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q042_r042_p033_asset_01_f54bb42b22.png>)
 
@@ -2347,14 +2086,7 @@ How long will it take to paint the two sheds?
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q42`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/41`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/41`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/41`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `42 E`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q042_r042_p033_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q042_r042_p033_view_01_5467457654.png>)
 
 ---
 
@@ -2367,7 +2099,7 @@ Year: 2019; section: section_1
 A school party consisting of 4 teachers and 20 students is visiting the theatre. Of the students,  
 8 are aged 15 years and 12 are aged 16 years. The following table shows the entry prices to the theatre.
 
-![Visual blackstone_2019_q043_r043_p034_asset_01_dad93fcaba; page 34](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q043_r043_p034_asset_01_dad93fcaba.png>)
+![Visual blackstone_2019_q043_r043_p034_asset_01_dad93fcaba](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q043_r043_p034_asset_01_dad93fcaba.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q043_r043_p034_asset_01_dad93fcaba.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q043_r043_p034_asset_01_dad93fcaba.png>)
 
@@ -2403,14 +2135,7 @@ $560
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q43`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/42`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/42`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/42`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `43 A`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q043_r043_p034_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q043_r043_p034_view_01_5467457654.png>)
 
 ---
 
@@ -2422,15 +2147,15 @@ Year: 2019; section: section_1
 
 Consider the following net, which forms a hexagonal prism:
 
-![Visual blackstone_2019_q044_r044_p035_asset_01_45412793ce; page 35](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_01_45412793ce.png>)
+![Visual blackstone_2019_q044_r044_p035_asset_01_45412793ce](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_01_45412793ce.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_01_45412793ce.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_01_45412793ce.png>)
 
-![Visual blackstone_2019_q044_r044_p035_asset_04_9ffd5e1175; page 35](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_04_9ffd5e1175.png>)
+![Visual blackstone_2019_q044_r044_p035_asset_04_9ffd5e1175](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_04_9ffd5e1175.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_04_9ffd5e1175.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_04_9ffd5e1175.png>)
 
-![Visual blackstone_2019_q044_r044_p035_asset_05_3300403e65; page 35](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_05_3300403e65.png>)
+![Visual blackstone_2019_q044_r044_p035_asset_05_3300403e65](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_05_3300403e65.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_05_3300403e65.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_05_3300403e65.png>)
 
@@ -2450,11 +2175,11 @@ B
 4 3 2 1 6 5  
 T
 
-![Visual blackstone_2019_q044_r044_p035_asset_02_fe9d8d54f3; page 35](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_02_fe9d8d54f3.png>)
+![Visual blackstone_2019_q044_r044_p035_asset_02_fe9d8d54f3](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_02_fe9d8d54f3.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_02_fe9d8d54f3.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_02_fe9d8d54f3.png>)
 
-![Visual blackstone_2019_q044_r044_p035_asset_03_ba4e9831fe; page 35](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_03_ba4e9831fe.png>)
+![Visual blackstone_2019_q044_r044_p035_asset_03_ba4e9831fe](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_03_ba4e9831fe.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_03_ba4e9831fe.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_03_ba4e9831fe.png>)
 
@@ -2473,7 +2198,7 @@ T
 4 1  
 5 6
 
-![Visual blackstone_2019_q044_r044_p035_asset_06_0b6d531261; page 35](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_06_0b6d531261.png>)
+![Visual blackstone_2019_q044_r044_p035_asset_06_0b6d531261](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_06_0b6d531261.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_06_0b6d531261.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_06_0b6d531261.png>)
 
@@ -2483,18 +2208,11 @@ Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_asset_06_0b6d
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q44`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/43`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/43`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/43`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `44 C`
 - Review: visual\_placement\_unresolved: Asset has no reliable displayed option/body placement; preserved without reassignment.
 - Review: incomplete\_or\_ambiguous\_options:A,C,E
 - Review: graphics\_present:option\_association\_not\_resolved
 - Review: visual\_multiple\_option\_images\_merged:shared\_geometry\_requires\_review
 - Review: visual\_component\_association\_uncertain
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q044_r044_p035_view_01_5467457654.png>)
 
 ---
 
@@ -2539,11 +2257,6 @@ The negative effects of radiation may be less significant than the psychological
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q45`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/44`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/44`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/44`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `45 D`
 
 ---
 
@@ -2588,11 +2301,6 @@ Good knowledge of the car is necessary for fixing it. Without fixing the car, we
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q46`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/45`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/45`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/45`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `46 E`
 
 ---
 
@@ -2636,11 +2344,6 @@ Inheritance tax should be set at a fairly low rate so that the children of rich 
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q47`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/46`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/46`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/46`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `47 E`
 
 ---
 
@@ -2688,11 +2391,6 @@ Saturday
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q48`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/47`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/47`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/47`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `48 D`
 
 ---
 
@@ -2704,7 +2402,7 @@ Year: 2019; section: section_1
 
 A 250g bag of mixed nuts lists the contents on the packet as follows:
 
-![Visual blackstone_2019_q049_r049_p038_asset_01_8871e27634; page 38](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q049_r049_p038_asset_01_8871e27634.png>)
+![Visual blackstone_2019_q049_r049_p038_asset_01_8871e27634](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q049_r049_p038_asset_01_8871e27634.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q049_r049_p038_asset_01_8871e27634.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q049_r049_p038_asset_01_8871e27634.png>)
 
@@ -2742,14 +2440,7 @@ What is the largest possible peanut content of the nuts remaining in the bag aft
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q49`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/48`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/48`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/48`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `49 C`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q049_r049_p038_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q049_r049_p038_view_01_5467457654.png>)
 
 ---
 
@@ -2761,7 +2452,7 @@ Year: 2019; section: section_1
 
 The net below can be folded to make a Roman numerical dice.
 
-![Visual blackstone_2019_q050_r050_p039_asset_01_be49c9ded6; page 39](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_01_be49c9ded6.png>)
+![Visual blackstone_2019_q050_r050_p039_asset_01_be49c9ded6](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_01_be49c9ded6.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_01_be49c9ded6.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_01_be49c9ded6.png>)
 
@@ -2773,43 +2464,33 @@ Which one of the following dice could have been made as a result of folding the 
 
 #### A
 
-![Visual blackstone_2019_q050_r050_p039_asset_02_a8ff3e95ec; page 39](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_02_a8ff3e95ec_clean_2db24cbfe50d.png>)
+![Visual blackstone_2019_q050_r050_p039_asset_02_a8ff3e95ec](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_02_a8ff3e95ec_clean_2db24cbfe50d.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_02_a8ff3e95ec_clean_2db24cbfe50d.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_02_a8ff3e95ec_clean_2db24cbfe50d.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_02_a8ff3e95ec.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_02_a8ff3e95ec.png>)
-
 #### B
 
-![Visual blackstone_2019_q050_r050_p039_asset_03_d86bcef695; page 39](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_03_d86bcef695_clean_4652011c3241.png>)
+![Visual blackstone_2019_q050_r050_p039_asset_03_d86bcef695](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_03_d86bcef695_clean_4652011c3241.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_03_d86bcef695_clean_4652011c3241.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_03_d86bcef695_clean_4652011c3241.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_03_d86bcef695.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_03_d86bcef695.png>)
-
 #### C
 
-![Visual blackstone_2019_q050_r050_p039_asset_04_5fdb5432d8; page 39](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_04_5fdb5432d8_clean_1fdccca8c54d.png>)
+![Visual blackstone_2019_q050_r050_p039_asset_04_5fdb5432d8](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_04_5fdb5432d8_clean_1fdccca8c54d.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_04_5fdb5432d8_clean_1fdccca8c54d.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_04_5fdb5432d8_clean_1fdccca8c54d.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_04_5fdb5432d8.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_04_5fdb5432d8.png>)
-
 #### D
 
-![Visual blackstone_2019_q050_r050_p039_asset_05_15331248da; page 39](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_05_15331248da_clean_3d772ed851fd.png>)
+![Visual blackstone_2019_q050_r050_p039_asset_05_15331248da](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_05_15331248da_clean_3d772ed851fd.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_05_15331248da_clean_3d772ed851fd.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_05_15331248da_clean_3d772ed851fd.png>)
 
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_05_15331248da.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_05_15331248da.png>)
-
 #### E
 
-![Visual blackstone_2019_q050_r050_p039_asset_06_2992ad7d34; page 39](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_06_2992ad7d34_clean_91ec8cf0c12a.png>)
+![Visual blackstone_2019_q050_r050_p039_asset_06_2992ad7d34](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_06_2992ad7d34_clean_91ec8cf0c12a.png>)
 
 Asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_06_2992ad7d34_clean_91ec8cf0c12a.png](<../../data/clean/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_06_2992ad7d34_clean_91ec8cf0c12a.png>)
-
-Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_06_2992ad7d34.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_06_2992ad7d34.png>)
 
 **Correct answer:** D
 
@@ -2817,13 +2498,6 @@ Raw asset: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_asset_06_
 
 - Match status: matched
 - Question record: `blackstone_2019_4502/11_section_1_q50`
-- Source PDF: TSA Oxford 2019.pdf
-- Clean record: [TSA Oxford 2019-65ce40f75786.clean.json](<../../data/clean/blackstone/TSA Oxford 2019-65ce40f75786.clean.json>); pointer `/questions/49`
-- Raw record: [TSA Oxford 2019-65ce40f75786.raw.json](<../../data/raw/blackstone/TSA Oxford 2019-65ce40f75786.raw.json>); pointer `/questions/49`
-- Answer record: [TSA-2019-Answers-blackstone-3da59de7277c.answers.json](<../../data/raw/blackstone_answer_keys/2019/TSA-2019-Answers-blackstone-3da59de7277c.answers.json>); pointer `/answers/49`
-- Answer-key source: TSA-2019-Answers-blackstone.pdf; row `50 D`
 - Review: graphics\_present:option\_association\_not\_resolved
-
-Original question layout: [assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_view_01_5467457654.png](<../../data/raw/blackstone/assets/65ce40f75786da18c6bc/blackstone_2019_q050_r050_p039_view_01_5467457654.png>)
 
 ---

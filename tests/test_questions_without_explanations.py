@@ -134,7 +134,7 @@ def test_missing_question_is_reported_when_key_exists():
     assert "**Correct answer:** A" in markdown
 
 
-def test_raw_and_derived_visual_references_remain_traceable(tmp_path):
+def test_visual_content_remains_without_extra_source_references(tmp_path):
     value = record()
     raw = tmp_path / "raw" / "raw.json"
     clean = tmp_path / "clean" / "clean.json"
@@ -164,8 +164,19 @@ def test_raw_and_derived_visual_references_remain_traceable(tmp_path):
         tmp_path / "matched.json",
         tmp_path / "export.md",
     )
-    assert "graphic-clean.png" in markdown and "Raw asset:" in markdown
-    assert "raw/graphic.png" in markdown
+    assert "graphic-clean.png" in markdown
+    assert "Raw asset:" not in markdown and "raw/graphic.png" not in markdown
+    assert "- Question record: `question-1`" in markdown
+    for label in (
+        "Source PDF:",
+        "Clean record:",
+        "Raw record:",
+        "Answer record:",
+        "Answer-key source:",
+        "Original question layout:",
+        "Matched input:",
+    ):
+        assert label not in markdown
 
 
 def test_real_export_completeness_and_determinism(tmp_path):
@@ -190,6 +201,18 @@ def test_real_export_completeness_and_determinism(tmp_path):
         assert list(
             map(int, re.findall(r"^## Question (\d+)$", content, re.MULTILINE))
         ) == list(range(1, 51))
+        assert len(re.findall(r"^- Question record:", content, re.MULTILINE)) == 50
+        for label in (
+            "- Source PDF:",
+            "- Clean record:",
+            "- Raw record:",
+            "- Answer record:",
+            "- Answer-key source:",
+            "Raw asset:",
+            "Original question layout:",
+            "Matched input:",
+        ):
+            assert label not in content
         for target in re.findall(r"\]\(<([^>]+)>\)", content):
             assert (tmp_path / target).resolve().exists(), target
     assert (

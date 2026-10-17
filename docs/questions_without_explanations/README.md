@@ -25,10 +25,11 @@ question is retained with explicit unavailable fields.
 
 2018 Q20 (key **B**) and 2019 Q32 (key **C**) remain upstream option-mapping
 conflicts. Their source keys are included without claiming a successful match or
-inventing missing choices. Existing warnings, available assets and original-layout
-references are retained. Other unresolved clean/raw findings also remain visible.
-Body visuals remain in order; image options use existing cleaned crops with links
-to original raw assets. Unassigned visuals stay explicitly unassigned.
+inventing missing choices. Existing warnings and available assets are retained.
+Other unresolved clean/raw findings also remain visible. Each question retains
+its question record identifier, while other source references are omitted. Body
+visuals remain in order; image options use existing cleaned crops. Unassigned
+visuals stay explicitly unassigned.
 
 ## Reproduce offline (PowerShell, repository root)
 

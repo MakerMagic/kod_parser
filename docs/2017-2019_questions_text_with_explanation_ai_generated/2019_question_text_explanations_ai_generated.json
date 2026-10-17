@@ -1,0 +1,425 @@
+
+{
+  "explanations": [
+    {
+      "number": 1,
+      "main_reasoning": "London's prosperity depends on attracting a diverse population of residents and businesses, but rapidly increasing property prices are undermining this advantage. Rising housing costs have reduced renters' disposable income, while expensive commercial property is forcing promising businesses out and slowing productivity.\n\nThese consequences support the author's overall conclusion that overpriced property is depriving London of the economic and human diversity essential to its prosperity. Therefore, E expresses the main conclusion.",
+      "incorrect_options": {
+        "A": "The importance of attracting ambitious people helps explain why diversity matters to London's prosperity. However, it is a supporting premise rather than the conclusion about property prices threatening that prosperity.",
+        "B": "The 30% decline in renters' disposable income is evidence of the consequences of rising housing costs, not the author's overall conclusion.",
+        "C": "London's failure to provide adequate housing introduces the problem, but the argument extends beyond housing to its consequences for businesses, diversity and economic prosperity.",
+        "D": "Slowing productivity and business concerns illustrate the economic consequences of expensive property. They support the broader conclusion rather than expressing it."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q1"
+    },
+    {
+      "number": 3,
+      "main_reasoning": "The argument observes that elite athletes demonstrate exceptional self-discipline after years of demanding training. It then assumes that their training developed this discipline and concludes that similar programmes would produce comparable discipline in students.\n\nHowever, the observed relationship does not establish causation. Athletes may already possess unusually strong self-discipline before beginning training, enabling them to persist through difficult programmes and reach elite levels. If so, training might not produce the same discipline in students who lack this initial characteristic. Therefore, E identifies the flaw: confusing a pre-existing characteristic with an effect of training.",
+      "incorrect_options": {
+        "A": "Elite performance may require abilities beyond self-discipline, but the argument concerns whether training develops discipline, not whether discipline alone guarantees sporting success.",
+        "B": "Other activities might also develop self-discipline, but this does not undermine the possibility that athletic training could develop it.",
+        "C": "Limited access to elite coaching could make similar programmes difficult to implement. However, this is a practical obstacle rather than the underlying causal error about how athletes acquire discipline.",
+        "D": "Educational achievement may not be necessary for success in later life, but this does not address whether athletic training would improve students' discipline or academic performance."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q3"
+    },
+    {
+      "number": 4,
+      "main_reasoning": "The passage presents evidence that certain harmful behaviours and social problems are becoming less prevalent among younger people while affecting substantial numbers of middle-aged adults. It cites drinking-related hospital admissions, the increasing proportion of heroin addicts over forty, rising imprisonment among middle-aged men and comparatively worsening suicide patterns in that age group.\n\nTogether, these examples support the conclusion that some problems traditionally associated with younger people are increasingly affecting middle-aged individuals. Therefore, B is correct.",
+      "incorrect_options": {
+        "A": "The passage compares specific problems involving substance use, imprisonment and suicide. It does not establish that younger people experience fewer health problems overall.",
+        "C": "The passage discusses alcohol-related harm and imprisonment separately but provides no evidence that drinking increases an individual's likelihood of criminal behaviour.",
+        "D": "Although alcohol, drugs and suicide are significant concerns, the passage provides no comparison with other causes of death to establish that they are the biggest killers of middle-aged people.",
+        "E": "The statistics compare age groups at particular times. They do not demonstrate that today's responsible young people will develop harmful behaviours when they become older."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q4"
+    },
+    {
+      "number": 5,
+      "main_reasoning": "The argument claims that education today is less valuable because teachers increasingly focus on examination results rather than preparing students for life and providing examples of adulthood.\n\nFor this change to constitute a reduction in educational value, preparation for life must be considered more valuable than merely achieving examination success. If examination results were equally or more important, the shift towards exam-focused teaching would not necessarily make education worse. Therefore, A is the underlying assumption connecting the change in teaching priorities to the conclusion about reduced educational value.",
+      "incorrect_options": {
+        "B": "Adults may selectively remember positive school experiences, but the argument does not require this tendency. Such bias could instead weaken the comparison with earlier generations.",
+        "C": "Students may have ambitions different from those of their teachers, but the argument concerns the value of learning from adult role models, not necessarily copying their careers or ambitions.",
+        "D": "Examination results may be important for future opportunities, but this does not establish that exam-focused education is more valuable than broader preparation for life.",
+        "E": "The argument concerns the educational benefits received by students, not whether teachers find mentoring more personally satisfying than helping students pass examinations."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q5"
+    },
+    {
+      "number": 9,
+      "main_reasoning": "The argument states that mobile phones were banned in the author's daughter's school and that English test scores subsequently improved. It treats this sequence as evidence that the ban caused the improvement and uses it to recommend equivalent bans in every school.\n\nHowever, an improvement occurring after a policy change does not establish that the policy caused it. Other changes in teaching, assessment or student performance could explain the higher scores. Without identifying the cause, the argument cannot reliably attribute the improvement to the phone ban. Therefore, B identifies the flaw.",
+      "incorrect_options": {
+        "A": "The two texting statistics describe different frequencies of texting, but the argument does not make the statistical comparison alleged. Its decisive inference concerns the cause of improved examination scores.",
+        "C": "The passage criticises poor spelling and inappropriate communication, not necessarily every use of text messaging. The proposed ban depends on the claimed educational benefits rather than treating all texting as inherently inappropriate.",
+        "D": "The main conclusion recommends banning mobile phones in schools, not that texting itself is inappropriate. The argument therefore does not merely restate a premise as its conclusion.",
+        "E": "Poor spelling may harm job applications, but the passage does not establish that perfect spelling is required for every job. This stronger assumption is unnecessary to the argument about school phone bans."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q9"
+    },
+    {
+      "number": 10,
+      "main_reasoning": "The argument suggests prejudice against female programmers because code changes submitted by women were accepted 72% of the time when their gender was hidden, compared with 63% when it was revealed.\n\nHowever, E states that male contributors experienced a similar decline when their gender became visible. This introduces an alternative explanation: revealing a contributor's gender, or the associated visibility of their identity, may affect acceptance rates generally rather than reflecting prejudice specifically against women. Therefore, E most weakens the inference that the observed decline demonstrates gender-specific discrimination against female programmers.",
+      "incorrect_options": {
+        "A": "Female users rejecting more code changes concerns their behaviour as reviewers, not whether other users discriminate against female contributors whose gender is visible.",
+        "B": "Initiatives encouraging women to enter programming show efforts to improve representation, but they do not establish whether bias affected the acceptance rates in the study.",
+        "C": "If the two groups of female contributors submitted code of similar quality, differences in the code itself would become a less plausible explanation for the acceptance-rate gap. This would strengthen the discrimination hypothesis.",
+        "D": "Ada Lovelace's scientific education provides historical background but does not explain the difference between acceptance rates for identified and unidentified female contributors."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q10"
+    },
+    {
+      "number": 11,
+      "main_reasoning": "Schools have a responsibility to support students' well-being and prepare them for adult life, including maintaining physical fitness. However, many young people dislike competitive sport, and many adults stop participating in sport after leaving school.\n\nThe argument proposes that introducing activities without a competitive element would make physical activity more accessible and appealing to students who dislike traditional games. Such experiences could encourage continued participation after school. Therefore, D expresses the main recommendation: schools should offer non-competitive physical activities as alternatives to traditional games lessons.",
+      "incorrect_options": {
+        "A": "Preparing students for life after school provides the broader educational purpose supporting the recommendation. It does not specify the change to physical education that the author advocates.",
+        "B": "Dislike of competitive sport among many young people explains why alternatives are needed. It is supporting evidence rather than the conclusion.",
+        "C": "The fact that many adults discontinue sport demonstrates the importance of encouraging sustainable physical activity, but it does not state the proposed school policy.",
+        "E": "Encouraging students to enjoy physical activity is consistent with the argument, but this option does not express the specific recommendation to offer non-competitive alternatives within school lessons."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q11"
+    },
+    {
+      "number": 12,
+      "main_reasoning": "The first lamp alternates between 1 second on and 1 second off, repeating every 2 seconds. The second alternates between 2 seconds on and 2 seconds off, repeating every 4 seconds. Both are switched on simultaneously.\n\nOver each 4-second cycle, the first lamp is off during seconds 1–2 and 3–4, while the second is off during seconds 2–4. Therefore, both lamps are off together only during seconds 3–4, for exactly 1 second per 4-second cycle.\n\nThere are 60 ÷ 4 = 15 complete cycles in one minute, giving 15 × 1 = 15 seconds of simultaneous darkness. Therefore, C is correct.",
+      "incorrect_options": {
+        "A": "10 seconds would represent only one-sixth of a minute, whereas the repeating patterns produce simultaneous darkness for one-quarter of every 4-second cycle.",
+        "B": "12 seconds is 3 seconds below the calculated total and does not match the 15 identical cycles occurring each minute.",
+        "D": "20 seconds exceeds the established duration by 5 seconds. Both lamps are dark together for only 1 second in each 4-second cycle.",
+        "E": "30 seconds is the total time each individual lamp spends switched off during a minute. It does not account for the other lamp remaining illuminated during some of those intervals."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q12"
+    },
+    {
+      "number": 15,
+      "main_reasoning": "The passage describes a natural flood management scheme that successfully reduced peak river flow and protected buildings. It then identifies additional environmental benefits of the methods used: improving water quality, preventing erosion and, in some cases, storing carbon.\n\nThese effects are separate from the immediate reduction of flooding. Therefore, the evidence establishes that natural flood management can provide benefits beyond flood prevention. This is the conclusion expressed in B.",
+      "incorrect_options": {
+        "A": "The passage reports that the scheme reduced flood risk in one case but provides no evidence about its effectiveness under exceptionally heavy rainfall.",
+        "C": "The reduction in floodwater was attributed approximately equally to upstream land management and flood storage, but this does not establish that every natural flood management method is equally effective.",
+        "D": "The success of one scheme does not establish that natural flood management is suitable or necessary in every flood-prone location.",
+        "E": "The described scheme involved hills and upstream land management, but the passage provides no comparison with schemes in other landscapes to establish where these methods are most effective."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q15"
+    },
+    {
+      "number": 16,
+      "main_reasoning": "The government plans to increase fuel tax to help meet carbon emissions targets. The argument opposes this policy because fuel costs have already increased substantially and higher taxes would raise transport costs, consumer prices and inflation.\n\nFor these economic consequences to justify abandoning a policy intended to reduce emissions, the argument must assume that protecting people's finances takes priority over the environmental objective in this situation. If controlling emissions were considered more important, the government could reasonably accept the financial costs. Therefore, A is the underlying assumption.",
+      "incorrect_options": {
+        "B": "The argument calls for abandoning a proposed increase, not necessarily reducing existing fuel prices. It does not require fuel costs to fall below their current level.",
+        "C": "The argument acknowledges emissions reduction as the government's objective but does not need to assume that no other justification for higher fuel taxes could exist.",
+        "D": "The passage describes financial pressure on transport companies, but the proposed recommendation does not depend on those companies actually facing bankruptcy.",
+        "E": "Additional oil revenue is mentioned as evidence of the government's financial position. The argument does not require this revenue to be used specifically to reduce existing fuel taxes."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q16"
+    },
+    {
+      "number": 17,
+      "main_reasoning": "The argument uses the observation that married people tend to be wealthier, healthier and happier to recommend pursuing marriage. This reasoning assumes that marriage itself contributes to these advantages rather than merely being associated with them.\n\nE weakens this inference by stating that wealthier couples are four times more likely to marry than poorer couples. This suggests an alternative explanation for married people's greater average wealth: people who are already financially better off may be more likely to get married. Therefore, the observed association between marriage and wealth does not necessarily show that marriage produces greater wealth. This weakens an important part of the argument supporting marriage.",
+      "incorrect_options": {
+        "A": "Evidence that marriage improves cancer survival would support the claim that marriage contributes to better health outcomes.",
+        "B": "Differences in whether married people have children might complicate the statistics, but the option does not establish that parenthood explains the reported advantages.",
+        "C": "Tax advantages for married couples could help explain why marriage contributes to greater wealth. This supports rather than undermines the claimed financial benefits.",
+        "D": "Conflict-ridden relationships may be associated with poorer health, showing that relationship quality matters. However, this does not directly challenge the claim about married people's average advantages as strongly as the selection effect identified in E."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q17"
+    },
+    {
+      "number": 18,
+      "main_reasoning": "The three runners complete one lap every 3, 5 and 6 minutes respectively. For all three to cross the start line simultaneously again, the elapsed time must be a common multiple of all three lap times.\n\nThe lowest common multiple of 3, 5 and 6 is 30 minutes. In that time, Alec completes 30 ÷ 3 = 10 laps, while Barry completes 30 ÷ 5 = 6 laps.\n\nThe difference is 10 − 6 = 4 laps. Therefore, B is correct.",
+      "incorrect_options": {
+        "A": "2 laps is below the calculated difference of 4 at the first time all three runners return to the start line together.",
+        "C": "5 laps exceeds the difference between Alec's 10 completed laps and Barry's 6 completed laps by one.",
+        "D": "6 is the number of laps Barry completes in 30 minutes, not the number of additional laps completed by Alec.",
+        "E": "10 is Alec's total number of completed laps at the next simultaneous crossing, not his lead over Barry."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q18"
+    }
+    {
+      "number": 21,
+      "main_reasoning": "The argument uses the success of conservation tourism in Africa to justify welcoming tourism in the Arctic. However, evidence that tourism generates wealth, employment and conservation benefits in one region does not establish that it will produce comparable benefits elsewhere. The Arctic may face different conditions, and the passage provides no evidence that cruise tourism there will protect endangered species or support conservation as African tourism allegedly does. Therefore, A identifies the flaw: generalising from one successful example of wildlife tourism to tourism in other environments.",
+      "incorrect_options": {
+        "B": "The argument explicitly challenges the claim that tourists merely want to see endangered animals, suggesting that they may also gain knowledge. It does not assume that viewing animals is their only motivation.",
+        "C": "The argument presents tourism as beneficial because it supports conservation. It does not treat tourism as more important than successful conservation.",
+        "D": "The passage predicts that tourists will return better informed, but it does not require them to become committed conservationists. Its broader weakness is extending the African example to the Arctic.",
+        "E": "The argument presents conservation tourism as helping endangered species survive, not as inevitably causing their extinction."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q21"
+    },
+    {
+      "number": 22,
+      "main_reasoning": "The original argument states that unlawful conduct would require the vice president to resign. It then observes that he has resigned and concludes that he must have acted unlawfully. This incorrectly treats a consequence as proof of its proposed cause: resignation could occur for reasons other than unlawful conduct.\n\nE follows the same pattern. It states that a venomous snake bite would cause severe inflammation, then concludes that the snake must have been venomous because inflammation is present. Both arguments affirm the consequent: if P then Q; Q occurs; therefore P. This inference is invalid because Q may have other causes.",
+      "incorrect_options": {
+        "A": "This applies the contrapositive: if a king cobra bite guarantees death, survival rules out a king cobra bite. It does not infer a cause from the presence of its consequence.",
+        "B": "Yellow markings are presented as sufficient evidence of a pit viper, and the conclusion applies that condition directly. This is not the same reversed inference.",
+        "C": "The argument rules out the stated rattlesnake danger because rattlesnakes are absent, rather than inferring the original cause from an observed consequence.",
+        "D": "This reasons from receiving prompt treatment to the absence of complications, although the original conditional only concerns delayed treatment. It denies the antecedent rather than affirming the consequent."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q22"
+    },
+    {
+      "number": 23,
+      "main_reasoning": "The argument establishes that people who support socially beneficial projects must be willing to accept the personal inconvenience or cost necessary for those projects to succeed. Supporting a mental health centre in principle while refusing to live near its users is inconsistent because integration into ordinary communities is essential to the proposed approach.\n\nB illustrates the same principle. People who support increased healthcare funding should accept the higher taxes required to finance it rather than supporting the benefit while objecting to their personal contribution. Both arguments require consistency between endorsing a collective benefit and accepting its individual costs.",
+      "incorrect_options": {
+        "A": "Refusing to support sporting events because of corruption concerns expresses consistency between criticism and consumer behaviour, but it does not specifically concern accepting a personal cost necessary to provide a public benefit.",
+        "C": "Parents limiting their children's access to gadgets would make their actions consistent with their beliefs, but the issue concerns private parenting choices rather than sharing the burdens of a socially beneficial project.",
+        "D": "Vegetarians encouraging others to adopt their diet extends a personal conviction to other people. It does not require them to accept personal disadvantages associated with a collective policy they support.",
+        "E": "Supporting access to benefits previously received by oneself concerns extending opportunities to others, not accepting the personal costs of implementing a publicly supported project."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q23"
+    },
+    {
+      "number": 27,
+      "main_reasoning": "The argument contrasts nature's historical ability to adapt to major temperature changes with humanity's dependence on comparatively stable climatic conditions. Human civilisations developed during an unusually predictable period, whereas the natural world has experienced much greater fluctuations throughout Earth's history.\n\nThe author uses this difference to argue that climate change poses a more serious threat to human civilisation than to nature's long-term survival. Therefore, B expresses the main conclusion: action against climate change is more important for humanity than for the environment.",
+      "incorrect_options": {
+        "A": "The association between climate policy and environmental protection introduces the argument. The author challenges this emphasis rather than presenting it as the main conclusion.",
+        "C": "Nature's historical adaptation to temperature changes is supporting evidence explaining why climate change may threaten humans more severely.",
+        "D": "The development of civilisation during a relatively stable climatic period helps explain human vulnerability. It is a premise supporting the comparative conclusion.",
+        "E": "This summarises the contrasting consequences for nature and humans, but it primarily explains why responding to climate change is more important for humanity. B expresses that broader conclusion about the priority of action."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q27"
+    },
+    {
+      "number": 28,
+      "main_reasoning": "The passage acknowledges that chiropractic spinal manipulation benefits some patients, but reports that more than half experience mild or moderate adverse effects. It also describes several hundred cases involving serious, sometimes permanent injuries, including strokes following damage to arteries supplying the brain.\n\nThese risks establish that chiropractic treatment can produce harm, sometimes severe, despite its possible benefits. The evidence therefore supports the cautious conclusion that chiropractic therapy may do more harm than good, as stated in B. It does not establish that harm necessarily outweighs benefits in every case.",
+      "incorrect_options": {
+        "A": "The reported risks raise safety concerns, but the passage also acknowledges benefits for some patients. It does not establish that banning all chiropractic treatment is necessary.",
+        "C": "The passage identifies particular risks associated with spinal manipulation but makes no comparison between the spine and other parts of the body.",
+        "D": "Consulting a doctor beforehand might be a precaution, but the passage provides no evidence that doing so would prevent the described injuries.",
+        "E": "The claim that adverse effects are necessary for recovery is attributed to chiropractors. The passage does not establish that pain is an essential part of healing."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q28"
+    },
+    {
+      "number": 29,
+      "main_reasoning": "The argument warns that police forces might exploit re-education courses to generate income by catching motorists committing relatively minor offences and collecting course fees. For this proposed financial incentive to exist, the money collected from participants must exceed the cost of providing the courses.\n\nIf the courses cost as much as or more than the fees collected, increasing participation would not generate the surplus revenue described. Therefore, A is the underlying assumption necessary for the argument that police forces could benefit financially from expanding the scheme.",
+      "incorrect_options": {
+        "B": "The concern is that police might exploit courses for revenue, not that re-education prevents offences more effectively than conventional penalties.",
+        "C": "The argument suggests that financial pressure could create incentives for abuse. It does not require police forces to be generally more interested in income than road safety.",
+        "D": "The number of people choosing courses has tripled, but this does not establish that the total number of driving offences has tripled. The financial concern does not require such an increase.",
+        "E": "Drivers' preferences between penalty points and financial costs might affect their choices, but the argument about police revenue does not depend on one fear being greater than the other."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q29"
+    },
+    {
+      "number": 33,
+      "main_reasoning": "The argument claims that Welsh shopkeepers would be acting inconsistently if they avoided UK taxes while condemning large corporations for doing the same. It therefore concludes that the shopkeepers should continue paying their taxes in full.\n\nA weakens this criticism by explaining that the shopkeepers' sole purpose is to pressure the government into tackling corporate tax avoidance. Their proposed actions would then be a form of protest against the system rather than an attempt to gain the same financial advantages they condemn. This difference in purpose provides a reason to distinguish the morality of their protest from the corporations' tax-avoidance practices.",
+      "incorrect_options": {
+        "B": "If similar protests harmed the economy, this would provide an additional reason to oppose the shopkeepers' actions rather than weaken the argument against them.",
+        "C": "Small businesses being unable to obtain the same tax benefits would question the feasibility of the proposed scheme, but it would not undermine the principle that comparable tax avoidance should be judged consistently.",
+        "D": "The existence of continually emerging loopholes explains difficulties in addressing tax avoidance but does not establish that shopkeepers are morally justified in using those loopholes.",
+        "E": "The difference between one trader's taxes and Facebook's taxes may explain the protest, but unequal payments alone do not establish that avoiding taxes is morally acceptable for the trader."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q33"
+    },
+    {
+      "number": 34,
+      "main_reasoning": "The argument observes that frequent mobile phone users are more likely to experience cognitive failures and short attention spans. It then concludes that reducing phone use will lower the risk of these problems.\n\nHowever, this assumes that frequent phone use causes the observed cognitive difficulties. A identifies an alternative explanation: individuals might already have short attention spans before developing their phone habits. Such people could be more inclined to use phones frequently, meaning their pre-existing characteristics help explain the association. If so, reducing phone use might not resolve the underlying cause. Therefore, A identifies the causal flaw.",
+      "incorrect_options": {
+        "B": "The argument recommends limiting phone use to reduce risk, not eliminating every cognitive failure. A strategy need not be sufficient on its own to produce some reduction in risk.",
+        "C": "Phones may provide practical benefits in everyday life, but those benefits do not establish whether frequent usage causes cognitive problems.",
+        "D": "Different phone functions may involve different activities, but the option does not identify an alternative cause of the observed association between frequent use and cognitive failures.",
+        "E": "The relative danger of phone use while driving concerns a different risk. It does not determine whether general phone use causes the cognitive difficulties described."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q34"
+    },
+    {
+      "number": 35,
+      "main_reasoning": "The argument challenges the conventional judgement that hypocrisy is necessarily bad. Although hypocrites fail to follow the moral standards they profess, their desire to appear morally better suggests that they still recognise those standards as desirable.\n\nThis distinguishes hypocrisy from openly disregarding moral principles. The passage also suggests that some hypocrites genuinely aspire to become the people they pretend to be, potentially leading to improvement. These considerations support the author's central conclusion that hypocrisy can sometimes be regarded as a virtue rather than exclusively as a moral failing. Therefore, D is correct.",
+      "incorrect_options": {
+        "A": "The desire to conceal embarrassing behaviour is presented as evidence that hypocrites recognise moral standards. It supports the conclusion rather than expressing the broader judgement about hypocrisy.",
+        "B": "The criticism of shamelessness helps explain why hypocrisy might be preferable to openly disregarding morality, but it is not the main conclusion.",
+        "C": "The possibility of future moral improvement is one reason for evaluating hypocrisy more positively. The conclusion is broader than this potential consequence.",
+        "E": "This reflects the conventional negative view of hypocrisy that the author explicitly challenges by presenting reasons for a more favourable interpretation."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q35"
+    },
+    {
+      "number": 39,
+      "main_reasoning": "The passage argues that traditional punctuation rules enabled writers to communicate precise relationships between ideas. Commas, semicolons, colons and full stops served different functions, allowing subtle distinctions in meaning.\n\nThe author criticises contemporary punctuation practices for disregarding these distinctions, thereby reducing precision in communication and encouraging imprecise thinking. Since traditional punctuation is presented as providing valuable clarity that current practices often lack, the passage supports restoring its instruction in schools. Therefore, C is the conclusion that can be drawn.",
+      "incorrect_options": {
+        "A": "The passage criticises careless punctuation as reflecting lazy thinking, but it does not establish that most writers deliberately avoid considering relationships between their ideas.",
+        "B": "The author praises the traditional system's precision but provides no evidence about how many people successfully mastered its finer rules.",
+        "D": "Grammar schools are praised for their contribution to punctuation standards, but this does not establish that the entire grammar-school system should be reintroduced.",
+        "E": "The passage criticises contemporary changes in punctuation rather than arguing that such changes are necessarily natural or desirable because language evolves."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q39"
+    },
+    {
+      "number": 40,
+      "main_reasoning": "The argument claims that politicians praise relentless work and present longer hours as evidence of admirable character. It then concludes that these political messages have successfully encouraged the glorification of work, contributing to stress, damaged relationships and unhappiness.\n\nFor political slogans to be responsible for this outcome, they must meaningfully influence how people behave or what working habits they adopt. If slogans had no significant effect on everyday behaviour, the argument could not attribute the harmful work culture to their success. Therefore, B is the underlying assumption.",
+      "incorrect_options": {
+        "A": "The passage mentions poor pay, but dissatisfaction with salaries is not necessary to establish that political messages encourage excessive working hours.",
+        "C": "The argument criticises the social consequences of overwork but does not require restructuring the working week to benefit economic performance.",
+        "D": "Whether employers could afford shorter hours or higher wages concerns possible solutions, not the assumed influence of political rhetoric on working habits.",
+        "E": "Stress may affect family relationships, but the argument does not require a general comparison establishing that less-stressed workers are better parents."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q40"
+    },
+    {
+      "number": 41,
+      "main_reasoning": "The argument identifies a gap between research evidence and police officers' beliefs about crime and punishment. Officers are reported to endorse unsupported misconceptions and to express considerable confidence in those beliefs. It then recommends additional training because research indicates that training can reduce this scientist–practitioner gap.\n\nE strengthens the recommendation by establishing that officers whose views are not evidence-based are more likely to receive public complaints. This connects the identified problem with adverse professional consequences, providing an additional practical reason to address misconceptions through training.",
+      "incorrect_options": {
+        "A": "Recruitment failing to identify misconceptions suggests another source of the problem, but it does not directly establish that officers' existing false beliefs have harmful consequences or that additional training is especially important.",
+        "B": "Opposition to capital punishment does not establish that officers avoid other crime-related misconceptions. It offers little support for the recommendation.",
+        "C": "The existence of similar gaps in other professions shows that the problem is widespread, but it does not establish the consequences of such beliefs among police officers.",
+        "D": "Criticism that training is insufficiently practical concerns the character of existing programmes, not specifically whether additional evidence-based training would correct misconceptions."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q41"
+    },
+    {
+      "number": 45,
+      "main_reasoning": "The argument contrasts the physical risks of radiation exposure with the psychological consequences of prolonged compulsory evacuation. Evidence from Chernobyl suggests that evacuation-related depression, alcoholism and suicide contributed substantially to reduced life expectancy. The passage also notes scientific disagreement over safe radiation levels.\n\nTogether, these considerations support allowing affected individuals to weigh the uncertain physical risks against the potential psychological harm of remaining displaced. The main conclusion is therefore that people wishing to return to the Fukushima area should be permitted to make that decision themselves, as stated in D.",
+      "incorrect_options": {
+        "A": "The passage questions whether evacuation-related harms may outweigh radiation risks, but it does not establish that cancer risks themselves have been exaggerated.",
+        "B": "Scientific disagreement about safe radiation levels is explicitly presented as evidence supporting individual choice. It is not the main policy conclusion.",
+        "C": "Reduced life expectancy among Chernobyl evacuees is cited as supporting evidence. The passage does not establish that every forced evacuation produces this outcome.",
+        "E": "The possibility that psychological consequences exceed radiation-related harms is a central reason for permitting individuals to return, but it is not the final recommendation."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q45"
+    },
+    {
+      "number": 46,
+      "main_reasoning": "The original argument establishes two necessary conditions: a tasty cake requires fresh ingredients, and obtaining those ingredients requires visiting the market. Therefore, if the market was not visited, the necessary ingredients could not have been obtained, so the cake cannot be tasty.\n\nE follows the same chain. Fixing the car requires good knowledge of it, and arriving at the wedding on time requires fixing the car. Without the necessary knowledge, the car cannot be fixed, and without fixing it, timely arrival is impossible. Both arguments use the absence of a necessary condition to rule out a later outcome.",
+      "incorrect_options": {
+        "A": "Health and vegetable consumption are presented as necessary conditions for happiness, but the conclusion treats eating vegetables as sufficient to guarantee happiness. This reverses the conditional reasoning.",
+        "B": "The argument eliminates one of two alternative destinations and infers the other. It does not follow a chain of necessary conditions.",
+        "C": "The argument infers that a candle was lit because reading is possible, although other sources of light could permit reading. It affirms the consequent instead of eliminating an outcome through an absent necessary condition.",
+        "D": "The argument uses the absence of hearing damage to rule out loud music through earphones. This is a single contrapositive rather than the linked necessary conditions in the original argument."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q46"
+    },
+    {
+      "number": 47,
+      "main_reasoning": "The argument defends private healthcare on the principle that people are morally entitled to use their money to improve their own lives and those of their families. The ability to purchase advantages is presented as a legitimate purpose of wealth, even when those advantages are not equally available to everyone.\n\nE applies the same principle to inheritance: low inheritance taxes would allow wealthy parents to pass on enough money to materially improve their children's lives. Both arguments defend using personal wealth to provide advantages for family members, rather than requiring those advantages to be equally accessible to all.",
+      "incorrect_options": {
+        "A": "This restricts how wealthy individuals should spend inherited money, whereas the original principle defends their entitlement to use wealth to improve their own and their families' lives.",
+        "B": "Foreign holidays are defended because they benefit local economies, not because individuals are entitled to purchase personal advantages with their money.",
+        "C": "This imposes a duty to use natural talents for society's benefit. The original argument instead defends the individual's right to use earned resources for personal and family benefits.",
+        "D": "This recommends redistributing wealth to less fortunate people. The original principle specifically defends wealthy individuals using their resources to benefit themselves and their loved ones."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q47"
+    },
+    {
+      "number": 48,
+      "main_reasoning": "The baker needs 500g for the recipe and at least 50g remaining, so the total sourdough required is 550g. The mixture initially weighs 100g on Monday morning. It loses 1g of water per hour, or 24g between daily additions. Each morning, its remaining weight is doubled by adding equal weights of flour and water.\n\nTuesday: (100 − 24) × 2 = 152g.\nWednesday: (152 − 24) × 2 = 256g.\nThursday: (256 − 24) × 2 = 464g.\nFriday: (464 − 24) × 2 = 880g.\n\nThursday's amount is insufficient, but Friday's exceeds 550g. Therefore, D is correct.",
+      "incorrect_options": {
+        "A": "Tuesday's mixture weighs only 152g after doubling, which is 398g below the required 550g.",
+        "B": "Wednesday's mixture weighs 256g, still 294g below the minimum required for baking and retaining a starter.",
+        "C": "Thursday's mixture weighs 464g, which is 86g short of the required 550g.",
+        "E": "Saturday is later than necessary because the mixture first reaches the required amount on Friday."
+      },
+      "question_record": "blackstone_2019_4502/11_section_1_q48"
+    }
+  ],
+  "not_generated": [
+    {
+      "number": 2,
+      "reason": "image-related: The tax rates and annual income information for the six individuals are contained in an image-based table. These figures are necessary to calculate and compare their annual tax payments.",
+      "question_record": "blackstone_2019_4502/11_section_1_q2"
+    },
+    {
+      "number": 6,
+      "reason": "image-related: The question contains a greyscale diagram of the Canadian flag. It is excluded under the instruction to process only questions without images.",
+      "question_record": "blackstone_2019_4502/11_section_1_q6"
+    },
+    {
+      "number": 7,
+      "reason": "image-related: The individual marks awarded by the examiners appear in an image-based table. The numerical data are necessary to determine which pair disagreed the most.",
+      "question_record": "blackstone_2019_4502/11_section_1_q7"
+    },
+    {
+      "number": 8,
+      "reason": "image-related: The distribution of Standard and Premium tickets sold over the three nights is represented in charts. These figures are necessary to compare possible sales revenues.",
+      "question_record": "blackstone_2019_4502/11_section_1_q8"
+    },
+    {
+      "number": 13,
+      "reason": "image-related: The journey distances and monthly ticket costs as proportions of wages are supplied in an image-based table. Without these values, the cost-to-distance ratios cannot be calculated.",
+      "question_record": "blackstone_2019_4502/11_section_1_q13"
+    },
+    {
+      "number": 14,
+      "reason": "image-related: The characteristics of the two cars are represented in diagrams. Their relative prices, ages, sizes and speeds must be compared using the visual information.",
+      "question_record": "blackstone_2019_4502/11_section_1_q14"
+    },
+    {
+      "number": 19,
+      "reason": "image-related: The recycling figures for the 20 countries across three years are contained in an image-based table. The numerical values are required to calculate the greatest percentage increase.",
+      "question_record": "blackstone_2019_4502/11_section_1_q19"
+    },
+    {
+      "number": 20,
+      "reason": "image-related: The transparent glass block and all five proposed views are illustrated. Their spatial arrangements must be compared to identify the impossible view.",
+      "question_record": "blackstone_2019_4502/11_section_1_q20"
+    }
+    {
+      "number": 24,
+      "reason": "image-related: The question requires comparing the illuminated segments used to display digits 1–9. The segment patterns are supplied as images and are necessary to determine the maximum and minimum frequencies.",
+      "question_record": "blackstone_2019_4502/11_section_1_q24"
+    },
+    {
+      "number": 25,
+      "reason": "image-related: The nightly hotel prices and corresponding discount schemes are contained in an image-based table. These details are required to calculate the cheapest four-night stay including Saturday.",
+      "question_record": "blackstone_2019_4502/11_section_1_q25"
+    },
+    {
+      "number": 26,
+      "reason": "image-related: The initial cube-face arrangement, rolling route and proposed final faces are represented through images. Their spatial relationships must be examined to identify the upper face.",
+      "question_record": "blackstone_2019_4502/11_section_1_q26"
+    },
+    {
+      "number": 30,
+      "reason": "image-related: The arrangement of the nine numbered cards is supplied as an image. Adjacency is essential to determine the available moves and whether playing first or second guarantees victory.",
+      "question_record": "blackstone_2019_4502/11_section_1_q30"
+    },
+    {
+      "number": 31,
+      "reason": "image-related: The question includes a calendar with highlighted Bank Holidays. Those dates are required to determine how many days follow the longer holiday ferry timetable.",
+      "question_record": "blackstone_2019_4502/11_section_1_q31"
+    },
+    {
+      "number": 32,
+      "reason": "image-related and incomplete structure: The proposed bar charts are represented through images, and the extracted answer options have incomplete or ambiguous labels. The supplied record also identifies a correct-answer option conflict.",
+      "question_record": "blackstone_2019_4502/11_section_1_q32"
+    },
+    {
+      "number": 36,
+      "reason": "image-related: The pattern diagram and the table of material widths and prices contain visual information needed to determine the least expensive arrangement of four pieces.",
+      "question_record": "blackstone_2019_4502/11_section_1_q36"
+    },
+    {
+      "number": 37,
+      "reason": "image-related: The bath catalogue is presented as an image. Its prices and specifications are required to compare the cheapest qualifying steel and acrylic baths.",
+      "question_record": "blackstone_2019_4502/11_section_1_q37"
+    },
+    {
+      "number": 38,
+      "reason": "image-related: The proportions of votes for the five outings are represented by a pie chart. The chart must be examined to determine which numerical row is compatible with those proportions.",
+      "question_record": "blackstone_2019_4502/11_section_1_q38"
+    },
+    {
+      "number": 42,
+      "reason": "image-related: The shed's dimensions and geometry are supplied in a diagram. They are necessary to calculate the total painting area and time.",
+      "question_record": "blackstone_2019_4502/11_section_1_q42"
+    },
+    {
+      "number": 43,
+      "reason": "image-related: The theatre ticket prices and relevant age or group conditions are provided in an image-based table. These details are necessary to calculate the minimum admission cost.",
+      "question_record": "blackstone_2019_4502/11_section_1_q43"
+    },
+    {
+      "number": 44,
+      "reason": "image-related and ambiguous option structure: The original hexagonal prism net and candidate nets are image-based, and the extracted option labels and visual associations are incomplete or uncertain.",
+      "question_record": "blackstone_2019_4502/11_section_1_q44"
+    },
+    {
+      "number": 49,
+      "reason": "image-related: The nut mixture's labelled composition is contained in an image. The stated proportions are required to calculate the minimum almond content and maximum remaining peanut proportion.",
+      "question_record": "blackstone_2019_4502/11_section_1_q49"
+    },
+    {
+      "number": 50,
+      "reason": "image-related: The Roman-numeral dice net and all five assembled dice are represented by images. Their face arrangements and orientations must be compared visually.",
+      "question_record": "blackstone_2019_4502/11_section_1_q50"
+    }
+  ]
+}

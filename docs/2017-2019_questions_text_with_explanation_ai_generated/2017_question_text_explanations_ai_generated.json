@@ -1,0 +1,482 @@
+{
+  "explanations": [
+    {
+      "number": 1,
+      "main_reasoning": "The passage argues that characteristics associated with 'madness', such as obsession, risk-taking and self-absorption, are also found in leaders regarded as 'great'. Therefore, these traits cannot reliably distinguish supposedly mad leaders from successful ones. The author concludes that describing enemy leaders as 'mad' is intended to dehumanise and discredit them rather than provide an objective assessment of their personalities. This is expressed by E.",
+      "incorrect_options": {
+        "A": "Although self-absorption is mentioned as a leadership characteristic, the passage does not establish that people seek power specifically for personal advancement.",
+        "B": "The passage mentions leaders regarded as great but does not establish general agreement about who is mad. Instead, it questions the reliability of that description.",
+        "C": "The passage discusses seeking and achieving power but does not define successful leadership as obtaining and retaining political authority.",
+        "D": "The passage compares characteristics among different political leaders, not leaders with the general population. It provides no evidence about how common these traits are outside politics."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q1"
+    },
+    {
+      "number": 2,
+      "main_reasoning": "Profit equals total sales revenue minus production cost. Before lunchtime ends, 40 pizzas sell for $2 each and 35 flapjacks for $1 each. In the afternoon, 8 pizzas sell for $1 each and 14 flapjacks for $0.50 each. The remaining 2 pizzas and 1 flapjack generate no revenue because they are given away. Total revenue = (40 × 2) + (35 × 1) + (8 × 1) + (14 × 0.50) = $130. Subtracting the $30 production cost gives $130 − $30 = $100. Therefore, A is correct.",
+      "incorrect_options": {
+        "B": "$102.50 exceeds the calculated profit by $2.50. The stated sales and production cost establish a profit of exactly $100.",
+        "C": "$115 exceeds the calculated profit by $15 and does not account consistently for the established revenue and production cost.",
+        "D": "$120 is $20 greater than the calculated profit, despite the total revenue being only $130 and production costing $30.",
+        "E": "$130 is the total sales revenue, not the profit. The $30 production cost must still be deducted."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q2"
+    },
+    {
+      "number": 3,
+      "main_reasoning": "The argument predicts that declining participation among younger voters will eventually leave elections without enough voters to establish a governing mandate. However, this prediction assumes that younger people's current voting behaviour will continue as they grow older. E identifies the overlooked possibility that people who vote infrequently when young may become more likely to vote with age. If this happens, the current age-related difference does not necessarily indicate a continuing decline in turnout. The argument therefore fails to distinguish a persistent generational trend from behaviour that changes with age.",
+      "incorrect_options": {
+        "A": "Potential difficulties with internet or postal voting concern possible alternatives to conventional elections, not whether the predicted decline in turnout necessarily follows.",
+        "B": "Young people's participation in pressure groups does not establish whether their likelihood of voting will increase as they grow older.",
+        "C": "Declining turnout in European countries would provide evidence about the geographical extent of the trend but would not establish that it must continue indefinitely.",
+        "D": "The use of elections in democratic countries describes the existing political system. It does not address the assumption about future voting behaviour."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q3"
+    },
+    {
+      "number": 4,
+      "main_reasoning": "The passage establishes that celebrities influence young people's behaviour through their highly visible actions. Some provide positive examples, while others encourage the imitation of destructive behaviour. Since this influence exists regardless of whether celebrities intend to serve as role models, simply rejecting that responsibility does not eliminate it. The author therefore argues that celebrities should behave responsibly because they inevitably function as role models. This supports B.",
+      "incorrect_options": {
+        "A": "The prominence of celebrities in modern media provides background context, but the passage's conclusion concerns the responsibilities created by their influence.",
+        "C": "Media coverage contributes to celebrity influence, but the passage does not establish that reducing coverage would completely prevent imitation.",
+        "D": "Parental supervision might influence children's media exposure, but the passage does not argue that responsibility should primarily fall on parents.",
+        "E": "The passage maintains that celebrities function as role models regardless of their wishes. Saying they should not be regarded as role models does not address the influence they already exercise."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q4"
+    },
+    {
+      "number": 5,
+      "main_reasoning": "The argument criticises appointing a business owner's son because other employees may possess greater talent or experience, making the son unlikely to be the best candidate. This criticism supports prohibiting family preference only if appointing the best-qualified candidate is treated as the proper principle for selecting company leaders. If selecting the best candidate were not considered necessary, the son's potentially inferior qualifications would not provide the same justification for making family preference illegal. Therefore, B is the underlying assumption linking the evidence to the proposed prohibition.",
+      "incorrect_options": {
+        "A": "Business talent might run in families, but the argument does not require this possibility. It could instead strengthen the case for selecting certain relatives.",
+        "C": "The proposed prohibition does not depend on nepotism already being recognised as corruption. The argument attempts to justify making the practice illegal through its perceived unfairness.",
+        "D": "Experience is mentioned alongside talent, so the argument does not require experience to be the only indispensable qualification for leadership.",
+        "E": "Unrestricted freedom for business owners to select successors would weaken the proposed legal prohibition rather than provide an assumption necessary to justify it."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q5"
+    },
+    {
+      "number": 6,
+      "main_reasoning": "The overall height must include the picture itself, the mounting margins above and below it, and the wooden frame at both ends. The picture is 40 cm high, the top mount adds 6 cm, and the bottom mount adds 9 cm. The wooden frame contributes another 2 cm at the top and 2 cm at the bottom. Overall height = 40 + 6 + 9 + 2 + 2 = 59 cm. Therefore, D is correct.",
+      "incorrect_options": {
+        "A": "46 cm is smaller than the 55 cm required for the picture and its two mounting margins, even before adding the wooden frame.",
+        "B": "49 cm also fails to accommodate the combined 15 cm of top and bottom mounting around the 40 cm picture.",
+        "C": "56 cm is only 1 cm greater than the picture-and-mount height of 55 cm, whereas the wooden frame adds 4 cm.",
+        "E": "62 cm exceeds the established outer height by 3 cm. No additional component accounts for this difference."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q6"
+    },
+    {
+      "number": 8,
+      "main_reasoning": "The mowing time depends on the area of grass, excluding the patio. The lawn covers 10 × 25 = 250 m², while the patio covers 2 × 3 = 6 m². Therefore, the area requiring mowing is 250 − 6 = 244 m². With the old mower, Rosie needs 244 ÷ 1 = 244 minutes. With the new mower, she needs 244 ÷ 2 = 122 minutes. The time saved is 244 − 122 = 122 minutes. Therefore, A is correct.",
+      "incorrect_options": {
+        "B": "125 minutes is the time saving that would result from treating the entire 250 m² lawn as grass. The 6 m² patio must be excluded.",
+        "C": "128 minutes exceeds the established saving by 6 minutes and is inconsistent with the 244 m² of grass and the two stated mowing rates.",
+        "D": "244 minutes is the total time needed with the old mower, not the difference between the old and new mowing times.",
+        "E": "250 is the numerical value of the entire lawn's area in square metres, before excluding the patio. It is not the number of minutes saved."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q8"
+    },
+    {
+      "number": 9,
+      "main_reasoning": "The argument infers general satisfaction with banking services from customers' tendency to remain with their existing banks, particularly the 11% who still use their childhood bank. However, A states that nearly two-thirds of customers have actually changed banks, with some switching repeatedly. This substantially limits how far the behaviour of the 11% can support a conclusion about customers generally. Although switching does not necessarily prove dissatisfaction, evidence that a much larger proportion have switched undermines the reliance on customer loyalty as an indication of widespread satisfaction. Therefore, A most weakens the argument.",
+      "incorrect_options": {
+        "B": "Believing all banks offer similar services could explain why dissatisfied customers might remain with their current bank. However, this belief does not establish actual dissatisfaction or its prevalence, making it a less direct challenge than the widespread switching in A.",
+        "C": "Nearly two-thirds explicitly reporting satisfaction would directly support the conclusion that customers are generally happy with their banking services.",
+        "D": "Changing financial needs could explain some decisions to switch banks, but it does not establish that customers who remain are dissatisfied.",
+        "E": "If changing banks is easy, remaining with an existing bank may be a more meaningful voluntary choice. This does not weaken the suggested connection between loyalty and satisfaction."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q9"
+    },
+    {
+      "number": 10,
+      "main_reasoning": "The initiative is designed to increase young people's awareness of poetry, but the argument concludes that participation will improve their appreciation of poetry. These are distinct outcomes: becoming more familiar with poetry does not necessarily mean valuing or enjoying it more. The argument provides no additional evidence establishing that increased awareness through recitation will produce increased appreciation. Therefore, C identifies the unsupported inference between awareness and appreciation.",
+      "incorrect_options": {
+        "A": "Young people already being aware of poetry might reduce the need to increase awareness, but it does not identify the unjustified transition from awareness to appreciation.",
+        "B": "Recitation need not be necessary for appreciation to develop. However, the argument claims that recitation can improve appreciation, not that appreciation is impossible without recitation.",
+        "D": "Participants already being confident might challenge the confidence-building objective, but it does not address the argument's inference about appreciating poetry.",
+        "E": "The argument does not claim that reciting poetry develops original creativity. The distinction between recitation and creative expression therefore concerns a different outcome."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q10"
+    },
+    {
+      "number": 11,
+      "main_reasoning": "The success of health clubs is presented as evidence that people increasingly appreciate the importance of physical health. However, the author argues that most members rarely use their clubs and may feel they are improving their fitness merely by paying membership fees. Therefore, increasing club membership does not necessarily indicate increasing physical activity or improved health. The central conclusion is that the commercial success of health clubs is not a reliable sign of improvement in people's health, as stated in D.",
+      "incorrect_options": {
+        "A": "The passage criticises marketing and self-deception but does not establish that health clubs deliberately deceive people into purchasing memberships.",
+        "B": "Members who rarely attend health clubs are not necessarily failing to improve their health through other activities. The passage does not establish their overall health outcomes.",
+        "C": "People may understand the importance of physical health while failing to exercise consistently. The criticism concerns their behaviour rather than necessarily their understanding.",
+        "E": "Jogging is presented as a free alternative to paid exercise, but the passage provides no evidence that sales of jogging shoes would reliably measure national health."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q11"
+    },
+    {
+      "number": 12,
+      "main_reasoning": "Let x, y and z represent the numbers of 19p, 12p and 7p coupons. There are seven coupons worth 100p altogether, so x + y + z = 7 and 19x + 12y + 7z = 100. Substituting z = 7 − x − y gives 12x + 5y = 51. Since 5y is divisible by 5, 12x must leave a remainder of 1 when divided by 5. With at least one coupon of each value, x must be between 1 and 5. The only possible value is x = 3. Then y = 3 and z = 1, giving 3(19) + 3(12) + 1(7) = 100p. Therefore, C is correct: three coupons are worth 19p.",
+      "incorrect_options": {
+        "A": "If x = 1, the equation requires y = 39/5 = 7.8, which cannot represent a whole number of coupons.",
+        "B": "If x = 2, the equation requires y = 27/5 = 5.4, again violating the requirement for whole coupons.",
+        "D": "If x = 4, the equation requires y = 3/5 = 0.6, which is not a valid coupon count.",
+        "E": "If x = 5, then 12x = 60, already greater than the required total of 51 before including any 12p coupons."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q12"
+    },
+    {
+      "number": 15,
+      "main_reasoning": "Single-use plastic bags create environmental problems through resource consumption during manufacturing and harmful consequences after disposal. However, stronger reusable alternatives require more natural resources to manufacture. Therefore, an environmental comparison cannot consider production or disposal in isolation. It must also account for how long each product is used, since reusability affects how manufacturing costs should be evaluated. This supports E: manufacturing processes, length of use and disposal must all be considered when comparing products environmentally.",
+      "incorrect_options": {
+        "A": "The passage does not establish that changing consumer behaviour is ineffective. Reusing bags is itself a behavioural consideration relevant to their environmental impact.",
+        "B": "The existence of disadvantages in alternatives to plastic bags does not prove that product bans are never effective. This is an unsupported absolute generalisation.",
+        "C": "The passage examines the environmental consequences of shopping bags, not population growth. It provides no basis for identifying population restrictions as the solution.",
+        "D": "The passage does not establish that recycled paper bags have lower overall environmental costs than plastic bags. Their manufacturing, usage and disposal impacts are not compared."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q15"
+    },
+    {
+      "number": 16,
+      "main_reasoning": "The argument opposes discounts for low-emission vehicles because those vehicles still contribute to traffic congestion. This criticism depends on treating congestion reduction as the principal objective of congestion charging. If reducing pollution were instead the primary purpose, discounting cleaner vehicles could be reasonable even though they contribute equally to congestion. Therefore, the argument requires A: the principal purpose of a congestion charge is to reduce congestion. Without this assumption, the fact that cleaner vehicles still cause congestion would not establish that emission-based discounts are inappropriate.",
+      "incorrect_options": {
+        "B": "The argument does not require emissions reduction to be unimportant. It only requires congestion reduction to be the principal objective when evaluating congestion-charge discounts.",
+        "C": "Whether all drivers would purchase low-emission vehicles if they could afford them does not determine whether cleaner vehicles should receive congestion-charge discounts.",
+        "D": "The argument can criticise emission-based discounts even if congestion charging has produced other positive effects. Complete failure of the schemes is not a necessary assumption.",
+        "E": "The passage states that some schemes offer discounts while others waive charges. It does not require the assumption that universal ownership of low-emission cars would eliminate all payments."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q16"
+    },
+    {
+      "number": 17,
+      "main_reasoning": "The argument claims that modern communication technology allows information to spread rapidly and makes censorship or removal increasingly difficult. Consequently, governments and traditional media must develop new ways of responding to these challenges. C strengthens this reasoning because anonymous publication makes it harder to identify and prosecute those responsible for distributing information. This creates an additional obstacle to controlling online material, reinforcing the conclusion that established approaches must adapt.",
+      "incorrect_options": {
+        "A": "Successful government restrictions demonstrate that some online censorship remains possible. This weakens rather than strengthens the claim that information can no longer be effectively controlled.",
+        "B": "Journalists using mobile phones illustrates technological convenience, but it does not establish the difficulty of controlling or removing publicly shared information.",
+        "D": "Legal proceedings demonstrate that authorities can still respond to harmful online publications through existing legal mechanisms. They do not establish an additional obstacle to effective control.",
+        "E": "Individuals previously selling photographs to newspapers still depended on traditional media organisations for publication. This does not demonstrate the modern difficulty of controlling direct public distribution."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q17"
+    },
+    {
+      "number": 18,
+      "main_reasoning": "The room requires painting on four walls and the ceiling, excluding the door and windows. Wall area = 2(8 × 3) + 2(4 × 3) = 72 m². Ceiling area = 8 × 4 = 32 m². Subtracting the 10 m² occupied by the door and windows gives 72 + 32 − 10 = 94 m². Each litre covers 12 m², so the required paint is 94 ÷ 12 ≈ 7.83 litres. One 8-litre tin covers 96 m², which is sufficient. Therefore, A is correct: one tin.",
+      "incorrect_options": {
+        "B": "Two tins contain 16 litres, whereas the calculated requirement is less than 8 litres.",
+        "C": "Six tins provide 48 litres, far beyond the amount required to cover the 94 m² paintable area.",
+        "D": "Eight tins would cover 768 m², substantially exceeding the area requiring paint.",
+        "E": "Seventeen tins provide 136 litres, sufficient to cover 1,632 m², greatly exceeding the calculated requirement."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q18"
+    },
+    {
+  "explanations": [
+    {
+      "number": 21,
+      "main_reasoning": "The argument states that some unlicensed money lenders charge excessive interest and many use threats or violence. However, it concludes that anyone convicted of lending money without a licence should be imprisoned. This extends evidence about the harmful behaviour of some offenders to every person committing the offence, without establishing that all unlicensed lenders engage in such exploitation or deserve imprisonment. Therefore, B identifies the flaw: an unjustified generalisation from some members of a group to the entire group.",
+      "incorrect_options": {
+        "A": "Describing people as poor and vulnerable may evoke sympathy, but the argument's decisive problem is that evidence about some offenders is used to justify punishing all offenders.",
+        "C": "The passage criticises specific lending practices rather than attacking lenders' personal characteristics to discredit their arguments. Its conclusion concerns punishment, not the credibility of an opponent.",
+        "D": "The argument concerns whether unlicensed lenders should receive prison sentences. It does not present licensed and unlicensed lending as the only available options in a decision.",
+        "E": "The argument makes no claim about the interest rates charged by licensed lenders. Its proposed punishment does not depend on assuming that licensed lenders never charge excessive interest."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q21"
+    },
+    {
+      "number": 22,
+      "main_reasoning": "The original argument presents two alternatives: either students are becoming more intelligent or examinations are becoming easier. It then dismisses the first explanation because of the lack of supporting evidence and concludes that the second must be true. C follows the same structure: meerkat calls are classified as either greetings or alarms; the call is not a greeting, so it must be an alarm. Both arguments reach a conclusion by presenting two alternatives and eliminating one. The original argument's dismissal is less conclusive because a lack of evidence is not definitive disproof, but C most closely parallels its reasoning.",
+      "incorrect_options": {
+        "A": "Although organic and non-organic fertilisers are presented as alternatives, neither is eliminated. The conclusion instead recommends considering long-term consequences.",
+        "B": "The argument predicts a preference for holidays abroad based on desired weather predictability. It does not rule out holidays in the UK and infer the remaining alternative by elimination.",
+        "D": "The argument recommends wood-burning stoves because of their greater efficiency. It relies on a comparison of advantages rather than excluding one of two possibilities.",
+        "E": "The argument describes how prioritising certain patients may affect waiting times. It applies a scheduling rule rather than eliminating one alternative to establish another."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q22"
+    },
+    {
+      "number": 23,
+      "main_reasoning": "The central principle is that individuals should be responsible for risks they voluntarily take and that government should not interfere merely to prevent people from harming themselves. The argument applies this principle to compulsory cycling helmets, treating helmet use as a personal decision rather than something requiring legal enforcement. B illustrates the same principle: legalising recreational drugs would allow individuals to make their own choices despite potential personal risks, rather than having the government prohibit the activity for their protection.",
+      "incorrect_options": {
+        "A": "Refusing publicly funded addiction treatment because it is expensive relies on financial considerations, not on protecting individuals' freedom to make risky choices.",
+        "C": "Encouraging professional cyclists to promote helmets involves voluntary persuasion rather than legal compulsion. It does not directly illustrate the principle that government should avoid restricting self-regarding choices.",
+        "D": "Cyberbullying involves harm inflicted on other people. Government intervention to protect others is different from preventing individuals from voluntarily risking harm to themselves.",
+        "E": "Fining parents for unauthorised school absence enforces an obligation concerning children's education. It does not illustrate a right to undertake personal risks without government interference."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q23"
+    },
+    {
+      "number": 25,
+      "main_reasoning": "Each first choice earns 3 points, each second choice 2 points, and each third choice 1 point. The total scores are: Portugal = 6, France = 9, Majorca = 4, Greece = 4, and Tenerife = 7. However, the friends agreed not to visit anywhere that was nobody's first choice. France, despite receiving the highest score, must therefore be excluded because nobody ranked it first. Among the remaining eligible destinations, Tenerife has the highest score of 7 points. Therefore, E is correct.",
+      "incorrect_options": {
+        "A": "France receives 9 points, but nobody selected it as their first choice. It therefore violates the explicit eligibility condition.",
+        "B": "Greece receives 4 points: 3 from Lexy's first choice and 1 from Jo's third choice. This is below Tenerife's 7 points.",
+        "C": "Majorca receives 4 points: 3 from Kim's first choice and 1 from Naz's third choice. It therefore scores less than Tenerife.",
+        "D": "Portugal receives 6 points from Jo's and Mel's first choices. Although eligible, it receives one point fewer than Tenerife."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q25"
+    },
+    {
+      "number": 27,
+      "main_reasoning": "The argument distinguishes between soldiers operating outside combat and those making urgent decisions during battle. It argues that applying the Human Rights Act during combat could undermine military effectiveness because commanders might hesitate over possible legal consequences. This concern supports a limited exemption rather than removing legal protection from all soldiers. Therefore, A expresses the main conclusion: the HRA should apply outside battle situations but not during combat.",
+      "incorrect_options": {
+        "B": "The possibility that the HRA could distract commanders during battle is a supporting reason for the proposed exemption, not the main policy conclusion.",
+        "C": "This would remove the HRA from the armed forces entirely, whereas the argument explicitly supports its application outside battle situations.",
+        "D": "The passage suggests that fear of legal action may hinder rapid decisions. It does not establish that making rapid decisions and complying with the HRA are inherently incompatible.",
+        "E": "The argument identifies a possible reduction in effectiveness specifically during combat, not an inevitable reduction in the efficiency of the armed forces generally."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q27"
+    },
+    {
+      "number": 28,
+      "main_reasoning": "Aquaculture is presented as a possible way to satisfy growing demand for fish while reducing pressure on overexploited marine stocks. However, farming predator species such as tuna currently requires feeding them wild-caught fish because effective alternatives have not yet been developed. Consequently, farming these species would continue contributing to the same pressure on wild fish stocks that aquaculture is intended to relieve. This supports D: under current methods, fish farms should avoid attempting to rear predator species such as tuna.",
+      "incorrect_options": {
+        "A": "The passage does not compare freshwater fish consumption with marine fish consumption or establish that switching between them would reduce environmental damage.",
+        "B": "The difficulties affecting marine fish stocks do not establish that reducing the damage caused by ocean fishing is impossible. The passage discusses potential solutions rather than ruling them out.",
+        "C": "The passage does not analyse meat production or establish that all forms of fish farming cause unavoidable environmental harm. A future need for vegetarian diets is unsupported.",
+        "E": "The passage identifies pollution and disease transmission as potential risks of fish farming generally, while also identifying additional difficulties with predator species. It does not establish that environmental damage is likely to arise from only certain kinds of fish farming."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q28"
+    },
+    {
+      "number": 29,
+      "main_reasoning": "The study found improved blood flow and memory performance among volunteers drinking hot chocolate regularly. However, the argument moves from these improvements in brain functioning to the possibility of preventing Alzheimer's disease. This inference requires a connection between problems with general brain functioning and the development of Alzheimer's disease. Without such a relationship, improved memory and blood flow would not provide a reason to expect a reduced risk of the disease. Therefore, E identifies the necessary underlying assumption, although that relationship alone would not prove prevention.",
+      "incorrect_options": {
+        "A": "The experiment involved drinking hot chocolate, not eating solid chocolate. The conclusion does not require both forms of consumption to produce identical effects.",
+        "B": "An insufficient sample size would raise doubts about the reliability of the findings. It is a possible criticism rather than an assumption needed to connect brain functioning with Alzheimer's disease.",
+        "C": "The argument suggests benefits from regular consumption, not that improvements following a particular period must be permanent. Repeated temporary improvements could still be relevant to the proposed benefit.",
+        "D": "Possible additional health problems would complicate an assessment of chocolate's overall benefits, but the argument does not require such problems to occur."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q29"
+    },
+    {
+      "number": 30,
+      "main_reasoning": "A major scores 5 points and a minor scores 3. The Blues scored twice as many majors as minors. Let their number of minors be b, so their 52 points equal 5(2b) + 3b = 13b. Thus b = 4 and the Blues scored 8 majors. The Reds scored half as many majors as minors. Let their majors be r, giving 77 = 5r + 3(2r) = 11r. Thus r = 7 majors. Total majors = 8 + 7 = 15. Therefore, C is correct.",
+      "incorrect_options": {
+        "A": "9 majors is 6 fewer than the established combined total of 15 and cannot satisfy both teams' scores and scoring ratios.",
+        "B": "12 majors is 3 fewer than the required total. The Blues' 8 majors and Reds' 7 majors already establish 15.",
+        "D": "18 majors exceeds the calculated combined total by 3 and is inconsistent with the stated scoring constraints.",
+        "E": "21 majors exceeds the combined total by 6. Neither team's major count can increase without violating its point total or major-to-minor ratio."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q30"
+    },
+    {
+      "number": 33,
+      "main_reasoning": "The argument claims that limiting family size through contraception is necessary to address population growth and its environmental consequences. C strengthens this proposal by establishing that many births occur because people did not intend or wish to become parents. This creates a practical opportunity for contraception to reduce unintended births and consequently slow population growth. The information therefore supports the proposed policy as a means of reducing population-related environmental pressure.",
+      "incorrect_options": {
+        "A": "Economic reasons for larger families may help explain why population growth continues, but they do not establish that contraception-based policies would reduce it. Such reasons could also make family-size reduction more difficult.",
+        "B": "Developing other methods of reducing carbon footprints introduces potential alternatives to limiting family size. It does not strengthen the claim that population control must be central to environmental policy.",
+        "D": "Strong resistance to family-size restrictions would create an obstacle to implementing the recommended policies rather than support their practicality.",
+        "E": "Some people being unable to have children does not establish that contraception could significantly reduce the births contributing to projected population growth."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q33"
+    },
+    {
+      "number": 34,
+      "main_reasoning": "The argument provides evidence that television has reduced family communication: families increasingly watch programmes instead of discussing things together. However, it concludes that television weakens people's ability to think independently. Reduced family discussion does not by itself establish reduced individual thinking ability. Someone can watch television rather than participate in family conversations while still thinking independently. The argument therefore fails to supply the connection needed between its evidence about communication and its conclusion about independent thought. This is the flaw identified by B.",
+      "incorrect_options": {
+        "A": "The opening claim concerns reduced family communication, while the conclusion concerns reduced independent thinking. Both could be true simultaneously, so there is no contradiction between them.",
+        "C": "The argument describes a general pattern of television viewing among families rather than relying on one particular observed family or isolated example.",
+        "D": "The passage compares present communication habits with those of the past, but it does not explicitly infer that past behaviour must be correct simply because it occurred earlier.",
+        "E": "The argument offers observations about family behaviour as evidence rather than assuming that independent thinking has already declined. Its weakness is an unsupported link, not circular reasoning."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q34"
+    },
+    {
+      "number": 35,
+      "main_reasoning": "The argument states that traditional science lessons often teach matter as existing in only three states: solid, liquid and gas. However, modern scientific knowledge identifies additional states, including plasma and liquid crystal. The author argues that teaching only the traditional states gives students an inaccurate and oversimplified understanding of the universe. These observations support the recommendation expressed at the beginning: science lessons need to change so that they accurately reflect modern scientific knowledge. Therefore, E is the main conclusion.",
+      "incorrect_options": {
+        "A": "The failure of traditional teaching to reflect newer scientific discoveries supports the proposed reform, but it does not express the recommendation to update science education.",
+        "B": "The oversimplified description of matter is a specific criticism used to justify changing lessons, rather than the main conclusion itself.",
+        "C": "Providing an incorrect understanding of the universe is a consequence attributed to current teaching. It explains why the proposed educational reform is needed.",
+        "D": "Teaching matter as having three states is the existing practice identified as problematic. It serves as evidence for the argument, not its conclusion."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q35"
+    },
+    {
+      "number": 36,
+      "main_reasoning": "Each crossing takes 40 minutes, followed by a 5-minute turnaround. A boat leaving the mainland at 09:05 reaches the island at 09:45 and can next depart the island at 09:55. It returns to the mainland at 10:35 and can next depart there at 10:45. Thus, the same boat can serve mainland departures 100 minutes apart. Since mainland departures occur every 20 minutes, five different boats are needed to cover the departures at 09:05, 09:25, 09:45, 10:05 and 10:25 before the first boat can depart the mainland again. Five boats also suffice by repeating this 100-minute cycle. Therefore, C is correct.",
+      "incorrect_options": {
+        "A": "Three boats cannot cover five mainland departures within the first 100 minutes, because no boat can complete the required return journey in time to serve two of them.",
+        "B": "Four boats are insufficient for the five distinct mainland departures between 09:05 and 10:25, before the earliest departing boat becomes available again.",
+        "D": "Six boats exceed the minimum because five can maintain the timetable by repeating the 100-minute departure cycle.",
+        "E": "Seven boats are unnecessary. The service requires only five boats to maintain the departures from both terminals."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q36"
+    },
+    {
+      "number": 39,
+      "main_reasoning": "The scheme assigns individual caseworkers to vulnerable homeless people, helping them navigate health, justice and housing systems until their circumstances improve. It has also demonstrated substantial financial benefits, saving an average of £1000 per person per month in emergency support costs. These findings provide reasons to support assigning individual caseworkers to homeless people: the approach assists vulnerable individuals while reducing expenditure. Therefore, A is the best supported policy conclusion, particularly for the vulnerable people represented in the scheme.",
+      "incorrect_options": {
+        "B": "The passage reports reductions in emergency support costs but does not establish that homeless people were previously costing an excessive amount. Cost savings alone do not justify that judgement.",
+        "C": "The need for assistance navigating health, justice and housing systems suggests that these systems can be difficult to navigate. However, this is part of the explanation for the scheme's usefulness rather than its broader policy implication.",
+        "D": "The scheme reduces money that would otherwise have been spent on emergency assistance, but this does not establish that all homeless people currently depend on emergency support.",
+        "E": "The scheme helps people through individual caseworker assistance, but the passage does not isolate easier access to support as the cause of improvement. This statement is broader than the evidence about the scheme's demonstrated benefits."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q39"
+    },
+    {
+      "number": 40,
+      "main_reasoning": "The argument criticises simple daily alcohol limits because they may imply that drinking every day is acceptable, despite research suggesting that the body needs longer recovery periods. It therefore recommends using more complex health messages rather than simple ones that encourage unhealthy behaviour. However, this recommendation depends on complex messages being accessible to their intended audience. If people neither read nor understand them, greater complexity would not communicate the healthier guidance. Therefore, E expresses the required assumption that complex health promotion messages will be read and understood.",
+      "incorrect_options": {
+        "A": "The argument does not require all research from twenty-five years ago to be invalid. It only requires newer findings to reveal an important limitation in existing daily drinking advice.",
+        "B": "The argument concerns what daily drinking advice implies and might encourage. Drinking every day need not already be common for such advice to create a misleading impression.",
+        "C": "The argument does not require everyone always to follow health advice. It only relies on messages having some influence on understanding or behaviour.",
+        "D": "The argument recommends improving a particular type of health message. It does not depend on a general requirement to regularly revise government advice on every health issue."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q40"
+    }
+    {
+  "explanations": [
+    {
+      "number": 41,
+      "main_reasoning": "The argument uses evidence of past mass extinctions followed by recoveries in biodiversity to conclude that life will survive and become more diverse regardless of any disasters humanity causes. However, A states that the consequences of a global nuclear holocaust are unknown. Such a disaster might have consequences unlike those documented in the fossil record, so past recoveries cannot establish that life would necessarily recover from it. This challenges the argument's unrestricted prediction about all possible human-caused disasters, making A the strongest weakening statement.",
+      "incorrect_options": {
+        "B": "Uncertainty about precise fossil dates could affect the proposed timing of extinction cycles, but it does not directly challenge the evidence that biodiversity recovered after previous extinctions.",
+        "C": "Technology preventing natural catastrophes would reduce the likelihood of certain disasters. It does not establish whether life could recover from severe human-caused destruction.",
+        "D": "The ability of some species to survive extreme environmental changes supports the possibility that life could persist after disasters, although it does not guarantee increased biodiversity.",
+        "E": "The extinction of some species following dramatic climate changes is compatible with the passage's description of mass extinctions. It does not challenge the claim that biodiversity subsequently recovered."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q41"
+    },
+    {
+      "number": 42,
+      "main_reasoning": "The daily saving is the difference between the cost of 2 wet-food sachets and 25g of dry food from each supplier. At the pet shop, each sachet costs £12 ÷ 12 = £1, while dry food costs £4 ÷ 400 = £0.01 per gram. Daily cost = 2(£1) + 25(£0.01) = £2.25.\n\nOnline, each sachet costs £62.40 ÷ 96 = £0.65, and dry food costs £16 ÷ 2000 = £0.008 per gram. Daily cost = 2(£0.65) + 25(£0.008) = £1.50. Saving = £2.25 − £1.50 = £0.75, or 75p. Therefore, B is correct.",
+      "incorrect_options": {
+        "A": "40p is too small: the two wet-food sachets alone become 70p cheaper each day, before accounting for dry-food savings.",
+        "C": "93p exceeds the calculated daily saving of 75p by 18p and does not match the stated quantities and prices.",
+        "D": "£1.50 is the total daily cost of purchasing the food online, not the amount saved.",
+        "E": "£2.25 is the original daily cost at the local pet shop. The online daily cost must be deducted to determine the saving."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q42"
+    },
+    {
+      "number": 43,
+      "main_reasoning": "Arps and Urps have tails, while Orps do not. Since Billy captured 45 creatures with 33 tails, there must be 45 − 33 = 12 Orps.\n\nEach Orp has 2 horns, accounting for 12 × 2 = 24 horns. Only Arps have additional horns, with 3 each, so the number of Arps is (99 − 24) ÷ 3 = 25. The remaining creatures must be Urps: 45 − 12 − 25 = 8.\n\nThe leg total confirms this: 25 × 6 + 12 × 4 + 8 × 3 = 222. Therefore, A is correct.",
+      "incorrect_options": {
+        "B": "12 is the number of Orps established by the difference between total creatures and total tails, not the number of Urps.",
+        "C": "15 Urps together with 25 Arps would produce 40 tails, exceeding the stated total of 33.",
+        "D": "20 Urps would leave only 13 tailed creatures available as Arps, whereas the horn count requires 25 Arps.",
+        "E": "25 is the calculated number of Arps. Having 25 Urps as well as 25 Arps and 12 Orps would exceed the total of 45 creatures."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q43"
+    },
+    {
+      "number": 45,
+      "main_reasoning": "The passage argues that the continued growth of buy-to-let investment has contributed to housing becoming unaffordable for much of a generation. It supports this criticism with the example of London rents rising eight times faster than wages and predicts further financial difficulties for renters.\n\nThese observations support the author's broader judgement that buy-to-let produces harmful social consequences rather than social benefits. The phrase 'Plainly, no social good will come of this' expresses that overarching conclusion. Therefore, C is correct.",
+      "incorrect_options": {
+        "A": "Housing becoming unaffordable is presented as a consequence of buy-to-let growth. It supports the broader conclusion about social harm rather than expressing the author's overall judgement.",
+        "B": "Rent increases exceeding wage growth are explicitly cited as evidence of worsening housing affordability, not as the main conclusion.",
+        "D": "The prediction that rents will continue rising describes one anticipated consequence of the housing situation. It is narrower than the conclusion about the overall social effects of buy-to-let.",
+        "E": "The passage mentions an earlier moral argument against buy-to-let investment, but its final conclusion concerns harmful social consequences rather than explicitly declaring the investment practice immoral."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q45"
+    },
+    {
+      "number": 46,
+      "main_reasoning": "The argument states that having either freedom of speech or freedom of assembly guarantees democratic government. Therefore, if democratic government is absent, neither freedom can be present. This uses the logical structure: if A or B occurs, then C follows; if C does not occur, neither A nor B can occur.\n\nB follows exactly the same pattern. If a body emits either heat or light, its energy decreases. Therefore, if its energy remains constant, it can have emitted neither heat nor light. Both arguments use the contrapositive of the original conditional statement, making B correct.",
+      "incorrect_options": {
+        "A": "It reverses a conditional incorrectly. Knowing that lacking both security measures guarantees rejection does not establish that every rejection means both measures were absent.",
+        "C": "It treats the stated eligibility requirements as necessary conditions, although the wording only establishes that satisfying them is sufficient for eligibility. Failing them does not necessarily prove ineligibility.",
+        "D": "It eliminates one of two alternatives to infer the other. The original argument instead starts with a conditional relationship and reasons from the absence of its consequence.",
+        "E": "It infers that water and sunlight guarantee thriving because they are necessary for survival. This confuses necessary conditions with sufficient conditions rather than applying a contrapositive."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q46"
+    },
+    {
+      "number": 47,
+      "main_reasoning": "The argument begins with the principle that even when every available action is immoral, one should choose the action producing the greatest overall good. This means comparing harmful alternatives and selecting the one with the least damaging consequences rather than refusing to choose simply because every option is morally objectionable.\n\nB most closely illustrates this principle by identifying the action harming the fewest people as the best available choice. Both prioritise minimising overall harm when deciding between undesirable alternatives.",
+      "incorrect_options": {
+        "A": "Speed and cost are mentioned in the proposed action, but the underlying moral principle is maximising overall good. The fastest and cheapest action need not minimise harm.",
+        "C": "Considering cost and speed reflects details of the recommended action, not the fundamental principle used to decide which immoral option is preferable.",
+        "D": "The argument explicitly allows an action to remain immoral while being the right choice among available alternatives. It does not claim that choosing an action removes its immorality.",
+        "E": "Acting for the greater good does not necessarily make an action morally acceptable. The argument maintains that all available actions may remain immoral despite one being preferable."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q47"
+    },
+    {
+      "number": 48,
+      "main_reasoning": "The four known word scores provide four equations involving five unknown letter values: T, E, A, R and I.\n\nTEAR and RAT contain the same letters except for E, so E = TEAR − RAT.\n\nTREE contains T + R + 2E, while RAT contains T + R + A. Since E is known, A = RAT + 2E − TREE.\n\nRITE contains T + R + I + E, whereas TREE contains T + R + 2E. Thus I = RITE − TREE + E.\n\nThe score of RAT now determines T + R, but not T and R individually because these letters always appear together in every supplied word. Therefore, exactly three letter values—E, A and I—can be calculated. D is correct.",
+      "incorrect_options": {
+        "A": "Zero is incorrect because subtracting RAT from TEAR directly determines the value of E.",
+        "B": "One is insufficient because, after finding E, the difference between TREE and RAT also allows A to be calculated.",
+        "C": "Two is insufficient because comparing RITE with TREE additionally determines I once E is known.",
+        "E": "Four is unsupported because T and R always occur together. Their combined value can be found, but neither individual value can be determined uniquely."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q48"
+    },
+    {
+      "number": 49,
+      "main_reasoning": "Convert everyone's availability into London time. Nathan is available 08:00–20:00, Mark 16:00–04:00 the next day, Ben 07:00–19:00, and Isabel 06:00–18:00.\n\nFrom 08:00 to 16:00, Nathan, Ben and Isabel are available together: 8 hours. From 16:00 to 18:00, all four siblings are available: 2 hours. From 18:00 to 19:00, Nathan, Mark and Ben are available: 1 hour.\n\nOutside these intervals, fewer than three siblings are available simultaneously. Therefore, the total is 8 + 2 + 1 = 11 hours, making D correct.",
+      "incorrect_options": {
+        "A": "8 hours counts only the overlap from 08:00 to 16:00, excluding the three additional hours when Mark becomes available.",
+        "B": "9 hours is two hours short of the established total across the three qualifying intervals.",
+        "C": "10 hours excludes one of the 11 qualifying hours, including the additional overlap from 18:00 to 19:00 when three siblings remain available.",
+        "E": "12 hours exceeds the total by one hour. At 19:00 Ben becomes unavailable, leaving only Nathan and Mark online until 20:00."
+      },
+      "question_record": "blackstone_2017_4502/11_section_1_q49"
+    }
+  ],
+  "not_generated": [
+    {
+      "number": 7,
+      "reason": "image-related: The question requires reading a chart of monthly second-hand car sales. The numerical data are provided only in an image.",
+      "question_record": "blackstone_2017_4502/11_section_1_q7"
+    },
+    {
+      "number": 13,
+      "reason": "image-related: The football results table is an image. Without the match scores, it is impossible to verify which team scored in every match.",
+      "question_record": "blackstone_2017_4502/11_section_1_q13"
+    },
+    {
+      "number": 14,
+      "reason": "image-related: The question requires comparing the shapes and orientations of tile pieces with a missing area. These are represented through images.",
+      "question_record": "blackstone_2017_4502/11_section_1_q14"
+    },
+    {
+      "number": 19,
+      "reason": "image-related: The high-jump scoring table is provided as an image. Its numerical values are necessary to verify the 214-point increase.",
+      "question_record": "blackstone_2017_4502/11_section_1_q19"
+    },
+    {
+      "number": 20,
+      "reason": "image-related: The question requires numerical information from an image-based table and comparison with five image-based charts.",
+      "question_record": "blackstone_2017_4502/11_section_1_q20"
+    }
+    {
+      "number": 24,
+      "reason": "image-related: The original proportions of chemicals X and Y are partly represented through an image. The extracted text does not contain the complete numerical relationship required for calculation.",
+      "question_record": "blackstone_2017_4502/11_section_1_q24"
+    },
+    {
+      "number": 26,
+      "reason": "image-related: The arrangement of diagonal lines on the cube net is provided as an image. The visual layout is essential to determining which cube corners contain exactly two meeting lines.",
+      "question_record": "blackstone_2017_4502/11_section_1_q26"
+    },
+    {
+      "number": 31,
+      "reason": "image-related: The nutritional information per individual oatcake is shown in an image. This information is required to calculate the number of oatcakes in the 300g packet.",
+      "question_record": "blackstone_2017_4502/11_section_1_q31"
+    },
+    {
+      "number": 32,
+      "reason": "image-related: All five answer options are visual grids. Their shading patterns must be compared to identify the only completely correct arrangement.",
+      "question_record": "blackstone_2017_4502/11_section_1_q32"
+    },
+    {
+      "number": 37,
+      "reason": "image-related: The numbers of pupils and teachers by region appear only in an image-based table. These values are required to calculate and compare pupil-to-teacher ratios.",
+      "question_record": "blackstone_2017_4502/11_section_1_q37"
+    },
+    {
+      "number": 38,
+      "reason": "image-related: The question depends on comparing the shapes of tokens shown as images. Additionally, the supplied record marks option B as unavailable, preventing a complete comparison.",
+      "question_record": "blackstone_2017_4502/11_section_1_q38"
+    }
+    {
+      "number": 44,
+      "reason": "image-related: The question requires comparing an L-shaped three-dimensional box with five visual nets. The shapes, cuts and fold lines are contained in images, so the answer cannot be justified from text alone.",
+      "question_record": "blackstone_2017_4502/11_section_1_q44"
+    },
+    {
+      "number": 50,
+      "reason": "image-related: The shapes of the two L-shaped tables and all five proposed arrangements are represented through images. Their geometry must be examined to determine which arrangement is impossible.",
+      "question_record": "blackstone_2017_4502/11_section_1_q50"
+    }
+  ]
+}
