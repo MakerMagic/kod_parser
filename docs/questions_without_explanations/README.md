@@ -9,9 +9,9 @@ clean or matched data. Archived AI pilot snapshots are not canonical inputs.
 
 | Year | Question records checked | Known answer-key records | Existing explanations | Exported |
 |---|---:|---:|---:|---:|
-| 2017 | 50 | 50 | 0 | 50 |
-| 2018 | 50 | 50 | 0 | 50 |
-| 2019 | 50 | 50 | 0 | 50 |
+| 2017 | 50 | 50 | 46 | 4 |
+| 2018 | 50 | 50 | 45 | 5 |
+| 2019 | 50 | 50 | 45 | 5 |
 
 - [2017 questions](2017_questions_without_explanations.md)
 - [2018 questions](2018_questions_without_explanations.md)
@@ -44,7 +44,10 @@ This command writes only the three Markdown views and prints exact inclusion /
 exclusion counts. It imports no explanation provider and performs no generation
 or network requests. Reruns are deterministic for unchanged inputs.
 
-Validation: 70 export/explanation-structure/matching tests passed, plus Ruff,
-985 local-link checks and 10 PowerShell-block syntax checks (not execution).
-All 150 records were checked for complete stored body/prompt/option text, option
-order and correct key. No AI generation was run.
+The canonical records now include 97 imported text explanations and 39 reviewed
+visual explanations; these are excluded from this missing-explanation view.
+See the [explanation workspace](../2017-2019_questions_images_with_explanation_ai_generated/README.md)
+for per-question outcomes and unresolved cases. Export regeneration itself is
+offline and never generates explanations. Two source-listed image skips (2018 Q14
+and 2019 Q6) were found to be text-sufficient; their illustrations do not justify
+including them in image-only generation, so they remain listed here.

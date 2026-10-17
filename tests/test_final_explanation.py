@@ -341,12 +341,16 @@ def real_datasets():
 
 def test_all_local_records_preserve_every_original_block_and_projection(real_datasets):
     statuses = Counter()
+    official_2020 = Counter()
     for _, data in real_datasets:
         for r in data["records"]:
             a = r.get("answer")
             before = deepcopy(a)
             final = build_final_explanation(a, r.get("answer_reference"))
-            statuses[final["status"]] += 1
+            if r["identity"]["year"] == 2020:
+                official_2020[final["status"]] += 1
+            else:
+                statuses[final["status"]] += 1
             assert a == before
             assert not final["issues"], r["identity"]
             assert not final["unplaced_components"], r["identity"]
@@ -360,6 +364,8 @@ def test_all_local_records_preserve_every_original_block_and_projection(real_dat
                 for b in final["blocks"]
             ] == expected
     assert statuses == {"available": 550, "unavailable": 150}
+    if official_2020:
+        assert official_2020 == {"available": 50}
 
 
 @pytest.mark.parametrize(
@@ -425,7 +431,12 @@ def test_real_html_json_and_text_inspection_are_read_only(real_datasets, year, n
     if (year, number) == (2022, 46):
         assert "Manually supplied by the user" in section
     if year in (2017, 2019):
-        assert "answers only" in section
+        if final.get("explanation_by_ai"):
+            assert final["status"] == "available" and final["blocks"]
+            assert "Explanation by AI: True" in html
+            assert final["source_reference"]["path"]
+        else:
+            assert "answers only" in section
     for fmt in ("text", "json"):
         assert (
             json.loads(render_inspection(result, fmt))["record"]["final_explanation"]

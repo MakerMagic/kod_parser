@@ -1,8 +1,11 @@
 # TSA 2017–2019 answer-key matching
 
 The universal [Final Explanation](MATCHING_2008-2016_BACKTEST.md#final-explanation-all-matching-source-formats)
-section explicitly shows unavailability for these answer-only sources. Matching
-does not turn answer-key row screenshots into explanation visuals.
+section now includes the explicitly imported 2017–2019 text explanations and
+reviewed visual explanations. The original PDFs remain answer-only sources;
+their row screenshots are not explanation visuals. See the
+[explanation workspace](2017-2019_questions_images_with_explanation_ai_generated/README.md)
+for provenance, counts and unresolved cases.
 
 Run from the repository root in PowerShell. These sources supply **answers only**:
 empty explanation fields mean unavailable in this format, not failed extraction.
@@ -16,7 +19,7 @@ foreach ($answerYear in 2017..2019) {
     & $matchingPython -m parsers.blackstone_answer_keys "acquisition\local\TSA-$answerYear-Answers-blackstone.pdf" --output-dir "data\raw\blackstone_answer_keys\$answerYear" --overwrite
     if ($LASTEXITCODE -ne 0) { throw "Answer-key parsing failed: $answerYear" }
 }
-& $matchingPython -m processors.matching --clean-json 'data\clean\blackstone' --answers-json 'data\raw\blackstone_answer_keys' --years 2017 2018 2019 --output 'data\merged\blackstone\tsa_2017-2019.matched.json' --issues-report 'docs\MATCHING_2017-2019_ISSUES.md' --overwrite
+& $matchingPython -m processors.matching --clean-json 'data\clean\blackstone' --answers-json 'data\raw\blackstone_answer_keys' --years 2017 2018 2019 --explanation-imports 'docs\2017-2019_questions_text_with_explanation_ai_generated' --visual-explanations 'docs\2017-2019_questions_images_with_explanation_ai_generated' --output 'data\merged\blackstone\tsa_2017-2019.matched.json' --issues-report 'docs\MATCHING_2017-2019_ISSUES.md' --overwrite
 ```
 
 ## Inspect one question
@@ -30,7 +33,8 @@ Invoke-Item -LiteralPath $matchingHtml
 
 Change year/question as needed. `--format json` includes the complete stored record.
 HTML is self-contained and read-only. It shows Main Body, Main Question, Main
-Answers, Correct Answer, explicit explanation unavailability, original question
+Answers, Correct Answer, source-format explanation availability and the imported/
+generated Final Explanation, original question
 screenshots, Answer-Key Source (PDF/page/cells/raw row and saved row screenshot),
 matching metadata and preserved upstream issues. HTML exports require new filenames.
 
@@ -53,8 +57,9 @@ Actual source validation: 50 answers per year; all 150 pairs agree with independ
 PDFium text extraction, including rows 1/25/50. Matching currently yields **148
 matches and two upstream conflicts**: 2018 Q20 and 2019 Q32 have malformed/missing
 clean option labels. Their extracted key answers remain stored; the issues report
-references the raw/clean cause. No explanations were invented or missing-explanation
-warnings generated for this answer-only format.
+references the raw/clean cause. The answer-key parser does not fabricate
+explanations or issue missing-explanation warnings for this answer-only format;
+the explicit explanation overlay is applied after exact-key matching.
 
 User-confirmed answers (2026-10-15): **2018 Q20 = B**, **2019 Q32 = C**.
 Both agree with the parsed answer keys and are explicitly shown in the issues

@@ -613,6 +613,26 @@ contradictory populated explanation fields. `raw.cells`, `cell_bboxes`, `row_bbo
 not explanation images. Invalid/ambiguous rows retain raw content but have null
 correct answers; duplicate identities remain candidates, never force-matched.
 
+### Official 2020 full-explanation profile
+
+`parsers/official_2020_answers/` independently produces the same `answer_raw` v1
+contract from question/options/explanation pages. `explanation.presentation` is
+`full_explanation`: one paragraph-type block contains the complete explanation,
+including its paragraph/newline spacing; choice/list projections stay empty.
+`raw` retains exact explanation spans, question/options text, all source line
+references and geometric boundary evidence. Complete source-page previews are
+saved separately; original source and question RAW/CLEAN inputs are immutable.
+
+`answer_inference` retains status, method (`explicit_phrase`, `semantic_pattern`
+or `unresolved`), all positive candidate evidence and normalized comparison spans.
+Conflicting or unsupported candidates leave `correct_answer` null. No answer
+lookup table is used. Optional `question_evidence` contains extracted question
+prose and labelled options; generic matching checks the opening source line and
+every supplied textual option against the clean question before accepting the
+numeric-key match. `matching.source_question_verified` records that check.
+HTML presents one Full Explanation and an explicit inference-evidence section,
+without separate incorrect-answer/other-list presentation for this profile.
+
 ### Explicit pinned clean body visuals
 
 The single approved 2022 Q44 mapping and supplied PNG live in the clean module's

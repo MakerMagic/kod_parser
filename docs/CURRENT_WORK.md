@@ -4,7 +4,7 @@ Blackstone clean questions + TSA 2008–2016 explained answers → matched struc
 
 ## Current focus
 
-AI/Gemini generation is stopped. Offline canonical 2017–2019 Markdown exports now list 50 known-key/no-explanation questions per year, including the preserved 2018 Q20 / 2019 Q32 option conflicts. Reproduce with `processors.matching.export_without_explanations`; see `docs/questions_without_explanations/README.md`. The 17 AI-only Markdown files moved to `docs/ai_explanations/` with updated destinations/references; no generation logic or source data changed.
+2017–2019 supplied explanation imports and visual review: 97 text explanations matched by exact identity; 39 visual explanations accepted using the existing prompt/validator and inspected stored assets. Twelve visual cases remain unresolved (five structural, seven requiring stronger geometric proof); two text-sufficient illustrated cases are excluded from image-only generation. Match conflicts remain unchanged. Canonical HTML and no-explanation exports are rebuilt. Reapply via `processors.matching.explanation_imports`; see `docs/2017-2019_questions_images_with_explanation_ai_generated/README.md`. No Gemini API calls or raw/clean changes.
 
 Gemini-only rate-limit classification/backoff/jitter and configurable successful-request cooldown added; prompt, validator, generic generator/scheduler/backtest hashes unchanged. Configured 3.5 Flash Q1–Q5 pilot: first API call returned 429 with provider retry delay 23,643 seconds; remaining calls correctly withheld, 0/5 outputs and five resumable provider failures, no quality rejections. Validation: 139 tests, Ruff and five read-only HTML/text/JSON inspections passed. No fallback/full batch. Report and backtests: `docs/ai_explanations/EXPLANATION_FLASH35_RUN.md`.
 
@@ -13,6 +13,8 @@ Semantic explanation safeguards added: explicit coexistence/assumption prompt ru
 Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then match them to existing clean Blackstone questions.
 
 ## Already completed
+
+- Independent official 2020 profile verified: 50 full explanations / 50 matches, 26 explicit and 24 semantic answer inferences; all six supplied anchors pass. Complete text/evidence agrees with independent PDFium extraction; 50 HTML inspections are saved. Reparse is byte-identical and 36 pre-existing RAW/CLEAN/other-year matched JSONs remain unchanged. Q12's existing clean symbol-order review and Q25's raw caption review remain visible, not suppressed. Commands: `docs/MATCHING_2020_BACKTEST.md`.
 
 - RAW structural grouping fixes 2019 Q36's detached dimension and 2016 Q37's fragmented mushroom arrays (3→2 / 48→2 assets). Isolated reparsing of all 800 questions changed only these two records' visual fields; text/identity/options and original PNGs remain preserved. Affected RAW/CLEAN and dependent matching snapshots/reports regenerated; existing issue counts and ambiguous cases remain unchanged. Full suite: 457 passed; focused lint/format checks passed; regenerated PNG crops visually checked.
 - Matching derives ordered `final_explanation` blocks without modifying source components. With the approved manual supplements, 550 explanations are available and 150 answer-only records remain explicitly unavailable. HTML retains component debugging sections; original raw/clean inputs and assets stay immutable.
@@ -105,7 +107,7 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Next task
 
-- Review the 2017–2019 no-explanation Markdown exports. AI/Gemini generation remains stopped until explicitly requested again; historical commands under `docs/ai_explanations/` are not an active next step.
+- Review the imported/visual 2017–2019 explanations through the new HTML index and twelve unresolved cases in the year-specific workspace reports. Historical Gemini pilot commands remain inactive.
 
 - Independent CLEAN limitation: 2016 Q37 retains the declarative "When I looked..." sentence in Main Question, despite correct RAW ordering between the two now-complete diagrams. Grouping does not resolve this body/prompt classification; review separately without a question-specific exception.
 - Review the two upstream option-label conflicts blocking 2017–2019 matches; do not force their correct-answer association. Keep the Q44 manual composite scoped to the approved source/key.

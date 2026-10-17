@@ -1,0 +1,365 @@
+{
+  "generation_origin": "codex_visual_review_using_existing_provider_independent_prompt",
+  "prompt_sha256": "3161f496bc34705efa86436bf88c2f5f133bb61329025d98f5d0baf8802381c8",
+  "provider": "codex_assistant",
+  "explanations": [
+    {
+      "year": 2018,
+      "number": 7,
+      "main_reasoning": "Use the professionals' P column, since P counts all persons. Net loss equals professionals leaving minus professionals arriving. The losses for 2013–2017 are respectively 51−59 = −8, 50−55 = −5, 68−44 = 24, 67−45 = 22 and 65−44 = 21. The largest loss is 24 in 2015, so C is correct.",
+      "incorrect_options": {
+        "A": "In 2013, 59 professionals arrive and 51 leave: a gain of 8 rather than a loss.",
+        "B": "In 2014, 55 arrive and 50 leave, giving a net gain of 5.",
+        "D": "The 2016 loss is 67−45 = 22, smaller than the loss of 24 in 2015.",
+        "E": "The 2017 loss is 65−44 = 21, also smaller than the 2015 loss."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2018_4502/11_section_1_q7",
+      "context_sha256": "7b33b1b175f4df48020be0a36ace2ef2fa8034065bf50f4b2ec60517ae01b4da",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q007_r007_p006_asset_01_9b9ba9fc63",
+          "blackstone_2018_q007_r007_p006_view_01_147640c636"
+        ],
+        "visual_evidence": "Professionals P in/out pairs: 59/51,55/50,44/68,45/67,44/65 for 2013–2017.",
+        "reasoning_check": "All net changes computed using professional totals rather than total migration or only men/women."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 8,
+      "main_reasoning": "Read the visible upper segments using the complete display as a guide. The first hour digit has only its upper-right segment: 1. The second has both upper verticals but no top horizontal: 4. The minute tens has a top and upper-left segment but no upper-right segment; among valid minute tens this is 5. The time is therefore 14:5_, which rounds to 15:00, or 3 o'clock: C.",
+      "incorrect_options": {
+        "A": "About 13:00 would require the hour to be 12 or 13, whose second digit has a top horizontal segment unlike the visible 4.",
+        "B": "The display is in the last ten minutes of the 14th hour, so it rounds up to 15:00 rather than down to 14:00.",
+        "D": "A time rounding to 16:00 would have an hour such as 15 or 16; those second hour digits have a top segment absent here.",
+        "E": "A time near 17:00 likewise cannot have the displayed hour 14."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2018_4502/11_section_1_q8",
+      "context_sha256": "1fe33799b6f4b84361f5100ca8155b26f68baee87321dadf3e81c7787c8606d4",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q008_r008_p007_asset_01_2f371e40e1",
+          "blackstone_2018_q008_r008_p007_asset_02_eefa75de98",
+          "blackstone_2018_q008_r008_p007_view_01_147640c636"
+        ],
+        "visual_evidence": "Upper clock segments identify 14 and minute tens 5; final minute digit need not be identified to round to the nearest hour.",
+        "reasoning_check": "No journey-duration assumption needed; all possible 14:50–14:59 times round to 15:00."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 12,
+      "main_reasoning": "Compare each increase with the earlier year's value. The percentage rises are 1.20/3 = 40%, 2.10/4.20 = 50%, 3.15/6.30 = 50%, 5.67/9.45 = 60% and 7.56/15.12 = 50%. The largest percentage increase is therefore 2014–2015, D, even though the next year's cash increase is larger.",
+      "incorrect_options": {
+        "A": "The rise from £3 to £4.20 is 40%, below the maximum of 60%.",
+        "B": "The rise from £4.20 to £6.30 is 50%, not 60%.",
+        "C": "The rise from £6.30 to £9.45 is also 50%, below the 2014–2015 rate.",
+        "E": "The £7.56 cash increase is largest, but relative to £15.12 it is only 50%."
+      },
+      "correct_answer": "D",
+      "question_record": "blackstone_2018_4502/11_section_1_q12",
+      "context_sha256": "3b3a6071f4324229ec7bdf82297e0cd153498f35de2e255775eb44f2dc734881",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q012_r012_p009_asset_01_1ea96e9375",
+          "blackstone_2018_q012_r012_p009_view_01_a66fa25108"
+        ],
+        "visual_evidence": "Table values £3,£4.20,£6.30,£9.45,£15.12,£22.68 read in year order.",
+        "reasoning_check": "Divided each increment by its own initial value; verified 9.45×1.6=15.12."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 13,
+      "main_reasoning": "Enough whole rolls must be bought to supply at least 54 m. Embossed needs 14 rolls of 4 m; its 25% discount gives 14×£50×0.75 = £525. The comparable totals are woodchip £550, vymura £567, anaglypta £576 and fabric effect £600. Embossed, D, is cheapest.",
+      "incorrect_options": {
+        "A": "Woodchip needs 27 rolls. Five are free under every-fifth-roll-free, leaving 22×£25 = £550, £25 more than embossed.",
+        "B": "Vymura needs 18 rolls: 18×£35×0.9 = £567 after its qualifying discount.",
+        "C": "Anaglypta also needs 18 rolls, costing 18×£40×0.8 = £576 after discount.",
+        "E": "Fabric effect needs 11 rolls, so six paid rolls at £100 each are required under buy-one-get-one-free: £600."
+      },
+      "correct_answer": "D",
+      "question_record": "blackstone_2018_4502/11_section_1_q13",
+      "context_sha256": "e728902a98c40784ed8d826fbe477c6ae81d2dd65bf87b9b29f0aa9de1187156",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q013_r013_p010_asset_01_f49683fb1c",
+          "blackstone_2018_q013_r013_p010_view_01_147640c636"
+        ],
+        "visual_evidence": "Read all roll lengths, prices and distinct offer conditions; embossed 4 m/£50/25% off.",
+        "reasoning_check": "Whole-roll rounding and free-roll counts applied before comparing all five complete costs."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 14,
+      "status": "text_sufficient_illustration",
+      "reason": "The prose specifies folded sheets, pages, three blocks and eight sheets per block. The block-centre calculation can be done from that text alone; its drawing is illustrative. Draft preserved but not attached during image-only generation.",
+      "main_reasoning": "Each folded sheet has four pages. Eight sheets therefore make a 32-page block. The three blocks cover pages 1–32, 33–64 and 65–96; stitching is visible halfway through each, between pages 16/17, 48/49 and 80/81. Only 48 and 49 is offered, so C is correct.",
+      "incorrect_options": {
+        "A": "46/47 is a facing-page pair, but it is two pages before the middle opening of the second block.",
+        "B": "47/48 lies before the central 48/49 opening and is not the stitched centre.",
+        "D": "63/64 lies at the end of the second block, not halfway through it.",
+        "E": "64/65 is the boundary between the second and third blocks, not the centre of either."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2018_4502/11_section_1_q14",
+      "context_sha256": "cc5a0d6324588e57e7aee8f7e7e5438f3c4e7a8e221fb92dcd3543e68f56ba62",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q014_r014_p011_asset_01_5e6579a99c",
+          "blackstone_2018_q014_r014_p011_view_01_147640c636"
+        ],
+        "visual_evidence": "Diagram shows separately stitched folded-sheet blocks; stem changes sheets per block from four to eight.",
+        "reasoning_check": "Count four pages per sheet, then calculate each 32-page block's central opening."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 19,
+      "main_reasoning": "First apply both exclusions. David misses 16−13 = 3 penalties and Colin misses 13−9 = 4, so both are excluded. Graham has three instances of missing consecutive training sessions, also excluding him. John and Mike qualify; Mike scores 29 goals against John's 26. Thus Mike, D, wins.",
+      "incorrect_options": {
+        "A": "David's 32 goals do not help because his three missed penalties exceed the permitted two.",
+        "B": "John meets both conditions but scores only 26 goals, fewer than Mike's 29.",
+        "C": "Colin misses four penalties, exceeding the limit despite his 30 goals.",
+        "E": "Graham's 36 goals are highest, but he misses two consecutive sessions three times and is ineligible."
+      },
+      "correct_answer": "D",
+      "question_record": "blackstone_2018_4502/11_section_1_q19",
+      "context_sha256": "ddbf0b084697b84816f90e39b44f341e0e6027faebdd7caa1425a6b4db259f73",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q019_r019_p014_asset_01_7d62275ae6",
+          "blackstone_2018_q019_r019_p014_view_01_147640c636"
+        ],
+        "visual_evidence": "Read missed-session counts, penalties attempted/scored and total goals for all five players.",
+        "reasoning_check": "Eligibility filters applied before maximizing goals; Mike has two penalty misses and two consecutive-session absences, both allowed."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 24,
+      "main_reasoning": "The pictured digit 0 uses six segments and 8 uses seven. A valid hour can attain 6+7 = 13 segments at 08, and valid minutes can attain the same at 08. Thus 08:08 displays 26 segments. No valid hour or minute pair can exceed 13: using 8 in either tens position is invalid. Therefore D is correct.",
+      "incorrect_options": {
+        "A": "Twenty is below the achievable 26 segments in the valid time 08:08.",
+        "B": "Twenty-three is not the maximum because 08:08 supplies three more segments.",
+        "C": "Twenty-four is also below the verified 26-segment display.",
+        "E": "Twenty-eight would require four seven-segment 8s, giving 88:88 rather than a valid time."
+      },
+      "correct_answer": "D",
+      "question_record": "blackstone_2018_4502/11_section_1_q24",
+      "context_sha256": "91862f7a9b258b6304263c12e1894638a684a9762a78ce667bd567921cdf7dc9",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q024_r024_p017_asset_01_fea6299c81",
+          "blackstone_2018_q024_r024_p017_asset_02_0b18bb0d3e",
+          "blackstone_2018_q024_r024_p017_asset_03_90c5f524c3",
+          "blackstone_2018_q024_r024_p017_asset_04_3e9e8e0d24",
+          "blackstone_2018_q024_r024_p017_asset_05_0b43d88f74",
+          "blackstone_2018_q024_r024_p017_asset_06_c876ba8074",
+          "blackstone_2018_q024_r024_p017_asset_07_17e92c3d62",
+          "blackstone_2018_q024_r024_p017_asset_08_2ffd244816",
+          "blackstone_2018_q024_r024_p017_asset_09_58deb7ac51",
+          "blackstone_2018_q024_r024_p017_asset_10_5bcd8e1647",
+          "blackstone_2018_q024_r024_p017_view_01_9e478a0ae8"
+        ],
+        "visual_evidence": "Digit patterns show 0=6 segments and 8=7; other valid tens digits do not improve on 0.",
+        "reasoning_check": "Exhaustive valid-hour/minute maxima are each 13, attained together at 08:08; colon excluded as not a digit segment."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 25,
+      "main_reasoning": "First-choice totals are column sums: Sam 116831, Val 122036, Kim 116262, Pat 121986 and Jo 117836. Only Val and Pat advance. Transfer second choices from Sam, Kim and Jo voters: Val receives 37862+25517+20143 = 83522, giving 205558. Pat receives 26493+29681+31354 = 87528, giving 209514. Pat wins, D.",
+      "incorrect_options": {
+        "A": "Sam's 116831 first choices are below both finalists, so Sam is eliminated before transfers.",
+        "B": "Val leads the first round by 50 votes but loses after transfers, finishing 3956 votes behind Pat.",
+        "C": "Kim has only 116262 first choices and does not reach the final round.",
+        "E": "Jo's 117836 first choices also fall below Val and Pat; second choices cannot reinstate an eliminated candidate."
+      },
+      "correct_answer": "D",
+      "question_record": "blackstone_2018_4502/11_section_1_q25",
+      "context_sha256": "50c54ef59256c7bec173cbe457f76621e404cccb85b9894022d1222df21e68a5",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q025_r025_p018_asset_01_66f0a3edb2",
+          "blackstone_2018_q025_r025_p018_view_01_147640c636"
+        ],
+        "visual_evidence": "Table headings establish first choices as columns and second choices as rows; all five column sums and relevant transfer cells read.",
+        "reasoning_check": "Do not transfer ballots from one finalist to the other; independent sums produce Pat 209514 versus Val 205558."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 26,
+      "main_reasoning": "Ben looks along the columns of the overhead plan. Its leftmost column has just one stack, in the second row from the top. Amy's view fixes that row's maximum height at six, so Ben's leftmost stack cannot appear seven high. E shows seven on the left and is impossible. The other options place the seven-high maximum in one of the two columns that can contain it.",
+      "incorrect_options": {
+        "A": "Heights 5,6,7 are possible by putting the seven-high stack in the right column and the six-high stack centrally.",
+        "B": "Heights 5,7,6 can place the seven-high stack centrally and the six-high stack on the right.",
+        "C": "Heights 6,5,7 allow the lone left stack to be six high and the seven-high stack on the right.",
+        "D": "Heights 6,7,5 allow six on the left, seven centrally and the mandatory five-high stack on the right."
+      },
+      "correct_answer": "E",
+      "question_record": "blackstone_2018_4502/11_section_1_q26",
+      "context_sha256": "b2cb1b32fc18fce25f8b74ca514e5f9e4883ce4ffb1a1801a7bf4a875d75723d",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q026_r026_p019_asset_01_c4f3cb8a87",
+          "blackstone_2018_q026_r026_p019_asset_02_299d355a73",
+          "blackstone_2018_q026_r026_p019_asset_03_a4b86b4f8a",
+          "blackstone_2018_q026_r026_p019_asset_04_734495b500",
+          "blackstone_2018_q026_r026_p019_asset_05_091d04724b",
+          "blackstone_2018_q026_r026_p019_asset_06_b9ef9fe3c5",
+          "blackstone_2018_q026_r026_p019_asset_07_c5cc6c92db",
+          "blackstone_2018_q026_r026_p019_asset_08_89086f585f",
+          "blackstone_2018_q026_r026_p019_asset_09_6169b21de6",
+          "blackstone_2018_q026_r026_p019_view_01_147640c636"
+        ],
+        "visual_evidence": "Overhead rows have columns {middle},{left,middle,right},{middle,right},{right}; Amy's row maxima are 5,6,7,5. Ben options A–E read 5/6/7,5/7/6,6/5/7,6/7/5,7/5/6.",
+        "reasoning_check": "Constructible height assignments verified for A–D; E alone requires the leftmost unique stack to exceed its Amy-view row maximum."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 31,
+      "main_reasoning": "Only books covering the whole 1900–1950 period qualify. The cheapest initially is History of the 20th Century at £45, so Joanne returns with £45. After the 20% reduction, the qualifying books cost £36, £40 and £48. The most expensive she can afford is the illustrated guide at £40. She has £45−£40 = £5 left, E.",
+      "incorrect_options": {
+        "A": "Spending all £45 is impossible among the discounted qualifying prices £36, £40 and £48.",
+        "B": "£1 left would mean spending £44; All About History has that sale price but does not cover the required period.",
+        "C": "£2 left would mean spending £43, which is not a listed qualifying sale price.",
+        "D": "£3 left would mean spending £42; no qualifying book has that discounted price."
+      },
+      "correct_answer": "E",
+      "question_record": "blackstone_2018_4502/11_section_1_q31",
+      "context_sha256": "6a0fafec5a8c2c53156620de996d9420efb63a0824fc4f3f793237076f8c996d",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q031_r031_p022_asset_01_b77c11e8d4",
+          "blackstone_2018_q031_r031_p022_view_01_147640c636"
+        ],
+        "visual_evidence": "Qualifying titles/initial prices: History of the 20th Century £45, Illustrated Guide £50, History for All £60; other books end by 1900 or 1850.",
+        "reasoning_check": "Period coverage applied before both price choices; 0.8×50=40 and £48 remains unaffordable."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 32,
+      "status": "rejected",
+      "reason": "The two-piece polygon reconstructions were not independently verified for every rotated candidate. A specific geometric proof excluding E remains unresolved; no explanation inferred solely from the known answer.",
+      "question_record": "blackstone_2018_4502/11_section_1_q32"
+    },
+    {
+      "year": 2018,
+      "number": 36,
+      "main_reasoning": "Divide wholesale pack costs by 12 before finding profit per item. Weekly profits are crayons (10−4)×180 = 1080p; felt tips (12−6)×150 = 900p; pencils (6−2)×200 = 800p; pens (15−3)×150 = 1800p; rulers (30−5)×40 = 1000p. Pens and crayons are the two largest, totalling £28.80: B.",
+      "incorrect_options": {
+        "A": "Crayons and pencils yield £10.80+£8 = £18.80, below crayons and pens.",
+        "C": "Felt tips and pencils yield £9+£8 = £17, well below £28.80.",
+        "D": "Felt tips and rulers yield £9+£10 = £19, not the maximum.",
+        "E": "Pens and rulers yield £18+£10 = £28, 80p less than pens and crayons."
+      },
+      "correct_answer": "B",
+      "question_record": "blackstone_2018_4502/11_section_1_q36",
+      "context_sha256": "6021c7806be479432ba2996b8239c5d4f65dcf906a81b0f5e08c11a40810ad4b",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q036_r036_p025_asset_01_6180f2aaf9",
+          "blackstone_2018_q036_r036_p025_view_01_c679ce1c79"
+        ],
+        "visual_evidence": "Pack costs 48,72,24,36,60p; retail prices 10,12,6,15,30p; sales 180,150,200,150,40.",
+        "reasoning_check": "Compared profits rather than revenue; unit conversion from packs of twelve checked for every item."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 38,
+      "main_reasoning": "Use both whole-square position and tenths within a square. Hilltop (763613) fixes the low-left point at easting 76.3, northing 61.3; the rest of the pattern then locates the grid. Longwood is 78.7 east and 63.4 north. The point W lies about seven tenths across the 78 square and four tenths above line 63, so W, B, is Longwood.",
+      "incorrect_options": {
+        "A": "V is around 77.7/63.4: it has the correct northing but lies one whole square west of Longwood.",
+        "C": "X is approximately 79.2/62.6, matching High Moor rather than Longwood.",
+        "D": "Y is approximately 78.1/61.4, matching Riverside and lying much farther south.",
+        "E": "Z is approximately 80.4/61.3, matching Sunnybank, east and south of Longwood."
+      },
+      "correct_answer": "B",
+      "question_record": "blackstone_2018_4502/11_section_1_q38",
+      "context_sha256": "79f6334b6da73c242c495bce25a12b04ce21a0c41d2f8d9d0eb48d82730c3dbf",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q038_r038_p027_asset_01_a02de52e0c",
+          "blackstone_2018_q038_r038_p027_asset_02_fe5f468384",
+          "blackstone_2018_q038_r038_p027_asset_03_ce015e97f6",
+          "blackstone_2018_q038_r038_p027_view_01_147640c636"
+        ],
+        "visual_evidence": "Map, grid-reference worked example and full place-reference table checked together; W corresponds to 787634.",
+        "reasoning_check": "Calibrated axes from several relative reference points; did not equate an unnumbered grid cell with an absolute coordinate without corroboration."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 43,
+      "main_reasoning": "An 8-hour ticket costs £6.20. Two 3-hour tickets and a 2-hour ticket cover the required 7.5 hours for £1.70+£1.70+£1.20 = £4.60. Comparing combinations of the listed whole-hour allowances shows none covering at least eight hours costs less. The maximum saving is £6.20−£4.60 = £1.60, C.",
+      "incorrect_options": {
+        "A": "A £1.10 saving means paying £5.10, more than the available £4.60 combination.",
+        "B": "A £1.40 saving is possible with four 2-hour tickets costing £4.80, but it is not the greatest saving.",
+        "D": "A £2.10 saving would require an adequate combination costing only £4.10; the cheapest covering combination is £4.60.",
+        "E": "A £3.60 saving would mean paying £2.60, insufficient to cover 7.5 hours under the listed tariffs."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2018_4502/11_section_1_q43",
+      "context_sha256": "1e5e9a917b254674f758c2b60251160097449d91b82af3b5f5d53f2c9477f310",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q043_r043_p030_asset_01_b985d04484",
+          "blackstone_2018_q043_r043_p030_view_01_147640c636"
+        ],
+        "visual_evidence": "Tariffs for 1–8 hours: £0.80,1.20,1.70,2.40,3.50,4.20,5.20,6.20.",
+        "reasoning_check": "Whole-hour ticket allowances make required covered allowance at least eight; dynamic minimum-cost comparison gives £4.60."
+      }
+    },
+    {
+      "year": 2018,
+      "number": 44,
+      "status": "rejected",
+      "reason": "The orientation of shaded triangular sectors across all five cube nets needs an independent folding verification. Visible colours alone do not establish a reliable option-by-option rejection, so this remains manual review.",
+      "question_record": "blackstone_2018_4502/11_section_1_q44"
+    },
+    {
+      "year": 2018,
+      "number": 49,
+      "main_reasoning": "Shelves must be single pieces at least 40 cm deep, so 30 cm boards cannot be used. A 4 m board at 45 cm depth costs $9.30 and gives two 1.8 m shelves; a 2 m board costs $4.95 and gives one. Buy two 4 m boards and one 2 m board: 2×$9.30+$4.95 = $23.55 for five shelves. This is C.",
+      "incorrect_options": {
+        "A": "$21.15 is below the minimum: each pair of complete shelves costs at least $9.30 and the remaining single shelf at least $4.95.",
+        "B": "$23.25 is 30 cents below that verified minimum; shorter offcuts cannot be joined into a complete shelf.",
+        "D": "$24.75 buys five separate 2 m boards at $4.95 each but misses the saving from two 4 m boards.",
+        "E": "$25.50 buys the analogous 60 cm-deep boards, which are more expensive than the sufficient 45 cm depth."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2018_4502/11_section_1_q49",
+      "context_sha256": "d5ff5560c7b0ec2a75848f0eb6d08fda8eaf54d10890b2828a542f7eefba6a3c",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2018_q049_r049_p034_asset_01_572d6afe2d",
+          "blackstone_2018_q049_r049_p034_view_01_147640c636"
+        ],
+        "visual_evidence": "Read lengths, depths and prices; 4 m/45 cm=$9.30,2 m/45 cm=$4.95; 4 m gives two complete shelves while 3 m gives only one.",
+        "reasoning_check": "Width and indivisible-shelf constraints applied; cheaper depth30 excluded and all lengths compared by complete shelves produced."
+      }
+    }
+  ]
+}

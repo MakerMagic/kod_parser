@@ -1,0 +1,451 @@
+{
+  "generation_origin": "codex_visual_review_using_existing_provider_independent_prompt",
+  "prompt_sha256": "3161f496bc34705efa86436bf88c2f5f133bb61329025d98f5d0baf8802381c8",
+  "provider": "codex_assistant",
+  "explanations": [
+    {
+      "year": 2019,
+      "number": 2,
+      "main_reasoning": "Tax paid is annual income multiplied by the stated rate. Tim pays $10000×30% = $3000. David pays $50000×6% = $3000 as well, so C is correct. Matching the rate alone would be insufficient because the incomes differ.",
+      "incorrect_options": {
+        "A": "Neil pays $20000×25% = $5000, which is $2000 more than Tim.",
+        "B": "Veronica pays $150000×3% = $4500, not $3000 despite her lower rate.",
+        "D": "Amy pays $80000×5% = $4000, exceeding Tim's tax by $1000.",
+        "E": "Roz has Tim's 30% rate but pays it on $12000, giving $3600 rather than $3000."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2019_4502/11_section_1_q2",
+      "context_sha256": "f484cd9fbe9255b249b6dbd05add43f7e5c465abd8a3112b99f2d8f6567264c8",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q002_r002_p003_asset_01_f1128a30ac",
+          "blackstone_2019_q002_r002_p003_view_01_aae7330da1"
+        ],
+        "visual_evidence": "Income/rate pairs for Tim and all five alternatives read from the six-row table.",
+        "reasoning_check": "All six products independently checked; David alone equals Tim's $3000."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 6,
+      "status": "text_sufficient_illustration",
+      "reason": "The prose states the central square, side-strip width ratio and leaf-area fraction. These determine red:white without reading the flag picture. Draft preserved but not attached during image-only generation.",
+      "main_reasoning": "Take each side strip to have width 1 and the middle square width and height 2. Total area is 4×2 = 8. The two red strips occupy 4 units, and the leaf occupies a quarter of the middle square, another 1. Red area is therefore 5 and remaining white area is 3, giving 5:3, D.",
+      "incorrect_options": {
+        "A": "1:1 counts the equal side-strip and central-square areas but ignores the red leaf inside the centre.",
+        "B": "2:1 would allocate two thirds of the flag to red, whereas the stated leaf area makes red exactly five eighths.",
+        "C": "3:2 makes red three fifths of the flag, below the actual five eighths.",
+        "E": "5:4 counts the leaf as red but fails to subtract its area from the central white square."
+      },
+      "correct_answer": "D",
+      "question_record": "blackstone_2019_4502/11_section_1_q6",
+      "context_sha256": "4839a82fa02ace3409fe1e4970cead36cad968b68b372a030b976ecb4aadc850",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q006_r006_p006_asset_01_970a468805",
+          "blackstone_2019_q006_r006_p006_view_01_5467457654"
+        ],
+        "visual_evidence": "Flag widths 1:2:1; common height equals centre-square width; red leaf is one quarter of the centre.",
+        "reasoning_check": "Area conservation: red5 plus white3 equals total8; no measurement from the not-to-scale drawing."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 7,
+      "main_reasoning": "Compare the absolute difference between each student's two marks. Hillary Gordon receives 50 from Mr Robson and 90 from Mrs De Vere, a difference of 40. This exceeds Betty's 30 and every other difference, which is at most 10. Therefore Mrs De Vere and Mr Robson, E, disagree most.",
+      "incorrect_options": {
+        "A": "Mr Kettering and Mrs De Vere differ by 30 on Betty's marks, below the maximum difference of 40.",
+        "B": "Mr Robson and Ms Nolan differ by only 10 on Clara's marks, 50 versus 60.",
+        "C": "Ms Rosenberg and Ms Nolan differ by 10 on Janine's marks, 80 versus 90.",
+        "D": "Mr Kettering and Ms Rosenberg both give Cora 80, so they do not disagree on her mark."
+      },
+      "correct_answer": "E",
+      "question_record": "blackstone_2019_4502/11_section_1_q7",
+      "context_sha256": "5bc702205505fd3fa4fb5686021e988bf119a56f460f93efac9369a6adf633d7",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q007_r007_p007_asset_01_93374c42b2",
+          "blackstone_2019_q007_r007_p007_view_01_5467457654"
+        ],
+        "visual_evidence": "Examiner names linked to each student's two marks; Hillary's 50/90 is the unique largest gap.",
+        "reasoning_check": "Compared individual paired marks, not final averages or examiner totals."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 8,
+      "main_reasoning": "Let Standard cost s and Premium cost p, with p>s. Friday earns 150s+225 p, exceeding Thursday's 200s+150 p by 75 p−50s, which is positive. Saturday earns 300s+125 p; compared with Friday its advantage is 150s−100 p. This can be positive or negative depending on whether p is below or above 1.5s. Thus Friday or Saturday could have the highest income: E.",
+      "incorrect_options": {
+        "A": "Thursday cannot be highest because Friday necessarily earns more whenever Premium is dearer than Standard.",
+        "B": "Friday is not guaranteed highest: with s=1 and p=1.2, Saturday earns 450 versus Friday's 420.",
+        "C": "Thursday is impossible as the highest-income night, so the proposed Thursday-or-Friday alternatives are wrong.",
+        "D": "This also includes impossible Thursday and omits Friday, which can be highest when Premium is sufficiently expensive."
+      },
+      "correct_answer": "E",
+      "question_record": "blackstone_2019_4502/11_section_1_q8",
+      "context_sha256": "18106a0a2f019f11972310acc2d881cbf7f2823dc0f03192c1e0a76d72ed9d84",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q008_r008_p008_asset_01_b09422fd34",
+          "blackstone_2019_q008_r008_p008_asset_02_22b909c930",
+          "blackstone_2019_q008_r008_p008_view_01_5467457654"
+        ],
+        "visual_evidence": "Read Standard/Premium bars: Thursday200/150, Friday150/225, Saturday300/125.",
+        "reasoning_check": "Algebra establishes Thursday's exclusion and price-dependent ordering of Friday versus Saturday; example p=2s makes Friday win."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 13,
+      "main_reasoning": "Divide each wage percentage by route length. Karis–Helsinki costs 6/75 = 0.08 percentage points of wages per kilometre. Uppsala–Stockholm has the same 6% total cost but a shorter 72 km route, so its per-kilometre proportion is higher. All the other ratios also exceed 0.08. Therefore C is correct.",
+      "incorrect_options": {
+        "A": "Luton–London gives 14/56 = 0.25 percentage points per kilometre, much higher than 0.08.",
+        "B": "Brandenburg–Berlin gives 8/69 ≈ 0.116, above the Finnish route's ratio.",
+        "D": "Uppsala–Stockholm gives 6/72 ≈ 0.0833, slightly above 6/75.",
+        "E": "Drogheda–Dublin's lowest total percentage is spread over only 46 km: 5/46 ≈ 0.109, still higher."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2019_4502/11_section_1_q13",
+      "context_sha256": "59dd00069a4197398e5fdf8c5ca6290ac96c82aaded64c9b8500ac92c341f64b",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q013_r013_p011_asset_01_8f359898d2",
+          "blackstone_2019_q013_r013_p011_view_01_5467457654"
+        ],
+        "visual_evidence": "Lengths and wage percentages read from all five routes in the comparison table.",
+        "reasoning_check": "Compared percentage per kilometre rather than raw percentage or currency costs across countries."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 14,
+      "main_reasoning": "The first plot shows car 2 is more expensive and newer than car 1. The second shows car 2 is bigger and faster. Hence the cheaper car, car 1, is smaller, so B's claim that it is bigger is the one incorrect statement.",
+      "incorrect_options": {
+        "A": "This is true: car 2 has the higher market price and the lower age.",
+        "C": "This is true: car 1 is older on the first plot and has the lower maximum speed on the second.",
+        "D": "This is true: newer car 2 is the larger car according to the size axis.",
+        "E": "This is true: slower car 1 is also smaller on the second plot."
+      },
+      "correct_answer": "B",
+      "question_record": "blackstone_2019_4502/11_section_1_q14",
+      "context_sha256": "f01d38151a0ca4dd56263de2e46117064edaa1614493ea37511c9007d4a7f2b3",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q014_r014_p012_asset_01_08f861435f",
+          "blackstone_2019_q014_r014_p012_asset_02_eae08e6ad4",
+          "blackstone_2019_q014_r014_p012_view_01_801d84c16d"
+        ],
+        "visual_evidence": "Axes read as market price/age and maximum speed/size, with car labels maintained across plots.",
+        "reasoning_check": "Question asks for the false statement; confirmed B reverses the observed size comparison and the other four statements hold."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 19,
+      "main_reasoning": "Percentage increase is (year 3−year 1)/year 1×100. Grandia rises from 20 to 60 thousand tonnes: (60−20)/20×100 = 200%. No other country triples its first-year total; the next largest increases include Carbonda's 100% and Killumpa's 75%. Therefore the largest increase is 200%, E.",
+      "incorrect_options": {
+        "A": "50% occurs for Nalpha, from 32 to 48, but is below Grandia's 200% increase.",
+        "B": "75% describes Killumpa's rise from 40 to 70, not the largest rise.",
+        "C": "100% describes Carbonda's doubling from 20 to 40; Grandia triples instead.",
+        "D": "150% would turn Grandia's 20 into 50, whereas the table shows 60."
+      },
+      "correct_answer": "E",
+      "question_record": "blackstone_2019_4502/11_section_1_q19",
+      "context_sha256": "f49f57cb3ffa4e22f3739b61673d4584ac704c66e77464f70b3a9981fc183380",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q019_r019_p015_asset_01_2fd0598a32",
+          "blackstone_2019_q019_r019_p015_view_01_5467457654"
+        ],
+        "visual_evidence": "All twenty year1/year3 pairs compared; Grandia20/60,Carbonda20/40,Killumpa40/70,Nalpha32/48.",
+        "reasoning_check": "Computed increase relative to the starting amount; distinguished 200% increase from a final level of 300%."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 20,
+      "status": "rejected",
+      "reason": "All six transparent-block projections and their internal visible edges were not independently reconstructed. E cannot be rejected with a sufficiently verified geometric explanation yet; manual spatial review remains required.",
+      "question_record": "blackstone_2019_4502/11_section_1_q20"
+    },
+    {
+      "year": 2019,
+      "number": 24,
+      "main_reasoning": "Count how often each fixed segment is used by digits 1–9; do not count the total segments in a single digit. The lower-right segment appears in every digit except 2, so its count is 8. The lower-left appears only in 2, 6 and 8, giving 3. The other segment counts lie between these limits. Thus the maximum/minimum pair is 8 and 3, C.",
+      "incorrect_options": {
+        "A": "The maximum exceeds 7 because the lower-right segment lights for eight digits; the minimum is 3 rather than 4.",
+        "B": "Both limits are wrong: the lower-right reaches 8 and the lower-left is used only 3 times, not 5.",
+        "D": "Its maximum of 8 is correct, but the minimum of 5 overlooks the sparsely used lower-left segment.",
+        "E": "No segment appears in all nine digits; even the lower-right is off for 2, and the minimum is below 4."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2019_4502/11_section_1_q24",
+      "context_sha256": "d967ae6dffe403fffa32c0ae3e2cf92cf3b61775b602f09e8d3e9f1f582fc5aa",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q024_r024_p018_asset_01_5f0342d354",
+          "blackstone_2019_q024_r024_p018_asset_02_c2226edecb",
+          "blackstone_2019_q024_r024_p018_view_01_0fe929a466"
+        ],
+        "visual_evidence": "Seven fixed segment positions identified from the diagram; standard digit patterns use lower-right for1,3,4,5,6,7,8,9 and lower-left for2,6,8.",
+        "reasoning_check": "All seven frequencies checked: top7,upper-right7,lower-right8,bottom6,lower-left3,upper-left5,middle7."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 25,
+      "main_reasoning": "Compare four consecutive nights including Saturday with each hotel's own deal. Palace is cheapest from Friday through Monday: (50+90+80+60)×50% = €140. Checking the eligible four-night windows gives minimum bills of Grand €170, Majestic €165, Palms €160 and Plaza €180. Therefore the overall minimum is €140, C.",
+      "incorrect_options": {
+        "A": "€110 is below every valid four-night bill including Saturday after applying the stated deals.",
+        "B": "€120 likewise cannot cover the required stay; even Palace's cheapest discounted four-night window costs €140.",
+        "D": "€145 is Palace's Thursday–Sunday bill, half of €290, but Friday–Monday is €5 cheaper.",
+        "E": "€160 is achievable at Palms but costs €20 more than Palace's cheapest qualifying stay."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2019_4502/11_section_1_q25",
+      "context_sha256": "24032a24a22769ab6fef6fe3c7f7070b47e4228d04b6300cda242d38e457d97c",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q025_r025_p019_asset_01_f6618853aa",
+          "blackstone_2019_q025_r025_p019_view_01_5467457654"
+        ],
+        "visual_evidence": "Read nightly rates and deal definitions for all five hotels; Palace Fri/Sat/Sun/Mon=50/90/80/60.",
+        "reasoning_check": "Enumerated the four start days giving a Saturday night; applied the third-night-free rule to its actual chronological night, not an arbitrary cheapest night."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 26,
+      "main_reasoning": "The route has three straight runs, each of two rolls: right, down, right. Two rolls in one direction swap the top and bottom faces. Three such swaps therefore leave the face opposite the initial top facing up. Folding the pictured net puts the rectangle opposite the triangle. Since the triangle starts on top, the rectangle finishes on top: D.",
+      "incorrect_options": {
+        "A": "The square is adjacent to the triangle in the net, not opposite it; it cannot be the result of the three top/bottom swaps.",
+        "B": "The filled circle is also on a side face relative to the initial triangle, rather than its opposite face.",
+        "C": "The triangle would return to the top after an even number of these two-roll runs; there are three runs.",
+        "E": "The ring is another adjacent face, so it does not occupy the final opposite-top position."
+      },
+      "correct_answer": "D",
+      "question_record": "blackstone_2019_4502/11_section_1_q26",
+      "context_sha256": "3030647bbbb054c99e317bab2fda2f8b40801b4a476064121c808f4b5154dfac",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q026_r026_p020_asset_01_034c12c55b",
+          "blackstone_2019_q026_r026_p020_asset_02_12de63f5c4",
+          "blackstone_2019_q026_r026_p020_asset_03_2618dff6a1",
+          "blackstone_2019_q026_r026_p020_asset_04_c91a8b0f5e",
+          "blackstone_2019_q026_r026_p020_asset_05_f3a48969d6",
+          "blackstone_2019_q026_r026_p020_asset_06_adceecac63",
+          "blackstone_2019_q026_r026_p020_asset_07_99791ef8b2",
+          "blackstone_2019_q026_r026_p020_asset_08_b1cc784b3c",
+          "blackstone_2019_q026_r026_p020_view_01_5467457654"
+        ],
+        "visual_evidence": "Net has rectangle two faces left of triangle; route arrows cover two rightward, two downward and two rightward moves.",
+        "reasoning_check": "Each straight pair is a 180-degree roll; top/bottom identity toggles three times irrespective of the horizontal direction changes."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 30,
+      "main_reasoning": "Going second lets Alex choose the largest remaining adjacent average after seeing Sue's pair. The only adjacent differences as large as 6 are 1/8 (7), 3/9 (6) and 8/2 (6). Against 1/8 or 8/2, Alex can take 9/7 for an average of 8; against 3/9 she can take 6/7 for 6.5. Every other first move scores at most 5 and leaves an adjacent average above it. Thus playing second guarantees victory: E.",
+      "incorrect_options": {
+        "A": "Choosing 1 and 8 scores 7, but Sue can then choose adjacent 9 and 7 for an average of 8.",
+        "B": "After Alex removes 3 and 9, the neighbouring 6 and 7 remain. Sue's average of 6.5 beats Alex's difference of 6 by half a point.",
+        "C": "Choosing 6 and 7 scores only 1, leaving adjacent 3 and 9 with an average of 6.",
+        "D": "The difference between 7 and 9 is only 2. Sue can more than double this with the remaining neighbouring 3 and 6, averaging 4.5."
+      },
+      "correct_answer": "E",
+      "question_record": "blackstone_2019_4502/11_section_1_q30",
+      "context_sha256": "6d3f6ad267e65222b6a13059218aa331e7cf7cd127a564d19e284461296d4431",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q030_r030_p023_asset_01_408d3a03df",
+          "blackstone_2019_q030_r030_p023_view_01_5467457654"
+        ],
+        "visual_evidence": "Grid rows5/1/8,3/6/2,9/7/4; only horizontal/vertical neighbours included.",
+        "reasoning_check": "Enumerated all twelve first-player edges and best disjoint second-player edges; second player strictly beats every possible first score."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 31,
+      "main_reasoning": "The calendar has eight weekend days and two highlighted Monday bank holidays: ten long-service days and 21 ordinary weekdays. A long day lasts 400 minutes; six crossings need 6×50+5×20 = 400. An ordinary day lasts 230 minutes; four crossings need 4×50+3×10 = 230. No stop is needed after the last crossing. Total = 10×6+21×4 = 144, B.",
+      "incorrect_options": {
+        "A": "140 counts the eight weekends but treats both bank holidays as ordinary weekdays, losing two crossings on each.",
+        "C": "154 exceeds the daily maxima: ten days allow six crossings and the remaining 21 allow only four.",
+        "D": "166 similarly requires more crossings than the stated service windows and intermediate stops permit.",
+        "E": "186 assigns six crossings to all 31 days, ignoring the shorter weekday service."
+      },
+      "correct_answer": "B",
+      "question_record": "blackstone_2019_4502/11_section_1_q31",
+      "context_sha256": "a41859b2cb96c3fc838578c35742c84b48460df860f4207a20e9ee9b916ebc24",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q031_r031_p024_asset_01_ad59f7cc5e",
+          "blackstone_2019_q031_r031_p024_asset_02_185ec758ff",
+          "blackstone_2019_q031_r031_p024_asset_03_078f157461",
+          "blackstone_2019_q031_r031_p024_view_01_5467457654"
+        ],
+        "visual_evidence": "May starts Monday; weekends6/7,13/14,20/21,27/28 and bank holidays1/29; operating windows and stop lengths checked.",
+        "reasoning_check": "Used n crossings but n−1 intermediate stopovers, giving exact daily fits of 400 and 230 minutes."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 36,
+      "main_reasoning": "Rotate the 15×38 cm rectangles so their 38 cm sides run across the fabric. Four fit across 160 cm because 4×38 = 152 cm. They need 15 cm of length, rounded up to the permitted 20 cm purchase. Cost = 0.20×£2.80 = £0.56. The cheapest alternatives are 30 cm of 100 cm-wide material for 60 p or 30 cm of 120 cm-wide material for 66 p. Thus B is correct.",
+      "incorrect_options": {
+        "A": "42 p prices just 15 cm of the widest fabric, but purchases must be exact multiples of 10 cm.",
+        "C": "60 p is feasible using 30 cm of the 100 cm width, but the wide 20 cm strip is cheaper.",
+        "D": "66 p buys 30 cm of the 120 cm width, costing 10 p more than the optimal layout.",
+        "E": "80 p buys 40 cm of the narrowest material with the rectangles unrotated, an unnecessary extra cost."
+      },
+      "correct_answer": "B",
+      "question_record": "blackstone_2019_4502/11_section_1_q36",
+      "context_sha256": "f30bb3d58a7e5bb18d17a7ff5cdf98ac754e1838a4ab789bced1cf53b5e94ff5",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q036_r036_p028_asset_01_1adf3f43e5",
+          "blackstone_2019_q036_r036_p028_asset_02_aad9bbb5fc",
+          "blackstone_2019_q036_r036_p028_view_01_5467457654"
+        ],
+        "visual_evidence": "Pattern bounding rectangle15×38; widths/prices100/£2,120/£2.20,160/£2.80; length increments10 cm.",
+        "reasoning_check": "Area/width lower bounds rule out a20 cm strip at widths100 or120; explicit four-across layout establishes56p."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 37,
+      "main_reasoning": "First require 1600×700 mm, side grips and no pre-drilled tap holes. The qualifying steel baths are Europa £126 and Sierra £128; the qualifying acrylic baths are Carola £130 and Victory £149. The cheapest steel and acrylic choices are therefore £126 and £130. The saving is £4, C.",
+      "incorrect_options": {
+        "A": "£2 compares Sierra at £128 with Carola at £130, overlooking cheaper qualifying steel bath Europa.",
+        "B": "£3 is not the difference between the cheapest qualifying prices £130 and £126.",
+        "D": "£10 uses a different price comparison; the only least-cost qualifying pair differs by £4.",
+        "E": "£18 compares Carola £130 with Dalton £112, but Dalton has no side grips and is ineligible."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2019_4502/11_section_1_q37",
+      "context_sha256": "49f514460bdb1bf168c680685228e2c9b58097742c24c5d88c66663ee121919c",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q037_r037_p029_asset_01_cf20412222",
+          "blackstone_2019_q037_r037_p029_view_01_5467457654"
+        ],
+        "visual_evidence": "All catalogue rows filtered by dimensions, side grips and tap holes before comparing material prices.",
+        "reasoning_check": "Excluded cheaper Dalton/Oporto/Rocca without grips, shorter Polar, wider Balmoral and pre-drilled Gamma."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 38,
+      "main_reasoning": "Compare proportions, not raw vote totals. The chart's sectors are approximately train 21%, adventure 24%, farm 13%, museum 9% and theme park 32%. Row E gives 32/150≈21.3%, 36/150=24%, 20/150≈13.3%, 14/150≈9.3% and 48/150=32%, matching those sector sizes. Therefore E could represent the votes.",
+      "incorrect_options": {
+        "A": "Its farm share is 30/180=16.7%, making a 60-degree sector, noticeably larger than the pictured farm sector of about 48 degrees.",
+        "B": "Its museum share is 16/120=13.3%, too large for the smallest pictured sector of about 9%.",
+        "C": "Its farm share is 20/200=10%, too small for the pictured farm sector, which is about 13%.",
+        "D": "It assigns 15 votes each to farm and museum, but their sectors are visibly unequal."
+      },
+      "correct_answer": "E",
+      "question_record": "blackstone_2019_4502/11_section_1_q38",
+      "context_sha256": "c8773032c3cc52c9d25e91e5a3d15d76ef54b43b293257347c95c570caf7a208",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q038_r038_p030_asset_01_2e0cbc82a1",
+          "blackstone_2019_q038_r038_p030_asset_02_2e45bb8484",
+          "blackstone_2019_q038_r038_p030_view_01_5467457654"
+        ],
+        "visual_evidence": "Compared each row normalized by its own total with the five labelled pie sectors, including the unequal farm/museum angles.",
+        "reasoning_check": "E's implied angles are76.8,86.4,48,33.6,115.2 degrees, consistent with the displayed boundaries."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 42,
+      "main_reasoning": "One shed has front and back areas 2.5×1 and 2×1, plus two trapezoidal sides each averaging(2.5+2)/2×1=2.25 m². Total wooden area is 9 m²; the metal roof is excluded and the door included. Two sheds, three coats and 4 minutes/m² take 9×2×3×4=216 minutes. Add the single 20-minute break:236 minutes, or 3 hours 56 minutes, E.",
+      "incorrect_options": {
+        "A": "36 minutes covers just one coat on one shed:9×4. It omits the other coats, second shed and break.",
+        "B": "108 minutes covers three coats on one shed only, omitting the second shed and tea break.",
+        "C": "128 minutes is 108 plus the break, still painting only one shed.",
+        "D": "216 minutes is the correct painting time for both sheds but omits the required 20-minute break."
+      },
+      "correct_answer": "E",
+      "question_record": "blackstone_2019_4502/11_section_1_q42",
+      "context_sha256": "26f147c44678e7a1eb52748c70808611aba7b5a8e1a36404e5ef7314d8bd6cb4",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q042_r042_p033_asset_01_f54bb42b22",
+          "blackstone_2019_q042_r042_p033_view_01_5467457654"
+        ],
+        "visual_evidence": "Front height2.5 m, back2 m, width/depth1 m; sloping roof metal, four walls wood.",
+        "reasoning_check": "Two rectangles plus two trapezoids yield9 m²; all multiplicative requirements and exactly one break included."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 43,
+      "main_reasoning": "The twelve 16-year-olds count as adults, giving 16 adults and 8 children altogether. Split them into three groups of eight, distributing the children 2, 2, 4 and adults 6, 6, 4. Each group meets the at-least-two-children condition and costs$175, so the total is 3×$175=$525, A. Comparing the other packages cannot improve this: even replacing one eligible group with two full family tickets costs$180.",
+      "incorrect_options": {
+        "B": "$530 is achievable with two$175 groups and two$90 family tickets, but three groups save another$5.",
+        "C": "$545 is above the feasible$525 total; no extra charge is required for the 16-year-olds once grouped.",
+        "D": "$550 can buy two$175 groups and a$200 supergroup, but the third group can also satisfy the cheaper child condition.",
+        "E": "$560 also exceeds the verified minimum; the available eight children are sufficient to qualify all three groups."
+      },
+      "correct_answer": "A",
+      "question_record": "blackstone_2019_4502/11_section_1_q43",
+      "context_sha256": "13389e850081a9e2a76a61445fbd629e9cdb152a0dd68a55f9d064d77b7d4009",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q043_r043_p034_asset_01_dad93fcaba",
+          "blackstone_2019_q043_r043_p034_view_01_5467457654"
+        ],
+        "visual_evidence": "Ticket definitions checked: adult16+,child5–15,group8 with≥2 under16=$175,supergroup8=$200,family2adults+2children=$90.",
+        "reasoning_check": "Integer package comparison for16 adults/8 children confirms minimum525 and explicit feasible distribution."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 49,
+      "main_reasoning": "The minimum almond fraction is 20%, so eating all almonds removes 50 g from 250 g and leaves 200 g. Peanuts can originally be at most 40% of 250 g, or 100 g. That maximum is compatible with the other ingredient ranges, for example 20% almonds, 40% peanuts, 15% brazils, 10% hazelnuts and 15% pecans. The remaining peanut fraction is 100/200=50%, C.",
+      "incorrect_options": {
+        "A": "40% is the maximum original peanut percentage; removing almonds reduces the denominator and increases that fraction.",
+        "B": "48% would be 96 g of peanuts out of 200 g. The permitted 100 g gives a larger fraction.",
+        "D": "57% of the remaining 200 g would require 114 g of peanuts, exceeding the original 100 g maximum.",
+        "E": "60% would require 120 g, also above the permitted peanut mass."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2019_4502/11_section_1_q49",
+      "context_sha256": "a57907d286557c68ef7fbee80efabf1909801c1858e76dbbea0f9886f7cee939",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2019_q049_r049_p038_asset_01_8871e27634",
+          "blackstone_2019_q049_r049_p038_view_01_5467457654"
+        ],
+        "visual_evidence": "Ingredient ranges read: almonds20–30,brazils10–20,hazelnuts5–15,peanuts30–40,pecans10–20 percent.",
+        "reasoning_check": "Denominator after removal and feasibility of simultaneous ingredient percentages verified explicitly."
+      }
+    },
+    {
+      "year": 2019,
+      "number": 50,
+      "status": "rejected",
+      "reason": "Roman-numeral orientation and face handedness distinguish several candidates with otherwise adjacent faces. An independent orientation check for every option was not completed reliably, so no explanation is accepted from answer D alone.",
+      "question_record": "blackstone_2019_4502/11_section_1_q50"
+    }
+  ]
+}

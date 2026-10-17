@@ -50,6 +50,13 @@ def inspect_question(
     )
     live = []
     refs = [record.get("question_reference"), record.get("answer_reference")]
+    explanation_ref = (record.get("final_explanation") or {}).get("source_reference")
+    if (
+        explanation_ref
+        and explanation_ref.get("path")
+        and explanation_ref.get("sha256")
+    ):
+        refs.append(explanation_ref)
     q, a = record.get("question"), record.get("answer")
     if q:
         refs += [q["raw_reference"], record["question_document"]["input"]]
@@ -110,6 +117,13 @@ def inspect_question(
         "record": record,
         "live_inspection_issues": live,
     }
+    visual_entries = [
+        entry
+        for entry in data.get("visual_explanations", {}).get("audit", [])
+        if entry.get("year") == year and entry.get("number") == question_number
+    ]
+    if visual_entries:
+        result["visual_explanation_review"] = visual_entries
     generation_entries = [
         entry
         for entry in data.get("explanation_pilot", {}).get("audit", [])
@@ -141,6 +155,9 @@ def inspect_question(
 def render_html(result):
     r = result["record"]
     q, a = r.get("question"), r.get("answer")
+    full_explanation = (a or {}).get("explanation", {}).get(
+        "presentation"
+    ) == "full_explanation"
     identity = r["identity"]
     inherited = {}
     if q:
@@ -164,6 +181,14 @@ def render_html(result):
     ]
 
     def section(identifier, title, content):
+        if full_explanation and identifier in {
+            "main-explanation",
+            "incorrect-explanations",
+            "other-lists",
+        }:
+            return
+        if full_explanation and identifier == "final-explanation":
+            title = "Full Explanation"
         parts.append(
             f"<section id='{identifier}'><h2>{escape(title)}</h2>{content}</section>"
         )
@@ -194,6 +219,10 @@ def render_html(result):
             + "</section>"
         )
     section("correct-answer", "Correct Answer", text(r.get("correct_answer")))
+    if (a or {}).get("answer_inference"):
+        section(
+            "answer-inference", "Correct-Answer Inference", dump(a["answer_inference"])
+        )
     explanation = (a or {}).get("explanation", {})
     answer_only = explanation.get("availability") == "not_supplied_by_source_format"
     assets = {
@@ -380,7 +409,11 @@ def render_html(result):
             else ""
         )
         + (
-            "<p>No explanation is available: this source format supplies answers only.</p>"
+            (
+                "<p>The answer-key PDF supplies answers only. The imported/generated explanation is shown in Final Explanation above.</p>"
+                if final.get("status") == "available" and final.get("explanation_by_ai")
+                else "<p>No explanation is available: this source format supplies answers only.</p>"
+            )
             if answer_only
             else (
                 (
@@ -558,6 +591,11 @@ def render_html(result):
                 "raw_document": (q or {}).get("raw_document_warnings"),
                 "cleaning": (q or {}).get("cleaning_issues"),
                 "live_validation": result["live_inspection_issues"],
+                **(
+                    {"visual_explanation_review": result["visual_explanation_review"]}
+                    if result.get("visual_explanation_review")
+                    else {}
+                ),
             }
         ),
     )

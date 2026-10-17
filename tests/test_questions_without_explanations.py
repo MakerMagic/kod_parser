@@ -184,11 +184,20 @@ def test_real_export_completeness_and_determinism(tmp_path):
     if not source.exists():
         pytest.skip("Local matched dataset unavailable")
     original = source.read_bytes()
+    current = json.loads(original)
+    expected = {
+        year: sorted(
+            r["identity"]["question_number"]
+            for r in current["records"]
+            if r["identity"]["year"] == year
+            and not r.get("final_explanation", {}).get("blocks")
+            and (r.get("answer") or {}).get("correct_answer")
+        )
+        for year in (2017, 2018, 2019)
+    }
     counts = export(source, tmp_path)
     assert {year: values["exported"] for year, values in counts.items()} == {
-        2017: 50,
-        2018: 50,
-        2019: 50,
+        year: len(numbers) for year, numbers in expected.items()
     }
     snapshots = {path: path.read_bytes() for path in tmp_path.glob("*.md")}
     export(source, tmp_path)
@@ -198,10 +207,13 @@ def test_real_export_completeness_and_determinism(tmp_path):
         content = (tmp_path / f"{year}_questions_without_explanations.md").read_text(
             encoding="utf-8"
         )
-        assert list(
-            map(int, re.findall(r"^## Question (\d+)$", content, re.MULTILINE))
-        ) == list(range(1, 51))
-        assert len(re.findall(r"^- Question record:", content, re.MULTILINE)) == 50
+        assert (
+            list(map(int, re.findall(r"^## Question (\d+)$", content, re.MULTILINE)))
+            == expected[year]
+        )
+        assert len(re.findall(r"^- Question record:", content, re.MULTILINE)) == len(
+            expected[year]
+        )
         for label in (
             "- Source PDF:",
             "- Clean record:",
@@ -220,7 +232,7 @@ def test_real_export_completeness_and_determinism(tmp_path):
         in (tmp_path / "2018_questions_without_explanations.md")
         .read_text(encoding="utf-8")
         .split("## Question 20\n")[1]
-        .split("## Question 21\n")[0]
+        .split("## Question ")[0]
     )
 
 

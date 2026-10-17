@@ -1,5 +1,6 @@
 """Deterministic matching-only issue groups; upstream presentation stays separate."""
 
+import os
 from collections import defaultdict
 from pathlib import Path
 
@@ -105,6 +106,43 @@ def write_report(data, output):
             )
         lines.append("")
     superseded = [r for r in data["records"] if r.get("superseded_answer_candidates")]
+    if data.get("explanation_imports"):
+        from .export_without_explanations import has_explanation
+
+        available = [r for r in data["records"] if has_explanation(r)]
+        missing = [r for r in data["records"] if not has_explanation(r)]
+        links = []
+        for year in (2017, 2018, 2019):
+            target = (
+                Path(__file__).resolve().parents[2]
+                / f"docs/2017-2019_questions_images_with_explanation_ai_generated/{year}/ISSUES.md"
+            )
+            relative = Path(
+                os.path.relpath(target, Path(output).resolve().parent)
+            ).as_posix()
+            links.append(f"[{year}](<{relative}>)")
+        lines += [
+            "## Explanation Availability",
+            "",
+            f"Available: {len(available)}. Without an accepted explanation: {len(missing)}. Explanation import/generation does not change matching approval.",
+            "",
+            "Year-specific import/review reports: " + ", ".join(links) + ".",
+            "",
+        ]
+        for year in sorted({r["identity"]["year"] for r in missing}):
+            group = [r for r in missing if r["identity"]["year"] == year]
+            lines += [f"### {year} Without Explanation ({len(group)} questions)", ""]
+            for record in group:
+                metadata = record.get("ai_explanation") or {}
+                reason = (
+                    metadata.get("quality_review_reasons")
+                    or metadata.get("validation_errors")
+                    or ["No accepted explanation supplied"]
+                )
+                lines.append(
+                    f"- Q{record['identity']['question_number']}: {metadata.get('generation_status', 'unavailable')}; {'; '.join(reason)}"
+                )
+            lines.append("")
     if superseded:
         lines += [
             f"## Manually Superseded Source Findings ({len(superseded)} records)",

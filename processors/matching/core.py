@@ -1,6 +1,7 @@
 """Generic intermediate-record matching; no PDF extraction or fuzzy matching."""
 
 import json
+import re
 from collections import defaultdict
 from copy import deepcopy
 from hashlib import sha256
@@ -54,6 +55,92 @@ def finding(code, reason, key=None, **extra):
         "manual_review_required": True,
         **extra,
     }
+
+
+def verify_question_evidence(answer, question):
+    """Optional question-bearing answer sources must agree beyond numeric identity.
+
+    Ignore typographic/whitespace differences but retain mathematical operators,
+    decimal points and currency. Never rewrite either source. Opening prose and
+    all supplied textual options must agree.
+    Image-only options have no invented textual comparison.
+    """
+    evidence = answer.get("question_evidence")
+    if evidence is None:
+        return None
+
+    def compact(text):
+        text = (
+            str(text)
+            .casefold()
+            .translate(str.maketrans({"–": "-", "—": "-", "−": "-"}))
+        )
+        return "".join(re.findall(r"[^\W_]|[+\-×÷=<>%£$.:/]", text))
+
+    source_text = evidence.get("question_text", "")
+    source = compact(source_text.splitlines()[0] if source_text else "")
+    target = compact(question.get("question_text", ""))
+    # Introductory prose precedes any embedded table/diagram extraction order.
+    prefix = source
+    if len(prefix) < 40 or not target.startswith(prefix):
+        return False
+    options = question.get("options") or []
+    supplied = evidence.get("options") or []
+    if [o.get("label") for o in supplied] != [o.get("label") for o in options]:
+        return False
+    return all(
+        not original.get("text")
+        or compact(original["text"]) == compact(clean.get("text", ""))
+        for original, clean in zip(supplied, options)
+    )
+
+
+def existing_question_source_conflicts(data, existing):
+    """Do not silently replace a prior answer/manual explanation on source import.
+
+    Opt-in question-bearing sources only; older workflows retain their existing
+    behaviour. Same-PDF parser refinements are allowed, not a different source or
+    an AI/manual overlay being overwritten with different content.
+    """
+
+    def key(record):
+        value = record["identity"]
+        return value["year"], value["section"], value["question_number"]
+
+    previous = {key(r): r for r in existing["records"]}
+    conflicts = []
+    for record in data["records"]:
+        answer = record.get("answer") or {}
+        if answer.get("question_evidence") is None:
+            continue
+        ident = record["identity"]
+        old = previous.get(key(record))
+        if not old:
+            continue
+        old_final = old.get("final_explanation") or {}
+        new_final = record.get("final_explanation") or {}
+        old_answer = old.get("answer") or {}
+        different_answer = old.get("correct_answer") and old[
+            "correct_answer"
+        ] != answer.get("correct_answer")
+        different_explanation = (
+            old_final.get("status") == "available"
+            and old_final.get("blocks") != new_final.get("blocks")
+            and (
+                old_final.get("explanation_by_ai")
+                or old_answer.get("source_document", {}).get("sha256")
+                != answer.get("source_document", {}).get("sha256")
+            )
+        )
+        if different_answer or different_explanation:
+            conflicts.append(
+                finding(
+                    "existing_answer_explanation_conflict",
+                    "Existing answer/explanation differs from incoming question-bearing source; existing matched output was not overwritten",
+                    (ident["year"], ident["section"], ident["question_number"]),
+                )
+            )
+    return conflicts
 
 
 def readiness(references, *, years=None, question_source=None):
@@ -371,6 +458,14 @@ def match_records(
             )
         else:
             q, a = qs[0]["record"], ans[0]["record"]
+            if verify_question_evidence(a, q) is False:
+                issues.append(
+                    finding(
+                        "source_question_content_conflict",
+                        "Question-bearing answer source does not agree with clean opening prose/options; no match forced",
+                        key,
+                    )
+                )
             if (
                 a.get("target_question_key") is not None
                 and a["target_question_key"] != q["source_question_key"]
@@ -471,6 +566,17 @@ def match_records(
             "answer_candidates": deepcopy(ans) if len(ans) > 1 else [],
             "matching": {
                 "confidence": "exact_core_identity" if status == "matched" else None,
+                **(
+                    {
+                        "source_question_verified": verify_question_evidence(
+                            a_item["record"], q_item["record"]
+                        )
+                    }
+                    if a_item
+                    and q_item
+                    and a_item["record"].get("question_evidence") is not None
+                    else {}
+                ),
                 "paper_variant_verified": bool(
                     a_item
                     and a_item["record"].get("paper")

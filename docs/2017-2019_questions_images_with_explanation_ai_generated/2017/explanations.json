@@ -1,0 +1,245 @@
+{
+  "generation_origin": "codex_visual_review_using_existing_provider_independent_prompt",
+  "prompt_sha256": "3161f496bc34705efa86436bf88c2f5f133bb61329025d98f5d0baf8802381c8",
+  "provider": "codex_assistant",
+  "explanations": [
+    {
+      "year": 2017,
+      "number": 7,
+      "main_reasoning": "Compare consecutive months within 2013, not the two years in the same column. Sales rise from 87 in March to 114 in April: an increase of 27. The other increases during 2013 are June's 16, July's 18, September's 18 and November's 15. Thus April has the largest increase, so A is correct.",
+      "incorrect_options": {
+        "B": "June rises from May's 90 to 106, an increase of 16, smaller than April's 27.",
+        "C": "July increases from 106 to 124, a gain of 18 rather than 27.",
+        "D": "September increases from 113 to 131, also a gain of only 18.",
+        "E": "November increases from 77 to 92, a gain of 15, below April's increase."
+      },
+      "correct_answer": "A",
+      "question_record": "blackstone_2017_4502/11_section_1_q7",
+      "context_sha256": "2180a052c68e97211f2904d60138e23f509b0c7c65b3223b2373ed3cb7e3810f",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2017_q007_r007_p006_asset_01_ba072c2bc6",
+          "blackstone_2017_q007_r007_p006_view_01_401e97bf86"
+        ],
+        "visual_evidence": "2013 row read as 123,106,87,114,90,106,124,113,131,77,92,75.",
+        "reasoning_check": "Compare all positive consecutive-month differences, including June's 16; April's 27 is the unique maximum."
+      }
+    },
+    {
+      "year": 2017,
+      "number": 13,
+      "main_reasoning": "A team's home goals are the first number in its row; its away goals are the second number in its column. Every non-diagonal home and away entry for Rhine is positive. The other listed teams each have at least one zero. Therefore Rhine, D, is the only listed team to score in every match.",
+      "incorrect_options": {
+        "A": "Amazon loses 2–0 away to Nile, so Amazon scores no goals in that match.",
+        "B": "Ganges loses 2–0 away to Yangtze; the second number is Ganges's score of zero.",
+        "C": "Nile loses 1–0 away to Volga, leaving Nile with no goals.",
+        "E": "Volga loses 1–0 away to Nile and therefore does not score in every match."
+      },
+      "correct_answer": "D",
+      "question_record": "blackstone_2017_4502/11_section_1_q13",
+      "context_sha256": "2b55d8855053f6fe680167e72dd688cec28a4a1800ab97fd2491cb8cbd542212",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2017_q013_r013_p009_asset_01_7c3449361f",
+          "blackstone_2017_q013_r013_p009_view_01_48ee22bfa3"
+        ],
+        "visual_evidence": "Read Rhine row first scores and Rhine column second scores; identified explicit zero-score counterexamples for Amazon, Ganges, Nile and Volga.",
+        "reasoning_check": "Home/away score order checked before comparing; Rhine's eighteen own scores are all at least one."
+      }
+    },
+    {
+      "year": 2017,
+      "number": 14,
+      "status": "rejected",
+      "reason": "A reliable rotation-only tiling proof was not established from the extracted piece geometry. A provisional grid transcription also permitted another combination, so no explanation is accepted on the strength of the answer key alone.",
+      "question_record": "blackstone_2017_4502/11_section_1_q14"
+    },
+    {
+      "year": 2017,
+      "number": 19,
+      "main_reasoning": "For each proposed new height, compare its points with the score 0.18 m lower. At 1.74 m the table gives 903 points; at 1.56 m it gives 689. The increase is 903 − 689 = 214, exactly as stated. Therefore Daphne's new best is 1.74 m, C.",
+      "incorrect_options": {
+        "A": "A new height of 1.09 m would mean an old height of 0.91 m, below the table's lowest listed height; it cannot supply the required pair of table entries.",
+        "B": "At 1.44 m the score is 555, compared with 369 at 1.26 m: an increase of 186, not 214.",
+        "D": "At 1.89 m the score is 1093, compared with 867 at 1.71 m: an increase of 226.",
+        "E": "At 2.09 m the score is 1359, compared with 1119 at 1.91 m: an increase of 240."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2017_4502/11_section_1_q19",
+      "context_sha256": "0a8876076dff5652903027d57ecf7abf7a847950bcaf9e4a09a47cc438165b49",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2017_q019_r019_p013_asset_01_9fc235fa2e",
+          "blackstone_2017_q019_r019_p013_view_01_48ee22bfa3"
+        ],
+        "visual_evidence": "Table pairs: 1.74/903 and 1.56/689; 1.44/555 and 1.26/369; 1.89/1093 and 1.71/867; 2.09/1359 and 1.91/1119.",
+        "reasoning_check": "Subtract heights by 18 cm and compare point differences; only C gives 214 among supported table pairs."
+      }
+    },
+    {
+      "year": 2017,
+      "number": 20,
+      "main_reasoning": "Subtract each 2012 figure from the corresponding 2007 figure. From January to December the differences are 37.1, 10.1, 77.4, 29.9, 25.8, 35.1, 33.6, 18.7, 60.1, 18.3, 10.2 and 16.7. March must be tallest, September second, and January slightly higher than June and July. Chart D also preserves the smaller late-year values, so D is correct.",
+      "incorrect_options": {
+        "A": "Its September bar is taller than March's, whereas the differences are 60.1 and 77.4 respectively.",
+        "B": "Its January bar is too low relative to June and July: January's 37.1 should exceed both 35.1 and 33.6.",
+        "C": "It makes March and September approximately equal and exaggerates several smaller months; their actual differences are distinct.",
+        "E": "It puts September above March and makes several small differences too large, contrary to the calculated monthly pattern."
+      },
+      "correct_answer": "D",
+      "question_record": "blackstone_2017_4502/11_section_1_q20",
+      "context_sha256": "e7a7d1e6c66a16ce26c5c8dc0401732c1f7ec069967d5b24ace1e5b103921f61",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2017_q020_r020_p014_asset_01_ac2406a656",
+          "blackstone_2017_q020_r020_p014_asset_02_a77c5d40c9",
+          "blackstone_2017_q020_r020_p014_asset_03_3d5777fdb4",
+          "blackstone_2017_q020_r020_p014_asset_04_ce866ef1fb",
+          "blackstone_2017_q020_r020_p014_asset_05_e4cd448cdf",
+          "blackstone_2017_q020_r020_p014_asset_06_52093bd266",
+          "blackstone_2017_q020_r020_p014_view_01_48ee22bfa3"
+        ],
+        "visual_evidence": "All twelve paired table values and all five chart patterns were compared in their labelled order.",
+        "reasoning_check": "Independent subtraction establishes the full pattern rather than matching only a single tall bar."
+      }
+    },
+    {
+      "year": 2017,
+      "number": 24,
+      "main_reasoning": "The pictured fractions show that the original 6 kg contains 1/4 X and 3/4 Y, so Y weighs 4.5 kg. Adding only X leaves that 4.5 kg unchanged. For Y to be 60% of the final mixture, total mass must be 4.5 ÷ 0.60 = 7.5 kg. Add 7.5 − 6 = 1.5 kg of X: B.",
+      "incorrect_options": {
+        "A": "Adding 1 kg gives 2.5 kg X out of 7 kg, about 35.7%, below 40%.",
+        "C": "Adding 2 kg gives 3.5 kg X out of 8 kg, or 43.75%, above 40%.",
+        "D": "Adding 2.5 kg gives 4 kg X out of 8.5 kg, about 47.1%, above the target.",
+        "E": "Adding 3 kg gives 4.5 kg X out of 9 kg, making X 50% rather than 40%."
+      },
+      "correct_answer": "B",
+      "question_record": "blackstone_2017_4502/11_section_1_q24",
+      "context_sha256": "705afb0ed65c194788db0180ffdd92831e7266df31d562378802b91fed19a197",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2017_q024_r024_p016_asset_01_8c3e31cda5",
+          "blackstone_2017_q024_r024_p016_asset_02_d5eb65dbcc",
+          "blackstone_2017_q024_r024_p016_view_01_ade9658eec"
+        ],
+        "visual_evidence": "Original fractions verified as 1/4 X and 3/4 Y; these are small visual fraction assets embedded in the prose.",
+        "reasoning_check": "Unchanged Y mass fixes the final total; all four alternative masses checked against the resulting X proportion."
+      }
+    },
+    {
+      "year": 2017,
+      "number": 26,
+      "main_reasoning": "Track diagonal endpoints as the six faces fold into a cube: endpoints at the same three-dimensional vertex must be counted together. The folded net gives four vertices with two diagonal endpoints and four vertices with one. This accounts for all twelve endpoints from six face diagonals. Therefore exactly four corners have two meeting diagonals, C.",
+      "incorrect_options": {
+        "A": "Two would omit two of the four distinct folded vertices where a pair of diagonal endpoints meets.",
+        "B": "Three undercounts the four two-diagonal vertices produced by folding the net.",
+        "D": "Five overcounts: each of the other four vertices has only one diagonal, not a pair.",
+        "E": "Six also counts vertices with only one diagonal as though they had two."
+      },
+      "correct_answer": "C",
+      "question_record": "blackstone_2017_4502/11_section_1_q26",
+      "context_sha256": "966e2ef8d7e03e76c400a54a633f577c51bf250aa1db58250b9cc9d21c5fa39e",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2017_q026_r026_p017_asset_01_7b89e62dd9",
+          "blackstone_2017_q026_r026_p017_view_01_60335ea9be"
+        ],
+        "visual_evidence": "Net face diagonals transcribed in their relative positions; central, upper and lower faces descend rightward, other three rise rightward.",
+        "reasoning_check": "Three-dimensional folding check gives endpoint degree multiset [2,2,2,2,1,1,1,1], summing to 12."
+      }
+    },
+    {
+      "year": 2017,
+      "number": 31,
+      "main_reasoning": "Use energy to compare a whole 300 g packet with one oatcake. At 427 kcal per 100 g, the packet contains about 3 × 427 = 1281 kcal. Each oatcake supplies 53 kcal, so 1281 ÷ 53 ≈ 24.17. The figures are rounded, and the only compatible option is 24, D. The fat figures independently give 3 × 17.6 ÷ 2.2 = 24.",
+      "incorrect_options": {
+        "A": "Seven oatcakes at 53 kcal supply only about 371 kcal, far below the packet's roughly 1281 kcal.",
+        "B": "Eight oatcakes supply about 424 kcal, approximately the energy per 100 g rather than per 300 g packet.",
+        "C": "Twenty-one oatcakes supply about 1113 kcal, too little to be explained by rounding.",
+        "E": "Twenty-seven oatcakes supply about 1431 kcal, well above the packet total."
+      },
+      "correct_answer": "D",
+      "question_record": "blackstone_2017_4502/11_section_1_q31",
+      "context_sha256": "9a17c75d74fcb1fb8577276fe96aa57ed05c5f2960b871f112b7ead6b53968ba",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2017_q031_r031_p020_asset_01_9f0d2229b7",
+          "blackstone_2017_q031_r031_p020_view_01_48ee22bfa3"
+        ],
+        "visual_evidence": "Per oatcake: 53 kcal and 2.2 g fat. Per 100 g: 427 kcal and 17.6 g fat; packet 300 g.",
+        "reasoning_check": "Energy quotient and independent fat quotient both select 24; rounding explains the small energy discrepancy."
+      }
+    },
+    {
+      "year": 2017,
+      "number": 32,
+      "main_reasoning": "The correct grid must differ from each other grid by moving just one shaded square. Number rows from the top and columns from the left. Relative to E, A moves (3,1) to (3,3); B moves (3,1) to (4,1); C moves (2,1) to (4,2); D moves (3,1) to (1,2). Each therefore has exactly one misplaced shaded square. E is correct.",
+      "incorrect_options": {
+        "A": "A and C differ in two shaded-square placements, so A cannot be correct while C has only one square misplaced.",
+        "B": "B and C likewise require two shaded squares to be moved, inconsistent with the one-error rule.",
+        "C": "C differs by two misplaced shaded squares from A, B and D, rather than one from every other grid.",
+        "D": "D and C differ in two shaded-square placements; this rules out D as the correct reference grid."
+      },
+      "correct_answer": "E",
+      "question_record": "blackstone_2017_4502/11_section_1_q32",
+      "context_sha256": "18bb54989c6d89343b3c8ed450389d58b55a4b0bd839dbee4f438cb2a2bb7a43",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2017_q032_r032_p021_asset_01_94ce07b30c",
+          "blackstone_2017_q032_r032_p021_asset_02_69bb2a3621",
+          "blackstone_2017_q032_r032_p021_asset_03_66b79b88f3",
+          "blackstone_2017_q032_r032_p021_asset_04_b1b9d2a49a",
+          "blackstone_2017_q032_r032_p021_asset_05_cb506bc89f",
+          "blackstone_2017_q032_r032_p021_view_01_6e16e4c902"
+        ],
+        "visual_evidence": "Read all five 4×4 grids in the printed Top orientation; E shades (1,3),(2,1),(2,4),(3,1),(4,3).",
+        "reasoning_check": "Set comparisons show E has a one-square replacement relative to each of A–D, while each other candidate fails against C or A."
+      }
+    },
+    {
+      "year": 2017,
+      "number": 37,
+      "main_reasoning": "Divide pupils by teachers; both columns are in thousands, so the common scale cancels. Scotland has 893 ÷ 59 ≈ 15.14 pupils per teacher, below Northern Ireland's 341 ÷ 21 ≈ 16.24 and all the other regions. Therefore Scotland, D, has the lowest ratio.",
+      "incorrect_options": {
+        "A": "England Midlands has 1613 ÷ 88 ≈ 18.33 pupils per teacher, greater than Scotland's 15.14.",
+        "B": "England South has 2160 ÷ 121 ≈ 17.85 pupils per teacher, also higher than Scotland.",
+        "C": "Wales has 497 ÷ 26 ≈ 19.12 pupils per teacher, the highest of these answer choices rather than the lowest.",
+        "E": "Northern Ireland has fewer pupils in total but 341 ÷ 21 ≈ 16.24 per teacher, still above Scotland."
+      },
+      "correct_answer": "D",
+      "question_record": "blackstone_2017_4502/11_section_1_q37",
+      "context_sha256": "a7564471f0887f5f1f5d0df172d5e4c8a4adc8f5b3b7cbfd1b92bd337178d2e0",
+      "review": {
+        "reviewer": "codex_assistant",
+        "assets_reviewed": [
+          "blackstone_2017_q037_r037_p023_asset_01_7f3bfcc913",
+          "blackstone_2017_q037_r037_p023_view_01_1d18f4d56f"
+        ],
+        "visual_evidence": "Read pupil/teacher pairs for all regions; England North 2418/132, East 900/50 and London 1173/66 also exceed Scotland's ratio.",
+        "reasoning_check": "Compared ratios rather than pupil totals; both units cancel and Scotland is the unique minimum."
+      }
+    },
+    {
+      "year": 2017,
+      "number": 44,
+      "status": "rejected",
+      "reason": "The cut-versus-fold topology of all five L-box nets was not independently verified sufficiently to justify an option-specific explanation. Preserved for manual geometric review rather than inferring a proof from answer A.",
+      "question_record": "blackstone_2017_4502/11_section_1_q44"
+    },
+    {
+      "year": 2017,
+      "number": 50,
+      "question_record": "blackstone_2017_4502/11_section_1_q50",
+      "status": "rejected",
+      "reason": "A constructive rotation-only fit was not verified for every alternative L-table outline. The provisional unit-grid transcription did not reproduce E reliably, so the explanation remains unaccepted rather than using the answer key as proof."
+    }
+  ]
+}

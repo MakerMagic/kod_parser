@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from .core import match_records
+from .core import existing_question_source_conflicts, match_records
 from .report import write_report
 from .storage import load_matched, protect_output
 
@@ -24,7 +24,11 @@ def main(argv=None):
     cli.add_argument("--question-source", default="blackstone")
     cli.add_argument("--years", nargs="+", type=int, default=list(range(2008, 2017)))
     cli.add_argument("--overwrite", action="store_true")
+    cli.add_argument("--explanation-imports", type=Path)
+    cli.add_argument("--visual-explanations", type=Path)
     args = cli.parse_args(argv)
+    if args.visual_explanations and not args.explanation_imports:
+        cli.error("--visual-explanations requires --explanation-imports")
     if set(args.years) != set(range(2008, 2017)) and (
         args.output.resolve()
         == Path("data/merged/blackstone/tsa_2008-2016.matched.json").resolve()
@@ -54,6 +58,29 @@ def main(argv=None):
         years=set(args.years),
         question_source=args.question_source,
     )
+    if args.explanation_imports:
+        from .explanation_imports import (
+            apply_visuals,
+            import_text,
+            load_sources,
+            write_reports,
+        )
+
+        entries, source_warnings = load_sources(args.explanation_imports)
+        data, _ = import_text(data, entries)
+        data["explanation_imports"]["source_warnings"] = source_warnings
+        if args.visual_explanations:
+            data = apply_visuals(data, args.visual_explanations)
+            write_reports(data, args.visual_explanations, source_warnings)
+    if args.output.exists():
+        conflicts = existing_question_source_conflicts(data, load_matched(args.output))
+        if conflicts:
+            data["issues"].extend(conflicts)
+            protect_output(data, args.issues_report)
+            write_report(data, args.issues_report)
+            cli.error(
+                "Existing answer/explanation conflicts; matched output left unchanged; see issues report"
+            )
     for output in (args.output, args.issues_report):
         protect_output(data, output)
     args.output.parent.mkdir(parents=True, exist_ok=True)
