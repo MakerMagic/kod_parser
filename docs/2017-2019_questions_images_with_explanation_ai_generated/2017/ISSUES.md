@@ -60,7 +60,7 @@ Source container recovery is an import operation, not a parser fix. Original fil
 
 ## Manual Review Required (1 questions)
 
-- Q38: unresolved_question_structure. [Backtest](../../../inspections_matching/explanation_imports/2017_q38.html)
+- Q38: no_reviewed_explanation_supplied. [Backtest](../../../inspections_matching/explanation_imports/2017_q38.html)
 
 ## Reasoning Review Rejected (3 questions)
 

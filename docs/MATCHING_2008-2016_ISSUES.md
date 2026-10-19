@@ -3,12 +3,7 @@
 
 Records: 450. Readiness: True. Matching issues only; raw/clean warnings are preserved in merged snapshots and shown during inspection, not silently resolved.
 
-## Correct Answer Option Conflict (1 records)
-
-| Year | Section | Question | Question source | Answer source / pages | Source answer (not match approval) | Reason / upstream cause | Review |
-|---|---|---|---|---|---|---|---|
-| 2014 | section_1 | 50 | TSA Oxford 2014.pdf | TSA-2008-2016-Explained-Answers.pdf; {'start_page': 230, 'end_page': 231} | B | Correct label is absent/duplicated in clean options; upstream structure needs review; upstream: ['incomplete_or_ambiguous_options:A,C', 'graphics_present:option_association_not_resolved', 'visual_image_option_association_uncertain:outside_text', 'visual_component_association_uncertain', 'visual_component_association_uncertain', 'visual_component_association_uncertain', 'visual_component_association_uncertain', 'visual_component_association_uncertain', 'visual_component_association_uncertain', 'ambiguous_body_question_split', 'visual_placement_unresolved', 'visual_placement_unresolved', 'visual_placement_unresolved', 'visual_placement_unresolved', 'visual_placement_unresolved', 'visual_placement_unresolved'] | yes |
-
+No matching-specific issues detected. This is not proof of explanation or upstream visual fidelity.
 ## Manually Superseded Source Findings (2 records)
 
 Audit history, not active explanation failures. Explicit pinned manual supplements are selected; the original parser is not claimed fixed. Original records/warnings/previews remain in superseded_answer_candidates and HTML inspection.

@@ -1,8 +1,145 @@
 """Conservative repeated-layout detection for label-anchored image choices."""
 
 import re
+from math import ceil
 
-from .visual_structure import focused_crop, option_anchor_is_left_of_visual, words
+from .visual_structure import (
+    bounds,
+    focused_crop,
+    option_anchor_is_left_of_visual,
+    words,
+)
+
+
+def option_cell_owner(box, anchors, page):
+    """Require a complete answer set and containment in one label-defined cell.
+
+    Unlike fragment voting, a following label merely near the bottom edge does
+    not claim an otherwise contained shape. This never accepts an object that
+    crosses the next option boundary or an arbitrary letter inside a diagram.
+    """
+    labels = [a["label"] for a in anchors]
+    if (
+        len(labels) < 5
+        or len(set(labels)) != len(labels)
+        or set(labels) != set("ABCDEFGHIJKLMNOPQRSTUVWXYZ"[: len(labels)])
+    ):
+        return None
+    candidates = []
+    on_page = [a for a in anchors if a["page"] == page and a.get("label_only")]
+    for anchor in on_page:
+        a = anchor["bbox"]
+        height = a[3] - a[1]
+        if not option_anchor_is_left_of_visual(anchor, box) or box[1] < a[1] - height:
+            continue
+        right = min(
+            (
+                b["bbox"][0]
+                for b in on_page
+                if abs(b["bbox"][1] - a[1]) < height and b["bbox"][0] > a[2]
+            ),
+            default=float("inf"),
+        )
+        bottom = min(
+            (
+                b["bbox"][1]
+                for b in on_page
+                if abs(b["bbox"][0] - a[0]) < height * 2 and b["bbox"][1] > a[3]
+            ),
+            default=float("inf"),
+        )
+        reach = min((right - a[2]) * 0.7, (box[2] - box[0]) * 1.5)
+        if box[2] < right and box[3] < bottom and box[0] - a[2] <= reach:
+            candidates.append(anchor)
+    return candidates[0] if len(candidates) == 1 else None
+
+
+def partition_option_objects(group, anchors, page, bitmap, pixels, page_size):
+    """Separate native objects with distinct, complete option-cell ownership.
+
+    Overlapping raster envelopes additionally require a rendered blank band
+    around the next label row. A shared PDF object cannot be split this way.
+    Source object IDs and their original bboxes remain unchanged.
+    """
+    buckets = {}
+    for obj in group["objects"]:
+        owner = option_cell_owner(obj["bbox"], anchors, page)
+        if owner is None:
+            return None
+        buckets.setdefault(owner["label"], {"owner": owner, "objects": []})[
+            "objects"
+        ].append(obj)
+    if len(buckets) < 2:
+        return None
+    pieces = [
+        {
+            "bbox": bounds([o["bbox"] for o in b["objects"]]),
+            "objects": b["objects"],
+            "option_override": label,
+        }
+        for label, b in buckets.items()
+    ]
+    sx, sy = bitmap.width / page_size[0], bitmap.height / page_size[1]
+    for upper in pieces:
+        for lower in pieces:
+            u, v = upper["bbox"], lower["bbox"]
+            if upper is lower or not (
+                u[1] < v[1] < u[3] and max(u[0], v[0]) < min(u[2], v[2])
+            ):
+                continue
+            if any(o["kind"] != "raster" for g in (upper, lower) for o in g["objects"]):
+                return None
+            a = buckets[lower["option_override"]]["owner"]["bbox"]
+            h = a[3] - a[1]
+            first, last = max(v[1], a[1] - h), min(u[3] + h, a[3])
+            x0, x1 = int(min(u[0], v[0]) * sx), ceil(max(u[2], v[2]) * sx)
+            runs, run = [], []
+            for y in range(max(0, int(first * sy)), min(bitmap.height, int(last * sy))):
+                scan = pixels[y * bitmap.stride + x0 * 3 : y * bitmap.stride + x1 * 3]
+                if scan and min(scan) >= 245:
+                    run.append(y)
+                elif run:
+                    runs.append(run)
+                    run = []
+            if run:
+                runs.append(run)
+            valid = [r for r in runs if len(r) / sy >= h * 0.25]
+            if not valid:
+                return None
+            band = max(valid, key=len)
+            cut = (band[0] + band[-1] + 1) / (2 * sy)
+            upper["bbox"][3] = min(u[3], cut)
+            lower["bbox"][1] = max(v[1], cut)
+            lower.setdefault("object_crop_evidence", []).extend(
+                {
+                    "object_id": obj["image_id"],
+                    "source_bbox": obj["bbox"][:],
+                    "visible_bbox": [
+                        obj["bbox"][0],
+                        max(obj["bbox"][1], cut),
+                        *obj["bbox"][2:],
+                    ],
+                    "method": "complete_option_cells_and_rendered_blank_band",
+                    "blank_band_bbox": [
+                        x0 / sx,
+                        band[0] / sy,
+                        x1 / sx,
+                        (band[-1] + 1) / sy,
+                    ],
+                    "cut": cut,
+                    "option_label": lower["option_override"],
+                    "neighbor_option_label": upper["option_override"],
+                    "neighbor_object_ids": [o["image_id"] for o in upper["objects"]],
+                    "minimum_channel": 245,
+                }
+                for obj in lower["objects"]
+                if obj["bbox"][1] < cut
+            )
+    for piece in pieces:
+        piece["grouping_notes"] = [
+            "Native PDF objects partitioned by complete option-anchor cells; overlapping raster padding separated only at a rendered blank band. Original object bounds retained."
+        ]
+    return pieces
 
 
 def contains(outer, inner, tolerance=0.1):
@@ -61,6 +198,30 @@ def image_choice_anchors(question, lines, pages):
         return []
     if len({id(a["group"]) for a in candidates}) != len(candidates):
         return []
+    # Detached legend swatches are native parts of an answer chart, not body
+    # figures. Only a complete, unique answer-cell layout can claim them.
+    primary = {id(a["group"]) for a in candidates}
+    for anchor in candidates:
+        groups = pages[anchor["page"]][0]
+        extras = [
+            g
+            for g in groups
+            if id(g) not in primary
+            and option_cell_owner(
+                bounds([anchor["group"]["bbox"], g["bbox"]]), candidates, anchor["page"]
+            )
+            is anchor
+        ]
+        if extras:
+            original = anchor["group"]
+            anchor["group"] = {
+                **original,
+                "bbox": bounds([original["bbox"], *[g["bbox"] for g in extras]]),
+                "objects": [
+                    *original["objects"],
+                    *[o for g in extras for o in g["objects"]],
+                ],
+            }
     sizes = [
         (
             a["group"]["bbox"][2] - a["group"]["bbox"][0],
@@ -86,7 +247,15 @@ def image_choice_anchors(question, lines, pages):
     shared_dimension = any(
         min(s[i] for s in sizes) >= max(s[i] for s in sizes) * 0.85 for i in (0, 1)
     )
-    if not similar and not (label_only_region and shared_dimension):
+    bounded_shapes = all(
+        option_cell_owner(a["group"]["bbox"], candidates, a["page"]) is a
+        for a in candidates
+    )
+    if (
+        not similar
+        and not (label_only_region and shared_dimension)
+        and not bounded_shapes
+    ):
         return []
     if not all(
         any(
@@ -103,13 +272,19 @@ def image_choice_anchors(question, lines, pages):
         return []
     for anchor in candidates:
         groups, width, height = pages[anchor["page"]]
+        owned_ids = {o["image_id"] for o in anchor["group"]["objects"]}
+        neighbors = [
+            g
+            for g in groups
+            if not owned_ids.intersection(o["image_id"] for o in g["objects"])
+        ]
         anchor["crop"], evidence = focused_crop(
             anchor["group"],
             lines,
             anchor["page"],
             width,
             height,
-            groups,
+            [anchor["group"], *neighbors],
             candidates,
             owner_label=anchor["label"],
         )
@@ -169,6 +344,35 @@ def image_choice_anchors(question, lines, pages):
         }
         for a in candidates
     ]
+
+
+def coalesce_anchor_groups(groups, anchors, page):
+    """Reassemble only object sets already certified by complete text containment."""
+    remaining = list(groups)
+    result = []
+    for anchor in anchors:
+        ids = anchor.get("object_ids")
+        if anchor["page"] != page or not ids:
+            continue
+        owned = [g for g in remaining if {o["image_id"] for o in g["objects"]} <= ids]
+        if (
+            len(owned) < 2
+            or {o["image_id"] for g in owned for o in g["objects"]} != ids
+        ):
+            continue
+        result.append(
+            {
+                "bbox": bounds([g["bbox"] for g in owned]),
+                "objects": [o for g in owned for o in g["objects"]],
+                "graph": any(g.get("graph") for g in owned),
+                "option_override": anchor["label"],
+                "grouping_notes": [
+                    "Complete answer-cell geometry and text containment bind detached visual components, including legends, to one option."
+                ],
+            }
+        )
+        remaining = [g for g in remaining if g not in owned]
+    return [*remaining, *result]
 
 
 def attach_visual_text(question, lines):

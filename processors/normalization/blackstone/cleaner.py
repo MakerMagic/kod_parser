@@ -23,6 +23,10 @@ RULES = [
     "introduced_structured_blocks",
     "wrapped_structured_introductions",
     "geometry_backed_capitalized_prose_wraps",
+    "answer_completed_colon_prompt",
+    "conditional_sentence_completion_prompt",
+    "modal_impact_word_boundaries",
+    "auxiliary_negation_word_boundaries",
 ]
 METADATA = ("source", "year", "session", "paper", "variant", "section", "document_role")
 EXPECTED = (
@@ -113,6 +117,8 @@ def clean_dataset(dataset, raw_json, *, raw_sha256=None):
                 join_lines=join_lines,
                 separate_blocks=separate_blocks,
                 contextual_wraps=field == "question_text",
+                recover_modal_joins=field == "question_text",
+                recover_auxiliary_joins=field == "question_text",
                 line_context=question_line_context(raw)
                 if field == "question_text"
                 else None,
@@ -129,6 +135,16 @@ def clean_dataset(dataset, raw_json, *, raw_sha256=None):
                         "rules": RULES[:4]
                         + (
                             ["geometry_backed_capitalized_prose_wraps"]
+                            if field == "question_text"
+                            else []
+                        )
+                        + (
+                            ["modal_impact_word_boundaries"]
+                            if field == "question_text"
+                            else []
+                        )
+                        + (
+                            ["auxiliary_negation_word_boundaries"]
                             if field == "question_text"
                             else []
                         )
@@ -345,6 +361,10 @@ def validate_clean(dataset):
             wrapped_lead_ins="wrapped_structured_introductions"
             in dataset["cleaning"]["rules"],
             contextual_wraps="geometry_backed_capitalized_prose_wraps"
+            in dataset["cleaning"]["rules"],
+            recover_modal_joins="modal_impact_word_boundaries"
+            in dataset["cleaning"]["rules"],
+            recover_auxiliary_joins="auxiliary_negation_word_boundaries"
             in dataset["cleaning"]["rules"],
             line_context=question_line_context(raw)
             if "geometry_backed_capitalized_prose_wraps" in dataset["cleaning"]["rules"]

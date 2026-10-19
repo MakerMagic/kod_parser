@@ -166,7 +166,11 @@ def _read_page(page):
             glyphs.setdefault(key, char)
         for char in glyphs.values():
             separator = char["text"].isspace() or char["text"] == "(cid:3)"
-            if word and (separator or char["x0"] > word[-1]["x1"] + 3):
+            if word and (
+                separator
+                or char["x0"] > word[-1]["x1"] + 3
+                or char["x1"] < word[-1]["x0"] - 3
+            ):
                 line["word_boxes"].append(word_bounds(word))
                 line["word_texts"].append("".join(c["text"] for c in word))
                 word = []
@@ -261,13 +265,46 @@ def _split_fields(block, lines):
     """Use raw offsets; never normalize whitespace or rewrite extracted content."""
     first = _marker(lines[0]["text"], "number")
     text_start = lines[0]["block_start"] + first[1]
+    # A complete, aligned text-choice sequence is stronger than capital letters
+    # printed inside an earlier diagram (including rotated cube-face labels).
+    text_candidates = [
+        (line, marker)
+        for line in lines[1:]
+        if (marker := _marker(line["text"], "option")) and marker[0] <= "E"
+    ]
+    complete_text_choices = False
+    for index, (first_line, marker) in enumerate(text_candidates):
+        if marker[0] != "A":
+            continue
+        aligned = [
+            candidate
+            for candidate in text_candidates[index:]
+            if abs(candidate[0]["x0"] - first_line["x0"]) <= 4
+        ]
+        if [m[0] for _, m in aligned] == list("ABCDE") and all(
+            line["text"][m[1] :].strip() for line, m in aligned
+        ):
+            complete_text_choices = True
     grouped_rows = [
         line
         for line in lines[1:]
-        if re.fullmatch(r"[A-E](?:[ \t]+[A-E])+", line["text"])
-        or re.fullmatch(r"[A-Z](?:[ \t]+[A-Z])+", line["text"])
-        and line["text"].split()
-        == list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"[: len(line["text"].split())])
+        if not complete_text_choices
+        and (
+            re.fullmatch(
+                r"[A-E](?:[ \t]+[A-E])+",
+                line.get("readable_text", line["text"]).strip(),
+            )
+            or re.fullmatch(
+                r"[A-Z](?:[ \t]+[A-Z])+",
+                line.get("readable_text", line["text"]).strip(),
+            )
+            and line.get("readable_text", line["text"]).split()
+            == list(
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[
+                    : len(line.get("readable_text", line["text"]).split())
+                ]
+            )
+        )
     ]
     if grouped_rows:
         start = grouped_rows[0]["block_start"]
@@ -275,10 +312,15 @@ def _split_fields(block, lines):
             line
             for line in lines
             if line["block_start"] >= start
-            and re.fullmatch(r"[A-Z](?:[ \t]+[A-Z])*", line["text"])
+            and re.fullmatch(
+                r"[A-Z](?:[ \t]+[A-Z])*",
+                line.get("readable_text", line["text"]).strip(),
+            )
         ]
         candidate_labels = [
-            label for line in label_rows for label in line["text"].split()
+            label
+            for line in label_rows
+            for label in line.get("readable_text", line["text"]).split()
         ]
         if len(candidate_labels) < 5 or candidate_labels != list(
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[: len(candidate_labels)]
@@ -286,9 +328,16 @@ def _split_fields(block, lines):
             label_rows = [
                 line
                 for line in label_rows
-                if re.fullmatch(r"[A-E](?:[ \t]+[A-E])*", line["text"])
+                if re.fullmatch(
+                    r"[A-E](?:[ \t]+[A-E])*",
+                    line.get("readable_text", line["text"]).strip(),
+                )
             ]
-        labels = [label for line in label_rows for label in line["text"].split()]
+        labels = [
+            label
+            for line in label_rows
+            for label in line.get("readable_text", line["text"]).split()
+        ]
         options = [
             {
                 "label": label,

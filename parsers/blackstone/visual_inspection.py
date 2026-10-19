@@ -205,12 +205,54 @@ def visual_issues(question, raw_json, pages):
                 for i in meaningful
                 if i.get("image_id") in asset.get("object_ids", [])
             ]
+
+            def visible_bounds(obj, asset=asset):
+                evidence = [
+                    e
+                    for e in asset.get("object_crop_evidence", [])
+                    if e.get("object_id") == obj["image_id"]
+                ]
+                if len(evidence) != 1 or obj.get("kind") != "raster":
+                    return obj["bbox"]
+                e = evidence[0]
+                b, cut = e.get("blank_band_bbox") or [], e.get("cut")
+                expected = [obj["bbox"][0], cut, *obj["bbox"][2:]]
+                neighbors = [
+                    i
+                    for i in meaningful
+                    if i["image_id"] in e.get("neighbor_object_ids", [])
+                ]
+                if (
+                    e.get("method") == "complete_option_cells_and_rendered_blank_band"
+                    and e.get("source_bbox") == obj["bbox"]
+                    and e.get("visible_bbox") == expected
+                    and isinstance(cut, (int, float))
+                    and len(b) == 4
+                    and obj["bbox"][1] < cut < obj["bbox"][3]
+                    and b[1] <= cut <= b[3]
+                    and b[3] > b[1]
+                    and b[0] <= obj["bbox"][0]
+                    and b[2] >= obj["bbox"][2]
+                    and e.get("minimum_channel") == 245
+                    and asset.get("belongs_to") == "option"
+                    and e.get("option_label") == asset.get("option_label")
+                    and neighbors
+                    and all(
+                        i.get("option_label")
+                        == e.get("neighbor_option_label")
+                        != asset.get("option_label")
+                        for i in neighbors
+                    )
+                ):
+                    return expected
+                return obj["bbox"]
+
             if any(
                 not (
-                    crop[0] <= i["bbox"][0]
-                    and crop[1] <= i["bbox"][1]
-                    and crop[2] >= i["bbox"][2]
-                    and crop[3] >= i["bbox"][3]
+                    crop[0] <= visible_bounds(i)[0]
+                    and crop[1] <= visible_bounds(i)[1]
+                    and crop[2] >= visible_bounds(i)[2]
+                    and crop[3] >= visible_bounds(i)[3]
                 )
                 for i in objects
             ):

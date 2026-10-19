@@ -128,6 +128,172 @@ def test_conclusions_and_ambiguous_stems_are_not_promoted(tmp_path, text):
 
 
 @pytest.mark.parametrize(
+    "prompt",
+    [
+        "The campaign organisers' advertisement reflects:",
+        "The above argument rests on the implicit assumption that:",
+        "This result represents:",
+    ],
+)
+def test_colon_answer_completions_are_prompts(tmp_path, prompt):
+    from processors.normalization.blackstone.structure import build_structure
+
+    q, _, _ = case(tmp_path, "The passage provides the context.\n" + prompt)
+    raw = deepcopy(q["raw_record"])
+    for o in raw["options"]:
+        o["text"] = "the change expressed as a percentage of the earlier quantity."
+    issues = []
+    body, main, accounting = build_structure(raw, lambda *args: issues.append(args))
+    assert main == prompt
+    assert body[0]["text"] == "The passage provides the context."
+    assert not issues
+    assert any(a["destination"] == "main_question" for a in accounting)
+
+
+@pytest.mark.parametrize(
+    "lead",
+    [
+        "The cost of entry is as follows:",
+        "The following table shows:",
+        "The quoted data represents:",
+        "The premises are:",
+        "The argument is shown below:",
+    ],
+)
+def test_colon_body_introductions_not_prompts(tmp_path, lead):
+    from processors.normalization.blackstone.structure import build_structure
+
+    q, _, _ = case(tmp_path, "Read the context.\n" + lead)
+    raw = deepcopy(q["raw_record"])
+    for o in raw["options"]:
+        o["text"] = "the change expressed as a percentage of the earlier quantity."
+    body, main, _ = build_structure(raw, lambda *args: None)
+    assert main is None
+    assert lead in body[0]["text"]
+
+
+@pytest.mark.parametrize(
+    "year,number,expected",
+    [
+        (2010, 32, "The campaign organisers' advertisement reflects:"),
+        (2012, 16, "The above argument rests on the implicit assumption that:"),
+        (
+            2014,
+            50,
+            "Which one of the following pie charts shows the number of visitors in each age group that paid to enter the museum yesterday?",
+        ),
+    ],
+)
+def test_real_colon_structure_preserves_raw_and_options(year, number, expected):
+    from processors.normalization.blackstone.structure import build_structure
+
+    paths = list(Path("data/raw/blackstone").glob(f"TSA Oxford {year}-*.raw.json"))
+    if not paths:
+        pytest.skip("Local raw corpus absent")
+    raw = json.loads(paths[0].read_text(encoding="utf-8"))["questions"][number - 1]
+    before = deepcopy(raw)
+    _, prompt, _ = build_structure(raw, lambda *args: None)
+    assert prompt == expected
+    assert raw == before
+
+
+def test_colon_clause_before_a_body_visual_is_not_an_answer_prompt(tmp_path):
+    from processors.normalization.blackstone.structure import (
+        colon_prompt_span,
+        text_lines,
+    )
+
+    q, _, _ = case(tmp_path, "The context is supplied.\nThe claim represents:")
+    raw = deepcopy(q["raw_record"])
+    for o in raw["options"]:
+        o["text"] = "the change as a fraction of the original population."
+    raw["layout_blocks"] = [
+        {
+            "block_id": f"b{i}",
+            "order": i + 1,
+            "type": "text",
+            "component": "question_body",
+            "text": line["text"],
+            "raw_span": line["span"],
+        }
+        for i, line in enumerate(text_lines(raw["question_text"]))
+    ]
+    raw["layout_blocks"].append(
+        {
+            "block_id": "chart",
+            "order": 3,
+            "type": "visual",
+            "component": "question_body",
+        }
+    )
+    assert colon_prompt_span(raw) is None
+
+
+@pytest.mark.parametrize(
+    "verb", ["weaken", "strengthen", "undermine", "support", "challenge"]
+)
+def test_known_modal_joins_recovered_only_in_argument_prompt_context(tmp_path, verb):
+    s = f"Which statement, if true, would{verb} the above argument?"
+    q, _, _ = case(tmp_path, "The author makes a claim.\n" + s)
+    assert q["main_question"] == s.replace("would" + verb, "would " + verb)
+    assert q["question_text"].endswith(q["main_question"])
+    assert q["raw_record"]["question_text"].endswith(s)
+    assert any(
+        "modal_impact_word_boundaries" in t["rules"] for t in q["transformations"]
+    )
+
+
+@pytest.mark.parametrize(
+    "s",
+    [
+        "The shoulder is injured; the woodwind player could strengthen it.",
+        "The label reads wouldweaken.",
+        "Which would-be challenger supports the argument?",
+        "Which policy would strengthen the above argument?",
+        "Wouldstrengthen is a fictional label in this sentence.",
+    ],
+)
+def test_modal_join_rule_does_not_split_legitimate_or_quoted_tokens(s):
+    assert normalize_text(s, recover_modal_joins=True) == s
+
+
+def test_auxiliary_negative_join_uses_same_closed_prompt_grammar(tmp_path):
+    q, _, _ = case(
+        tmp_path, "Two constraints are supplied.\nWhich of the statements isnot true?"
+    )
+    assert q["main_question"] == "Which of the statements is not true?"
+    assert q["raw_record"]["question_text"].endswith("isnot true?")
+    assert (
+        normalize_text("The name isnot a word.", recover_modal_joins=True)
+        == "The name isnot a word."
+    )
+
+
+def test_join_rule_upgrade_preserves_declared_legacy_clean_outputs(tmp_path):
+    raw_dir = tmp_path / "raw"
+    raw_dir.mkdir()
+    _, current, raw = case(
+        raw_dir, "The context is available.\nWhich statement isnot true?"
+    )
+    legacy = deepcopy(current)
+    legacy["cleaning"]["rules"].remove("auxiliary_negation_word_boundaries")
+    legacy["questions"][0]["question_text"] = legacy["questions"][0][
+        "question_text"
+    ].replace("is not", "isnot")
+    legacy["questions"][0]["main_question"] = legacy["questions"][0][
+        "main_question"
+    ].replace("is not", "isnot")
+    target = tmp_path / "clean/version.clean.json"
+    target.parent.mkdir()
+    target.write_text(json.dumps(legacy), encoding="utf-8")
+    assert load_clean(target) == legacy
+    before = raw.read_bytes()
+    write_clean(current, target, overwrite=True)
+    assert load_clean(target)["questions"][0]["main_question"].endswith("is not true?")
+    assert raw.read_bytes() == before
+
+
+@pytest.mark.parametrize(
     "text,expected",
     [
         (

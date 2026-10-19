@@ -646,3 +646,53 @@ the approved sixteen consecutive blocks, preserving all other content and order.
 snapshots, warnings and source block references remain. `cleaning.body_asset_rules`
 declares the rule. Group/source/image conflicts keep original body blocks and a
 cleaning issue; readiness and inspection validate both pinned source and saved copy.
+
+## Categorization schema v1
+
+The independent `categorization/` layer consumes existing `matched` v1 files.
+It writes to `data/categorized/blackstone/`, never into raw/clean/merged inputs.
+`matching_handoff.json` is a hash lock over canonical inputs, per-record pointers/
+content hashes, and source/asset dependencies; it detects drift, not an archive
+copy. Explicit refresh is required after an intentional upstream change.
+
+`*.categorized.json` contains `stage="categorized"`, `schema_version="1"`, owner,
+handoff/model references, logic/version/code hashes, records and checked summary.
+Each record has a stable identity/source key and hashed `matched_reference`
+(`path`, `sha256`, `json_pointer`, `record_sha256`); an unchanged readable
+`question_view` (body/prompt/options/visual references); correct answer; Final
+Explanation; question/answer/AI provenance references; preserved upstream context;
+and an independent `categorization` object. Raw snapshots are referenced, not
+copied into yet another full question extraction layer.
+
+Categorization fields: nullable `category` (currently Problem-Solving / Critical Thinking),
+`subcategories` array, `status` (`classified`, `multi_label`, `needs_review`,
+`ambiguous`, `unclassified`), candidate patterns/support/examples, active pattern
+IDs, evidence/rationale, confidence semantics and review issues. Multi-label
+Problem-Solving may include Relevant Selection + Finding Procedures. Conflicting
+Critical Thinking intents remain ambiguous, not a forced multi-label result.
+An accepted label is model-supported, not manually approved. Unresolved rows
+retain candidates and issues; a supported top-level category alone is not counted
+as successful complete categorization. Summary counts use successful rows only,
+with unresolved rows reported separately. No upstream warning is cleared.
+
+The versioned pattern catalogue stores definitions, positive/counter indicators
+and cognitive tasks. Reviewed examples are training evidence, never runtime ID
+exceptions. Model/version references preserve reproducibility as patterns evolve.
+Inspection layers categorization onto matching HTML without changing its input.
+
+Pattern catalogue v2 also stores category metadata (`engine`, supported
+`modalities`, `multi_label`). Eligibility and output validation use this metadata;
+current Critical Thinking excludes meaningful question visuals, not source
+screenshots, decorative objects or explanation images. New profile-based
+families can share the existing evidence/status/report schema. Spatial
+representation equivalence joins method equivalence under Identifying Similarity;
+material filtering can coexist with similarity when separately supported.
+Optional `comparison` and per-row `previous_categorization` / `previous_main_question`
+are QA-only before/after evidence, never runtime classification inputs.
+
+Catalogue v3 stores `semantic_families` with lexical indicators, semantic intent,
+required context, counter-evidence, modality and confidence-contribution meaning.
+The trained model freezes these families; active family evidence is exposed in
+each categorization result. Comparison counts distinguish resolutions by previous
+status (unclassified/needs_review/ambiguous) without counting status-only moves as
+resolved. No confidence thresholds were lowered for this refinement.

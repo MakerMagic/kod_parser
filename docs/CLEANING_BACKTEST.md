@@ -1,5 +1,22 @@
 # Blackstone raw → clean inspection
 
+Answer-completed colon prompts are recognised only with final-clause grammar,
+parallel textual answer completions and no intervening aligned body visual.
+2010 Q32 and 2012 Q16 recover Main Question; table/list/data lead-ins remain body
+context. 2014 Q50's separate RAW option-boundary defect is now repaired upstream.
+Raw text/options/assets stay unchanged by cleaning.
+
+Unpunctuated conditional completion prompts also require an unfinished request,
+parallel substantive text options and no intervening body visual. A final line or
+copula alone is insufficient. 2016 Q12's complete scheduling request is retained
+as Main Question without inventing punctuation or moving preceding constraints.
+
+Known prompt word joins are repaired conservatively in CLEAN: a modal joined to
+an impact verb immediately targeting an argument (`wouldweaken`), or an auxiliary
+joined to `not` before a truth/possibility predicate (`isnot true`). An interrogative
+prompt context is required; this is not a general dictionary word splitter.
+2009 Q17/Q14 retain the exact original tokens in their raw snapshots and source.
+
 Run from the repository root. Cleaning reads stored raw JSON/PNG assets only;
 it never opens PDFs, acquires files, matches answers, or categorizes questions.
 

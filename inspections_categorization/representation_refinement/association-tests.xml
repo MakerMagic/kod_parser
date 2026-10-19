@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="15" time="7.577" timestamp="2026-10-18T18:20:14.706190+05:00" hostname="KOMPUTER"><testcase classname="tests.test_blackstone_visual_structure" name="test_2016_q32_raster_padding_does_not_merge_distinct_options" time="6.781"><failure message="AssertionError: assert not [{'raw_json': 'C:\\Users\\user\\AppData\\Local\\Temp\\pytest-of-user\\pytest-255\\test_2016_q32_raster_padding_d0\\201...: 'C:\\Users\\user\\Desktop\\kod_parser\\acquisition\\local\\TSA Oxford 2016.pdf', 'year': 2016, 'session': None, ...}]">tmp_path = WindowsPath('C:/Users/user/AppData/Local/Temp/pytest-of-user/pytest-255/test_2016_q32_raster_padding_d0')
+
+    def test_2016_q32_raster_padding_does_not_merge_distinct_options(tmp_path):
+        source = (
+            Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2016.pdf"
+        )
+        if not source.is_file():
+            pytest.skip("Local 2016 PDF unavailable")
+        data = parse_pdf(source, asset_dir=tmp_path / "assets")
+        validate_raw(data)
+        q = data["questions"][31]
+        assert [option["label"] for option in q["options"]] == list("ABCDE")
+        assert q["raw"]["question_block"]
+        assert len([a for a in q["visual_assets"] if a["belongs_to"] == "question"]) == 4
+        assert all(
+            len(o["images"]) == 1 and o["images"][0]["option_label"] == o["label"]
+            for o in q["options"]
+        )
+        assert all(not a["warnings"] for a in q["visual_assets"])
+        assert any(
+            "rendered blank band" in note for a in q["visual_assets"] for note in a["notes"]
+        )
+&gt;       assert not [
+            row
+            for row in collect_issues(data, tmp_path / "2016.raw.json")
+            if row["question_number"] == 32
+        ]
+E       AssertionError: assert not [{'raw_json': 'C:\\Users\\user\\AppData\\Local\\Temp\\pytest-of-user\\pytest-255\\test_2016_q32_raster_padding_d0\\201...: 'C:\\Users\\user\\Desktop\\kod_parser\\acquisition\\local\\TSA Oxford 2016.pdf', 'year': 2016, 'session': None, ...}]
+
+tests\test_blackstone_visual_structure.py:647: AssertionError</failure></testcase><testcase classname="tests.test_blackstone_visual_structure" name="test_shared_choice_geometry_stays_unresolved_and_is_reported" time="0.137" /><testcase classname="tests.test_blackstone_component_recovery" name="test_near_following_anchor_does_not_claim_a_contained_composite" time="0.001" /><testcase classname="tests.test_blackstone_component_recovery" name="test_incomplete_or_text_choice_anchors_cannot_force_visual_ownership" time="0.001" /><testcase classname="tests.test_blackstone_component_recovery" name="test_native_raster_objects_need_a_blank_anchor_band_to_separate[True]" time="0.003" /><testcase classname="tests.test_blackstone_component_recovery" name="test_native_raster_objects_need_a_blank_anchor_band_to_separate[False]" time="0.003" /><testcase classname="tests.test_blackstone_component_recovery" name="test_one_shared_drawing_crossing_options_stays_unresolved" time="0.002" /><testcase classname="tests.test_blackstone_component_recovery" name="test_decoded_label_rows_recover_boundary_after_encoded_body_words" time="0.002" /><testcase classname="tests.test_blackstone_component_recovery" name="test_complete_aligned_text_answers_outrank_letters_inside_diagrams" time="0.002" /><testcase classname="tests.test_blackstone_component_recovery" name="test_unpunctuated_conditional_completion_requires_parallel_answers[If Alex works on Friday, then the nights when Robin works are-values0]" time="0.005" /><testcase classname="tests.test_blackstone_component_recovery" name="test_unpunctuated_conditional_completion_requires_parallel_answers[If all packages are used, then the total number of containers is-values1]" time="0.002" /><testcase classname="tests.test_blackstone_component_recovery" name="test_final_body_line_or_data_leadin_is_not_a_completion_prompt[The workers are]" time="0.002" /><testcase classname="tests.test_blackstone_component_recovery" name="test_final_body_line_or_data_leadin_is_not_a_completion_prompt[The guard worked on Monday.]" time="0.002" /><testcase classname="tests.test_blackstone_component_recovery" name="test_final_body_line_or_data_leadin_is_not_a_completion_prompt[If the conditions hold, then the data shown below are]" time="0.002" /><testcase classname="tests.test_blackstone_component_recovery" name="test_final_body_line_or_data_leadin_is_not_a_completion_prompt[If the guard is working, then the following table is]" time="0.002" /></testsuite></testsuites>

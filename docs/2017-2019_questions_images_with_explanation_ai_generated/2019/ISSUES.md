@@ -59,8 +59,8 @@ Source container recovery is an import operation, not a parser fix. Original fil
 
 ## Manual Review Required (2 questions)
 
-- Q32: ambiguous_matching_or_options; unresolved_question_structure. [Backtest](../../../inspections_matching/explanation_imports/2019_q32.html)
-- Q44: ambiguous_matching_or_options; unresolved_question_structure. [Backtest](../../../inspections_matching/explanation_imports/2019_q44.html)
+- Q32: no_reviewed_explanation_supplied. [Backtest](../../../inspections_matching/explanation_imports/2019_q32.html)
+- Q44: no_reviewed_explanation_supplied. [Backtest](../../../inspections_matching/explanation_imports/2019_q44.html)
 
 ## Reasoning Review Rejected (2 questions)
 

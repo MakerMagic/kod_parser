@@ -1,0 +1,5999 @@
+{
+  "owner": "tsa_categorization_v1",
+  "manual_approval": false,
+  "reevaluated_records": 750,
+  "candidate_count": 152,
+  "prior_status_counts": {
+    "classified": 133,
+    "needs_review": 8,
+    "unclassified": 11
+  },
+  "records": [
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2008_4502/01_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which of the following is a conclusion which can be reliably drawn from the passage as a whole?"
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2008_4502/01_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which of the following would, if true, weaken the argument?"
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2008_4502/01_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following is a conclusion which can be drawn from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2008_4502/01_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2008_4502/01_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which of the following illustrates the principle that the author argues for in the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2008_4502/01_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which of the following is a conclusion that can reliably be drawn from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 33,
+        "question_id": "blackstone_2008_4502/01_section_1_q33",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 33
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2008_4502/01_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which of the following can reliably be inferred from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2008_4502/01_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2008_4502/01_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which of the following statements is an application of the principle underlying the argument in the passage?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2009_4502/11_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following conclusions can reliably be drawn from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2009_4502/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2009_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "previous": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Problem-Solving",
+        "subcategories": [
+          "Relevant Selection"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "scenario_tariff_selection"
+      ],
+      "main_question": "Which company should I use to receive the lowest telephone bill?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2009_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following is a conclusion that can be drawn from the passage above?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2009_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": null,
+        "subcategories": [],
+        "status": "unclassified",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "top_level_pattern_uncovered",
+            "reason": "No corroborated cognitive-task profile; candidate similarities alone do not justify a label.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which of the following, if true, would weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2009_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which of the following best illustrates the principle underlying the argument above?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2009_4502/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "previous": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "active_semantic_features": [
+        "temporal_derivation"
+      ],
+      "main_question": "How much later than expected did May's phone eventually ring?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2009_4502/11_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which of the following is a conclusion that can be drawn from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 30,
+        "question_id": "blackstone_2009_4502/11_section_1_q30",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 30
+        }
+      },
+      "previous": {
+        "category": null,
+        "subcategories": [],
+        "status": "unclassified",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "top_level_pattern_uncovered",
+            "reason": "No corroborated cognitive-task profile; candidate similarities alone do not justify a label.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Problem-Solving",
+        "subcategories": [
+          "Finding Procedures"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "constraint_simulation"
+      ],
+      "main_question": "Which one of the following could NOT be true?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 33,
+        "question_id": "blackstone_2009_4502/11_section_1_q33",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 33
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2009_4502/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": null,
+        "subcategories": [],
+        "status": "unclassified",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "top_level_pattern_uncovered",
+            "reason": "No corroborated cognitive-task profile; candidate similarities alone do not justify a label.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be concluded from the passage above?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2009_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2009_4502/11_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which of the following applies the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2010_4502/11_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following could be reliably concluded from the above information?"
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2010_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "previous": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "active_semantic_features": [
+        "temporal_derivation"
+      ],
+      "main_question": "What is the greatest amount of time that she could be late waking up?"
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2010_4502/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2010_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following conclusions is best supported by the data given above?"
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2010_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2010_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best illustrates the principle underlying the argument above?"
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2010_4502/11_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following conclusions can be drawn from the passage?"
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 33,
+        "question_id": "blackstone_2010_4502/11_section_1_q33",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 33
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most strengthens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2010_4502/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion of the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2010_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2010_4502/11_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle underlying the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2011_4502/11_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2011_4502/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most strengthen the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2011_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following is a conclusion that can reliably be drawn from the above reasoning?"
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2011_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2011_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best illustrates the principle underlying the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2011_4502/11_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following conclusions is best supported by the passage above?"
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 33,
+        "question_id": "blackstone_2011_4502/11_section_1_q33",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 33
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which of the following, if true, would strengthen this argument?"
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2011_4502/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2011_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2012_4502/11_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can reliably be concluded from the information above?"
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2012_4502/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2012_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2012_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2012_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best illustrates the principle underlying the argument?"
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2012_4502/11_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following is a conclusion which can be drawn from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 33,
+        "question_id": "blackstone_2012_4502/11_section_1_q33",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 33
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which of the following, if true, most strengthens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2012_4502/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be inferred from claims made in the passage?"
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2012_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2012_4502/11_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": null,
+        "subcategories": [],
+        "status": "unclassified",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "top_level_pattern_uncovered",
+            "reason": "No corroborated cognitive-task profile; candidate similarities alone do not justify a label.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following identifies the principle underlying the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2013_4502/11_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following conclusions is best supported by the passage above?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 8,
+        "question_id": "blackstone_2013_4502/11_section_1_q8",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 8
+        }
+      },
+      "previous": {
+        "category": null,
+        "subcategories": [],
+        "status": "unclassified",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "top_level_pattern_uncovered",
+            "reason": "No corroborated cognitive-task profile; candidate similarities alone do not justify a label.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Problem-Solving",
+        "subcategories": [
+          "Finding Procedures"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "relational_reconstruction"
+      ],
+      "main_question": "Assuming that 'east' means, as near as it matters, 'due east', which one of the following can be said with certainty?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2013_4502/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most strengthen the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2013_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following conclusions is best supported by the passage above?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2013_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most strengthen the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 21,
+        "question_id": "blackstone_2013_4502/11_section_1_q21",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 21
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most strengthens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2013_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best illustrates the principle underlying the argument above?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 33,
+        "question_id": "blackstone_2013_4502/11_section_1_q33",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 33
+        }
+      },
+      "previous": {
+        "category": null,
+        "subcategories": [],
+        "status": "unclassified",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "top_level_pattern_uncovered",
+            "reason": "No corroborated cognitive-task profile; candidate similarities alone do not justify a label.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following presents the strongest challenge to the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2013_4502/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2013_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most strengthen the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 43,
+        "question_id": "blackstone_2013_4502/11_section_1_q43",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 43
+        }
+      },
+      "previous": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "active_semantic_features": [
+        "temporal_derivation"
+      ],
+      "main_question": "How many minutes late was yesterday's 10.20 am train from Teovil when it arrived at Erd?"
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2013_4502/11_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2014_4502/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2014_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2014_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most strengthen the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2014_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": null,
+        "subcategories": [],
+        "status": "unclassified",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "top_level_pattern_uncovered",
+            "reason": "No corroborated cognitive-task profile; candidate similarities alone do not justify a label.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best matches the principle underlying the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2014_4502/11_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 33,
+        "question_id": "blackstone_2014_4502/11_section_1_q33",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 33
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2014_4502/11_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "previous": {
+        "category": null,
+        "subcategories": [],
+        "status": "unclassified",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "top_level_pattern_uncovered",
+            "reason": "No corroborated cognitive-task profile; candidate similarities alone do not justify a label.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Problem-Solving",
+        "subcategories": [
+          "Finding Procedures"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "temporal_derivation"
+      ],
+      "main_question": "According to the clock in the interview room, when did Lucy arrive?"
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2014_4502/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2014_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2014_4502/11_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best illustrates the principle underlying the argument?"
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2015_4502/11_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2015_4502/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2015_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following conclusions is best supported by the passage above?"
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2015_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most strengthens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2015_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2015_4502/11_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion of the passage above?"
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 33,
+        "question_id": "blackstone_2015_4502/11_section_1_q33",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 33
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2015_4502/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following conclusions is best supported by the passage above?"
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2015_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, would most weaken the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2015_4502/11_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best illustrates the principle underlying the argument above?"
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2016_4502/11_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2016_4502/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2016_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following is a conclusion that can be drawn from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2016_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2016_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": null,
+        "subcategories": [],
+        "status": "unclassified",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "top_level_pattern_uncovered",
+            "reason": "No corroborated cognitive-task profile; candidate similarities alone do not justify a label.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following is the best statement of the principle underlying the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2016_4502/11_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following could be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 33,
+        "question_id": "blackstone_2016_4502/11_section_1_q33",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 33
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2016_4502/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following is a conclusion that can be drawn from the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2016_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most strengthens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2016_4502/11_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2017_4502/11_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2017_4502/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2017_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following is a conclusion that can be drawn from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2017_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most strengthens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2017_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2017_4502/11_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 33,
+        "question_id": "blackstone_2017_4502/11_section_1_q33",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 33
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most strengthens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2017_4502/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following is a conclusion that can be drawn from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2017_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2017_4502/11_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best illustrates the principle contained in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2017_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "previous": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Problem-Solving",
+        "subcategories": [],
+        "status": "needs_review",
+        "issues": [
+          {
+            "code": "problem_solving_skill_unresolved",
+            "reason": "Numerical/spatial task is clear, but material selection versus procedure/equivalence is not sufficiently evidenced.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "active_semantic_features": [
+        "temporal_derivation"
+      ],
+      "main_question": "For how many hours during a 24-hour period are at least three of the four siblings able to be online at the same time?"
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2018_4502/11_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can most reliably be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2018_4502/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2018_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2018_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2018_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2018_4502/11_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2018_4502/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following is a conclusion that can be drawn from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2018_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2018_4502/11_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": null,
+        "subcategories": [],
+        "status": "unclassified",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "top_level_pattern_uncovered",
+            "reason": "No corroborated cognitive-task profile; candidate similarities alone do not justify a label.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following expresses the general principle that underlies the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2019_4502/11_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 10,
+        "question_id": "blackstone_2019_4502/11_section_1_q10",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 10
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2019_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2019_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above reasoning?"
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2019_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2019_4502/11_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following is a conclusion that can be drawn from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 33,
+        "question_id": "blackstone_2019_4502/11_section_1_q33",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 33
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2019_4502/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": null,
+        "subcategories": [],
+        "status": "unclassified",
+        "patterns": [],
+        "issues": [
+          {
+            "code": "top_level_pattern_uncovered",
+            "reason": "No corroborated cognitive-task profile; candidate similarities alone do not justify a label.",
+            "manual_review_required": true
+          }
+        ]
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above?"
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2019_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most strengthens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2019_4502/11_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2020,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2020_D512/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2020,
+          "paper": "D512/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2020,
+        "section": "section_1",
+        "question_number": 10,
+        "question_id": "blackstone_2020_D512/11_section_1_q10",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2020,
+          "paper": "D512/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 10
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2020,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2020_D512/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2020,
+          "paper": "D512/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2020,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2020_D512/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2020,
+          "paper": "D512/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2020,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2020_D512/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2020,
+          "paper": "D512/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2020,
+        "section": "section_1",
+        "question_number": 28,
+        "question_id": "blackstone_2020_D512/11_section_1_q28",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2020,
+          "paper": "D512/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 28
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2020,
+        "section": "section_1",
+        "question_number": 39,
+        "question_id": "blackstone_2020_D512/11_section_1_q39",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2020,
+          "paper": "D512/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 39
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle underlying the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2020,
+        "section": "section_1",
+        "question_number": 45,
+        "question_id": "blackstone_2020_D512/11_section_1_q45",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2020,
+          "paper": "D512/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 45
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2020,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2020_D512/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2020,
+          "paper": "D512/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 4,
+        "question_id": "blackstone_2021_4502/11_section_1_q4",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 4
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 5,
+        "question_id": "blackstone_2021_4502/11_section_1_q5",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 5
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 10,
+        "question_id": "blackstone_2021_4502/11_section_1_q10",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 10
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 16,
+        "question_id": "blackstone_2021_4502/11_section_1_q16",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 16
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 22,
+        "question_id": "blackstone_2021_4502/11_section_1_q22",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 22
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most strengthens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2021_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 27,
+        "question_id": "blackstone_2021_4502/11_section_1_q27",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 27
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 35,
+        "question_id": "blackstone_2021_4502/11_section_1_q35",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 35
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 41,
+        "question_id": "blackstone_2021_4502/11_section_1_q41",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 41
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 47,
+        "question_id": "blackstone_2021_4502/11_section_1_q47",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 47
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 9,
+        "question_id": "blackstone_2022_4502/11_section_1_q9",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 9
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 10,
+        "question_id": "blackstone_2022_4502/11_section_1_q10",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 10
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 11,
+        "question_id": "blackstone_2022_4502/11_section_1_q11",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 11
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 17,
+        "question_id": "blackstone_2022_4502/11_section_1_q17",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 17
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 23,
+        "question_id": "blackstone_2022_4502/11_section_1_q23",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 23
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 34,
+        "question_id": "blackstone_2022_4502/11_section_1_q34",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 34
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_principle"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Applying Principles"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "principle_application"
+      ],
+      "main_question": "Which one of the following best illustrates the principle used in the above argument?"
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 35,
+        "question_id": "blackstone_2022_4502/11_section_1_q35",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 35
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_infer"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Drawing a Conclusion"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "new_inference"
+      ],
+      "main_question": "Which one of the following can be drawn as a conclusion from the above passage?"
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2022_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "previous": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "patterns": [
+          "ct_impact"
+        ],
+        "issues": []
+      },
+      "current": {
+        "category": "Critical Thinking",
+        "subcategories": [
+          "Assessing the Impact of Additional Evidence"
+        ],
+        "status": "classified",
+        "issues": []
+      },
+      "active_semantic_features": [
+        "evidence_change"
+      ],
+      "main_question": "Which one of the following, if true, most weakens the above argument?"
+    }
+  ]
+}

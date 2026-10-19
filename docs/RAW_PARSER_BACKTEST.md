@@ -87,6 +87,15 @@ Assets live under `OUTPUT_DIR/assets/<source-content-hash>/`. Names such as `bla
 
 ### Focused crops and structured placement
 
+Complete aligned text choices take precedence over capital letters inside
+diagrams; verified CID-decoded spatial labels can identify an image-answer row
+without rewriting raw page/question text. Complete option-anchor cells distinguish
+body visuals from answer visuals, including detached legends and unequal shapes.
+Overlapping raster envelopes are separated only with distinct native-object
+ownership and a rendered blank separator. Optional `object_crop_evidence` retains
+original bounds, visible bounds and that separator; inspection validates this
+evidence and still flags missing/tampered evidence or a shared crossing object.
+
 Disconnected body geometry is grouped **before** focused cropping, without
 increasing the general proximity radius. A detached dimension annotation needs a
 shaft with paired arrowheads, a local measurement, matching extents, a unique

@@ -14,6 +14,8 @@ from processors.normalization.blackstone.backtest import (
     render_inspection,
 )
 from processors.normalization.blackstone.storage import write_clean
+from processors.normalization.blackstone.structure import completion_prompt_span
+from processors.normalization.blackstone.text import normalize_text
 
 
 def encode(value):
@@ -229,9 +231,22 @@ def test_targets_and_analogues_use_stored_visual_ownership(corpus, year, number)
 
 
 def test_ambiguous_actual_body_visuals_remain_flagged(corpus):
+    root = Path(__file__).resolve().parents[1]
     for year, number in [(2018, 20), (2019, 44), (2016, 32)]:
-        _, data = next((p, d) for p, d in corpus if d["document"].get("year") == year)
-        q = data["questions"][number - 1]
+        raw, current = next(
+            (p, d) for p, d in corpus if d["document"].get("year") == year
+        )
+        archived = (
+            root
+            / "inspections_categorization/representation_refinement/original_inputs"
+            / raw.name
+        )
+        if not archived.exists():
+            pytest.skip("Optional original ambiguous RAW snapshots unavailable")
+        original = json.loads(archived.read_text(encoding="utf-8"))
+        # The cleaner must still refuse the unchanged ambiguous RAW input.
+        # The live records were repaired upstream, not by relaxing CLEAN rules.
+        q = clean_dataset(original, raw)["questions"][number - 1]
         assert "visual_placement_unresolved" in {
             i["code"] for i in q["cleaning_issues"]
         }
@@ -239,6 +254,12 @@ def test_ambiguous_actual_body_visuals_remain_flagged(corpus):
             "association_uncertain" in w or "shared_geometry" in w
             for w in q["raw_warnings"]
         )
+        assert not current["questions"][number - 1]["cleaning_issues"]
+    # A genuinely unresolved live control remains reviewable as well.
+    _, specimen = next((p, d) for p, d in corpus if "specimen" in p.name)
+    assert "visual_placement_unresolved" in {
+        i["code"] for i in specimen["questions"][24]["cleaning_issues"]
+    }
 
 
 def test_all_36_alignment_cases_and_already_correct_controls(corpus):
@@ -268,11 +289,45 @@ def test_all_36_alignment_cases_and_already_correct_controls(corpus):
             # The frozen visual-only baseline predates the prose-wrap fix.
             # Content and structure remain exact; known PDF wraps may change.
             assert " ".join(q["question_text"].split()) == " ".join(
-                b["question_text"].split()
+                normalize_text(
+                    b["question_text"],
+                    recover_modal_joins=True,
+                    recover_auxiliary_joins=True,
+                ).split()
             )
-            assert " ".join((q["main_question"] or "").split()) == " ".join(
-                (b["main_question"] or "").split()
+            completion = completion_prompt_span(
+                {**q["raw_record"], "question_text": q["question_text"]}
             )
+            recovered_completion = b["main_question"] is None and completion is not None
+            if recovered_completion:
+                assert q["main_question"] == q["question_text"][slice(*completion)]
+                assert q["question_text"].rstrip().endswith(q["main_question"])
+                assert " ".join(
+                    (body_text(q) + " " + q["main_question"]).split()
+                ) == " ".join(
+                    normalize_text(
+                        body_text(b),
+                        recover_modal_joins=True,
+                        recover_auxiliary_joins=True,
+                    ).split()
+                )
+            elif (q["metadata"].get("year"), q["question_number"]) in {
+                (2010, 32),
+                (2012, 16),
+            }:
+                # Explicitly reviewed colon prompts were unresolved in this old
+                # visual-only baseline; all their source text remains accounted.
+                assert b["main_question"] is None
+                assert q["main_question"] and q["main_question"].endswith(":")
+                assert q["question_text"].rstrip().endswith(q["main_question"])
+            else:
+                assert " ".join((q["main_question"] or "").split()) == " ".join(
+                    normalize_text(
+                        b["main_question"] or "",
+                        recover_modal_joins=True,
+                        recover_auxiliary_joins=True,
+                    ).split()
+                )
             assert [(o["label"], o["text"]) for o in q["options"]] == [
                 (o["label"], o["text"]) for o in b["options"]
             ]
@@ -288,7 +343,7 @@ def test_all_36_alignment_cases_and_already_correct_controls(corpus):
             elif not b["cleaning_issues"]:
                 # Exact alignment can add previously missing source-block
                 # evidence; already-correct displayed content/order must not change.
-                assert [
+                assert recovered_completion or [
                     {
                         k: " ".join(v.split()) if k == "text" else v
                         for k, v in block.items()

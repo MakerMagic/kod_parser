@@ -19,9 +19,27 @@ from .storage import load_matched, protect_output
 
 
 def inspect_question(
-    path, *, year, question_number, section="section_1", source=None, **selectors
+    path,
+    *,
+    year,
+    question_number,
+    section="section_1",
+    source=None,
+    cache=None,
+    **selectors,
 ):
-    data = load_matched(path)
+    if cache is None:
+        data = load_matched(path)
+    else:
+        # A batch-local read cache, never a persisted alternative input. Reload
+        # on file changes; normal per-record source/asset checks still run.
+        resolved = Path(path).resolve()
+        stat = resolved.stat()
+        stamp = (stat.st_mtime_ns, stat.st_size)
+        previous = cache.get(str(resolved))
+        if previous is None or previous[0] != stamp:
+            cache[str(resolved)] = (stamp, load_matched(resolved))
+        data = cache[str(resolved)][1]
     found = [
         r
         for r in data["records"]

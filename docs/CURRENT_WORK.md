@@ -14,6 +14,18 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Already completed
 
+- BMAT Section 1 path: `acquisition/bmat`, `parsers/bmat`, `processors/bmat`; all 19 PMT papers 2003–2021 acquired with hashes. RAW preserves 664 questions / 524 pages; 280 intentional skips, 363 raw-ready, 21 non-skipped reviews. There are 82 independent issue-bearing records (61 also skipped), so BMAT RAW is NOT yet complete. All 664 HTMLs and separate skip/defect reporting generated. 125 BMAT/TSA tests pass; three real layout determinism checks and all 750 TSA hash-locked records pass unchanged. See `docs/BMAT_RAW_BACKTEST.md` / `inspections_bmat/validation.json`. BMAT clean/match/categorize remain gated placeholders; no answer/explanation download or generation.
+
+- Representation/rulebook refinement: decoded option anchors, image-cell ownership, certified blank raster bands and detached chart legends repaired RAW body/answer separation; CLEAN recognises conditional sentence-completion prompts. RAW/CLEAN/matching propagated with all 750 raw question blocks and Final Explanations preserved. All ten new regressions pass: 12 prior reviews resolved, five accepted subtypes corrected, none withdrawn; current support 722/750, 25 PS reviews and three unclassified. All 265 affected/review HTMLs rebuilt; current evidence audit: `inspections_categorization/representation_refinement/validation.json`. No explanation generation.
+
+- Controlled Problem-Solving rulebook review: all 260 previously for-review PS records assessed; 225 resolved (12 multi-label), 35 retained with concrete reasons. The other 490 records, RAW/CLEAN/matching, answers and explanations are unchanged. Content-bound decisions: `categorization/ps_review_decisions.tsv` / `ps_review.json`; reproduce with `categorization review`. Current totals: 710 supported, 37 needs_review (35 PS + two excluded CT), three unclassified. Complete review trail: `docs/CATEGORIZATION_BACKTEST.MD`.
+
+- Rulebook review completion verified after interruption: all 260 HTML inspections and 509 local links pass; persisted labels/multi-labels match bound decisions. Issues list contains only 40 unique unresolved records; resolved history stays in backtesting, not active issue rows. Focused review tests 41/41 and categorization regressions 111/111 pass; reports regenerate byte-identically. Saved checks: `inspections_categorization/rulebook/validation.json`.
+
+- Semantic categorization refinement: v3 context-gated principle/impact/inference and procedural/tariff families, 64 reviewed examples. All 750 rows re-evaluated; 11 unclassified + five needs_review resolved, all 469 prior accepted labels retained. Current support 485/750 (373 CT, 112 PS), 265 unresolved. CLEAN-only 2009 Q17/Q14 prompt joins corrected with separately declared rules; RAW/answers/explanations preserved and legacy matching/handoff rebuilt. Before/after audit: `inspections_categorization/before_semantic_refinement.json`; current QA: `docs/CATEGORIZATION_BACKTEST.MD`.
+
+- Categorization refinement: CLEAN recovers answer-completed colon prompts (2010 Q32, 2012 Q16); affected CLEAN/matching rebuilt and handoff refreshed, RAW/answers/explanations preserved. Catalogue v2 adds category modality/engine metadata and spatial equivalence patterns; decorative/preview references are not meaningful visuals. 59 reviewed examples; 17 prior unresolved assignments supported, eight prior selection labels corrected, three geometric-composition labels withdrawn for review. Current support: 469/750 (363 CT, 106 PS); 281 unresolved. Full before/after audit and HTML links: `docs/CATEGORIZATION_BACKTEST.MD`; reasons: `docs/categorization_issues.md`.
+
 - Independent official 2020 profile verified: 50 full explanations / 50 matches, 26 explicit and 24 semantic answer inferences; all six supplied anchors pass. Complete text/evidence agrees with independent PDFium extraction; 50 HTML inspections are saved. Reparse is byte-identical and 36 pre-existing RAW/CLEAN/other-year matched JSONs remain unchanged. Q12's existing clean symbol-order review and Q25's raw caption review remain visible, not suppressed. Commands: `docs/MATCHING_2020_BACKTEST.md`.
 
 - RAW structural grouping fixes 2019 Q36's detached dimension and 2016 Q37's fragmented mushroom arrays (3→2 / 48→2 assets). Isolated reparsing of all 800 questions changed only these two records' visual fields; text/identity/options and original PNGs remain preserved. Affected RAW/CLEAN and dependent matching snapshots/reports regenerated; existing issue counts and ambiguous cases remain unchanged. Full suite: 457 passed; focused lint/format checks passed; regenerated PNG crops visually checked.
@@ -101,18 +113,20 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Do not work on yet
 
-- categorization;
 - final dataset generation;
 - additional sources.
 
 ## Next task
 
+- Finish BMAT RAW review before implementing cleaning: inspect the 21 blocked non-skipped questions and separately retain the 61 skipped records' structural/encoding issues. Verify image borders/association, remaining unknown glyphs and request boundaries through `docs/BMAT_RAW_ISSUES.md` / `inspections_bmat/index.html`; never reinterpret detection failures as intentional No Question skips.
+
+- Manually backtest the current refinement trail and investigate the remaining 25 PS reviews: 11 below semantic thresholds, nine source/explanation conflicts, two incomplete extractions, two taxonomy boundaries and one insufficiently specified task. Three unclassified records remain. Assistant assessments are not human approval; do not generate explanations or repair unrelated upstream issues implicitly.
+
 - Review the imported/visual 2017–2019 explanations through the new HTML index and twelve unresolved cases in the year-specific workspace reports. Historical Gemini pilot commands remain inactive.
 
 - Independent CLEAN limitation: 2016 Q37 retains the declarative "When I looked..." sentence in Main Question, despite correct RAW ordering between the two now-complete diagrams. Grouping does not resolve this body/prompt classification; review separately without a question-specific exception.
-- Review the two upstream option-label conflicts blocking 2017–2019 matches; do not force their correct-answer association. Keep the Q44 manual composite scoped to the approved source/key.
-- User confirmed 2018 Q20 = B and 2019 Q32 = C; these agree with source keys and are shown in the issues report without clearing the upstream option conflicts.
+- The 2018 Q20 and 2019 Q32 option-label conflicts are now repaired in RAW and match source answers B/C. Keep the 2022 Q44 manual composite scoped to the approved source/key.
 
 - Keep the supplied PDF's Q46 header omission traceable; replace the approved 2022 manual supplement only with verified source evidence. Do not turn it into an automatic missing-explanation fallback.
-- Review the remaining 2014 Q50 upstream option conflict in `MATCHING_2008-2016_ISSUES.md`. Keep 2008 Q12 / 2016 Q38's original source failures traceable alongside their approved manual explanations.
+- The 2014 Q50 option conflict is repaired and source answer B is matched. Keep 2008 Q12 / 2016 Q38's original source failures traceable alongside their approved manual explanations.
 - Expand manual explanation/screenshot fidelity checks before any downstream stage.

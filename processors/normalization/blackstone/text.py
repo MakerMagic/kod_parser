@@ -185,6 +185,8 @@ def normalize_text(
     contextual_wraps=False,
     line_context=None,
     on_unresolved=None,
+    recover_modal_joins=False,
+    recover_auxiliary_joins=False,
 ):
     """NFC/common whitespace only; keep paragraphs, lists, tables and hyphens."""
     if not isinstance(value, str):
@@ -262,7 +264,28 @@ def normalize_text(
         # Joining a wrapped introduction can expose its lead-in phrase. Apply
         # the same evidence rule again without any further prose joining.
         result, _ = _introduced_blocks(result)
-    return "\n".join(result).strip()
+    result = "\n".join(result).strip()
+    if recover_modal_joins:
+        # A closed grammatical combination inside an answer request, not a
+        # general dictionary splitter. Original extraction remains in RAW.
+        result = re.sub(
+            r"(\b(?:Which|What)\b[^?!.:\n]*?\b)(would|could|should|might)"
+            r"(weaken|strengthen|undermine|support|challenge)"
+            r"(?=\s+(?:(?:the|this|that|a|an)\s+)?(?:(?:above|following)\s+)?"
+            r"(?:argument|reasoning|claim|conclusion)\b)",
+            r"\1\2 \3",
+            result,
+            flags=re.IGNORECASE,
+        )
+    if recover_auxiliary_joins:
+        result = re.sub(
+            r"(\b(?:Which|What)\b[^?!.:\n]*?\b)(is|are|was|were|does|do)(not)"
+            r"(?=\s+(?:true|false|possible|correct|consistent)\b)",
+            r"\1\2 \3",
+            result,
+            flags=re.IGNORECASE,
+        )
+    return result
 
 
 def artifact_reason(value):

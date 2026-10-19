@@ -176,17 +176,33 @@ def test_all_question_numbers_raw_spans_and_core_fields_survive(cid_papers):
                 p["raw_text"] for p in old["pages"]
             ]
             for q, original in zip(data["questions"], old["questions"]):
+                recovered_boundary = (
+                    [o["label"] for o in original["options"]] != list("ABCDE")
+                    and [o["label"] for o in q["options"]] == list("ABCDE")
+                    and all(len(o["images"]) == 1 for o in q["options"])
+                )
                 for key in (
                     "question_id",
                     "source_question_key",
                     "page_reference",
-                    "question_text",
                     "subpoints",
                 ):
                     assert q[key] == original[key]
-                for key in ("question_block", "options_block", "page_spans"):
+                for key in ("question_block", "page_spans"):
                     assert q["raw"][key] == original["raw"][key]
-                if q["question_number"] not in CASES[year]:
+                if recovered_boundary:
+                    assert original["question_text"] in q["question_text"]
+                    assert (
+                        q["raw"]["options_block"] in original["raw"]["question_block"]
+                    )
+                    assert all(
+                        o["images"][0]["option_label"] == o["label"]
+                        for o in q["options"]
+                    )
+                else:
+                    assert q["question_text"] == original["question_text"]
+                    assert q["raw"]["options_block"] == original["raw"]["options_block"]
+                if q["question_number"] not in CASES[year] and not recovered_boundary:
                     assert [(o["label"], o["text"]) for o in q["options"]] == [
                         (o["label"], o["text"]) for o in original["options"]
                     ]

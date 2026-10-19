@@ -1,0 +1,740 @@
+TSA Problem-Solving Subcategory Attribution Rules
+This rulebook treats categorization as a semantic diagnosis of the cognitive operation required to solve the question, not as keyword matching or recognition of surface formats such as tables, numbers, or diagrams.    Pasted markdown The governing question is: “What cognitive operation must the student perform to answer the question?”    Pasted markdown
+A. Core distinction between the three categories
+Category	Core cognitive operation	Decisive diagnostic question
+Relevant Selection	Determine which supplied information is applicable and ignore information that is unnecessary or inapplicable	Would the main difficulty largely disappear if the solver were told exactly which supplied information to use?
+Finding Procedures	Determine how to transform the available information into the answer through a non-trivial method, sequence, algorithm, simulation, or construction	Even with the relevant information already identified, must the solver still devise or execute a substantial procedure?
+Identifying Similarity	Recognise that two configurations, representations, relationships, or structures are equivalent despite superficial differences	Is the decisive task recognising preserved structure/equivalence rather than selecting data or constructing a procedure?
+
+
+A question can contain selection, calculation, and comparison simultaneously. Classification depends on which of these operations is material to solving, not merely present.
+Evidence hierarchy
+Use evidence in this order:
+1. Main Question intent — what the student is actually being asked to determine.
+2. Required solving operation — what must happen cognitively before the answer can be reached.
+3. Answer-option structure — what distinguishes the correct option from distractors.
+4. Main Body structure — whether the information source contains irrelevant, processual, or transformational structure.
+5. Explanation, if available — strong corroborating evidence for the actual solution path, but it must not override the question itself.
+6. Visual assets — useful when the operation depends on a diagram, spatial transformation, graph, or structured display.
+7. Surface vocabulary — lowest-priority evidence.
+A table, graph, image, arithmetic expression, or keyword must never determine the category by itself. In particular, the source explicitly requires distinguishing “using all supplied information” from “selecting only the relevant subset.”    Pasted markdown
+Materiality test
+For every candidate category ask:
+If this cognitive operation were removed or supplied to the student for free, would the problem become substantially easier?
+
+If NO, the operation is probably incidental and should not determine classification.
+B. Relevant Selection
+Definition
+Assign Relevant Selection when the solver must determine which supplied information applies to the requested situation before the main calculation or comparison can be performed.
+The defining difficulty is not merely reading information. It is excluding information that is available but irrelevant, inapplicable, or unnecessary. This directly follows the stated core concept of selecting correct information before solving.    Pasted markdown
+Decisive signs
+At least one of these should normally be present:
+- The source contains more information than the requested scenario requires.
+- Several rows, columns, categories, rules, rates, dates, groups, or values are available, but only a subset applies.
+- Applying the wrong subset produces a plausible but incorrect answer.
+- Determining applicability requires interpreting conditions in the Main Question.
+- Once the relevant subset is identified, the remaining operation becomes comparatively straightforward.
+Supporting signs
+- Large table or dataset.
+- Several categories with overlapping applicability.
+- Conditional tariffs/rates/rules.
+- Question specifies a particular person, date, scenario, product, journey, subgroup, or restriction.
+- Values needed for the answer are distributed across different parts of the Main Body.
+- Distractor information resembles the relevant information closely.
+Negative signs
+- Every supplied value is necessary.
+- The required values are explicitly named in the Main Question.
+- There is no meaningful choice about what information applies.
+- The hard part occurs only after the relevant information is obvious.
+- The solver must mainly simulate, optimise, arrange, sequence, or recognise equivalence.
+Hard exclusions
+Do not assign Relevant Selection solely because:
+- a table/chart/graph is present;
+- the question contains many numbers;
+- the student must select one answer option;
+- the student can eliminate incorrect answer options;
+- some information happens not to be used because of one particular solution strategy;
+- all relevant values are obvious and the real challenge is a non-trivial procedure.
+Pattern families
+Pattern RS-01 — Structured subset selection
+YES/NO decision chain
+1. Does the Main Body contain a structured information source with multiple entries?
+   - NO → RS-01 does not apply.
+   - YES → continue.
+2. Does the requested situation concern only some of those entries?
+   - NO → RS-01 does not apply.
+   - YES → continue.
+3. Must the solver determine which entries apply rather than being explicitly told?
+   - NO → weak evidence only.
+   - YES → continue.
+4. Could choosing an incorrect but plausible subset lead to a different answer?
+   - NO → supporting evidence only.
+   - YES → strong RS-01 evidence.
+5. After the correct subset is isolated, is the remaining work comparatively straightforward?
+   - YES → RS-01 is near-decisive for Relevant Selection.
+   - NO → test for Relevant Selection + Finding Procedures.
+Positive signals
+- Relevant rows/columns must be identified.
+- Data categories overlap.
+- Several plausible values compete for use.
+- Applicability depends on interpreting the scenario.
+Counter-signals
+- Every row/column is required.
+- The table merely stores inputs for a multi-step algorithm.
+- The table itself represents a process to simulate.
+SHOULD trigger
+A tariff table lists prices for different usage ranges, and the solver must determine which rate applies to the stated usage before calculating the total.
+SHOULD NOT trigger
+A table gives exactly the four values required for a formula, all four must be used, and the difficulty lies in executing the calculation.
+Pattern RS-02 — Scenario-specific applicability
+Decision chain
+1. Does the Main Question define a specific scenario, person, date, condition, route, category, or constraint?
+   - NO → pattern does not apply.
+   - YES → continue.
+2. Does the Main Body contain information covering multiple scenarios?
+   - NO → pattern does not apply.
+   - YES → continue.
+3. Must the solver map the requested scenario to the applicable information?
+   - NO → weak evidence.
+   - YES → continue.
+4. Is distinguishing applicable from non-applicable information necessary before solving?
+   - YES → strong Relevant Selection.
+   - NO → do not classify from this pattern.
+Positive signals
+- “For this customer…”
+- “On this day…”
+- “For this journey…”
+- “For someone satisfying…”
+- Multiple rules apply to different cases.
+Counter-signals
+If the scenario merely supplies initial conditions for a difficult simulation, Finding Procedures may dominate.
+Pattern RS-03 — Conditional rate/rule selection
+Decision chain
+1. Are several rates, rules, tariffs, eligibility conditions, or thresholds supplied?
+2. Does only one or a subset apply to the target case?
+3. Must the solver determine applicability from conditions rather than being directly told?
+4. Is the main potential error choosing the wrong rule/rate rather than executing arithmetic?
+If YES to 1–4 → strong Relevant Selection.
+If the applicable rule is obvious but applying it requires a substantial multi-stage process → consider Finding Procedures.
+Pattern RS-04 — Selective combination across sources
+Decision chain
+1. Are required facts distributed across multiple tables, paragraphs, diagrams, or lists?
+2. Are some apparently related pieces irrelevant?
+3. Must the solver combine only a specific subset?
+4. Would combining all available information be invalid or misleading?
+YES to 1–4 → strong Relevant Selection.
+This pattern is stronger than mere “information appears in several places”; selectivity is essential.
+Pattern RS-05 — Selection before derivation
+The required answer may not be directly printed.
+Decision chain
+1. Must the solver first identify the correct input values?
+2. Must those selected values then be used to derive another value?
+3. Is the derivation itself routine once the correct inputs are known?
+YES → Relevant Selection.
+If step 2 instead requires a non-obvious multi-step method, consider RS + FP.
+Diagnostic checklist
+- [ ] More information is supplied than the task requires.
+- [ ] Applicability depends on the particular scenario.
+- [ ] A plausible but irrelevant subset exists.
+- [ ] Correct selection must occur before meaningful solving.
+- [ ] Supplying the correct subset in advance would substantially reduce difficulty.
+- [ ] The remaining procedure after selection is relatively straightforward.
+Strong threshold
+Strong Relevant Selection candidate when:
+- the selection requirement is definitely necessary, and
+- at least two additional independent signs above are present, and
+- no hard exclusion applies.
+High confidence should normally require that the counterfactual test also succeeds:
+If the correct data subset were highlighted for the student, most of the problem's difficulty would disappear.
+
+False positives
+Do not classify as RS merely because:
+- a table has many entries but all are needed;
+- a graph must be read to obtain one obvious value;
+- options A–E require elimination;
+- irrelevant-looking data happens not to be used under one elegant solution method;
+- a diagram contains many elements but the task is rotation/reflection equivalence;
+- several numbers appear, but the difficult step is discovering an algorithm;
+- a question asks which answer is relevant to an argument — unless the underlying Problem-Solving operation genuinely involves selecting supplied data.
+C. Finding Procedures
+Definition
+Assign Finding Procedures when the relevant information is sufficiently available, but the solver must determine how to transform it into the answer through a non-trivial process.
+The source defines the central difficulty as figuring out HOW to get from available information to the solution and explicitly warns that arithmetic, numbers, or tables alone are insufficient.    Pasted markdown
+Decisive signs
+- A sequence of dependent operations must be constructed.
+- Several states/cases must be propagated or simulated.
+- Solving requires working backwards.
+- A systematic search or case analysis is necessary.
+- A constrained arrangement must be built.
+- An optimum, minimum, or maximum must be achieved through method rather than direct comparison.
+- A repeated process must be tracked until a condition is met.
+Supporting signs
+- Intermediate quantities are necessary.
+- Later steps depend on earlier results.
+- Order matters.
+- A process changes state over time.
+- Multiple constraints interact.
+- Trial possibilities must be systematically ruled out.
+- A scheduling, allocation, packing, production, or route procedure is involved.
+Negative signs
+- One obvious calculation produces the answer.
+- The challenge is merely finding the correct input values.
+- The correct result follows immediately from one comparison.
+- The primary task is recognising equivalent structures.
+- A procedure is optional rather than necessary.
+Hard exclusions
+Do not assign FP merely because:
+- arithmetic occurs;
+- there are several mathematical operations but their sequence is completely explicit;
+- a formula is directly given and values are simply substituted;
+- the question contains many numbers;
+- a table is present;
+- the solver happens to use a lengthy personal solution method when a direct method exists.
+Pattern families
+Pattern FP-01 — Non-trivial procedural chain
+Decision chain
+1. Are the relevant inputs already identifiable?
+   - NO → first test RS.
+   - YES → continue.
+2. Can the answer be obtained by one direct obvious operation?
+   - YES → FP-01 does not apply.
+   - NO → continue.
+3. Must the solver construct a sequence of dependent operations?
+   - NO → test another category.
+   - YES → continue.
+4. Does choosing the wrong order/method plausibly produce failure even with correct inputs?
+   - YES → strong FP evidence.
+5. Would being given the procedure remove most of the difficulty?
+   - YES → near-decisive FP.
+Pattern FP-02 — Repeated process / simulation
+Decision chain
+1. Does the system change through repeated steps, rounds, cycles, moves, days, transactions, or stages?
+2. Must the solver track those changes?
+3. Does each state depend on the previous state?
+4. Is the final answer determined only after simulating or abstracting the process?
+YES → strong Finding Procedures.
+Examples include:
+- recurring schedules;
+- repeated transfers;
+- cyclic arrangements;
+- progressive filling/emptying;
+- repeated transformations.
+Pattern FP-03 — Work backwards
+Decision chain
+1. Is a final state/result given?
+2. Is the unknown earlier state required?
+3. Must operations be reversed in the correct order?
+4. Is reversing the chain the substantive method?
+YES → strong FP.
+Simply rearranging one equation is not enough.
+Pattern FP-04 — Systematic case analysis
+Decision chain
+1. Are multiple configurations initially possible?
+2. Must constraints be applied to eliminate or retain cases?
+3. Is checking only one case insufficient?
+4. Must the solver search the possibility space systematically?
+YES → strong FP.
+This includes some “could/could not be true” problems when the core work is constructing/testing configurations, rather than recognising a structural equivalence.
+Pattern FP-05 — Optimisation / constrained construction
+Decision chain
+1. Is the target a minimum, maximum, most efficient, earliest, latest, fewest, greatest, or optimal arrangement?
+2. Can the answer be obtained by directly comparing supplied finished values?
+   - YES → not necessarily FP.
+   - NO → continue.
+3. Must the solver construct possibilities or derive a strategy under constraints?
+4. Must feasibility and optimality both be established?
+YES → strong FP.
+Pattern FP-06 — Scheduling / allocation / routing procedure
+Decision chain
+1. Are resources, people, times, locations, tasks, or routes constrained?
+2. Must they be assigned/ordered/combined?
+3. Do decisions interact?
+4. Is a valid sequence or allocation the core solution?
+YES → strong FP.
+If the route is merely chosen from a table by extracting one directly applicable row, RS may be more appropriate.
+Diagnostic checklist
+- [ ] Relevant information is already identifiable.
+- [ ] One obvious direct calculation is insufficient.
+- [ ] Several dependent operations/states/cases are required.
+- [ ] The solver must choose or construct a method.
+- [ ] Order or sequence matters.
+- [ ] Giving the procedure in advance would substantially reduce difficulty.
+Strong threshold
+Strong FP candidate when:
+- a non-trivial procedure is necessary, and
+- at least two procedural signs are present, and
+- no hard exclusion applies.
+A long solution is not enough. The procedure itself must be part of what the student has to discover.
+False positives
+- Three additions in sequence when the required calculation is obvious.
+- Plugging values into a known formula.
+- Reading several values from a table where the real difficulty is selecting applicable rows → RS.
+- Comparing two finished values.
+- Trying answer choices as an optional shortcut.
+- Recognising a rotated cube after mentally rotating it → IS, even though mental transformation occurs as a “process.”
+D. Identifying Similarity
+Definition
+Assign Identifying Similarity when the essential task is recognising that two objects, structures, configurations, representations, methods, or relationships are equivalent under a relevant transformation or invariant.
+The core is structural equivalence, including rotation, reflection, folding, unfolding, viewpoints, nets, and potentially non-spatial relationships.    Pasted markdown
+Decisive signs
+- The task asks whether two representations could describe the same underlying object/structure.
+- A transformation changes appearance while preserving relevant relationships.
+- The solver must track invariant adjacency, orientation, ordering, correspondence, or relational structure.
+- The answer depends on matching a structural pattern rather than computing a new quantity.
+Supporting signs
+- rotation;
+- reflection;
+- folding/unfolding;
+- nets;
+- viewpoints;
+- matching configurations;
+- corresponding positions;
+- equivalent relationships;
+- same underlying pattern.
+These are supporting signals only; the source explicitly warns that such words cannot automatically determine the category.    Pasted markdown
+Negative signs
+- “same” refers only to equal numerical values.
+- Objects are compared only by magnitude.
+- A diagram is used merely as data input.
+- A spatial diagram supports a route calculation rather than equivalence recognition.
+- The solver constructs a configuration rather than recognising an equivalent one.
+Hard exclusions
+Do not assign IS when:
+- no equivalence/correspondence judgment is required;
+- the object simply needs measuring/counting;
+- the transformation creates a genuinely new state rather than an equivalent representation;
+- “same”, “match”, or “similar” is incidental vocabulary.
+Pattern families
+Pattern IS-01 — Rotation equivalence
+Decision chain
+1. Are two or more objects/configurations shown or described?
+2. Could differences in appearance be explained by rotation?
+3. Must the solver preserve internal relationships such as adjacency/order/orientation?
+4. Is the target to determine whether one representation could be the same object after rotation?
+YES → decisive IS.
+Pattern IS-02 — Reflection or mirror relation
+Decision chain
+1. Is a transformed representation being compared to an original?
+2. Is distinguishing rotation from reflection important?
+3. Must handedness/orientation relationships be preserved or reversed appropriately?
+4. Is equivalence/non-equivalence under the permitted transformation the goal?
+YES → strong IS.
+Pattern IS-03 — Folding / nets / unfolding
+Decision chain
+1. Is a flat or alternative representation mapped to a 3-D object or another configuration?
+2. Must the solver determine which elements become adjacent/opposite/corresponding?
+3. Is the primary challenge preserving relationships under folding/unfolding?
+4. Is the final task to identify a compatible/equivalent configuration?
+YES → decisive IS.
+A lengthy sequence of folds does not automatically make this FP if the essential test is still equivalence.
+Pattern IS-04 — Alternative viewpoint
+Decision chain
+1. Is the same object potentially being viewed from another side/angle?
+2. Does the solver need to infer which visible relationships would change and which remain invariant?
+3. Is the question asking which representation could correspond to the same object?
+YES → strong IS.
+Pattern IS-05 — Non-spatial structural equivalence
+Decision chain
+1. Are two patterns, systems, sequences, mappings, or relationships being compared?
+2. Are surface values/names different?
+3. Is there an underlying relational structure that may be the same?
+4. Is recognising that shared structure the main task?
+YES → IS.
+If the solver must instead derive a new sequence through an algorithm, FP may dominate.
+Diagnostic checklist
+- [ ] Two or more representations/structures must be compared.
+- [ ] Surface appearance differs.
+- [ ] Relevant structural relationships must be preserved.
+- [ ] A transformation/correspondence must be recognised.
+- [ ] The target is equivalence, not primarily a new computed quantity.
+- [ ] Providing the correspondence in advance would remove most of the difficulty.
+Strong threshold
+Strong IS candidate when:
+- structural equivalence/correspondence is the actual target, and
+- at least one substantive invariant/transformation must be tracked, and
+- no hard exclusion applies.
+False positives
+- Two prices are “the same”.
+- Two quantities happen to be equal after calculation.
+- Two routes are compared by travel time.
+- A diagram contains repeated shapes, but the question asks for an area.
+- A transformation is performed as one step inside a larger algorithm, but equivalence recognition is not tested.
+- Two configurations are compared only to determine which is larger/cheaper/faster.
+E. Multi-label rules
+Multi-label classification is legitimate only when each assigned category represents an independently material cognitive operation. The source explicitly permits multi-label cases, particularly Relevant Selection + Finding Procedures, but warns against assigning both merely because selection and arithmetic coexist.    Pasted markdown
+RS + FP
+Assign both only if all of the following hold:
+1. The solver must perform a genuinely non-trivial information-selection task.
+2. After the correct information is selected, a genuinely non-trivial procedure still remains.
+3. Neither operation is merely incidental.
+4. Removing either operation would substantially simplify the question.
+Counterfactual test
+Ask both:
+If the correct subset of information were highlighted, would a substantial procedure still remain?
+
+AND
+If the correct procedure were supplied, would determining which information applies still require meaningful discrimination?
+
+If YES + YES → RS + FP justified.
+If only the first is YES → FP.
+If only the second is YES → RS.
+RS + IS
+Possible, but uncommon.
+Assign both only when:
+1. Structural equivalence must first be recognised or verified; and
+2. after that, the solver must still select materially relevant information from a broader source, or vice versa;
+3. neither operation is trivial.
+Do not dual-label merely because a diagram contains irrelevant visual elements.
+FP + IS
+Possible, but uncommon.
+Assign both when:
+1. recognising structural equivalence is independently required; and
+2. after equivalence is established, a substantial procedural construction/simulation is still necessary.
+Do not assign FP simply because mental rotation involves several imagined steps. If those steps serve only to recognise equivalence, use IS alone.
+RS + FP + IS
+Allow only in exceptional cases where all three operations independently pass the materiality counterfactual.
+Default response to uncertain triple-label cases should be:
+needs_review
+rather than assigning all three.
+F. Conflict-resolution matrix
+Conflict	Decisive distinction	Primary test
+RS vs FP	Which information? vs How do I use it?	If the correct inputs were highlighted, would substantial difficulty remain? YES → FP pressure; NO → RS pressure
+RS vs IS	Choose applicable information vs recognise equivalent representation	Is the solver filtering data or preserving structural relationships across representations?
+FP vs IS	Construct/execute procedure vs recognise invariant structure	Is the desired output a derived state/value/process, or identification of an equivalent configuration?
+
+
+RS vs FP tie-breaker
+1. Identify correct inputs.
+2. Imagine they are highlighted.
+3. If solution now becomes nearly immediate → RS.
+4. If substantial reasoning remains → FP may apply.
+5. If selection itself was also substantial → RS + FP.
+RS vs IS tie-breaker
+1. Is excess/inapplicable information genuinely present?
+2. Is choosing among it necessary?
+3. Or is the apparent “selection” simply choosing which object matches another?
+If the latter → IS.
+Selecting the matching answer option is not RS.
+FP vs IS tie-breaker
+1. Is the solver trying to produce a result by executing steps?
+   - FP pressure.
+2. Or determine whether two states/configurations represent the same structure?
+   - IS pressure.
+3. If transformation steps merely support recognition of sameness → IS.
+4. If equivalence recognition is only one stage in a substantive algorithm → possible FP + IS.
+G. Master decision tree for Codex
+Step 1 — Identify the demanded output
+What does the Main Question fundamentally ask the solver to determine?
+- an applicable subset/value/rule → go to 2A
+- a result requiring a method/process → go to 2B
+- an equivalent/matching structure → go to 2C
+- unclear → evaluate all three and mark review if evidence remains conflicting
+2A — Test Relevant Selection
+RS-1: Is more information available than the requested scenario needs?
+- NO → RS unlikely; go to 2B.
+- YES → continue.
+RS-2: Must the solver determine which information applies?
+- NO → RS weak only; go to 2B.
+- YES → continue.
+RS-3: Would highlighting the applicable information remove a substantial part of the difficulty?
+- YES → RS candidate.
+- NO → RS may be secondary; continue to FP test.
+2B — Test Finding Procedures
+FP-1: After relevant information is known, can the answer be obtained by one direct obvious operation?
+- YES → FP normally excluded; go to 2C.
+- NO → continue.
+FP-2: Must the solver construct/execute a sequence, simulation, systematic search, optimisation, allocation, backwards process, or constrained arrangement?
+- NO → FP weak.
+- YES → continue.
+FP-3: Would supplying the procedure substantially simplify the problem?
+- YES → FP candidate.
+- NO → FP weak.
+2C — Test Identifying Similarity
+IS-1: Is the task comparing representations/configurations/relationships?
+- NO → IS unlikely.
+- YES → continue.
+IS-2: Is the question fundamentally whether they are equivalent/corresponding despite different appearance?
+- NO → IS unlikely.
+- YES → continue.
+IS-3: Must a structural invariant be preserved across rotation/reflection/folding/viewpoint/rearrangement or another representation change?
+- YES → IS candidate.
+- NO → test whether “same/similar” is merely superficial wording.
+Step 3 — Apply materiality tests
+For every candidate label:
+If this operation were supplied to the student for free, would difficulty substantially decrease?
+
+- NO → remove that label.
+- YES → retain candidate.
+Step 4 — Apply hard exclusions
+Remove categories triggered only by:
+- modality;
+- keywords;
+- arithmetic presence;
+- visual presence;
+- table presence;
+- answer-choice selection.
+This implements the source requirement that keywords remain evidence rather than the entire decision.    Pasted markdown
+Step 5 — Evaluate multi-label status
+If two candidate operations remain:
+1. Is operation A independently substantial?
+2. Is operation B independently substantial?
+3. Would removing A still leave B as a material challenge?
+4. Would removing B still leave A as a material challenge?
+YES to all → multi-label.
+Otherwise retain only the dominant operation.
+Step 6 — Determine status
+- clear evidence, no material conflict → classify;
+- incomplete evidence → needs_review;
+- evidence supports multiple substantial operations → multi-label;
+- contradictory signals or missing visual information → needs_review.
+H. Confidence rules
+High confidence
+Require all of:
+1. At least one decisive semantic indicator.
+2. At least two independent supporting indicators.
+3. No hard exclusion.
+4. Counterfactual materiality test succeeds.
+5. No competing category has comparable unexplained evidence.
+6. Available explanation/visual evidence, when present, is consistent with the classification.
+High confidence is not a probability.
+Medium confidence
+Use when:
+- core operation appears identifiable;
+- one decisive or several strong signals exist;
+- some evidence is incomplete;
+- a competing category is plausible but weaker;
+- no direct contradiction exists.
+Medium should not be used to disguise unresolved conflicts.
+Review
+Use needs_review when any of the following applies:
+- required visual asset is missing/unreadable;
+- Main Question intent and explanation imply different operations;
+- two categories both appear substantial but materiality cannot be determined;
+- classification depends mainly on keywords;
+- categorization depends on assuming an unstated solution path;
+- source extraction is incomplete;
+- multiple interpretations of the task remain defensible;
+- no category reaches its minimum semantic threshold.
+The source explicitly prefers review over forcing a classification when signals conflict.    Pasted markdown
+I. Machine-friendly compact rule set
+subcategory_rules:
+
+  relevant_selection:
+    core_operation:
+      determine_which_supplied_information_is_applicable
+
+    decisive_conditions:
+      - excess_or_competing_information_exists
+      - solver_must_determine_applicability
+      - incorrect_but_plausible_subsets_exist
+      - selection_occurs_before_main_solution
+      - providing_correct_subset_substantially_reduces_difficulty
+
+    strong_signals:
+      - scenario_specific_rows_or_columns
+      - conditional_tariff_or_rate
+      - eligibility_or_applicability_rules
+      - several_categories_but_only_subset_needed
+      - selective_combination_across_sources
+      - relevant_inputs_must_be_found_before_derivation
+
+    weak_signals:
+      - table_present
+      - chart_present
+      - many_numbers
+      - long_body
+      - multiple_categories
+      - visual_data
+
+    exclusions:
+      - all_information_required
+      - relevant_inputs_explicitly_identified
+      - only_answer_choice_selection
+      - main_difficulty_is_nontrivial_procedure
+      - main_difficulty_is_structural_equivalence
+
+    materiality_test:
+      question: >
+        If the correct information were highlighted,
+        would most of the difficulty disappear?
+      yes_supports: relevant_selection
+      no_action: test_finding_procedures
+
+    minimum_strong_assignment:
+      require:
+        - applicability_selection_is_necessary
+        - at_least_two_independent_supporting_signals
+        - no_hard_exclusion
+
+  finding_procedures:
+    core_operation:
+      construct_or_execute_nontrivial_method_to_reach_solution
+
+    decisive_conditions:
+      - relevant_inputs_are_known_or_identifiable
+      - direct_single_operation_is_insufficient
+      - method_or_sequence_must_be_determined
+      - intermediate_states_or_cases_matter
+      - providing_the_procedure_substantially_reduces_difficulty
+
+    strong_signals:
+      - dependent_multi_step_process
+      - simulation
+      - repeated_process
+      - work_backwards
+      - systematic_case_analysis
+      - optimisation
+      - constrained_arrangement
+      - scheduling
+      - allocation
+      - routing
+      - production_or_work_rate_sequence
+
+    weak_signals:
+      - arithmetic_present
+      - multiple_numbers
+      - multiple_operations
+      - table_present
+      - calculation_language
+
+    exclusions:
+      - one_obvious_direct_calculation
+      - simple_formula_substitution
+      - primary_difficulty_is_data_selection
+      - primary_difficulty_is_equivalence_recognition
+      - lengthy_method_is_optional_solver_strategy
+
+    materiality_test:
+      question: >
+        If the correct method or sequence were supplied,
+        would most of the difficulty disappear?
+      yes_supports: finding_procedures
+      no_action: reconsider_category
+
+    minimum_strong_assignment:
+      require:
+        - nontrivial_procedure_is_necessary
+        - at_least_two_independent_procedural_signals
+        - no_hard_exclusion
+
+  identifying_similarity:
+    core_operation:
+      recognize_structural_equivalence_across_different_representations
+
+    decisive_conditions:
+      - representations_or_structures_are_compared
+      - equivalence_or_correspondence_is_the_target
+      - relevant_relationships_must_be_preserved
+      - superficial_appearance_differs
+      - recognition_not_new_quantity_is_primary_goal
+
+    strong_signals:
+      - rotation_equivalence
+      - reflection_relation
+      - folding_or_unfolding
+      - net_to_object_mapping
+      - alternative_viewpoint
+      - corresponding_positions
+      - relational_pattern_equivalence
+      - invariant_structure
+
+    weak_signals:
+      - same
+      - similar
+      - equivalent
+      - match
+      - correspond
+      - diagram_present
+      - repeated_shapes
+
+    exclusions:
+      - same_only_means_equal_numeric_value
+      - comparison_is_only_by_magnitude
+      - diagram_is_only_data_source
+      - transformation_is_incidental_to_procedure
+      - no_equivalence_judgment_required
+
+    materiality_test:
+      question: >
+        If the correct correspondence or transformation were shown,
+        would most of the difficulty disappear?
+      yes_supports: identifying_similarity
+      no_action: reconsider_category
+
+    minimum_strong_assignment:
+      require:
+        - structural_equivalence_is_actual_target
+        - at_least_one_material_invariant_or_transformation
+        - no_hard_exclusion
+
+multi_label:
+
+  relevant_selection_plus_finding_procedures:
+    require:
+      - selection_is_independently_substantial
+      - procedure_is_independently_substantial
+      - procedure_remains_difficult_after_data_is_highlighted
+      - selection_remains_difficult_if_procedure_is_given
+
+  relevant_selection_plus_identifying_similarity:
+    require:
+      - structural_equivalence_is_material
+      - information_selection_is_separately_material
+      - neither_operation_is_incidental
+
+  finding_procedures_plus_identifying_similarity:
+    require:
+      - equivalence_recognition_is_material
+      - substantial_procedure_remains_after_equivalence_is_known
+      - neither_operation_is_incidental
+
+  triple_label:
+    default: needs_review
+    allow_only_if:
+      - all_three_pass_independent_materiality_tests
+
+conflict_resolution:
+
+  RS_vs_FP:
+    decisive_test: >
+      Highlight all correct inputs.
+      If substantial procedural difficulty remains, FP is material.
+      If difficulty largely disappears, RS dominates.
+
+  RS_vs_IS:
+    decisive_test: >
+      Determine whether the solver is filtering applicable information
+      or recognizing an equivalent representation.
+
+  FP_vs_IS:
+    decisive_test: >
+      Determine whether the solver must construct a process/result
+      or recognize preserved structure across representations.
+
+confidence:
+
+  high:
+    require:
+      - decisive_semantic_signal
+      - two_independent_supporting_signals
+      - no_hard_exclusion
+      - materiality_test_passes
+      - no_unresolved_competing_category
+
+  medium:
+    require:
+      - core_operation_probably_identified
+      - evidence_incomplete_or_competing_signal_weaker
+      - no_direct_conflict
+
+  review:
+    trigger_if:
+      - missing_required_visual
+      - incomplete_extraction
+      - conflicting_semantic_signals
+      - classification_depends_on_keywords
+      - classification_depends_on_unstated_solution_strategy
+      - multiple_categories_remain_equally_plausible
+      - no_category_reaches_semantic_threshold
+
+The governing principle throughout is precision over coverage: ambiguous questions should remain needs_review rather than being forced into a category, exactly as required by the specification.

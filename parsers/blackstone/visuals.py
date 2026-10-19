@@ -12,7 +12,12 @@ from pathlib import Path
 
 import pypdfium2 as pdfium
 
-from .image_options import image_choice_anchors
+from .image_options import (
+    coalesce_anchor_groups,
+    image_choice_anchors,
+    option_cell_owner,
+    partition_option_objects,
+)
 from .visual_grouping import group_body_components
 from .visual_structure import (
     focused_crop,
@@ -403,11 +408,10 @@ def _anchors(question, lines):
     for line in lines:
         if line["block_start"] < start:
             continue
-        if grouped and not re.fullmatch(r"[A-Z](?:[ \t]+[A-Z])*", line["text"]):
+        readable = line.get("readable_text", line["text"]).strip()
+        if grouped and not re.fullmatch(r"[A-Z](?:[ \t]+[A-Z])*", readable):
             continue
-        match = re.match(
-            r"^(?:[A-Z](?:\s+|$)|\(cid:(?:36|37|38|39|40)\))", line["text"]
-        )
+        match = re.match(r"^(?:[A-Z](?:\s+|$)|\(cid:(?:36|37|38|39|40)\))", readable)
         if not match:
             continue
         positions = (
@@ -424,7 +428,7 @@ def _anchors(question, lines):
                         "label_only": bool(
                             re.fullmatch(
                                 r"(?:[A-Z]|\(cid:(?:36|37|38|39|40)\))(?:\s+(?:[A-Z]|\(cid:(?:36|37|38|39|40)\)))*",
-                                line["text"],
+                                readable,
                             )
                         ),
                     }
@@ -620,7 +624,9 @@ def _associate_rows(groups, anchors, page, lines, options_start):
                 group["option_override"] = anchor["label"]
 
 
-def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
+def save_visuals(
+    dataset, pending_questions, asset_dir, *, overwrite=False, asset_prefix="blackstone"
+):
     """Augment existing image references; save layouts and complete padded regions."""
     root = Path(asset_dir).resolve()
     base = root.parent
@@ -668,7 +674,7 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
         year = dataset["year"] if dataset["year"] is not None else "unknown-year"
         number = question["question_number"] if question else "unassigned"
         shape = sha256(repr([round(v, 3) for v in box]).encode()).hexdigest()[:10]
-        stem = f"blackstone_{year}_q{str(number).zfill(3)}_r{record_index:03}_p{page:03}_{role}_{order:02}_{shape}"
+        stem = f"{asset_prefix}_{year}_q{str(number).zfill(3)}_r{record_index:03}_p{page:03}_{role}_{order:02}_{shape}"
         return {
             "image_id": stem,
             "path": None,
@@ -838,6 +844,7 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                 <= (group["bbox"][1] + group["bbox"][3]) / 2
                                 < segment["bbox"][3]
                             ]
+                            groups = coalesce_anchor_groups(groups, anchors, number)
                             text_containers = [
                                 group
                                 for group in groups
@@ -864,6 +871,22 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                             refined = []
                             for group in groups:
                                 box = group["bbox"]
+                                cell_owner = option_cell_owner(box, anchors, number)
+                                if cell_owner:
+                                    group["option_override"] = cell_owner["label"]
+                                    refined.append(group)
+                                    continue
+                                separated = partition_option_objects(
+                                    group,
+                                    anchors,
+                                    number,
+                                    bitmap,
+                                    pixels,
+                                    (width, height),
+                                )
+                                if separated:
+                                    refined.extend(separated)
+                                    continue
                                 graph_owner = (
                                     _graph_cell(group, anchors, number)
                                     if group.get("graph")
@@ -999,6 +1022,10 @@ def save_visuals(dataset, pending_questions, asset_dir, *, overwrite=False):
                                     group["objects"],
                                 )
                                 asset.update(group["crop_context"])
+                                if group.get("object_crop_evidence"):
+                                    asset["object_crop_evidence"] = group[
+                                        "object_crop_evidence"
+                                    ]
                                 asset["notes"].extend(group.get("grouping_notes", []))
                                 asset["warnings"].extend(
                                     group.get("grouping_warnings", [])

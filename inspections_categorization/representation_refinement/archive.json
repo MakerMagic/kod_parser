@@ -1,0 +1,352 @@
+[
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\merged\\blackstone\\tsa_2008-2016.matched.json",
+      "sha256": "3c1aefd1bfc6f798dcfd940946b4de15c01bc86da6ceab0e7810e2dc8b9802c4"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\tsa_2008-2016.matched.json",
+      "sha256": "3c1aefd1bfc6f798dcfd940946b4de15c01bc86da6ceab0e7810e2dc8b9802c4"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2008-c8eb2ecc81ec.clean.json",
+      "sha256": "69513793a5d0869564a2d12e3b82359cc276043472df3fc4060c794a35282886"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2008-c8eb2ecc81ec.clean.json",
+      "sha256": "69513793a5d0869564a2d12e3b82359cc276043472df3fc4060c794a35282886"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2008-c8eb2ecc81ec.raw.json",
+      "sha256": "008a419825a5a5d104603a8c27321b15db8a2fe24cd98eda0a43946afd5d0457"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2008-c8eb2ecc81ec.raw.json",
+      "sha256": "008a419825a5a5d104603a8c27321b15db8a2fe24cd98eda0a43946afd5d0457"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2009-4606aa41945d.clean.json",
+      "sha256": "9815b3c6cf53317742900f5996762fa98eff875f47106076feb6a171dcbf05ab"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2009-4606aa41945d.clean.json",
+      "sha256": "9815b3c6cf53317742900f5996762fa98eff875f47106076feb6a171dcbf05ab"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2009-4606aa41945d.raw.json",
+      "sha256": "daa472fb9782361412b42a6f6dc6facb10823d2bb30b872a7e3c09ac7c845b16"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2009-4606aa41945d.raw.json",
+      "sha256": "daa472fb9782361412b42a6f6dc6facb10823d2bb30b872a7e3c09ac7c845b16"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2010-677c2c8838da.clean.json",
+      "sha256": "db441544ded9b41f8e335ed1af5307cd2435ffb1f6887e32a665bc94872259aa"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2010-677c2c8838da.clean.json",
+      "sha256": "db441544ded9b41f8e335ed1af5307cd2435ffb1f6887e32a665bc94872259aa"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2010-677c2c8838da.raw.json",
+      "sha256": "4bd5fcb9a1fd53b8a3fb4ee24019f2e573d56c168fe4f36340859ead9f93e5c1"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2010-677c2c8838da.raw.json",
+      "sha256": "4bd5fcb9a1fd53b8a3fb4ee24019f2e573d56c168fe4f36340859ead9f93e5c1"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2011-9ec516fea34a.clean.json",
+      "sha256": "cac52a3eaa6590ac93e2a1d0f232d60b8c0aaaa94e516bbf89909b17c399f4c2"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2011-9ec516fea34a.clean.json",
+      "sha256": "cac52a3eaa6590ac93e2a1d0f232d60b8c0aaaa94e516bbf89909b17c399f4c2"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2011-9ec516fea34a.raw.json",
+      "sha256": "9c297347c20ea8bb293db452b5e390ad57a9605aa6e3a92736ef35ac731bbce8"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2011-9ec516fea34a.raw.json",
+      "sha256": "9c297347c20ea8bb293db452b5e390ad57a9605aa6e3a92736ef35ac731bbce8"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2012-363965df88fb.clean.json",
+      "sha256": "acdc1609e16b877af706479a1cf86617a20ee53962daf69d4bde53bee65cd0a2"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2012-363965df88fb.clean.json",
+      "sha256": "acdc1609e16b877af706479a1cf86617a20ee53962daf69d4bde53bee65cd0a2"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2012-363965df88fb.raw.json",
+      "sha256": "a41b03c70000c0ebb4564ce912750c7c62370a6950169ff2743c69f987a2817b"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2012-363965df88fb.raw.json",
+      "sha256": "a41b03c70000c0ebb4564ce912750c7c62370a6950169ff2743c69f987a2817b"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2013-228802858c5a.clean.json",
+      "sha256": "4aff78ec28cbbdf74ebfa60c47064df8660bd2a35c376e33b2ab41212fed62d3"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2013-228802858c5a.clean.json",
+      "sha256": "4aff78ec28cbbdf74ebfa60c47064df8660bd2a35c376e33b2ab41212fed62d3"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2013-228802858c5a.raw.json",
+      "sha256": "f91694c9b2560c647eaaf0ff2ae936a33e1a803f621896f16e088108b2420d1d"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2013-228802858c5a.raw.json",
+      "sha256": "f91694c9b2560c647eaaf0ff2ae936a33e1a803f621896f16e088108b2420d1d"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2014-bdc455006b64.clean.json",
+      "sha256": "ea05d822e287a001b7bca0c518f93058f0bcfea13e1dfc7f21cb374981dd7609"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2014-bdc455006b64.clean.json",
+      "sha256": "ea05d822e287a001b7bca0c518f93058f0bcfea13e1dfc7f21cb374981dd7609"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2014-bdc455006b64.raw.json",
+      "sha256": "a084206489e2ab0d8884eee06e9637bf12617404fe40a842831c4a458fababf5"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2014-bdc455006b64.raw.json",
+      "sha256": "a084206489e2ab0d8884eee06e9637bf12617404fe40a842831c4a458fababf5"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2015-9762ad5ab93f.clean.json",
+      "sha256": "566923071e99f6b50943da692ce1e54b65ced2e1406868f58e19b2cfa05c9a4b"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2015-9762ad5ab93f.clean.json",
+      "sha256": "566923071e99f6b50943da692ce1e54b65ced2e1406868f58e19b2cfa05c9a4b"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2015-9762ad5ab93f.raw.json",
+      "sha256": "09672338806fe6fa04d0b8f364846ef34219a594df2fd03d892efda02db03363"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2015-9762ad5ab93f.raw.json",
+      "sha256": "09672338806fe6fa04d0b8f364846ef34219a594df2fd03d892efda02db03363"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2016-a179b4c387b5.clean.json",
+      "sha256": "308603a65ff568ac2b1636595cc101864e0f3c8ec8ed16b07ef36a3421414ac9"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2016-a179b4c387b5.clean.json",
+      "sha256": "308603a65ff568ac2b1636595cc101864e0f3c8ec8ed16b07ef36a3421414ac9"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2016-a179b4c387b5.raw.json",
+      "sha256": "3d5c0259ff43e8804c83d2c017830c1361bb307a67fdab7a53cf2b80ae9cd54b"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2016-a179b4c387b5.raw.json",
+      "sha256": "3d5c0259ff43e8804c83d2c017830c1361bb307a67fdab7a53cf2b80ae9cd54b"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\merged\\blackstone\\tsa_2017-2019.matched.json",
+      "sha256": "73ccd59ed902eb02e1f42ac0f57defc6c7cd29da4274356e98ac5188e29641e9"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\tsa_2017-2019.matched.json",
+      "sha256": "73ccd59ed902eb02e1f42ac0f57defc6c7cd29da4274356e98ac5188e29641e9"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2017-39ac6671413a.clean.json",
+      "sha256": "e802bcf2953b3aa7e91b5441f1f95542fb25d7d0b925fe094dc4b1e9d3d394e8"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2017-39ac6671413a.clean.json",
+      "sha256": "e802bcf2953b3aa7e91b5441f1f95542fb25d7d0b925fe094dc4b1e9d3d394e8"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2017-39ac6671413a.raw.json",
+      "sha256": "2e55220641df3958e8948c9e45d12d6578f81083a5995f38297bb1fb825416db"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2017-39ac6671413a.raw.json",
+      "sha256": "2e55220641df3958e8948c9e45d12d6578f81083a5995f38297bb1fb825416db"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2018-efef38a3ea2b.clean.json",
+      "sha256": "22762ddfe356b2dda77e11f7a0e0f47059abb26586b9bd7da190ff392a07b762"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2018-efef38a3ea2b.clean.json",
+      "sha256": "22762ddfe356b2dda77e11f7a0e0f47059abb26586b9bd7da190ff392a07b762"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2018-efef38a3ea2b.raw.json",
+      "sha256": "b8381cc8d5c8b57baa221b28431f96a81bcab341fcb55e5188f92c73d021ca7a"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2018-efef38a3ea2b.raw.json",
+      "sha256": "b8381cc8d5c8b57baa221b28431f96a81bcab341fcb55e5188f92c73d021ca7a"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2019-65ce40f75786.clean.json",
+      "sha256": "73ff51d39f056e98c94957cc3e8c1ba344a6f60a1daa298954d577dd7f005a3f"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2019-65ce40f75786.clean.json",
+      "sha256": "73ff51d39f056e98c94957cc3e8c1ba344a6f60a1daa298954d577dd7f005a3f"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2019-65ce40f75786.raw.json",
+      "sha256": "73cf00590d61f20e46a0b421bcdcd0cb65bfd1c64fb4e0bb1ea49148361b1273"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2019-65ce40f75786.raw.json",
+      "sha256": "73cf00590d61f20e46a0b421bcdcd0cb65bfd1c64fb4e0bb1ea49148361b1273"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\merged\\blackstone\\tsa_2020.matched.json",
+      "sha256": "052231caf93a33f57b6c717b2a6ae23b1cb9727f4f3ed4d5e0e2f3600bd60b45"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\tsa_2020.matched.json",
+      "sha256": "052231caf93a33f57b6c717b2a6ae23b1cb9727f4f3ed4d5e0e2f3600bd60b45"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2020-ca4ee526afb0.clean.json",
+      "sha256": "815118a60260bb357e79572fa74ffc185274ebb5539a0cc086d9071aa273d55f"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2020-ca4ee526afb0.clean.json",
+      "sha256": "815118a60260bb357e79572fa74ffc185274ebb5539a0cc086d9071aa273d55f"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2020-ca4ee526afb0.raw.json",
+      "sha256": "62b6d23553ca844ca6cbe2676f953d0a9bcf1a0646461bb3e225da82945b294c"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2020-ca4ee526afb0.raw.json",
+      "sha256": "62b6d23553ca844ca6cbe2676f953d0a9bcf1a0646461bb3e225da82945b294c"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\merged\\blackstone\\tsa_2021.matched.json",
+      "sha256": "20ef0e69deb832f1d9ff42ea26208b8cc748ad909e3c52b66972b254336d42a6"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\tsa_2021.matched.json",
+      "sha256": "20ef0e69deb832f1d9ff42ea26208b8cc748ad909e3c52b66972b254336d42a6"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA Oxford 2021-de4797cbdaeb.clean.json",
+      "sha256": "7c508942b0f0f041f74befe3e9f277d10c6c242f144f687f7ab76a1871d2d3db"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2021-de4797cbdaeb.clean.json",
+      "sha256": "7c508942b0f0f041f74befe3e9f277d10c6c242f144f687f7ab76a1871d2d3db"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA Oxford 2021-de4797cbdaeb.raw.json",
+      "sha256": "d7337d38e4a44ac89a9bc139a5fe35347857fc882d6fda5d6524f0b34f4e6513"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA Oxford 2021-de4797cbdaeb.raw.json",
+      "sha256": "d7337d38e4a44ac89a9bc139a5fe35347857fc882d6fda5d6524f0b34f4e6513"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\merged\\blackstone\\tsa_2022.matched.json",
+      "sha256": "c89bef16daeda84195492e18f30ab6d0222fb727d1d7a592fe9754a585495f7c"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\tsa_2022.matched.json",
+      "sha256": "c89bef16daeda84195492e18f30ab6d0222fb727d1d7a592fe9754a585495f7c"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\blackstone\\TSA_2022-aeb958e80a18.clean.json",
+      "sha256": "2f9648a33c0a72a00fb82ebedb184465ff00d93dfccda205c9a99f21a365a73f"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA_2022-aeb958e80a18.clean.json",
+      "sha256": "2f9648a33c0a72a00fb82ebedb184465ff00d93dfccda205c9a99f21a365a73f"
+    }
+  },
+  {
+    "original": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\blackstone\\TSA_2022-aeb958e80a18.raw.json",
+      "sha256": "44e554d6bc074cce3fb78a6b024efba7be502ffab61c9d1b0ca8ab9043971923"
+    },
+    "archive": {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\representation_refinement\\original_inputs\\TSA_2022-aeb958e80a18.raw.json",
+      "sha256": "44e554d6bc074cce3fb78a6b024efba7be502ffab61c9d1b0ca8ab9043971923"
+    }
+  }
+]

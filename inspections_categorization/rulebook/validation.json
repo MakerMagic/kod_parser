@@ -1,0 +1,6040 @@
+{
+  "owner": "tsa_categorization_v1",
+  "stage": "categorization_review_validation",
+  "categorized_reference": {
+    "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\categorized\\blackstone\\tsa.categorized.json",
+    "sha256": "02c9bc15be704b786f4adfccc71fb2fbac07fb772f0aee872ad76f1ddf7881c5"
+  },
+  "review_reference": {
+    "path": "C:\\Users\\user\\Desktop\\kod_parser\\categorization\\ps_review.json",
+    "sha256": "b88c8fc4338783a2b31a3a496b073a3ce566b5cc86b987af255b392a284394e0"
+  },
+  "scope_count": 260,
+  "unchanged_outside_scope": 490,
+  "upstream_views_answers_explanations_preserved": 750,
+  "review_summary": {
+    "all_needs_review": 262,
+    "problem_solving_review": 260,
+    "out_of_scope_review": 2,
+    "reviewed": 260,
+    "resolved": 225,
+    "remaining_review": 35,
+    "resolved_subcategory_counts_overlapping": {
+      "Finding Procedures": 166,
+      "Relevant Selection": 48,
+      "Identifying Similarity": 23
+    },
+    "multi_label": 12,
+    "remaining_reasons": {
+      "below_semantic_threshold": 16,
+      "explanation_question_conflict": 9,
+      "taxonomy_boundary": 2,
+      "incomplete_extraction": 4,
+      "ambiguous_visual_association": 3,
+      "insufficient_semantic_evidence": 1
+    }
+  },
+  "resolved_exclusive": {
+    "Finding Procedures": 154,
+    "Relevant Selection": 37,
+    "Identifying Similarity": 22,
+    "Relevant Selection + Finding Procedures": 11,
+    "Finding Procedures + Identifying Similarity": 1
+  },
+  "active_issue_unique_questions": 40,
+  "issue_groups_counted": 10,
+  "markdown_links_resolved": 509,
+  "test_references": [
+    {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\rulebook\\review-tests.xml",
+      "sha256": "d6481d295d5cf8f63ba757cbfe34fc7ec3335eeffceffec45188277f3931004f"
+    },
+    {
+      "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\rulebook\\category-regressions.xml",
+      "sha256": "a25a5343906f27eee0d8a9fc40ab8e9a66f4bf94c16c29e14d834227aacc7afe"
+    }
+  ],
+  "tests_passed": 152,
+  "html": [
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 6,
+        "question_id": "blackstone_2008_4502/01_section_1_q6",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 6
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q006.html",
+        "sha256": "2bf6fbdf2bf94a05b4715e85f65d07583777cac56935e07cf8a39ab6208387f6"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2008_4502/01_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q007.html",
+        "sha256": "da8777321da2d2a32f34f5cd5b0eb42f5f02ed6c0406d9d811fd914d7ff880a4"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2008_4502/01_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q013.html",
+        "sha256": "1ee0708413bbbb5c2e1b448a04fd50bf180337116b85f2828ee2cd2f70d0733c"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 18,
+        "question_id": "blackstone_2008_4502/01_section_1_q18",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 18
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q018.html",
+        "sha256": "99862e1ea7e098f6cfd3de1f78eb67ac52b905a2c3bb9229e535ce382c39333d"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 19,
+        "question_id": "blackstone_2008_4502/01_section_1_q19",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 19
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q019.html",
+        "sha256": "adb61167e805dffd6847bea299e22faa65534fc8429eb5aa19531cd9c41427d1"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 20,
+        "question_id": "blackstone_2008_4502/01_section_1_q20",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 20
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q020.html",
+        "sha256": "1b37c044b02e3b14aba9a33de0ae5b56f07ff8536766be8193b821b614afe855"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2008_4502/01_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q024.html",
+        "sha256": "4b051a49131162e3e1107a6f5e862e16843b533a8cdcb775a518755aba917f34"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2008_4502/01_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q025.html",
+        "sha256": "a623191088393887ea1a9fe8b2dbb9561bf4e272c945150d3a8ff4c3ff434a8c"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 26,
+        "question_id": "blackstone_2008_4502/01_section_1_q26",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 26
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q026.html",
+        "sha256": "81c0e391c0655252a77f34aaf0c1ed115ef86f4bd56c8da9bc2293e9f6614938"
+      },
+      "rendered_images": 9
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 30,
+        "question_id": "blackstone_2008_4502/01_section_1_q30",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 30
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q030.html",
+        "sha256": "8e1eb0156598491b6e5e18b0beb53746d1ee6ae130d059abd35312c18c0dd0fc"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2008_4502/01_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q031.html",
+        "sha256": "5b56b95b2be64a52ebbc9e8d584ba4f57d603d121f77bd8c8c8121613c3058a0"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 32,
+        "question_id": "blackstone_2008_4502/01_section_1_q32",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 32
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q032.html",
+        "sha256": "4d8ed86c10777e98beeadf3f66bf031d93faf06aa88827f5289f14e97a6d73b5"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2008_4502/01_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q036.html",
+        "sha256": "51256a9cbe0ebb2b184f5811e2763f6f7105a52d5657ad54d66afab7a5df59d7"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2008_4502/01_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q037.html",
+        "sha256": "6be59289a43bd176a888e32b707f1bb1141c3f1ea17c666bec764427d3ea5d86"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 38,
+        "question_id": "blackstone_2008_4502/01_section_1_q38",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 38
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q038.html",
+        "sha256": "8cde24e0a5bc3f650460599bb959370d975b78b867c2c5641434dc9a02e3438f"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 42,
+        "question_id": "blackstone_2008_4502/01_section_1_q42",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 42
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q042.html",
+        "sha256": "3b16f1954737dfce5e63cf8c7281955d84c9b8ec4a2d99624bf700309a541706"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 43,
+        "question_id": "blackstone_2008_4502/01_section_1_q43",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 43
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q043.html",
+        "sha256": "d37c97f99fe487a633d2a41e7c4dfc050bb85f2cbeb213b36eb8311352662f54"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 44,
+        "question_id": "blackstone_2008_4502/01_section_1_q44",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 44
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q044.html",
+        "sha256": "5c46e5b3521ac387401788a0e579c3100729998072186e94b68084b9a9b330a4"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2008,
+        "section": "section_1",
+        "question_number": 48,
+        "question_id": "blackstone_2008_4502/01_section_1_q48",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2008,
+          "paper": "4502/01",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 48
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2008_q048.html",
+        "sha256": "657c251ecb907c3a689f50a1707edc0ad9d7551b56d59155e19305c288b5291f"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 2,
+        "question_id": "blackstone_2009_4502/11_section_1_q2",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 2
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q002.html",
+        "sha256": "efd38f08f369f47bc3831de2e2bafc8a038249db65f05a042daacc3f2d35a5d1"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 6,
+        "question_id": "blackstone_2009_4502/11_section_1_q6",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 6
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q006.html",
+        "sha256": "3ecda81fe545509742a8e478e6fd4243c8494f55255c3bc1b29e8d4a280b51eb"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 8,
+        "question_id": "blackstone_2009_4502/11_section_1_q8",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 8
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q008.html",
+        "sha256": "507db465c3f9095d1c1c744182a5fcb5c847dbe2bcd227e34f8ba49cbaf0e36a"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 18,
+        "question_id": "blackstone_2009_4502/11_section_1_q18",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 18
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q018.html",
+        "sha256": "0f4993ee0af6ef2e92c141770a933f633f3abe3dcea818109238e525e2783c94"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 19,
+        "question_id": "blackstone_2009_4502/11_section_1_q19",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 19
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q019.html",
+        "sha256": "9aabea2a35ab6099742482e8eaf0cd9e442fb9b1e775872bbbb6a9f4e0081eaa"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 20,
+        "question_id": "blackstone_2009_4502/11_section_1_q20",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 20
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q020.html",
+        "sha256": "073757bca5663249a95e6b6cd2ce4f3cc11b12de5ef8fb913209c10a29cb9279"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2009_4502/11_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q024.html",
+        "sha256": "45b3f11ba6197deea10c14525ef46e3d3c5aaabf7bcbd35cbfe297f6af8724c3"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2009_4502/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q025.html",
+        "sha256": "0bb4681a6969bf8705834d833ae8f27b2b6625e95e0c2fa2d24eb75ce394f829"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 26,
+        "question_id": "blackstone_2009_4502/11_section_1_q26",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 26
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q026.html",
+        "sha256": "d4efdf604ab84c67b2291647f00b052de8e6ed97a69b9355c3c620a034d68080"
+      },
+      "rendered_images": 5
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2009_4502/11_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q031.html",
+        "sha256": "5d86c03c89bfe07094806796441805a22f9bf8901a00ce22d9cc2eeb518941db"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 32,
+        "question_id": "blackstone_2009_4502/11_section_1_q32",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 32
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q032.html",
+        "sha256": "c846a1be1e62994e988935c66929cf00522cc51a32b30b2c3712e6ca794e0d34"
+      },
+      "rendered_images": 7
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2009_4502/11_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q036.html",
+        "sha256": "023c18f04064680a70851afd95638c35debcb10ae63ebefae81dbc35535d7bb2"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2009_4502/11_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q037.html",
+        "sha256": "e676b65a2efe57c35d27501e1a46c2887660c200cee08a9da927c6cfa78035b9"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 42,
+        "question_id": "blackstone_2009_4502/11_section_1_q42",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 42
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q042.html",
+        "sha256": "10f15d47af475576121f7caaf25dece34f8e2485dbe31844a01fbd42089d7c9d"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 43,
+        "question_id": "blackstone_2009_4502/11_section_1_q43",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 43
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q043.html",
+        "sha256": "a9006ea078b685297c9ec792650d545f096c1dd1d36d73dde830355388eb6153"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2009,
+        "section": "section_1",
+        "question_number": 44,
+        "question_id": "blackstone_2009_4502/11_section_1_q44",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2009,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 44
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2009_q044.html",
+        "sha256": "eee4b9120d6602ebdbafe0237b0a7c6c87fff997837dd0835f5dbc7b40ebb01f"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 6,
+        "question_id": "blackstone_2010_4502/11_section_1_q6",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 6
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q006.html",
+        "sha256": "74a0415921b111562ae652879c3e73b75a97bd6d588fc0d6f3e3e76f48e48c51"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2010_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q007.html",
+        "sha256": "a54df21fa21599425230b1d6bb8e6bf1ac2fc7e78d0e0c700af7a716a99a95fd"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 8,
+        "question_id": "blackstone_2010_4502/11_section_1_q8",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 8
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q008.html",
+        "sha256": "a48d4332e64d1666c8e5243cad1a6fb8dcb1a819ab8285c08c3197dab0317337"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2010_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q013.html",
+        "sha256": "6ed95ddca9b6d7e5b3f5aea74e18a4840505c13f8bf555ae8258169ff650df53"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 14,
+        "question_id": "blackstone_2010_4502/11_section_1_q14",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 14
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "explanation_question_conflict",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q014.html",
+        "sha256": "654594241a6eff4f0d41a5c3a2041fbb78b9d932819038b7eae8b9aa58d8bf04"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 15,
+        "question_id": "blackstone_2010_4502/11_section_1_q15",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 15
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "taxonomy_boundary",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q015.html",
+        "sha256": "5c5ae2fce752fb98362c601a174b830e23630f1d9f836e802a078e801dbb0344"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 20,
+        "question_id": "blackstone_2010_4502/11_section_1_q20",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 20
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q020.html",
+        "sha256": "6cf6c73a42c6a5fa1bf431d6167a7c47d94add12f6bfe6bc71de0e045c5f0639"
+      },
+      "rendered_images": 12
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2010_4502/11_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q024.html",
+        "sha256": "9aaf7f1e072d90b8ad4a74d8025ace06a3eb41b489251ea374c063aa01b2fe79"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 26,
+        "question_id": "blackstone_2010_4502/11_section_1_q26",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 26
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q026.html",
+        "sha256": "e05f166bfd0e14aedd36550da30831e09a966d97957b2f1e6d3f528ad50362c2"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 30,
+        "question_id": "blackstone_2010_4502/11_section_1_q30",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 30
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q030.html",
+        "sha256": "1f0f3488582402a2211083bfe33c0864fc575a64ff88d5ee613211cee3cc6749"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2010_4502/11_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q031.html",
+        "sha256": "3d96ddb99ada8d73af24989a74f034de47aaf711f6bbbbcb614635c56c51e1a8"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2010_4502/11_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q036.html",
+        "sha256": "79e1994971b745e6d50c7da6a5e7a95d93123b953a86e6c1e4750b93a15ddd93"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2010_4502/11_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q037.html",
+        "sha256": "ad6f60e8b362698673767f8c94eaaee46729a18f50e7838f1ed29287bfdd4aec"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 42,
+        "question_id": "blackstone_2010_4502/11_section_1_q42",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 42
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q042.html",
+        "sha256": "c4403a57de9b9f614fca6633ef61addcc9cfff929fd2a28a852531c9babb4ae9"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 44,
+        "question_id": "blackstone_2010_4502/11_section_1_q44",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 44
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q044.html",
+        "sha256": "8ece62f1b3d8485ee2688fa52434bcfe1b3c8d4c69afb12179b5449698814222"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2010_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q049.html",
+        "sha256": "e4dd8976ce19ee837bb26f0ab5098d093d6e80371fec1c4ae52411e0100ff642"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2010,
+        "section": "section_1",
+        "question_number": 50,
+        "question_id": "blackstone_2010_4502/11_section_1_q50",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2010,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 50
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2010_q050.html",
+        "sha256": "b40522eb079fb3f163730cb33ef49388301fdec101d419b86a168d56c2c4b090"
+      },
+      "rendered_images": 7
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2011_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q007.html",
+        "sha256": "760c14a4816ab2890c4591654e49b9b47c34b7a67b30e64b000fc171b3f7e133"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 12,
+        "question_id": "blackstone_2011_4502/11_section_1_q12",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 12
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q012.html",
+        "sha256": "aa1bcb3c97593040ff29a2757d0321fe47a3e1e8a373deb551eb23fa2f13aa04"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2011_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q013.html",
+        "sha256": "2ea30435962447bb78e0b1c14b2ea429f30bd071cee3cd1a505b35aca3c43caa"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 18,
+        "question_id": "blackstone_2011_4502/11_section_1_q18",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 18
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q018.html",
+        "sha256": "f097044d1d0d3d1e0e5a7507ecbcecf6d26e98e722271c04671168edf73da8a6"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 20,
+        "question_id": "blackstone_2011_4502/11_section_1_q20",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 20
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q020.html",
+        "sha256": "cd6dd735dbf79fcc4f553f2fa66433bf8cf0404f6b842cbc935cedf12f648182"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2011_4502/11_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q024.html",
+        "sha256": "58be316cbfa4bd2e87dbd8c34d50d31818106ff6aad6e1e87e1e5e2823fedc78"
+      },
+      "rendered_images": 5
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2011_4502/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q025.html",
+        "sha256": "5c46cd7ce74611232c546f8feb372b23e90d70baae7e29add67222ee4ed07ffb"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 26,
+        "question_id": "blackstone_2011_4502/11_section_1_q26",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 26
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q026.html",
+        "sha256": "aeb54e24cc4aa3c5fb876cf0e07639cd1a16fde8e237974fcf4f7cc5e1c87a76"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 30,
+        "question_id": "blackstone_2011_4502/11_section_1_q30",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 30
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q030.html",
+        "sha256": "7c4885fd0cf97bd6a3278c34b24c1ca8f48ccd5692415d1a4715576da874c2c6"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2011_4502/11_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q031.html",
+        "sha256": "54931de641a092f40a1eea92abc3375e174bd8aff1a3d6d8c3d24b61cdaed75a"
+      },
+      "rendered_images": 9
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 32,
+        "question_id": "blackstone_2011_4502/11_section_1_q32",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 32
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q032.html",
+        "sha256": "bd3ce66583dc2c916c364ab526d443f981eb2397e4e021928c92afdc5b17787e"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2011_4502/11_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q036.html",
+        "sha256": "3d144004af48c6aa3a20a09ee4bdc78f49472554683108a63c9000ef01b5d803"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2011_4502/11_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q037.html",
+        "sha256": "c7cd2705d4b5a34697d8e67202626fa8be8fd6d594479da3cad77c6c38fd0bc7"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 43,
+        "question_id": "blackstone_2011_4502/11_section_1_q43",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 43
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q043.html",
+        "sha256": "7bbcce5ecb1256916dd8d97a9e187eb314f49f421fcb66ab180117e2799465dd"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 44,
+        "question_id": "blackstone_2011_4502/11_section_1_q44",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 44
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q044.html",
+        "sha256": "59f38111130ff1d15a6c9a6e280c63c53f1f901e74ddb79a4e1319e104a752ae"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 48,
+        "question_id": "blackstone_2011_4502/11_section_1_q48",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 48
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q048.html",
+        "sha256": "b26e7cf7e8a727505fe188fa1ef3150430938892c058a1fb2271945d119e4956"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2011_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q049.html",
+        "sha256": "8bc46f8ceb5d92f2716974e070471352dc3c4a2457873042e0ef490bd061023c"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2011,
+        "section": "section_1",
+        "question_number": 50,
+        "question_id": "blackstone_2011_4502/11_section_1_q50",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2011,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 50
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2011_q050.html",
+        "sha256": "896d0ee8e495ebf2ae5647cd431db47d11bb4cdbeb3a4e59269dda16ab604483"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 2,
+        "question_id": "blackstone_2012_4502/11_section_1_q2",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 2
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q002.html",
+        "sha256": "008f329fd48ace8ef2c1d22bf9b6d12eb12058ff98434b8c36c6d4ccadbaaedd"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 6,
+        "question_id": "blackstone_2012_4502/11_section_1_q6",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 6
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q006.html",
+        "sha256": "11b9ef7101530d8e1eaa2d414d306b6cb0d25d83f984cfa1960b8bcddb8f15dd"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2012_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q007.html",
+        "sha256": "8953070af816d6685d3c6664a12f81cad3df8a6f680045c384b79bab4f0b431a"
+      },
+      "rendered_images": 5
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 12,
+        "question_id": "blackstone_2012_4502/11_section_1_q12",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 12
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q012.html",
+        "sha256": "d5d41ee604d2cd61ba40b96278ce87ffcca8b0169cde06c4891331a34564ba2e"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2012_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q013.html",
+        "sha256": "39f9889ac8804be395616c32b9e91866d39c483f533b1a69ad436fd75160a56b"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 18,
+        "question_id": "blackstone_2012_4502/11_section_1_q18",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 18
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q018.html",
+        "sha256": "e0508c5a429529cd786fd00c8ab2637fed12c9b5fae4b401b3750238025a0f60"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2012_4502/11_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q024.html",
+        "sha256": "59afd2cb1309563f5ec2e5eeed9622d4c9e5d0d15d1a09a1053b2115a6ac2312"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2012_4502/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q025.html",
+        "sha256": "cc0af29a7478b86ee121ee49b5cf78af40b70f679b7bd491958b64e13202136b"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2012_4502/11_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q031.html",
+        "sha256": "91fa0322c8080e659dde6c21b3531ce06696f8a12185b0768f56b9466f15893a"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 32,
+        "question_id": "blackstone_2012_4502/11_section_1_q32",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 32
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q032.html",
+        "sha256": "0a8edd10ff8af3395b7dbfcdd0bd75c3ae07e948d173cdbb7fad9f9aead59a31"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2012_4502/11_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q036.html",
+        "sha256": "e8edae57a70009323c4cb63fb50370c5ab558bdb222acc2f16ea17b26114197d"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2012_4502/11_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q037.html",
+        "sha256": "0b6d33890de7a5659eb85ef6b0e283352a3c96bc45581d4abe4b7440de6b7463"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 38,
+        "question_id": "blackstone_2012_4502/11_section_1_q38",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 38
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q038.html",
+        "sha256": "a1ee0cfec76d3a37c597de9f8a768673aef71330e4e453cedac0a20b836ddba8"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 42,
+        "question_id": "blackstone_2012_4502/11_section_1_q42",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 42
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q042.html",
+        "sha256": "b149a4697357e43de9a2f452f05694a9c16cc1149a1d16e7b41bb771a3070a15"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 44,
+        "question_id": "blackstone_2012_4502/11_section_1_q44",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 44
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q044.html",
+        "sha256": "5bf1bc80c06931d078da42ada6ebbbd885b1e18fc42d53146c8d2101780b69ab"
+      },
+      "rendered_images": 7
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 48,
+        "question_id": "blackstone_2012_4502/11_section_1_q48",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 48
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q048.html",
+        "sha256": "e87f74fa075b75da0fdfdd116758d5a243f86f4ce21465dce9713732a353e594"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2012_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q049.html",
+        "sha256": "1ac48a41abaa09df09d465b4a4f060a2b3394e446adb79d3dbfee880b119dcd6"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2012,
+        "section": "section_1",
+        "question_number": 50,
+        "question_id": "blackstone_2012_4502/11_section_1_q50",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2012,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 50
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2012_q050.html",
+        "sha256": "737f7a98b593d3212949acf566c93c0c1be62c1ed08c157a5dc8475e16bec57b"
+      },
+      "rendered_images": 9
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 2,
+        "question_id": "blackstone_2013_4502/11_section_1_q2",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 2
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q002.html",
+        "sha256": "1960e70e4f977ccbe009ac3fc80cf26c33520029462063d018567bb6efad277c"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 6,
+        "question_id": "blackstone_2013_4502/11_section_1_q6",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 6
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q006.html",
+        "sha256": "b421ff2d8b6f1b05ee9e84fbac9e36d68c66634ee502af60c9d7f5602bf43990"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2013_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q007.html",
+        "sha256": "cab0b9432ec6775c0ebfb4a4bf785c340244949d05755074ff86c5cccf843d8c"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2013_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q013.html",
+        "sha256": "2d3803ac8c3208af876eada7d68a5507b9b58687c6859ecb5933c8653b087b61"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 14,
+        "question_id": "blackstone_2013_4502/11_section_1_q14",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 14
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q014.html",
+        "sha256": "e3c4178ae7d8e94d4f5b3354e8c1c3e2bca710cb755decd2470c1605d5de0cca"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 18,
+        "question_id": "blackstone_2013_4502/11_section_1_q18",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 18
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q018.html",
+        "sha256": "80ca7bef2d4e44f8582e92ea4c045f69feeb3fd33b2826b97a10d48b7af89e05"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 19,
+        "question_id": "blackstone_2013_4502/11_section_1_q19",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 19
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q019.html",
+        "sha256": "171ad2c4a18a164aad617870374752d5b576e1adefa83046f587bd488f9ae03a"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 20,
+        "question_id": "blackstone_2013_4502/11_section_1_q20",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 20
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q020.html",
+        "sha256": "4b8b544eb86cabeaf2eba9ad62b439db397c6b68631e055270f5ede8f3382d71"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2013_4502/11_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q024.html",
+        "sha256": "b93034499c53c64a88c694b1f0159150cda5c459fd9ae7bc779ca6d1901967a1"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2013_4502/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q025.html",
+        "sha256": "907da6c2a12d1551e4692646faea91f3e1cd1f6a690a54ba86e308f4b2dafcd2"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 26,
+        "question_id": "blackstone_2013_4502/11_section_1_q26",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 26
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q026.html",
+        "sha256": "a8e8e4e8cb69288acc7aa1d567bd85d635040e401ab6d81cd7f33355e4e8c7d5"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 30,
+        "question_id": "blackstone_2013_4502/11_section_1_q30",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 30
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q030.html",
+        "sha256": "c6dc7d0e986393b32df9d5cbf503389273c9d61e4e3af881e32f58fac40e0015"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2013_4502/11_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q036.html",
+        "sha256": "2b89da3517ee3c0b1178479543bb011ff4a2dacdb4460ea31ccbfccc1047b97d"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 42,
+        "question_id": "blackstone_2013_4502/11_section_1_q42",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 42
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q042.html",
+        "sha256": "06ab817ce3ede6ef335b4bd6ba5c02e8da5e2baaa85391b85a791f3a43ae60f7"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 43,
+        "question_id": "blackstone_2013_4502/11_section_1_q43",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 43
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q043.html",
+        "sha256": "26a2f53e2b49e0ff64f1f68eced225d68e09700fe5fa081575adbd0bb9fb48d0"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2013_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q049.html",
+        "sha256": "69bf0957dcba6014a1bd1e5a9016c94ef981ad1d46a9464cff65a659b16f7f32"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2013,
+        "section": "section_1",
+        "question_number": 50,
+        "question_id": "blackstone_2013_4502/11_section_1_q50",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2013,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 50
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2013_q050.html",
+        "sha256": "881523f72cc158ef03cdaa352802f91c94c174a3112623833aecb56fb6314d19"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 2,
+        "question_id": "blackstone_2014_4502/11_section_1_q2",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 2
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q002.html",
+        "sha256": "1549a89177cd32d235ab7a55675bd6d0dd0a0f2118f742238700c434099fb397"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 6,
+        "question_id": "blackstone_2014_4502/11_section_1_q6",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 6
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q006.html",
+        "sha256": "9335824dd38dd054983f4708a97fd62bbd45251f8a3510bdef284eaa3944f4fe"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2014_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q007.html",
+        "sha256": "cc78bb6dc51f7c344488059319de5d1598e663ff9e79b190a007bb27ce03e60c"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 12,
+        "question_id": "blackstone_2014_4502/11_section_1_q12",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 12
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q012.html",
+        "sha256": "d146dbd36edf5f69d67046c345cf77c5aa9e33b0f797f1aedb6f57bfa995c649"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2014_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q013.html",
+        "sha256": "6b286a8d09694b6b2d92fa7e76da434f41552280441ab02f9399b2d826ef488d"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 14,
+        "question_id": "blackstone_2014_4502/11_section_1_q14",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 14
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q014.html",
+        "sha256": "b94dbd0d8734a8cdb77d5909c8aecf3c6829b9c9e9310833575ccaa6447124ee"
+      },
+      "rendered_images": 7
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 18,
+        "question_id": "blackstone_2014_4502/11_section_1_q18",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 18
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q018.html",
+        "sha256": "2a7161fd47f9a8b5eacc0d350d13f842e484421dbb3a5c45e23b6010375b3816"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 20,
+        "question_id": "blackstone_2014_4502/11_section_1_q20",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 20
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q020.html",
+        "sha256": "f29fc9b9cabcbbcef2ef4f274b2199e4cb338f4a087e83f8d6fce242be64f8ae"
+      },
+      "rendered_images": 5
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2014_4502/11_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q024.html",
+        "sha256": "8f5d45685c0a5a3c5b58a366efaa5d765a238044f73a6a153feb74a01a0fcea3"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2014_4502/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q025.html",
+        "sha256": "d502f8b1b8794113a1a7c908937151a1c44e4866cf5b7945c1ce43779330e756"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 26,
+        "question_id": "blackstone_2014_4502/11_section_1_q26",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 26
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q026.html",
+        "sha256": "f9c3f733dc905d9f809b98d76653c35647b83633bde85dd3cf92f80efd2af85d"
+      },
+      "rendered_images": 9
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2014_4502/11_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q031.html",
+        "sha256": "f4b2276a3795ecec62bda144edcaf43168ca48b7f905e568e9b8ca84665b0efc"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2014_4502/11_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q037.html",
+        "sha256": "00bc8aeba7d752512b7e429d13af898b222672b6d0fc3c2071b137adc1da406a"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 38,
+        "question_id": "blackstone_2014_4502/11_section_1_q38",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 38
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q038.html",
+        "sha256": "c699c41eff5251f399e58cd998f697f4cf6da4c7d0f8aa654bd2cb1740f369b3"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 42,
+        "question_id": "blackstone_2014_4502/11_section_1_q42",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 42
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q042.html",
+        "sha256": "98de339d83bf358d7a9b8b240dd4dc4d7a289501c9fc3fa19c70636463a10fa1"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 44,
+        "question_id": "blackstone_2014_4502/11_section_1_q44",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 44
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q044.html",
+        "sha256": "7977858615a53aa0c392b2b28ff861e8e2fc3148e8d25170339d8f1028de1c72"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 48,
+        "question_id": "blackstone_2014_4502/11_section_1_q48",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 48
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q048.html",
+        "sha256": "084fe8c131ef59fabb849aeab2029a42f70f51d51e65cc2c81b5a0f6c09263dc"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2014_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q049.html",
+        "sha256": "9fff0db1638212c849f487b92e7cb30110c24bc9151f9d7b136076b23d877d22"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2014,
+        "section": "section_1",
+        "question_number": 50,
+        "question_id": "blackstone_2014_4502/11_section_1_q50",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2014,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 50
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "incomplete_extraction",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2014_q050.html",
+        "sha256": "712cdd4050d24e782237f015a45b4baa8b858465b6fcbb4a78add15c83e63b76"
+      },
+      "rendered_images": 9
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 2,
+        "question_id": "blackstone_2015_4502/11_section_1_q2",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 2
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q002.html",
+        "sha256": "9e4efe268d236b171d1b0bfb36c4f0807d3edd5e257039afe5e4d6e78c5143ed"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2015_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q007.html",
+        "sha256": "df8e60eb1718e1191df928d13ff4ff92181c7dfdf42b8d86bdedd632e5c98d5c"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 8,
+        "question_id": "blackstone_2015_4502/11_section_1_q8",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 8
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q008.html",
+        "sha256": "bcf02700682b700d72795fe3352523bbde2c73b2de61792301cba37b95e2fccc"
+      },
+      "rendered_images": 9
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2015_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q013.html",
+        "sha256": "f594754cda6bc211c5d500f551a24074236ce089519316e647d0d01b48f2724e"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 14,
+        "question_id": "blackstone_2015_4502/11_section_1_q14",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 14
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "taxonomy_boundary",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q014.html",
+        "sha256": "8ede95e842aba88500bf8ec29004d0dd3f8007e2b333c2f8bee85557092d1f75"
+      },
+      "rendered_images": 5
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 18,
+        "question_id": "blackstone_2015_4502/11_section_1_q18",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 18
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q018.html",
+        "sha256": "7afee026f822380b8686d1d89e9fad82f1d6146e6ce5e670d7cc9b0562c990fb"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 19,
+        "question_id": "blackstone_2015_4502/11_section_1_q19",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 19
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q019.html",
+        "sha256": "e01ec043709f26654860034b3ef5b6147428f79a95890a1314e005c10df372c0"
+      },
+      "rendered_images": 5
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2015_4502/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q025.html",
+        "sha256": "82d7d73616e4592e09839502e2ac6ed9138b3b13ff515990e4dde196c1af5650"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 26,
+        "question_id": "blackstone_2015_4502/11_section_1_q26",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 26
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q026.html",
+        "sha256": "add6faebf55ab780350fa448efe8e3ac0a5376c8d4db12642449e6aa31c0d087"
+      },
+      "rendered_images": 7
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 30,
+        "question_id": "blackstone_2015_4502/11_section_1_q30",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 30
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q030.html",
+        "sha256": "caee0bd9666f34ddd2e97bf9357e07fa3e17989deb1bf8ed9ffa192e60d1a86e"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2015_4502/11_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q037.html",
+        "sha256": "657c9f7d929c0f53e6e6cc855c12702b59620cfc9a3eaddcf9473dc6b7ff8695"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 38,
+        "question_id": "blackstone_2015_4502/11_section_1_q38",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 38
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q038.html",
+        "sha256": "1c54378a56d59e23d998c97d7206aa2bdeee84e978dff7453924cb0d690de7da"
+      },
+      "rendered_images": 9
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 42,
+        "question_id": "blackstone_2015_4502/11_section_1_q42",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 42
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q042.html",
+        "sha256": "2356544076a21b440e7d3814bd2c01feff570bdced0c77de515434a2dddd91bf"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 43,
+        "question_id": "blackstone_2015_4502/11_section_1_q43",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 43
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q043.html",
+        "sha256": "180f664e95a83c0b5f49770badf2159f3f4e0d407a6561088a2eaa9657f366a2"
+      },
+      "rendered_images": 5
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 44,
+        "question_id": "blackstone_2015_4502/11_section_1_q44",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 44
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q044.html",
+        "sha256": "e77c8fbefdebdb50f550cae238389f5d12b53418772a19ec7f9800181be55041"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 48,
+        "question_id": "blackstone_2015_4502/11_section_1_q48",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 48
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q048.html",
+        "sha256": "09da17c2d5de03960c773a758d2c85af1ee2c1d9c8a81f6986aa183f37f566f1"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2015_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q049.html",
+        "sha256": "f598d382bdd47863257e01424405320b6a1e0b3f6ee330b3fabf184335094eff"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2015,
+        "section": "section_1",
+        "question_number": 50,
+        "question_id": "blackstone_2015_4502/11_section_1_q50",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2015,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 50
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2015_q050.html",
+        "sha256": "0ee76ca095e84b3ef470256fd672f79ddcfabcba749106d259857078ca6504dd"
+      },
+      "rendered_images": 5
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 2,
+        "question_id": "blackstone_2016_4502/11_section_1_q2",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 2
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q002.html",
+        "sha256": "d5239c35dcd65706c3facad63364eed75aab2f51aaec885686051ba90c9b120c"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 6,
+        "question_id": "blackstone_2016_4502/11_section_1_q6",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 6
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q006.html",
+        "sha256": "f95967bb7e230adc57f594e23d757653b11ea4241c90d93deb687966686305e6"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2016_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q007.html",
+        "sha256": "514df727a47d5f4a28429b89bdc01a3baf1cb372d8e423ba1cb610700bd3a525"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2016_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q013.html",
+        "sha256": "7e2f65375c077357387707ad25063767626d407542e76cf67531083fdb62830e"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 14,
+        "question_id": "blackstone_2016_4502/11_section_1_q14",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 14
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q014.html",
+        "sha256": "e89bc9a54af814c22f7386d042f1e4302ee3644eb3f018f224824fbe8f26c21c"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 18,
+        "question_id": "blackstone_2016_4502/11_section_1_q18",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 18
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q018.html",
+        "sha256": "123f47f38519eb6a3f72c9c54a8455c8cad32db812402b9f9bf2acfae1a8448e"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 19,
+        "question_id": "blackstone_2016_4502/11_section_1_q19",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 19
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q019.html",
+        "sha256": "d23d3ff064939cd542e326713a196517364f160bab92907bd7c74c5a3e04ab74"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 26,
+        "question_id": "blackstone_2016_4502/11_section_1_q26",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 26
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q026.html",
+        "sha256": "ce986ab6a1f302d99e7d3efd3cc1440a779681329f077c20c32751e167410c70"
+      },
+      "rendered_images": 7
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 30,
+        "question_id": "blackstone_2016_4502/11_section_1_q30",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 30
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q030.html",
+        "sha256": "de8684097b885a67366af525b432b1c93c1dade7e03fe41ed8657902560ebf5e"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2016_4502/11_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q031.html",
+        "sha256": "60c3ca7faaaeb95ffb163cc56b70b03cd7df142405a36765898dfebdc90cfbac"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 32,
+        "question_id": "blackstone_2016_4502/11_section_1_q32",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 32
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "ambiguous_visual_association",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q032.html",
+        "sha256": "0b5bba6369d882b759fb2ecf363742cddc1a5a3e2966506590b5eb884f9aedee"
+      },
+      "rendered_images": 10
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2016_4502/11_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q036.html",
+        "sha256": "55a4203b670bbff3211e9c090706ed3f16ef91bc43ef1f2c3163bc967976d09c"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2016_4502/11_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q037.html",
+        "sha256": "210856b85cbee66fe829cc87e87e3101f1cc9f44651459b5edf6d922f251c099"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 38,
+        "question_id": "blackstone_2016_4502/11_section_1_q38",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 38
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q038.html",
+        "sha256": "42aba831239eac870dbdb7047e7e8906228f1dedde8e0a93732869c3c4c149db"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 42,
+        "question_id": "blackstone_2016_4502/11_section_1_q42",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 42
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q042.html",
+        "sha256": "02811d2a9acd9e7e59a1905c4039349505aad5bed7aebcab9b0f200d3402fa77"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 43,
+        "question_id": "blackstone_2016_4502/11_section_1_q43",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 43
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q043.html",
+        "sha256": "c7d3add5fbb681d60e1e4e15e4ef521384676a0793fdcb40cc96a920ceda6bb6"
+      },
+      "rendered_images": 6
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 44,
+        "question_id": "blackstone_2016_4502/11_section_1_q44",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 44
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q044.html",
+        "sha256": "63e981191e609a4617add798640c72fdcaf9c7b10fe3154ce11ae52fd939868d"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 48,
+        "question_id": "blackstone_2016_4502/11_section_1_q48",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 48
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "explanation_question_conflict",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q048.html",
+        "sha256": "fc8e9378d420b3c64d5abe2de9df1b2c9dff456f5dc0b235a583f05dcfb90d86"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2016,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2016_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2016,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2016_q049.html",
+        "sha256": "7cc0f2271762e0a1f68b65b93a2feb815881594669fecc8e7cd94fa1798948fb"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 2,
+        "question_id": "blackstone_2017_4502/11_section_1_q2",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 2
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q002.html",
+        "sha256": "65e1fa257bb78fe03d95b282074e2719d9b20657bd174376c103768464f1a3cc"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 6,
+        "question_id": "blackstone_2017_4502/11_section_1_q6",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 6
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q006.html",
+        "sha256": "a24a36ef6f21e2994a1ec848177e493a36b7e7280922c921c1067c4815dc6570"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 8,
+        "question_id": "blackstone_2017_4502/11_section_1_q8",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 8
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q008.html",
+        "sha256": "fc7086d4d3a0d495b8ce622b9c591902fa1c029051952509ace132433a323c83"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 12,
+        "question_id": "blackstone_2017_4502/11_section_1_q12",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 12
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q012.html",
+        "sha256": "2d635ffe37274a6bc5e2a43b7692e7783026e691f49922cf5e016ab9ebd3811e"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2017_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q013.html",
+        "sha256": "1234572b466023619d0effa843fb714e1fe6d70b02708079ac05c256ca1b039a"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 14,
+        "question_id": "blackstone_2017_4502/11_section_1_q14",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 14
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q014.html",
+        "sha256": "f2af764258ddba04df4901825c762549376afff8d39115af182a02cad574b77d"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 18,
+        "question_id": "blackstone_2017_4502/11_section_1_q18",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 18
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q018.html",
+        "sha256": "26e59763a79c5ef1c0ceef05eb208966bffd45b1fb9ced3f54789abb34b65ce3"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 19,
+        "question_id": "blackstone_2017_4502/11_section_1_q19",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 19
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q019.html",
+        "sha256": "6a1c86794044000ffe3d97b168d1371bd202d644c2e36d16a3ec3162ce3dbe3a"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 20,
+        "question_id": "blackstone_2017_4502/11_section_1_q20",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 20
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q020.html",
+        "sha256": "3b23456079dc6a910c5ef0996ed61bc8fb2ac66e84ec7d0b5380510acd030812"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2017_4502/11_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q024.html",
+        "sha256": "d6b66a3ad3284f7c52d677a35dd4541790cb43edf354bec05b0ac4ebefbabae8"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2017_4502/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q025.html",
+        "sha256": "9ff157a1f40af82339a7ff7f14ec823cffb23e2d4838b212f8bbe7154f1bbb47"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 26,
+        "question_id": "blackstone_2017_4502/11_section_1_q26",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 26
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q026.html",
+        "sha256": "de08da850091503d1bb06b33d7b8c49dc79d3cec8369baa3ccc12cd8ab067ce6"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 30,
+        "question_id": "blackstone_2017_4502/11_section_1_q30",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 30
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q030.html",
+        "sha256": "e3dc5be0e08804b3a6a9e7fad82a2046662ea40e196ca8170ff4c4d883365192"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2017_4502/11_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q031.html",
+        "sha256": "138b5c99eab9599dbaf261b31fcc5dd6f235a08fce222cff6d4873e49dc53934"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 32,
+        "question_id": "blackstone_2017_4502/11_section_1_q32",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 32
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q032.html",
+        "sha256": "12f6e93fb403613b94dbc03a9c3b653a4de2649ce669a87322573164c59aa0fe"
+      },
+      "rendered_images": 7
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 38,
+        "question_id": "blackstone_2017_4502/11_section_1_q38",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 38
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "ambiguous_visual_association",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q038.html",
+        "sha256": "3fe5a9c2968d58ce731f1b4c588f0068b85d92bd37f01348533e253a0d77ebd5"
+      },
+      "rendered_images": 7
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 48,
+        "question_id": "blackstone_2017_4502/11_section_1_q48",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 48
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q048.html",
+        "sha256": "430730005217600d4af76be978f85fcbefec5ea0efca1139a9bc2648ffc17cf9"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2017_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q049.html",
+        "sha256": "bef9774f6dc42443f4caea7bcc29a8fac4b10e27c566c8c911eabf2ac25a51fd"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2017,
+        "section": "section_1",
+        "question_number": 50,
+        "question_id": "blackstone_2017_4502/11_section_1_q50",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2017,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 50
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2017_q050.html",
+        "sha256": "dc66ba09fc44190b8be29150d6505b812022112fbf799f63da89144852f081ce"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 2,
+        "question_id": "blackstone_2018_4502/11_section_1_q2",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 2
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q002.html",
+        "sha256": "65f21a46ec230a74acb54b5141b0cb3f0054948cb419d92cc86efb0ce95d9e66"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2018_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q007.html",
+        "sha256": "3a1a44cd5f12a0465c9c97f42316498eb000c336aa85f7d8fa014cfd70795369"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 8,
+        "question_id": "blackstone_2018_4502/11_section_1_q8",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 8
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q008.html",
+        "sha256": "7d50b98a18970a2efe8a7acca661fbe52452777ce259e4111106e2ef2382cacf"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2018_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q013.html",
+        "sha256": "3caf39ed738788a3b9ad76914d656f9f6f5cb24f93f65f36ae9602a249bd1d7f"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 14,
+        "question_id": "blackstone_2018_4502/11_section_1_q14",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 14
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q014.html",
+        "sha256": "f3f463e420e2521cd78ee970516a68c1c6988528fcadaad16e837a7f47306959"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 18,
+        "question_id": "blackstone_2018_4502/11_section_1_q18",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 18
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q018.html",
+        "sha256": "4eb64b6bee66ff3ae497ab1df632c4d2accd01aef3415cbc034e9751f9316a86"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 19,
+        "question_id": "blackstone_2018_4502/11_section_1_q19",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 19
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q019.html",
+        "sha256": "12e212d2ddd776d278d8e933c457044853db701fc68efe720a93e47c6d630394"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2018_4502/11_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q024.html",
+        "sha256": "689f29e6ac88109f225e002341d4d71cb580dc318b32261d576ee231cbb02861"
+      },
+      "rendered_images": 12
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2018_4502/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q025.html",
+        "sha256": "a049e5174ccd19b992f2f426adf6967e4c0745dd830c4d801975dfe454399ffe"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2018_4502/11_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q031.html",
+        "sha256": "0ac82695fcbf671fc03b00698ed266c6b8855df056920f5c410bf2cdf42013a1"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 32,
+        "question_id": "blackstone_2018_4502/11_section_1_q32",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 32
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q032.html",
+        "sha256": "bf6bf6f6d49d1b08daa92a2bfa72525c9818660f77792fd8a61aefcea493a04e"
+      },
+      "rendered_images": 9
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2018_4502/11_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q036.html",
+        "sha256": "6a572a0ae34d7d6efc693c7c18b50ede687d82d6d1d52393776f6ae3584df170"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2018_4502/11_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q037.html",
+        "sha256": "5a416bb9d82821163acb773ae2420ec69ba947daa016a26c259ada364d926959"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 38,
+        "question_id": "blackstone_2018_4502/11_section_1_q38",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 38
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q038.html",
+        "sha256": "43f60e75d4e799b1ac9f20e26a0d6091189959ae8ea633f218c643661bd8ce85"
+      },
+      "rendered_images": 5
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 43,
+        "question_id": "blackstone_2018_4502/11_section_1_q43",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 43
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q043.html",
+        "sha256": "28c69da899714d987fc41ee77189418eee2e322709312e3d8120e1716a61483a"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2018_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q049.html",
+        "sha256": "835d559bff1c61cf90656f5bc14693e05b578da66e06a3fc2badb01828a312cd"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2018,
+        "section": "section_1",
+        "question_number": 50,
+        "question_id": "blackstone_2018_4502/11_section_1_q50",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2018,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 50
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "ambiguous_visual_association",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2018_q050.html",
+        "sha256": "c67f2bc5316261e598010ef65130e5de16f9fc80e47c32b200a9b00480ede84a"
+      },
+      "rendered_images": 9
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 2,
+        "question_id": "blackstone_2019_4502/11_section_1_q2",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 2
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q002.html",
+        "sha256": "0c30c6e1dba0151081153591c7230f954a5015b666633dd347ae0bc3599cca53"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 6,
+        "question_id": "blackstone_2019_4502/11_section_1_q6",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 6
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q006.html",
+        "sha256": "a87aedc275d58a6b3ee1b2b1416075a5686f25b022c0fb52632036fca1902b36"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2019_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q007.html",
+        "sha256": "168010e3cd75019184b885caf143b3b42bcc8db53337e89ea425804d36244da9"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 8,
+        "question_id": "blackstone_2019_4502/11_section_1_q8",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 8
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q008.html",
+        "sha256": "1986ccc7808d212192d3397bd77d0b15b0d8ea86379e06e4caabe9da7aab92c5"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 12,
+        "question_id": "blackstone_2019_4502/11_section_1_q12",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 12
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q012.html",
+        "sha256": "7c11f5612d9317929eeafad644e7f6878f334dfe6248faa052b1c9c25ac0505c"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 14,
+        "question_id": "blackstone_2019_4502/11_section_1_q14",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 14
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q014.html",
+        "sha256": "14884f17f06cd4c2e32db925939e9eafd4e234fdabf2c4ae1310dbf353037d67"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 19,
+        "question_id": "blackstone_2019_4502/11_section_1_q19",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 19
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q019.html",
+        "sha256": "0d48ea66e1d74ea23ea373585a4f89c91b101572de021ad78477215b7b660d67"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2019_4502/11_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q024.html",
+        "sha256": "74cdaa8b8ba5d806c2f3e9ea219e826a7e3cc91bcbf30316c4d5cf1766c76692"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2019_4502/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q025.html",
+        "sha256": "41315111acbfbe1260e7b5169080be9522255c864eb5685090af8adf911387fc"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 26,
+        "question_id": "blackstone_2019_4502/11_section_1_q26",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 26
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q026.html",
+        "sha256": "92236248ea08f7f17b4ec9ba986701fa6326d06c9059bbadc7540a4f7a06b145"
+      },
+      "rendered_images": 10
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 30,
+        "question_id": "blackstone_2019_4502/11_section_1_q30",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 30
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q030.html",
+        "sha256": "c7af71e4f890c59c2ab05a9d9f0a428cf5e567aee1a80a1daccd7fd290080cf3"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2019_4502/11_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q031.html",
+        "sha256": "4f62448c2b93c070e0b75807c59cfad6a25d2bf3b3a06c323c5555a12c6de993"
+      },
+      "rendered_images": 5
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 32,
+        "question_id": "blackstone_2019_4502/11_section_1_q32",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 32
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "incomplete_extraction",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q032.html",
+        "sha256": "ebf6cea01905951524af30da5b37efa54f68bc2b2a0c6c79d0ae149072d104fe"
+      },
+      "rendered_images": 17
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2019_4502/11_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q036.html",
+        "sha256": "a1000f659d6ee9f39d1820e0ee520f998e3008afa3934d37068e5e8b8f3fa603"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2019_4502/11_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q037.html",
+        "sha256": "a902d40f0ae35cb1fc84d4dc1eded86b8b5fa2e788f4ad96e1543561da6c6b3d"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 38,
+        "question_id": "blackstone_2019_4502/11_section_1_q38",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 38
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q038.html",
+        "sha256": "93090a7916b92bfcd1c2b20c74375b9b83d0079c9aae195649ef64a68eca8a16"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 42,
+        "question_id": "blackstone_2019_4502/11_section_1_q42",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 42
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q042.html",
+        "sha256": "519f07c3d1f1b6e5868b517ffa708ccef755040eba53408a208724f5f2c17940"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 43,
+        "question_id": "blackstone_2019_4502/11_section_1_q43",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 43
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q043.html",
+        "sha256": "a220a7dc64524d08670e5923b8dad937895b30f677dd6df7a4a3cd8c10ee7467"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 48,
+        "question_id": "blackstone_2019_4502/11_section_1_q48",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 48
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q048.html",
+        "sha256": "741293384904dd0324dc9bce76585ddc99d430aa1d89356623d6aaad766c5537"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2019,
+        "section": "section_1",
+        "question_number": 49,
+        "question_id": "blackstone_2019_4502/11_section_1_q49",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2019,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 49
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2019_q049.html",
+        "sha256": "0d9e4483fe203c83e7e2bb4cd048fefeca110a93444d2c3290b73a905b312cf2"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2020,
+        "section": "section_1",
+        "question_number": 12,
+        "question_id": "blackstone_2020_D512/11_section_1_q12",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2020,
+          "paper": "D512/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 12
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "incomplete_extraction",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2020_q012.html",
+        "sha256": "768ebb6b9f7cd92d318e8ef209bb42d631500faede03dfa297dc42aca26399cf"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2020,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2020_D512/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2020,
+          "paper": "D512/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2020_q025.html",
+        "sha256": "f15f5a73a4ca62557851a70fefdf4f15ffc9912ffcfeb043bd70ff0f9038cd18"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 2,
+        "question_id": "blackstone_2021_4502/11_section_1_q2",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 2
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q002.html",
+        "sha256": "b17809f279d6be6d5566fd98fe20fb478c087d14c13fe5cec1d975e9df82a7c5"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 6,
+        "question_id": "blackstone_2021_4502/11_section_1_q6",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 6
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q006.html",
+        "sha256": "d594066e32ca972cf075e101cb729d254cdcb62995436ddb9653a2405a91afb2"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2021_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "incomplete_extraction",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q007.html",
+        "sha256": "3ec2fbb5cc25eae848b7adcc5cc51e2012a3a66cb28905b0221d06c6ce5b51b4"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 8,
+        "question_id": "blackstone_2021_4502/11_section_1_q8",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 8
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q008.html",
+        "sha256": "af75bb3041841b79137d19da79cd86f247acc96605ae3ee540bca11e749d4d94"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2021_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q013.html",
+        "sha256": "1f43189d7ea88bbc7220d7d38f5c1ee48ab1cc5d77107bc7b6d4a11f5618921f"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 18,
+        "question_id": "blackstone_2021_4502/11_section_1_q18",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 18
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q018.html",
+        "sha256": "98387c6351116d6d77155ccf0eba7d312df84313924b4841cf851896802ee8a0"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 19,
+        "question_id": "blackstone_2021_4502/11_section_1_q19",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 19
+        }
+      },
+      "status": "multi_label",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q019.html",
+        "sha256": "013cdc08cb4dffe04c57e0548330e74ae24170993c7cedb85fa8665b26704ae3"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 20,
+        "question_id": "blackstone_2021_4502/11_section_1_q20",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 20
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q020.html",
+        "sha256": "6dfa1eabe2adee4fff6579388e7fb867701fbd15073e3540c23b6eba5e55b4a2"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2021_4502/11_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q024.html",
+        "sha256": "86b0307136408cebda9201e1c865f94742cd2590cf766c57b68f98727ad15de4"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 26,
+        "question_id": "blackstone_2021_4502/11_section_1_q26",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 26
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q026.html",
+        "sha256": "c4c80fc7a5734d84edfc3aa4a15da2faf49b635507ea56e63be2b15fa07d7517"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 30,
+        "question_id": "blackstone_2021_4502/11_section_1_q30",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 30
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q030.html",
+        "sha256": "96906c119fb2628af4d55f6b4f6bd70946c7c9483935cae6c310f1fbbf3b4739"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2021_4502/11_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q031.html",
+        "sha256": "b1b765adacb30c3bf88535171f8ef3a81223ea4335388f18989cc518efed9b9a"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 32,
+        "question_id": "blackstone_2021_4502/11_section_1_q32",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 32
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q032.html",
+        "sha256": "7a48620a598abb5e074d40f917095645203319476c7514097d7592712b114e2d"
+      },
+      "rendered_images": 9
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2021_4502/11_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q036.html",
+        "sha256": "1bc8709bd8caa31331336c2f8a31b0c5ecbdb2754a595a17a0a01d9091d8d3fc"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2021_4502/11_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q037.html",
+        "sha256": "38e33f762da2eba2e18a701e10314571532ea059fcae3668e5949e04140e082c"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 42,
+        "question_id": "blackstone_2021_4502/11_section_1_q42",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 42
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q042.html",
+        "sha256": "1c11651c079b4515edc48112e462048c6ec9dcad97f4056982f27855965da9cf"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 43,
+        "question_id": "blackstone_2021_4502/11_section_1_q43",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 43
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q043.html",
+        "sha256": "6479b6144ba0ab27803c26cb01123d7199987188cd974018cf63b3e317cb6444"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 44,
+        "question_id": "blackstone_2021_4502/11_section_1_q44",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 44
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "explanation_question_conflict",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q044.html",
+        "sha256": "13fd517c25ce79de860fb5bdbf7218f68186bf88391e84bc895359b5b6c0373e"
+      },
+      "rendered_images": 8
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 46,
+        "question_id": "blackstone_2021_4502/11_section_1_q46",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 46
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q046.html",
+        "sha256": "e32db854d6e2378cf8d910d8a8bf5813d7a647086b6cea0b0b8c2df2a8fa113c"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 48,
+        "question_id": "blackstone_2021_4502/11_section_1_q48",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 48
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "below_semantic_threshold",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q048.html",
+        "sha256": "f8b1fcb9a2db4fad7e13acda5fd7404ce3ad23f16f2c78526f0107ee60c9af4b"
+      },
+      "rendered_images": 6
+    },
+    {
+      "identity": {
+        "year": 2021,
+        "section": "section_1",
+        "question_number": 50,
+        "question_id": "blackstone_2021_4502/11_section_1_q50",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2021,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 50
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2021_q050.html",
+        "sha256": "fff680d8c4dffbc246999a7406dc7a680cb492f0222a0485efd6635d2eea35a4"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 2,
+        "question_id": "blackstone_2022_4502/11_section_1_q2",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 2
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q002.html",
+        "sha256": "af6191de96c9682b654a10d099d8dba8afb6339621989b8e05b17f4aa3a37789"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 7,
+        "question_id": "blackstone_2022_4502/11_section_1_q7",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 7
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q007.html",
+        "sha256": "2ab0580f16badc3ce240048e5f1c41d0d9ecc87b1c4768ffc9c44fffee5a71a0"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 13,
+        "question_id": "blackstone_2022_4502/11_section_1_q13",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 13
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q013.html",
+        "sha256": "09e845876ec501c1958d41b49e5bf0c0c6ebc2bc361ab53b6ad3913423e1721a"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 14,
+        "question_id": "blackstone_2022_4502/11_section_1_q14",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 14
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q014.html",
+        "sha256": "1a5029183e8f82d8c25e216159ceb7723e25167c895d4c4fe4b658256adaff9d"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 19,
+        "question_id": "blackstone_2022_4502/11_section_1_q19",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 19
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "explanation_question_conflict",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q019.html",
+        "sha256": "4857ed5ccc82765a0c331f41a5e588937006911617eec8adfe43ec4a94ed9b41"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 20,
+        "question_id": "blackstone_2022_4502/11_section_1_q20",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 20
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "explanation_question_conflict",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q020.html",
+        "sha256": "e854a55e00787b94bc3b46f1ddde7ddbac5921fa0da2faac0895dcecfed6e267"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 24,
+        "question_id": "blackstone_2022_4502/11_section_1_q24",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 24
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q024.html",
+        "sha256": "4a89995423e7f8185bba0ca99a080442d4dab943655eb8dfee358d54cffed5e9"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 25,
+        "question_id": "blackstone_2022_4502/11_section_1_q25",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 25
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q025.html",
+        "sha256": "b9462e3eb28f271636ee769d0e126a4591e69c0958b44564f0be9090512f9662"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 30,
+        "question_id": "blackstone_2022_4502/11_section_1_q30",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 30
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "explanation_question_conflict",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q030.html",
+        "sha256": "efb4b9745a0089125dd1ec5b757cd69658d65db8d32fd7372abeb2b2f6b3d5a5"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 31,
+        "question_id": "blackstone_2022_4502/11_section_1_q31",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 31
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q031.html",
+        "sha256": "0f3df794d9ccd208a2aea06bdb20f012837f9a36e0e1346860f403063f6c84f7"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 32,
+        "question_id": "blackstone_2022_4502/11_section_1_q32",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 32
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q032.html",
+        "sha256": "f52be13e0ed1a6ed2730960cdfd0811f252c5f6b3b83ba602844f0cc67e48084"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 36,
+        "question_id": "blackstone_2022_4502/11_section_1_q36",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 36
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "insufficient_semantic_evidence",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q036.html",
+        "sha256": "c554ad0a6c77390d4aa10c8b65f7d3fd651bb833fc3b0ad280f6e8d9c7c85422"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 37,
+        "question_id": "blackstone_2022_4502/11_section_1_q37",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 37
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q037.html",
+        "sha256": "28bc5e6602fb4b6c6e18da2648f9b27194ab6a548cae57b19587dd06e7e37f96"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 38,
+        "question_id": "blackstone_2022_4502/11_section_1_q38",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 38
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q038.html",
+        "sha256": "d3acb402b2758aa0b770d5e3489f00630d46094a030df83db00d1d1e848237d3"
+      },
+      "rendered_images": 7
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 42,
+        "question_id": "blackstone_2022_4502/11_section_1_q42",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 42
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "explanation_question_conflict",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q042.html",
+        "sha256": "b3223b5011e0349e7f912564898fd2787a911af5c7a94b9de47a83060c86dc46"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 43,
+        "question_id": "blackstone_2022_4502/11_section_1_q43",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 43
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "explanation_question_conflict",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q043.html",
+        "sha256": "f69ba4e2fd3052fd40ca6add491a9768f1c5f503a64d33d49c692eb4e11a9dc0"
+      },
+      "rendered_images": 3
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 44,
+        "question_id": "blackstone_2022_4502/11_section_1_q44",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 44
+        }
+      },
+      "status": "needs_review",
+      "remaining_review_reason": "explanation_question_conflict",
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q044.html",
+        "sha256": "05dd07efb9798518b7d060b97bec51fa6746f236062a16aec18ec2e3ce0cfeec"
+      },
+      "rendered_images": 4
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 46,
+        "question_id": "blackstone_2022_4502/11_section_1_q46",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 46
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q046.html",
+        "sha256": "720624ae25897e2f38bda21a41f4ce66e36a5db062d27c3f50f403650b89974b"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 48,
+        "question_id": "blackstone_2022_4502/11_section_1_q48",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 48
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q048.html",
+        "sha256": "86d9bd1ef9add2a24b2a15e4cb9c1b0be3814d0e963d7a8b6be399261f26d698"
+      },
+      "rendered_images": 2
+    },
+    {
+      "identity": {
+        "year": 2022,
+        "section": "section_1",
+        "question_number": 50,
+        "question_id": "blackstone_2022_4502/11_section_1_q50",
+        "source_question_key": {
+          "source": "blackstone",
+          "year": 2022,
+          "paper": "4502/11",
+          "variant": null,
+          "section": "section_1",
+          "question_number": 50
+        }
+      },
+      "status": "classified",
+      "remaining_review_reason": null,
+      "html": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\inspections_categorization\\2022_q050.html",
+        "sha256": "b0f39d230d17234287c1b49d6a509ab09f832a63b3b98aefe7dfc95ceaae6a76"
+      },
+      "rendered_images": 8
+    }
+  ]
+}

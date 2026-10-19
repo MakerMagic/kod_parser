@@ -190,6 +190,147 @@ def tail_prompt_span(text, options):
     return first, end
 
 
+def colon_prompt_span(question):
+    """Recognise answer-completed clauses, not arbitrary body introductions.
+
+    Require a final relational/request clause and parallel textual completions.
+    Stored layout, where aligned, must put no intervening body visual between
+    the clause and the options. Neither colon nor proximity alone is evidence.
+    """
+    text = question.get("question_text") or ""
+    options = question.get("options") or []
+    labels = [o.get("label") for o in options]
+    if (
+        not text.rstrip().endswith(":")
+        or artifact_reason(text)
+        or len(labels) < 2
+        or any(not x for x in labels)
+        or len(set(labels)) != len(labels)
+    ):
+        return None
+    completions = [(o.get("text") or "").strip() for o in options]
+    if any(o.get("images") for o in options) or not all(
+        len(t.split()) >= 4 and t[0].islower() and not _row_kind(t) for t in completions
+    ):
+        return None
+    end = len(text.rstrip())
+    starts = {0, *(m.end() for m in re.finditer(r"[.!?]\s+|\n[ \t]*", text[:end]))}
+    for start in sorted(starts):
+        while start < end and text[start].isspace():
+            start += 1
+        clause = re.sub(r"\s+", " ", text[start:end]).strip()
+        if (
+            not clause
+            or not clause[0].isupper()
+            or re.search(r"[.!?:].+\S", clause[:-1])
+        ):
+            continue
+        if re.search(
+            r"\b(?:as follows|shown|below|table|list|diagram|premises|data|quot(?:e|ation))\b",
+            clause,
+            re.IGNORECASE,
+        ):
+            continue
+        relation = re.search(
+            r"\b(?:reflects?|represents?|expresses?|illustrates?|indicates?|means?|"
+            r"describes?|is|are|would be|must be|assumption that)\s*:$",
+            clause,
+            re.IGNORECASE,
+        )
+        if not relation and not (PROMPT.match(clause) and _statement_request(clause)):
+            continue
+        # Do not detach the last wrapped fragment of the requested clause.
+        before = text[:start].rstrip()
+        if before and not before.endswith((".", "?", "!", "'", '"', "’", "”", ")")):
+            continue
+        lines = text_lines(text)
+        mapping = _line_mapping(question, lines)
+        if mapping is not None:
+            layout = question.get("layout_blocks") or []
+            prompt_orders = [
+                b["order"]
+                for b in layout
+                if b.get("block_id") in mapping
+                and lines[mapping[b["block_id"]]]["span"]["end"] > start
+            ]
+            if prompt_orders and any(
+                b.get("type") == "visual"
+                and b.get("component") != "option"
+                and b.get("order", 0) > max(prompt_orders)
+                for b in layout
+            ):
+                continue
+        return start, end
+    return None
+
+
+def completion_prompt_span(question):
+    """Recognise conditional answer-completed requests without punctuation.
+
+    A dangling copula alone is insufficient: require a conditional/request
+    clause, parallel substantive phrase choices and no intervening body visual.
+    Ordinary table/list introductions and complete final prose stay in the body.
+    """
+    text = question.get("question_text") or ""
+    options = question.get("options") or []
+    labels = [o.get("label") for o in options]
+    values = [(o.get("text") or "").strip() for o in options]
+    if (
+        artifact_reason(text)
+        or len(labels) < 3
+        or labels != list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"[: len(labels)])
+        or any(o.get("images") for o in options)
+        or not all(values)
+        or not re.search(r"\b(?:is|are|would be|must be)\s*$", text)
+    ):
+        return None
+    numeric = all(re.match(r"^\d+(?:[.,:/]\d+)*(?:\s|$)", t) for t in values)
+    enumerated = all(
+        re.fullmatch(r"[A-Za-z]+(?:,\s*[A-Za-z]+)+(?:\s+and\s+[A-Za-z]+)?\.?", t)
+        for t in values
+    )
+    phrases = all(t[0].islower() and len(t.split()) >= 3 for t in values)
+    if not (numeric or enumerated or phrases):
+        return None
+    end = len(text.rstrip())
+    starts = {0, *(m.end() for m in re.finditer(r"[.!?]\s+|\n[ \t]*", text[:end]))}
+    for start in sorted(starts):
+        candidate = re.sub(r"\s+", " ", text[start:end]).strip()
+        conditional = re.match(r"^(?:If|Assuming|Given)\b", candidate) and re.search(
+            r",\s*(?:then\s+)?(?:the|which|what)\b", candidate
+        )
+        request = PROMPT.match(candidate) and _statement_request(candidate)
+        if not (conditional or request) or re.search(
+            r"[.!?:].+\S|\b(?:as follows|shown below|following (?:table|list|data)|listed below)\b",
+            candidate,
+            re.IGNORECASE,
+        ):
+            continue
+        before = text[:start].rstrip()
+        if before and not before.endswith((".", "?", "!", ")")):
+            continue
+        mapping = _line_mapping(question, text_lines(text))
+        if mapping is not None:
+            lines = text_lines(text)
+            orders = [
+                b["order"]
+                for b in question.get("layout_blocks") or []
+                if b.get("block_id") in mapping
+                and lines[mapping[b["block_id"]]]["span"]["end"] > start
+            ]
+            if orders and any(
+                b.get("type") == "visual"
+                and b.get("component") != "option"
+                and b.get("order", 0) > max(orders)
+                for b in question.get("layout_blocks") or []
+            ):
+                continue
+        while start < end and text[start].isspace():
+            start += 1
+        return start, end
+    return None
+
+
 def _line_mapping(question, lines):
     raw = question.get("raw") or {}
     block = raw.get("question_block", "")
@@ -262,7 +403,11 @@ def build_structure(question, issue):
     prompt = (
         (lines[legacy[0]]["span"]["start"], lines[legacy[1] - 1]["span"]["end"])
         if legacy
-        else tail_prompt_span(text, question.get("options") or [])
+        else (
+            tail_prompt_span(text, question.get("options") or [])
+            or colon_prompt_span(question)
+            or completion_prompt_span(question)
+        )
         if lines
         else None
     )
@@ -507,6 +652,8 @@ def build_structure(question, issue):
         normalize_text(
             text[prompt[0] : prompt[1]],
             contextual_wraps=True,
+            recover_modal_joins=True,
+            recover_auxiliary_joins=True,
             line_context=[
                 prose_context[i]
                 for i, line in enumerate(lines)

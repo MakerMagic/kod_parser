@@ -1,0 +1,33 @@
+{
+  "stage": "bmat_raw_validation",
+  "source_pdfs_verified": 19,
+  "raw_pages_preserved": 524,
+  "questions_verified": 664,
+  "html_verified": 664,
+  "status_counts": {
+    "parser_review": 21,
+    "retained": 363,
+    "skipped": 280
+  },
+  "skip_types_overlapping": {
+    "No Question": 26,
+    "Shared Information Range": 199,
+    "Variable-related question": 1,
+    "Several correct answers": 2,
+    "too long": 52,
+    "Necessary and Sufficient Conditions": 3,
+    "Explanation": 14,
+    "Complete the text": 5,
+    "Source": 3
+  },
+  "parsing_issue_questions": 82,
+  "eligible_downstream": 363,
+  "determinism_years": [
+    2003,
+    2013,
+    2020
+  ],
+  "tsa_hash_locked_records_unchanged": 750,
+  "tests_passed": 125,
+  "local_report_links_checked": 456
+}

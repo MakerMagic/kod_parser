@@ -624,7 +624,7 @@ def test_2015_text_frames_no_longer_flag_every_question(tmp_path):
     assert not question_issues
 
 
-def test_2016_q32_two_diagrams_stay_unresolved(tmp_path):
+def test_2016_q32_raster_padding_does_not_merge_distinct_options(tmp_path):
     source = (
         Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2016.pdf"
     )
@@ -635,16 +635,24 @@ def test_2016_q32_two_diagrams_stay_unresolved(tmp_path):
     q = data["questions"][31]
     assert [option["label"] for option in q["options"]] == list("ABCDE")
     assert q["raw"]["question_block"]
-    merged = [
-        asset
-        for asset in q["visual_assets"]
-        if "visual_multiple_option_images_merged:shared_geometry_requires_review"
-        in asset["warnings"]
-    ]
-    assert merged and all(asset["belongs_to"] == "unknown" for asset in merged)
+    assert len([a for a in q["visual_assets"] if a["belongs_to"] == "question"]) == 4
+    assert all(
+        len(o["images"]) == 1 and o["images"][0]["option_label"] == o["label"]
+        for o in q["options"]
+    )
+    assert all(not a["warnings"] for a in q["visual_assets"])
     assert any(
-        "visual_multiple_option_images_merged:shared_geometry_requires_review"
-        in row["reasons"]
+        "rendered blank band" in note for a in q["visual_assets"] for note in a["notes"]
+    )
+    assert not [
+        row
+        for row in collect_issues(data, tmp_path / "2016.raw.json")
+        if row["question_number"] == 32
+    ]
+    clipped = next(a for a in q["visual_assets"] if a.get("object_crop_evidence"))
+    clipped["object_crop_evidence"][0]["cut"] += 10
+    assert any(
+        "visual_crop_may_be_incomplete:object_outside_crop" in row["reasons"]
         for row in collect_issues(data, tmp_path / "2016.raw.json")
         if row["question_number"] == 32
     )
