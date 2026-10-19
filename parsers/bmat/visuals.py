@@ -31,6 +31,25 @@ def centered_cells(question, pending, width):
         )
     if [a["label"] for a in anchors] != [o["label"] for o in options]:
         return []
+    # Some papers place choice letters above the LEFT edge, not the centre,
+    # of each diagram. Require one complete, distinct native envelope per label
+    # before changing column boundaries; do not infer this from letter position
+    # alone or split a genuinely shared graphic.
+    left_envelopes = []
+    for a in anchors:
+        b, h = a["bbox"], a["bbox"][3] - a["bbox"][1]
+        matches = [
+            asset
+            for asset in question["visual_assets"]
+            if asset["page"] == a["page"]
+            and (g := asset.get("graphic_bbox", asset["bbox"]))[2] - g[0] > h * 2
+            and abs(g[0] - b[0]) <= h
+            and b[1] <= g[1] <= b[3] + h * 2
+        ]
+        left_envelopes.append(matches)
+    left_aligned = all(len(v) == 1 for v in left_envelopes) and len(
+        {id(v[0]) for v in left_envelopes}
+    ) == len(anchors)
     cells = []
     for a in anchors:
         b = a["bbox"]
@@ -56,13 +75,26 @@ def centered_cells(question, pending, width):
             ],
             default=float("inf"),
         )
+        if left_aligned:
+            right = min(
+                [n["bbox"][0] for n in row if n["bbox"][0] > b[0] + height],
+                default=width,
+            )
         cells.append(
             {
                 **a,
                 "cell": [
-                    (left + mid) / 2 if left else 0,
+                    b[0] - height / 2
+                    if left_aligned
+                    else (left + mid) / 2
+                    if left
+                    else 0,
                     b[1],
-                    (right + mid) / 2 if right != width else width,
+                    right - height / 2
+                    if left_aligned and right != width
+                    else (right + mid) / 2
+                    if right != width
+                    else width,
                     bottom,
                 ],
             }
@@ -76,7 +108,7 @@ def owner(box, cells, page):
         for a in cells
         if a["page"] == page
         and a["cell"][0] <= box[0] <= box[2] <= a["cell"][2]
-        and a["bbox"][3] <= box[1] < box[3] < a["cell"][3]
+        and a["bbox"][1] <= box[1] <= box[3] < a["cell"][3]
     ]
     if len(candidates) == 1:
         return candidates[0]
@@ -88,7 +120,7 @@ def owner(box, cells, page):
         for a in cells
         if a["page"] == page
         and box[0] <= (a["bbox"][0] + a["bbox"][2]) / 2 <= box[2]
-        and a["bbox"][3] <= box[1] < box[3] < a["cell"][3]
+        and a["bbox"][1] <= box[1] <= box[3] < a["cell"][3]
     ]
     if len(aligned) == 1:
         a = aligned[0]

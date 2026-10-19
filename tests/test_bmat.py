@@ -312,7 +312,22 @@ def test_full_page_is_layout_not_length_or_continuation(height, spans, expected)
         question_id="stable",
         question_number=1,
         raw={"page_spans": [{"page": i + 1} for i in range(spans)]},
-        layout_blocks=[{"bbox": [50, 50, 500, height]}],
+        layout_blocks=[
+            {
+                "type": "text",
+                "component": "question_body",
+                "page": 1,
+                "bbox": [50, 50, 500, 70],
+            },
+            {
+                "type": "text",
+                "component": "option",
+                "label": "D",
+                "page": 1,
+                "text": "D Fourth claim",
+                "bbox": [50, height - 10, 500, height],
+            },
+        ],
     )
     d = {
         "questions": [q],

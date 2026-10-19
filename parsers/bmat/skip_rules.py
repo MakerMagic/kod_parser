@@ -6,11 +6,13 @@ from collections import defaultdict
 ORDER = [
     "Shared Information Range",
     "No Question",
+    "Subpoints",
     "Necessary and Sufficient Conditions",
     "Several correct answers",
     "Complete the text",
     "Source",
     "Variable-related question",
+    "Drawing Inferences",
     "Explanation",
     "too long",
 ]
@@ -25,7 +27,9 @@ def semantic_tags(q):
     stem = q["raw_components"]["main_question"] or ""
     s = " ".join(stem.split())
     options = [o["text"].strip() for o in q["options"]]
-    tags = []
+    from .semantic_filters import tags as semantic_filters
+
+    tags = semantic_filters(q)
 
     def add(name, evidence, signals, counter):
         tags.append(
@@ -119,7 +123,8 @@ def semantic_tags(q):
         s,
     )
     flaw = has(
-        r"\b(?:flaw|reasoning error|erroneous step|main conclusion|assumption)\b", s
+        r"\b(?:flaw\w*|reasoning error|erroneous step|main conclusion|assumption|wrong with (?:this|the|that|above) argument)\b",
+        s,
     )
     if (
         explanation
@@ -175,6 +180,17 @@ def semantic_tags(q):
         body,
     )
     audit = q.get("option_audit") or {}
+    if not options and audit.get("verified_dataset_rows_not_options"):
+        add(
+            "No Question",
+            "The source supplies named rows of one data table, not a separate multiple-choice answer set.",
+            [
+                "explicit dataset letter range in request",
+                "aligned numeric table columns",
+                "header precedes candidate rows",
+            ],
+            ["ordinary textual choices", "table-form answer alternatives"],
+        )
     verified_write_in = (
         audit.get("cover_allows_write_in")
         and audit.get("possible_label_lines") == 0
@@ -185,7 +201,7 @@ def semantic_tags(q):
         and audit.get("text_complete")
         and audit.get("bounded_by_numbered_items")
         and (
-            re.sub(r"[_\s]+$", "", s).endswith("?")
+            has(r"\?(?:\s*\([^)]*\)[.]?)?\s*$", re.sub(r"[_\s]+$", "", s))
             or has(r"^(?:Estimate|Express|Calculate|Determine)\b", s)
         )
     )
@@ -212,6 +228,8 @@ def semantic_tags(q):
 
 
 def annotate(dataset):
+    from .occupancy import measure
+
     for declared in dataset["shared_information_ranges"]:
         declared["affected_question_ids"] = []
     owners = defaultdict(set)
@@ -248,26 +266,23 @@ def annotate(dataset):
                 )
                 r["affected_question_ids"].append(q["question_id"])
         spans = q["raw"]["page_spans"]
-        if len(spans) == 1 and len(owners[spans[0]["page"]]) == 1:
-            page = dataset["pages"][spans[0]["page"] - 1]
-            # Actual content bounds, not the padded question/page preview crop.
-            layout = q.get("layout_blocks") or []
-            boxes = [b["bbox"] for b in layout if b.get("bbox")]
-            if boxes:
-                extent = (max(b[3] for b in boxes) - min(b[1] for b in boxes)) / (
-                    page["height"] - 80
-                )
-                if extent >= 0.65:
-                    tags.append(
-                        {
-                            "type": "too long",
-                            "reason": "One complete question is the sole question on the page and spans at least 65% of its usable height.",
-                            "page": page["page_number"],
-                            "content_height_ratio": round(extent, 4),
-                            "confidence": "high",
-                            "status": "intentional_skip",
-                        }
-                    )
+        occupancy = measure(q, dataset["pages"])
+        if (
+            len(spans) == 1
+            and len(owners[spans[0]["page"]]) == 1
+            and occupancy.get("exceeds_threshold")
+        ):
+            tags.append(
+                {
+                    "type": "too long",
+                    "reason": "One complete question occupies more than 60% of the usable content height, ending at the bottom of its final answer option.",
+                    "page": occupancy["page"],
+                    "content_height_ratio": round(occupancy["occupancy_ratio"], 6),
+                    "measurement": occupancy,
+                    "confidence": "high",
+                    "status": "intentional_skip",
+                }
+            )
         unique = {}
         for tag in tags:
             if tag["type"] in unique:
@@ -276,7 +291,8 @@ def annotate(dataset):
                 unique[tag["type"]] = tag
         tags = sorted(unique.values(), key=lambda t: ORDER.index(t["type"]))
         q["bmat_filter"] = {
-            "rule_version": "1",
+            "rule_version": "3",
+            "too_long_measurement": occupancy,
             "skip_from_pipeline": bool(tags),
             "primary_type": tags[0]["type"] if tags else None,
             "types": tags,
@@ -287,3 +303,59 @@ def annotate(dataset):
             else "normal",
             "skip_reason": tags[0]["reason"] if tags else None,
         }
+
+
+def main(argv=None):
+    """Refresh only stored RAW exclusion evidence; never reopen/crop a PDF."""
+    import argparse
+    import json
+    from pathlib import Path
+
+    from .parser import validate_raw
+    from .quality import findings
+
+    cli = argparse.ArgumentParser(description=main.__doc__)
+    cli.add_argument("inputs", nargs="+", type=Path)
+    cli.add_argument("--overwrite", action="store_true", required=True)
+    args = cli.parse_args(argv)
+    paths = sorted(
+        {
+            p.resolve()
+            for root in args.inputs
+            for p in (root.glob("*.raw.json") if root.is_dir() else [root])
+        }
+    )
+    for path in paths:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        validate_raw(data)
+        annotate(data)
+        for q in data["questions"]:
+            q["parsing_issues"] = [
+                {
+                    "code": w.split(":", 1)[0].split(" [", 1)[0],
+                    "reason": w,
+                    "manual_review_required": True,
+                }
+                for w in findings(data, q, path)
+            ]
+            q["pipeline_status"] = (
+                "intentional_skip"
+                if q["bmat_filter"]["skip_from_pipeline"]
+                else "parser_review"
+                if q["parsing_issues"] or data["warnings"]
+                else "raw_ready"
+            )
+        validate_raw(data)
+        path.write_text(
+            json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+        print(
+            data["year"],
+            "exclusion evidence refreshed (no PDF/asset changes)",
+            flush=True,
+        )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -36,11 +36,11 @@ def findings(data, question, path):
             candidates = [
                 a for a in question["visual_assets"] if a.get("option_label") == label
             ]
-            if (
-                len(candidates) == 1
-                and candidates[0].get("association_method")
-                == "bmat_complete_above_label_cells"
-            ):
+            if len(candidates) == 1 and candidates[0].get("association_method") in {
+                "bmat_complete_above_label_cells",
+                "bmat_complete_anchor_envelopes",
+                "bmat_spatial_math_option_cells",
+            }:
                 continue
         issues.append(code + (" [" + asset + "]" if asset else ""))
     if not question["raw_components"]["main_question"] and not no_choices_expected:

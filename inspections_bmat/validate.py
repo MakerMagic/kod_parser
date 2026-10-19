@@ -42,6 +42,7 @@ class HTML(HTMLParser):
 def main():
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("--determinism", action="store_true")
+    cli.add_argument("--test-report",nargs="+",type=Path,default=[ROOT/"inspections_bmat/regressions.xml"])
     args = cli.parse_args()
     manifest_path = ROOT / "data/input/bmat/manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -195,11 +196,7 @@ def main():
     # answer/explanation and image references without running any TSA stage.
     tsa = load_categorized(ROOT / "data/categorized/blackstone/tsa.categorized.json")
     assert len(tsa["records"]) == 750
-    suites = (
-        ElementTree.parse(ROOT / "inspections_bmat/regressions.xml")
-        .getroot()
-        .findall("testsuite")
-    )
+    suites = [suite for path in args.test_report for suite in ElementTree.parse(path).getroot().findall("testsuite")]
     assert all(
         s.get("failures") == s.get("errors") == s.get("skipped") == "0" for s in suites
     )
@@ -216,6 +213,7 @@ def main():
         "determinism_years": determinism,
         "tsa_hash_locked_records_unchanged": 750,
         "tests_passed": sum(int(s.get("tests", 0)) for s in suites),
+        "test_reports": [str(p) for p in args.test_report],
         "local_report_links_checked": links_checked,
     }
     (ROOT / "inspections_bmat/validation.json").write_text(

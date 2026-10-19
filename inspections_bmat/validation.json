@@ -5,29 +5,31 @@
   "questions_verified": 664,
   "html_verified": 664,
   "status_counts": {
-    "parser_review": 21,
-    "retained": 363,
-    "skipped": 280
+    "parser_review": 3,
+    "retained": 326,
+    "skipped": 335
   },
   "skip_types_overlapping": {
-    "No Question": 26,
-    "Shared Information Range": 199,
+    "Drawing Inferences": 7,
+    "No Question": 29,
+    "Shared Information Range": 207,
     "Variable-related question": 1,
     "Several correct answers": 2,
-    "too long": 52,
+    "too long": 67,
     "Necessary and Sufficient Conditions": 3,
     "Explanation": 14,
+    "Subpoints": 37,
     "Complete the text": 5,
     "Source": 3
   },
-  "parsing_issue_questions": 82,
-  "eligible_downstream": 363,
-  "determinism_years": [
-    2003,
-    2013,
-    2020
-  ],
+  "parsing_issue_questions": 10,
+  "eligible_downstream": 326,
+  "determinism_years": [],
   "tsa_hash_locked_records_unchanged": 750,
-  "tests_passed": 125,
-  "local_report_links_checked": 456
+  "tests_passed": 319,
+  "test_reports": [
+    "inspections_bmat\\repair\\bmat-tests.xml",
+    "inspections_bmat\\repair\\tsa-tests.xml"
+  ],
+  "local_report_links_checked": 400
 }

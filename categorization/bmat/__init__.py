@@ -1,1 +1,1 @@
-"""Reserved BMAT matched-record categorization; not a RAW exclusion detector."""
+"""Independent BMAT task-intent categorization, after source exclusion filtering."""

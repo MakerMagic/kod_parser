@@ -3,113 +3,105 @@
   "summary": {
     "questions": 664,
     "status_counts": {
-      "parser_review": 21,
-      "retained": 363,
-      "skipped": 280
+      "parser_review": 3,
+      "retained": 326,
+      "skipped": 335
     },
-    "unique_intentional_skips": 280,
-    "unique_parsing_issue_questions": 82,
-    "retained_without_parsing_issues": 363,
+    "unique_intentional_skips": 335,
+    "unique_parsing_issue_questions": 10,
+    "retained_without_parsing_issues": 326,
     "skip_tag_counts_overlapping": {
-      "Shared Information Range": 199,
-      "No Question": 26,
+      "Shared Information Range": 207,
+      "No Question": 29,
+      "Subpoints": 37,
       "Necessary and Sufficient Conditions": 3,
       "Several correct answers": 2,
       "Complete the text": 5,
       "Source": 3,
       "Variable-related question": 1,
+      "Drawing Inferences": 7,
       "Explanation": 14,
-      "too long": 52
+      "too long": 67
     },
     "by_year": {
       "2003": {
         "parser_review": 1,
-        "retained": 18,
-        "skipped": 21
+        "retained": 15,
+        "skipped": 24
       },
       "2004": {
-        "retained": 16,
-        "parser_review": 3,
-        "skipped": 16
+        "retained": 18,
+        "skipped": 16,
+        "parser_review": 1
       },
       "2005": {
-        "retained": 15,
-        "skipped": 19,
-        "parser_review": 1
+        "retained": 12,
+        "skipped": 23
       },
       "2006": {
-        "retained": 16,
-        "skipped": 19
+        "retained": 12,
+        "skipped": 23
       },
       "2007": {
-        "retained": 16,
-        "skipped": 19
+        "retained": 12,
+        "skipped": 23
       },
       "2008": {
-        "retained": 17,
-        "parser_review": 3,
-        "skipped": 15
+        "skipped": 20,
+        "retained": 15
       },
       "2009": {
-        "skipped": 19,
-        "retained": 15,
-        "parser_review": 1
+        "skipped": 21,
+        "retained": 14
       },
       "2010": {
-        "retained": 19,
-        "parser_review": 2,
-        "skipped": 14
+        "retained": 18,
+        "skipped": 17
       },
       "2011": {
-        "skipped": 16,
-        "retained": 18,
-        "parser_review": 1
+        "skipped": 19,
+        "retained": 16
       },
       "2012": {
-        "retained": 19,
-        "parser_review": 1,
-        "skipped": 15
+        "retained": 17,
+        "skipped": 18
       },
       "2013": {
-        "retained": 20,
-        "skipped": 15
+        "retained": 18,
+        "skipped": 17
       },
       "2014": {
-        "parser_review": 3,
-        "retained": 16,
-        "skipped": 16
+        "retained": 17,
+        "skipped": 18
       },
       "2015": {
-        "retained": 27,
-        "skipped": 7,
-        "parser_review": 1
+        "retained": 19,
+        "skipped": 16
       },
       "2016": {
         "retained": 21,
-        "skipped": 13,
-        "parser_review": 1
-      },
-      "2017": {
-        "retained": 17,
-        "skipped": 16,
-        "parser_review": 2
-      },
-      "2018": {
-        "retained": 21,
         "skipped": 14
       },
-      "2019": {
+      "2017": {
         "retained": 15,
-        "skipped": 19,
-        "parser_review": 1
+        "skipped": 20
+      },
+      "2018": {
+        "retained": 19,
+        "skipped": 16
+      },
+      "2019": {
+        "retained": 14,
+        "skipped": 21
       },
       "2020": {
-        "retained": 28,
-        "skipped": 4
+        "retained": 27,
+        "skipped": 5
       },
       "2021": {
-        "retained": 29,
-        "skipped": 3
+        "retained": 27,
+        "skipped": 4,
+        "parser_review": 1
       }
     },
     "document_issues": []
@@ -165,8 +157,10 @@
         "start_page": 4,
         "end_page": 4
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Drawing Inferences"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2003_b50f7fbc103f.raw.json",
       "question_id": "bmat_2003_unspecified_section_1_q4"
@@ -286,23 +280,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_option_anchor_boundary_uncertain:manual_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:A",
-        "option_content_unresolved:B",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q012_r012_p007_asset_01_1e8e35b21a.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q012_r012_p007_asset_01_1e8e35b21a.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q012_r012_p007_asset_02_4513e3fb45.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q012_r012_p007_asset_02_4513e3fb45.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q012_r012_p007_asset_03_796bf425fd.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q012_r012_p007_asset_03_796bf425fd.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q012_r012_p007_asset_04_b2113ffc13.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q012_r012_p007_asset_04_b2113ffc13.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2003_b50f7fbc103f.raw.json",
       "question_id": "bmat_2003_unspecified_section_1_q12"
     },
@@ -356,23 +334,7 @@
       "types": [
         "Variable-related question"
       ],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_option_anchor_boundary_uncertain:manual_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:A",
-        "option_content_unresolved:B",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "option_content_unresolved:E",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q016_r016_p009_asset_01_38c041bcea.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q016_r016_p009_asset_02_9c5e929319.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q016_r016_p009_asset_03_0eb20406d5.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q016_r016_p009_asset_04_b7e9df7697.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q016_r016_p009_asset_04_b7e9df7697.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q016_r016_p009_asset_05_baeab4b53c.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q016_r016_p009_asset_05_baeab4b53c.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2003_b50f7fbc103f.raw.json",
       "question_id": "bmat_2003_unspecified_section_1_q16"
     },
@@ -383,8 +345,10 @@
         "start_page": 9,
         "end_page": 9
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Drawing Inferences"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2003_b50f7fbc103f.raw.json",
       "question_id": "bmat_2003_unspecified_section_1_q17"
@@ -452,8 +416,10 @@
         "start_page": 11,
         "end_page": 11
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Drawing Inferences"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2003_b50f7fbc103f.raw.json",
       "question_id": "bmat_2003_unspecified_section_1_q22"
@@ -635,34 +601,7 @@
       "types": [
         "too long"
       ],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_option_anchor_boundary_uncertain:manual_review",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:A",
-        "option_content_unresolved:B",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "option_content_unresolved:E",
-        "option_content_unresolved:F",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_03_b449c6ac2c.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_03_b449c6ac2c.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_03_b449c6ac2c.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_04_1043ca7503.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_04_1043ca7503.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_05_2be87e317c.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_05_2be87e317c.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_05_2be87e317c.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_06_1806a9d41a.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_06_1806a9d41a.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_07_b604067166.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_07_b604067166.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_07_b604067166.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_08_4d8b64d8f7.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_08_4d8b64d8f7.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q035_r035_p017_asset_08_4d8b64d8f7.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2003_b50f7fbc103f.raw.json",
       "question_id": "bmat_2003_unspecified_section_1_q35"
     },
@@ -677,9 +616,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2003_b50f7fbc103f.raw.json",
       "question_id": "bmat_2003_unspecified_section_1_q36"
     },
@@ -709,9 +646,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2003_b50f7fbc103f.raw.json",
       "question_id": "bmat_2003_unspecified_section_1_q38"
     },
@@ -743,21 +678,7 @@
         "Shared Information Range"
       ],
       "issues": [
-        "visual_option_anchor_boundary_uncertain:manual_review",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review",
-        "visual_component_association_uncertain",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_01_16041f0476.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_01_16041f0476.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_01_16041f0476.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_02_0981befbce.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_02_0981befbce.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_02_0981befbce.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_03_062ee5029a.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_03_062ee5029a.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_03_062ee5029a.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_04_681a922eec.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_04_681a922eec.png]",
-        "visual_component_association_uncertain [assets/b50f7fbc103ff2982062/bmat_2003_q040_r040_p019_asset_04_681a922eec.png]"
+        "foreign_option_letter_in_crop:C->D [assets/b50f7fbc103ff2982062/bmat_2003_q040_p019_geometry_a0e29dbbf8.png]"
       ],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2003_b50f7fbc103f.raw.json",
       "question_id": "bmat_2003_unspecified_section_1_q40"
@@ -821,13 +742,9 @@
         "start_page": 4,
         "end_page": 4
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/bf878c35d9f91132da01/bmat_2004_q005_r005_p004_asset_01_a038bb416e.png]",
-        "visual_component_association_uncertain [assets/bf878c35d9f91132da01/bmat_2004_q005_r005_p004_asset_02_ec8cc939b6.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2004_bf878c35d9f9.raw.json",
       "question_id": "bmat_2004_unspecified_section_1_q5"
     },
@@ -942,9 +859,7 @@
       "types": [
         "Necessary and Sufficient Conditions"
       ],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2004_bf878c35d9f9.raw.json",
       "question_id": "bmat_2004_unspecified_section_1_q13"
     },
@@ -958,19 +873,8 @@
       "status": "parser_review",
       "types": [],
       "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
         "visual_component_association_uncertain",
-        "visual_option_anchor_boundary_uncertain:manual_review",
-        "option_content_unresolved:A",
-        "option_content_unresolved:B",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "visual_component_association_uncertain [assets/bf878c35d9f91132da01/bmat_2004_q014_r014_p009_asset_02_2ccc41a9dd.png]",
-        "visual_component_association_uncertain [assets/bf878c35d9f91132da01/bmat_2004_q014_r014_p009_asset_03_b34c1aba9d.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/bf878c35d9f91132da01/bmat_2004_q014_r014_p009_asset_04_8a3f5bf211.png]",
-        "visual_component_association_uncertain [assets/bf878c35d9f91132da01/bmat_2004_q014_r014_p009_asset_04_8a3f5bf211.png]",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/bf878c35d9f91132da01/bmat_2004_q014_r014_p009_asset_05_b8226f9635.png]",
-        "visual_component_association_uncertain [assets/bf878c35d9f91132da01/bmat_2004_q014_r014_p009_asset_05_b8226f9635.png]"
+        "visual_component_association_uncertain [assets/bf878c35d9f91132da01/bmat_2004_q014_r014_p009_asset_01_20f43d92d0.png]"
       ],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2004_bf878c35d9f9.raw.json",
       "question_id": "bmat_2004_unspecified_section_1_q14"
@@ -1021,11 +925,9 @@
         "start_page": 11,
         "end_page": 11
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2004_bf878c35d9f9.raw.json",
       "question_id": "bmat_2004_unspecified_section_1_q18"
     },
@@ -1084,21 +986,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:A",
-        "option_content_unresolved:B",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/bf878c35d9f91132da01/bmat_2004_q022_r022_p013_asset_01_c3ff582aeb.png]",
-        "visual_component_association_uncertain [assets/bf878c35d9f91132da01/bmat_2004_q022_r022_p013_asset_01_c3ff582aeb.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/bf878c35d9f91132da01/bmat_2004_q022_r022_p013_asset_02_186e8e8fc9.png]",
-        "visual_component_association_uncertain [assets/bf878c35d9f91132da01/bmat_2004_q022_r022_p013_asset_02_186e8e8fc9.png]",
-        "visual_component_association_uncertain [assets/bf878c35d9f91132da01/bmat_2004_q022_r022_p013_asset_03_3756a05595.png]",
-        "visual_component_association_uncertain [assets/bf878c35d9f91132da01/bmat_2004_q022_r022_p013_asset_04_06f8f501ae.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2004_bf878c35d9f9.raw.json",
       "question_id": "bmat_2004_unspecified_section_1_q22"
     },
@@ -1469,15 +1357,9 @@
         "start_page": 8,
         "end_page": 8
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "visual_caption_boundary_uncertain:external_caption_preserved",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout",
-        "visual_caption_boundary_uncertain:external_caption_preserved [assets/4196ce29c047cb9135f4/bmat_2005_q013_r013_p008_asset_01_a7dba65cc5.png]",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout [assets/4196ce29c047cb9135f4/bmat_2005_q013_r013_p008_asset_01_a7dba65cc5.png]",
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2005_4196ce29c047.raw.json",
       "question_id": "bmat_2005_unspecified_section_1_q13"
     },
@@ -1488,8 +1370,10 @@
         "start_page": 9,
         "end_page": 9
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2005_4196ce29c047.raw.json",
       "question_id": "bmat_2005_unspecified_section_1_q14"
@@ -1514,8 +1398,10 @@
         "start_page": 10,
         "end_page": 10
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2005_4196ce29c047.raw.json",
       "question_id": "bmat_2005_unspecified_section_1_q16"
@@ -1588,11 +1474,10 @@
       },
       "status": "skipped",
       "types": [
-        "Shared Information Range"
+        "Shared Information Range",
+        "No Question"
       ],
-      "issues": [
-        "options_not_detected:requires_source_inspection"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2005_4196ce29c047.raw.json",
       "question_id": "bmat_2005_unspecified_section_1_q21"
     },
@@ -1667,9 +1552,7 @@
         "Necessary and Sufficient Conditions",
         "Source"
       ],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2005_4196ce29c047.raw.json",
       "question_id": "bmat_2005_unspecified_section_1_q26"
     },
@@ -1680,8 +1563,10 @@
         "start_page": 16,
         "end_page": 16
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2005_4196ce29c047.raw.json",
       "question_id": "bmat_2005_unspecified_section_1_q27"
@@ -1706,8 +1591,10 @@
         "start_page": 17,
         "end_page": 17
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2005_4196ce29c047.raw.json",
       "question_id": "bmat_2005_unspecified_section_1_q29"
@@ -1734,6 +1621,7 @@
       },
       "status": "skipped",
       "types": [
+        "Subpoints",
         "Source"
       ],
       "issues": [],
@@ -2060,8 +1948,10 @@
         "start_page": 13,
         "end_page": 13
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2006_3baf7cfa3aed.raw.json",
       "question_id": "bmat_2006_4500/01_section_1_q19"
@@ -2157,8 +2047,10 @@
         "start_page": 18,
         "end_page": 18
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2006_3baf7cfa3aed.raw.json",
       "question_id": "bmat_2006_4500/01_section_1_q26"
@@ -2200,8 +2092,10 @@
         "start_page": 20,
         "end_page": 20
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2006_3baf7cfa3aed.raw.json",
       "question_id": "bmat_2006_4500/01_section_1_q29"
@@ -2213,8 +2107,10 @@
         "start_page": 21,
         "end_page": 21
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2006_3baf7cfa3aed.raw.json",
       "question_id": "bmat_2006_4500/01_section_1_q30"
@@ -2228,7 +2124,8 @@
       },
       "status": "skipped",
       "types": [
-        "Shared Information Range"
+        "Shared Information Range",
+        "Drawing Inferences"
       ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2006_3baf7cfa3aed.raw.json",
@@ -2273,7 +2170,8 @@
       },
       "status": "skipped",
       "types": [
-        "Shared Information Range"
+        "Shared Information Range",
+        "Subpoints"
       ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2006_3baf7cfa3aed.raw.json",
@@ -2344,8 +2242,10 @@
         "start_page": 5,
         "end_page": 5
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2007_9944c5a637df.raw.json",
       "question_id": "bmat_2007_4500/01_section_1_q4"
@@ -2398,8 +2298,10 @@
         "start_page": 7,
         "end_page": 7
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Drawing Inferences"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2007_9944c5a637df.raw.json",
       "question_id": "bmat_2007_4500/01_section_1_q8"
@@ -2460,10 +2362,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/9944c5a637dfb7830de1/bmat_2007_q012_r012_p009_asset_01_0e5091115b.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2007_9944c5a637df.raw.json",
       "question_id": "bmat_2007_4500/01_section_1_q12"
     },
@@ -2530,8 +2429,10 @@
         "start_page": 12,
         "end_page": 12
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2007_9944c5a637df.raw.json",
       "question_id": "bmat_2007_4500/01_section_1_q17"
@@ -2618,10 +2519,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/9944c5a637dfb7830de1/bmat_2007_q023_r023_p016_asset_01_098ca83c23.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2007_9944c5a637df.raw.json",
       "question_id": "bmat_2007_4500/01_section_1_q23"
     },
@@ -2636,9 +2534,7 @@
       "types": [
         "Necessary and Sufficient Conditions"
       ],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2007_9944c5a637df.raw.json",
       "question_id": "bmat_2007_4500/01_section_1_q24"
     },
@@ -2729,8 +2625,10 @@
         "start_page": 21,
         "end_page": 21
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2007_9944c5a637df.raw.json",
       "question_id": "bmat_2007_4500/01_section_1_q31"
@@ -2744,7 +2642,8 @@
       },
       "status": "skipped",
       "types": [
-        "Shared Information Range"
+        "Shared Information Range",
+        "too long"
       ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2007_9944c5a637df.raw.json",
@@ -2802,8 +2701,10 @@
         "start_page": 3,
         "end_page": 3
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Drawing Inferences"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q1"
@@ -2828,14 +2729,9 @@
         "start_page": 4,
         "end_page": 4
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "visual_caption_boundary_uncertain:external_caption_preserved",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout",
-        "visual_caption_boundary_uncertain:external_caption_preserved [assets/e658c0e051edd77335e1/bmat_2008_q003_r003_p004_asset_01_adf604c17a.png]",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout [assets/e658c0e051edd77335e1/bmat_2008_q003_r003_p004_asset_01_adf604c17a.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q3"
     },
@@ -2887,8 +2783,10 @@
         "start_page": 7,
         "end_page": 7
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q7"
@@ -2950,10 +2848,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/e658c0e051edd77335e1/bmat_2008_q011_r011_p009_asset_01_b639425a91.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q11"
     },
@@ -2990,11 +2885,9 @@
         "start_page": 11,
         "end_page": 11
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q14"
     },
@@ -3033,11 +2926,9 @@
         "start_page": 13,
         "end_page": 13
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q17"
     },
@@ -3063,11 +2954,10 @@
       },
       "status": "skipped",
       "types": [
-        "Shared Information Range"
+        "Shared Information Range",
+        "No Question"
       ],
-      "issues": [
-        "options_not_detected:requires_source_inspection"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q19"
     },
@@ -3112,10 +3002,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/e658c0e051edd77335e1/bmat_2008_q022_r022_p015_asset_01_33129e545d.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q22"
     },
@@ -3167,8 +3054,10 @@
         "start_page": 17,
         "end_page": 17
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q26"
@@ -3193,8 +3082,10 @@
         "start_page": 18,
         "end_page": 18
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q28"
@@ -3219,8 +3110,10 @@
         "start_page": 20,
         "end_page": 20
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q30"
@@ -3294,10 +3187,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/e658c0e051edd77335e1/bmat_2008_q035_r035_p024_asset_01_6790b3659b.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2008_e658c0e051ed.raw.json",
       "question_id": "bmat_2008_4500/01_section_1_q35"
     },
@@ -3312,16 +3202,7 @@
       "types": [
         "No Question"
       ],
-      "issues": [
-        "visual_caption_boundary_uncertain:external_caption_preserved",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout",
-        "visual_crop_contains_unrelated_text:boundary_overlap",
-        "visual_component_association_uncertain",
-        "visual_caption_boundary_uncertain:external_caption_preserved [assets/f2b39a709c6add90186d/bmat_2009_q001_r001_p003_asset_01_be2c3f6899.png]",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout [assets/f2b39a709c6add90186d/bmat_2009_q001_r001_p003_asset_01_be2c3f6899.png]",
-        "visual_crop_contains_unrelated_text:boundary_overlap [assets/f2b39a709c6add90186d/bmat_2009_q001_r001_p003_asset_01_be2c3f6899.png]",
-        "visual_component_association_uncertain [assets/f2b39a709c6add90186d/bmat_2009_q001_r001_p003_asset_01_be2c3f6899.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2009_f2b39a709c6a.raw.json",
       "question_id": "bmat_2009_4500/11_section_1_q1"
     },
@@ -3334,6 +3215,7 @@
       },
       "status": "skipped",
       "types": [
+        "Drawing Inferences",
         "too long"
       ],
       "issues": [],
@@ -3351,26 +3233,7 @@
       "types": [
         "too long"
       ],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:A",
-        "option_content_unresolved:B",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "option_content_unresolved:E",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/f2b39a709c6add90186d/bmat_2009_q003_r003_p005_asset_01_d48515fe3c.png]",
-        "visual_component_association_uncertain [assets/f2b39a709c6add90186d/bmat_2009_q003_r003_p005_asset_01_d48515fe3c.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/f2b39a709c6add90186d/bmat_2009_q003_r003_p005_asset_02_d9858f68fb.png]",
-        "visual_component_association_uncertain [assets/f2b39a709c6add90186d/bmat_2009_q003_r003_p005_asset_02_d9858f68fb.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/f2b39a709c6add90186d/bmat_2009_q003_r003_p005_asset_03_0e6a68dcdc.png]",
-        "visual_component_association_uncertain [assets/f2b39a709c6add90186d/bmat_2009_q003_r003_p005_asset_03_0e6a68dcdc.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/f2b39a709c6add90186d/bmat_2009_q003_r003_p005_asset_04_f50badf8bc.png]",
-        "visual_component_association_uncertain [assets/f2b39a709c6add90186d/bmat_2009_q003_r003_p005_asset_04_f50badf8bc.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/f2b39a709c6add90186d/bmat_2009_q003_r003_p005_asset_05_d73e5850c4.png]",
-        "visual_component_association_uncertain [assets/f2b39a709c6add90186d/bmat_2009_q003_r003_p005_asset_05_d73e5850c4.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2009_f2b39a709c6a.raw.json",
       "question_id": "bmat_2009_4500/11_section_1_q3"
     },
@@ -3407,8 +3270,10 @@
         "start_page": 7,
         "end_page": 7
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2009_f2b39a709c6a.raw.json",
       "question_id": "bmat_2009_4500/11_section_1_q6"
@@ -3437,9 +3302,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2009_f2b39a709c6a.raw.json",
       "question_id": "bmat_2009_4500/11_section_1_q8"
     },
@@ -3452,7 +3315,8 @@
       },
       "status": "skipped",
       "types": [
-        "Shared Information Range"
+        "Shared Information Range",
+        "Subpoints"
       ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2009_f2b39a709c6a.raw.json",
@@ -3469,10 +3333,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/f2b39a709c6add90186d/bmat_2009_q010_r010_p009_asset_01_bbea481661.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2009_f2b39a709c6a.raw.json",
       "question_id": "bmat_2009_4500/11_section_1_q10"
     },
@@ -3483,16 +3344,9 @@
         "start_page": 10,
         "end_page": 10
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:C",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/f2b39a709c6add90186d/bmat_2009_q011_r011_p010_asset_04_2e8fbff571.png]",
-        "visual_component_association_uncertain [assets/f2b39a709c6add90186d/bmat_2009_q011_r011_p010_asset_04_2e8fbff571.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2009_f2b39a709c6a.raw.json",
       "question_id": "bmat_2009_4500/11_section_1_q11"
     },
@@ -3593,9 +3447,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2009_f2b39a709c6a.raw.json",
       "question_id": "bmat_2009_4500/11_section_1_q18"
     },
@@ -3625,9 +3477,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2009_f2b39a709c6a.raw.json",
       "question_id": "bmat_2009_4500/11_section_1_q20"
     },
@@ -3679,8 +3529,10 @@
         "start_page": 18,
         "end_page": 18
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2009_f2b39a709c6a.raw.json",
       "question_id": "bmat_2009_4500/11_section_1_q24"
@@ -3876,11 +3728,9 @@
         "start_page": 4,
         "end_page": 4
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2010_06c7ef7d42a2.raw.json",
       "question_id": "bmat_2010_4500/11_section_1_q3"
     },
@@ -3917,8 +3767,10 @@
         "start_page": 6,
         "end_page": 6
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2010_06c7ef7d42a2.raw.json",
       "question_id": "bmat_2010_4500/11_section_1_q6"
@@ -3992,10 +3844,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q011_r011_p009_asset_01_0d76dacef7.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2010_06c7ef7d42a2.raw.json",
       "question_id": "bmat_2010_4500/11_section_1_q11"
     },
@@ -4006,22 +3855,9 @@
         "start_page": 10,
         "end_page": 10
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "option_content_unresolved:E",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/06c7ef7d42a2bf036487/bmat_2010_q012_r012_p010_asset_03_0ae78ecb84.png]",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q012_r012_p010_asset_03_0ae78ecb84.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/06c7ef7d42a2bf036487/bmat_2010_q012_r012_p010_asset_04_62130373b2.png]",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q012_r012_p010_asset_04_62130373b2.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/06c7ef7d42a2bf036487/bmat_2010_q012_r012_p010_asset_05_4e891d14c1.png]",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q012_r012_p010_asset_05_4e891d14c1.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2010_06c7ef7d42a2.raw.json",
       "question_id": "bmat_2010_4500/11_section_1_q12"
     },
@@ -4075,20 +3911,7 @@
       "types": [
         "too long"
       ],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "option_content_unresolved:E",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/06c7ef7d42a2bf036487/bmat_2010_q016_r016_p013_asset_04_42763d2046.png]",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q016_r016_p013_asset_04_42763d2046.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/06c7ef7d42a2bf036487/bmat_2010_q016_r016_p013_asset_05_26f792ed43.png]",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q016_r016_p013_asset_05_26f792ed43.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/06c7ef7d42a2bf036487/bmat_2010_q016_r016_p013_asset_06_b2dab901de.png]",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q016_r016_p013_asset_06_b2dab901de.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2010_06c7ef7d42a2.raw.json",
       "question_id": "bmat_2010_4500/11_section_1_q16"
     },
@@ -4159,6 +3982,7 @@
       "status": "skipped",
       "types": [
         "Shared Information Range",
+        "Subpoints",
         "Explanation"
       ],
       "issues": [],
@@ -4176,10 +4000,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q022_r022_p018_asset_01_56820bf0d7.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2010_06c7ef7d42a2.raw.json",
       "question_id": "bmat_2010_4500/11_section_1_q22"
     },
@@ -4242,8 +4063,10 @@
         "start_page": 22,
         "end_page": 22
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2010_06c7ef7d42a2.raw.json",
       "question_id": "bmat_2010_4500/11_section_1_q27"
@@ -4255,8 +4078,10 @@
         "start_page": 23,
         "end_page": 23
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2010_06c7ef7d42a2.raw.json",
       "question_id": "bmat_2010_4500/11_section_1_q28"
@@ -4298,20 +4123,7 @@
       "types": [
         "too long"
       ],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "option_content_unresolved:E",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/06c7ef7d42a2bf036487/bmat_2010_q031_r031_p025_asset_04_75dbab8190.png]",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q031_r031_p025_asset_04_75dbab8190.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/06c7ef7d42a2bf036487/bmat_2010_q031_r031_p025_asset_05_540fd46c63.png]",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q031_r031_p025_asset_05_540fd46c63.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/06c7ef7d42a2bf036487/bmat_2010_q031_r031_p025_asset_06_517be8e35b.png]",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q031_r031_p025_asset_06_517be8e35b.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2010_06c7ef7d42a2.raw.json",
       "question_id": "bmat_2010_4500/11_section_1_q31"
     },
@@ -4371,10 +4183,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/06c7ef7d42a2bf036487/bmat_2010_q035_r035_p027_asset_03_aff431ad67.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2010_06c7ef7d42a2.raw.json",
       "question_id": "bmat_2010_4500/11_section_1_q35"
     },
@@ -4389,20 +4198,7 @@
       "types": [
         "too long"
       ],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "option_content_unresolved:E",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/a8ffa678ede8f746feb3/bmat_2011_q001_r001_p003_asset_04_ceea226d44.png]",
-        "visual_component_association_uncertain [assets/a8ffa678ede8f746feb3/bmat_2011_q001_r001_p003_asset_04_ceea226d44.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/a8ffa678ede8f746feb3/bmat_2011_q001_r001_p003_asset_05_bd0cce0eee.png]",
-        "visual_component_association_uncertain [assets/a8ffa678ede8f746feb3/bmat_2011_q001_r001_p003_asset_05_bd0cce0eee.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/a8ffa678ede8f746feb3/bmat_2011_q001_r001_p003_asset_06_27180ebfa9.png]",
-        "visual_component_association_uncertain [assets/a8ffa678ede8f746feb3/bmat_2011_q001_r001_p003_asset_06_27180ebfa9.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2011_a8ffa678ede8.raw.json",
       "question_id": "bmat_2011_4500/11_section_1_q1"
     },
@@ -4483,12 +4279,11 @@
         "start_page": 7,
         "end_page": 7
       },
-      "status": "parser_review",
-      "types": [],
-      "issues": [
-        "visual_option_anchor_boundary_uncertain:manual_review",
-        "visual_option_anchor_boundary_uncertain:manual_review [assets/a8ffa678ede8f746feb3/bmat_2011_q007_r007_p007_asset_01_236c837e4e.png]"
+      "status": "skipped",
+      "types": [
+        "No Question"
       ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2011_a8ffa678ede8.raw.json",
       "question_id": "bmat_2011_4500/11_section_1_q7"
     },
@@ -4548,10 +4343,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/a8ffa678ede8f746feb3/bmat_2011_q011_r011_p009_asset_01_b4e27e39df.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2011_a8ffa678ede8.raw.json",
       "question_id": "bmat_2011_4500/11_section_1_q11"
     },
@@ -4601,8 +4393,10 @@
         "start_page": 12,
         "end_page": 12
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2011_a8ffa678ede8.raw.json",
       "question_id": "bmat_2011_4500/11_section_1_q15"
@@ -4627,8 +4421,10 @@
         "start_page": 14,
         "end_page": 14
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2011_a8ffa678ede8.raw.json",
       "question_id": "bmat_2011_4500/11_section_1_q17"
@@ -4702,11 +4498,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/a8ffa678ede8f746feb3/bmat_2011_q022_r022_p018_asset_01_552f876eda.png]",
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2011_a8ffa678ede8.raw.json",
       "question_id": "bmat_2011_4500/11_section_1_q22"
     },
@@ -4903,10 +4695,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/a8ffa678ede8f746feb3/bmat_2011_q035_r035_p028_asset_01_90e0e20c18.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2011_a8ffa678ede8.raw.json",
       "question_id": "bmat_2011_4500/11_section_1_q35"
     },
@@ -4943,25 +4732,9 @@
         "start_page": 5,
         "end_page": 5
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "option_content_unresolved:E",
-        "option_content_unresolved:F",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/7c0e6e039d205e37026b/bmat_2012_q003_r003_p005_asset_03_221a1fc68f.png]",
-        "visual_component_association_uncertain [assets/7c0e6e039d205e37026b/bmat_2012_q003_r003_p005_asset_03_221a1fc68f.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/7c0e6e039d205e37026b/bmat_2012_q003_r003_p005_asset_04_3d22b6b5be.png]",
-        "visual_component_association_uncertain [assets/7c0e6e039d205e37026b/bmat_2012_q003_r003_p005_asset_04_3d22b6b5be.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/7c0e6e039d205e37026b/bmat_2012_q003_r003_p005_asset_05_95859a7431.png]",
-        "visual_component_association_uncertain [assets/7c0e6e039d205e37026b/bmat_2012_q003_r003_p005_asset_05_95859a7431.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/7c0e6e039d205e37026b/bmat_2012_q003_r003_p005_asset_06_e26fc9f7ef.png]",
-        "visual_component_association_uncertain [assets/7c0e6e039d205e37026b/bmat_2012_q003_r003_p005_asset_06_e26fc9f7ef.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2012_7c0e6e039d20.raw.json",
       "question_id": "bmat_2012_4500/11_section_1_q3"
     },
@@ -5116,20 +4889,7 @@
       "types": [
         "too long"
       ],
-      "issues": [
-        "multi_column_options:text_and_image_association_unresolved",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review",
-        "visual_component_association_uncertain",
-        "option_content_unresolved:C",
-        "option_content_unresolved:D",
-        "option_content_unresolved:E",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/7c0e6e039d205e37026b/bmat_2012_q014_r014_p013_asset_04_bab6194458.png]",
-        "visual_component_association_uncertain [assets/7c0e6e039d205e37026b/bmat_2012_q014_r014_p013_asset_04_bab6194458.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/7c0e6e039d205e37026b/bmat_2012_q014_r014_p013_asset_05_063370bc44.png]",
-        "visual_component_association_uncertain [assets/7c0e6e039d205e37026b/bmat_2012_q014_r014_p013_asset_05_063370bc44.png]",
-        "visual_multiple_option_images_merged:shared_geometry_requires_review [assets/7c0e6e039d205e37026b/bmat_2012_q014_r014_p013_asset_06_69390bdf85.png]",
-        "visual_component_association_uncertain [assets/7c0e6e039d205e37026b/bmat_2012_q014_r014_p013_asset_06_69390bdf85.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2012_7c0e6e039d20.raw.json",
       "question_id": "bmat_2012_4500/11_section_1_q14"
     },
@@ -5166,8 +4926,10 @@
         "start_page": 16,
         "end_page": 16
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2012_7c0e6e039d20.raw.json",
       "question_id": "bmat_2012_4500/11_section_1_q17"
@@ -5211,16 +4973,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_caption_boundary_uncertain:external_caption_preserved",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout",
-        "visual_neighbor_boundary_uncertain:content_bounds_overlap",
-        "visual_caption_boundary_uncertain:external_caption_preserved [assets/7c0e6e039d205e37026b/bmat_2012_q020_r020_p019_asset_01_984f348751.png]",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout [assets/7c0e6e039d205e37026b/bmat_2012_q020_r020_p019_asset_01_984f348751.png]",
-        "visual_caption_boundary_uncertain:external_caption_preserved [assets/7c0e6e039d205e37026b/bmat_2012_q020_r020_p019_asset_02_70a5e4d1d9.png]",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout [assets/7c0e6e039d205e37026b/bmat_2012_q020_r020_p019_asset_02_70a5e4d1d9.png]",
-        "visual_neighbor_boundary_uncertain:content_bounds_overlap [assets/7c0e6e039d205e37026b/bmat_2012_q020_r020_p019_asset_02_70a5e4d1d9.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2012_7c0e6e039d20.raw.json",
       "question_id": "bmat_2012_4500/11_section_1_q20"
     },
@@ -5250,10 +5003,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/7c0e6e039d205e37026b/bmat_2012_q022_r022_p020_asset_01_ac68d7a73f.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2012_7c0e6e039d20.raw.json",
       "question_id": "bmat_2012_4500/11_section_1_q22"
     },
@@ -5331,8 +5081,10 @@
         "start_page": 25,
         "end_page": 25
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2012_7c0e6e039d20.raw.json",
       "question_id": "bmat_2012_4500/11_section_1_q28"
@@ -5357,8 +5109,10 @@
         "start_page": 26,
         "end_page": 26
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2012_7c0e6e039d20.raw.json",
       "question_id": "bmat_2012_4500/11_section_1_q30"
@@ -5584,10 +5338,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/6e2a62a372670b103588/bmat_2013_q011_r011_p007_asset_01_8c3cef0043.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2013_6e2a62a37267.raw.json",
       "question_id": "bmat_2013_4500/11_section_1_q11"
     },
@@ -5665,8 +5416,10 @@
         "start_page": 11,
         "end_page": 11
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2013_6e2a62a37267.raw.json",
       "question_id": "bmat_2013_4500/11_section_1_q17"
@@ -5740,10 +5493,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/6e2a62a372670b103588/bmat_2013_q022_r022_p014_asset_02_f3f737d6bd.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2013_6e2a62a37267.raw.json",
       "question_id": "bmat_2013_4500/11_section_1_q22"
     },
@@ -5849,8 +5599,10 @@
         "start_page": 20,
         "end_page": 20
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2013_6e2a62a37267.raw.json",
       "question_id": "bmat_2013_4500/11_section_1_q30"
@@ -5894,9 +5646,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2013_6e2a62a37267.raw.json",
       "question_id": "bmat_2013_4500/11_section_1_q33"
     },
@@ -5926,10 +5676,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/6e2a62a372670b103588/bmat_2013_q035_r035_p023_asset_01_33f8ea9615.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2013_6e2a62a37267.raw.json",
       "question_id": "bmat_2013_4500/11_section_1_q35"
     },
@@ -5940,13 +5687,9 @@
         "start_page": 3,
         "end_page": 3
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "visual_caption_boundary_uncertain:external_caption_preserved",
-        "font_encoding_artifacts:unverified_glyphs_preserved",
-        "visual_caption_boundary_uncertain:external_caption_preserved [assets/9aca9594137dc35003d8/bmat_2014_q001_r001_p003_asset_01_ee304a43a9.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2014_9aca9594137d.raw.json",
       "question_id": "bmat_2014_4500/11_section_1_q1"
     },
@@ -6000,12 +5743,7 @@
       "types": [
         "too long"
       ],
-      "issues": [
-        "visual_caption_boundary_uncertain:external_caption_preserved",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout",
-        "visual_caption_boundary_uncertain:external_caption_preserved [assets/9aca9594137dc35003d8/bmat_2014_q005_r005_p005_asset_01_43ed983981.png]",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout [assets/9aca9594137dc35003d8/bmat_2014_q005_r005_p005_asset_01_43ed983981.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2014_9aca9594137d.raw.json",
       "question_id": "bmat_2014_4500/11_section_1_q5"
     },
@@ -6029,16 +5767,9 @@
         "start_page": 7,
         "end_page": 7
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "visual_component_association_uncertain",
-        "font_encoding_artifacts:unverified_glyphs_preserved",
-        "visual_component_association_uncertain [assets/9aca9594137dc35003d8/bmat_2014_q007_r007_p007_asset_01_8e351f745e.png]",
-        "visual_component_association_uncertain [assets/9aca9594137dc35003d8/bmat_2014_q007_r007_p007_asset_02_6803f13401.png]",
-        "visual_component_association_uncertain [assets/9aca9594137dc35003d8/bmat_2014_q007_r007_p007_asset_03_80d73eed6c.png]",
-        "visual_component_association_uncertain [assets/9aca9594137dc35003d8/bmat_2014_q007_r007_p007_asset_04_0e857fd405.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2014_9aca9594137d.raw.json",
       "question_id": "bmat_2014_4500/11_section_1_q7"
     },
@@ -6205,11 +5936,10 @@
       },
       "status": "skipped",
       "types": [
-        "Shared Information Range"
+        "Shared Information Range",
+        "Subpoints"
       ],
-      "issues": [
-        "font_encoding_artifacts:unverified_glyphs_preserved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2014_9aca9594137d.raw.json",
       "question_id": "bmat_2014_4500/11_section_1_q19"
     },
@@ -6224,9 +5954,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "font_encoding_artifacts:unverified_glyphs_preserved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2014_9aca9594137d.raw.json",
       "question_id": "bmat_2014_4500/11_section_1_q20"
     },
@@ -6241,9 +5969,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "font_encoding_artifacts:unverified_glyphs_preserved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2014_9aca9594137d.raw.json",
       "question_id": "bmat_2014_4500/11_section_1_q21"
     },
@@ -6271,9 +5997,7 @@
       "types": [
         "Complete the text"
       ],
-      "issues": [
-        "font_encoding_artifacts:unverified_glyphs_preserved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2014_9aca9594137d.raw.json",
       "question_id": "bmat_2014_4500/11_section_1_q23"
     },
@@ -6323,8 +6047,10 @@
         "start_page": 22,
         "end_page": 22
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2014_9aca9594137d.raw.json",
       "question_id": "bmat_2014_4500/11_section_1_q27"
@@ -6351,8 +6077,10 @@
         "start_page": 24,
         "end_page": 24
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2014_9aca9594137d.raw.json",
       "question_id": "bmat_2014_4500/11_section_1_q29"
@@ -6364,11 +6092,9 @@
         "start_page": 25,
         "end_page": 25
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "font_encoding_artifacts:unverified_glyphs_preserved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2014_9aca9594137d.raw.json",
       "question_id": "bmat_2014_4500/11_section_1_q30"
     },
@@ -6443,9 +6169,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "font_encoding_artifacts:unverified_glyphs_preserved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2014_9aca9594137d.raw.json",
       "question_id": "bmat_2014_4500/11_section_1_q35"
     },
@@ -6555,9 +6279,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "options_not_detected:requires_source_inspection"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2015_7a8534780b4b.raw.json",
       "question_id": "bmat_2015_4500/11_section_1_q8"
     },
@@ -6690,13 +6412,13 @@
       "number": 18,
       "pages": {
         "start_page": 15,
-        "end_page": 16
+        "end_page": 15
       },
-      "status": "parser_review",
-      "types": [],
-      "issues": [
-        "font_encoding_artifacts:unverified_glyphs_preserved"
+      "status": "skipped",
+      "types": [
+        "too long"
       ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2015_7a8534780b4b.raw.json",
       "question_id": "bmat_2015_4500/11_section_1_q18"
     },
@@ -6707,8 +6429,10 @@
         "start_page": 16,
         "end_page": 16
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Shared Information Range"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2015_7a8534780b4b.raw.json",
       "question_id": "bmat_2015_4500/11_section_1_q19"
@@ -6720,8 +6444,10 @@
         "start_page": 16,
         "end_page": 16
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Shared Information Range"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2015_7a8534780b4b.raw.json",
       "question_id": "bmat_2015_4500/11_section_1_q20"
@@ -6733,8 +6459,10 @@
         "start_page": 17,
         "end_page": 17
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Shared Information Range"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2015_7a8534780b4b.raw.json",
       "question_id": "bmat_2015_4500/11_section_1_q21"
@@ -6746,8 +6474,10 @@
         "start_page": 17,
         "end_page": 17
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Shared Information Range"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2015_7a8534780b4b.raw.json",
       "question_id": "bmat_2015_4500/11_section_1_q22"
@@ -6863,7 +6593,7 @@
       "number": 31,
       "pages": {
         "start_page": 22,
-        "end_page": 24
+        "end_page": 22
       },
       "status": "retained",
       "types": [],
@@ -6878,8 +6608,11 @@
         "start_page": 25,
         "end_page": 25
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Shared Information Range",
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2015_7a8534780b4b.raw.json",
       "question_id": "bmat_2015_4500/11_section_1_q32"
@@ -6891,8 +6624,10 @@
         "start_page": 25,
         "end_page": 25
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Shared Information Range"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2015_7a8534780b4b.raw.json",
       "question_id": "bmat_2015_4500/11_section_1_q33"
@@ -6904,8 +6639,11 @@
         "start_page": 26,
         "end_page": 26
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Shared Information Range",
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2015_7a8534780b4b.raw.json",
       "question_id": "bmat_2015_4500/11_section_1_q34"
@@ -6917,8 +6655,10 @@
         "start_page": 26,
         "end_page": 26
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Shared Information Range"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2015_7a8534780b4b.raw.json",
       "question_id": "bmat_2015_4500/11_section_1_q35"
@@ -6982,8 +6722,10 @@
         "start_page": 5,
         "end_page": 5
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2016_084b815f8c36.raw.json",
       "question_id": "bmat_2016_4500/11_section_1_q5"
@@ -7070,10 +6812,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/084b815f8c363a972aea/bmat_2016_q011_r011_p010_asset_01_1cac827c80.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2016_084b815f8c36.raw.json",
       "question_id": "bmat_2016_4500/11_section_1_q11"
     },
@@ -7162,11 +6901,9 @@
         "start_page": 15,
         "end_page": 15
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2016_084b815f8c36.raw.json",
       "question_id": "bmat_2016_4500/11_section_1_q18"
     },
@@ -7226,10 +6963,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/084b815f8c363a972aea/bmat_2016_q022_r022_p018_asset_01_f8b5ca162c.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2016_084b815f8c36.raw.json",
       "question_id": "bmat_2016_4500/11_section_1_q22"
     },
@@ -7471,8 +7205,10 @@
         "start_page": 6,
         "end_page": 6
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2017_79c38eebc481.raw.json",
       "question_id": "bmat_2017_4500/11_section_1_q5"
@@ -7497,8 +7233,10 @@
         "start_page": 8,
         "end_page": 8
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2017_79c38eebc481.raw.json",
       "question_id": "bmat_2017_4500/11_section_1_q7"
@@ -7527,11 +7265,10 @@
       },
       "status": "skipped",
       "types": [
-        "Shared Information Range"
+        "Shared Information Range",
+        "Subpoints"
       ],
-      "issues": [
-        "font_encoding_artifacts:unverified_glyphs_preserved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2017_79c38eebc481.raw.json",
       "question_id": "bmat_2017_4500/11_section_1_q9"
     },
@@ -7655,11 +7392,11 @@
         "start_page": 18,
         "end_page": 18
       },
-      "status": "parser_review",
-      "types": [],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
+      "status": "skipped",
+      "types": [
+        "too long"
       ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2017_79c38eebc481.raw.json",
       "question_id": "bmat_2017_4500/11_section_1_q18"
     },
@@ -7687,7 +7424,8 @@
       },
       "status": "skipped",
       "types": [
-        "Shared Information Range"
+        "Shared Information Range",
+        "Subpoints"
       ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2017_79c38eebc481.raw.json",
@@ -7797,8 +7535,10 @@
         "start_page": 26,
         "end_page": 26
       },
-      "status": "parser_review",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [
         "font_encoding_artifacts:unverified_glyphs_preserved"
       ],
@@ -7886,7 +7626,8 @@
       },
       "status": "skipped",
       "types": [
-        "Shared Information Range"
+        "Shared Information Range",
+        "Subpoints"
       ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2017_79c38eebc481.raw.json",
@@ -7967,8 +7708,10 @@
         "start_page": 5,
         "end_page": 5
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2018_3bca20d68c43.raw.json",
       "question_id": "bmat_2018_4500/11_section_1_q5"
@@ -8056,10 +7799,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/3bca20d68c430c894d93/bmat_2018_q011_r011_p010_asset_01_8ff17bbd7e.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2018_3bca20d68c43.raw.json",
       "question_id": "bmat_2018_4500/11_section_1_q11"
     },
@@ -8083,8 +7823,10 @@
         "start_page": 11,
         "end_page": 11
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2018_3bca20d68c43.raw.json",
       "question_id": "bmat_2018_4500/11_section_1_q13"
@@ -8210,10 +7952,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/3bca20d68c430c894d93/bmat_2018_q022_r022_p018_asset_01_666178cdb9.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2018_3bca20d68c43.raw.json",
       "question_id": "bmat_2018_4500/11_section_1_q22"
     },
@@ -8435,9 +8174,7 @@
       "types": [
         "too long"
       ],
-      "issues": [
-        "font_encoding_artifacts:unverified_glyphs_preserved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2019_52993364d7e3.raw.json",
       "question_id": "bmat_2019_4500/11_section_1_q3"
     },
@@ -8489,11 +8226,9 @@
         "start_page": 7,
         "end_page": 7
       },
-      "status": "parser_review",
+      "status": "retained",
       "types": [],
-      "issues": [
-        "raw_prompt_boundary_unresolved"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2019_52993364d7e3.raw.json",
       "question_id": "bmat_2019_4500/11_section_1_q7"
     },
@@ -8553,10 +8288,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/52993364d7e394a615e4/bmat_2019_q011_r011_p010_asset_01_b25bd7acd8.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2019_52993364d7e3.raw.json",
       "question_id": "bmat_2019_4500/11_section_1_q11"
     },
@@ -8711,10 +8443,7 @@
       "types": [
         "Shared Information Range"
       ],
-      "issues": [
-        "visual_component_association_uncertain",
-        "visual_component_association_uncertain [assets/52993364d7e394a615e4/bmat_2019_q022_r022_p020_asset_01_2ba5bba7d6.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2019_52993364d7e3.raw.json",
       "question_id": "bmat_2019_4500/11_section_1_q22"
     },
@@ -8766,8 +8495,10 @@
         "start_page": 23,
         "end_page": 23
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2019_52993364d7e3.raw.json",
       "question_id": "bmat_2019_4500/11_section_1_q26"
@@ -8794,8 +8525,10 @@
         "start_page": 25,
         "end_page": 25
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "Subpoints"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2019_52993364d7e3.raw.json",
       "question_id": "bmat_2019_4500/11_section_1_q28"
@@ -9003,16 +8736,7 @@
       "types": [
         "too long"
       ],
-      "issues": [
-        "visual_caption_boundary_uncertain:external_caption_preserved",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout",
-        "visual_crop_contains_unrelated_text:boundary_overlap",
-        "visual_component_association_uncertain",
-        "visual_caption_boundary_uncertain:external_caption_preserved [assets/88d436a5b3b9aecef601/bmat_2020_q008_r008_p007_asset_01_c374504778.png]",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout [assets/88d436a5b3b9aecef601/bmat_2020_q008_r008_p007_asset_01_c374504778.png]",
-        "visual_crop_contains_unrelated_text:boundary_overlap [assets/88d436a5b3b9aecef601/bmat_2020_q008_r008_p007_asset_01_c374504778.png]",
-        "visual_component_association_uncertain [assets/88d436a5b3b9aecef601/bmat_2020_q008_r008_p007_asset_01_c374504778.png]"
-      ],
+      "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2020_88d436a5b3b9.raw.json",
       "question_id": "bmat_2020_4500/11_section_1_q8"
     },
@@ -9075,8 +8799,10 @@
         "start_page": 10,
         "end_page": 10
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2020_88d436a5b3b9.raw.json",
       "question_id": "bmat_2020_4500/11_section_1_q13"
@@ -9406,8 +9132,10 @@
         "start_page": 6,
         "end_page": 6
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2021_79ddc2445760.raw.json",
       "question_id": "bmat_2021_4500/11_section_1_q6"
@@ -9432,10 +9160,8 @@
         "start_page": 8,
         "end_page": 8
       },
-      "status": "skipped",
-      "types": [
-        "too long"
-      ],
+      "status": "parser_review",
+      "types": [],
       "issues": [
         "incomplete_or_ambiguous_options:noncontiguous_label_candidates",
         "visual_option_labels_ambiguous:duplicate_structural_labels",
@@ -9444,25 +9170,25 @@
         "visual_caption_may_be_incomplete:local_text_preserved_in_layout",
         "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_01_ad7f9c6693.png]",
         "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_02_b69b1f88c5.png]",
-        "visual_caption_boundary_uncertain:external_caption_preserved [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_03_65db79bac1.png]",
-        "visual_caption_may_be_incomplete:local_text_preserved_in_layout [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_03_65db79bac1.png]",
-        "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_03_65db79bac1.png]",
+        "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_p008_geometry_6b7447675d.png]",
+        "visual_caption_boundary_uncertain:external_caption_preserved [assets/79ddc2445760dcf85ae6/bmat_2021_q008_p008_geometry_6b7447675d.png]",
+        "visual_caption_may_be_incomplete:local_text_preserved_in_layout [assets/79ddc2445760dcf85ae6/bmat_2021_q008_p008_geometry_6b7447675d.png]",
         "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_04_9c6f9e6553.png]",
-        "visual_caption_boundary_uncertain:external_caption_preserved [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_05_2b7734fd65.png]",
         "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_05_2b7734fd65.png]",
+        "visual_caption_boundary_uncertain:external_caption_preserved [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_05_2b7734fd65.png]",
         "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_06_c3cd734a4a.png]",
         "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_07_5b58cfba25.png]",
         "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_08_0d0ac8047b.png]",
         "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_09_233ca31aeb.png]",
         "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_10_39445cd303.png]",
+        "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_11_bfb8148c76.png]",
         "visual_caption_boundary_uncertain:external_caption_preserved [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_11_bfb8148c76.png]",
         "visual_caption_may_be_incomplete:local_text_preserved_in_layout [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_11_bfb8148c76.png]",
-        "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_11_bfb8148c76.png]",
+        "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_12_bbcfcb7e76.png]",
         "visual_caption_boundary_uncertain:external_caption_preserved [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_12_bbcfcb7e76.png]",
         "visual_caption_may_be_incomplete:local_text_preserved_in_layout [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_12_bbcfcb7e76.png]",
-        "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_12_bbcfcb7e76.png]",
-        "visual_caption_boundary_uncertain:external_caption_preserved [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_13_c5059495a7.png]",
-        "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_13_c5059495a7.png]"
+        "visual_component_association_uncertain [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_13_c5059495a7.png]",
+        "visual_caption_boundary_uncertain:external_caption_preserved [assets/79ddc2445760dcf85ae6/bmat_2021_q008_r008_p008_asset_13_c5059495a7.png]"
       ],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2021_79ddc2445760.raw.json",
       "question_id": "bmat_2021_4500/11_section_1_q8"
@@ -9619,8 +9345,10 @@
         "start_page": 16,
         "end_page": 16
       },
-      "status": "retained",
-      "types": [],
+      "status": "skipped",
+      "types": [
+        "too long"
+      ],
       "issues": [],
       "raw_json": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\bmat_2021_79ddc2445760.raw.json",
       "question_id": "bmat_2021_4500/11_section_1_q20"

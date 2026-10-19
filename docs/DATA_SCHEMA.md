@@ -696,3 +696,42 @@ The trained model freezes these families; active family evidence is exposed in
 each categorization result. Comparison counts distinguish resolutions by previous
 status (unclassified/needs_review/ambiguous) without counting status-only moves as
 resolved. No confidence thresholds were lowered for this refinement.
+
+## BMAT RAW / CLEAN projections
+
+BMAT RAW retains immutable page strings, question blocks, source keys, page spans
+and native object metadata. Additive `raw_components` contains `main_body`,
+`main_question`, `body_equals_question`, method and normalization flag.
+No separate textual passage uses `Equals question` plus the explicit boolean;
+the actual prompt remains in `main_question`. Exact-span
+`raw.visual_text_exclusions` / `raw.structural_exclusions` explain ownership.
+Readable layout interpretations do not replace exact `text` / `raw_span`.
+Prior crop candidates remain traceable; source assets are not overwritten.
+
+BMAT CLEAN follows the existing clean-document shape: `stage`, `schema_version`,
+`cleaning`, `document`, `raw_reference`, `questions`. Each item preserves identity,
+an exact `raw_record` snapshot, SHA/pointer reference, ordered `main_body`
+text/visual blocks, `main_question`, `options`, unchanged assets and complete
+`bmat_filter`. Asset paths resolve relative to `raw_reference.path`, not CLEAN.
+No PDF parsing, answer inference or matching occurs in cleaning.
+
+`cleaning_issues[].origin` distinguishes `raw` propagation from actual `cleaning`
+defects. `pipeline_status` is `clean_ready`, `upstream_review`, `cleaning_review`
+or `intentional_skip`; `pipeline_eligible` requires no skip and no issues.
+Skipped records remain inspectable without becoming genuine parser failures.
+
+BMAT exclusion rule v2 adds `Subpoints` and `Drawing Inferences`, with all
+applicable tags retained. `options[].glyph_layout` records native line/point
+and exact nearby glyph geometry, without normalizing RAW mathematical content.
+CLEAN may add `fraction_normalization` evidence and `render_text_only` while
+retaining the original text/crops in `raw_record` and unchanged image references.
+Verified table-row false choices remain under `raw.rejected_option_candidates`
+with structural rejection evidence; no separate answer set is invented.
+
+Independent BMAT categorization currently consumes CLEAN directly for targeted
+task-intent attribution: `owner: bmat_categorization_v1`, `input_stage: clean`,
+hashed sources, stable identities, question snapshots and `categorization`.
+It reuses TSA category names, not matching success. `matching_status: not_run`
+is explicit. Statuses distinguish `supported`, `intentional_skip`, `needs_review`
+and `not_evaluated` (normal attribution outside the targeted pass). No correct
+answer/explanation or completed normal dataset is claimed by this layer.

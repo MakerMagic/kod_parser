@@ -3,11 +3,19 @@
 STAGES = {
     "acquire": {"module": "acquisition.bmat", "output": "data/input/bmat"},
     "raw": {"module": "parsers.bmat", "output": "data/raw/bmat"},
-    "clean": {"module": None, "input": "data/raw/bmat", "output": "data/clean/bmat"},
-    "match": {"module": None, "input": "data/clean/bmat", "output": "data/merged/bmat"},
+    "clean": {
+        "module": "processors.normalization.bmat",
+        "input": "data/raw/bmat",
+        "output": "data/clean/bmat",
+    },
+    "match": {
+        "module": "processors.matching.bmat",
+        "input": "data/clean/bmat",
+        "output": "data/merged/bmat",
+    },
     "categorize": {
-        "module": None,
-        "input": "data/merged/bmat",
+        "module": "categorization.bmat",
+        "input": "data/clean/bmat",
         "output": "data/categorized/bmat",
     },
 }

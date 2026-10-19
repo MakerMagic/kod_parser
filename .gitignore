@@ -14,3 +14,9 @@ data/final/
 inspections_raw/
 inspections_clean/
 inspections_matching/
+inspections_categorization/
+inspections_bmat/
+inspections_bmat_clean/
+inspections_bmat_categorization/
+inspections_bmat_matching/
+data/categorized/bmat/

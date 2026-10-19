@@ -66,3 +66,6 @@ All fifty inspections follow `../inspections_matching/2020/qNNN.html`.
 Tests compare all complete explanation text and inferred assertion evidence
 against independent PDFium extraction, check A–E geometry and exact raw spans,
 and exercise missing explanation, conflicting answers and mismatched questions.
+
+2008-2016 matching:
+$matchingHtml = 'inspections_matching\TSA_2020_q20-' + (Get-Date -Format 'yyyyMMdd_HHmmss_fff') + '.html'; & $matchingPython -m processors.matching.backtest inspect --matched-json 'data\merged\blackstone\tsa_2020.matched.json' --year 2020 --question 20 --format html --output $matchingHtml; if (Test-Path $matchingHtml) { Invoke-Item -LiteralPath $matchingHtml }

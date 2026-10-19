@@ -4,6 +4,8 @@ import argparse
 import base64
 import json
 import os
+import tempfile
+import time
 from collections import Counter, defaultdict
 from hashlib import sha256
 from html import escape
@@ -12,6 +14,33 @@ from pathlib import Path
 from .parser import validate_raw
 from .quality import status
 from .skip_rules import ORDER
+
+
+def write_html(output, content):
+    """Atomic QA refresh; bounded retries for transient Windows sharing errors."""
+    output = Path(output)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(
+        mode="w",
+        encoding="utf-8",
+        dir=output.parent,
+        prefix=output.name + ".",
+        suffix=".tmp",
+        delete=False,
+    ) as stream:
+        temporary = Path(stream.name)
+        stream.write(content)
+    try:
+        for attempt in range(3):
+            try:
+                os.replace(temporary, output)
+                return
+            except OSError as error:
+                if error.errno not in {13, 22} or attempt == 2:
+                    raise
+                time.sleep(0.05 * (attempt + 1))
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 def load(path):
@@ -146,11 +175,11 @@ def report(inputs, output, *, index_dir=None):
             f"<tr><td>{r['year']}</td><td>{r['number']}</td><td>{r['status']}</td><td>{escape(', '.join(r['types']))}</td><td><a href='{r['year']}_q{r['number']:03}.html'>Inspect</a></td></tr>"
             for r in all_rows
         ]
-        (root / "index.html").write_text(
+        write_html(
+            root / "index.html",
             "<!doctype html><meta charset='utf-8'><title>BMAT RAW inspection</title><h1>BMAT RAW</h1><input aria-label='Filter' placeholder='Year, status or type' oninput=\"for(const r of document.querySelectorAll('tr'))r.hidden=!r.textContent.toLowerCase().includes(this.value.toLowerCase())\"><table><thead><th>Year<th>Question<th>Status<th>BMAT types<th>Inspection</thead><tbody>"
             + "".join(links)
             + "</tbody></table>",
-            encoding="utf-8",
         )
     return summary
 
@@ -239,7 +268,7 @@ def inspect(path, question_number, output):
     parts.append("</html>")
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text("".join(parts), encoding="utf-8")
+    write_html(output, "".join(parts))
     return state
 
 

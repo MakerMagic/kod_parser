@@ -1,8 +1,15 @@
 # BMAT Section 1 RAW backtesting
 
 BMAT is a separate source family. Acquisition, local PDF parsing, RAW exclusion
-annotations and future cleaning/matching/categorization remain separate stages.
+annotations, cleaning, matching and categorization remain separate stages.
 No answers, explanations or normal TSA-style subcategories are inferred here.
+
+The second refinement adds evidence-bearing `Drawing Inferences` and `Subpoints`
+exclusions. Three full numbered propositions **and** combination-valued options
+are required for `Subpoints`; a lone keyword or three unrelated bullets is not
+enough. Explicit conclusion/assumption/flaw requests remain normal task intents
+unless another BMAT-specific exclusion applies. Normal task attribution lives
+in the independent [BMAT categorization stage](BMAT_CATEGORIZATION_BACKTEST.md).
 
 ## Reproduce (repository root, PowerShell)
 
@@ -88,14 +95,22 @@ Source, Necessary and Sufficient Conditions. No normal PS subtype is assigned.
 No Question requires source response evidence, not merely missing extraction.
 One selected combination-valued option is not several independently selected
 choices. Full-page exclusion requires one complete item, actual content-height
-coverage >=65%, and no continuation from another page; padded crops/text length
+coverage >60% (ending at the final option bottom), and no continuation from another page; padded crops/text length
 alone supply no proof. X as multiplication/object labels, ordinary mentions of
 explanation/source, and lone underscores/necessary are negative controls.
 
 `processors.bmat.contracts.eligible_records` excludes skips, parser defects and
-documents with unresolved numbering. Future clean/match/categorize entrypoints
-are deliberately blocked until implemented and reviewed; no speculative output
-is created. They must retain this eligibility/provenance rather than rediscover tags.
+documents with unresolved numbering. Separate [BMAT cleaning](BMAT_CLEANING_BACKTEST.md)
+now consumes corrected stored RAW and retains skips/defects for inspection.
+The independent matching/categorization entrypoints retain this eligibility and
+provenance rather than rediscover tags. Matching consumes only issue-free retained items.
+
+Original question previews now use the union of owned text, body visuals and all
+answer-option geometry, with neighbor/shared-range barriers and font-relative padding.
+Original preview candidates remain preserved. Compact extracted range declarations
+such as `Questions 19–22refer ...` are recognized without swallowing the next shared
+stimulus into the preceding question. Native round glyphs become readable bullets
+only with outline proof and a repeated aligned list following a colon; raw strings stay exact.
 
 ## Reuse and remaining limitations
 
@@ -108,3 +123,22 @@ files and previous generated assets are never deleted by these commands.
 RAW is not declared complete while structural/encoding/visual issues remain in
 the report. Such records stay quarantined for manual source comparison. Existing
 TSA raw/clean/matching/categorization data must remain hash-identical.
+
+## Stabilization audit
+
+RAW v2 adds font-scoped embedded-cmap/zero-ink spacing evidence, complete
+anchor-to-visual ownership, spatial-math crops, paragraph crop barriers,
+PDF-matrix-backed axis bounds, exact-span visual/admin exclusions and contextual
+final prompts. Original page strings and old PNGs remain intact.
+`layout_blocks[].readable_text` is additive, not a replacement for exact
+`text`/`raw_span`. `raw_components.body_equals_question` distinguishes the
+`Equals question` sentinel from literal source content.
+
+Full-page detection was refined from 65% to 60% of usable height, still requiring
+one complete, non-continuing question on that page. This includes the verified
+compact 2017 Q18 layout; text length alone is not evidence.
+
+[Before/after audit](../inspections_bmat/stabilization/review.json) records all
+82 initial genuine issue questions. The source's water-ice prompt is 2004 Q13,
+not Q3. 2014 Q7 retains faithful fraction images, not guessed text. Residual
+2021 Q8 graph fragments and unknown fonts are not declared resolved.

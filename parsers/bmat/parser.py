@@ -1,22 +1,24 @@
 """Local BMAT PDF -> lossless RAW contract; no acquisition or normal categorization."""
 
 import re
+from bisect import bisect_left, bisect_right
 from collections import Counter
 from hashlib import sha256
 from itertools import pairwise
 from pathlib import Path
+from statistics import median
 
 import pdfplumber
 
 from . import reuse
 
-VERSION = "1"
+VERSION = "2"
 ADMIN = re.compile(
-    r"^(?:©|Copyright|BMAT(?:\s+\d{4}:)?\s*Section\s+1|\[?Turn over|BLANK PAGE|END OF (?:PAPER|QUESTIONS)|Permission to reproduce)",
+    r"^(?:©|Copyright|BMAT(?:\s+\d{4}:)?\s*Section\s+1|\[?Turn over|BLANK PAGE|END OF (?:THE\s+)?(?:PAPER|QUESTIONS|TEST|TEXT|SECTION(?:\s+\d+)?)\s*$|_{8,}\s*$|Permission to reproduce)",
     re.IGNORECASE,
 )
 RANGE = re.compile(
-    r"\bQuestions?\s+(\d+)\s*(?:to|through|[-–—]|\(cid:\d+\))\s*(\d+)\s+(?:refer|relate|apply|are based|use|concern)",
+    r"\bQuestions?\s+(\d+)\s*(?:to|through|[-–—]|\(cid:\d+\))\s*(\d+)\s*(?:refer|relate|apply|are based|use|concern)\b",
     re.IGNORECASE,
 )
 PROMPT = re.compile(
@@ -72,6 +74,30 @@ def split_fields(block, lines):
         l["block_start"]
         for l in lines[1:]
         if interpreted(l).strip()[:1].isupper() and PROMPT.match(interpreted(l).strip())
+    ]
+    # Conditional prose inside a completed option is not another question.
+    first_option = next(
+        (
+            l["block_start"]
+            for l in lines[1:]
+            if (m := marker(l, "option"))
+            and m[0] == "A"
+            and (len(interpreted(l).split()) > 2 or interpreted(l).strip() == "A")
+        ),
+        None,
+    )
+    hard_requests = {
+        l["block_start"]
+        for l in lines[1:]
+        if re.match(
+            r"^(?:Which|What|How|Why|Who|Whose|Select|Choose|Identify|Calculate|Determine)\b",
+            interpreted(l).strip(),
+        )
+    }
+    requests = [
+        r
+        for r in requests
+        if first_option is None or r < first_option or r in hard_requests
     ]
     final_request = max(requests, default=begin)
     pure = [
@@ -171,40 +197,10 @@ def split_fields(block, lines):
 
 
 def raw_components(question):
-    """Raw line-order projection only; no paragraph normalization or rewriting."""
-    text = question["question_text"]
-    lines = text.splitlines(keepends=True)
-    offset, starts = 0, []
-    for line in lines:
-        if line.strip()[:1].isupper() and PROMPT.match(line.strip()):
-            starts.append(offset)
-        offset += len(line)
-    starts.extend(
-        m.start()
-        for m in re.finditer(r"\b(?:Which|What|How|Why|Who)\b", text)
-        if m.start() == 0 or text[: m.start()].rstrip().endswith((".", "?", "!"))
-    )
-    starts.extend(
-        m.start(1)
-        for m in re.finditer(r"(?:^|(?<=[.!?])\s+)([A-Z][^?!.]*\?)", text)
-        if re.search(r"\b(?:how|what|which|who|why)\b", m[1], re.IGNORECASE)
-    )
-    starts.extend(
-        m.start()
-        for m in re.finditer(r"\b(?:On the basis of|In the context of)\b", text)
-        if re.search(
-            r"\b(?:which|what|how|deduce)\b",
-            text[m.end() : m.end() + 200],
-            re.IGNORECASE,
-        )
-    )
-    start = max(starts) if starts else None
-    question["raw_components"] = {
-        "main_body": text[:start] if start is not None else text,
-        "main_question": text[start:] if start is not None else None,
-        "method": "last_explicit_request_line" if start is not None else "unresolved",
-        "normalization_applied": False,
-    }
+    """Compatibility entry point for the BMAT-specific structural projection."""
+    from .structure import components
+
+    components(question)
 
 
 def parse_pdf(
@@ -212,21 +208,95 @@ def parse_pdf(
 ):
     path = Path(input_path).resolve(strict=True)
     pages, page_lines, excluded = [], [], {}
+    math_layout = {}
+    verified_fonts = set()
     with pdfplumber.open(path) as doc:
         metadata = dict(doc.metadata or {})
         for p in doc.pages:
             record, lines = reuse.read_page(p)
-            verified = reuse.supports_shifted_cids(record["raw_text"], len(p.chars))
-            for line in lines:
-                if verified:
-                    line["readable_text"] = reuse.decode_cids(line["text"])
-                    line["word_texts"] = [
-                        reuse.decode_cids(t) for t in line["word_texts"]
+            # Preserve compact native separator + surrounding glyph geometry.
+            # Fraction interpretation/normalization belongs to CLEAN, not RAW.
+            math_layout[p.page_number] = []
+            chars_by_x = sorted(p.chars, key=lambda c: c["x0"])
+            char_x = [c["x0"] for c in chars_by_x]
+            digit_sizes = [c["size"] for c in p.chars if c["text"].isdigit()]
+            glyph_scale = median(digit_sizes) if digit_sizes else 12
+            separators = [
+                {
+                    "x0": c["x0"],
+                    "x1": c["x1"],
+                    "top": c["top"],
+                    "bottom": c["bottom"],
+                    "pts": [(c["x1"], c["top"]), (c["x0"], c["bottom"])],
+                    "separator_glyph": c,
+                }
+                for c in p.chars
+                if c["text"] in {"/", "⁄"}
+            ]
+            for obj in [*p.lines, *separators]:
+                width, height = obj["x1"] - obj["x0"], obj["bottom"] - obj["top"]
+                if not (
+                    1 < width < glyph_scale * 3 and 0 <= height < glyph_scale * 2.2
+                ):
+                    continue
+                near = [
+                    c
+                    for c in chars_by_x[
+                        bisect_right(char_x, obj["x0"] - 20) : bisect_left(
+                            char_x, obj["x1"] + 35
+                        )
                     ]
+                    if c["text"].strip()
+                    and obj["x0"] - 20 < c["x0"] < obj["x1"] + 35
+                    and obj["top"] - 15 < c["top"] < obj["bottom"] + 10
+                ]
+                if sum(c["text"].isdigit() for c in near) < 2:
+                    continue
+                math_layout[p.page_number].append(
+                    {
+                        "page": p.page_number,
+                        "bbox": [obj["x0"], obj["top"], obj["x1"], obj["bottom"]],
+                        "points": [list(point) for point in obj["pts"]],
+                        "separator_is_text": bool(obj.get("separator_glyph")),
+                        "glyphs": [
+                            {
+                                k: c[k]
+                                for k in (
+                                    "text",
+                                    "x0",
+                                    "x1",
+                                    "top",
+                                    "bottom",
+                                    "size",
+                                    "fontname",
+                                )
+                            }
+                            for c in near
+                        ],
+                    }
+                )
+            verified = reuse.supports_shifted_cids(record["raw_text"], len(p.chars))
+            cid_fonts = {
+                c["fontname"] for c in p.chars if c["text"].startswith("(cid:")
+            }
+            if verified:
+                verified_fonts.update(cid_fonts)
+            elif cid_fonts and cid_fonts <= verified_fonts:
+                verified = True
+            from .encoding import annotate_lines
+
+            record["font_interpretation"] = annotate_lines(
+                p, lines, verified, reuse.decode_cids
+            )
             record["verified_shifted_cids"] = verified
             pages.append(record)
             excluded[record["page_number"]] = [
-                l for l in lines if ADMIN.match(interpreted(l))
+                l
+                for l in lines
+                if ADMIN.match(interpreted(l))
+                or interpreted(l).strip() == str(record["page_number"])
+                and l["x0"] > record["width"] * 0.35
+                and (l["top"] < 55 or l["top"] > record["height"] * 0.85)
             ]
             page_lines.append(content_lines(record, lines))
             p.close()
@@ -359,6 +429,17 @@ def parse_pdf(
                 }
                 records.append(pending)
             start, stop = lines[begin]["start"], lines[end - 1]["end"]
+            if end == len(lines):
+                # Retain in-question terminal controls in the exact RAW span;
+                # only the structured projection excludes them later.
+                terminal = [
+                    l["end"]
+                    for l in excluded[page["page_number"]]
+                    if l["start"] >= stop
+                    and re.match(r"^(?:END OF|_{8,})", interpreted(l), re.IGNORECASE)
+                    and l["bottom"] < page["height"] - 45
+                ]
+                stop = max([stop, *terminal])
             box = [
                 0,
                 max(35, lines[begin]["top"] - 6),
@@ -391,16 +472,21 @@ def parse_pdf(
                 if o["bbox"][1] < box[3] and o["bbox"][3] >= box[1]
             )
     for pending in records:
+        pending["math_layout"] = [
+            item
+            for segment in pending["segments"]
+            for item in math_layout.get(segment["page"], [])
+            if segment["bbox"][1] <= item["bbox"][1] <= segment["bbox"][3]
+        ]
         block = "\n".join(s["text"] for s in pending["segments"])
         text, options_block, options, subpoints, warnings = split_fields(
             block, pending["lines"]
         )
-        if any(
-            pages[s["page"] - 1]["verified_shifted_cids"] for s in pending["segments"]
-        ):
-            text = reuse.decode_cids(text)
-            for option in options:
-                option["text"] = reuse.decode_cids(option["text"])
+        from .encoding import decode_block
+
+        text = decode_block(text, pending["lines"])
+        for option in options:
+            option["text"] = decode_block(option["text"], pending["lines"])
         key = {k: dataset[k] for k in ("source", "year", "paper", "variant", "section")}
         key["question_number"] = pending["number"]
         q = {
@@ -434,13 +520,17 @@ def parse_pdf(
             q,
             pending,
             marker,
-            reuse.decode_cids
-            if any(
-                pages[s["page"] - 1]["verified_shifted_cids"]
-                for s in pending["segments"]
-            )
-            else lambda s: s,
+            lambda s, context=pending["lines"]: decode_block(s, context),
         )
+        from .option_evidence import (
+            inline_layout,
+            recover_spatial_text,
+            reject_data_rows,
+        )
+
+        reject_data_rows(q, pending)
+        recover_spatial_text(q, pending)
+        inline_layout(q, pending)
         question_marks = [l for l in pending["lines"] if "?" in interpreted(l)]
         request_end = question_marks[-1] if question_marks else None
         answer_objects = [
@@ -460,6 +550,9 @@ def parse_pdf(
             if request_end is None or l["block_start"] > request_end["block_start"]
         ]
         q["option_audit"] = {
+            "verified_dataset_rows_not_options": bool(
+                q["raw"].get("option_rejection_evidence")
+            ),
             "cover_allows_write_in": bool(
                 re.search(r"write in words or numbers", cover, re.IGNORECASE)
             ),
@@ -476,6 +569,9 @@ def parse_pdf(
             "bounded_by_numbered_items": pending["number"] < (expected or 0),
         }
         dataset["questions"].append(q)
+    from .stabilize import mark_trailing_rules
+
+    mark_trailing_rules(dataset, records)
     if render:
         reuse.save_visuals(
             dataset,
@@ -492,11 +588,37 @@ def parse_pdf(
             asset_dir or Path("data/raw/bmat/assets"),
             overwrite_assets,
         )
+        from .option_evidence import recover_inline_cells
+
+        recover_inline_cells(
+            dataset, records, asset_dir or Path("data/raw/bmat/assets")
+        )
+        from .stabilize import recover_math_options, revise_visuals
+
+        revise_visuals(dataset, records, asset_dir or Path("data/raw/bmat/assets"))
+        recover_math_options(
+            dataset, records, asset_dir or Path("data/raw/bmat/assets")
+        )
+        from .stabilize import recover_oriented_labels
+
+        recover_oriented_labels(
+            dataset, records, asset_dir or Path("data/raw/bmat/assets")
+        )
+        from .stabilize import reunite_swatch_legends
+
+        reunite_swatch_legends(
+            dataset, records, asset_dir or Path("data/raw/bmat/assets")
+        )
     for q, pending in zip(dataset["questions"], records):
         if render:
             guard_body_boundary(q, pending)
             reuse.attach_visual_text(q, pending["lines"])
             reuse.add_layout(q, pending)
+            by_span = {l["block_start"]: l for l in pending["lines"]}
+            for layout in q["layout_blocks"]:
+                if layout["type"] == "text":
+                    line = by_span[layout["raw_span"]["start"]]
+                    layout["readable_text"] = interpreted(line)
         else:
             q["visual_assets"], q["visual_previews"] = [], []
         # Shared exact-span admin projection: no source character is removed
@@ -505,11 +627,17 @@ def parse_pdf(
         begin = marker(pending["lines"][0], "number")[1]
         q["raw"]["text_question_candidate"] = q["raw"]["question_block"][begin:end]
         reuse.project_admin_exclusions(q, pending, excluded, [])
-        if any(
-            pages[s["page"] - 1]["verified_shifted_cids"] for s in pending["segments"]
-        ):
-            q["question_text"] = reuse.decode_cids(q["question_text"])
-        raw_components(q)
+        q["question_text"] = decode_block(q["question_text"], pending["lines"])
+        from .stabilize import project_visual_text
+
+        project_visual_text(q, pending, excluded)
+        from .structure import components
+
+        components(q)
+    if render:
+        from .previews import refresh
+
+        refresh(dataset, asset_dir or Path("data/raw/bmat/assets"))
     if [q["question_number"] for q in dataset["questions"]] != list(
         range(1, (expected or len(records)) + 1)
     ):
