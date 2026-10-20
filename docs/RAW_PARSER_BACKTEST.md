@@ -70,7 +70,11 @@ $inspectionJson = 'inspections_raw\question-12-' + (Get-Date -Format 'yyyyMMdd_H
 
 Exports require a new file. Existing files, including raw JSON, are never overwritten by inspection.
 
-## Visual inspection (all questions)
+## Visual inspection on explicit user request
+
+For development, select the question directly from canonical RAW JSON and open
+its existing asset paths. HTML export is optional and is not needed to access a
+complete question. The following commands are user-facing inspection examples.
 
 ```powershell
 & $parserPython -m parsers.blackstone.backtest inspect --raw-json 'data\raw\blackstone' --source 'TSA_2022.pdf' --year 2022 --question 50

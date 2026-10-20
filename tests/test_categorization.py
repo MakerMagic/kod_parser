@@ -672,7 +672,8 @@ def test_regenerable_comparison_guide_and_future_family_labels(tmp_path):
     once = target.read_text(encoding="utf-8")
     update_guide(data, target)
     assert target.read_text(encoding="utf-8") == once
-    assert "Future family / New skill" in once and "Maintained commands." in once
+    assert "Future family / New skill" not in once and "Maintained commands." in once
+    assert data["records"][0]["categorization"]["category"] == "Future family"
 
 
 @pytest.mark.parametrize(

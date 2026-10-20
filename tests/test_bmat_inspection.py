@@ -105,12 +105,12 @@ def test_issue_regeneration_removes_only_genuinely_resolved_rows(tmp_path, monke
         return backtest.report(out, issues, tmp_path / "guide.md", tmp_path / "html")
 
     assert refresh()["unique_review_questions"] == 2
-    assert "| 2015 | [18]" in issues.read_text(encoding="utf-8")
+    assert "| 2015 | 18 |" in issues.read_text(encoding="utf-8")
     dataset["questions"][0] = q
     assert refresh()["unique_review_questions"] == 1
     text = issues.read_text(encoding="utf-8")
-    assert "| 2015 | [18]" not in text
-    assert re.findall(r"\| 2003 \| \[(\d+)\]", text) == ["1"]
+    assert "| 2015 | 18 |" not in text
+    assert re.findall(r"\| 2003 \| (\d+) \|", text) == ["1"]
     assert "visual_neighbor_boundary_uncertain" in text
     assert (
         core.build([source])["sources"][0]["sha256"]

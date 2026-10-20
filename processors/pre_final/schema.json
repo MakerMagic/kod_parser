@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Unified TSA/BMAT pre-final dataset v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["owner", "stage", "schema_version", "categories", "inputs", "taxonomy_reference", "questions", "summary"],
+  "properties": {
+    "owner": {"const": "pre_final_v1"},
+    "stage": {"const": "pre_final"},
+    "schema_version": {"const": "1"},
+    "categories": {"type": "object", "minProperties": 10, "maxProperties": 10, "additionalProperties": {"type": "object", "required": ["name", "family"], "properties": {"name": {"type": "string"}, "family": {"type": "string"}}, "additionalProperties": false}},
+    "inputs": {"type": "array", "items": {"$ref": "#/$defs/reference"}},
+    "taxonomy_reference": {"$ref": "#/$defs/reference"},
+    "questions": {"type": "array", "items": {"$ref": "#/$defs/question"}},
+    "summary": {"type": "object", "required": ["total", "by_source"], "properties": {"total": {"type": "integer", "minimum": 0}, "by_source": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}}}, "additionalProperties": false}
+  },
+  "$defs": {
+    "reference": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false},
+    "block": {"oneOf": [
+      {"type": "object", "required": ["type", "text"], "properties": {"type": {"const": "text"}, "text": {"type": "string"}}, "additionalProperties": false},
+      {"type": "object", "required": ["type", "asset_id"], "properties": {"type": {"const": "visual"}, "asset_id": {"type": "string"}}, "additionalProperties": false}
+    ]},
+    "asset": {"type": "object", "required": ["id", "path", "sha256", "role", "option_label", "order", "page", "bbox"], "properties": {
+      "id": {"type": "string"}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+      "role": {"enum": ["body", "option", "source_preview", "explanation"]}, "option_label": {"type": ["string", "null"]}, "order": {"type": "integer", "minimum": 1}, "page": {"type": ["integer", "null"]}, "bbox": {"type": ["array", "null"], "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+      "axis_labels": {"type": "array"}, "provenance": {"type": "object"}
+    }, "additionalProperties": false},
+    "question": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "source", "year", "question_number", "section", "paper", "variant", "category", "difficulty", "main_body", "main_question", "main_answers", "correct_answer", "explanation", "explanation_by_ai", "assets", "provenance"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1}, "source": {"enum": ["TSA", "BMAT"]}, "year": {"type": "integer", "minimum": 1}, "question_number": {"type": "integer", "minimum": 1},
+        "section": {"type": "string", "minLength": 1}, "paper": {"type": ["string", "null"]}, "variant": {"type": ["string", "null"]},
+        "category": {"enum": ["ct_main", "ct_infer", "ct_assume", "ct_impact", "ct_error", "ct_match", "ct_principle", "ps_select", "ps_procedure", "ps_similarity"]},
+        "difficulty": {"type": "null"}, "main_body": {"type": "array", "items": {"$ref": "#/$defs/block"}}, "main_question": {"type": "string", "minLength": 1},
+        "main_answers": {"type": "array", "minItems": 2, "items": {"type": "object", "required": ["label", "text", "asset_ids"], "properties": {"label": {"type": "string", "pattern": "^[A-Z]$"}, "text": {"type": "string"}, "asset_ids": {"type": "array", "items": {"type": "string"}}, "render_text_only": {"const": true}}, "additionalProperties": false}},
+        "correct_answer": {"type": "string", "pattern": "^[A-Z]$"}, "explanation": {"type": ["object", "null"], "required": ["blocks", "provenance"], "properties": {"blocks": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["type"], "properties": {"type": {"enum": ["paragraph", "list", "visual"]}}}}, "provenance": {"type": "object"}}, "additionalProperties": false},
+        "explanation_by_ai": {"type": "boolean"}, "assets": {"type": "array", "items": {"$ref": "#/$defs/asset"}}, "provenance": {"type": "object"}
+      }
+    }
+  }
+}

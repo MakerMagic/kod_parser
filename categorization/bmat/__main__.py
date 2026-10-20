@@ -1,4 +1,4 @@
-"""BMAT CLEAN -> targeted task categorization; never parse/match source PDFs."""
+"""BMAT CLEAN -> one canonical dominant category; never parse/match source PDFs."""
 
 import argparse
 import json
@@ -10,7 +10,27 @@ from .core import build, write
 
 def main(argv=None):
     cli = argparse.ArgumentParser(description=__doc__)
-    cli.add_argument("command", choices=["run", "report"])
+    cli.add_argument("command", choices=["run", "report", "bind-review"])
+    cli.add_argument("--year", type=int, help="Limit explicitly requested HTML exports")
+    cli.add_argument(
+        "--question", type=int, help="Limit explicitly requested HTML exports"
+    )
+    cli.add_argument(
+        "--review-json", type=Path, default=Path("categorization/bmat/review.json")
+    )
+    cli.add_argument(
+        "--model-json",
+        type=Path,
+        default=Path("data/categorized/blackstone/model.json"),
+    )
+    cli.add_argument(
+        "--review-baseline",
+        type=Path,
+        default=Path("categorization/bmat/review_baseline.json"),
+    )
+    cli.add_argument(
+        "--decisions", type=Path, default=Path("categorization/bmat/decisions.tsv")
+    )
     cli.add_argument("--clean-json", nargs="+", default=["data/clean/bmat"])
     cli.add_argument(
         "--matched-json",
@@ -32,15 +52,35 @@ def main(argv=None):
         "--inspections", type=Path, default=Path("inspections_bmat_categorization")
     )
     args = cli.parse_args(argv)
+    if args.command == "bind-review":
+        from .review import bind
+
+        result = bind(args.review_baseline, args.decisions, args.review_json)
+        print(json.dumps({"reviewed": len(result["decisions"])}))
+        return 0
     if args.command == "run":
         write(
             args.output,
             build(
                 args.clean_json,
                 args.matched_json if args.matched_json.exists() else None,
+                args.review_json if args.review_json.exists() else None,
+                args.model_json if args.model_json.exists() else None,
             ),
         )
-    print(json.dumps(report(args.output, args.issues, args.guide, args.inspections)))
+    print(
+        json.dumps(
+            report(
+                args.output,
+                args.issues,
+                args.guide,
+                args.inspections,
+                render=args.command == "report",
+                year=args.year,
+                question=args.question,
+            )
+        )
+    )
     return 0
 
 

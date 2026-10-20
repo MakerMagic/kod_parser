@@ -207,13 +207,14 @@ def inspect(record):
     return html.replace("</main>", "".join(parts[4:]) + "</main>", 1)
 
 
-def report(path, issues, guide, folder):
+def report(path, issues, guide, folder, *, render=True, year=None, question=None):
     data = load_matched(path)
     for ref in data["inputs"]:
         if sha256(Path(ref["path"]).read_bytes()).hexdigest() != ref["sha256"]:
             raise ValueError("Stale matched output; regenerate before backtesting")
     root = Path(folder)
-    root.mkdir(parents=True, exist_ok=True)
+    if render:
+        root.mkdir(parents=True, exist_ok=True)
     counts = Counter(r["status"] for r in data["records"])
     if dict(counts) != data["summary"]["statuses"]:
         raise ValueError("Matched summary differs from persisted records")
@@ -240,22 +241,29 @@ def report(path, issues, guide, folder):
         ):
             raise ValueError("An ineligible/stale explanation was marked matched")
         filename = f"{ident['year']}_q{ident['question_number']:03}.html"
-        (root / filename).write_text(inspect(r), encoding="utf-8")
-        link = Path(os.path.relpath(root / filename, guide.parent)).as_posix()
-        row = f"| {ident['year']} | [{ident['question_number']}]({link}) | {r['status']} | {r.get('correct_answer') or '—'} |"
+        if (
+            render
+            and (year is None or ident["year"] == year)
+            and (question is None or ident["question_number"] == question)
+        ):
+            (root / filename).write_text(inspect(r), encoding="utf-8")
+        row = f"| {ident['year']} | {ident['question_number']} | {r['status']} | {r.get('correct_answer') or '—'} |"
         rows.append(row)
         if r["status"] not in {"matched", "intentionally_skipped"}:
             active.append(row)
     index_rows = [
         f"<li><a href='{r['identity']['year']}_q{r['identity']['question_number']:03}.html'>{r['identity']['year']} Q{r['identity']['question_number']}: {escape(r['status'])}</a></li>"
         for r in data["records"]
+        if (year is None or r["identity"]["year"] == year)
+        and (question is None or r["identity"]["question_number"] == question)
     ]
-    (root / "index.html").write_text(
-        "<!doctype html><meta charset='utf-8'><h1>BMAT matching inspections</h1><ul>"
-        + "".join(index_rows)
-        + "</ul>",
-        encoding="utf-8",
-    )
+    if render:
+        (root / "index.html").write_text(
+            "<!doctype html><meta charset='utf-8'><h1>BMAT matching inspections</h1><ul>"
+            + "".join(index_rows)
+            + "</ul>",
+            encoding="utf-8",
+        )
     title = "# BMAT Section 1 matching backtesting\n\nRead-only views of canonical matches. Excluded/deferred sources are explicitly not accepted matches.\n\n"
     title += (
         "## Reproduce independently\n\n```powershell\n"
@@ -286,7 +294,8 @@ def report(path, issues, guide, folder):
         )
         + "\n```\n"
     )
-    guide.write_text(title + summary + table + "\n".join(rows) + "\n", encoding="utf-8")
+    title += "## Select a user-requested inspection\n\n```powershell\npython -m processors.matching.bmat report --year 2021 --question 25\n```\n\nOnly explicitly requested `report` commands render HTML. Omit `--question` to select a year; omit both selectors only when a complete export is actually requested. `run` persists matching and issues without HTML exports. Canonical data is `data/merged/bmat/questions.matched.json`; filter `records` by identity/status to read a question directly. Referenced assets can be opened directly. Correct Answer and Main/Final Explanation remain separate; reviews, conflicts, provenance and upstream exclusions remain visible. Counts and individual records belong to JSON and issue indexes, not this guide.\n"
+    guide.write_text(title, encoding="utf-8")
     warnings = Counter(
         w
         for a in data["source_unresolved"]

@@ -302,90 +302,12 @@ def save_inspection(
 
 
 def update_guide(data, path):
-    """Regenerate the bounded current-run audit, retaining maintained CLI docs."""
+    """Maintain user instructions only; canonical JSON retains the review trail."""
     path = safe_output(path, data["inputs"])
     existing = path.read_text(encoding="utf-8")
     if path.suffix.lower() != ".md" or not existing.startswith(
         "# Categorization backtesting"
     ):
         raise ValueError("Not a categorization backtest guide")
-    marker = "<!-- categorization-current-audit -->"
-    head = existing.split(marker)[0].rstrip()
-    lines = [
-        head,
-        "",
-        marker,
-        "## Current refinement audit",
-        "",
-        "Generated from the categorized output; assignments are not human approval.",
-        "",
-        "```json",
-        json.dumps(data["summary"], indent=2),
-        "```",
-        "",
-        "Before/after counts: "
-        + json.dumps(data.get("comparison", {}).get("counts", {})),
-        "",
-        "| Year | Question | Previous → current | Inspection |",
-        "|---|---|---|---|",
-    ]
-    for change in data.get("comparison", {}).get("changes", []):
-        y, n = change["identity"]["year"], change["identity"]["question_number"]
-
-        def label(c):
-            return (
-                (c["category"] or "Unclassified")
-                + " / "
-                + " + ".join(c["subcategories"])
-                + " ["
-                + c["status"]
-                + "]"
-            )
-
-        target = path.parent.parent / "inspections_categorization" / f"{y}_q{n:03}.html"
-        link = (
-            f"[HTML](../inspections_categorization/{target.name})"
-            if target.exists()
-            else "Not yet rendered"
-        )
-        lines.append(
-            f"| {y} | {n} | {label(change['previous'])} → {label(change['current'])} | {link} |"
-        )
-    lines += [
-        "",
-        (
-            "Unknown task profiles and concrete upstream conflicts remain in the issues report. "
-            "A previous label withdrawn for review is not a completed reclassification."
-        ),
-        "",
-    ]
-    if data.get("review_summary"):
-        lines += [
-            "## Rulebook review — complete audit",
-            "",
-            (
-                "Assistant assessments rebound to current task evidence, not human approval. Refined semantic families are evaluated across all statuses; changed text/asset ownership cannot silently inherit an old assessment."
-                if data.get("refinement_summary")
-                else "Assistant assessments under the supplied rulebook, not human approval. No classifier retraining or changes outside the frozen review set."
-            ),
-            "",
-            "```json",
-            json.dumps(data["review_summary"], indent=2),
-            "```",
-            "",
-            "| Year | Question | Previous → current | Evidence / remaining reason | Inspection |",
-            "|---|---|---|---|---|",
-        ]
-        for row in data["records"]:
-            review = row.get("rulebook_review")
-            if not review:
-                continue
-            y, n = row["identity"]["year"], row["identity"]["question_number"]
-            c = row["categorization"]
-            final = " + ".join(c["subcategories"]) or "review"
-            evidence = review["evidence"].replace("|", "\\|").replace("\n", " ")
-            lines.append(
-                f"| {y} | {n} | {review['previous_categorization']['status']} → {final} [{c['status']}] | {evidence} | [HTML](../inspections_categorization/{y}_q{n:03}.html) |"
-            )
-        lines.append("")
-    path.write_text("\n".join(lines), encoding="utf-8")
+    head = existing.split("<!-- categorization-current-audit -->")[0].rstrip()
+    path.write_text(head + "\n", encoding="utf-8")

@@ -229,7 +229,8 @@ def test_reports_and_html_keep_resolved_and_unresolved_audit(reviewed, tmp_path)
     guide.write_text("# Categorization backtesting\n", encoding="utf-8")
     update_guide(result, guide)
     text = guide.read_text(encoding="utf-8")
-    assert text.count("[HTML](../inspections_categorization/") >= 260
+    assert "[HTML](../inspections_categorization/" not in text
+    assert len([r for r in result["records"] if r.get("rulebook_review")]) == 260
     current = load_categorized("data/categorized/blackstone/tsa.categorized.json")
     for year, number in [(2015, 38), (2022, 42)]:
         html = render_html(inspect(current, year=year, question=number))

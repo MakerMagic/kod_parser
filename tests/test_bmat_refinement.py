@@ -199,7 +199,11 @@ def test_existing_tsa_categories_are_reused(stem, subcategory):
 
 def test_skip_precedence_and_upstream_defect_not_auto_resolved():
     q = clean_fixture("Which is the unstated assumption of the argument?")
-    q["bmat_filter"] = {"skip_from_pipeline": True, "skip_reason": "Three subpoints"}
+    q["bmat_filter"] = {
+        "skip_from_pipeline": True,
+        "primary_type": "Subpoints",
+        "skip_reason": "Three subpoints",
+    }
     assert attribution(q)["status"] == "intentional_skip"
     q["bmat_filter"] = {"skip_from_pipeline": False}
     q["cleaning_issues"] = [{"code": "missing_asset"}]
@@ -212,7 +216,8 @@ def test_conditional_assuming_is_not_an_assumption_question():
         choices=["10 minutes", "20 minutes", "30 minutes", "40 minutes"],
     )
     a = attribution(q)
-    assert a["status"] == "not_evaluated" and not a["issues"]
+    assert a["status"] == "needs_review" and a["issues"]
+    assert "Identifying an Assumption" not in a["subcategories"]
 
 
 def glyph(t, x, y, size=8):
@@ -450,7 +455,7 @@ def test_current_report_has_unique_unresolved_entries_and_no_stale_skip(tmp_path
         for r in data["records"]
         if r["categorization"]["status"] == "needs_review"
     }
-    listed = [int(x) for x in re.findall(r"\| 2011 \| \[(\d+)\]", text)]
+    listed = [int(x) for x in re.findall(r"\| 2011 \| (\d+) \|", text)]
     assert len(listed) == len(set(listed)) == summary["unique_review_questions"]
     assert set(listed) == expected and 7 not in listed
     before = issues.read_bytes()

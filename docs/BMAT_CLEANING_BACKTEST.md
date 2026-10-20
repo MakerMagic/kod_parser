@@ -9,7 +9,7 @@ $env:PYTHONPATH = (Resolve-Path '.venv/Lib/site-packages').Path
 $env:PYTHONIOENCODING = 'utf-8'
 $bmatPython = Join-Path $env:USERPROFILE '.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe'
 & $bmatPython -m processors.bmat clean --raw-json data/raw/bmat --overwrite
-& $bmatPython -m processors.normalization.bmat.backtest report --all-html
+& $bmatPython -m processors.normalization.bmat.backtest report
 & $bmatPython -m processors.normalization.bmat.backtest inspect --year 2014 --question 1
 & $bmatPython -m pytest -q tests/test_bmat_cleaning.py
 ```
@@ -18,6 +18,10 @@ $bmatPython = Join-Path $env:USERPROFILE '.cache/codex-runtimes/codex-primary-ru
 - [Current cleaning issues](BMAT_CLEANING_ISSUES.md)
 - [Machine-readable clean status](../inspections_bmat_clean/status.json)
 - [Cross-category stabilization audit](../inspections_bmat/stabilization/review.json)
+
+Read canonical CLEAN/RAW records and referenced assets directly. Export HTML
+only on user request; `--all-html` is an explicit batch-export option, not a
+development prerequisite. Use `--year` and `--question` to bound inspections.
 
 Inspection uses the **same renderer and section order as TSA CLEAN**:
 Main Body → Main Question → Main Answers → Original Screenshot → metadata →

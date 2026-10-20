@@ -1,8 +1,7 @@
 """Independent BMAT task attribution from CLEAN records; never invent matching.
 
-Only the requested, evidenced Critical Thinking intents are attributed here.
-Normal Problem-Solving attribution is deliberately not inferred from survival of
-BMAT exclusion rules. The existing TSA taxonomy/features are reused unchanged.
+The TSA concept model and content-bound review are reused without modifying TSA.
+BMAT retains one dominant canonical label and separate upstream/skip state.
 """
 
 import json
@@ -19,7 +18,7 @@ OWNER = "bmat_categorization_v1"
 CATALOG = Path(__file__).parents[1] / "patterns.json"
 
 
-def attribution(question):
+def _critical_thinking(question):
     result = {
         "category": None,
         "subcategories": [],
@@ -86,9 +85,20 @@ def attribution(question):
     flaw = re.search(
         r"\b(?:wrong with|flaw\w*|weakness|errors? in|mistake in)\b", s, re.IGNORECASE
     )
-    argument = re.search(r"\b(?:argument|reasoning|inference)\b", s, re.IGNORECASE)
+    argument = re.search(
+        r"\b(?:argument|reasoning|inference|hypothesis|theory|position|claim)\b",
+        s,
+        re.IGNORECASE,
+    )
     prose_choices = sum(len(o["text"].split()) >= 4 for o in opts) >= 3 or list_context
     if list_context:
+        evidence["argument_context"] = True
+    if (
+        re.search(r"\bmatch\w*\b.{0,35}\b(?:reasoning|argument)\b", s, re.IGNORECASE)
+        and argument
+        and prose_choices
+    ):
+        evidence["analogy_task"] = True
         evidence["argument_context"] = True
     impact_request = re.search(
         r"\b(?:would|could|if true)\b.{0,55}\b(?:weaken\w*|strengthen\w*|undermine\w*|cast doubt)\b",
@@ -221,7 +231,35 @@ def attribution(question):
     return result
 
 
-def build(inputs, matched_path=None):
+def attribution(question, model=None):
+    from .attribution import problem_solving
+    from .taxonomy import assign, special
+
+    result = _critical_thinking(question)
+    if result["status"] == "needs_review" and question["cleaning_issues"]:
+        return result
+    if label := special(question):
+        name, reason, method = label
+        return assign(result, name, reason, status="intentional_skip", method=method)
+    if result["status"] == "supported":
+        result["decision_method"] = "tsa_argument_intent_with_bmat_context"
+        return result
+    return problem_solving(question, result, model)
+
+
+def build(inputs, matched_path=None, review_path=None, model_path=None):
+    from categorization.core import file_ref
+    from categorization.model import Model
+
+    from .review import apply as apply_review
+    from .review import load as load_review
+    from .taxonomy import validate
+
+    decisions = load_review(review_path) if review_path is not None else {}
+    model = None
+    if model_path is not None:
+        trained = json.loads(Path(model_path).read_text(encoding="utf-8"))
+        model = Model(trained["examples"], trained["patterns"]["patterns"])
     matching, matching_source = {}, None
     if matched_path is not None:
         from processors.matching.storage import load_matched
@@ -291,20 +329,34 @@ def build(inputs, matched_path=None):
                     }
                     if match
                     else None,
-                    "categorization": attribution(q),
+                    "categorization": attribution(q, model),
                 }
             )
+            row = records[-1]
+            apply_review(row["categorization"], row, decisions)
+            validate(row["categorization"])
     return {
         "owner": OWNER,
         "stage": "categorization",
         "input_stage": "clean",
-        "scope": "BMAT exclusion precedence and targeted Critical Thinking task intents; not a matched/final dataset",
+        "scope": "Complete BMAT dominant-task categorization; one canonical category per eligible question, independent upstream/matching state retained",
         "taxonomy_reference": {
             "path": str(CATALOG.resolve()),
             "sha256": sha256(CATALOG.read_bytes()).hexdigest(),
         },
         "sources": sources,
         "matching_source": matching_source,
+        "review_reference": file_ref(review_path) if review_path is not None else None,
+        "model_reference": file_ref(model_path) if model_path is not None else None,
+        "definition_references": [
+            file_ref(
+                Path(__file__).resolve().parents[2] / "parsers/bmat/skip_rules.py"
+            ),
+            file_ref(
+                Path(__file__).resolve().parents[2] / "parsers/bmat/semantic_filters.py"
+            ),
+            file_ref(Path(__file__).parents[1] / "ps_attribution_rulebook.txt"),
+        ],
         "records": records,
         "summary": dict(Counter(r["categorization"]["status"] for r in records)),
     }
@@ -321,3 +373,53 @@ def write(path, data):
     path.write_text(
         json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
+
+
+def refresh_context(path, matched_path, review_path, model_path):
+    """Refresh references and changed review decisions, not corpus recategorization."""
+    from categorization.core import digest, file_ref, verify_refs
+    from categorization.model import Model
+    from processors.matching.storage import load_matched
+
+    from .review import apply as apply_review
+    from .review import load as load_review
+    from .taxonomy import validate
+
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    decisions = load_review(review_path)
+    matching = load_matched(matched_path)
+    verify_refs([*data["sources"], *matching["inputs"]])
+    model_data = json.loads(Path(model_path).read_text(encoding="utf-8"))
+    model = Model(model_data["examples"], model_data["patterns"]["patterns"])
+    positions = {
+        r["question"]["question_id"]: (i, r)
+        for i, r in enumerate(matching["records"])
+        if r.get("question")
+    }
+    changed = []
+    ref = file_ref(matched_path)
+    for row in data["records"]:
+        i, match = positions[row["question_id"]]
+        if row["question"] != match["question"]:
+            raise ValueError(
+                "Changed question requires upstream propagation and fresh review"
+            )
+        row["matching_status"] = match["status"]
+        row["matching_reference"] = {**ref, "json_pointer": f"/records/{i}"}
+        decision = decisions.get(digest(row["question"]))
+        old = row["categorization"].get("review", {})
+        if decision and (
+            old.get("proposed_category") != decision["category_id"]
+            or row["categorization"]["rationale"] != decision["evidence"]
+        ):
+            row["categorization"] = attribution(row["question"], model)
+            apply_review(row["categorization"], row, decisions)
+            changed.append(row["identity"])
+        validate(row["categorization"])
+    data["matching_source"] = ref
+    data["review_reference"] = file_ref(review_path)
+    data["summary"] = dict(
+        Counter(r["categorization"]["status"] for r in data["records"])
+    )
+    write(path, data)
+    return changed

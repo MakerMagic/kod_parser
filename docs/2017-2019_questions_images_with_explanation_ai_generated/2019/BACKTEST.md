@@ -1,20 +1,11 @@
 # 2019 explanation backtesting
 
-28 imported text explanations and 17 accepted visual explanations. Q20/Q32/Q44/Q50
-remain unresolved. Q6 is text-sufficient and excluded from image generation.
-Q32's answer key C does not repair its conflicted match.
+Read canonical records in `data/merged/blackstone/tsa_2017-2019.matched.json` by year 2019, question number, and issue status. Open referenced assets directly; no report is required to read an explanation.
 
-- [All questions](../../../inspections_matching/explanation_imports/index.html)
-- [Imported Q1](../../../inspections_matching/explanation_imports/2019_q01.html)
-- [Pie chart and table Q38](../../../inspections_matching/explanation_imports/2019_q38.html)
-- [Conflicted Q32](../../../inspections_matching/explanation_imports/2019_q32.html)
-- [Issues](ISSUES.md)
-
-After setting `$matchingPython` as in the [workspace README](../README.md):
+For a user-requested inspection:
 
 ```powershell
-& $matchingPython -m processors.matching.backtest inspect --matched-json 'data\merged\blackstone\tsa_2017-2019.matched.json' --year 2019 --question 38 --format html --output 'inspections_matching\2019_q38_import_review.html'
+python -m processors.matching.backtest inspect --matched-json data/merged/blackstone/tsa_2017-2019.matched.json --year 2019 --question 20 --format html --output inspections_matching/2019_selected_review.html
 ```
 
-Use a new output filename on each run. Correct answer, Final Explanation,
-option-specific reasons, visual evidence and unresolved statuses remain visible.
+Use a new output filename. The view shows Final Explanation, AI provenance, source components, asset references and unresolved issues. A source review or unresolved option structure is not successful completion. See `ISSUES.md` for current workspace issues; authoritative status remains in canonical JSON.

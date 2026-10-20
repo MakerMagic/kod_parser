@@ -23,7 +23,7 @@ def parse(path):
         **file_reference(path),
         "source_family": "bmat",
         "source_format": "task_supplied_bmat_explanations",
-        "origin": "human_user_message_2026_10_19",
+        "origin": "human_user_supplied_text",
     }
     lines = text.splitlines()
     records, issues, current, year = [], [], None, None
@@ -35,7 +35,22 @@ def parse(path):
         body = lines[current["start"] : end]
         notes, urls, kept = [], [], []
         for line in body:
-            if re.match(r"^(?:Source:\s*)?\[", line) and URL.search(line):
+            declaration = re.fullmatch(
+                r"\s*(?:the\s+)?(?:correct\s+)?answer\s*(?:is|:)\s*([A-H])\s*[.!]?\s*",
+                line,
+                re.IGNORECASE,
+            )
+            if declaration:
+                if declaration[1].upper() != current["answer"]:
+                    notes.append(
+                        "Conflicting standalone answer declaration retained in raw source"
+                    )
+                continue
+            if re.fullmatch(r"\s*Original solution\s*", line, re.IGNORECASE):
+                continue
+            if URL.search(line) and (
+                re.match(r"^\s*(?:Source:|\[|https?://)", line, re.IGNORECASE)
+            ):
                 urls.extend(URL.findall(line))
             elif line.startswith("Review required:"):
                 notes.append(line)
@@ -72,7 +87,7 @@ def parse(path):
                 "correct_answer": current["answer"],
                 "source_document": {
                     **source,
-                    "source_url": urls[0] if urls else None,
+                    "source_url": None,
                     "line_start": current["start"],
                     "line_end": end,
                 },

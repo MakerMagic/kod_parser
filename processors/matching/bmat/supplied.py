@@ -11,7 +11,7 @@ from processors.matching.explanation import build_final_explanation
 from .core import eligibility, key
 
 
-def apply(data, path, *, previous=None):
+def apply(data, path, *, previous=None, prefer_text=False):
     source = json.loads(Path(path).read_text(encoding="utf-8"))
     if source.get("stage") != "answer_raw" or source.get("source_family") != "bmat":
         raise ValueError("Supplied explanations must be normalized BMAT answers")
@@ -59,6 +59,28 @@ def apply(data, path, *, previous=None):
             ):
                 record[field] = deepcopy(prior[field])
             existing = record["answer"]
+            if (
+                existing["correct_answer"] == a["correct_answer"]
+                and existing["explanation"] == a["explanation"]
+            ):
+                record["answer"] = deepcopy(a)
+                record["answer_reference"] = deepcopy(items[0]["reference"])
+                record["final_explanation"] = build_final_explanation(
+                    a, items[0]["reference"]
+                )
+                existing = record["answer"]
+        # Explicit user authorization only: replace an image-only web explanation
+        # with their supplied text, never replace an existing manual/text solution.
+        replace_image = bool(
+            prefer_text
+            and existing
+            and existing.get("source_document", {}).get("source_format")
+            == "bmat_wordpress_worked_solutions"
+            and record["final_explanation"]["blocks"]
+            and all(
+                b["type"] == "visual" for b in record["final_explanation"]["blocks"]
+            )
+        )
         if len(items) != 1:
             status = "duplicate_supplied_source"
         elif q is None:
@@ -79,12 +101,41 @@ def apply(data, path, *, previous=None):
             status = "explanation_conflict"
         elif warnings:
             status = "supplied_review_required"
+            if previous_supplied:
+                record["status"] = "explanation_review_required"
+            if replace_image:
+                record["answer_candidates"].append(
+                    {
+                        "record": deepcopy(existing),
+                        "document": deepcopy(existing["source_document"]),
+                        "reference": deepcopy(record["answer_reference"]),
+                        "superseded_by": "explicit_user_supplied_text",
+                    }
+                )
+                record["answer"] = deepcopy(a)
+                record["answer_reference"] = deepcopy(items[0]["reference"])
+                record["final_explanation"] = build_final_explanation(
+                    a, items[0]["reference"]
+                )
+                record["status"] = "explanation_review_required"
         elif (
-            existing and record["final_explanation"]["blocks"] and not previous_supplied
+            existing
+            and record["final_explanation"]["blocks"]
+            and not previous_supplied
+            and not replace_image
         ):
             status = "existing_preserved"
         else:
             status = "matched_supplied"
+            if replace_image:
+                record["answer_candidates"].append(
+                    {
+                        "record": deepcopy(existing),
+                        "document": deepcopy(existing["source_document"]),
+                        "reference": deepcopy(record["answer_reference"]),
+                        "superseded_by": "explicit_user_supplied_text",
+                    }
+                )
             record["answer"] = deepcopy(a)
             record["answer_reference"] = deepcopy(items[0]["reference"])
             record["correct_answer"] = a["correct_answer"]

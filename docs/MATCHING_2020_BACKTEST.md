@@ -53,16 +53,8 @@ separate: Q12 retains `isolated_symbol_ordering_unresolved` in cleaning and Q25
 retains its RAW caption-boundary review. Neither warning was removed or solved
 by this answer-source task.
 
-| Question | Answer | HTML |
-|---|---|---|
-| 1 | A | [Inspect](../inspections_matching/2020/q001.html) |
-| 3 | A | [Inspect](../inspections_matching/2020/q003.html) |
-| 9 | C | [Inspect](../inspections_matching/2020/q009.html) |
-| 10 | C | [Inspect](../inspections_matching/2020/q010.html) |
-| 15 | D | [Inspect](../inspections_matching/2020/q015.html) |
-| 23 | B | [Inspect](../inspections_matching/2020/q023.html) |
-
-All fifty inspections follow `../inspections_matching/2020/qNNN.html`.
+Use the inspection command above with the requested year/question; do not
+pre-generate a question catalog. Regression fixtures retain answer assertions.
 Tests compare all complete explanation text and inferred assertion evidence
 against independent PDFium extraction, check A–E geometry and exact raw spans,
 and exercise missing explanation, conflicting answers and mismatched questions.

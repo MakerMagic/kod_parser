@@ -8,6 +8,7 @@ data/raw/
 data/clean/
 data/merged/
 data/final/
+data/pre_final/
 
 
 .vscode/
@@ -15,6 +16,7 @@ inspections_raw/
 inspections_clean/
 inspections_matching/
 inspections_categorization/
+inspections_pre_final/
 inspections_bmat/
 inspections_bmat_clean/
 inspections_bmat_categorization/

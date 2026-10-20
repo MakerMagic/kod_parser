@@ -19,7 +19,7 @@ $env:PYTHONIOENCODING = 'utf-8'
 $bmatPython = Join-Path $env:USERPROFILE '.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe'
 & $bmatPython -m processors.bmat acquire
 & $bmatPython -m processors.bmat raw data/input/bmat --output-dir data/raw/bmat --overwrite
-& $bmatPython -m processors.bmat report --output docs/BMAT_RAW_ISSUES.md --all-html
+& $bmatPython -m processors.bmat report --output docs/BMAT_RAW_ISSUES.md
 & $bmatPython -m processors.bmat inspect --year 2017 --question 1 --output inspections_bmat/2017_q001.html
 & $bmatPython -m processors.bmat list --status parser_review
 & $bmatPython -m processors.bmat list --type 'Shared Information Range'
@@ -39,6 +39,11 @@ BMAT/Section 1/year/count. An explicit API year must not contradict the cover.
 `--no-assets` is a diagnostic-only probe, not a completed usable RAW run.
 
 ## Inspection
+
+Read canonical RAW JSON and referenced assets directly for development. The
+`inspect` command above is an optional user-requested export, not a prerequisite
+for reading a question. Add `--all-html` only for an explicitly requested batch;
+use `--year`, `--question`, `--status` and `--type` to bound it.
 
 - [All questions: filter by year/status/type](../inspections_bmat/index.html)
 - [Machine-readable current status](../inspections_bmat/status.json)

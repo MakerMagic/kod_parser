@@ -408,7 +408,7 @@ def test_supplied_missing_explanation_attaches_and_roundtrips_without_images(
     first = apply(build(), path)
     r = first["records"][0]
     assert r["status"] == "matched" and r["correct_answer"] == "C"
-    assert r["answer"]["source_document"]["origin"].startswith("human_user_message")
+    assert r["answer"]["source_document"]["origin"] == "human_user_supplied_text"
     assert not r["answer"]["explanation"]["visual_assets"]
     assert apply(build(previous=first), path, previous=first) == first
 

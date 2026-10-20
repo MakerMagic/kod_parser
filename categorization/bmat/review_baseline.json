@@ -1,0 +1,4455 @@
+{
+  "owner": "bmat_review_baseline_v1",
+  "records": [
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2003,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2003_b50f7fbc103f.clean.json",
+        "sha256": "b945b03835f72b28ec02afac7c45f5fea7fbcdd8285a07c3de22260ab1906dcd",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "612f9d71e74998ef88fe3c776c5c54b35b2908ac4539f1fbb6b2b1801993f3b7"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2003,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 13
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2003_b50f7fbc103f.clean.json",
+        "sha256": "b945b03835f72b28ec02afac7c45f5fea7fbcdd8285a07c3de22260ab1906dcd",
+        "json_pointer": "/questions/12"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "61b63b9b31b5fddc6aedd4d2212ab0ed90a0a35ff5e9108e8c23251f916962cf"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2003,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 15
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2003_b50f7fbc103f.clean.json",
+        "sha256": "b945b03835f72b28ec02afac7c45f5fea7fbcdd8285a07c3de22260ab1906dcd",
+        "json_pointer": "/questions/14"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "191f568fa3a4ffc3c3acf569a17766e74b309fcee30222b509c0dbce751bd485"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2003,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 19
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2003_b50f7fbc103f.clean.json",
+        "sha256": "b945b03835f72b28ec02afac7c45f5fea7fbcdd8285a07c3de22260ab1906dcd",
+        "json_pointer": "/questions/18"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "9c1c2ae40fc74064b1e3dff276967c6acacf75e13c728299ca1a932f51d94d80"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2003,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 29
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2003_b50f7fbc103f.clean.json",
+        "sha256": "b945b03835f72b28ec02afac7c45f5fea7fbcdd8285a07c3de22260ab1906dcd",
+        "json_pointer": "/questions/28"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "ece6d8c7a7ca89eeda9b27089b4df77108251db5f3f931f5704294fa93178d22"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2003,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 30
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2003_b50f7fbc103f.clean.json",
+        "sha256": "b945b03835f72b28ec02afac7c45f5fea7fbcdd8285a07c3de22260ab1906dcd",
+        "json_pointer": "/questions/29"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "a3414e350088a18675636d0984bbb6cf15529b6c5f20c579bd81f4abb53c8269"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2003,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 33
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2003_b50f7fbc103f.clean.json",
+        "sha256": "b945b03835f72b28ec02afac7c45f5fea7fbcdd8285a07c3de22260ab1906dcd",
+        "json_pointer": "/questions/32"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "fb4293344fe800408e01aabcc015e1bc82518b3ebed64a0b8e7acc104c1deaa7"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2003,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 34
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2003_b50f7fbc103f.clean.json",
+        "sha256": "b945b03835f72b28ec02afac7c45f5fea7fbcdd8285a07c3de22260ab1906dcd",
+        "json_pointer": "/questions/33"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "a7a4187079631b53ef8968ff0593d6bc147e21fd62c8752584348ab6e191449e"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2004,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2004_bf878c35d9f9.clean.json",
+        "sha256": "4de373ac932f103d7ae59cf95e5e77bcd5a95d9b36a45498e8f200df317392f0",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "e9dcf44ba6b2a160b1e34afb7c29fe80db7f9fa2c92066ff3c9fca1f3e95f5f8"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2004,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2004_bf878c35d9f9.clean.json",
+        "sha256": "4de373ac932f103d7ae59cf95e5e77bcd5a95d9b36a45498e8f200df317392f0",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "e02a8932172091ea0beb65449fad74b75425330a4e90d6af65c964bd99e96bb7"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2004,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 5
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2004_bf878c35d9f9.clean.json",
+        "sha256": "4de373ac932f103d7ae59cf95e5e77bcd5a95d9b36a45498e8f200df317392f0",
+        "json_pointer": "/questions/4"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "f7b79c4cc580a5474c4aaa53d74a286a49fd7b3faab3e12742d86c77f65c0c66"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2004,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2004_bf878c35d9f9.clean.json",
+        "sha256": "4de373ac932f103d7ae59cf95e5e77bcd5a95d9b36a45498e8f200df317392f0",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "90de8031eefd8d69ffd5f91f5ce764eabf5f2b7c3768cf74c1d92256b0dbee10"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2004,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2004_bf878c35d9f9.clean.json",
+        "sha256": "4de373ac932f103d7ae59cf95e5e77bcd5a95d9b36a45498e8f200df317392f0",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "d5f6cdfb54ce51f88da14768116b11d731b08ebf4a4dc04ec801a20cca472062"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2004,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 16
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2004_bf878c35d9f9.clean.json",
+        "sha256": "4de373ac932f103d7ae59cf95e5e77bcd5a95d9b36a45498e8f200df317392f0",
+        "json_pointer": "/questions/15"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "74632dd9ccc72a635fd41a3917ca5464c84014fb6db291f1d6e1025f518e5df6"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2004,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2004_bf878c35d9f9.clean.json",
+        "sha256": "4de373ac932f103d7ae59cf95e5e77bcd5a95d9b36a45498e8f200df317392f0",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "4c89f793ffe60def148d3270b7187a60c17b8833f598dd00cbbf0ce032809a3c"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2004,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 26
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2004_bf878c35d9f9.clean.json",
+        "sha256": "4de373ac932f103d7ae59cf95e5e77bcd5a95d9b36a45498e8f200df317392f0",
+        "json_pointer": "/questions/25"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "c889162a6f41c5b0daba1f01a6ea62b5ba74b749ad712903bdf97b21eaba12ee"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2004,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 27
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2004_bf878c35d9f9.clean.json",
+        "sha256": "4de373ac932f103d7ae59cf95e5e77bcd5a95d9b36a45498e8f200df317392f0",
+        "json_pointer": "/questions/26"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "4c2220ac059bf151eacf3faa9be13ac6b9aa76a2292de0b44d2823e8eb8826bd"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2004,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 28
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2004_bf878c35d9f9.clean.json",
+        "sha256": "4de373ac932f103d7ae59cf95e5e77bcd5a95d9b36a45498e8f200df317392f0",
+        "json_pointer": "/questions/27"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "b0099332175e4212fbb79595197418e523a12dc5d5fa4fb4636c5280c377354b"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2004,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 29
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2004_bf878c35d9f9.clean.json",
+        "sha256": "4de373ac932f103d7ae59cf95e5e77bcd5a95d9b36a45498e8f200df317392f0",
+        "json_pointer": "/questions/28"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "2a0fe09016265165a667466e886b8c21e324e5a97aff8e503ef3c1958e03977f"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2005,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2005_4196ce29c047.clean.json",
+        "sha256": "3539481e9ba5d3a3fb5856acd2cd6330e978327df0ab352ba61fe3492306e119",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "97575b34ef0b4b0d763c15fbf06d8e21f65f186b720533c5a50adb2c4059dcda"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2005,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2005_4196ce29c047.clean.json",
+        "sha256": "3539481e9ba5d3a3fb5856acd2cd6330e978327df0ab352ba61fe3492306e119",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "6db9b1cd7ad90f7885f8061b2db3c2a20cab85b73de99e661168f94ebfed7f3c"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2005,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 11
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2005_4196ce29c047.clean.json",
+        "sha256": "3539481e9ba5d3a3fb5856acd2cd6330e978327df0ab352ba61fe3492306e119",
+        "json_pointer": "/questions/10"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "6e8f092fbffd6335bcf46f08e20ae55428dba5838270acbcaf044352ad46c00a"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2005,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 13
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2005_4196ce29c047.clean.json",
+        "sha256": "3539481e9ba5d3a3fb5856acd2cd6330e978327df0ab352ba61fe3492306e119",
+        "json_pointer": "/questions/12"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "343511bddee3586d7ea12bda30f800c2fd233be5f05dacaeba153d60b50b2782"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2005,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 15
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2005_4196ce29c047.clean.json",
+        "sha256": "3539481e9ba5d3a3fb5856acd2cd6330e978327df0ab352ba61fe3492306e119",
+        "json_pointer": "/questions/14"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "a0653bb3b87df584621873f135f1f5054232cdf520fde7e1a302721397919ec4"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2005,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 24
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2005_4196ce29c047.clean.json",
+        "sha256": "3539481e9ba5d3a3fb5856acd2cd6330e978327df0ab352ba61fe3492306e119",
+        "json_pointer": "/questions/23"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "bf0da59e38d03ced5780e9727c10628cb1ad62938f427242b166d9eff54bc017"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2005,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 28
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2005_4196ce29c047.clean.json",
+        "sha256": "3539481e9ba5d3a3fb5856acd2cd6330e978327df0ab352ba61fe3492306e119",
+        "json_pointer": "/questions/27"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "4af4223c76c569ca1575928fff0c58f1c01256ef0ece4ac47e2d7b4d235edd75"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2005,
+        "paper": null,
+        "variant": null,
+        "section": "section_1",
+        "question_number": 30
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2005_4196ce29c047.clean.json",
+        "sha256": "3539481e9ba5d3a3fb5856acd2cd6330e978327df0ab352ba61fe3492306e119",
+        "json_pointer": "/questions/29"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "cd7bc1e4bae0c3e21a35cf5898ea3652f4bbede57d8cdd0993e89f6c9f13b40a"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2006,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2006_3baf7cfa3aed.clean.json",
+        "sha256": "e3c9fb03f10ee8559c85fee34f1f4a0d0f3e0e08b52dff2380158249491e195f",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "9eb34a094ed394ec7b29705922a88a2919202ec0961194fd31736e5059a4893a"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2006,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2006_3baf7cfa3aed.clean.json",
+        "sha256": "e3c9fb03f10ee8559c85fee34f1f4a0d0f3e0e08b52dff2380158249491e195f",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "eafc5af9e9c4f7a27b1e4973d770a9249c3790c7f6f9245471ffd2294b20ff16"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2006,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 17
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2006_3baf7cfa3aed.clean.json",
+        "sha256": "e3c9fb03f10ee8559c85fee34f1f4a0d0f3e0e08b52dff2380158249491e195f",
+        "json_pointer": "/questions/16"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "4cf979cf141d414a90a194ebb7b1a3b876980d5d86326e552179c484eb63f546"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2006,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 23
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2006_3baf7cfa3aed.clean.json",
+        "sha256": "e3c9fb03f10ee8559c85fee34f1f4a0d0f3e0e08b52dff2380158249491e195f",
+        "json_pointer": "/questions/22"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "4bbb64348a44f8068faf3e3e179b088558b2b8c03af6ae6f7acc4828a0208b10"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2006,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2006_3baf7cfa3aed.clean.json",
+        "sha256": "e3c9fb03f10ee8559c85fee34f1f4a0d0f3e0e08b52dff2380158249491e195f",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "3e6c2d79e766c9ca0f290f30d24a72642f77074beb1b0b9ddafea4d1f0dbdc50"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2007,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2007_9944c5a637df.clean.json",
+        "sha256": "32e11a32afdba63bf5881b23ef9c2955a47abb0492d0c72df1c08b63d86898a4",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "0d32c3d8bf83ad5ffd7eef911315ea6ee2c5c2334702e10cbd03e24ad9d238e2"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2007,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2007_9944c5a637df.clean.json",
+        "sha256": "32e11a32afdba63bf5881b23ef9c2955a47abb0492d0c72df1c08b63d86898a4",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "8f4cd668803c8af046074be7ef4223ec021ac75913d1de51daedc672a09d078b"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2007,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 15
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2007_9944c5a637df.clean.json",
+        "sha256": "32e11a32afdba63bf5881b23ef9c2955a47abb0492d0c72df1c08b63d86898a4",
+        "json_pointer": "/questions/14"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "e691cd0b8a0156b8fa2654b724e7bf53bab2f73666f1b33b91c882896b856383"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2007,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2007_9944c5a637df.clean.json",
+        "sha256": "32e11a32afdba63bf5881b23ef9c2955a47abb0492d0c72df1c08b63d86898a4",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "9fa5a47d6ebad7679068a3b62e85f4bf890d638b0fb4838b3efe50019d50a657"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2007,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 19
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2007_9944c5a637df.clean.json",
+        "sha256": "32e11a32afdba63bf5881b23ef9c2955a47abb0492d0c72df1c08b63d86898a4",
+        "json_pointer": "/questions/18"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "f5e12a1cec8b9bbc8178a57daf7a4316516a8d334a3ba4a75683f70288cd0e79"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2007,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2007_9944c5a637df.clean.json",
+        "sha256": "32e11a32afdba63bf5881b23ef9c2955a47abb0492d0c72df1c08b63d86898a4",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "58af1c3eb165a019f74a74e2dd7a39440cd5c92ce450d51bfaaa9b0642e79650"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2007,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 26
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2007_9944c5a637df.clean.json",
+        "sha256": "32e11a32afdba63bf5881b23ef9c2955a47abb0492d0c72df1c08b63d86898a4",
+        "json_pointer": "/questions/25"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "a527dc778c6f0ea86fcab285942aa9bcb0e623e8752fc138acc1481a7fc34044"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2007,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 27
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2007_9944c5a637df.clean.json",
+        "sha256": "32e11a32afdba63bf5881b23ef9c2955a47abb0492d0c72df1c08b63d86898a4",
+        "json_pointer": "/questions/26"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "94ae9fb619dc73591ab1bf67f609d3afb2be8efd84823e5261e8eeb200699217"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "2a36290de679887c04e931ad94592841db07645c0c9150f3fd23a316a466c08b"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 5
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/4"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "666c16ac044ced92f642b4271427b38636b4e62a16acd4e0fea2cdfa106877cb"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 6
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/5"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "1759a078fa9a0567ca0825ab12b3c63608f11a3d10bbe9a4c10e80d99f3f3f8e"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "88a0afd4e8f9f100b6b65836c7e2474d6605161406e2a0ec3470a52a8373f489"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 13
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/12"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "28fc913294fd8041d29f2ac1068777a009bf309c7426c2d1691d47ab980b97b4"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 14
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/13"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "8f575832d931805e7a03031abc88be80dde6ee7ed46e46a075c640625ccd69dd"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 17
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/16"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "ee1c6ffc3cf1ecbd8a687c3ae911726e4866702750f4114c46e054322c47e2c8"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "4f993dbc5b31c44d9edcf4a7ebd24b0022569969fa90b775c41d4a0321155837"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 23
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/22"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "abec83385ea94453fd263873b5f6dc35c230b07a656f955701a9a77931da7686"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 27
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/26"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "69bc4266b39e852ba6880b869267b4fe0ac5d4bc1fedc6a2fe4c3e5f247de5c6"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 29
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/28"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "9708c9c29609ade9b7740795f170350c149213b29e4310e08ae7a46858d6cfc1"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2008,
+        "paper": "4500/01",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 31
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2008_e658c0e051ed.clean.json",
+        "sha256": "e396daa783119a683e4f453cce335b13df72ba4def9bfeaadedceddfc396e003",
+        "json_pointer": "/questions/30"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "3dc8d74b47e9acd9e04b3d00515abe6e6f0cf96d8a9ff52e6d889523921f4803"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2009,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 5
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2009_f2b39a709c6a.clean.json",
+        "sha256": "a1774bd6d48e6b61bbb30403fe67023b63a5337316949297ad259b85e95df0e3",
+        "json_pointer": "/questions/4"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "19d27a6f04412dd5e1721665970daab3b8418f965481f031425425069beda809"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2009,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2009_f2b39a709c6a.clean.json",
+        "sha256": "a1774bd6d48e6b61bbb30403fe67023b63a5337316949297ad259b85e95df0e3",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "9323c85d6dd87b8db1ab746fa797afd738c66111ffde3806d02b64cd07a8544f"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2009,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 11
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2009_f2b39a709c6a.clean.json",
+        "sha256": "a1774bd6d48e6b61bbb30403fe67023b63a5337316949297ad259b85e95df0e3",
+        "json_pointer": "/questions/10"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "b47985b62e804ac3df5f9822f4a260508317268fecc4ef9e13bee2aeaa86a34d"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2009,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 13
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2009_f2b39a709c6a.clean.json",
+        "sha256": "a1774bd6d48e6b61bbb30403fe67023b63a5337316949297ad259b85e95df0e3",
+        "json_pointer": "/questions/12"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "cd434528053c9d1af2b4332bae9ad02877c53ea7828c94eb75aaada63684695b"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2009,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 23
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2009_f2b39a709c6a.clean.json",
+        "sha256": "a1774bd6d48e6b61bbb30403fe67023b63a5337316949297ad259b85e95df0e3",
+        "json_pointer": "/questions/22"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "fc842e4b7e043a7ee9892fe2ef6162b8ffb92d6ac4ad6a5d91d643631fdf441d"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2009,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 27
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2009_f2b39a709c6a.clean.json",
+        "sha256": "a1774bd6d48e6b61bbb30403fe67023b63a5337316949297ad259b85e95df0e3",
+        "json_pointer": "/questions/26"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "80fc15ce5b685b0758a3ee6d3603c80c7d3f31f45f0d10a06d13c35507c1ecba"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2009,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 31
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2009_f2b39a709c6a.clean.json",
+        "sha256": "a1774bd6d48e6b61bbb30403fe67023b63a5337316949297ad259b85e95df0e3",
+        "json_pointer": "/questions/30"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "1730e14e3b76b6b6f68410ec25a6279e1ffaee1161fad794076590dfca6d4923"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2010,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2010_06c7ef7d42a2.clean.json",
+        "sha256": "8f7ae2bc3dba14d38cb6df23c6ca8e733224105d88152ad00acedc29e9c9e954",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "81e0d6e209b90580869d324830882414ad1ec557d69905324c5bc9d4425aaea8"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2010,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2010_06c7ef7d42a2.clean.json",
+        "sha256": "8f7ae2bc3dba14d38cb6df23c6ca8e733224105d88152ad00acedc29e9c9e954",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "dffafc12133731f3f1d86372f364911421f0084b2d07187b40e714c4c2393fd1"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2010,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 5
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2010_06c7ef7d42a2.clean.json",
+        "sha256": "8f7ae2bc3dba14d38cb6df23c6ca8e733224105d88152ad00acedc29e9c9e954",
+        "json_pointer": "/questions/4"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "d56d6c143f9020393356bc36c28d72846234a29a1655af84c23749af5dfe382a"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2010,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2010_06c7ef7d42a2.clean.json",
+        "sha256": "8f7ae2bc3dba14d38cb6df23c6ca8e733224105d88152ad00acedc29e9c9e954",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "6e5c039137e208901b8cf6cc38453fea1f3e19f3d9e3fa213acf921e42865d08"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2010,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2010_06c7ef7d42a2.clean.json",
+        "sha256": "8f7ae2bc3dba14d38cb6df23c6ca8e733224105d88152ad00acedc29e9c9e954",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "d576d6d1fcd91827d202d334acebf8416e5a69db35cfaa896babbed9a3b9a973"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2010,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 14
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2010_06c7ef7d42a2.clean.json",
+        "sha256": "8f7ae2bc3dba14d38cb6df23c6ca8e733224105d88152ad00acedc29e9c9e954",
+        "json_pointer": "/questions/13"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "37eb9f9c31cd2d7668043f2f1837b677d624a54a64bd50664d0df5253e8c76f7"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2010,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2010_06c7ef7d42a2.clean.json",
+        "sha256": "8f7ae2bc3dba14d38cb6df23c6ca8e733224105d88152ad00acedc29e9c9e954",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "ab79391c20d6f1b505f6048162090378b0c4750571d9864d30ea45ea20c54bcc"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2010,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 23
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2010_06c7ef7d42a2.clean.json",
+        "sha256": "8f7ae2bc3dba14d38cb6df23c6ca8e733224105d88152ad00acedc29e9c9e954",
+        "json_pointer": "/questions/22"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "334b606e56e1754bb2366f1f24e912f8af4930406610b9dcf58f5cb1b1c495b2"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2010,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2010_06c7ef7d42a2.clean.json",
+        "sha256": "8f7ae2bc3dba14d38cb6df23c6ca8e733224105d88152ad00acedc29e9c9e954",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "afb5f1fa6561747c272a007c208c6adb44fd7e8e1fe99947971e724e0f7e1a60"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2010,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 29
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2010_06c7ef7d42a2.clean.json",
+        "sha256": "8f7ae2bc3dba14d38cb6df23c6ca8e733224105d88152ad00acedc29e9c9e954",
+        "json_pointer": "/questions/28"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "ef9ff71488ac7567f09a4e84e8162e5edc0e0341b93f904f6265ad4e42ad31a6"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2011,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2011_a8ffa678ede8.clean.json",
+        "sha256": "ace1f81237d1e56e2341b2fdfc1abda61c25c9a56c046af0f5022b794a463f9c",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "534b6b370e07f1dd4249d28a1f0fc7086a267f707db6fe9ce2b660e81d99a2d7"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2011,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2011_a8ffa678ede8.clean.json",
+        "sha256": "ace1f81237d1e56e2341b2fdfc1abda61c25c9a56c046af0f5022b794a463f9c",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "22bfc2c8949e4fe7dde35db913bceb3eb004c7e3d8dfc9e5c1e435efa081f48e"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2011,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 13
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2011_a8ffa678ede8.clean.json",
+        "sha256": "ace1f81237d1e56e2341b2fdfc1abda61c25c9a56c046af0f5022b794a463f9c",
+        "json_pointer": "/questions/12"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "0e65f4c0aac055b47ff612d9861d65c8661a337a0c8a88cec7507914a8f19ca4"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2011,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 14
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2011_a8ffa678ede8.clean.json",
+        "sha256": "ace1f81237d1e56e2341b2fdfc1abda61c25c9a56c046af0f5022b794a463f9c",
+        "json_pointer": "/questions/13"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "b0cd3b9b64e1bca2fd89bb7fd416adafb4627b80dbfb477d565c441a2b739ada"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2011,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 16
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2011_a8ffa678ede8.clean.json",
+        "sha256": "ace1f81237d1e56e2341b2fdfc1abda61c25c9a56c046af0f5022b794a463f9c",
+        "json_pointer": "/questions/15"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "7695b5123616765c7a7a75b20eda6f9e7d4796c829002fc8ea6417802dc2acb7"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2011,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2011_a8ffa678ede8.clean.json",
+        "sha256": "ace1f81237d1e56e2341b2fdfc1abda61c25c9a56c046af0f5022b794a463f9c",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "f61af4c97882a45daebc9b87eeb2eb9e379ff6bcb3464520c4bfe6bbff617abf"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2011,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 24
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2011_a8ffa678ede8.clean.json",
+        "sha256": "ace1f81237d1e56e2341b2fdfc1abda61c25c9a56c046af0f5022b794a463f9c",
+        "json_pointer": "/questions/23"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "63bf5d8bc42cbfd7ea9ad2ea549765613ee21aa48412807a2ae131e9c5735896"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2011,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2011_a8ffa678ede8.clean.json",
+        "sha256": "ace1f81237d1e56e2341b2fdfc1abda61c25c9a56c046af0f5022b794a463f9c",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "212f558940694abca736943e888b2aa3846963ea030223291d6a827cf0dccd0f"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2011,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 27
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2011_a8ffa678ede8.clean.json",
+        "sha256": "ace1f81237d1e56e2341b2fdfc1abda61c25c9a56c046af0f5022b794a463f9c",
+        "json_pointer": "/questions/26"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "cb0fe7bd370f99115aa79191031dee314c1d95686392023398d79e0944852758"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2011,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 29
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2011_a8ffa678ede8.clean.json",
+        "sha256": "ace1f81237d1e56e2341b2fdfc1abda61c25c9a56c046af0f5022b794a463f9c",
+        "json_pointer": "/questions/28"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "79ac5de22570c7b49eaa532e129820ab834287bae8d6b76027edc56e5b7e652c"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2012,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2012_7c0e6e039d20.clean.json",
+        "sha256": "4ef99dd72666c2b41b12e47d2b9be5f619fbdf156f8c821b19142e4beff4066d",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "c9b3ab3c46d9d2f5fa64a68bcd8af569d5cfd52209ee8ffeeff224fbb9f8e2ea"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2012,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2012_7c0e6e039d20.clean.json",
+        "sha256": "4ef99dd72666c2b41b12e47d2b9be5f619fbdf156f8c821b19142e4beff4066d",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "118d672b93e08be2f7bcd31620c0f469dadaca782b31f8788fd8693d70c74997"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2012,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2012_7c0e6e039d20.clean.json",
+        "sha256": "4ef99dd72666c2b41b12e47d2b9be5f619fbdf156f8c821b19142e4beff4066d",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "a1a6842f0301b21fde61e8b3ca593b764dda98d5ba049a4774af9b78344084e5"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2012,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2012_7c0e6e039d20.clean.json",
+        "sha256": "4ef99dd72666c2b41b12e47d2b9be5f619fbdf156f8c821b19142e4beff4066d",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "33f5fb40916d7969b1eacb0c58c81abb079f859516b9205cdf35b78b497a93c0"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2012,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 16
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2012_7c0e6e039d20.clean.json",
+        "sha256": "4ef99dd72666c2b41b12e47d2b9be5f619fbdf156f8c821b19142e4beff4066d",
+        "json_pointer": "/questions/15"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "3b811aee194cd0d3ec6536df97944ca58c77b7acd8781505e27744e5efa216a2"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2012,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2012_7c0e6e039d20.clean.json",
+        "sha256": "4ef99dd72666c2b41b12e47d2b9be5f619fbdf156f8c821b19142e4beff4066d",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "3dcf76ca8350d76b91aa7b4cfe39a19b5c6d158b49601a7a0b882bdc9c71c7df"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2012,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2012_7c0e6e039d20.clean.json",
+        "sha256": "4ef99dd72666c2b41b12e47d2b9be5f619fbdf156f8c821b19142e4beff4066d",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "247a188a912652151debe938d6bce4ca9d032b908ec7e58c9501268133073465"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2012,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 27
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2012_7c0e6e039d20.clean.json",
+        "sha256": "4ef99dd72666c2b41b12e47d2b9be5f619fbdf156f8c821b19142e4beff4066d",
+        "json_pointer": "/questions/26"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "a3a0f0e4ceaa1c7fe11d2ece80e8ac40b4ea9366090ef02f72cb5cf362bcae16"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2012,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 29
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2012_7c0e6e039d20.clean.json",
+        "sha256": "4ef99dd72666c2b41b12e47d2b9be5f619fbdf156f8c821b19142e4beff4066d",
+        "json_pointer": "/questions/28"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "a80f6927b355a302f60a0a1850c91de5e10746e328571164fee46b1927446d82"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2012,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 31
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2012_7c0e6e039d20.clean.json",
+        "sha256": "4ef99dd72666c2b41b12e47d2b9be5f619fbdf156f8c821b19142e4beff4066d",
+        "json_pointer": "/questions/30"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "06d78d599d355f6d537e12ddb6c53cc617db22ef0df407571ddaa5873b06efb7"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "a89d1a60f43b058858de1e0b2dcc4fbc058718035631d286c7253752566dd087"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "f61640852fd3beb138424c3c4630960cfbb7a5914411028a828a5462db8a213b"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 5
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/4"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "e70079df8611ee5e32e3795647b3d401f6fdacf5975331bd60e89c96c763638d"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 6
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/5"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "b4e6e66c61e2c2a2ea70fe49e067510dd7bb373319c15a078588d59459478267"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "1487e0764b9731927fe94346bffcd60d8b38ba93beb681f5c8a05c89cef71e6f"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 14
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/13"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "86deb23fe40e733f5a50b2ffa89093485931c02a9b84ee37e395f124bb7d341e"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 16
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/15"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "c1a228a8da7b9a26f0fb9ded8b1dd56f4cdaca8ecb3a2cc034b4bfcdebe3e7b8"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "1706a539ac833eaf1ae0a53dda9d6236eb494fdf1d26f0d773833a7bbabcc34e"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "3acb54194030e8e89aff4244f6934771a453be638ef67254c62e83261656f8c4"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 26
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/25"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "2e675a77ddd2d0b7a17ca78a10c1f0874f14d918b2adee8b4574226db3156224"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 27
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/26"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "b8e84929a0363f8584e9fa9edc98bb6808b9b5030b348d938145420dc21a815e"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2013,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 31
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2013_6e2a62a37267.clean.json",
+        "sha256": "59da3f8a113ec55dd80451089e7eda659ebbf8ce766b84d23e2c9ac59cda5133",
+        "json_pointer": "/questions/30"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "f63445524fdf4ac69bd9a85d3b4b075b692f81af2429724e4936ebaf50965635"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2014,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2014_9aca9594137d.clean.json",
+        "sha256": "943871f1e53d8979e0ab7a0db4aff877197f81df487d0fff6ec084aaffa8b0ac",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "f029c691b20aa8d24c0f5c779ffb827ae958eb3390af1e4a7b0d553659d1dd6a"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2014,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2014_9aca9594137d.clean.json",
+        "sha256": "943871f1e53d8979e0ab7a0db4aff877197f81df487d0fff6ec084aaffa8b0ac",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "33b61652170d200b3e005eafbe4b35a735c12929d694ef2ceeb6343ac4f6b4ba"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2014,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2014_9aca9594137d.clean.json",
+        "sha256": "943871f1e53d8979e0ab7a0db4aff877197f81df487d0fff6ec084aaffa8b0ac",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "6d79b299e72dcf6ac69678f42e483327625d7ddb6538b40db37e73db25dd7358"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2014,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2014_9aca9594137d.clean.json",
+        "sha256": "943871f1e53d8979e0ab7a0db4aff877197f81df487d0fff6ec084aaffa8b0ac",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "ffeee8cc51f0673a8f0f191abaebbcf9dee364060ff9030c469c84473c922e45"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2014,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 16
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2014_9aca9594137d.clean.json",
+        "sha256": "943871f1e53d8979e0ab7a0db4aff877197f81df487d0fff6ec084aaffa8b0ac",
+        "json_pointer": "/questions/15"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "7825a7a82bb0a3403f1a8675aa7bfff688c14c73fde4ac27a704225a477911ef"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2014,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2014_9aca9594137d.clean.json",
+        "sha256": "943871f1e53d8979e0ab7a0db4aff877197f81df487d0fff6ec084aaffa8b0ac",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "3158c6672119e5ae5c04cc1d8e77f99b21ec144aa973c91454a8f288459d1191"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2014,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 22
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2014_9aca9594137d.clean.json",
+        "sha256": "943871f1e53d8979e0ab7a0db4aff877197f81df487d0fff6ec084aaffa8b0ac",
+        "json_pointer": "/questions/21"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "efe6c5e0d415a81a04beb01a4c18b413e0a57e287bac5ff6a6cf187657f8def2"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2014,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 24
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2014_9aca9594137d.clean.json",
+        "sha256": "943871f1e53d8979e0ab7a0db4aff877197f81df487d0fff6ec084aaffa8b0ac",
+        "json_pointer": "/questions/23"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "398353339db6442b0448c3ba9a3bc49e3753971f9c3f8f07fe11da779ccab2c3"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2014,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 26
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2014_9aca9594137d.clean.json",
+        "sha256": "943871f1e53d8979e0ab7a0db4aff877197f81df487d0fff6ec084aaffa8b0ac",
+        "json_pointer": "/questions/25"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "1269f04ea1b14577ddb6647effa621a8f4e69b8dfa914ab77b34640af4b7e22e"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2014,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 30
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2014_9aca9594137d.clean.json",
+        "sha256": "943871f1e53d8979e0ab7a0db4aff877197f81df487d0fff6ec084aaffa8b0ac",
+        "json_pointer": "/questions/29"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "040153aad0ffff5095bd6ef18644fa5b1f71acafd2e55fb2396496b08eede213"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2015,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2015_7a8534780b4b.clean.json",
+        "sha256": "ebda760d9bb01c7e9cd25c400f49d6597c96c7cb5c7b5e72022045192bb42b0e",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "5bc2d8e4d6ea79d14ee551e02873cc8577317d74172fcd50b46e307906f85748"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2015,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2015_7a8534780b4b.clean.json",
+        "sha256": "ebda760d9bb01c7e9cd25c400f49d6597c96c7cb5c7b5e72022045192bb42b0e",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "f58e541008a4322b63ff281cb8c2d6f877b5a0fdf2e521293760c4860fb2bc5a"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2015,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2015_7a8534780b4b.clean.json",
+        "sha256": "ebda760d9bb01c7e9cd25c400f49d6597c96c7cb5c7b5e72022045192bb42b0e",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "937c18a29ea3d8d5861aeb524195d70a974fc2bf84a2c50ef16dd55fcfcefa19"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2015,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 14
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2015_7a8534780b4b.clean.json",
+        "sha256": "ebda760d9bb01c7e9cd25c400f49d6597c96c7cb5c7b5e72022045192bb42b0e",
+        "json_pointer": "/questions/13"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "3a4fece77f4a96a9f574c5b146720252417248b495bcc8f6b41aeae08ac1d379"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2015,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 16
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2015_7a8534780b4b.clean.json",
+        "sha256": "ebda760d9bb01c7e9cd25c400f49d6597c96c7cb5c7b5e72022045192bb42b0e",
+        "json_pointer": "/questions/15"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "930feee77db51217e65597deb5cd52da460f6fd0b2763581a7648f9859137b12"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2015,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 24
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2015_7a8534780b4b.clean.json",
+        "sha256": "ebda760d9bb01c7e9cd25c400f49d6597c96c7cb5c7b5e72022045192bb42b0e",
+        "json_pointer": "/questions/23"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "b8c8f68f00641c361881d7fe6101367a81bdeaa5c47c1a7e718f3dd0998a4897"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2015,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2015_7a8534780b4b.clean.json",
+        "sha256": "ebda760d9bb01c7e9cd25c400f49d6597c96c7cb5c7b5e72022045192bb42b0e",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "76207835cd487f94073055f0d03c66cef375e20d621d48df54f93115d808de72"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2015,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 27
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2015_7a8534780b4b.clean.json",
+        "sha256": "ebda760d9bb01c7e9cd25c400f49d6597c96c7cb5c7b5e72022045192bb42b0e",
+        "json_pointer": "/questions/26"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "682dc47490869166e1cca8b7afe3162bf430b4236861b0d1600b88dac9a86f92"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2015,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 29
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2015_7a8534780b4b.clean.json",
+        "sha256": "ebda760d9bb01c7e9cd25c400f49d6597c96c7cb5c7b5e72022045192bb42b0e",
+        "json_pointer": "/questions/28"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "b25b3746453046c975c4660d15974a159b1d58eea8483645b6b3c75b2afa9413"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2015,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 31
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2015_7a8534780b4b.clean.json",
+        "sha256": "ebda760d9bb01c7e9cd25c400f49d6597c96c7cb5c7b5e72022045192bb42b0e",
+        "json_pointer": "/questions/30"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "e13887184ac16cdd10b2171615b82ad68322580cd597a420e3f99a51c49a8226"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2016,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2016_084b815f8c36.clean.json",
+        "sha256": "711d97a4f2548e820cf64ae8a24745dd2cdf2e0cb1d64947e5ae97557364ef9a",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "c72765390efd68ba0ff156d6078719642e1ea629a3e22fad474925ac39e4b784"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2016,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2016_084b815f8c36.clean.json",
+        "sha256": "711d97a4f2548e820cf64ae8a24745dd2cdf2e0cb1d64947e5ae97557364ef9a",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "ab60b59f32597594c69426744bdbe5d0731aa6334d18ff95a0cf576a01a0d8bc"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2016,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2016_084b815f8c36.clean.json",
+        "sha256": "711d97a4f2548e820cf64ae8a24745dd2cdf2e0cb1d64947e5ae97557364ef9a",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "6aaf4eeefbaca029b2cca50dbd680e778a7cdbd1c3d85534f85c3b680d6f4337"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2016,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2016_084b815f8c36.clean.json",
+        "sha256": "711d97a4f2548e820cf64ae8a24745dd2cdf2e0cb1d64947e5ae97557364ef9a",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "c0d8941ef7bcf2f7f3b40c95a9c5816d0e8d2f605dc851bcac16705b0c23cccd"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2016,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 14
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2016_084b815f8c36.clean.json",
+        "sha256": "711d97a4f2548e820cf64ae8a24745dd2cdf2e0cb1d64947e5ae97557364ef9a",
+        "json_pointer": "/questions/13"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "fbb4bfb0119f89f7c52a8958aef762d13faa8738c4814a7e93b58d5c35011599"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2016,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 16
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2016_084b815f8c36.clean.json",
+        "sha256": "711d97a4f2548e820cf64ae8a24745dd2cdf2e0cb1d64947e5ae97557364ef9a",
+        "json_pointer": "/questions/15"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "2783189f37960447feabeeed807818ecf98c039e5436157ee52c82b7409beb22"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2016,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2016_084b815f8c36.clean.json",
+        "sha256": "711d97a4f2548e820cf64ae8a24745dd2cdf2e0cb1d64947e5ae97557364ef9a",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "10c2a1ce51b55346715796669a44719347610eed01975cff450914313c1773b7"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2016,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 23
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2016_084b815f8c36.clean.json",
+        "sha256": "711d97a4f2548e820cf64ae8a24745dd2cdf2e0cb1d64947e5ae97557364ef9a",
+        "json_pointer": "/questions/22"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "3341b7a8b44e09f1f7d36d1f30262cad4fd2f89b867dde5648b26e14a2b53419"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2016,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2016_084b815f8c36.clean.json",
+        "sha256": "711d97a4f2548e820cf64ae8a24745dd2cdf2e0cb1d64947e5ae97557364ef9a",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "05af68f713cf917a713543b51d5edb4d6e555c0d6861755a47095f60394f6724"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2016,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 29
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2016_084b815f8c36.clean.json",
+        "sha256": "711d97a4f2548e820cf64ae8a24745dd2cdf2e0cb1d64947e5ae97557364ef9a",
+        "json_pointer": "/questions/28"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "4fb016a470be2185b26069cd45567c2a30f40c274932343d4ae87689ae35f64c"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2016,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 31
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2016_084b815f8c36.clean.json",
+        "sha256": "711d97a4f2548e820cf64ae8a24745dd2cdf2e0cb1d64947e5ae97557364ef9a",
+        "json_pointer": "/questions/30"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "a76aaddf803a6206211e4b1d053707ead20c794271794f6645503b2c90441c12"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2017,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2017_79c38eebc481.clean.json",
+        "sha256": "3b605de5410177e96e4bf3bd1526fc066c0a791fac0d81a3bf565ed477cc89cf",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "ae6fed201db0193fa509b08dddccbbdcf6cf4ce7823a6ae5f33d404121728012"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2017,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2017_79c38eebc481.clean.json",
+        "sha256": "3b605de5410177e96e4bf3bd1526fc066c0a791fac0d81a3bf565ed477cc89cf",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "f553af1fd13a853274b9b2284fd1f0365aa29546760d785f77459cfeba474503"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2017,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 14
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2017_79c38eebc481.clean.json",
+        "sha256": "3b605de5410177e96e4bf3bd1526fc066c0a791fac0d81a3bf565ed477cc89cf",
+        "json_pointer": "/questions/13"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "e2bb127b678e0563264232b998558ad35db352a804e10f773b57f0246cca26a2"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2017,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 15
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2017_79c38eebc481.clean.json",
+        "sha256": "3b605de5410177e96e4bf3bd1526fc066c0a791fac0d81a3bf565ed477cc89cf",
+        "json_pointer": "/questions/14"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "52bfd45d2c5dd9697d1c310c6f84a7c872000345d93f771700dd224743ed0706"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2017,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 16
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2017_79c38eebc481.clean.json",
+        "sha256": "3b605de5410177e96e4bf3bd1526fc066c0a791fac0d81a3bf565ed477cc89cf",
+        "json_pointer": "/questions/15"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "dfe74f5ef233a25a25e1f3ba5d9ed535430bbb5f020becb323fff57dc10be225"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2017,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2017_79c38eebc481.clean.json",
+        "sha256": "3b605de5410177e96e4bf3bd1526fc066c0a791fac0d81a3bf565ed477cc89cf",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "268c262010bb693bdf4ef10a245e169599e0521d709d0f430d851033b26ac7ea"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2017,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 27
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2017_79c38eebc481.clean.json",
+        "sha256": "3b605de5410177e96e4bf3bd1526fc066c0a791fac0d81a3bf565ed477cc89cf",
+        "json_pointer": "/questions/26"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "e9495236f9d9a1068d924002930ea5c557f769dcabc5f32de91bb72a308da634"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2017,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 31
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2017_79c38eebc481.clean.json",
+        "sha256": "3b605de5410177e96e4bf3bd1526fc066c0a791fac0d81a3bf565ed477cc89cf",
+        "json_pointer": "/questions/30"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "120eb578cec752ce53bbdf3382edd98eb8e936033c3ece5d65889b578ab55033"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2018,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2018_3bca20d68c43.clean.json",
+        "sha256": "3b4ad18d0fe0570d19fbd266138c1e0487c43bb696aa011df541b17343ebd4b0",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "000b9ad46ce537ceba1dfe83f927321b564639086e6a0ec2177f453130646b00"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2018,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 3
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2018_3bca20d68c43.clean.json",
+        "sha256": "3b4ad18d0fe0570d19fbd266138c1e0487c43bb696aa011df541b17343ebd4b0",
+        "json_pointer": "/questions/2"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "5922f4a191a81c09d5d53ac887725d9122b9982e7a6f40fc879e9f14d51afce7"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2018,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2018_3bca20d68c43.clean.json",
+        "sha256": "3b4ad18d0fe0570d19fbd266138c1e0487c43bb696aa011df541b17343ebd4b0",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "da76309a9e8e15c86aeef8ca81c6b87a5484bc3cbd6d0bb37056e9b479d02b5b"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2018,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2018_3bca20d68c43.clean.json",
+        "sha256": "3b4ad18d0fe0570d19fbd266138c1e0487c43bb696aa011df541b17343ebd4b0",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "8c6807ee471bca1ce38b4ea906890db9d970e3fab1ab2fc303a9f75769266543"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2018,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 14
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2018_3bca20d68c43.clean.json",
+        "sha256": "3b4ad18d0fe0570d19fbd266138c1e0487c43bb696aa011df541b17343ebd4b0",
+        "json_pointer": "/questions/13"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "3ec9a7e2f19003fb6c2bbd62ea463fac8161df60ade9b4e2a3e9c7246ca76b9b"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2018,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 16
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2018_3bca20d68c43.clean.json",
+        "sha256": "3b4ad18d0fe0570d19fbd266138c1e0487c43bb696aa011df541b17343ebd4b0",
+        "json_pointer": "/questions/15"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "507dadd25cd0fb9b23ab0425616b4720e70a7745a74e765a3f5b6d6109e18c74"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2018,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2018_3bca20d68c43.clean.json",
+        "sha256": "3b4ad18d0fe0570d19fbd266138c1e0487c43bb696aa011df541b17343ebd4b0",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "a627592106a00347fad2d4ede3fe7c5ec625b7b7a8a460e9b1c70145a2189e05"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2018,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 23
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2018_3bca20d68c43.clean.json",
+        "sha256": "3b4ad18d0fe0570d19fbd266138c1e0487c43bb696aa011df541b17343ebd4b0",
+        "json_pointer": "/questions/22"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "28ed5c284cb875beed0ac89fd5f7039a41d00259e9b41a6b5b0875ecc3274053"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2018,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2018_3bca20d68c43.clean.json",
+        "sha256": "3b4ad18d0fe0570d19fbd266138c1e0487c43bb696aa011df541b17343ebd4b0",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "040fe163a9ad4c4d8493693f11a247f9fad55a86f46f11343f1a547e816e8c70"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2018,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 31
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2018_3bca20d68c43.clean.json",
+        "sha256": "3b4ad18d0fe0570d19fbd266138c1e0487c43bb696aa011df541b17343ebd4b0",
+        "json_pointer": "/questions/30"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "3c21d6dd5ba59f834d9351e0617827ad686ce5a42b09f879c52ed45b6d388001"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2019,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 1
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2019_52993364d7e3.clean.json",
+        "sha256": "4fad5c6f9a64409235b74a0b8e5da9a7295f39420c91b07eaddaf3255ce1b833",
+        "json_pointer": "/questions/0"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "6a554c42d1c24ae26433a6183ec1d60c2069a1e8957bf41ce0d598094fa096ed"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2019,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2019_52993364d7e3.clean.json",
+        "sha256": "4fad5c6f9a64409235b74a0b8e5da9a7295f39420c91b07eaddaf3255ce1b833",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "160b7cc59cbbe898685a4cd8d0c3589c5a931f890127e1ad3d274afd2a8a0897"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2019,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2019_52993364d7e3.clean.json",
+        "sha256": "4fad5c6f9a64409235b74a0b8e5da9a7295f39420c91b07eaddaf3255ce1b833",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "74732a09c62942395836aa3936cf2787a5dae93487b03e6ec9d77e02d98b4d28"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2019,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 16
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2019_52993364d7e3.clean.json",
+        "sha256": "4fad5c6f9a64409235b74a0b8e5da9a7295f39420c91b07eaddaf3255ce1b833",
+        "json_pointer": "/questions/15"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "60957984508ac4acdf4317652348fed4713776f0235caf2913e67c12b51c72aa"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2019,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2019_52993364d7e3.clean.json",
+        "sha256": "4fad5c6f9a64409235b74a0b8e5da9a7295f39420c91b07eaddaf3255ce1b833",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "4b4dccf8a1b96f8f8d672e0789a945d79c56442eb402be485f8d73342a74a74d"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2019,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 29
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2019_52993364d7e3.clean.json",
+        "sha256": "4fad5c6f9a64409235b74a0b8e5da9a7295f39420c91b07eaddaf3255ce1b833",
+        "json_pointer": "/questions/28"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "6244d9ffeb9cc81e751c38c157562a2b11f734404f214b3b830bf90e56b697ce"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2020,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 2
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2020_88d436a5b3b9.clean.json",
+        "sha256": "ff903dbdb9b9f06f10889d4acf04d152153874a3cef3e43a16c0284f8cfa058a",
+        "json_pointer": "/questions/1"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "9c9d0c34fd390aa66eb0fa3b030f523d5907e92ca17ef39abd8d1de66a542459"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2020,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 6
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2020_88d436a5b3b9.clean.json",
+        "sha256": "ff903dbdb9b9f06f10889d4acf04d152153874a3cef3e43a16c0284f8cfa058a",
+        "json_pointer": "/questions/5"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "dbe0d1e078a9ce1c045a821ce66c7c25ade5d9a326b261ef1596a69bee670611"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2020,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2020_88d436a5b3b9.clean.json",
+        "sha256": "ff903dbdb9b9f06f10889d4acf04d152153874a3cef3e43a16c0284f8cfa058a",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "f78b2bba9cf0eb1eac44d177ccf5ea5bfc251c6b150fc07cc8b385f89f140eba"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2020,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2020_88d436a5b3b9.clean.json",
+        "sha256": "ff903dbdb9b9f06f10889d4acf04d152153874a3cef3e43a16c0284f8cfa058a",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "115b6d9e8ab09fa98b707d416cd8cd966209d5d5f245d0ee70036feecc668890"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2020,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2020_88d436a5b3b9.clean.json",
+        "sha256": "ff903dbdb9b9f06f10889d4acf04d152153874a3cef3e43a16c0284f8cfa058a",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "17d1082105ea8e8c6e99eb513fb55f0e5c99af5df910e2b8acefd69ad57ddeb4"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2020,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 19
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2020_88d436a5b3b9.clean.json",
+        "sha256": "ff903dbdb9b9f06f10889d4acf04d152153874a3cef3e43a16c0284f8cfa058a",
+        "json_pointer": "/questions/18"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "43c06cb77e603d483e6a118d77b0c909227126e17ba5633e627aa6a730b295ff"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2020,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 24
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2020_88d436a5b3b9.clean.json",
+        "sha256": "ff903dbdb9b9f06f10889d4acf04d152153874a3cef3e43a16c0284f8cfa058a",
+        "json_pointer": "/questions/23"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "a196c75afa029e6a634b08fd461b20e92763e0610c5c2543a0b275b5d0bd1d3d"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2020,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2020_88d436a5b3b9.clean.json",
+        "sha256": "ff903dbdb9b9f06f10889d4acf04d152153874a3cef3e43a16c0284f8cfa058a",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "8082bbe614560d6581cbf5db3995df7d31f194c10fd660f904121aac293b3359"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2020,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 26
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2020_88d436a5b3b9.clean.json",
+        "sha256": "ff903dbdb9b9f06f10889d4acf04d152153874a3cef3e43a16c0284f8cfa058a",
+        "json_pointer": "/questions/25"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "e7eeed3f0b7b80dceaa16015b72895bd6c8e9d4111500930e71477f269a2cb54"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2020,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 28
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2020_88d436a5b3b9.clean.json",
+        "sha256": "ff903dbdb9b9f06f10889d4acf04d152153874a3cef3e43a16c0284f8cfa058a",
+        "json_pointer": "/questions/27"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "d2e3f2fd195202d4ffef0ac646738bbdbf17672d471f1830824d423d03fc4928"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2020,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 30
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2020_88d436a5b3b9.clean.json",
+        "sha256": "ff903dbdb9b9f06f10889d4acf04d152153874a3cef3e43a16c0284f8cfa058a",
+        "json_pointer": "/questions/29"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "416c7d0dc88ec4e5e9033f2818530936fe3f2553e5cd6d36759c7f838e493a4d"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2021,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 2
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2021_79ddc2445760.clean.json",
+        "sha256": "6678171da76993385bda0981bca926a464e47f5db381a302b49fa5d3425c180a",
+        "json_pointer": "/questions/1"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "cc9f190b00937cd5c4e7ae7ce848416bf5f3e04af2edb37ecd2c547ddc9fafe4"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2021,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 7
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2021_79ddc2445760.clean.json",
+        "sha256": "6678171da76993385bda0981bca926a464e47f5db381a302b49fa5d3425c180a",
+        "json_pointer": "/questions/6"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "ea82762a3a5ea93bc2c65166965b31556bcb4005ffcf72d65173a4e62f713018"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2021,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 12
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2021_79ddc2445760.clean.json",
+        "sha256": "6678171da76993385bda0981bca926a464e47f5db381a302b49fa5d3425c180a",
+        "json_pointer": "/questions/11"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "7beb2bf7a602ae5e56c2a40c3b06199606ccd6be85af3386e2df0117eefcc4c1"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2021,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 13
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2021_79ddc2445760.clean.json",
+        "sha256": "6678171da76993385bda0981bca926a464e47f5db381a302b49fa5d3425c180a",
+        "json_pointer": "/questions/12"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "c19ae7a94d65c4648b762bce03277c80df2a24df71d8981581349a341f29f995"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2021,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 18
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2021_79ddc2445760.clean.json",
+        "sha256": "6678171da76993385bda0981bca926a464e47f5db381a302b49fa5d3425c180a",
+        "json_pointer": "/questions/17"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "f0ab8155844426cbfe09872d37b50dd570c4f9687b0a49fb0790a9b399961cb4"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2021,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 19
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2021_79ddc2445760.clean.json",
+        "sha256": "6678171da76993385bda0981bca926a464e47f5db381a302b49fa5d3425c180a",
+        "json_pointer": "/questions/18"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "c313b408b8f78c1473185e3e0dc8810037d0955e3c3deabc6c80c47f5b28ac91"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2021,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 24
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2021_79ddc2445760.clean.json",
+        "sha256": "6678171da76993385bda0981bca926a464e47f5db381a302b49fa5d3425c180a",
+        "json_pointer": "/questions/23"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "8c822a34dd87230f872cca200a207773fceeb9cc2cdf97b9b87cdffd3043db0a"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2021,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 25
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2021_79ddc2445760.clean.json",
+        "sha256": "6678171da76993385bda0981bca926a464e47f5db381a302b49fa5d3425c180a",
+        "json_pointer": "/questions/24"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "b0b950976d1d61c0253e9083252cb963b370e184de22ea5359eb068d555f901d"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2021,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 26
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2021_79ddc2445760.clean.json",
+        "sha256": "6678171da76993385bda0981bca926a464e47f5db381a302b49fa5d3425c180a",
+        "json_pointer": "/questions/25"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "c3f592dc11d0b63c4e1816c26ef3e8372ff84a4bd963a6a9f7eb6be00011727a"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2021,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 28
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2021_79ddc2445760.clean.json",
+        "sha256": "6678171da76993385bda0981bca926a464e47f5db381a302b49fa5d3425c180a",
+        "json_pointer": "/questions/27"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "ad6a7716f045cf4ad7ac8595722dd8240a0ad90fadbc9fc67fbfa49445e86d16"
+    },
+    {
+      "identity": {
+        "source": "bmat",
+        "year": 2021,
+        "paper": "4500/11",
+        "variant": null,
+        "section": "section_1",
+        "question_number": 30
+      },
+      "question_reference": {
+        "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\bmat\\bmat_2021_79ddc2445760.clean.json",
+        "sha256": "6678171da76993385bda0981bca926a464e47f5db381a302b49fa5d3425c180a",
+        "json_pointer": "/questions/29"
+      },
+      "categorization": {
+        "category": null,
+        "subcategories": [],
+        "patterns": [],
+        "status": "not_evaluated",
+        "confidence": "unresolved",
+        "rationale": "Normal task attribution outside this targeted Critical Thinking pass remains pending; surviving exclusion filters is not a Problem-Solving label.",
+        "issues": []
+      },
+      "question_sha256": "4b92dbdb48f116fb5e882f8129ea49fc45d46e65bd49c48e5d43774152402cbf"
+    }
+  ]
+}

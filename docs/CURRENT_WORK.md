@@ -1,8 +1,15 @@
 ## Current milestone
 
-Blackstone clean questions + TSA 2008–2016 explained answers → matched structured dataset.
+Pre-final assembly: categorized, issue-free TSA/BMAT → unified JSON → optional
+question-rendering backtesting → later database import.
 
 ## Current focus
+
+Pre-final assembly/validation is implemented: 987 accepted records (700 TSA,
+287 BMAT), one canonical TSA category and difficulty=null each. Existing intrinsic
+IDs are reused; reruns are byte-identical. Earlier stages remain read-only.
+The opt-in renderer consumes unified JSON only. Difficulty assignment and database
+import remain separate future tasks. Notes below record historical upstream work.
 
 2017–2019 supplied explanation imports and visual review: 97 text explanations matched by exact identity; 39 visual explanations accepted using the existing prompt/validator and inspected stored assets. Twelve visual cases remain unresolved (five structural, seven requiring stronger geometric proof); two text-sufficient illustrated cases are excluded from image-only generation. Match conflicts remain unchanged. Canonical HTML and no-explanation exports are rebuilt. Reapply via `processors.matching.explanation_imports`; see `docs/2017-2019_questions_images_with_explanation_ai_generated/README.md`. No Gemini API calls or raw/clean changes.
 
@@ -13,6 +20,18 @@ Semantic explanation safeguards added: explicit coexistence/assumption prompt ru
 Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then match them to existing clean Blackstone questions.
 
 ## Already completed
+
+- Pre-final transition: instructions/schema/architecture updated before code.
+  `processors/pre_final/` writes `data/pre_final/questions.json` and compact
+  `validation.json`; excludes 343 BMAT-specific skips, 72 issue-bearing records
+  and 12 additional category-only failures (unique/disjoint counts). No upstream
+  processing or question HTML generation during assembly. Renderer begins Source,
+  Explanation by AI, Category. Fifty focused/regression tests, Ruff and CLI
+  validation pass. User commands: `docs/PRE_FINAL_BACKTEST.md`.
+
+- Targeted correction: canonical JSON/assets are now the permanent inspection authority; BMAT matching/category `run` no longer renders HTML. Backtest guides/catalog generators are instructional only, with explicit year/question export selectors. Supplied 2020/2021 text is authoritative for image-only web replacements: 64 normalized texts, 54 attached (48 matched, six review), nine intentional skips and one upstream defer retained. Newly attempted full-image OCR code/cache was removed at the user's request and both web/TSA source JSONs restored exactly. BMAT 2021 Q25 corrected through a generalized dependent-unit-rate pattern and a renewed content-bound assessment; Q26 has no current stored/live crop issue and its PNGs remain unchanged. No issue-free multi-TSA-primary BMAT targets exist; that step was skipped. No question inspection exports generated for development.
+
+- Complete BMAT categorization: all 664 records considered; 316 TSA-task classifications, 343 canonical BMAT-specific types, five input reviews. All 178 previously pending tasks reviewed against full text and stored source visuals; eight additional existing BMAT response-framework types recognized. Two newly observed option-boundary defects (2011 Q13, 2015 Q29) remain blocked alongside the three known upstream reviews. One category per accepted BMAT record; TSA multi-label behavior and RAW/CLEAN/matching remain unchanged. Reproduce: `python -m categorization.bmat run`; decisions: `categorization/bmat/decisions.tsv` / `review.json`; current reports: `docs/BMAT_CATEGORIZATION_{ISSUES,BACKTEST}.md`.
 
 - BMAT continuation: 664 records, 326 clean-ready / 335 intentional skips / three upstream reviews; ten genuine RAW defects (seven independently skipped), zero cleaning-specific defects. `too long` uses >60% usable height to final option; Q18's verified bullet glyph clears its defect but 75.44% occupancy remains excluded. Compact shared declarations repair 2015 Q18/Q31; 667 question-only previews preserve all 524 source-page texts and 669 historical preview PNGs. Worked solutions: 594 parsed source records, 287 initial eligible matches. Task-supplied 98 text records add 14 matches; 48 existing explanations preserved, 27 skips, one upstream defer, eight source reviews; current verified matches 295. No imported images or generated explanations. Categorization remains 148 supported / 178 unattempted / three genuine reviews / 335 skips, with fresh matching context. Reports: `docs/BMAT_{RAW,CLEANING,MATCHING,CATEGORIZATION}_{ISSUES,BACKTEST}.md`; audit: `inspections_bmat/repair/validation.json`. Missing supplied 2011 Q15 header and source inconsistencies remain explicit.
 
@@ -89,6 +108,11 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Code navigation
 
+- Pre-final assembly/validation: `processors/pre_final/core.py`, schema:
+  `processors/pre_final/schema.json`, opt-in renderer: `render.py`; tests:
+  `tests/test_pre_final.py`. Canonical inputs are categorized TSA/BMAT JSON plus
+  their existing hash-verified matching context, never generated reports.
+
 - Semantic triage/review evidence: `processors/explanations/validator.py`; candidate-bound approval: `generator.approve_after_quality_review`; regressions: `tests/test_explanation_semantics.py`. Structural pass alone stays pending, not accepted.
 
 - Deferred-provider queue: `processors/explanations/scheduler.py`; orchestration/resume/metrics: `generator.py`; regressions: `tests/test_explanation_deferred.py`.
@@ -113,14 +137,19 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Do not work on yet
 
-- final dataset generation;
+- database import and difficulty assignment;
+- upstream repairs/reruns during pre-final assembly;
 - additional sources.
 
 ## Next task
 
-- Review the 11 remaining BMAT RAW defects (three non-skipped, eight also skipped). Shared/overlapping visual envelopes, outlined labels and unknown fonts remain unresolved. Do not infer matching completion or normal PS categories from the targeted CT pass; matching, normal PS attribution and explanation generation require a separate task.
+- Use pre-final JSON for explicitly requested rendering/backtesting. Database import
+  and difficulty assignment require separate tasks. Remaining upstream reviews
+  below are historical backlog, not instructions for pre-final assembly.
 
-- Manually backtest the current refinement trail and investigate the remaining 25 PS reviews: 11 below semantic thresholds, nine source/explanation conflicts, two incomplete extractions, two taxonomy boundaries and one insufficiently specified task. Three unclassified records remain. Assistant assessments are not human approval; do not generate explanations or repair unrelated upstream issues implicitly.
+- Review the ten remaining BMAT RAW defects (three non-skipped, seven also skipped), plus the option-boundary/column defects newly observed during categorization in 2011 Q13 and 2015 Q29. Upstream repair and matching changes remain separate tasks; all safe categorization inputs have now been attributed. Do not infer matching completion from a category or start explanation generation.
+
+- Inspect canonical TSA categorization issue records and their directly referenced assets for the remaining 25 PS reviews: 11 below semantic thresholds, nine source/explanation conflicts, two incomplete extractions, two taxonomy boundaries and one insufficiently specified task. Three unclassified records remain. Do not generate question reports merely to read them; assistant assessments are not human approval and do not authorize unrelated upstream changes.
 
 - Review the imported/visual 2017–2019 explanations through the new HTML index and twelve unresolved cases in the year-specific workspace reports. Historical Gemini pilot commands remain inactive.
 

@@ -30,9 +30,8 @@ Counts are unique question records. Intentional skips are policy exclusions, not
     },
     "statuses": {
       "intentionally_skipped": 27,
-      "matched_supplied": 14,
+      "matched_supplied": 62,
       "supplied_review_required": 8,
-      "existing_preserved": 48,
       "deferred_upstream_issue": 1
     },
     "target_missing": 0,
@@ -431,65 +430,65 @@ Counts are unique question records. Intentional skips are policy exclusions, not
 
 | Year | Question | Status | Correct answer |
 |---|---|---|---|
-| 2003 | [1](../inspections_bmat_matching/2003_q001.html) | deferred_upstream_issue | — |
-| 2004 | [14](../inspections_bmat_matching/2004_q014.html) | deferred_upstream_issue | — |
-| 2021 | [8](../inspections_bmat_matching/2021_q008.html) | deferred_upstream_issue | — |
+| 2003 | 1 | deferred_upstream_issue | — |
+| 2004 | 14 | deferred_upstream_issue | — |
+| 2021 | 8 | deferred_upstream_issue | — |
 
 ### duplicate_source (1 unique questions)
 
 | Year | Question | Status | Correct answer |
 |---|---|---|---|
-| 2008 | [12](../inspections_bmat_matching/2008_q012.html) | duplicate_source | — |
+| 2008 | 12 | duplicate_source | — |
 
 ### explanation_review_required (6 unique questions)
 
 | Year | Question | Status | Correct answer |
 |---|---|---|---|
-| 2020 | [18](../inspections_bmat_matching/2020_q018.html) | explanation_review_required | D |
-| 2020 | [23](../inspections_bmat_matching/2020_q023.html) | explanation_review_required | B |
-| 2020 | [24](../inspections_bmat_matching/2020_q024.html) | explanation_review_required | B |
-| 2020 | [25](../inspections_bmat_matching/2020_q025.html) | explanation_review_required | D |
-| 2020 | [30](../inspections_bmat_matching/2020_q030.html) | explanation_review_required | C |
-| 2021 | [24](../inspections_bmat_matching/2021_q024.html) | explanation_review_required | A |
+| 2020 | 18 | explanation_review_required | D |
+| 2020 | 23 | explanation_review_required | B |
+| 2020 | 24 | explanation_review_required | B |
+| 2020 | 25 | explanation_review_required | D |
+| 2020 | 30 | explanation_review_required | C |
+| 2021 | 24 | explanation_review_required | A |
 
 ### source_missing (17 unique questions)
 
 | Year | Question | Status | Correct answer |
 |---|---|---|---|
-| 2014 | [1](../inspections_bmat_matching/2014_q001.html) | source_missing | — |
-| 2014 | [2](../inspections_bmat_matching/2014_q002.html) | source_missing | — |
-| 2014 | [3](../inspections_bmat_matching/2014_q003.html) | source_missing | — |
-| 2014 | [4](../inspections_bmat_matching/2014_q004.html) | source_missing | — |
-| 2014 | [6](../inspections_bmat_matching/2014_q006.html) | source_missing | — |
-| 2014 | [7](../inspections_bmat_matching/2014_q007.html) | source_missing | — |
-| 2014 | [12](../inspections_bmat_matching/2014_q012.html) | source_missing | — |
-| 2014 | [13](../inspections_bmat_matching/2014_q013.html) | source_missing | — |
-| 2014 | [15](../inspections_bmat_matching/2014_q015.html) | source_missing | — |
-| 2014 | [16](../inspections_bmat_matching/2014_q016.html) | source_missing | — |
-| 2014 | [17](../inspections_bmat_matching/2014_q017.html) | source_missing | — |
-| 2014 | [18](../inspections_bmat_matching/2014_q018.html) | source_missing | — |
-| 2014 | [22](../inspections_bmat_matching/2014_q022.html) | source_missing | — |
-| 2014 | [24](../inspections_bmat_matching/2014_q024.html) | source_missing | — |
-| 2014 | [25](../inspections_bmat_matching/2014_q025.html) | source_missing | — |
-| 2014 | [26](../inspections_bmat_matching/2014_q026.html) | source_missing | — |
-| 2014 | [30](../inspections_bmat_matching/2014_q030.html) | source_missing | — |
+| 2014 | 1 | source_missing | — |
+| 2014 | 2 | source_missing | — |
+| 2014 | 3 | source_missing | — |
+| 2014 | 4 | source_missing | — |
+| 2014 | 6 | source_missing | — |
+| 2014 | 7 | source_missing | — |
+| 2014 | 12 | source_missing | — |
+| 2014 | 13 | source_missing | — |
+| 2014 | 15 | source_missing | — |
+| 2014 | 16 | source_missing | — |
+| 2014 | 17 | source_missing | — |
+| 2014 | 18 | source_missing | — |
+| 2014 | 22 | source_missing | — |
+| 2014 | 24 | source_missing | — |
+| 2014 | 25 | source_missing | — |
+| 2014 | 26 | source_missing | — |
+| 2014 | 30 | source_missing | — |
 
 ### source_unresolved (5 unique questions)
 
 | Year | Question | Status | Correct answer |
 |---|---|---|---|
-| 2004 | [12](../inspections_bmat_matching/2004_q012.html) | source_unresolved | — |
-| 2005 | [24](../inspections_bmat_matching/2005_q024.html) | source_unresolved | — |
-| 2016 | [16](../inspections_bmat_matching/2016_q016.html) | source_unresolved | — |
-| 2016 | [29](../inspections_bmat_matching/2016_q029.html) | source_unresolved | — |
-| 2019 | [1](../inspections_bmat_matching/2019_q001.html) | source_unresolved | — |
+| 2004 | 12 | source_unresolved | — |
+| 2005 | 24 | source_unresolved | — |
+| 2016 | 16 | source_unresolved | — |
+| 2016 | 29 | source_unresolved | — |
+| 2019 | 1 | source_unresolved | — |
 
 ### supplied_review_required (2 unique questions)
 
 | Year | Question | Status | Correct answer |
 |---|---|---|---|
-| 2011 | [4](../inspections_bmat_matching/2011_q004.html) | supplied_review_required | — |
-| 2011 | [16](../inspections_bmat_matching/2011_q016.html) | supplied_review_required | — |
+| 2011 | 4 | supplied_review_required | — |
+| 2011 | 16 | supplied_review_required | — |
 
 ## Intentional exclusions
 

@@ -20,6 +20,9 @@ prompt context is required; this is not a general dictionary word splitter.
 Run from the repository root. Cleaning reads stored raw JSON/PNG assets only;
 it never opens PDFs, acquires files, matches answers, or categorizes questions.
 
+Read canonical CLEAN/RAW records directly during development. The HTML commands
+below are optional user-requested exports, not a way to reconstruct question data.
+
 Raw CID visual-option recovery now supplies distinct A–E image references for
 the affected 2012–2014 layouts. Regenerate clean output with the command below
 after reparsing; cleaning does not guess missing raw associations. Clean layout

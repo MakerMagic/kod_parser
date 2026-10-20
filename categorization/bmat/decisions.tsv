@@ -1,0 +1,179 @@
+year	question	category_id	evidence	input_issue
+2003	3	ps_procedure	Cross-check row and column marginal totals to locate the erroneous intersection; every total matters, so filtering a supplied subset does not solve the task.
+2003	13	ps_procedure	Reverse successive remaining-passenger fractions from the final eight passengers; a dependent backwards calculation, not selecting an applicable table row.
+2003	15	ps_procedure	Construct within-pool and between-pool pair counts without double counting, then include the final; the competition process supplies the counting method.
+2003	19	ps_procedure	Undo the two clocks' separate errors to reconstruct true arrival times before comparing them; no finished comparable values are supplied for selection.
+2003	29	ps_procedure	Derive the possible outcome shares and the least compatible integer population; the constraint calculation remains after all data are highlighted.
+2003	30	Subpoints	Evaluate three complete numbered propositions and select one combination-valued answer; this is the existing BMAT Subpoints framework, not three numerical inputs.
+2003	33	ps_procedure	Reconstruct the horses' order through successive positional changes under the stated constraints; not recognizing a second depiction of one fixed arrangement.
+2003	34	ps_procedure	Balance solute and water through the mistaken preparation and correction; the decisive work is deriving the required change, not choosing supplied rates.
+2004	1	ps_similarity	Compare the candidate outlines with the union of the four fixed triangles using preserved angles and area; the requested result is a compatible representation.
+2004	3	ps_procedure	Construct the minimum possible overlap of three groups under their given totals; the required extremal bound is not a value already present in the information.
+2004	5	ps_procedure	Use relative walking and cycling times and delays to derive the distance; successive rate relationships, not a visually equivalent configuration, determine the answer.
+2004	7	ps_procedure	Remove material costs, split profit, and reimburse the relevant outlays in order; a cash-flow procedure remains even when all required inputs are identified.
+2004	12	Several correct answers	The instruction explicitly says to shade all that apply and the separate A-E responses are not combination-valued choices; preserve the existing multiple-response BMAT type.
+2004	16	ps_procedure	Test feasible weight orders against the initial weights and their changes; a constraint reconstruction is necessary, rather than selecting a given ranked list.
+2004	18	ps_procedure	Convert units, count cubic fragments and distinguish new internal surface from original surface; the dependent geometric calculation is the material operation.
+2004	26	ps_procedure	Synchronize two periodic cycles with their offsets to find the next coincidence; no applicable row or alternative depiction gives the result directly.
+2004	27	ps_procedure	Separate the water and container masses before applying different volume and area scale factors; the unknown quantity requires constructing the calculation chain.
+2004	28	Subpoints	Judge three full numbered statements and choose their correct combination, rather than separate response boxes or three incidental data entries; existing Subpoints applies.
+2004	29	ps_procedure	Track material remaining after the spill and replacement to obtain the final dilution; the sequential mixture states must be calculated rather than recognized.
+2005	1	ps_procedure	Account for boundary sharing in a repeating tile unit and derive the limiting ratio; merely recognizing the pictured pattern does not produce the requested count ratio.
+2005	3	ps_procedure	Combine the head and leg relationships for two animal types to derive the unknown count; the needed result is constructed from coupled constraints.
+2005	11	ps_similarity	Translate the shaded Venn intersection and exclusion into the corresponding verbal set relationship; the decisive operation is equivalence between representations.
+2005	13	ps_procedure	Apply the successive glass attenuation and reflection process to obtain transmitted light; the picture supplies process inputs, not equivalent answer configurations.
+2005	15	ps_procedure	Reverse the offer revenue to the original cost basis before calculating profit at the normal price; dependent price relationships are the central difficulty.
+2005	24	Several correct answers	The prompt requires two separately labelled responses applying to the graph, without pair-valued combination choices; this is the existing several-correct-answers type.
+2005	28	ps_procedure	Reconstruct the phase of the four-number blocks and the parity restriction to determine the next state; the operation is rule execution, not pattern resemblance alone.
+2005	30	ps_procedure	Enumerate car-quality orders under the early-stopping search strategy and count successful outcomes; a conditional process, not information lookup, decides the answer.
+2006	1	ps_procedure	Undo independent population changes before forming the requested ratio; selecting the stated populations alone leaves the essential inverse calculation unsolved.
+2006	12	ps_procedure	Link offer unit price and fixed margin to the required supplier-price reduction; a reconstructed cost relationship rather than tariff selection is necessary.
+2006	17	ps_procedure	Use the remaining ride budget after fixed choices and gum expenditure to solve the unknown split; the unknown integer counts must be derived.
+2006	23	ps_procedure	Combine the mean and relative-closeness conditions to bound the true weight; every guess constrains the feasible interval, rather than offering distractor rows.
+2006	25	ps_procedure	Combine the hands' angular-rate ratio with the squared-length relationship; the clock drawing illustrates a dependent calculation, not an alternative viewpoint match.
+2007	1	ps_procedure	Iterate the height-deficit recurrence over three years; the final value is generated by successive state changes rather than selected from supplied information.
+2007	7	ps_procedure	Count allowable alternating colour orders and compare with all position assignments; the probability requires a combinatorial method, not recognizing equivalent pictures.
+2007	15	ps_procedure	Derive the unknown vote total from the stated fractions, then compare winning totals and margin; the dependent arithmetic chain remains after data selection.
+2007	18	ps_procedure	Translate the budget into whole tiles and a two-to-one integer layout before finding the remaining bed width; packing and discreteness make the procedure material.
+2007	19	ps_procedure	Use the relative gain per lap to infer the time needed to gain a full lap; the result requires rate reasoning rather than choosing a supplied lap time.
+2007	25	ps_select	Select current area, additional area and the 2017 target while rejecting the unrelated 2012 target; after that scenario-specific selection the proportion is routine.
+2007	26	ps_procedure	Enumerate feasible seatings under adjacency, window and aisle conditions and form the probability; all conditions must be simulated, not simply filtered by one attribute.
+2007	27	ps_procedure	Construct the capture-recapture proportion from the observed marked fraction to estimate the population; selecting the counts does not establish the necessary relationship.
+2008	3	ps_select	Filter the table for the required 4 mm diameter and 35/45 mm lengths before forming the favourable-to-total fraction; irrelevant sizes create the material selection task.
+2008	5	ps_similarity	Match views of the same unconventional die through invariant face adjacency and opposites; no new numeric state or sequential transformation is requested.
+2008	6	Subpoints	The task evaluates three verbal criticisms and selects their combination; a decorative header does not turn this proposition framework into spatial Problem-Solving.
+2008	12	ps_procedure	Compose the price and attendance percentage changes to obtain revenue change; there is no excess dataset to filter and multiplication bases must be reconstructed.
+2008	13	Subpoints	Three complete statements must be evaluated together and one labelled combination selected; preserve the defined Subpoints type rather than force a TSA scalar intent.
+2008	14	ps_select	Select only later-dated performances that actually improve the existing record, rejecting faster-looking but inapplicable ranked entries; applicability is the main challenge.
+2008	17	Subpoints	Evaluate the three proposed challenges as full propositions and choose the applicable combination; this is the existing three-subpoint BMAT answer framework.
+2008	18	ps_procedure	Construct worst-case rounding bounds for volume and concentration before applying the integer limit; a bound calculation, not selecting a finished value, is needed.
+2008	23	ps_procedure	Count binary strings by length and include the inter-letter gaps correctly; the communication construction determines the count through a nontrivial method.
+2008	27	ps_procedure	Model outbound and return motion relative to the moving convoy to derive courier speed; the requested unknown cannot be obtained by reading a given rate.
+2008	29	ps_procedure	Partition the concatenated digits into six distinct admissible numbers under the range constraint; systematic constrained reconstruction is the solving operation.
+2008	31	ps_similarity	Judge whether the fixed Soma pieces are compatible with the target cuboid using their spatial structure; the final task is configuration correspondence, not counting outcomes.
+2009	5	ps_procedure	Minimize birthday events while respecting twins and divisibility by gender counts; simultaneous integer constraints require constructing a feasible extremal family.
+2009	7	ps_procedure	Infer unknown usage from equal Gold and Silver costs, then calculate the Bronze saving; this is not a given usage profile selecting an already applicable tariff.
+2009	11	ps_similarity	Compare folded and unfolded outlines through preserved edge and face relationships; the answer is an equivalent spatial representation, not a new calculated quantity.
+2009	13	ps_procedure	Track two bag-transfer states and eliminate incompatible pairs of claims; four propositions are not the exactly-three Subpoints framework or separate multi-response answers.
+2009	23	ps_procedure	Decode the combined date, sequence and check-digit rules and test candidate validity; the answer follows rule simulation rather than a resemblance between codes.
+2009	27	ps_procedure	Infer the meal price from the first failed purchase, then simulate weekday token balances; the dependent state process is indispensable after inputs are known.
+2009	31	ps_procedure	Execute the shortest-seek lift algorithm including the new request to reconstruct its next stops; this is a process simulation, not simply selecting a timetable row.
+2010	1	ps_procedure	Combine the two weight lookups with the joint weight, then reverse the BMI relationship; constructing the missing person's value is more than selecting applicable cells.
+2010	3	ps_similarity	Locate the scatter point corresponding to the specified row of the table; the same relationship is represented in two forms and no new process must be devised.
+2010	5	ps_procedure	Schedule preparation, baking and cooling with permitted overlaps to find the critical completion time; all stage durations matter and data selection is insufficient.
+2010	7	ps_procedure	Enumerate digit masks compatible with three stuck lights and the score bound; systematic state testing, not merely rotating or matching a fixed display, is required.
+2010	12	ps_select	Identify the tile colour-count profile whose exclusion balances the supplied inventory; the task filters a given profile, not a rotated representation or newly built design.
+2010	14	ps_procedure	Compare the segment-state changes across digit pairs to maximize the number switched; the answer requires systematic pair testing rather than equivalence of shapes.
+2010	18	ps_procedure	Construct a maximum packing of H-shaped cards, considering interlocking and rotation; rotation is an operation within optimization, not the final recognition task.
+2010	23	ps_procedure	Count unordered valid digit-distinct number pairs against the full sample space; the probability needs an explicit counting method and careful duplicate avoidance.
+2010	25	ps_procedure	Simulate exchanges and opponents' scores under conditional doubling to select the best result; the dynamic rules, not a supplied result profile, determine success.
+2010	29	ps_procedure	Partition the apples into two triples meeting the tolerance and identify the unused apple; checking feasible combinations is essential rather than choosing a single input.
+2011	3	ps_select	The specified deluxe/no-meals/car scenario selects applicable hotel and hire rates from competing offers; after highlighting those rates, only routine cost addition remains.
+2011	12	ps_similarity	Group equal-sized tile patterns modulo rotation; the decisive criterion is preserved configuration under transformation, not arbitrary numerical pattern counting.
+2011	13	ct_impact	Evaluate new evidence strengthening the HAR1-language hypothesis, not explain the phenomenon itself. The source preview confirms displaced option boundaries in CLEAN; defer acceptance pending that upstream repair.	option_boundary_defect
+2011	14	ps_procedure	Reconstruct wins, draws and losses from the league totals and their joint consistency; all teams constrain the solution, so selecting one row cannot solve it.
+2011	16	ps_select	Select volume and surface-area information for the relevant lakes and ignore lengths and other descriptors; the depth-ratio comparison is routine after that selection.
+2011	18	ps_procedure	Use age and service contributions to solve Ruby's working years and then compare with Jasper; the dependent wage calculation remains after choosing relevant inputs.
+2011	24	ct_infer	Derive what is entailed by the manager's only-if condition while rejecting its converse and inverse; the task concerns a new logical conclusion, not a parallel argument.
+2011	25	ps_procedure	Track oil and vinegar through two transfers with changing mixtures; multiple dependent material-balance states, not relevant-row selection, determine the result.
+2011	27	ps_procedure	Systematically test combinations of three pieces and count those forming a rectangle; generating feasible combinations is material, beyond recognizing one fixed equivalent outline.
+2011	29	ps_procedure	Relate walking and cycling distances to the late-departure offset and meeting place; the unknown speed ratio requires a constructed relative-motion calculation.
+2012	1	ps_select	Filter the countries for the joint population and area proportions requested; identifying the applicable comparative profile is central, with only routine comparison afterward.
+2012	3	ps_select	Select the omitted tile whose pattern counts balance the inventory; the task filters supplied profiles rather than matching a folded or rotated representation.
+2012	7	ps_procedure	Derive the repeating interior tiling unit while accounting for shared boundaries, then calculate the ratio; recognizing a similar drawing alone does not produce it.
+2012	12	ps_select	Select Thursday's usable earliest outbound and latest return services satisfying the arrival limit; the many inapplicable timetable entries dominate over routine interval arithmetic.
+2012	16	ps_procedure	Calculate shaded area by weighted counts of the different tile patterns; the task uses all contributing areas and does not ask for an equivalent configuration.
+2012	18	ps_procedure	Construct the possible overlap bounds by inclusion and exclusion; the required range is a derived constraint result rather than an already supplied relevant subset.
+2012	25	ps_procedure	Simulate the three dart outcomes including order-sensitive halving and miss rules; selecting the numerical scores alone leaves the decisive sequence unresolved.
+2012	27	ps_procedure	Reverse instalment cash flows into sales and account separately for May and June receivables; a dependent accounting reconstruction, not simple tariff selection, is needed.
+2012	29	ps_procedure	Relate net ticket receipts and the forty-percent refunds to derive audience and refund values; the core operation is constructing the coupled revenue equations.
+2012	31	ps_procedure	Maximize the final score subject to the fixed points total and guaranteed finishing rank; feasibility and extremal constraints require systematic case handling.
+2013	1	ps_procedure	Complete the operator rota under exactly-two-per-day, three-day maximum and no-four-consecutive restrictions; interacting scheduling constraints cannot be solved by filtering one row.
+2013	3	ps_procedure	Combine modulo-seven birthday shifts with leap-day effects; one pair-valued answer is still a single response and does not invoke the multiple-answer BMAT type.
+2013	5	ps_procedure	Use reduced price, sales ratio and the revenue increase to reconstruct the total; dependent relationships, rather than selection of an applicable price, are decisive.
+2013	6	ct_impact	Assess a new fact that challenges the stated theory; challenge means weakening this argument, not a non-argument difficulty or identifying an already-present flaw.
+2013	7	ps_procedure	Match first and surnames under letter-repetition and length restrictions; this is constraint assignment, not matching equivalent argument structures or rotated figures.
+2013	14	ps_procedure	Apply alphabetical order, digit-word lengths and numeric sum constraints together; the unknown number must be generated by systematic constrained testing.
+2013	16	ps_procedure	Reconstruct calendar dates from name initials and two/five-month gaps; temporal sequencing remains material after every stated clue is highlighted.
+2013	18	ps_procedure	Enumerate admissible nonzero squared date/time assignments in September; the answer is a count of valid constructions, not a supplied profile or equivalent picture.
+2013	25	ps_procedure	Combine the forty-one-minute offset with digit constraints at two consecutive minutes; reconstructing feasible clock states is the necessary procedural operation.
+2013	26	ps_procedure	Propagate the octahedron's orientation through the specified rolling sequence to obtain a new bottom face; this executes a state-changing process rather than matching two static views.
+2013	27	ct_infer	Use exhaustive married/unmarried logical cases to determine the entailed conclusion; the task derives a claim from premises rather than scheduling or calculating numeric states.
+2013	31	ps_procedure	Assign numbers to seats while satisfying the simultaneous row-sum constraints; constructing a feasible arrangement, not recognizing the same pictured arrangement, is decisive.
+2014	1	ps_select	Filter records for positive change in both measures; identifying the qualifying subset of supplied data is the material operation, with no substantial generated procedure.
+2014	3	ps_procedure	Construct a valid password under its initial, no-repetition and known-position conditions; the unknown sequence must be derived rather than selected by a single supplied attribute.
+2014	7	ps_procedure	Combine the free small jar with its extra contents relative to the large-jar baseline; the dependent bonus bases, not merely the presence of a price table, create difficulty.
+2014	12	ps_procedure	Intersect intervals implied by the relative accuracy of the guesses to recover the true count; the constraints must be modeled, not just read from a selected entry.
+2014	16	ps_select	Choose the eight-page colour/black-and-white tariff row and the five-hundred-copy rates, rejecting the other page-count bands; subsequent price comparison is routine.
+2014	18	ps_procedure	Simulate the draw under alternating parity and minimum adjacent-gap rules to determine possible opponents; the process changes states and is not a static equivalence match.
+2014	22	ps_procedure	Convert decimal-day time while adjusting the midday epoch; unit and origin transformations generate the answer instead of selecting a ready-made corresponding diagram.
+2014	24	ps_select	Choose applicable discount and voucher rules for the specified finished room packages; competing offer applicability dominates, and remaining cost comparisons are routine.
+2014	26	ps_procedure	Enumerate concatenated digit squares subject to nonzero and nonrepetition restrictions; a candidate-generation procedure rather than superficial numerical resemblance is needed.
+2014	30	ps_procedure	Schedule single-track meetings with siding waits, running and dwell constraints; the temporal dependency process cannot be replaced by selecting one timetable value.
+2015	1	ps_procedure	Compose transitive height comparisons into a constrained partial order; procedural relation reconstruction does not require numerical data or a diagram.
+2015	7	ps_procedure	Reverse Thursday's purchase proceeds to Wednesday's price, then calculate Paul's return; the dependent inverse price chain is the core task.
+2015	12	ps_procedure	Test feasible score combinations for four puzzles with discrete scoring rules; the supplied table is input to a case procedure, not a finished applicable answer.
+2015	14	ps_procedure	Decompose mixtures into base colours and use the known red consumption to derive blue remaining; material-balance dependencies persist after information selection.
+2015	16	ps_procedure	Count disjoint sibling pairs without cross-gender double counting and reconcile the school total; the combinatorial reconstruction is the material solving operation.
+2015	24	ct_impact	Assess which of five propositions jointly weaken the argument. One pair-valued answer is a single response, and five statements do not satisfy the exactly-three Subpoints definition.
+2015	25	ps_procedure	Construct digits from place-value and grouped-sum restrictions simultaneously; the resulting number is not present as an applicable data row or equivalent drawing.
+2015	27	ps_procedure	Derive overlap bounds using inclusion and exclusion, as in other set-constraint problems; selecting the given counts does not supply the necessary bound.
+2015	29	ps_procedure	Compute wall areas net of openings, coats and whole-tin optimization. The source preview shows A-H in two columns but CLEAN merges E-H into A-D; defer acceptance until upstream options are repaired.	merged_option_columns
+2015	31	ps_procedure	Use visible face opposites and all-six pair-sum uniqueness to reconstruct values on a different die; substantial constraint construction dominates over matching an alternative view of one object.
+2016	1	ps_procedure	Complete missing contingency-table totals before constructing the conditional-probability denominator; the requested value is not obtainable by selecting an existing complete row.
+2016	3	ps_select	Select the applicable stay-length discount and car-park pass rates for five versus eight nights; scenario-dependent tariff selection dominates the routine final addition.
+2016	7	ps_procedure	Reverse the piecewise tax and age-band changes to infer unknown income; highlighting applicable rates still leaves the substantial inverse calculation unsolved.
+2016	12	ps_procedure	Decode both readings of the unusual clock and subtract across the overnight interval; the decisive task executes a time-conversion process rather than matching a static view.
+2016	14	ps_procedure	Accumulate monthly changes from the initial balance before counting threshold exceedances; the graph shows changes, so filtering its plotted heights would be wrong.
+2016	16	ps_procedure	Calculate net directed coin flows for every player using the full set of transfers; no small relevant subset or equivalent visual configuration directly yields the final balances.
+2016	18	ps_select	Filter mortgages by the required loan-to-value eligibility, then compare the applicable fees and annual interest; rejecting ineligible offers is a material selection operation.
+2016	23	ps_similarity	Compare outlines formed by superposition of the pinned rotatable pieces; the answer preserves the pieces' structure under transformation, rather than counting or optimizing constructions.
+2016	25	ps_procedure	Subtract twice the film running times from the total and distribute the remainder over five intervals; constructing the time-balance calculation is decisive.
+2016	29	ps_procedure	Simulate how folds carry the marks and count those between the fixed green marks; the requested new count needs process execution, not merely recognizing a folded equivalent.
+2016	31	ps_procedure	Solve the coupled integer goal-scoring relationships to reconstruct the result; all constraints contribute and no applicable supplied row gives the missing score.
+2017	1	ps_procedure	Use the known yellow consumption and mixture proportions to derive total paint and then red consumption; a dependent mixture calculation, not data selection, remains essential.
+2017	3	ps_select	Filter houses by budget and the wish criteria before the routine cost/bedroom tie-break; the supplied property profiles contain inapplicable alternatives that must be rejected.
+2017	14	ps_procedure	Construct each party's final seats from six directed transfers before comparing pie charts; the multi-state balance model is material, rather than a routine one-step representation match.
+2017	15	ct_match	Match the argumentative pattern of excluding one of two alternative origins; the options are new arguments, not visual configurations or examples applying a normative principle.
+2017	16	ps_procedure	Model the complete one-to-nine digit inventory and subtract the two PIN totals to infer the absent digit; the unknown must be derived from a conservation constraint.
+2017	25	ps_procedure	Relate altered speed, distance and journey time to solve the coupled motion equations; choosing the supplied quantities does not resolve the procedural relationship.
+2017	27	ps_procedure	Combine whole-pack divisibility with the three-for-two offer to optimize plate purchases; candidate package combinations must be constructed rather than merely filtered.
+2017	31	ps_procedure	Reconstruct the neighbours' interest profiles through left/right/opposite seating relationships; cross-row relational constraints, not a single known profile filter, determine Jess's position.
+2018	1	ps_procedure	Distinguish endpoint and interior seating/bin contributions to derive the count; a combinatorial construction is needed even without a meaningful diagram.
+2018	3	ps_select	Select only intervals overlapping ten to twelve and clip their endpoints before routine addition; filtering applicable time data is more material than the remaining arithmetic.
+2018	7	ps_procedure	Execute the shortest-seek lift rule with dwell times to generate the route and timing; a supplied schedule cannot simply be selected to obtain the result.
+2018	12	ps_select	Select customers in the strictly applicable delay bands, excluding boundary and shorter delays; refund addition is routine once the relevant rows are correctly identified.
+2018	14	ps_procedure	Apply the truth-count restrictions across four paired statements to find a feasible assignment; the single combination answer is not a request for separate multiple responses.
+2018	16	ps_procedure	Construct pump-rate equations before and after the smaller tank reaches half-full; sequential state relationships, not subset selection, dominate the calculation.
+2018	18	ps_procedure	Count colour arrangements over six distinct spots with at most four skittles of each colour; this is constrained enumeration, not grouping identical shapes under rotation.
+2018	23	ps_procedure	Test digits against simultaneous consecutive-number, sum and product restrictions; the missing number needs systematic case construction rather than a superficial pattern match.
+2018	25	ps_procedure	Maximize the second-largest whole-dollar allocation under ordering and total bounds; integer extremal feasibility is the central procedure, not information lookup.
+2018	31	ps_procedure	Reconstruct four marks from their sum, differences and ordering conditions; all stated constraints matter and the required values must be derived together.
+2019	1	ps_procedure	Decompose the original costs by ratio and fixed fee, apply differing changes, and recombine; dependent base quantities must be reconstructed before obtaining the new total.
+2019	7	ps_select	Select the positive-test row and its total for the conditional sample space, rejecting negative tests and whole-population accuracy; the final fraction is routine after selection.
+2019	12	ps_procedure	Construct the minimum ferry fleet satisfying crossing times, port turnaround and both departure sequences; identifying timetable entries alone leaves resource feasibility unsolved.
+2019	16	ps_procedure	Convert each gender/age percentage into a count and aggregate with population weights; all cells matter and constructing the weighted denominator is central.
+2019	25	ps_procedure	Test integer purchase possibilities against the budget for four statements; one combination-valued answer is neither exactly-three Subpoints nor separately selected responses.
+2019	29	Subpoints	Evaluate exactly three full claims and select their single combination, including the all-of-them choice; retain the existing BMAT Subpoints definition rather than invent a fallback.
+2020	2	ps_procedure	Derive savings per quarter and round the payback period up to the first complete quarter; the answer requires a cost-recovery procedure, not selecting a supplied price.
+2020	6	ps_procedure	Calculate the weighted orange-juice contribution of both component mixtures; the final fraction is newly constructed rather than an equivalent pictured arrangement.
+2020	7	ps_select	Select size/image rates, the applicable personalization charge and postage band for the specified order; irrelevant price alternatives create the main selection difficulty.
+2020	12	ps_select	Select costume rows containing blue and their applicable fractions, ignoring other colours; material subset selection precedes routine weighted usage and remainder arithmetic.
+2020	18	ps_procedure	Test exact-budget integer fruit combinations and construct a decisive counterexample; this is feasibility under purchasing rules, not an argumentative flaw in a passage.
+2020	19	ps_procedure	Construct combinations of battery pack sizes to minimize total cost; selecting a battery row is insufficient because mixed packs can beat any single supplied package.
+2020	24	ps_procedure	Reconstruct bicycle, tricycle, unicycle and tandem counts from simultaneous component balances; every component total constrains an integer-system solution.
+2020	25	ps_procedure	Optimize the number of coins under fixed value and denomination restrictions; finding and bounding feasible integer combinations is the material procedural task.
+2020	26	ps_procedure	Compose eligibility, turnout and leave-vote fractions with different conditional bases; the pie charts supply inputs but do not ask for an equivalent representation.
+2020	28	ps_procedure	Account for the overlap and raised folded sections to reconstruct the original strip length; folding supports a new length calculation, not a spatial equivalence choice.
+2020	30	ps_similarity	Map YMC components to their invariant two-digit OCT representations and reversed component order; the final choice is the corresponding encoding, without needing an independent numeric derivation.
+2021	2	ps_procedure	Construct the minimum boys and girls counts while excluding each child from their own siblings; simultaneous family constraints, not data selection, determine the minimum.
+2021	7	ps_select	Filter desserts by salt, fat and protein limits and then select the lowest carbohydrate value; the supplied nutrient inventory contains material inapplicable alternatives.
+2021	12	ps_procedure	Split revenue and reconcile the shared ingredient expenditure to derive the reimbursement; dependent cash-flow allocations remain after relevant amounts are known.
+2021	13	ps_procedure	Derive medication days, weight-dependent tablet counts and separately rounded box quantities; the constructed dose-to-box chain is material, not merely choosing a dosage row.
+2021	18	ps_procedure	Find jar masses satisfying the pair-sum equals twice-third-mass constraint; a relational combination search is necessary rather than selecting a single applicable mass.
+2021	19	ps_select	Select France and UK in 2000 with both population and death-rate columns, rejecting other countries and 2015; conversion and subtraction are routine after that substantial selection.
+2021	24	ps_procedure	Infer the clock's drift rate from two observations and extrapolate across the stated period; the new reading requires a dependent time-error calculation, not simple lookup.
+2021	25	ps_procedure	Derive the second price from the relative cost, compute both daily rates and subtract. The requested per-day basis is explicit, so there is no material applicability decision among competing tariffs; unused jar masses do not make selection the dominant task.
+2021	26	ps_similarity	Convert the given quantity and price ratios into relative revenue sectors and match the corresponding pie chart; the final material operation preserves relationships across representations.
+2021	28	ps_procedure	Calculate triangle and rectangle grey areas, take the white complement and form the ratio; the diagram supplies dimensions for a derived area process, not equivalent-shape recognition.
+2021	30	ps_procedure	Construct maximum set overlap separately within the two disjoint groups and add their bounds; the requested maximum is not one of the directly supplied table counts.

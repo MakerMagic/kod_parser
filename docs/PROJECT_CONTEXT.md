@@ -1,5 +1,12 @@
 # Project Context
 
+Active development has moved to **pre-final assembly** of successfully categorized,
+issue-free TSA and BMAT canonical structured data. Earlier milestones below are
+historical. Pre-final preserves upstream data, does not rerun/modify previous stages,
+and writes one unified JSON with stable examination IDs and difficulty=null.
+Question-rendering backtesting follows assembly; database import and difficulty
+assignment are later separate tasks. See ARCHITECTURE.md and DATA_SCHEMA.md.
+
 
 Current milestone:
 

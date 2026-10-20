@@ -46,7 +46,11 @@ matching / merging
 ↓
 categorization
 ↓
-final dataset
+pre-final assembly (categorized, issue-free TSA/BMAT only)
+↓
+question-rendering backtesting (explicit user request)
+↓
+later database import
 ```
 
 ## Critical Architecture Rules
@@ -64,6 +68,27 @@ Raw extracted data must be preserved before cleaning or normalization. Cleaning 
 ## Code Navigation and Token Efficiency
 
 Do not reread the entire codebase before each task.
+
+### Canonical data first; reports are optional user views
+
+Read question data from canonical structured storage. Use existing assets directly
+when necessary. Generate inspection reports only on explicit user request or when
+a genuine, evidenced diagnostic need cannot be resolved from source data alone.
+
+JSON/canonical storage is authoritative for question fields, answers, explanations,
+assets, provenance, categories, evidence and issues. Select the required records
+directly by source family/year/section/question or structured issue filters. Do not
+generate HTML, Markdown dumps, per-question catalogs or temporary inspection pages
+merely to read a question. Open referenced assets directly.
+
+Before an exceptional diagnostic export, state the concrete uncertainty, why
+canonical data/source assets cannot resolve it, and what new information the
+bounded export provides. A warning alone is not permission to generate a report.
+
+Stage runs must not implicitly render question inspections. Keep backtesting tools
+available for explicit user requests. Backtesting documentation contains commands,
+selectors and interpretation guidance, not generated question content or exhaustive
+per-question link lists. Issue indexes remain separate and derive from current data.
 
 Before editing, inspect only:
 
@@ -87,21 +112,19 @@ Do not scan unrelated folders unless the task requires it.
 
 ## Current Development Milestone
 
-Current milestone:
+Active development is now **pre-final assembly** for both TSA and BMAT.
+Consume only successfully categorized, issue-free canonical structured records
+with exactly one of the existing ten TSA category IDs. Preserve validated content,
+answers, explanations, asset associations and minimal provenance; do not repair,
+rerun or modify raw parsing, cleaning, matching or categorization in this stage.
+Missing required input is a pre-final validation exclusion, never fabricated data.
 
-```text
-Blackstone clean questions
-+
-TSA 2008–2016 explained answers
-↓
-answer/explanation parsing
-↓
-matching / merged structured data
-
-Before matching questions, parse and structure answers and explanations from:
-TSA-2008-2016-Explained-Answers.pdf
-
-Do not implement categorization, final dataset generation, or unrelated source support unless explicitly requested.
+Produce one unified JSON for later rendering/backtesting and database import.
+Rendering follows assembly; database import follows rendering/backtesting and is
+not implemented now. IDs are deterministic examination identities, stable across
+reruns, never timestamps/order/content hashes. Every difficulty is null; difficulty
+assignment is a separate future process. See docs/DATA_SCHEMA.md and
+docs/ARCHITECTURE.md. Earlier milestones are historical, not current instructions.
 
 ## Context and Skill Usage
 

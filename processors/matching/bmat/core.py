@@ -68,7 +68,14 @@ def eligibility(question):
     return None
 
 
-def build(clean_inputs, answer_path, *, previous=None, supplied_path=None):
+def build(
+    clean_inputs,
+    answer_path,
+    *,
+    previous=None,
+    supplied_path=None,
+    prefer_supplied_text=False,
+):
     answer_path = Path(answer_path).resolve()
     source = json.loads(answer_path.read_text(encoding="utf-8"))
     if source.get("source_family") != "bmat" or source.get("stage") != "answer_raw":
@@ -275,7 +282,9 @@ def build(clean_inputs, answer_path, *, previous=None, supplied_path=None):
     if supplied_path is not None:
         from .supplied import apply
 
-        apply(result, supplied_path, previous=previous)
+        apply(
+            result, supplied_path, previous=previous, prefer_text=prefer_supplied_text
+        )
     return result
 
 
@@ -288,10 +297,16 @@ def write(path, data):
     )
 
 
-def run(clean_inputs, answer_path, output, supplied_path=None):
+def run(
+    clean_inputs, answer_path, output, supplied_path=None, *, prefer_supplied_text=False
+):
     previous = load_matched(output) if Path(output).exists() else None
     data = build(
-        clean_inputs, answer_path, previous=previous, supplied_path=supplied_path
+        clean_inputs,
+        answer_path,
+        previous=previous,
+        supplied_path=supplied_path,
+        prefer_supplied_text=prefer_supplied_text,
     )
     write(output, data)
     return data

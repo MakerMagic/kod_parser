@@ -1,5 +1,17 @@
 # Processing Rules
 
+## Active pre-final boundary
+
+Current development assembles only successfully categorized, issue-free TSA/BMAT
+canonical records into one pre-final JSON. Earlier-stage rules below describe their
+own historical processing responsibilities, not work to rerun here. Pre-final does
+not parse, clean, match, categorize, repair input or generate explanations. Missing
+required data is recorded as a validation exclusion. Preserve validated content;
+use deterministic examination IDs and difficulty=null. Question rendering follows
+assembly; database import and difficulty assignment are separate later tasks.
+The authoritative ten-category catalogue is `categorization/patterns.json`; historical
+category proposals below do not add pre-final labels or BMAT-to-TSA mappings.
+
 ## 1. General Rule
 
 Processing starts only after a document is available as an input.

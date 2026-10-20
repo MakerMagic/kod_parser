@@ -1,5 +1,45 @@
 # Data Schema
 
+## Pre-final unified schema v1 (active milestone)
+
+`data/pre_final/questions.json` is the single rendering/import-facing assembly of
+successful, issue-free TSA/BMAT categorization. It does not replace upstream JSON.
+Envelope: `stage: pre_final`, `schema_version: 1`, canonical ten-category catalogue,
+hashed source references, `questions` and deterministic summary. A companion
+`validation.json` records unique exclusions and input validation reasons, not
+question-content copies or a Markdown catalogue.
+
+Each question has deterministic `id`, `source` (TSA/BMAT), `year`,
+`question_number`, `section`, `paper`, `variant`, one `category` (canonical TSA
+pattern ID), `difficulty: null`, `main_body` (ordered blocks), `main_question`,
+`main_answers` (ordered labelled options and asset associations), `correct_answer`,
+nullable `explanation`, boolean `explanation_by_ai`, ordered `assets` with semantic
+roles/option association and minimal `provenance`. Category names/families live in
+the envelope catalogue rather than competing category fields. Difficulty assignment
+is a separate future process. Explanation blocks/text/order/source metadata remain
+faithful to the accepted upstream representation; no explanation is generated.
+
+ID identity is source + year + section + paper + variant + question number, not
+filename, text, timestamp or traversal order. Source-family scope is mandatory.
+Reuse the established intrinsic `blackstone_{year}_{paper}_section_1_q{n}` and
+`bmat_{year}_{paper-or-unspecified}_section_1_q{n}` IDs for current unambiguous
+identities. Other sections/variants use tagged percent-escaped identity components
+to avoid separator/null collisions. The original ID also remains in provenance;
+acquisition details never define identity. Duplicate logical identities are rejected.
+
+Eligibility requires successful categorization, exactly one of the ten TSA IDs,
+no unresolved categorization/upstream/matching/explanation issues, trustworthy
+references, complete prompt/options and compatible correct answer. Informational
+warnings are distinguished only using existing upstream issue/status semantics;
+uncertain or stale dependencies are exclusions, never silently bypassed. BMAT-only
+categories/skips are excluded, not mapped to TSA categories. Asset paths are resolved
+against their original storage owner, not the new output folder.
+
+Raw/clean/matching/categorization stay read-only. Rendering/backtesting consumes
+this schema after assembly, with Source → Explanation by AI → Category before
+question content. Database import follows rendering/backtesting and is not yet
+implemented. Assembly never generates question reports automatically.
+
 ## 1. General Principle
 
 The data model must distinguish between:
@@ -728,10 +768,27 @@ retaining the original text/crops in `raw_record` and unchanged image references
 Verified table-row false choices remain under `raw.rejected_option_candidates`
 with structural rejection evidence; no separate answer set is invented.
 
-Independent BMAT categorization currently consumes CLEAN directly for targeted
-task-intent attribution: `owner: bmat_categorization_v1`, `input_stage: clean`,
-hashed sources, stable identities, question snapshots and `categorization`.
-It reuses TSA category names, not matching success. `matching_status: not_run`
-is explicit. Statuses distinguish `supported`, `intentional_skip`, `needs_review`
-and `not_evaluated` (normal attribution outside the targeted pass). No correct
-answer/explanation or completed normal dataset is claimed by this layer.
+Independent BMAT categorization consumes CLEAN for complete dominant-task
+attribution: `owner: bmat_categorization_v1`, `input_stage: clean`, hashed sources,
+stable identities, unchanged question snapshots and `categorization`. Successful
+results contain exactly one `patterns` ID and one canonical `subcategories` name.
+The TSA IDs/names come from `categorization/patterns.json`; existing BMAT type
+names come from `parsers/bmat/skip_rules.py:ORDER` and use family `BMAT-specific`.
+BMAT uses a single dominant category without changing TSA multi-label behavior.
+Statuses are `supported`, `intentional_skip` (with its canonical BMAT category),
+or `needs_review` with no accepted category. Surviving RAW exclusion filters is
+not itself a Problem-Solving label. Newly recognized existing BMAT response
+frameworks are classified here without rewriting upstream skip metadata.
+
+`categorization/bmat/decisions.tsv`, `review_baseline.json` and `review.json`
+preserve a complete content-bound review of the 178 previously pending tasks.
+Full question and asset hashes prevent ID-only reuse; changed evidence requires
+new review. `review` retains previous attribution, all evaluated alternatives,
+and concrete input defects where acceptance is blocked. Weak automated evidence
+abstains instead of forcing a label. The TSA concept model supplies ranking and
+shared semantic features, not runtime question-ID exceptions.
+
+Optional hash-verified matching context displays existing answers/explanations
+without affecting matching status or upstream data. `matching_status: not_run`
+remains explicit when matching context is absent. Categorization success never
+claims explanation matching or repair of RAW/CLEAN defects.

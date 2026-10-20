@@ -27,7 +27,11 @@ matching / merging
 ↓
 categorization
 ↓
-validation / export
+pre-final assembly (issue-free, categorized TSA/BMAT)
+↓
+question-rendering backtesting
+↓
+later database import
 ```
 
 Question data and answer/explanation data are processed independently before matching.
@@ -184,7 +188,23 @@ Responsible for assigning categories and subcategories to already structured que
 
 Categorization must not be part of acquisition or parsing.
 
-### 4.8 Validation and Export
+### 4.8 Pre-final Assembly (active stage)
+
+`processors/pre_final/` reads canonical categorization JSON for TSA and BMAT.
+Resolve existing structured references only when needed for issue/answer/asset
+context. No stage is rerun and no upstream file is written. Accept only successful,
+issue-free inputs with one canonical TSA category and required usable content.
+BMAT-specific skips and unresolved/multi-primary categories do not enter this view.
+
+Write one schema-versioned JSON to `data/pre_final/questions.json` and a compact
+machine-readable validation summary beside it. Preserve upstream content without
+recovery, inference or explanation generation. Stable IDs use examination identity;
+all difficulty values are null pending a separate future process.
+
+Rendering/backtesting reads only this unified JSON, on explicit user request.
+Database import follows rendering/backtesting and is not part of this milestone.
+
+### 4.9 Later Validation and Export
 
 Responsible for checking data quality and producing final outputs.
 
@@ -270,19 +290,9 @@ later pipeline stages
 
 ## 7. Current Development Milestone
 
-Current milestone:
-
-```text
-Blackstone raw structured JSON → Blackstone clean structured JSON
-
-The current work is normalization/cleaning of already parsed raw data.
-Cleaning must:
-- consume structured raw data, not PDFs;
-- preserve raw data unchanged;
-- write cleaned data to a separate output layer;
-- remain deterministic and independently testable;
-- preserve uncertainty instead of hiding extraction problems.
-Do not implement answer matching, categorization, or final dataset generation unless explicitly requested.
+Active milestone: categorized, issue-free TSA/BMAT → unified pre-final JSON →
+optional question-rendering backtesting. Raw, cleaning, matching and categorization
+remain read-only. Database import and difficulty assignment are later work.
 
 ## 8. Architecture Safeguards
 
