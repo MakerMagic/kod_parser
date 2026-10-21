@@ -2,8 +2,7 @@
 
 ## Current milestone
 
-Mathematics ingestion: twelve local matdev PDFs → stored RAW question and answer
-keys → deterministic matching → selected mathematical inspections.
+Mathematics: stored RAW → issue-free cleaning and bounded stored-key matching.
 
 ## Already completed
 
@@ -34,6 +33,14 @@ keys → deterministic matching → selected mathematical inspections.
 
 ## In progress
 
+- Cleaning processed all 351 eligible mathematics RAW records: 350 cleaned and
+  1 review (math_9 Q1: empty stored main content); 9 RAW-issue questions excluded.
+  Canonical output: `data/clean/mathematics/questions.json`, with separate
+  cleaning/exclusion findings in its `validation.json`. RAW remains unchanged.
+- Unmatched-only key retry processed math_2 Q7 and math_3 Q27: both retain their
+  missing-option validation issues. All 358 existing valid matches were preserved.
+  Retry details: `data/merged/mathematics/retry_validation.json`. Focused cleaning,
+  stored matching and RAW-issue regressions: 13 passed; Ruff checks pass.
 - 9 mathematics questions retain explicit RAW findings: 12 uncertain native
   formula blocks, 6 unverified raster formulas in one question, and two graph
   option sets without reliable separate labels. See `../mathematics/RAW_ISSUES.md`.
@@ -56,5 +63,5 @@ keys → deterministic matching → selected mathematical inspections.
 
 ## Do not work on yet
 
-- Cleaning, new matching work, categorization, difficulty, database import;
+- Categorization, pre-final, rendering changes, difficulty, database import;
   TSA/BMAT content changes and further mathematics processing.

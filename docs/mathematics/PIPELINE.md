@@ -6,6 +6,10 @@ local paths; acquisition location is provenance, not a parsing requirement.
 
 ## Independent stages
 
+Current work: cleaning eligible stored mathematics RAW records, then retrying
+only unmatched stored-key associations. Categorization and later stages remain
+separate future work.
+
 `python -m parsers.mathematics <PDF paths>` writes `data/raw/mathematics`.
 It opens each source version once, preserving question-page text, character/font
 geometry, question/option bounds, immutable source crops and the last-page answer
@@ -16,6 +20,27 @@ headers are excluded only from projections; original page content stays in RAW.
 `data/merged/mathematics/questions.json`. Matching uses document SHA-256 and
 question number, validates duplicate keys/labels, and never reads a PDF. Answers
 come only from the extracted key. No mathematical solving or categorization runs.
+
+`python -m processors.normalization.mathematics --raw-json data/raw/mathematics`
+writes `data/clean/mathematics/questions.json` and `validation.json`. It accepts
+only `extraction_status: extracted` records without RAW findings. The existing
+ordered block schema is preserved: prose line endings and outer whitespace are
+normalized conservatively, while LaTeX, internal spacing, line boundaries, assets,
+lists, geometry, IDs and RAW evidence remain intact. `cleaning_issues` is separate
+from RAW issues; failed input validation is retained for review, not marked clean.
+Excluded questions and exact reasons appear in the compact validation JSON.
+This stage does not read PDFs or modify RAW or existing matching data.
+Consumers must distinguish `cleaning.status: cleaned` from `review`; review
+records are retained with `cleaning_issues` and are not approved clean output.
+The cleaning CLI exits 1 when review records exist, after writing both outputs.
+
+`python -m processors.matching.mathematics retry` uses existing merged records and
+their stored RAW/key references. It invokes the existing matcher only for records
+without a validated matched answer and writes `retry_validation.json` beside the
+merged output. Already valid matches are preserved verbatim. A known key letter
+does not become a validated answer while extracted options are missing; such a
+record retains its precise matching issue. Cleaning eligibility is independent of
+matching, and retrying matching does not admit RAW-issue questions into cleaning.
 
 ## Formula fidelity and schema
 
@@ -119,6 +144,14 @@ unresolved option structures. Canonical per-source metrics and findings are in
 `python -m parsers.mathematics.raw_issues`. It includes only question-linked RAW
 issues; matching findings remain in the merged structured data and are not mixed
 into this RAW report.
+
+The current cleaning projection considers all 360 records: 351 eligible, 350
+successfully cleaned, 1 review and 9 excluded due to RAW findings. The review is
+`math_9.pdf` Q1 (`empty_content`, field `content`): the stored RAW main content
+contains no blocks. Its source data is preserved for a separate RAW correction.
+The unmatched-only retry processed math_2 Q7 and math_3 Q27; both remain unresolved
+because extracted options are absent, despite unique stored key rows A and B.
+All 358 existing valid matched records remain unchanged.
 
 ## Running the relevant tests
 

@@ -22,7 +22,20 @@ def main(argv=None):
     )
     view = sub.add_parser("inspect")
     check = sub.add_parser("validate")
-    for cmd in (view, check):
+    retry = sub.add_parser(
+        "retry", help="Retry only records without a validated matched answer"
+    )
+    retry.add_argument(
+        "--validation-output",
+        type=Path,
+        default=Path("data/merged/mathematics/validation.json"),
+    )
+    retry.add_argument(
+        "--retry-output",
+        type=Path,
+        default=Path("data/merged/mathematics/retry_validation.json"),
+    )
+    for cmd in (view, check, retry):
         cmd.add_argument(
             "--input", type=Path, default=Path("data/merged/mathematics/questions.json")
         )
@@ -52,6 +65,16 @@ def main(argv=None):
         write(args.output, data)
         write(args.validation_output, validate(data))
         print(json.dumps(data["summary"]))
+    elif args.command == "retry":
+        from .retry import retry_unmatched
+
+        old = load(args.input)
+        data, report = retry_unmatched(old)
+        if data != old:
+            write(args.input, data)
+        write(args.validation_output, validate(data))
+        write(args.retry_output, report)
+        print(json.dumps(report, ensure_ascii=False))
     elif args.command == "validate":
         result = validate(load(args.input))
         print(json.dumps(result, ensure_ascii=False))

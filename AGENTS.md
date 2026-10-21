@@ -22,8 +22,12 @@ after it; consult schemas/taxonomies only when the task needs them.
 
 ## Current domain and stage
 
-The active domain is mathematics: twelve local `matdev` papers have RAW extraction
-and stored answer-key matching. RAW-stage findings are listed in the generated
+The active domain is mathematics: RAW extraction is followed by issue-free
+cleaning and stored answer-key matching. Cleaning consumes only completed,
+RAW-issue-free records and writes a separate `data/clean/mathematics` projection.
+Retry matching only for records without a validated matched answer; preserve all
+existing valid matches. Twelve local `matdev` papers have RAW extraction.
+RAW-stage findings are listed in the generated
 `docs/mathematics/RAW_ISSUES.md`; inspect only relevant records/assets. Extraction and
 matching commands, method limits and schema are in `docs/mathematics/PIPELINE.md`;
 selected-output guidance is in `docs/mathematics/BACKTEST.md`. Do not solve
