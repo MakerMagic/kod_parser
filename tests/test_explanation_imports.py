@@ -144,7 +144,7 @@ def real_data():
 
 def test_real_inputs_all_recover_and_validate_with_unique_stable_ids():
     entries, warnings = load_sources(
-        "docs/2017-2019_questions_text_with_explanation_ai_generated"
+        "docs/critical_thinking_problem_solving/tsa/2017-2019_questions_text_with_explanation_ai_generated"
     )
     assert len(entries) == 150 and len(warnings) == 3
     assert len({e["question_record"] for e, _ in entries}) == 150

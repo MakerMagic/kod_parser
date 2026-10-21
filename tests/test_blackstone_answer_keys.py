@@ -111,7 +111,7 @@ def test_conflicting_source_years_reported_not_guessed(tmp_path):
     [(2017, ["E", "E", "D"]), (2018, ["B", "D", "C"]), (2019, ["E", "C", "D"])],
 )
 def test_real_fifty_rows_and_independent_extractor(tmp_path, year, expected):
-    pdf = ROOT / f"acquisition/local/TSA-{year}-Answers-blackstone.pdf"
+    pdf = ROOT / f"acquisition/local/critical_thinking_problem_solving/tsa/TSA-{year}-Answers-blackstone.pdf"
     if not pdf.exists():
         pytest.skip("Local source unavailable")
     raw = parse_pdf(pdf, asset_dir=tmp_path / "answers/assets")

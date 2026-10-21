@@ -106,7 +106,7 @@ def papers(tmp_path_factory):
     root = tmp_path_factory.mktemp("body_association")
     result = {}
     for year in [2017, 2018, 2019, 2020, 2021]:
-        source = repo / f"acquisition/local/TSA Oxford {year}.pdf"
+        source = repo / f"acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford {year}.pdf"
         if not source.is_file():
             pytest.skip("Local source PDFs unavailable")
         directory = root / "raw" / str(year)

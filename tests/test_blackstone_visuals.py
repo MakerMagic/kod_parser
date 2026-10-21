@@ -236,12 +236,12 @@ def test_coordinate_mismatch_saves_flagged_full_page_fallback(tmp_path, monkeypa
 
 @pytest.mark.skipif(
     not (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA_2022.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA_2022.pdf"
     ).exists(),
     reason="Local PDF unavailable",
 )
 def test_tsa_2022_question_50_vector_graphic(tmp_path):
-    source = Path(__file__).resolve().parents[1] / "acquisition/local/TSA_2022.pdf"
+    source = Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA_2022.pdf"
     data = parse_pdf(source, asset_dir=tmp_path / "assets")
     question = data["questions"][49]
     assert question["question_number"] == 50

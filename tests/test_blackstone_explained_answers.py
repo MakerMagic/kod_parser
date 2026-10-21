@@ -360,7 +360,7 @@ def test_generic_matching_preserves_visuals_and_source_issues(matching_case, tmp
 @pytest.fixture(scope="module", params=[2021, 2022])
 def actual_source(request, tmp_path_factory):
     year = request.param
-    source = ROOT / f"acquisition/local/TSA-{year}-Explained-Answers-blackstone.pdf"
+    source = ROOT / f"acquisition/local/critical_thinking_problem_solving/tsa/TSA-{year}-Explained-Answers-blackstone.pdf"
     if not source.exists():
         pytest.skip("Local worked-solutions PDF not available")
     folder = tmp_path_factory.mktemp(f"answers{year}")
@@ -501,7 +501,7 @@ def test_generated_year_matching_and_html_are_traceable_read_only(year, numbers)
             assert "<img " in gallery and "data:image/png;base64" in gallery
         assert json.loads(render_inspection(result, "json")) == result
     assert path.read_bytes() == baseline
-    report = (ROOT / f"docs/MATCHING_{year}_ISSUES.md").read_text(encoding="utf-8")
+    report = (ROOT / f"docs/critical_thinking_problem_solving/tsa/MATCHING_{year}_ISSUES.md").read_text(encoding="utf-8")
     assert f"# Matching {year} issues" in report and "(0 records)" not in report
     if year == 2022:
         assert (

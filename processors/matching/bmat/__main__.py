@@ -35,13 +35,13 @@ def main(argv=None):
         "--output", type=Path, default=Path("data/merged/bmat/questions.matched.json")
     )
     cli.add_argument(
-        "--issues", type=Path, default=Path("docs/BMAT_MATCHING_ISSUES.md")
+        "--issues", type=Path, default=Path("docs/critical_thinking_problem_solving/bmat/BMAT_MATCHING_ISSUES.md")
     )
     cli.add_argument(
-        "--guide", type=Path, default=Path("docs/BMAT_MATCHING_BACKTEST.md")
+        "--guide", type=Path, default=Path("docs/critical_thinking_problem_solving/bmat/BMAT_MATCHING_BACKTEST.md")
     )
     cli.add_argument(
-        "--inspections", type=Path, default=Path("inspections_bmat_matching")
+        "--inspections", type=Path, default=Path("inspections/critical_thinking_problem_solving/bmat/matching")
     )
     args = cli.parse_args(argv)
     if args.command == "run":

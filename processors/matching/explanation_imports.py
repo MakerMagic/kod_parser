@@ -19,8 +19,8 @@ from .export_without_explanations import has_explanation
 from .storage import load_matched, protect_output
 
 IDENTITY = re.compile(r"blackstone_(\d{4})_.+_section_1_q(\d+)$")
-WORKSPACE = Path("docs/2017-2019_questions_images_with_explanation_ai_generated")
-IMPORTS = Path("docs/2017-2019_questions_text_with_explanation_ai_generated")
+WORKSPACE = Path("docs/critical_thinking_problem_solving/tsa/2017-2019_questions_images_with_explanation_ai_generated")
+IMPORTS = Path("docs/critical_thinking_problem_solving/tsa/2017-2019_questions_text_with_explanation_ai_generated")
 
 
 def fingerprint(value):
@@ -357,7 +357,7 @@ def apply_visuals(data, workspace):
                 "year": year,
                 "number": row["number"],
                 "question_record": row["question_record"],
-                "backtest": f"../../../inspections_matching/explanation_imports/{year}_q{row['number']:02}.html",
+                "backtest": f"../../../inspections/critical_thinking_problem_solving/tsa/matching/explanation_imports/{year}_q{row['number']:02}.html",
             }
             if not entries:
                 audit.append(
@@ -524,7 +524,7 @@ def write_reports(data, workspace, source_warnings):
                     or f"{entry.get('characters', 'unknown')} characters"
                 )
                 lines.append(
-                    f"- Q{entry['number']}: {reason}. [Backtest](../../../inspections_matching/explanation_imports/{year}_q{entry['number']:02}.html)"
+                    f"- Q{entry['number']}: {reason}. [Backtest](../../../inspections/critical_thinking_problem_solving/tsa/matching/explanation_imports/{year}_q{entry['number']:02}.html)"
                 )
             lines.append("")
         (Path(workspace) / str(year) / "ISSUES.md").write_text(
@@ -539,7 +539,7 @@ def write_backtests(path):
     from .backtest import inspect_question, render_html
 
     data = load_matched(path)
-    folder = Path("inspections_matching/explanation_imports")
+    folder = Path("inspections/critical_thinking_problem_solving/tsa/matching/explanation_imports")
     protect_output(data, folder / "index.html")
     folder.mkdir(parents=True, exist_ok=True)
     marker = "<!-- tsa-explanation-import-backtest -->"

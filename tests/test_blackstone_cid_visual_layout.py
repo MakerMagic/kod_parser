@@ -31,7 +31,7 @@ def cid_papers(tmp_path_factory):
     repo = Path(__file__).resolve().parents[1]
     result = {}
     for year in CASES:
-        source = repo / f"acquisition/local/TSA Oxford {year}.pdf"
+        source = repo / f"acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford {year}.pdf"
         if not source.is_file():
             pytest.skip("Local PDF regression sources unavailable")
         raw = root / str(year) / f"{year}.raw.json"
@@ -147,7 +147,7 @@ def test_shape_width_variation_requires_complete_label_only_region():
 
 def test_all_question_numbers_raw_spans_and_core_fields_survive(cid_papers):
     repo = Path(__file__).resolve().parents[1]
-    baseline = repo / "inspections_raw/cid_visual_baseline_20261014"
+    baseline = repo / "inspections/critical_thinking_problem_solving/tsa/raw/cid_visual_baseline_20261014"
     for year, (data, _, _) in cid_papers.items():
         assert [q["question_number"] for q in data["questions"]] == list(range(1, 51))
         assert data["input"]["sha256"] and data["source"]

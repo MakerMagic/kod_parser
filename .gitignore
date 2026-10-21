@@ -1,5 +1,6 @@
 .venv/
 .pytest_cache/
+.test_tmp/
 __pycache__/
 *.pyc
 
@@ -12,13 +13,15 @@ data/pre_final/
 
 
 .vscode/
-inspections_raw/
-inspections_clean/
-inspections_matching/
-inspections_categorization/
-inspections_pre_final/
-inspections_bmat/
-inspections_bmat_clean/
-inspections_bmat_categorization/
-inspections_bmat_matching/
+inspections/critical_thinking_problem_solving/tsa/raw/
+inspections/critical_thinking_problem_solving/tsa/clean/
+inspections/critical_thinking_problem_solving/tsa/matching/
+inspections/critical_thinking_problem_solving/tsa/categorization/
+inspections/critical_thinking_problem_solving/pre_final/
+inspections/critical_thinking_problem_solving/bmat/raw/
+inspections/critical_thinking_problem_solving/bmat/clean/
+inspections/critical_thinking_problem_solving/bmat/categorization/
+inspections/critical_thinking_problem_solving/bmat/matching/
 data/categorized/bmat/
+inspections/mathematics/
+tmp/

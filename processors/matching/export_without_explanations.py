@@ -290,7 +290,7 @@ def main(argv=None):
     cli = argparse.ArgumentParser(description=__doc__)
     cli.add_argument("--matched-json", type=Path, required=True)
     cli.add_argument(
-        "--output-dir", type=Path, default=Path("docs/questions_without_explanations")
+        "--output-dir", type=Path, default=Path("docs/critical_thinking_problem_solving/tsa/questions_without_explanations")
     )
     args = cli.parse_args(argv)
     print(json.dumps(export(args.matched_json, args.output_dir), indent=2))

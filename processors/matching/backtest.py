@@ -642,7 +642,7 @@ def main(argv=None):
     report = commands.add_parser("report")
     report.add_argument("--matched-json", type=Path, required=True)
     report.add_argument(
-        "--output", type=Path, default=Path("docs/MATCHING_2008-2016_ISSUES.md")
+        "--output", type=Path, default=Path("docs/critical_thinking_problem_solving/tsa/MATCHING_2008-2016_ISSUES.md")
     )
     args = cli.parse_args(argv)
     try:

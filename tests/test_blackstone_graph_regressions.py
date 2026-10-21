@@ -11,8 +11,8 @@ from parsers.blackstone.backtest import inspect_question, render_inspection
 from parsers.blackstone.visual_inspection import read_png
 from parsers.blackstone.visual_structure import foreign_option_anchors
 
-SOURCE = Path(__file__).parents[1] / "acquisition/local/TSA Oxford 2021.pdf"
-SOURCE_2020 = Path(__file__).parents[1] / "acquisition/local/TSA Oxford 2020.pdf"
+SOURCE = Path(__file__).parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2021.pdf"
+SOURCE_2020 = Path(__file__).parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2020.pdf"
 Q32_OPTION_HASHES = [
     "30fc955314afeb2d2f86ec145a2549359c76dcd7bdb7fdbf0f25396f6c2552f6",
     "b4ddcf1e1676f964c116bcffc0a1cf232e90c1a949f9c2b699a9d9ef06ab664a",

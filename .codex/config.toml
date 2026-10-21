@@ -1,0 +1,4 @@
+# Project-scoped defaults. Raise effort for unusually difficult reasoning tasks.
+model_reasoning_effort = "high"
+model_verbosity = "low"
+tool_output_token_limit = 12000

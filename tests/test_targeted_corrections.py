@@ -62,8 +62,8 @@ def test_stage_cli_does_not_implicitly_render_questions(
 
 
 def test_backtesting_guides_are_instructions_not_question_catalogs():
-    paths = list(Path("docs").glob("*BACKTEST*")) + list(
-        Path("docs/2017-2019_questions_images_with_explanation_ai_generated").glob(
+    paths = list(Path("docs").rglob("*BACKTEST*.md")) + list(
+        Path("docs/critical_thinking_problem_solving/tsa/2017-2019_questions_images_with_explanation_ai_generated").glob(
             "*/BACKTEST.md"
         )
     )
@@ -72,7 +72,7 @@ def test_backtesting_guides_are_instructions_not_question_catalogs():
         text = path.read_text(encoding="utf-8")
         assert not re.search(r"\]\([^)]*inspections[^)]*(?:q\d|_q\d)", text), path
         assert not re.search(r"^\|\s*20\d{2}\s*\|", text, re.MULTILINE), path
-    assert "hundreds" not in Path("docs/BMAT_CATEGORIZATION_BACKTEST.md").read_text(
+    assert "hundreds" not in Path("docs/critical_thinking_problem_solving/bmat/BMAT_CATEGORIZATION_BACKTEST.md").read_text(
         encoding="utf-8"
     )
 

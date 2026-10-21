@@ -453,6 +453,6 @@ def test_verified_numbered_sections_leave_generated_issues_but_real_issues_remai
     for number in (9, 21, 33):
         assert f"| 2016 | section_1 | {number} |" not in report
     assert "| 2016 | 38 |" in report
-    assert report == (ROOT / "docs/MATCHING_2008-2016_ISSUES.md").read_text(
+    assert report == (ROOT / "docs/critical_thinking_problem_solving/tsa/MATCHING_2008-2016_ISSUES.md").read_text(
         encoding="utf-8"
     )

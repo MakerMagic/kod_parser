@@ -17,7 +17,7 @@
     "question_number": 46
   },
   "related_source_document": {
-    "path": "../../../acquisition/local/TSA-2022-Explained-Answers-blackstone.pdf",
+    "path": "../../../acquisition/local/critical_thinking_problem_solving/tsa/TSA-2022-Explained-Answers-blackstone.pdf",
     "sha256": "3982891a94a2bcb1766140976450e365b294da7422371b1b721eeaf50d536d93"
   },
   "explanation_text": "Each event can give 10, 6, 3, or 1 point, and a student can enter at most three events. We test the options: 15 = 6 + 6 + 3, 22 = 10 + 6 + 6, but 24 cannot be made using any combination of at most three of these scores. Therefore, the lowest impossible score is 24 (C)."

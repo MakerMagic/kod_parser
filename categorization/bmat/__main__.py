@@ -43,13 +43,13 @@ def main(argv=None):
         default=Path("data/categorized/bmat/questions.categorized.json"),
     )
     cli.add_argument(
-        "--issues", type=Path, default=Path("docs/BMAT_CATEGORIZATION_ISSUES.md")
+        "--issues", type=Path, default=Path("docs/critical_thinking_problem_solving/bmat/BMAT_CATEGORIZATION_ISSUES.md")
     )
     cli.add_argument(
-        "--guide", type=Path, default=Path("docs/BMAT_CATEGORIZATION_BACKTEST.md")
+        "--guide", type=Path, default=Path("docs/critical_thinking_problem_solving/bmat/BMAT_CATEGORIZATION_BACKTEST.md")
     )
     cli.add_argument(
-        "--inspections", type=Path, default=Path("inspections_bmat_categorization")
+        "--inspections", type=Path, default=Path("inspections/critical_thinking_problem_solving/bmat/categorization")
     )
     args = cli.parse_args(argv)
     if args.command == "bind-review":

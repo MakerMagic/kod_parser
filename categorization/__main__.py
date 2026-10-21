@@ -36,7 +36,7 @@ def main(argv=None):
     r.add_argument("--model", type=Path, required=True)
     r.add_argument("--output", type=Path, required=True)
     r.add_argument(
-        "--issues-report", type=Path, default=Path("docs/categorization_issues.md")
+        "--issues-report", type=Path, default=Path("docs/critical_thinking_problem_solving/tsa/categorization_issues.md")
     )
     r.add_argument("--overwrite", action="store_true")
     r.add_argument(
@@ -63,7 +63,7 @@ def main(argv=None):
     i.add_argument("--overwrite", action="store_true")
     p = sub.add_parser("report")
     p.add_argument("--categorized-json", type=Path, required=True)
-    p.add_argument("--output", type=Path, default=Path("docs/categorization_issues.md"))
+    p.add_argument("--output", type=Path, default=Path("docs/critical_thinking_problem_solving/tsa/categorization_issues.md"))
     p.add_argument("--backtest-guide", type=Path)
     p.add_argument(
         "--review-inspections-dir",
@@ -86,7 +86,7 @@ def main(argv=None):
     v.add_argument("--annotations", type=Path, required=True)
     v.add_argument("--output", type=Path, required=True)
     v.add_argument(
-        "--issues-report", type=Path, default=Path("docs/categorization_issues.md")
+        "--issues-report", type=Path, default=Path("docs/critical_thinking_problem_solving/tsa/categorization_issues.md")
     )
     v.add_argument("--overwrite", action="store_true")
     args = cli.parse_args(argv)

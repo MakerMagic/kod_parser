@@ -256,7 +256,7 @@ def test_exporter_never_imports_generation_or_providers():
 
 
 def test_organized_ai_markdown_and_its_links_are_local_and_valid():
-    folder = Path("docs/ai_explanations")
+    folder = Path("docs/critical_thinking_problem_solving/tsa/ai_explanations")
     for path in folder.glob("*.md"):
         if path.name != "README.md":
             assert not (folder.parent / path.name).exists()

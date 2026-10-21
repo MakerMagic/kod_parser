@@ -172,7 +172,7 @@ def test_html_text_json_inspection_and_report_do_not_mutate_inputs(
 ):
     before = {p: p.read_bytes() for p in tmp_path.rglob("*") if p.is_file()}
     merged = tmp_path / "merged/result.matched.json"
-    report = tmp_path / "docs/MATCHING_2008-2016_ISSUES.md"
+    report = tmp_path / "docs/critical_thinking_problem_solving/tsa/MATCHING_2008-2016_ISSUES.md"
     assert (
         match_main(
             [

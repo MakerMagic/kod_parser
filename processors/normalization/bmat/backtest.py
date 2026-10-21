@@ -200,7 +200,7 @@ def report(inputs, output, index_dir=None, all_html=False):
             )
             for row, issue in entries.values():
                 target = (
-                    Path(index_dir or "inspections_bmat_clean")
+                    Path(index_dir or "inspections/critical_thinking_problem_solving/bmat/clean")
                     / f"{row['year']}_q{row['question_number']:03}.html"
                 )
                 link = os.path.relpath(
@@ -247,7 +247,7 @@ def main(argv=None):
     cli.add_argument("command", choices=["report", "inspect"])
     cli.add_argument("--clean-json", nargs="+", default=["data/clean/bmat"])
     cli.add_argument("--output", type=Path)
-    cli.add_argument("--index-dir", type=Path, default=Path("inspections_bmat_clean"))
+    cli.add_argument("--index-dir", type=Path, default=Path("inspections/critical_thinking_problem_solving/bmat/clean"))
     cli.add_argument("--all-html", action="store_true")
     cli.add_argument("--year", type=int)
     cli.add_argument("--question", type=int)
@@ -257,7 +257,7 @@ def main(argv=None):
             json.dumps(
                 report(
                     args.clean_json,
-                    args.output or Path("docs/BMAT_CLEANING_ISSUES.md"),
+                    args.output or Path("docs/critical_thinking_problem_solving/bmat/BMAT_CLEANING_ISSUES.md"),
                     args.index_dir,
                     args.all_html,
                 )

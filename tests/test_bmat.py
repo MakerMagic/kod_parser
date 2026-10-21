@@ -539,7 +539,7 @@ def test_range_after_options_does_not_steal_preceding_answer(tmp_path, wrapped):
 
 @pytest.mark.parametrize("year,count", [(2003, 40), (2013, 35), (2017, 35), (2020, 32)])
 def test_real_pilot_numbering_and_raw_spans(year, count):
-    paths = list(Path("inspections_bmat/pilot").glob(f"bmat_{year}_*.raw.json"))
+    paths = list(Path("inspections/critical_thinking_problem_solving/bmat/raw/pilot").glob(f"bmat_{year}_*.raw.json"))
     if not paths:
         pytest.skip("Optional local BMAT pilot unavailable")
     d = json.loads(paths[0].read_text(encoding="utf-8"))

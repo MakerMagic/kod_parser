@@ -690,7 +690,7 @@ def main(argv=None):
     )
     report.add_argument("--raw-json", nargs="+", required=True, type=Path)
     report.add_argument(
-        "--output", type=Path, default=Path("docs/RAW_PARSING_ISSUES.md")
+        "--output", type=Path, default=Path("docs/critical_thinking_problem_solving/tsa/RAW_PARSING_ISSUES.md")
     )
     args = parser.parse_args(argv)
     try:

@@ -264,7 +264,7 @@ def test_clean_references_html_and_missing_derived_asset_reporting(
 @pytest.fixture(scope="module")
 def parsed_2017(tmp_path_factory):
     source = (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2017.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2017.pdf"
     )
     if not source.exists():
         pytest.skip("Local PDF unavailable")

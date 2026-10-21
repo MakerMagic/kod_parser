@@ -19,7 +19,7 @@ def main(argv=None):
         default=Path("data/merged/blackstone/tsa_2008-2016.matched.json"),
     )
     cli.add_argument(
-        "--issues-report", type=Path, default=Path("docs/MATCHING_2008-2016_ISSUES.md")
+        "--issues-report", type=Path, default=Path("docs/critical_thinking_problem_solving/tsa/MATCHING_2008-2016_ISSUES.md")
     )
     cli.add_argument("--question-source", default="blackstone")
     cli.add_argument("--years", nargs="+", type=int, default=list(range(2008, 2017)))
@@ -33,7 +33,7 @@ def main(argv=None):
         args.output.resolve()
         == Path("data/merged/blackstone/tsa_2008-2016.matched.json").resolve()
         or args.issues_report.resolve()
-        == Path("docs/MATCHING_2008-2016_ISSUES.md").resolve()
+        == Path("docs/critical_thinking_problem_solving/tsa/MATCHING_2008-2016_ISSUES.md").resolve()
     ):
         cli.error(
             "Set separate --output and --issues-report paths for the selected years"

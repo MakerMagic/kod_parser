@@ -19,7 +19,7 @@ def main(argv=None):
         "--output-dir", type=Path, default=Path("data/clean/blackstone")
     )
     parser.add_argument(
-        "--issues-report", type=Path, default=Path("docs/CLEANING_ISSUES.md")
+        "--issues-report", type=Path, default=Path("docs/critical_thinking_problem_solving/tsa/CLEANING_ISSUES.md")
     )
     parser.add_argument(
         "--overwrite",

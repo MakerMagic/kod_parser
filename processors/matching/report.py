@@ -115,7 +115,7 @@ def write_report(data, output):
         for year in (2017, 2018, 2019):
             target = (
                 Path(__file__).resolve().parents[2]
-                / f"docs/2017-2019_questions_images_with_explanation_ai_generated/{year}/ISSUES.md"
+                / f"docs/critical_thinking_problem_solving/tsa/2017-2019_questions_images_with_explanation_ai_generated/{year}/ISSUES.md"
             )
             relative = Path(
                 os.path.relpath(target, Path(output).resolve().parent)

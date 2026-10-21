@@ -61,7 +61,7 @@ def write_comparison(runs, output):
             backtest = entry.get("backtest_path")
             if not backtest:
                 legacy = (
-                    Path("inspections_matching")
+                    Path("inspections/critical_thinking_problem_solving/tsa/matching")
                     / f"gemini_pilot_{entry['identity']['year']}_q{entry['identity']['question_number']}.html"
                 )
                 backtest = str(legacy.resolve()) if legacy.exists() else None

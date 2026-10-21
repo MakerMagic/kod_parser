@@ -2,6 +2,10 @@
 
 import base64
 import json
+import os
+import re
+import shutil
+import subprocess
 from copy import deepcopy
 from hashlib import sha256
 from html.parser import HTMLParser
@@ -155,6 +159,25 @@ def test_css_scroll_sizing_and_no_distortion(data):
     assert "max-width:100%;width:auto;height:auto;object-fit:contain" in css
     assert "object-fit:cover" not in css and "text-overflow:ellipsis" not in css
     assert ":checked" in css
+    # Reading viewport only: answers must determine their own natural height.
+    rules = {
+        selector.strip(): declarations
+        for selector, declarations in re.findall(
+            r"([^{}]+)\{([^{}]*)\}", css.split("@media print", 1)[0]
+        )
+    }
+    assert "height:560px" in rules[".body-pane"]
+    assert "overflow-y:auto" in rules[".body-pane"]
+    assert "min-height:560px" in rules[".simulation-grid"]
+    for selector in (
+        ".body-pane,.question-pane",
+        ".question-pane",
+        ".answer-options",
+        ".answer-option",
+        ".option-content",
+    ):
+        assert "overflow" not in rules[selector].replace("overflow-wrap:anywhere", "")
+        assert "max-height" not in rules[selector]
     with pytest.raises(ValueError, match="1166 or 1350"):
         render.render_html(data["questions"][0], data["categories"], width=1200)
 
@@ -334,3 +357,48 @@ def test_canonical_small_rendering_sample_unchanged():
         sha256((ROOT / p).read_bytes()).hexdigest() == value
         for p, value in assets.items()
     )
+
+
+@pytest.mark.skipif(
+    os.environ.get("RUN_BROWSER_RENDERING") != "1",
+    reason="Opt-in existing Playwright/Edge smoke; no browser dependencies installed",
+)
+def test_browser_passage_scroll_answers_expand(data, tmp_path):
+    from PIL import Image
+
+    # Four layout fixtures, not a semantic question audit or canonical-data edit.
+    rows = deepcopy(data["questions"][:4])
+    for row in rows:
+        row["main_body"] = [{"type": "text", "text": "Short passage."}]
+        row["main_answers"][1]["text"] = "Short answer."
+    rows[1]["main_body"][0]["text"] = "Long passage paragraph.\n\n" * 160
+    rows[2]["main_answers"][1]["text"] = "Long answer with natural wrapping. " * 170
+    image = tmp_path / "large-option.png"
+    Image.new("RGB", (900, 1200), "white").save(image)
+    rows[3]["assets"] = [
+        {
+            "id": "large",
+            "path": image.name,
+            "sha256": sha256(image.read_bytes()).hexdigest(),
+            "role": "option",
+            "option_label": "B",
+            "page": 1,
+        }
+    ]
+    rows[3]["main_answers"][1]["asset_ids"] = ["large"]
+    selected = tmp_path / "browser-fixtures.html"
+    selected.write_text(
+        render.build_report(rows, data["categories"], root=tmp_path), encoding="utf-8"
+    )
+    result = subprocess.run(
+        [
+            shutil.which("node"),
+            str(ROOT / "tests/browser_question_rendering.cjs"),
+            str(selected),
+        ],
+        text=True,
+        capture_output=True,
+        timeout=60,
+        check=False,
+    )
+    assert result.returncode == 0, result.stdout + result.stderr

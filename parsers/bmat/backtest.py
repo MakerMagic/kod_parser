@@ -123,7 +123,7 @@ def report(inputs, output, *, index_dir=None):
         out = ["| Year | Question | Pages | Evidence / issue |", "|---|---|---|---|"]
         for r, reason in entries:
             target = (
-                Path(index_dir or "inspections_bmat")
+                Path(index_dir or "inspections/critical_thinking_problem_solving/bmat/raw")
                 / f"{r['year']}_q{r['number']:03}.html"
             )
             link = os.path.relpath(
@@ -289,8 +289,8 @@ def main(argv=None):
     if args.command == "report":
         result = report(
             paths,
-            args.output or Path("docs/BMAT_RAW_ISSUES.md"),
-            index_dir="inspections_bmat",
+            args.output or Path("docs/critical_thinking_problem_solving/bmat/BMAT_RAW_ISSUES.md"),
+            index_dir="inspections/critical_thinking_problem_solving/bmat/raw",
         )
         print(json.dumps(result, ensure_ascii=False))
     for path in paths:
@@ -325,7 +325,7 @@ def main(argv=None):
                     args.output
                     if args.command == "inspect" and args.output
                     else Path(
-                        f"inspections_bmat/{d['year']}_q{q['question_number']:03}.html"
+                        f"inspections/critical_thinking_problem_solving/bmat/raw/{d['year']}_q{q['question_number']:03}.html"
                     ),
                 )
     return 0

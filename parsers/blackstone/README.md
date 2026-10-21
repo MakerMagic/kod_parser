@@ -3,16 +3,16 @@
 Run from the repository root with the existing dependencies in `requirements.txt`:
 
 ```powershell
-python -m parsers.blackstone acquisition/local
-python -m parsers.blackstone "acquisition/local/TSA Oxford 2020.pdf"
+python -m parsers.blackstone acquisition/local/critical_thinking_problem_solving/tsa
+python -m parsers.blackstone "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2020.pdf"
 python -m pytest -q tests/test_blackstone_raw.py
 ```
 
-Inputs may be any existing PDF paths or directories. Directory discovery checks document content, rather than requiring a Blackstone filename. It recognizes the TSA question papers currently available in `acquisition/local/`. No files are acquired or moved. The API is `parse_pdf(path, metadata=..., acquisition=...)`; neither acquisition metadata nor location determines extraction behavior.
+Inputs may be any existing PDF paths or directories. Directory discovery checks document content, rather than requiring a Blackstone filename. It recognizes the TSA question papers currently available in `acquisition/local/critical_thinking_problem_solving/tsa/`. No files are acquired or moved. The API is `parse_pdf(path, metadata=..., acquisition=...)`; neither acquisition metadata nor location determines extraction behavior.
 
 Raw JSON is written to `data/raw/blackstone/` by default. Use `--output-dir PATH` to choose another raw location. Names include a file content hash to avoid collisions between different PDFs with the same filename. Existing outputs require explicit `--overwrite`.
 
-The output follows `docs/DATA_SCHEMA.md`: source metadata, input reference, acquisition information, question identity, page references, raw blocks, question text, options, subpoints, images, and warnings. Additional extraction context includes full page text, PDF metadata, content SHA-256, graphic bounding boxes, and raw page spans. `validate_raw(data)` checks required records and reconstructs question blocks from unchanged page slices.
+The output follows `docs/critical_thinking_problem_solving/DATA_SCHEMA.md`: source metadata, input reference, acquisition information, question identity, page references, raw blocks, question text, options, subpoints, images, and warnings. Additional extraction context includes full page text, PDF metadata, content SHA-256, graphic bounding boxes, and raw page spans. `validate_raw(data)` checks required records and reconstructs question blocks from unchanged page slices.
 
 The source value `blackstone` identifies the selected parser profile. The current PDFs carry TSA/Cambridge provenance, so that original metadata is retained and the unverified Blackstone label is flagged. Acquisition is `unknown` unless provided by the caller. Missing year or section remains null; uncertain semantic question IDs remain null rather than being invented.
 
@@ -28,15 +28,15 @@ Inspect the exact stored record, without rerunning the parser:
 
 ```powershell
 python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA Oxford 2020.pdf" --year 2020 --question 12
-python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --output docs/RAW_PARSING_ISSUES.md
+python -m parsers.blackstone.backtest report --raw-json data/raw/blackstone --output docs/critical_thinking_problem_solving/tsa/RAW_PARSING_ISSUES.md
 python -m pytest -q tests/test_blackstone_backtest.py tests/test_blackstone_raw.py
 ```
 
-Every parser CLI run that saves raw output also generates a separate `OUTPUT_DIR/RAW_PARSING_ISSUES.md`. Use `--issues-report docs/RAW_PARSING_ISSUES.md` to choose the documentation location instead. Inspection supports stored paths/filenames/URLs, optional metadata selectors, text/JSON/HTML export, and complete stored page context. See [the backtest guide](../../docs/RAW_PARSER_BACKTEST.md) for commands, asset naming, and limitations. Reports include missing/failed visual assets; graphics presence alone is informational. Inspection does not modify raw JSON.
+Every parser CLI run that saves raw output also generates a separate `OUTPUT_DIR/RAW_PARSING_ISSUES.md`. Use `--issues-report docs/critical_thinking_problem_solving/tsa/RAW_PARSING_ISSUES.md` to choose the documentation location instead. Inspection supports stored paths/filenames/URLs, optional metadata selectors, text/JSON/HTML export, and complete stored page context. See [the backtest guide](../../docs/critical_thinking_problem_solving/tsa/RAW_PARSER_BACKTEST.md) for commands, asset naming, and limitations. Reports include missing/failed visual assets; graphics presence alone is informational. Inspection does not modify raw JSON.
 
 ```powershell
-python -m parsers.blackstone acquisition/local --overwrite --issues-report docs/RAW_PARSING_ISSUES.md
-python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA_2022.pdf" --year 2022 --question 50 --format html --output inspections_raw/TSA_2022_q50.html
+python -m parsers.blackstone acquisition/local/critical_thinking_problem_solving/tsa --overwrite --issues-report docs/critical_thinking_problem_solving/tsa/RAW_PARSING_ISSUES.md
+python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA_2022.pdf" --year 2022 --question 50 --format html --output inspections/critical_thinking_problem_solving/tsa/raw/TSA_2022_q50.html
 python -m pytest -q tests/test_blackstone_raw.py tests/test_blackstone_backtest.py tests/test_blackstone_visuals.py
 ```
 
@@ -54,7 +54,7 @@ If the repository virtual environment cannot launch in Codex, use its bundled Py
 $env:PYTHONPATH = (Resolve-Path '.venv/Lib/site-packages').Path
 $env:PYTHONIOENCODING = 'utf-8'
 $parserPython = 'C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe'
-& $parserPython -m parsers.blackstone acquisition/local
+& $parserPython -m parsers.blackstone acquisition/local/critical_thinking_problem_solving/tsa
 & $parserPython -m pytest -q tests/test_blackstone_raw.py
 ```
 python -m parsers.blackstone.backtest inspect --raw-json data/raw/blackstone --source "TSA_2022.pdf" --year 2022 --question 38

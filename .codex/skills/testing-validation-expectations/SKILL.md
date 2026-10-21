@@ -12,9 +12,9 @@ Adding or modifying parser tests, validators, schema checks, extraction checks, 
 Only editing documentation, installing VS Code extensions, or asking conceptual project questions.
 
 **Summarizes:**  
-- `docs/DEVELOPMENT_RULES.md`
-- `docs/DATA_SCHEMA.md`
-- `docs/PROCESSING_RULES.md`
+- `docs/general/DEVELOPMENT_RULES.md`
+- `docs/critical_thinking_problem_solving/DATA_SCHEMA.md`
+- `docs/general/PROCESSING_RULES.md`
 
 **Read original docs instead when:**  
 Changing validation strategy, adding new formal schemas, changing required fields, or introducing source-specific test rules.

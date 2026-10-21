@@ -1,182 +1,62 @@
-## Editing Rules for Codex
+# Project instructions
 
-Before editing, inspect only the files relevant to the task.
+Use this file as a short project router. Read only one relevant domain/stage guide
+after it; consult schemas/taxonomies only when the task needs them.
 
-Do not modify multiple pipeline stages in one task unless explicitly instructed.
+## Editing and architecture safeguards
 
-Do not rename folders, move modules, change public schema fields, or add new dependencies without explicit approval.
+- Inspect only relevant files and tests. Do not change multiple stages, public
+  schema, module paths or dependencies unless the task explicitly requires it.
+- Keep acquisition, identification, source parsing, raw extraction, cleaning,
+  matching, categorization, pre-final assembly and rendering independently
+  replaceable. Detailed architecture: `docs/general/ARCHITECTURE.md`.
+- Parsers consume available source files and do not acquire/download them. Preserve
+  original raw information; clean into a separate layer. Do not silently discard
+  uncertain extraction or use filenames alone as stable question identity.
+- When extraction changes, test question numbering, option boundaries, required
+  fields and raw-text preservation.
+- Use canonical structured data as the source of truth. Open referenced assets
+  directly. Generate inspection output only on user request or for a concrete,
+  evidenced diagnostic need that source data/assets cannot resolve.
+- Preserve user changes. Do not use destructive repository-wide recovery commands.
 
-If extraction logic changes, update or add tests for question numbering, option extraction, required fields, and raw text preservation.
+## Current domain and stage
 
-## Forbidden Patterns
+The active domain is mathematics: twelve local `matdev` papers have RAW extraction
+and stored answer-key matching. RAW-stage findings are listed in the generated
+`docs/mathematics/RAW_ISSUES.md`; inspect only relevant records/assets. Extraction and
+matching commands, method limits and schema are in `docs/mathematics/PIPELINE.md`;
+selected-output guidance is in `docs/mathematics/BACKTEST.md`. Do not solve
+questions or guess formulas from unresolved visuals. Do not start cleaning,
+categorization, difficulty or database import without an explicit task.
 
-Do not:
+TSA/BMAT processing is a completed dependency. Keep its shared pre-final and
+question-rendering system available at `processors/pre_final`; canonical input is
+`data/pre_final/questions.json`. Its selected-preview instructions are in
+`docs/critical_thinking_problem_solving/PRE_FINAL_BACKTEST.md`. Do not reopen
+upstream TSA/BMAT content or processing unless the user asks.
 
-- make one script that downloads, parses, cleans, matches, categorizes, and exports everything;
-- make parsers depend on URLs, scraping logic, or acquisition method;
-- clean or normalize text inside the raw extraction stage;
-- delete uncertain or messy extracted content silently;
-- use filename alone as the stable identity of a question;
-- read all documentation before every small task;
-- add libraries “just in case”;
-- perform repo-wide refactors for small parser tasks.
+Domain folders apply only to `docs`, `inspections` and `acquisition/local`.
+Processors, parsers, scripts, tests and shared utilities remain in shared module
+trees.
 
-# Project Instructions
+## Context and validation
 
-This repository implements a modular document-processing pipeline for TSA and related examination materials.
+- Consult `docs/general/CURRENT_WORK.md` when work depends on current project
+  progress; do not reread it when the task is self-contained or its status is
+  already in context. Keep its status brief and current.
+- For a task, read the relevant domain/stage guide and its direct tests. Load the
+  schema/taxonomy only when needed; do not scan all docs or the whole repository.
+- Use a task-matched skill when it is present in the active Codex skill catalog;
+  do not assume uninstalled repository skill paths. The repository-local skill is
+  `.agents/skills/token-saver-codex/SKILL.md`.
+- Run focused tests and validators for changed behavior. Do not regenerate
+  unrelated datasets or reports.
 
-The project is **not** a single PDF scraper. It is a general pipeline that can acquire or receive source files, identify them, parse source-specific formats, preserve raw extracted information, normalize data, match questions with answers/explanations, categorize questions, and produce a structured final dataset.
+## Reference guides
 
-## Core Pipeline
-
-```text
-acquisition
-↓
-input files
-↓
-identification / metadata
-↓
-source parser
-↓
-raw structured data
-↓
-normalization
-↓
-matching / merging
-↓
-categorization
-↓
-pre-final assembly (categorized, issue-free TSA/BMAT only)
-↓
-question-rendering backtesting (explicit user request)
-↓
-later database import
-```
-
-## Critical Architecture Rules
-
-File acquisition and document parsing are separate concerns.
-
-A parser must **not** depend on how its input file was obtained. A PDF may come from an automatic downloader, website scraper, manual upload, local folder, ZIP/archive, future API, external source, or previously generated dataset.
-
-Do not combine downloading, scraping, parsing, cleaning, matching, categorization, and final export into one script.
-
-Each stage must remain independently replaceable and testable.
-
-Raw extracted data must be preserved before cleaning or normalization. Cleaning must happen later and write to a separate output layer.
-
-## Code Navigation and Token Efficiency
-
-Do not reread the entire codebase before each task.
-
-### Canonical data first; reports are optional user views
-
-Read question data from canonical structured storage. Use existing assets directly
-when necessary. Generate inspection reports only on explicit user request or when
-a genuine, evidenced diagnostic need cannot be resolved from source data alone.
-
-JSON/canonical storage is authoritative for question fields, answers, explanations,
-assets, provenance, categories, evidence and issues. Select the required records
-directly by source family/year/section/question or structured issue filters. Do not
-generate HTML, Markdown dumps, per-question catalogs or temporary inspection pages
-merely to read a question. Open referenced assets directly.
-
-Before an exceptional diagnostic export, state the concrete uncertainty, why
-canonical data/source assets cannot resolve it, and what new information the
-bounded export provides. A warning alone is not permission to generate a report.
-
-Stage runs must not implicitly render question inspections. Keep backtesting tools
-available for explicit user requests. Backtesting documentation contains commands,
-selectors and interpretation guidance, not generated question content or exhaustive
-per-question link lists. Issue indexes remain separate and derive from current data.
-
-Before editing, inspect only:
-
-- the target file or folder;
-- directly related test files;
-- directly related schema/model files, if needed;
-- the relevant skill or short project status file.
-
-When useful, maintain short navigation notes in `docs/CURRENT_WORK.md` under `Code navigation`.
-
-Keep navigation notes brief and practical, for example:
-
-- where the current parser entry point is;
-- where tests for the current module are located;
-- where output files are expected;
-- which files were recently modified.
-
-Do not write long implementation explanations.
-
-Do not scan unrelated folders unless the task requires it.
-
-## Current Development Milestone
-
-Active development is now **question rendering / backtesting** for TSA and BMAT.
-Raw parsing, cleaning, matching, categorization and pre-final assembly are completed
-dependencies and out of scope. Input is ONLY `data/pre_final/questions.json` and
-the saved assets it references. Do not rerun earlier stages, inspect excluded
-questions/issues, reassess correctness/answers/categories/explanations or modify
-upstream data when a preview exposes something visually.
-
-Build reusable opt-in selectors, a single-question website simulation and a lower
-structured report from the same pre-final record. No permanent question catalogue
-or default all-question export. Follow the supplied screenshot, preserve asset
-aspect ratios, and provide independent passage scrolling at 1166/1350px presets.
-Lightweight rendering-input assertions are permitted, not a new quality pipeline.
-Report genuinely malformed input without repair. Database import follows rendering
-review; difficulty assignment remains separate. See docs/PRE_FINAL_BACKTEST.md.
-Earlier milestones are historical, not current instructions.
-
-## Context and Skill Usage
-
-Before reading long documentation, classify the task and load only the relevant context.
-
-For ordinary implementation tasks, use only `AGENTS.md` plus the relevant skill.
-
-Recommended minimum skills:
-
-```text
-architecture / folders / pipeline boundaries
-→ .codex/skills/project-architecture-guardrails/SKILL.md
-
-PDF extraction / raw parsing / cleaning boundaries
-→ .codex/skills/processing-raw-preservation/SKILL.md
-
-tests / validators / pytest
-→ .codex/skills/testing-validation-expectations/SKILL.md
-```
-
-Do not read every `.md` file or every skill before each task.
-
-## Current Work Tracking
-
-Use `docs/CURRENT_WORK.md` to understand the current milestone, current focus, completed work, and next task.
-
-At the end of a completed task, update `docs/CURRENT_WORK.md` briefly if the task changed project progress.
-
-Keep updates short. Do not write long explanations.
-
-Update only relevant sections:
-
-- `Already completed`
-- `In progress`
-- `Next task`
-- `Do not work on yet`
-
-Do not rewrite the whole file unless explicitly requested.
-
-
-
-## When to Read Full Documentation
-
-Read full project documentation only when changing architecture, schema, processing rules, development rules, or resolving ambiguity that the skills do not cover.
-
-Reference docs:
-
-- `docs/PROJECT_CONTEXT.md`
-- `docs/ARCHITECTURE.md`
-- `docs/DATA_SCHEMA.md`
-- `docs/PROCESSING_RULES.md`
-- `docs/DEVELOPMENT_RULES.md`
-
+- `docs/general/ARCHITECTURE.md` — full stage responsibilities and boundaries.
+- `docs/general/DEVELOPMENT_RULES.md` and
+  `docs/general/PROCESSING_RULES.md` — development and preservation rules.
+- `docs/critical_thinking_problem_solving/DATA_SCHEMA.md` — TSA/BMAT fields.
+- `docs/mathematics/PIPELINE.md` — mathematics extraction/matching contract.

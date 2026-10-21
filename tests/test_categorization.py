@@ -790,7 +790,7 @@ def test_procedural_domains_generalize_without_true_keyword_alone(real):
 def test_persisted_refinement_preserves_unaffected_previous_assignments(real):
     from categorization.model import REFINED_OPERATIONS
 
-    baseline = Path("inspections_categorization/before_semantic_refinement.json")
+    baseline = Path("inspections/critical_thinking_problem_solving/tsa/categorization/before_semantic_refinement.json")
     if not baseline.exists():
         pytest.skip("Optional prior categorization audit absent")
     _, _, model, records = real

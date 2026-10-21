@@ -254,7 +254,7 @@ def test_source_verification_does_not_erase_mathematical_mismatches(source, targ
 
 @pytest.fixture(scope="module")
 def real_source(tmp_path_factory):
-    path = ROOT / "acquisition/local/TSA-2020-Explained-Answers-official.pdf"
+    path = ROOT / "acquisition/local/critical_thinking_problem_solving/tsa/TSA-2020-Explained-Answers-official.pdf"
     if not path.exists():
         pytest.skip("Optional local official 2020 source unavailable")
     directory = tmp_path_factory.mktemp("official2020")

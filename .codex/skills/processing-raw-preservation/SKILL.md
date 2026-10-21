@@ -12,9 +12,9 @@ Working on PDF extraction, raw question parsing, text block detection, options A
 Only changing acquisition code, Git setup, README wording, or dependency installation.
 
 **Summarizes:**  
-- `docs/PROCESSING_RULES.md`
-- relevant raw-data rules from `docs/DATA_SCHEMA.md`
-- relevant pipeline boundaries from `docs/ARCHITECTURE.md`
+- `docs/general/PROCESSING_RULES.md`
+- relevant raw-data rules from `docs/critical_thinking_problem_solving/DATA_SCHEMA.md`
+- relevant pipeline boundaries from `docs/general/ARCHITECTURE.md`
 
 **Read original docs instead when:**  
 Adding new processing rules, changing extraction assumptions, changing cleaning strategy, or introducing source-specific behavior not covered by the skill.

@@ -248,7 +248,7 @@ def test_real_pdf_renders_whole_dimension_with_labels_and_preserves_raw(
 
 @pytest.fixture(scope="module")
 def local_reparse(tmp_path_factory):
-    root = Path("acquisition/local")
+    root = Path("acquisition/local/critical_thinking_problem_solving/tsa")
     sources = [root / f"TSA Oxford {year}.pdf" for year in (2016, 2019)]
     if not all(p.exists() for p in sources):
         pytest.skip("Local grouping regression PDFs unavailable")

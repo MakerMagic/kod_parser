@@ -12,8 +12,8 @@ Creating or modifying JSON output, schema validation, question IDs, metadata fie
 Only working on file downloading, folder setup, Git configuration, or unrelated environment setup.
 
 **Summarizes:**  
-- `docs/DATA_SCHEMA.md`
-- relevant schema rules from `docs/PROCESSING_RULES.md`
+- `docs/critical_thinking_problem_solving/DATA_SCHEMA.md`
+- relevant schema rules from `docs/general/PROCESSING_RULES.md`
 
 **Read original docs instead when:**  
 Changing canonical field names, adding/removing required fields, changing final dataset structure, or resolving schema ambiguity.
@@ -92,7 +92,7 @@ question_id
 question_number
 source_question_key
 
-The exact canonical names should follow docs/DATA_SCHEMA.md.
+The exact canonical names should follow docs/critical_thinking_problem_solving/DATA_SCHEMA.md.
 Raw preservation
 Always preserve raw extracted content:
 raw_text
@@ -166,7 +166,7 @@ Do not:
 - change field names casually without updating tests and documentation.
 When to Read Original Docs
 This skill is enough for ordinary schema-related tasks.
-Read docs/DATA_SCHEMA.md when:
+Read docs/critical_thinking_problem_solving/DATA_SCHEMA.md when:
 - adding required fields;
 - removing fields;
 - changing canonical names;

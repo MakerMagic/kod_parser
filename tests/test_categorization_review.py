@@ -16,7 +16,7 @@ from categorization.backtest import (
 from categorization.core import digest, read, validate_output, verify_refs
 from categorization.review import LABELS, apply_review, in_scope
 
-BASELINE = Path("inspections_categorization/before_rulebook_review.json")
+BASELINE = Path("inspections/critical_thinking_problem_solving/tsa/categorization/before_rulebook_review.json")
 ANNOTATIONS = Path("categorization/ps_review.json")
 
 
@@ -61,7 +61,7 @@ def test_outside_review_population_byte_equivalent_and_all_upstream_preserved(re
         assert old["correct_answer"] == new["correct_answer"]
         assert old["final_explanation"] == new["final_explanation"]
     archive_file = Path(
-        "inspections_categorization/representation_refinement/archive.json"
+        "inspections/critical_thinking_problem_solving/tsa/categorization/representation_refinement/archive.json"
     )
     archived = read(archive_file) if archive_file.exists() else []
     for ref in baseline["inputs"]:
@@ -229,7 +229,7 @@ def test_reports_and_html_keep_resolved_and_unresolved_audit(reviewed, tmp_path)
     guide.write_text("# Categorization backtesting\n", encoding="utf-8")
     update_guide(result, guide)
     text = guide.read_text(encoding="utf-8")
-    assert "[HTML](../inspections_categorization/" not in text
+    assert "[HTML](../inspections/critical_thinking_problem_solving/tsa/categorization/" not in text
     assert len([r for r in result["records"] if r.get("rulebook_review")]) == 260
     current = load_categorized("data/categorized/blackstone/tsa.categorized.json")
     for year, number in [(2015, 38), (2022, 42)]:

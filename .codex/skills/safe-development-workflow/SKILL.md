@@ -12,8 +12,8 @@ Starting a coding task, refactoring, editing multiple files, adding dependencies
 Only answering conceptual questions outside the repository or explaining Python/VS Code usage.
 
 **Summarizes:**  
-- `docs/DEVELOPMENT_RULES.md`
-- relevant architecture safety rules from `docs/ARCHITECTURE.md`
+- `docs/general/DEVELOPMENT_RULES.md`
+- relevant architecture safety rules from `docs/general/ARCHITECTURE.md`
 
 **Read original docs instead when:**  
 Changing development policy, adding new repo-wide conventions, changing dependency rules, or modifying core architecture.

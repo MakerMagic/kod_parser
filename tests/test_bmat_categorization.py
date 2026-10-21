@@ -291,7 +291,7 @@ def test_stage_rerun_round_trips_content_bound_categories_and_metadata(current):
 
 
 def test_issue_rows_equal_current_unique_unresolved_and_inspection_fields(current):
-    issues = Path("docs/BMAT_CATEGORIZATION_ISSUES.md").read_text(encoding="utf-8")
+    issues = Path("docs/critical_thinking_problem_solving/bmat/BMAT_CATEGORIZATION_ISSUES.md").read_text(encoding="utf-8")
     listed = [
         (int(y), int(n)) for y, n in re.findall(r"\| (\d{4}) \| (\d+) \|", issues)
     ]
@@ -312,7 +312,7 @@ def test_issue_rows_equal_current_unique_unresolved_and_inspection_fields(curren
 
 
 def test_previous_tsa_results_and_upstream_files_remain_byte_identical():
-    protected = Path("inspections_bmat_categorization/full_pass/protected_hashes.json")
+    protected = Path("inspections/critical_thinking_problem_solving/bmat/categorization/full_pass/protected_hashes.json")
     if not protected.exists():
         pytest.skip("Optional before/after workspace audit unavailable")
     for path, expected in json.loads(protected.read_text(encoding="utf-8")).items():

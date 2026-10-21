@@ -243,7 +243,7 @@ def main(argv=None):
     inspect.add_argument("--output", type=Path)
     report = commands.add_parser("report")
     report.add_argument("--clean-json", nargs="+", required=True, type=Path)
-    report.add_argument("--output", type=Path, default=Path("docs/CLEANING_ISSUES.md"))
+    report.add_argument("--output", type=Path, default=Path("docs/critical_thinking_problem_solving/tsa/CLEANING_ISSUES.md"))
     args = parser.parse_args(argv)
     try:
         if args.command == "report":

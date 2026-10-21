@@ -126,7 +126,7 @@ def test_spot_color_rectangle_grid_saves_a_focused_table(tmp_path):
 
 def test_2017_q20_spot_color_table_and_complete_answer_charts(tmp_path):
     source = (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2017.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2017.pdf"
     )
     if not source.is_file():
         pytest.skip("Local 2017 PDF unavailable")
@@ -413,13 +413,13 @@ def test_wide_chart_rows_match_left_labels_one_to_one(tmp_path):
 
 @pytest.mark.skipif(
     not (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2011.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2011.pdf"
     ).is_file(),
     reason="Local TSA Oxford 2011 PDF unavailable",
 )
 def test_2011_q25_contour_and_q50_option_boundaries(tmp_path):
     source = (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2011.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2011.pdf"
     )
     data = parse_pdf(source, asset_dir=tmp_path / "assets")
     validate_raw(data)
@@ -476,13 +476,13 @@ def test_2011_q25_contour_and_q50_option_boundaries(tmp_path):
 
 @pytest.mark.skipif(
     not (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2011.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2011.pdf"
     ).is_file(),
     reason="Local TSA Oxford 2011 PDF unavailable",
 )
 def test_2011_q7_image_options_use_only_left_side_anchors(tmp_path):
     source = (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2011.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2011.pdf"
     )
     data = parse_pdf(source, asset_dir=tmp_path / "assets")
     q = data["questions"][6]
@@ -513,13 +513,13 @@ def test_2011_q7_image_options_use_only_left_side_anchors(tmp_path):
 
 @pytest.mark.skipif(
     not (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2012.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2012.pdf"
     ).is_file(),
     reason="Local TSA Oxford 2012 PDF unavailable",
 )
 def test_2012_q3_text_enclosures_do_not_create_visual_association_issues(tmp_path):
     source = (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2012.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2012.pdf"
     )
     data = parse_pdf(source, asset_dir=tmp_path / "assets")
     q = data["questions"][2]
@@ -547,8 +547,7 @@ def test_local_closed_border_tables_keep_internal_text_without_surrounding_prose
 ):
     source = (
         Path(__file__).resolve().parents[1]
-        / "acquisition"
-        / "local"
+        / "acquisition/local/critical_thinking_problem_solving/tsa"
         / f"TSA Oxford {year}.pdf"
     )
     if not source.is_file():
@@ -577,7 +576,7 @@ def test_local_closed_border_tables_keep_internal_text_without_surrounding_prose
 
 def test_2021_q19_table_notes_keep_existing_conservative_crop(tmp_path):
     source = (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2021.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2021.pdf"
     )
     if not source.is_file():
         pytest.skip("Local 2021 PDF unavailable")
@@ -603,7 +602,7 @@ def test_2021_q19_table_notes_keep_existing_conservative_crop(tmp_path):
 
 def test_2015_text_frames_no_longer_flag_every_question(tmp_path):
     source = (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2015.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2015.pdf"
     )
     if not source.is_file():
         pytest.skip("Local 2015 PDF unavailable")
@@ -626,7 +625,7 @@ def test_2015_text_frames_no_longer_flag_every_question(tmp_path):
 
 def test_2016_q32_raster_padding_does_not_merge_distinct_options(tmp_path):
     source = (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2016.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2016.pdf"
     )
     if not source.is_file():
         pytest.skip("Local 2016 PDF unavailable")
@@ -773,13 +772,13 @@ def test_subpart_diagram_placement_and_unrelated_paragraph_remain_in_raw(tmp_pat
 
 @pytest.mark.skipif(
     not (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2010.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2010.pdf"
     ).exists(),
     reason="Local PDF unavailable",
 )
 def test_attached_bad_crop_regressions_on_local_2010_paper(tmp_path):
     source = (
-        Path(__file__).resolve().parents[1] / "acquisition/local/TSA Oxford 2010.pdf"
+        Path(__file__).resolve().parents[1] / "acquisition/local/critical_thinking_problem_solving/tsa/TSA Oxford 2010.pdf"
     )
     data = parse_pdf(source, asset_dir=tmp_path / "assets")
     validate_raw(data)

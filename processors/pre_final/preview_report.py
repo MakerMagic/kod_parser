@@ -1,14 +1,20 @@
 """Readable structured report below the simulation, never a second data model."""
 
 import json
+from functools import partial
 from html import escape
 
 from .preview_content import text
 
 
+def report_section(identifier, title, value, *, prefix=""):
+    return (
+        f"<section id='{prefix}{identifier}'><h3>{escape(title)}</h3>{value}</section>"
+    )
+
+
 def report(question, categories, content, *, prefix=""):
-    def section(identifier, title, value):
-        return f"<section id='{prefix}{identifier}'><h3>{escape(title)}</h3>{value}</section>"
+    section = partial(report_section, prefix=prefix)
 
     category = categories[question["category"]]
     parts = [

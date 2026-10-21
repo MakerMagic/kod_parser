@@ -14,7 +14,7 @@ from parsers.blackstone.__main__ import main
 from parsers.blackstone.cid_text import decode_cids, supports_shifted_cids
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCAL = ROOT / "acquisition" / "local"
+LOCAL = ROOT / "acquisition/local/critical_thinking_problem_solving/tsa"
 
 
 def write_pdf(

@@ -429,7 +429,7 @@ def test_all_analogous_issue_group_members_and_existing_prompt_controls(corpus):
                 resolved.append((year, q["question_number"]))
         baseline = (
             path.parents[3]
-            / "inspections_clean/tail_structure_baseline_20261014"
+            / "inspections/critical_thinking_problem_solving/tsa/clean/tail_structure_baseline_20261014"
             / path.name.replace(".raw.json", ".clean.json")
         )
         if baseline.exists():

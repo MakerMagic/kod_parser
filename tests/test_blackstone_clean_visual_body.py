@@ -238,7 +238,7 @@ def test_ambiguous_actual_body_visuals_remain_flagged(corpus):
         )
         archived = (
             root
-            / "inspections_categorization/representation_refinement/original_inputs"
+            / "inspections/critical_thinking_problem_solving/tsa/categorization/representation_refinement/original_inputs"
             / raw.name
         )
         if not archived.exists():
@@ -268,7 +268,7 @@ def test_all_36_alignment_cases_and_already_correct_controls(corpus):
     for raw, data in corpus:
         baseline = (
             root
-            / "inspections_clean/visual_body_baseline_20261014"
+            / "inspections/critical_thinking_problem_solving/tsa/clean/visual_body_baseline_20261014"
             / (raw.name.removesuffix(".raw.json") + ".clean.json")
         )
         if not baseline.exists():
