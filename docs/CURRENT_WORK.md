@@ -1,15 +1,31 @@
 ## Current milestone
 
-Pre-final assembly: categorized, issue-free TSA/BMAT → unified JSON → optional
-question-rendering backtesting → later database import.
+Question rendering: completed issue-free TSA/BMAT pre-final JSON → opt-in
+website-like simulation and detailed report → later database import.
 
 ## Current focus
 
-Pre-final assembly/validation is implemented: 987 accepted records (700 TSA,
-287 BMAT), one canonical TSA category and difficulty=null each. Existing intrinsic
+Pre-final assembly/validation is implemented: 1004 accepted records (700 TSA,
+304 BMAT), one canonical TSA category and difficulty=null each. Existing intrinsic
 IDs are reused; reruns are byte-identical. Earlier stages remain read-only.
-The opt-in renderer consumes unified JSON only. Difficulty assignment and database
-import remain separate future tasks. Notes below record historical upstream work.
+Rendering implementation is ready: screenshot-led two-column simulation, lower
+report, explicit selectors/sampling and 1166/1350px presets. The original rendering
+pass had 48 focused tests and Ruff passing without changing its then-current input.
+Browser review is complete
+via the user-authorized loopback HTTP preview: six existing examples at 1166/1350px,
+no broken/distorted/overflowing images, independent passage/answer scrolling, radio
+selection, Explanation anchor and report field ordering verified. No renderer fix
+was needed. The separately authorized BMAT 2010 Q2 boundary correction is now
+propagated: a stream-displaced standalone number no longer attaches Q3's stimulus
+to Q2 option D or its source preview. Exact original spans remain archived.
+The user-supplied BMAT 2014 key populated all 35 missing answers; 17 normal records
+entered pre-final, while 18 intentional skips remain excluded. No explanation was
+invented, and categories were preserved; content-bound review hashes were refreshed
+only as required by the changed 2010 source container/owned context. The historical
+protected-hash audit was rebased only for the two authorized 2010 RAW/CLEAN files;
+every other protected file, including TSA, remained byte-identical.
+Consume unified JSON only; do not reassess quality, reopen issues or change upstream.
+Difficulty assignment and import remain separate. Notes below are historical.
 
 2017–2019 supplied explanation imports and visual review: 97 text explanations matched by exact identity; 39 visual explanations accepted using the existing prompt/validator and inspected stored assets. Twelve visual cases remain unresolved (five structural, seven requiring stronger geometric proof); two text-sufficient illustrated cases are excluded from image-only generation. Match conflicts remain unchanged. Canonical HTML and no-explanation exports are rebuilt. Reapply via `processors.matching.explanation_imports`; see `docs/2017-2019_questions_images_with_explanation_ai_generated/README.md`. No Gemini API calls or raw/clean changes.
 
@@ -20,6 +36,14 @@ Semantic explanation safeguards added: explicit coexistence/assumption prompt ru
 Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then match them to existing clean Blackstone questions.
 
 ## Already completed
+
+- Question-rendering transition: documentation changed before code. Reused
+  `processors/pre_final/render.py` with selector, shared content/report primitives,
+  screenshot-led CSS, native radio selection and independent 560px passage/question
+  scrolling. One requested sample produces one disposable HTML. Six approved
+  rendering shapes exported in two pilot files (1166/1350px), not per-question
+  catalogues. Browser acceptance subsequently checked via loopback HTTP at both
+  widths. No broad quality QA or upstream changes.
 
 - Pre-final transition: instructions/schema/architecture updated before code.
   `processors/pre_final/` writes `data/pre_final/questions.json` and compact
@@ -108,6 +132,11 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Code navigation
 
+- Active rendering: `processors/pre_final/render.py`, `selection.py`,
+  `preview_content.py`, `preview_report.py`, `preview.css`; CLI `inspect` in
+  `__main__.py`; tests `tests/test_question_rendering.py`. Read only pre-final JSON
+  and its referenced saved assets; no assembly/quality validation during rendering.
+
 - Pre-final assembly/validation: `processors/pre_final/core.py`, schema:
   `processors/pre_final/schema.json`, opt-in renderer: `render.py`; tests:
   `tests/test_pre_final.py`. Canonical inputs are categorized TSA/BMAT JSON plus
@@ -143,9 +172,11 @@ Parse answers and explanations from `TSA-2008-2016-Explained-Answers.pdf`, then 
 
 ## Next task
 
-- Use pre-final JSON for explicitly requested rendering/backtesting. Database import
-  and difficulty assignment require separate tasks. Remaining upstream reviews
-  below are historical backlog, not instructions for pre-final assembly.
+- Rendering implementation/browser verification is complete; user visual feedback
+  may be applied within rendering only. Database import/difficulty remain separate.
+  BMAT 2010 Q2's separately authorized input repair is complete; its preview ends
+  after its actual final option D (this BMAT question has no option E). Historical
+  upstream review items below are NOT active instructions for rendering.
 
 - Review the ten remaining BMAT RAW defects (three non-skipped, seven also skipped), plus the option-boundary/column defects newly observed during categorization in 2011 Q13 and 2015 Q29. Upstream repair and matching changes remain separate tasks; all safe categorization inputs have now been attributed. Do not infer matching completion from a category or start explanation generation.
 

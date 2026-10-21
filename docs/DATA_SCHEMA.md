@@ -1,6 +1,11 @@
 # Data Schema
 
-## Pre-final unified schema v1 (active milestone)
+## Pre-final unified schema v1 (completed rendering input)
+
+Active development is now question-rendering backtesting. Read this schema's
+existing records and saved assets only; do not regenerate/revalidate upstream
+quality, change content/categories or assign difficulty. Lightweight selected-record
+rendering assertions are sufficient. The preview introduces no parallel schema.
 
 `data/pre_final/questions.json` is the single rendering/import-facing assembly of
 successful, issue-free TSA/BMAT categorization. It does not replace upstream JSON.

@@ -471,6 +471,7 @@ def parse_pdf(
                 for o in page["images"]
                 if o["bbox"][1] < box[3] and o["bbox"][3] >= box[1]
             )
+    repair_displaced_numbers(records, pages)
     for pending in records:
         pending["math_layout"] = [
             item
@@ -573,9 +574,28 @@ def parse_pdf(
 
     mark_trailing_rules(dataset, records)
     if render:
+        # RAW provenance may have several stream fragments on one page. The
+        # shared visual extractor expects one owning geometry per question/page;
+        # otherwise a tiny number-only fragment marks that page's chart foreign.
+        visual_records = []
+        for pending in records:
+            by_page = {}
+            for segment in pending["segments"]:
+                number, box = segment["page"], segment["bbox"]
+                if number not in by_page:
+                    by_page[number] = {**segment, "bbox": list(box)}
+                else:
+                    old = by_page[number]["bbox"]
+                    by_page[number]["bbox"] = [
+                        min(old[0], box[0]),
+                        min(old[1], box[1]),
+                        max(old[2], box[2]),
+                        max(old[3], box[3]),
+                    ]
+            visual_records.append({**pending, "segments": list(by_page.values())})
         reuse.save_visuals(
             dataset,
-            records,
+            visual_records,
             asset_dir or Path("data/raw/bmat/assets"),
             overwrite=overwrite_assets,
             asset_prefix="bmat",
@@ -668,6 +688,74 @@ def parse_pdf(
         )
     validate_raw(dataset)
     return dataset
+
+
+def repair_displaced_numbers(records, pages):
+    """Recover a left-margin number emitted after its same-baseline stimulus.
+
+    PDF stream order can put a standalone number after an entire table. Move
+    exact page spans, not prose, and require positive same-baseline geometry.
+    Ordinary cross-page answer continuations have no such numbered anchor.
+    """
+    for previous, current in pairwise(records):
+        anchor = current["lines"][0]
+        if interpreted(anchor).strip() != str(current["number"]):
+            continue
+        page = anchor["page"]
+        tail = [l for l in previous["lines"] if l["page"] == page]
+        if not tail or tail[0]["x0"] <= anchor["x1"]:
+            continue
+        height = anchor["bottom"] - anchor["top"]
+        if abs(tail[0]["top"] - anchor["top"]) > height * 0.3:
+            continue
+        moved = [s for s in previous["segments"] if s["page"] == page]
+        head = current["segments"][0]
+        if (
+            len(moved) != 1
+            or moved[0]["end"] > anchor["start"]
+            or not any(s["page"] != page for s in previous["segments"])
+        ):
+            continue
+        raw = pages[page - 1]["raw_text"]
+        first = {
+            **head,
+            "end": anchor["end"],
+            "text": raw[anchor["start"] : anchor["end"]],
+        }
+        first["bbox"] = [anchor["x0"], anchor["top"], anchor["x1"], anchor["bottom"]]
+        body = {
+            **moved[0],
+            "bbox": [
+                min(l["x0"] for l in tail),
+                min(l["top"] for l in tail),
+                max(l["x1"] for l in tail),
+                max(l["bottom"] for l in tail),
+            ],
+        }
+        rest_start = anchor["end"]
+        if raw[rest_start : rest_start + 1] == "\n":
+            rest_start += 1
+        rest = {**head, "start": rest_start, "text": raw[rest_start : head["end"]]}
+        previous["segments"] = [s for s in previous["segments"] if s["page"] != page]
+        previous["lines"] = [l for l in previous["lines"] if l["page"] != page]
+        current["segments"] = [first, body, rest, *current["segments"][1:]]
+        all_lines = [anchor, *tail, *current["lines"][1:]]
+        offset = 0
+        ordered = []
+        for segment in current["segments"]:
+            for line in all_lines:
+                if (
+                    line["page"] == segment["page"]
+                    and segment["start"] <= line["start"] < segment["end"]
+                ):
+                    ordered.append(
+                        {
+                            **line,
+                            "block_start": offset + line["start"] - segment["start"],
+                        }
+                    )
+            offset += len(segment["text"]) + 1
+        current["lines"] = ordered
 
 
 def validate_raw(dataset):

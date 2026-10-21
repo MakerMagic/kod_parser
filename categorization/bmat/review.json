@@ -2365,7 +2365,7 @@
         "section": "section_1",
         "question_number": 1
       },
-      "question_sha256": "81e0d6e209b90580869d324830882414ad1ec557d69905324c5bc9d4425aaea8",
+      "question_sha256": "cb50de859d9539c803436fff169f18c9614e8377d64d78d390eb47cf7d8da9b6",
       "category_id": "ps_procedure",
       "evidence": "Combine the two weight lookups with the joint weight, then reverse the BMI relationship; constructing the missing person's value is more than selecting applicable cells.",
       "input_issue": null,
@@ -2407,7 +2407,7 @@
         "section": "section_1",
         "question_number": 3
       },
-      "question_sha256": "dffafc12133731f3f1d86372f364911421f0084b2d07187b40e714c4c2393fd1",
+      "question_sha256": "8fe9bb8c7b9b5c5a057afc7673e976b27bc8f70b66efb2ec540b8e2dfc8fa9c9",
       "category_id": "ps_similarity",
       "evidence": "Locate the scatter point corresponding to the specified row of the table; the same relationship is represented in two forms and no new process must be devised.",
       "input_issue": null,
@@ -2424,10 +2424,10 @@
           "image_id": "bmat_2010_q003_r003_p004_asset_01_dfb2ce3b53"
         },
         {
-          "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\assets\\06c7ef7d42a2bf036487\\bmat_2010_q003_p004_question_only_335534787e46.png",
+          "path": "C:\\Users\\user\\Desktop\\kod_parser\\data\\raw\\bmat\\assets\\06c7ef7d42a2bf036487\\bmat_2010_q003_p004_question_only_fafb6da999c4.png",
           "sha256": "7dbed46f83955cb83e79b9493f1afa53ca30347f9d012aca849eb09c688a061f",
           "role": "source_preview",
-          "image_id": "bmat_2010_q003_p004_question_only_335534787e46"
+          "image_id": "bmat_2010_q003_p004_question_only_fafb6da999c4"
         }
       ],
       "previous_categorization": {
@@ -2449,7 +2449,7 @@
         "section": "section_1",
         "question_number": 5
       },
-      "question_sha256": "d56d6c143f9020393356bc36c28d72846234a29a1655af84c23749af5dfe382a",
+      "question_sha256": "aea4a00ce06dbfae622c1a04ee6cca2b9fd39d531a7d77af0ae0eefb8bf1b743",
       "category_id": "ps_procedure",
       "evidence": "Schedule preparation, baking and cooling with permitted overlaps to find the critical completion time; all stage durations matter and data selection is insufficient.",
       "input_issue": null,
@@ -2485,7 +2485,7 @@
         "section": "section_1",
         "question_number": 7
       },
-      "question_sha256": "6e5c039137e208901b8cf6cc38453fea1f3e19f3d9e3fa213acf921e42865d08",
+      "question_sha256": "8f646c7aeb22c302890fff3423338812ae99aaa82b1cf47b01f516861f521f05",
       "category_id": "ps_procedure",
       "evidence": "Enumerate digit masks compatible with three stuck lights and the score bound; systematic state testing, not merely rotating or matching a fixed display, is required.",
       "input_issue": null,
@@ -2581,7 +2581,7 @@
         "section": "section_1",
         "question_number": 12
       },
-      "question_sha256": "d576d6d1fcd91827d202d334acebf8416e5a69db35cfaa896babbed9a3b9a973",
+      "question_sha256": "00de6cde07a023d413a2f040ce80a12525abc22cd491bdb304c1115a303d9da2",
       "category_id": "ps_select",
       "evidence": "Identify the tile colour-count profile whose exclusion balances the supplied inventory; the task filters a given profile, not a rotated representation or newly built design.",
       "input_issue": null,
@@ -2647,7 +2647,7 @@
         "section": "section_1",
         "question_number": 14
       },
-      "question_sha256": "37eb9f9c31cd2d7668043f2f1837b677d624a54a64bd50664d0df5253e8c76f7",
+      "question_sha256": "7b903e213cc7e652b0d641a6c3a1d2e989951b6c75907d883144b2edb61c4b66",
       "category_id": "ps_procedure",
       "evidence": "Compare the segment-state changes across digit pairs to maximize the number switched; the answer requires systematic pair testing rather than equivalence of shapes.",
       "input_issue": null,
@@ -2701,7 +2701,7 @@
         "section": "section_1",
         "question_number": 18
       },
-      "question_sha256": "ab79391c20d6f1b505f6048162090378b0c4750571d9864d30ea45ea20c54bcc",
+      "question_sha256": "964bb8d7072a5209cdaa87a45922332b48c28c8168d804c5f6650f796995ca59",
       "category_id": "ps_procedure",
       "evidence": "Construct a maximum packing of H-shaped cards, considering interlocking and rotation; rotation is an operation within optimization, not the final recognition task.",
       "input_issue": null,
@@ -2743,7 +2743,7 @@
         "section": "section_1",
         "question_number": 23
       },
-      "question_sha256": "334b606e56e1754bb2366f1f24e912f8af4930406610b9dcf58f5cb1b1c495b2",
+      "question_sha256": "480499d8a9fbe9571f5daa82b388eccd850e23a0a7b9e3b548575db95e682858",
       "category_id": "ps_procedure",
       "evidence": "Count unordered valid digit-distinct number pairs against the full sample space; the probability needs an explicit counting method and careful duplicate avoidance.",
       "input_issue": null,
@@ -2815,7 +2815,7 @@
         "section": "section_1",
         "question_number": 25
       },
-      "question_sha256": "afb5f1fa6561747c272a007c208c6adb44fd7e8e1fe99947971e724e0f7e1a60",
+      "question_sha256": "936122fd2e478515cb79c0871babf4a516f3e399f796fb24afcdefab5763af64",
       "category_id": "ps_procedure",
       "evidence": "Simulate exchanges and opponents' scores under conditional doubling to select the best result; the dynamic rules, not a supplied result profile, determine success.",
       "input_issue": null,
@@ -2851,7 +2851,7 @@
         "section": "section_1",
         "question_number": 29
       },
-      "question_sha256": "ef9ff71488ac7567f09a4e84e8162e5edc0e0341b93f904f6265ad4e42ad31a6",
+      "question_sha256": "5a2aebc5f5149f5c776d6b9125b0f6a71505d2aab9e0fb830dce6883ca6c53ec",
       "category_id": "ps_procedure",
       "evidence": "Partition the apples into two triples meeting the tolerance and identify the unused apple; checking feasible combinations is essential rather than choosing a single input.",
       "input_issue": null,

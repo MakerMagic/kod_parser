@@ -48,8 +48,9 @@ def content_bounds(question, page_number):
 
 def regions(dataset, question):
     result = []
-    for span in question["raw"]["page_spans"]:
-        number = span["page"]
+    # Source-order recovery can create several exact spans on the same page.
+    # Preview the owned page region once, not once per provenance span.
+    for number in dict.fromkeys(s["page"] for s in question["raw"]["page_spans"]):
         page = dataset["pages"][number - 1]
         box = content_bounds(question, number)
         if box is None:

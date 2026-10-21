@@ -112,19 +112,21 @@ Do not scan unrelated folders unless the task requires it.
 
 ## Current Development Milestone
 
-Active development is now **pre-final assembly** for both TSA and BMAT.
-Consume only successfully categorized, issue-free canonical structured records
-with exactly one of the existing ten TSA category IDs. Preserve validated content,
-answers, explanations, asset associations and minimal provenance; do not repair,
-rerun or modify raw parsing, cleaning, matching or categorization in this stage.
-Missing required input is a pre-final validation exclusion, never fabricated data.
+Active development is now **question rendering / backtesting** for TSA and BMAT.
+Raw parsing, cleaning, matching, categorization and pre-final assembly are completed
+dependencies and out of scope. Input is ONLY `data/pre_final/questions.json` and
+the saved assets it references. Do not rerun earlier stages, inspect excluded
+questions/issues, reassess correctness/answers/categories/explanations or modify
+upstream data when a preview exposes something visually.
 
-Produce one unified JSON for later rendering/backtesting and database import.
-Rendering follows assembly; database import follows rendering/backtesting and is
-not implemented now. IDs are deterministic examination identities, stable across
-reruns, never timestamps/order/content hashes. Every difficulty is null; difficulty
-assignment is a separate future process. See docs/DATA_SCHEMA.md and
-docs/ARCHITECTURE.md. Earlier milestones are historical, not current instructions.
+Build reusable opt-in selectors, a single-question website simulation and a lower
+structured report from the same pre-final record. No permanent question catalogue
+or default all-question export. Follow the supplied screenshot, preserve asset
+aspect ratios, and provide independent passage scrolling at 1166/1350px presets.
+Lightweight rendering-input assertions are permitted, not a new quality pipeline.
+Report genuinely malformed input without repair. Database import follows rendering
+review; difficulty assignment remains separate. See docs/PRE_FINAL_BACKTEST.md.
+Earlier milestones are historical, not current instructions.
 
 ## Context and Skill Usage
 

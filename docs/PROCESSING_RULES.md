@@ -1,14 +1,13 @@
 # Processing Rules
 
-## Active pre-final boundary
+## Active rendering boundary
 
-Current development assembles only successfully categorized, issue-free TSA/BMAT
-canonical records into one pre-final JSON. Earlier-stage rules below describe their
-own historical processing responsibilities, not work to rerun here. Pre-final does
-not parse, clean, match, categorize, repair input or generate explanations. Missing
-required data is recorded as a validation exclusion. Preserve validated content;
-use deterministic examination IDs and difficulty=null. Question rendering follows
-assembly; database import and difficulty assignment are separate later tasks.
+Current development renders already-approved TSA/BMAT pre-final records only.
+Earlier-stage rules below describe historical processing responsibilities, not work
+to rerun here. Raw/clean/matching/categorization/assembly are complete dependencies.
+Rendering does not re-filter issues, verify answers, reassess categories/explanations
+or change input. Selected malformed rendering fields are reported, not repaired.
+Database import follows rendering review; difficulty assignment is separate.
 The authoritative ten-category catalogue is `categorization/patterns.json`; historical
 category proposals below do not add pre-final labels or BMAT-to-TSA mappings.
 

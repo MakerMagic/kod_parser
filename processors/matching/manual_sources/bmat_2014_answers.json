@@ -1,0 +1,18 @@
+{
+  "origin": "user_supplied_manual",
+  "approval": "missing_answers_only",
+  "source_family": "bmat",
+  "year": 2014,
+  "section": "section_1",
+  "source_image": "data/input/manual/bmat_2014_answer_key.png",
+  "verification": "Transcribed directly from the user-supplied BMAT answer-key screenshot. No inference or explanation supplied. Existing answers must not be overwritten.",
+  "answers": {
+    "1": "D", "2": "C", "3": "E", "4": "B", "5": "G",
+    "6": "B", "7": "E", "8": "B", "9": "C", "10": "D",
+    "11": "E", "12": "D", "13": "E", "14": "F", "15": "A",
+    "16": "D", "17": "D", "18": "C", "19": "F", "20": "C",
+    "21": "C", "22": "C", "23": "D", "24": "B", "25": "B",
+    "26": "D", "27": "E", "28": "A", "29": "E", "30": "D",
+    "31": "C", "32": "D", "33": "B", "34": "C", "35": "B"
+  }
+}

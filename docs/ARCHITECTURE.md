@@ -188,7 +188,7 @@ Responsible for assigning categories and subcategories to already structured que
 
 Categorization must not be part of acquisition or parsing.
 
-### 4.8 Pre-final Assembly (active stage)
+### 4.8 Pre-final Assembly (completed dependency)
 
 `processors/pre_final/` reads canonical categorization JSON for TSA and BMAT.
 Resolve existing structured references only when needed for issue/answer/asset
@@ -204,7 +204,22 @@ all difficulty values are null pending a separate future process.
 Rendering/backtesting reads only this unified JSON, on explicit user request.
 Database import follows rendering/backtesting and is not part of this milestone.
 
-### 4.9 Later Validation and Export
+### 4.9 Question Rendering / Backtesting (active stage)
+
+Flow: pre-final JSON → selector/filter → single-question simulation → report
+builder → disposable browser HTML. Reuse `processors/pre_final/render.py` and
+keep loading/selection/rendering/output separate. Only selected records receive
+lightweight rendering-field assertions; there is no new issue/eligibility review.
+The same normalized record supplies the website-like two-column simulation and
+the structured report below it. No source-specific content rules or alternate
+question schema. Use proportional saved images and independent passage scrolling.
+Presets are 1166px and 1350px. Do not modify data to fit the renderer.
+
+Raw/clean/matching/categorization/pre-final are read-only and are not rerun.
+Questions/answers/explanations/categories are not reassessed. Import follows
+rendering review, not this task. Preview output is opt-in, never a full catalogue.
+
+### 4.10 Later Validation and Export
 
 Responsible for checking data quality and producing final outputs.
 
@@ -290,9 +305,9 @@ later pipeline stages
 
 ## 7. Current Development Milestone
 
-Active milestone: categorized, issue-free TSA/BMAT → unified pre-final JSON →
-optional question-rendering backtesting. Raw, cleaning, matching and categorization
-remain read-only. Database import and difficulty assignment are later work.
+Active milestone: completed pre-final JSON → on-demand question-rendering
+backtesting. All earlier stages remain read-only/out of scope; no question-quality
+review. Database import follows rendering review; difficulty is separate later work.
 
 ## 8. Architecture Safeguards
 

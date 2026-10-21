@@ -119,6 +119,62 @@ def test_cross_page_preview_keeps_only_owned_content_on_each_page():
     )
 
 
+def test_final_multiline_option_and_image_end_before_neighbor():
+    q = {
+        "raw": {"page_spans": [{"page": 1}, {"page": 1}, {"page": 1}]},
+        "visual_assets": [],
+        "options": [
+            {"label": "E", "images": [{"page": 1, "bbox": [80, 430, 240, 510]}]}
+        ],
+        "layout_blocks": [
+            {
+                "page": 1,
+                "type": "text",
+                "component": "question_body",
+                "text": "Task",
+                "bbox": [50, 60, 500, 80],
+            },
+            {
+                "page": 1,
+                "type": "text",
+                "component": "option",
+                "label": "E",
+                "text": "E Final option",
+                "bbox": [80, 390, 500, 402],
+            },
+            {
+                "page": 1,
+                "type": "text",
+                "component": "option",
+                "label": "E",
+                "text": "continued line",
+                "bbox": [100, 405, 500, 417],
+            },
+        ],
+    }
+    neighbor = {
+        "layout_blocks": [
+            {
+                "page": 1,
+                "type": "text",
+                "component": "question_body",
+                "text": "Next question",
+                "bbox": [50, 520, 500, 540],
+            }
+        ]
+    }
+    d = {
+        "questions": [q, neighbor],
+        "pages": [{"width": 600, "height": 842}],
+        "shared_information_ranges": [],
+    }
+    previews = regions(d, q)
+    assert len(previews) == 1
+    crop = previews[0]
+    assert crop["content_bbox"][3] == 510
+    assert 510 <= crop["bbox"][3] < 520
+
+
 def outline_fixture():
     # One native round glyph; no Unicode cmap or CID/character-number assumption.
     glyph = bytes.fromhex(

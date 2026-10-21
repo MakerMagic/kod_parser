@@ -11,9 +11,11 @@ a concrete evidenced uncertainty.
 
 ## 1. Current Development Milestone
 
-Active milestone: pre-final assembly of already categorized, issue-free TSA/BMAT.
-Earlier stages are read-only dependencies: do not rerun, repair or modify them.
-Validate missing/invalid input and exclude it explicitly. Preserve validated text,
-answers, explanations and assets, use stable deterministic examination IDs and
-set difficulty to null. One unified JSON feeds explicit user rendering/backtesting;
-database import and difficulty assignment follow in separate tasks.
+Active milestone: question-rendering backtesting from completed pre-final JSON.
+Raw/cleaning/matching/categorization/pre-final assembly are out of scope: do not
+rerun, repair or modify them. Do not reassess question/answer/explanation/category
+quality or reopen excluded issues. Only lightweight assertions for selected
+rendering fields/assets are allowed. Report malformed pre-final input rather than
+repair it. Use one reusable simulation/report builder with opt-in selectors and
+1166/1350px layouts, not default bulk exports or static catalogues. Database import
+follows rendering review; difficulty assignment is separate later work.

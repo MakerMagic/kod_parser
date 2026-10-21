@@ -13,12 +13,11 @@ Counts are unique question records. Intentional skips are policy exclusions, not
   "duplicate_source_question_identities": 37,
   "statuses": {
     "deferred_upstream_issue": 3,
-    "matched": 295,
+    "matched": 312,
     "intentionally_skipped": 335,
     "source_unresolved": 5,
     "duplicate_source": 1,
     "supplied_review_required": 2,
-    "source_missing": 17,
     "explanation_review_required": 6
   },
   "supplied_imports": {
@@ -450,28 +449,6 @@ Counts are unique question records. Intentional skips are policy exclusions, not
 | 2020 | 25 | explanation_review_required | D |
 | 2020 | 30 | explanation_review_required | C |
 | 2021 | 24 | explanation_review_required | A |
-
-### source_missing (17 unique questions)
-
-| Year | Question | Status | Correct answer |
-|---|---|---|---|
-| 2014 | 1 | source_missing | — |
-| 2014 | 2 | source_missing | — |
-| 2014 | 3 | source_missing | — |
-| 2014 | 4 | source_missing | — |
-| 2014 | 6 | source_missing | — |
-| 2014 | 7 | source_missing | — |
-| 2014 | 12 | source_missing | — |
-| 2014 | 13 | source_missing | — |
-| 2014 | 15 | source_missing | — |
-| 2014 | 16 | source_missing | — |
-| 2014 | 17 | source_missing | — |
-| 2014 | 18 | source_missing | — |
-| 2014 | 22 | source_missing | — |
-| 2014 | 24 | source_missing | — |
-| 2014 | 25 | source_missing | — |
-| 2014 | 26 | source_missing | — |
-| 2014 | 30 | source_missing | — |
 
 ### source_unresolved (5 unique questions)
 

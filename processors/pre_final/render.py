@@ -1,184 +1,126 @@
-"""Opt-in unified question view: read pre-final JSON and its saved assets only."""
+"""Reusable website-like preview from pre-final JSON only, with opt-in reporting."""
 
-import base64
-import json
-import mimetypes
 from html import escape
 from pathlib import Path
 
-from .core import validate
-from .storage import ROOT, Store
+from .preview_content import QuestionContent, text
+from .preview_report import report
+from .selection import assert_renderable, load, select, select_many
+from .storage import ROOT
+
+WIDTHS = (1166, 1350)
+CSS = Path(__file__).with_name("preview.css")
 
 
-def select(data, *, identifier=None, source=None, year=None, question=None):
-    validate(data)
-    if identifier is None and (source is None or year is None or question is None):
-        raise ValueError("Select an exact ID or source/year/question")
-    rows = [
-        q
-        for q in data["questions"]
-        if (
-            (identifier is None or q["id"] == identifier)
-            and (source is None or q["source"] == source)
-            and (year is None or q["year"] == year)
-            and (question is None or q["question_number"] == question)
+def simulation(question, categories, content, *, report_prefix="", position=1, count=1):
+    """One question-taking component. No data loading, scoring or interpretation."""
+    label = escape(categories[question["category"]]["name"])
+    answers = []
+    for answer in question["main_answers"]:
+        answers.append(
+            "<label class='answer-option' data-option='"
+            + escape(answer["label"], quote=True)
+            + "'>"
+            "<input type='radio' name='answer-"
+            + str(position)
+            + "' value='"
+            + escape(answer["label"], quote=True)
+            + "' aria-label='Option "
+            + escape(answer["label"], quote=True)
+            + "'>"
+            "<span class='option-badge' aria-hidden='true'>"
+            + escape(answer["label"])
+            + "</span>"
+            "<span class='option-content'>"
+            + content.answer(answer, caption=False)
+            + "</span></label>"
         )
-    ]
-    if len(rows) != 1:
-        raise ValueError("No unique pre-final question; refine identity")
-    return rows[0]
+    return (
+        "<div class='preview-scroll'><section class='website' aria-label='Question simulation'>"
+        "<header class='exam-header'><span class='exam-source'>"
+        + escape(question["source"])
+        + "</span>"
+        "<span class='preview-pill'>Rendering preview · "
+        + str(question["year"])
+        + "</span>"
+        "<span class='category-badge'>" + label + "</span></header>"
+        "<div class='simulation-grid'><section class='body-pane' tabindex='0' aria-label='Passage'>"
+        "<h2 class='eyebrow'>PASSAGE</h2>"
+        + (content.body(caption=False) or text("No separate passage."))
+        + "</section>"
+        "<section class='question-pane' tabindex='0' aria-label='Question and answers'>"
+        "<div class='question-stem text'>"
+        + escape(question["main_question"])
+        + "</div>"
+        "<fieldset class='answer-options'><legend class='sr-only'>Select an answer for preview</legend>"
+        + "".join(answers)
+        + "</fieldset></section></div>"
+        "<footer class='exam-footer'><a class='explanation-link' href='#"
+        + report_prefix
+        + "explanation'>Explanation</a>"
+        "<span class='question-counter'>Question "
+        + str(question["question_number"])
+        + " · Preview "
+        + str(position)
+        + "/"
+        + str(count)
+        + "</span>"
+        "<button class='check-button' type='button' disabled title='Rendering preview only; no scoring'>Check</button>"
+        "</footer></section></div>"
+    )
 
 
-def render_html(question, categories, *, root=ROOT):
-    """Keep the established readable section order, without an upstream renderer."""
-    store = Store(root)
-    assets = {a["id"]: a for a in question["assets"]}
-
-    def text(value):
-        return "<p class='text'>" + escape(str(value)) + "</p>"
-
-    def figure(identifier):
-        asset = assets[identifier]
-        path = store.check(asset)
-        mime = mimetypes.guess_type(path.name)[0]
-        if mime not in {"image/png", "image/jpeg", "image/webp"}:
-            raise ValueError("Unsupported saved inspection asset")
-        return (
-            "<figure><img alt='"
-            + escape(asset["role"], quote=True)
-            + "' src='data:"
-            + mime
-            + ";base64,"
-            + base64.b64encode(path.read_bytes()).decode("ascii")
-            + "'><figcaption>"
-            + escape(asset["role"])
-            + " · page "
-            + escape(str(asset["page"]))
-            + "</figcaption></figure>"
-        )
-
-    def section(identifier, heading, content):
-        return (
-            f"<section id='{identifier}'><h2>{escape(heading)}</h2>{content}</section>"
-        )
-
-    title = f"{question['source']} {question['year']} — Question {question['question_number']}"
-    category = categories[question["category"]]
+def build_report(questions, categories, *, root=ROOT, width=1166):
+    if width not in WIDTHS:
+        raise ValueError("Supported preview widths: 1166 or 1350")
+    if not questions:
+        raise ValueError("No selected questions to render")
     parts = [
-        "<!doctype html><html lang='en'><head><meta charset='utf-8'>",
+        "<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>",
         "<meta http-equiv='Content-Security-Policy' content=\"default-src 'none'; img-src data:; style-src 'unsafe-inline'\">",
-        "<title>" + escape(title) + "</title>",
-        "<style>body{font:16px/1.55 system-ui,sans-serif;background:#eef2f6;color:#192535}main{max-width:1000px;margin:24px auto;background:white;padding:28px}h2{color:#235586;border-bottom:1px solid #dbe2e8}.text{white-space:pre-wrap}img{max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}section{margin-bottom:28px}</style></head><body><main>",
-        section("source", "Source", text(question["source"])),
-        section(
-            "explanation-by-ai",
-            "Explanation by AI",
-            text(str(question["explanation_by_ai"]).lower()),
-        ),
-        section(
-            "category", "Category", text(category["family"] + " → " + category["name"])
-        ),
-        "<h1>" + escape(title) + "</h1>",
-        section(
-            "main-body",
-            "Main Body",
-            "".join(
-                text(b["text"]) if b["type"] == "text" else figure(b["asset_id"])
-                for b in question["main_body"]
-            ),
-        ),
-        section("main-question", "Main Question", text(question["main_question"])),
-        section(
-            "main-answers",
-            "Main Answers",
-            "".join(
-                "<div data-option='"
-                + escape(a["label"], quote=True)
-                + "'>"
-                + text(a["label"] + ": " + a["text"])
-                + (
-                    ""
-                    if a.get("render_text_only")
-                    else "".join(figure(i) for i in a["asset_ids"])
-                )
-                + "</div>"
-                for a in question["main_answers"]
-            ),
-        ),
-        section("correct-answer", "Correct Answer", text(question["correct_answer"])),
+        "<title>Question rendering preview</title><style>"
+        + CSS.read_text(encoding="utf-8")
+        + "</style></head>",
+        "<body style='--preview-width:"
+        + str(width)
+        + "px'><main><p class='preview-note'>"
+        + str(width)
+        + " px preview · rendering only · answers are selectable, not scored</p>",
     ]
-    explanation = question["explanation"]
-    blocks = []
-    for block in (explanation or {}).get("blocks", []):
-        if block["type"] == "paragraph":
-            blocks.append(text(block["text"]))
-        elif block["type"] == "visual":
-            blocks.append(figure(block["asset_id"]))
-        elif block["type"] == "list":
-            tag = "ol" if block.get("ordered") else "ul"
-            blocks.append(
-                "<"
-                + tag
-                + ">"
-                + "".join(
-                    "<li class='text'>"
-                    + escape(
-                        ((i.get("label") + ": ") if i.get("label") else "") + i["text"]
-                    )
-                    + "</li>"
-                    for i in block["items"]
-                )
-                + "</"
-                + tag
-                + ">"
-            )
-            if block.get("transition"):
-                transition = block["transition"]
-                blocks.append(
-                    text(
-                        transition["text"]
-                        if isinstance(transition, dict)
-                        else transition
-                    )
-                )
-    parts.append(
-        section(
-            "explanation",
-            "Explanation",
-            "".join(blocks)
-            if explanation
-            else text("Not supplied by the accepted upstream source."),
+    for index, question in enumerate(questions):
+        assert_renderable(question, categories)
+        prefix = "" if len(questions) == 1 else f"q{index}-"
+        content = QuestionContent(question, root=root)
+        parts.append(
+            "<article class='question-preview' data-question-id='"
+            + escape(question["id"], quote=True)
+            + "'>"
         )
-    )
-    parts.append(
-        section(
-            "original-question",
-            "Original question screenshot",
-            "".join(
-                figure(a["id"])
-                for a in question["assets"]
-                if a["role"] == "source_preview"
-            ),
-        )
-    )
-    parts.append(
-        "<details><summary>Provenance</summary><pre>"
-        + escape(
-            json.dumps(
-                {
-                    "id": question["id"],
-                    **question["provenance"],
-                    "explanation": (explanation or {}).get("provenance"),
-                },
-                ensure_ascii=False,
-                indent=2,
+        parts.append(
+            simulation(
+                question,
+                categories,
+                content,
+                report_prefix=prefix,
+                position=index + 1,
+                count=len(questions),
             )
         )
-        + "</pre></details></main></body></html>"
-    )
+        parts.append(report(question, categories, content, prefix=prefix))
+        parts.append("</article>")
+    parts.append("</main></body></html>")
     return "".join(parts)
 
 
-def inspect(path, *, root=ROOT, **selectors):
-    data = json.loads(Path(path).read_text(encoding="utf-8"))
-    return render_html(select(data, **selectors), data["categories"], root=root)
+def render_html(question, categories, *, root=ROOT, width=1166):
+    return build_report([question], categories, root=root, width=width)
+
+
+def inspect(path, *, root=ROOT, width=1166, **selectors):
+    data = load(path)
+    return build_report(
+        select_many(data, **selectors), data["categories"], root=root, width=width
+    )
+
+
+__all__ = ["WIDTHS", "build_report", "inspect", "render_html", "select", "simulation"]
