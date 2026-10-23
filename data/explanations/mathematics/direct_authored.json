@@ -1,0 +1,3456 @@
+{
+  "domain": "mathematics",
+  "stage": "mathematics_explanation_authorship",
+  "questions": [
+    {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q022",
+      "source_pdf": "math_1.pdf",
+      "question_number": 22,
+      "content_sha256": "e356f8a8e93cbdd8d8d7e724d4ab74ba14286a72bf1c86a37e8a6602d09e401b",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The corner of the larger square divides the smaller square by two perpendicular lines through its centre. Rotating the smaller square by \\(90^\\circ\\) preserves it and interchanges the four regions, so they have equal area. The overlap shown is one such region: \\(\\frac14(5^2)=\\frac{25}{4}\\). Choose C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q022",
+          "content_sha256": "e356f8a8e93cbdd8d8d7e724d4ab74ba14286a72bf1c86a37e8a6602d09e401b"
+        }
+      }
+    },
+    {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q023",
+      "source_pdf": "math_1.pdf",
+      "question_number": 23,
+      "content_sha256": "7cd3b7ba73b925a0b6fc0d6063e3dc84df9625ee1f76f2a8b08b035dd6c3460c",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The lateral area is \\(\\pi r\\ell=60\\pi\\). With \\(r=6\\), the slant height is \\(\\ell=10\\). The cone's height is \\(h=\\sqrt{\\ell^2-r^2}=\\sqrt{100-36}=8\\). Hence \\(V=\\frac13\\pi r^2h=\\frac13\\pi(36)(8)=96\\pi\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q023",
+          "content_sha256": "7cd3b7ba73b925a0b6fc0d6063e3dc84df9625ee1f76f2a8b08b035dd6c3460c"
+        }
+      }
+    },
+    {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q025",
+      "source_pdf": "math_1.pdf",
+      "question_number": 25,
+      "content_sha256": "59cc67af2253cd6cb94ce919d86d72a01d666401c3a118ec92d8bdc74fea8643",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The diagram gives perpendicular edge lengths \\(5\\sqrt2,\\ 3\\sqrt2,\\ 2\\sqrt2\\). Applying Pythagoras across a face and then through the solid gives \\(RT^2=(5\\sqrt2)^2+(3\\sqrt2)^2+(2\\sqrt2)^2=50+18+8=76\\). Thus \\(RT=2\\sqrt{19}\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q025",
+          "content_sha256": "59cc67af2253cd6cb94ce919d86d72a01d666401c3a118ec92d8bdc74fea8643"
+        }
+      }
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q014",
+      "source_pdf": "math_10.pdf",
+      "question_number": 14,
+      "content_sha256": "d45d5ba7a382fc229d80edc1338c8ce8e716e13725065d379900af3e6ce77c89",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The smaller square's diagonal is \\(a\\sqrt2\\cdot\\sqrt2=2a\\), which is the circle's diameter and the outer square's side. Thus the circle has radius \\(a\\). The shaded area is the outer square minus the circle: \\((2a)^2-\\pi a^2=(4-\\pi)a^2\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v10.1_3d5046fccc04dca08099_q014",
+          "content_sha256": "d45d5ba7a382fc229d80edc1338c8ce8e716e13725065d379900af3e6ce77c89"
+        }
+      }
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q017",
+      "source_pdf": "math_10.pdf",
+      "question_number": 17,
+      "content_sha256": "135c406f077802d9c20c9e0f695d4e6eb855d883d58f64c244732bb875cdfb2b",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The two sides meeting at \\(C\\) are both \\(6\\) cm, and \\(\\angle C=120^\\circ\\). The cosine rule gives \\(AB^2=6^2+6^2-2(6)(6)\\cos120^\\circ=72+36=108\\). Therefore \\(AB=6\\sqrt3\\) cm, option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v10.1_3d5046fccc04dca08099_q017",
+          "content_sha256": "135c406f077802d9c20c9e0f695d4e6eb855d883d58f64c244732bb875cdfb2b"
+        }
+      }
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q030",
+      "source_pdf": "math_10.pdf",
+      "question_number": 30,
+      "content_sha256": "ee3e25d6d6398eba7986c2f6eb46dd582472be15b63c1c04774095fa11076050",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Rearrange \\(3x-2y=4\\) to get \\(y=\\frac32x-2\\). Its gradient is positive, its vertical intercept is \\(-2\\), and its horizontal intercept is \\(\\frac43\\). Graph E has these intercepts and rises by \\(3\\) units for each \\(2\\) units to the right. Choose E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v10.1_3d5046fccc04dca08099_q030",
+          "content_sha256": "ee3e25d6d6398eba7986c2f6eb46dd582472be15b63c1c04774095fa11076050"
+        }
+      }
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q009",
+      "source_pdf": "math_11.pdf",
+      "question_number": 9,
+      "content_sha256": "7cab922b6cededdd512385ae6c141e1142c41e3c90abf0a6591999d64c814120",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The perpendicular sides are \\(6+\\sqrt6\\) and \\(4-\\sqrt6\\). Therefore \\(A=\\frac12(6+\\sqrt6)(4-\\sqrt6)=\\frac12(24-2\\sqrt6-6)=9-\\sqrt6\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v11.1_b246fe094d784eb70752_q009",
+          "content_sha256": "7cab922b6cededdd512385ae6c141e1142c41e3c90abf0a6591999d64c814120"
+        }
+      }
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q011",
+      "source_pdf": "math_11.pdf",
+      "question_number": 11,
+      "content_sha256": "bb8b30bdb8734d6b517fc983acfd06bf007dbe5a32a9a1e71d2b025f85d2d05f",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Since \\(\\frac12(OA)(AB)=32\\) and \\(OA=8\\), we have \\(AB=8\\). The right triangle is isosceles, so \\(\\angle AOB=45^\\circ\\). The shaded union consists of the circle outside this sector, together with the triangle. Its area is \\(64\\pi-\\frac{45}{360}(64\\pi)+32=56\\pi+32\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v11.1_b246fe094d784eb70752_q011",
+          "content_sha256": "bb8b30bdb8734d6b517fc983acfd06bf007dbe5a32a9a1e71d2b025f85d2d05f"
+        }
+      }
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q014",
+      "source_pdf": "math_11.pdf",
+      "question_number": 14,
+      "content_sha256": "eaa6375671a3ca1fcfd15f8197bddf3cadcd22ff61806c69d098b7cdbb60c624",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The cylindrical part has radius \\(r\\) and height \\(l\\), so its volume is \\(\\pi r^2l\\). The hemisphere contributes \\(\\frac12\\left(\\frac43\\pi r^3\\right)=\\frac23\\pi r^3\\). Adding gives \\(V=\\pi r^2l+\\frac23\\pi r^3=\\frac{\\pi r^2}{3}(2r+3l)\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v11.1_b246fe094d784eb70752_q014",
+          "content_sha256": "eaa6375671a3ca1fcfd15f8197bddf3cadcd22ff61806c69d098b7cdbb60c624"
+        }
+      }
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q017",
+      "source_pdf": "math_11.pdf",
+      "question_number": 17,
+      "content_sha256": "4a79ec8bdeae91c113fe6a83f62e4099cca996aaa5ab51560c5994c114aa80aa",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Each of the four equal circles has area \\(9\\pi\\), hence radius \\(3\\). Their centres form a square of side \\(6\\). Its centre is \\(3\\sqrt2\\) from each large-circle centre. If the small radius is \\(r\\), tangency gives \\(r+3=3\\sqrt2\\). Its diameter is \\(2r=6\\sqrt2-6\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v11.1_b246fe094d784eb70752_q017",
+          "content_sha256": "4a79ec8bdeae91c113fe6a83f62e4099cca996aaa5ab51560c5994c114aa80aa"
+        }
+      }
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q028",
+      "source_pdf": "math_11.pdf",
+      "question_number": 28,
+      "content_sha256": "9c5c48da0ee3ce334a4630faf83b037e62b05fe1468ca676bccbf94b319dc900",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Joining midpoints of a square produces a square with half its area. The three cube-face areas are therefore \\(1,2,4\\) square centimetres. Their separate surface areas sum to \\(6(1+2+4)=42\\). At each join, two faces are hidden over areas \\(1\\) and \\(2\\). The exposed area is \\(42-2(1+2)=36\\text{ cm}^2\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v11.1_b246fe094d784eb70752_q028",
+          "content_sha256": "9c5c48da0ee3ce334a4630faf83b037e62b05fe1468ca676bccbf94b319dc900"
+        }
+      }
+    },
+    {
+      "id": "matdev_v12.1_6c8a6ddff0414bd51a85_q008",
+      "source_pdf": "math_12.pdf",
+      "question_number": 8,
+      "content_sha256": "258b90d1d8f257d33e8d787859d1bcc18072ba47736a20161b93df565798f759",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The distance from the square's centre to a corner is half its diagonal: \\(AM=\\frac{4\\sqrt2}{2}=2\\sqrt2\\). The vertical height \\(VM\\) is perpendicular to the base. In right triangle \\(VMA\\), \\(VM^2=VA^2-AM^2=8^2-(2\\sqrt2)^2=56\\). Thus \\(VM=2\\sqrt{14}\\) cm, option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v12.1_6c8a6ddff0414bd51a85_q008",
+          "content_sha256": "258b90d1d8f257d33e8d787859d1bcc18072ba47736a20161b93df565798f759"
+        }
+      }
+    },
+    {
+      "id": "matdev_v12.1_6c8a6ddff0414bd51a85_q020",
+      "source_pdf": "math_12.pdf",
+      "question_number": 20,
+      "content_sha256": "0c11e4cac5a61929115f84070a61740f18a67f0a1a85eecbb58fc2ab9a161b4a",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The smaller circle's diameter is the square's side \\(s\\), so its radius is \\(s/2\\). The larger circle's diameter is the square's diagonal \\(s\\sqrt2\\), so its radius is \\(s/\\sqrt2\\). Their area ratio is \\(\\pi(s/\\sqrt2)^2:\\pi(s/2)^2=\\frac{s^2}{2}:\\frac{s^2}{4}=2:1\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v12.1_6c8a6ddff0414bd51a85_q020",
+          "content_sha256": "0c11e4cac5a61929115f84070a61740f18a67f0a1a85eecbb58fc2ab9a161b4a"
+        }
+      }
+    },
+    {
+      "id": "matdev_v12.1_6c8a6ddff0414bd51a85_q021",
+      "source_pdf": "math_12.pdf",
+      "question_number": 21,
+      "content_sha256": "8541ef9f1219cf1e2a0d943ac5efeb140aa510798f8341d6ed6e87d5c99fb119",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The asset identifies the chord as \\(PQ\\), and the radii \\(OP,OQ\\) meet at a right angle. Thus \\(PQ^2=OP^2+OQ^2=2r^2\\). With \\(PQ=4\\sqrt2\\), \\(32=2r^2\\), so \\(r=4\\). The circumference is \\(2\\pi r=8\\pi\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v12.1_6c8a6ddff0414bd51a85_q021",
+          "content_sha256": "8541ef9f1219cf1e2a0d943ac5efeb140aa510798f8341d6ed6e87d5c99fb119"
+        }
+      }
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q006",
+      "source_pdf": "math_2.pdf",
+      "question_number": 6,
+      "content_sha256": "4115023e1ed27b2f45248b65191d2e61f8ed5e0f4536ff0295d43debca7e223b",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Write \\(DE=4k\\) and \\(EF=9k\\). Since \\(DF=2\\), \\(13k=2\\), giving \\(k=\\frac2{13}\\). The midpoint of \\(EF\\) is another \\(\\frac92k\\) beyond \\(E\\). Its distance from \\(D\\) is \\(4k+\\frac92k=\\frac{17}{2}k=\\frac{17}{13}\\), option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q006",
+          "content_sha256": "4115023e1ed27b2f45248b65191d2e61f8ed5e0f4536ff0295d43debca7e223b"
+        }
+      }
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q023",
+      "source_pdf": "math_2.pdf",
+      "question_number": 23,
+      "content_sha256": "ae9efb7aa33af28a41d0328bb2a76e15a97748d6345621aeaaddb68437ff66fc",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Let the square base have side \\(w\\); the height is \\(2w\\). The marked space diagonal satisfies \\(d^2=w^2+w^2+(2w)^2=6w^2\\), so \\(w=d/\\sqrt6\\). The volume is \\(2w^3=2(d/\\sqrt6)^3=\\frac{d^3\\sqrt6}{18}\\), option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q023",
+          "content_sha256": "ae9efb7aa33af28a41d0328bb2a76e15a97748d6345621aeaaddb68437ff66fc"
+        }
+      }
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q024",
+      "source_pdf": "math_2.pdf",
+      "question_number": 24,
+      "content_sha256": "2a53a115944c82dc36a6cecd3f0c8e718cfc795a537c2f1fc694c4ac09303661",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Because \\(EG\\parallel DH\\), triangles \\(FEG\\) and \\(FDH\\) are similar. The marked lengths give \\(FE=4\\) and \\(FD=4+1=5\\). Areas scale as the square of corresponding lengths, so \\(\\frac{[FDH]}{[FEG]}=(\\frac54)^2=\\frac{25}{16}\\). Hence \\([FDH]=\\frac{25a}{16}\\), option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q024",
+          "content_sha256": "2a53a115944c82dc36a6cecd3f0c8e718cfc795a537c2f1fc694c4ac09303661"
+        }
+      }
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q025",
+      "source_pdf": "math_2.pdf",
+      "question_number": 25,
+      "content_sha256": "e3de65fcd09b1ee65cabd74ce9a0ffe55eaa3170c02e695cfaee3311f548bdc5",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The triangular base is right-angled because \\(5^2+12^2=13^2\\). Its area is \\(\\frac12(5)(12)=30\\), and its perimeter is \\(30\\). For prism length \\(l\\), the surface area is \\(2(30)+30l=360\\), so \\(l=10\\). The volume is \\(30(10)=300\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q025",
+          "content_sha256": "e3de65fcd09b1ee65cabd74ce9a0ffe55eaa3170c02e695cfaee3311f548bdc5"
+        }
+      }
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q005",
+      "source_pdf": "math_3.pdf",
+      "question_number": 5,
+      "content_sha256": "72e9bbe2b481ec1bf0cc78070f562b132a78020a7f8fcee434cf81249d90b029",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "If the original side is \\(s\\), an inner side joins points separated by perpendicular distances \\(s/3\\) and \\(2s/3\\). Its squared length is \\(s^2/9+4s^2/9=5s^2/9\\). Each new square therefore has \\(\\frac59\\) of the previous area. The fourth square follows three reductions, giving \\((\\frac59)^3=\\frac{125}{729}\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q005",
+          "content_sha256": "72e9bbe2b481ec1bf0cc78070f562b132a78020a7f8fcee434cf81249d90b029"
+        }
+      }
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q007",
+      "source_pdf": "math_3.pdf",
+      "question_number": 7,
+      "content_sha256": "bbcac6b870447c612831768f24975a4b18d5055177256008d5cd7ceb278804bd",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Since \\(BC\\parallel DE\\), triangles \\(ABC\\) and \\(ADE\\) are similar. Their side ratios give \\(\\frac{4}{4+(x-4)}=\\frac{x}{x+3}\\), so \\(4(x+3)=x^2\\). Hence \\((x-6)(x+2)=0\\). Lengths are positive, so \\(x=6\\), and \\(DE=x+3=9\\) cm. Choose C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q007",
+          "content_sha256": "bbcac6b870447c612831768f24975a4b18d5055177256008d5cd7ceb278804bd"
+        }
+      }
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q009",
+      "source_pdf": "math_3.pdf",
+      "question_number": 9,
+      "content_sha256": "a7642de52995f57fd4eb3b1a1cd23d902260a46574a386630ce4c68db079e178",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The shaded regions are the largest circle minus the third, plus the second minus the smallest. Using their diameters, the area is \\(\\frac{\\pi}{4}[(4d)^2-(3d)^2+(2d)^2-d^2]=\\frac{\\pi d^2}{4}(16-9+4-1)=\\frac52\\pi d^2\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q009",
+          "content_sha256": "a7642de52995f57fd4eb3b1a1cd23d902260a46574a386630ce4c68db079e178"
+        }
+      }
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q017",
+      "source_pdf": "math_3.pdf",
+      "question_number": 17,
+      "content_sha256": "eb98985c3b6c3c9719e076c94ce4b8cfb436df7a3b8de1ae72615d59b1207c8e",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The marked horizontal and vertical sides are perpendicular. Therefore \\(A=\\frac12(4+\\sqrt2)(2-\\sqrt2)=\\frac12(8-2\\sqrt2-2)=3-\\sqrt2\\text{ cm}^2\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q017",
+          "content_sha256": "eb98985c3b6c3c9719e076c94ce4b8cfb436df7a3b8de1ae72615d59b1207c8e"
+        }
+      }
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q019",
+      "source_pdf": "math_3.pdf",
+      "question_number": 19,
+      "content_sha256": "056787de0120d63d406279d6da40b10220b33d54d24d82a50d933c473f6bd42b",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The shape comprises an equilateral triangle of side \\(x\\) and a semicircle with diameter \\(x\\). Their areas are \\(\\frac{\\sqrt3}{4}x^2\\) and \\(\\frac12\\pi(x/2)^2=\\frac{\\pi x^2}{8}\\). Adding gives \\(\\frac{x^2(2\\sqrt3+\\pi)}{8}\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q019",
+          "content_sha256": "056787de0120d63d406279d6da40b10220b33d54d24d82a50d933c473f6bd42b"
+        }
+      }
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q029",
+      "source_pdf": "math_3.pdf",
+      "question_number": 29,
+      "content_sha256": "edfe2e1503ed60fec15410967deae74c69fda06515b438d0322ea20cb42dc99b",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The perpendicular from the centre to a chord bisects the chord, so \\(DB=16/2=8\\). In right triangle \\(ODB\\), \\(OD=\\sqrt{OB^2-DB^2}=\\sqrt{10^2-8^2}=6\\). Since \\(OC=10\\), \\(CD=OC-OD=10-6=4\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q029",
+          "content_sha256": "edfe2e1503ed60fec15410967deae74c69fda06515b438d0322ea20cb42dc99b"
+        }
+      }
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q006",
+      "source_pdf": "math_4.pdf",
+      "question_number": 6,
+      "content_sha256": "7e2cfa7dedff2d06f05921f63d6d638244ebdc4e1d546951ac9624169e76fbb8",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The middle triangle has perpendicular sides \\(15,20\\), hence hypotenuse \\(\\sqrt{15^2+20^2}=25\\). By the corresponding sides in the similar triangles, \\(\\frac{b}{15}=\\frac{15}{25}\\), so \\(b=9\\). Also \\(\\frac{a}{25}=\\frac{25}{15}\\), so \\(a=\\frac{125}{3}\\). Thus \\(a-b=\\frac{125}{3}-9=\\frac{98}{3}\\), option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v4.1_d9d3b5564d35e43d7192_q006",
+          "content_sha256": "7e2cfa7dedff2d06f05921f63d6d638244ebdc4e1d546951ac9624169e76fbb8"
+        }
+      }
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q010",
+      "source_pdf": "math_4.pdf",
+      "question_number": 10,
+      "content_sha256": "a01fd8d38a246cc1c49aae3a202e1ae2647116c707da06a374ae6f317cb365f8",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "For an equilateral triangle, its circumradius is twice its inradius, so each new inscribed circle has half the previous radius. The third triangle lies in a circle of radius \\(R/4\\). An equilateral triangle inscribed in a circle of radius \\(\\rho\\) has side \\(\\rho\\sqrt3\\). Its side is therefore \\(R\\sqrt3/4\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v4.1_d9d3b5564d35e43d7192_q010",
+          "content_sha256": "a01fd8d38a246cc1c49aae3a202e1ae2647116c707da06a374ae6f317cb365f8"
+        }
+      }
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q016",
+      "source_pdf": "math_4.pdf",
+      "question_number": 16,
+      "content_sha256": "419ec0cada470d7e2e75027716333347777b19e46f921a28db89c6591c1e543a",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The angles sum to \\(180^\\circ\\): \\((6x+6)+(4x-10)+(5x+4)=180\\), so \\(15x=180\\) and \\(x=12\\). The angles are then \\(78^\\circ,38^\\circ,64^\\circ\\). Their largest difference is \\(78^\\circ-38^\\circ=40^\\circ\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v4.1_d9d3b5564d35e43d7192_q016",
+          "content_sha256": "419ec0cada470d7e2e75027716333347777b19e46f921a28db89c6591c1e543a"
+        }
+      }
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q020",
+      "source_pdf": "math_4.pdf",
+      "question_number": 20,
+      "content_sha256": "7e737d24661a2f28b224b5489f73083b3c5114d8eee8624a480b1256a9ad0c2a",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The function is \\(f(x)=-(2^{x+1})\\). It is always negative, has \\(f(0)=-2\\), approaches \\(0\\) from below as \\(x\\) decreases, and decreases rapidly as \\(x\\) increases. Graph D has this intercept and behaviour. Choose D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v4.1_d9d3b5564d35e43d7192_q020",
+          "content_sha256": "7e737d24661a2f28b224b5489f73083b3c5114d8eee8624a480b1256a9ad0c2a"
+        }
+      }
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q021",
+      "source_pdf": "math_4.pdf",
+      "question_number": 21,
+      "content_sha256": "de7ce72e145951c4d0e0580965c9524aaec1f908f02d88197f834d1e62e47c50",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The polygon has eight equal sides, so the angle between radii to consecutive vertices is \\(360^\\circ/8=45^\\circ\\). The marked radii span three such intervals. Therefore \\(x=3(45^\\circ)=135^\\circ\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v4.1_d9d3b5564d35e43d7192_q021",
+          "content_sha256": "de7ce72e145951c4d0e0580965c9524aaec1f908f02d88197f834d1e62e47c50"
+        }
+      }
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q024",
+      "source_pdf": "math_4.pdf",
+      "question_number": 24,
+      "content_sha256": "b14b1457ca1e960dc52ba431ed1008d5ed9ecbd3e91674510171e850a3278a78",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The graph opens downwards and has vertex \\((-1,6)\\), so its equation has the form \\(f(x)=-(x+1)^2+6\\). Expanding gives \\(f(x)=-x^2-2x+5\\). Its intercept \\(f(0)=5\\) also matches the graph. Choose E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v4.1_d9d3b5564d35e43d7192_q024",
+          "content_sha256": "b14b1457ca1e960dc52ba431ed1008d5ed9ecbd3e91674510171e850a3278a78"
+        }
+      }
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q029",
+      "source_pdf": "math_4.pdf",
+      "question_number": 29,
+      "content_sha256": "7fe7bc01e7e47de63a3d59f4aea1aacebb358c66c3a0e2dcfef5e134c2533fd0",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "A \\(90^\\circ\\) clockwise rotation sends \\((x,y)\\) to \\((y,-x)\\). Reflecting this in the horizontal axis gives \\((y,x)\\). The original vertices are \\(A(1,1),B(2,3),C(4,2)\\), so the final vertices are \\(A(1,1),B(3,2),C(2,4)\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v4.1_d9d3b5564d35e43d7192_q029",
+          "content_sha256": "7fe7bc01e7e47de63a3d59f4aea1aacebb358c66c3a0e2dcfef5e134c2533fd0"
+        }
+      }
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q003",
+      "source_pdf": "math_5.pdf",
+      "question_number": 3,
+      "content_sha256": "3d36561d0aea59984e0bdaf9578de3ecfd95c5204d12b54767ef9609fcd4c6e0",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The corresponding sides \\(16\\) and \\(24\\) give scale factor \\(24/16=3/2\\). Thus \\((x+7)(3/2)=18\\), so \\(x=5\\). The base relation is \\(2y-3=10(3/2)=15\\), giving \\(y=9\\). Therefore \\(x+y=14\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v5.1_46af027e8d6aa5fbb18f_q003",
+          "content_sha256": "3d36561d0aea59984e0bdaf9578de3ecfd95c5204d12b54767ef9609fcd4c6e0"
+        }
+      }
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q005",
+      "source_pdf": "math_5.pdf",
+      "question_number": 5,
+      "content_sha256": "a5a5d7325d22733925df05f8e6ec2ea95248cca83f63e088cf7d3db784759bc4",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The four marked angles surround one point, so their sum is \\(360^\\circ\\): \\(\\frac{x}{2}+\\frac{x}{4}+\\frac{x}{6}+\\frac{x}{3}=360\\). Using denominator \\(12\\), this gives \\(\\frac{15x}{12}=360\\), hence \\(x=288\\). Choose B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v5.1_46af027e8d6aa5fbb18f_q005",
+          "content_sha256": "a5a5d7325d22733925df05f8e6ec2ea95248cca83f63e088cf7d3db784759bc4"
+        }
+      }
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q009",
+      "source_pdf": "math_5.pdf",
+      "question_number": 9,
+      "content_sha256": "9d1fddd1634269ddf88efaf2a18e8dc0d1e49ac700ea2dc545f85bf2c9bf81aa",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Convert the dimensions first: \\(r=3(2.5)=7.5\\) cm and \\(h=6(2.5)=15\\) cm. Then \\(V=\\frac13\\pi r^2h=\\frac13\\pi(7.5)^2(15)=281.25\\pi\\text{ cm}^3\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v5.1_46af027e8d6aa5fbb18f_q009",
+          "content_sha256": "9d1fddd1634269ddf88efaf2a18e8dc0d1e49ac700ea2dc545f85bf2c9bf81aa"
+        }
+      }
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q019",
+      "source_pdf": "math_5.pdf",
+      "question_number": 19,
+      "content_sha256": "5fbf77cb324c6e00040a76e6fed7fc6941a1977903f5e459c87a794d68891848",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The shaded region is an annular sector of angle \\(\\pi/4\\). Its outer radius is \\(PR=4\\) ft. Since \\(PT=4\\) and \\(ST=2\\), its inner radius is \\(PS=2\\) ft. Its area is \\(\\frac{\\theta}{2}(R^2-r^2)=\\frac{\\pi}{8}(16-4)=1.5\\pi\\text{ ft}^2\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v5.1_46af027e8d6aa5fbb18f_q019",
+          "content_sha256": "5fbf77cb324c6e00040a76e6fed7fc6941a1977903f5e459c87a794d68891848"
+        }
+      }
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q020",
+      "source_pdf": "math_5.pdf",
+      "question_number": 20,
+      "content_sha256": "b95d5dfa6f7985d010c387668c1e9f35c76d01939ede374cdc4e8034ac622555",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The median of a trapezoid equals the average of the two parallel bases. Thus \\(7x-4=\\frac{38+(6x-6)}2=16+3x\\). Therefore \\(4x=20\\) and \\(x=5\\). The required base is \\(UV=6x-6=24\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v5.1_46af027e8d6aa5fbb18f_q020",
+          "content_sha256": "b95d5dfa6f7985d010c387668c1e9f35c76d01939ede374cdc4e8034ac622555"
+        }
+      }
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q023",
+      "source_pdf": "math_5.pdf",
+      "question_number": 23,
+      "content_sha256": "9e893917e6af3a985c545b99e1c7e20d3e6dc72c2a115ec996aa507da8f9f880",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The equal sides \\(EF=ED=13\\) make the triangle isosceles. The perpendicular \\(EG\\) bisects \\(FD\\), so \\(x+5=3x-9\\), giving \\(x=7\\). Thus \\(FG=12\\). Pythagoras gives \\(EG=\\sqrt{13^2-12^2}=\\sqrt{25}=5\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v5.1_46af027e8d6aa5fbb18f_q023",
+          "content_sha256": "9e893917e6af3a985c545b99e1c7e20d3e6dc72c2a115ec996aa507da8f9f880"
+        }
+      }
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q024",
+      "source_pdf": "math_5.pdf",
+      "question_number": 24,
+      "content_sha256": "e72c26c27d133288e7fe5799bd5eb359458aced6be2593623df7fd1c95f21657",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The five equal angles at the centre sum to \\(360^\\circ\\), so \\(x=72^\\circ\\). The two radii meeting the endpoints of the drawn chord enclose \\(2x=144^\\circ\\). They form an isosceles triangle whose base angle is \\(y=(180^\\circ-144^\\circ)/2=18^\\circ\\). Hence \\(y/x=18/72=1/4\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v5.1_46af027e8d6aa5fbb18f_q024",
+          "content_sha256": "e72c26c27d133288e7fe5799bd5eb359458aced6be2593623df7fd1c95f21657"
+        }
+      }
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q027",
+      "source_pdf": "math_5.pdf",
+      "question_number": 27,
+      "content_sha256": "4abc06bc9b30febda5b977bed157fd1e7a7ce2002572cd07c12c01cff49d0e8c",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The rectangle on the right has area \\(4(2)=8\\). The other rectangle has the same area and its outer corner \\(R\\) lies in quadrant II. For \\(R=(-2,4)\\), its width is \\(2\\), height is \\(4\\), and area is \\(8\\). Among the listed points this is the quadrant-II point with the required area. Choose C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v5.1_46af027e8d6aa5fbb18f_q027",
+          "content_sha256": "4abc06bc9b30febda5b977bed157fd1e7a7ce2002572cd07c12c01cff49d0e8c"
+        }
+      }
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q005",
+      "source_pdf": "math_6.pdf",
+      "question_number": 5,
+      "content_sha256": "3aba6e7d6c546cf9263ee2044581c746ce4a3083d8dab28954e89ed875ecafa0",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Transformation 2 rotates the triangle \\(90^\\circ\\) anticlockwise; transformation 5 adds \\(180^\\circ\\). Their composition is a \\(270^\\circ\\) anticlockwise rotation, equivalent to \\(90^\\circ\\) clockwise. It sends \\(L\\) to \\(P\\), the upward side \\(LN\\) to the rightward side \\(PR\\), and \\(M\\) to \\(Q\\), as shown. Choose D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v6.1_17589c9d9de3f79684bf_q005",
+          "content_sha256": "3aba6e7d6c546cf9263ee2044581c746ce4a3083d8dab28954e89ed875ecafa0"
+        }
+      }
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q010",
+      "source_pdf": "math_6.pdf",
+      "question_number": 10,
+      "content_sha256": "8ab14d247eb98538cf08f76a257918017b8a95049a7345dc4c11129a348e8868",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Take the vertex as \\((0,0,0)\\). The centre of the opposite unit-square face is \\((1,\\frac12,\\frac12)\\). The squared distance is \\(1^2+(\\frac12)^2+(\\frac12)^2=\\frac32\\). Thus the marked length is \\(\\sqrt{\\frac32}\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v6.1_17589c9d9de3f79684bf_q010",
+          "content_sha256": "8ab14d247eb98538cf08f76a257918017b8a95049a7345dc4c11129a348e8868"
+        }
+      }
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q015",
+      "source_pdf": "math_6.pdf",
+      "question_number": 15,
+      "content_sha256": "eddfcd8022a22319a89bf40bc2b0719dc8331411340d82c4bdc80e607e749826",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Let each perpendicular side of the isosceles triangle be \\(l\\). The distance from its right-angle vertex to its hypotenuse is \\(l/\\sqrt2\\). Tangency to the quarter-circle gives \\(l/\\sqrt2=r\\), so the triangle has area \\(l^2/2=r^2\\). Subtracting the quarter-circle gives \\(r^2-\\pi r^2/4=(1-\\pi/4)r^2\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v6.1_17589c9d9de3f79684bf_q015",
+          "content_sha256": "eddfcd8022a22319a89bf40bc2b0719dc8331411340d82c4bdc80e607e749826"
+        }
+      }
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q019",
+      "source_pdf": "math_6.pdf",
+      "question_number": 19,
+      "content_sha256": "cd22ff69e1234d8c6914aa51ea1d363341c57962e28492c20096871d5da3b6ab",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "After any first move, the second move returns the counter to its start only if it has the opposite direction and exactly the same distance. Each spinner has four equal sectors, giving probabilities \\(1/4\\) for each requirement. The spinners are independent, so the probability is \\((1/4)(1/4)=1/16\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v6.1_17589c9d9de3f79684bf_q019",
+          "content_sha256": "cd22ff69e1234d8c6914aa51ea1d363341c57962e28492c20096871d5da3b6ab"
+        }
+      }
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q020",
+      "source_pdf": "math_6.pdf",
+      "question_number": 20,
+      "content_sha256": "7584f4ec55ef285b6dc688a6242ccb2ebd96960a115acc6210fa54dc0f611c64",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Since \\(AB\\parallel CD\\), triangles \\(AEB\\) and \\(DEC\\) are similar. Their corresponding sides give \\(\\frac{BE}{EC}=\\frac{AE}{ED}=\\frac25\\). The diagram labels \\(BE=x\\) and \\(EC=x+6\\), so \\(5x=2(x+6)\\). Hence \\(3x=12\\), giving \\(BE=4\\) cm, option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v6.1_17589c9d9de3f79684bf_q020",
+          "content_sha256": "7584f4ec55ef285b6dc688a6242ccb2ebd96960a115acc6210fa54dc0f611c64"
+        }
+      }
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q005",
+      "source_pdf": "math_7.pdf",
+      "question_number": 5,
+      "content_sha256": "f5d7821c0989564c81752752810fece22f07f9dbbdfcce2bdc792a280fb5234a",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Sue and Freya start together, so the distance initially is zero. As Freya runs away, their separation increases; when Freya returns while Sue continues towards her, it decreases to zero. Their closing speed exceeds their separating speed, so the return segment is steeper. Graph B shows this pattern. Choose B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v7.1_a5015e33f742c966b3c9_q005",
+          "content_sha256": "f5d7821c0989564c81752752810fece22f07f9dbbdfcce2bdc792a280fb5234a"
+        }
+      }
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q009",
+      "source_pdf": "math_7.pdf",
+      "question_number": 9,
+      "content_sha256": "52e5d85e84358c76e2155f0c72d38a9cb4a7052c6cd005f6c6b90c5a229ca792",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Track vertex \\(D\\) through the first listed sequence. Since \\(R\\) advances one vertex and \\(S\\) reflects in the vertical axis, \\(R,R,S,R,S,R\\) sends \\(D\\to E\\to A\\to A\\to B\\to E\\to A\\). It ends at \\(A\\), not \\(D\\), so this sequence does not leave \\(D\\) in its original position. Choose A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v7.1_a5015e33f742c966b3c9_q009",
+          "content_sha256": "52e5d85e84358c76e2155f0c72d38a9cb4a7052c6cd005f6c6b90c5a229ca792"
+        }
+      }
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q017",
+      "source_pdf": "math_7.pdf",
+      "question_number": 17,
+      "content_sha256": "aa41905879da4f5cfe18a748fbb3073da5f91e50f636a954718ddf2ab919a72f",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The midpoint of \\(AB\\) is \\((\\frac{2+6}{2},\\frac{1+3}{2})=(4,2)\\). The slope of \\(AB\\) is \\((3-1)/(6-2)=1/2\\), so its perpendicular bisector has slope \\(-2\\). Through \\((4,2)\\), its equation is \\(y-2=-2(x-4)\\), or \\(y=10-2x\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v7.1_a5015e33f742c966b3c9_q017",
+          "content_sha256": "aa41905879da4f5cfe18a748fbb3073da5f91e50f636a954718ddf2ab919a72f"
+        }
+      }
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q018",
+      "source_pdf": "math_7.pdf",
+      "question_number": 18,
+      "content_sha256": "8a0da818dc0e8f7a1e7acdec8e2498a4a26df5b3b343e70fb17899fd06abe60e",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "If the square has side \\(s\\), the removed semicircle has radius \\(s/2\\). The remaining area is \\(s^2-\\frac12\\pi(s/2)^2=s^2(1-\\pi/8)=100\\). Thus \\(s^2=800/(8-\\pi)\\), giving \\(s=20\\sqrt{2/(8-\\pi)}\\) cm, option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v7.1_a5015e33f742c966b3c9_q018",
+          "content_sha256": "8a0da818dc0e8f7a1e7acdec8e2498a4a26df5b3b343e70fb17899fd06abe60e"
+        }
+      }
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q009",
+      "source_pdf": "math_8.pdf",
+      "question_number": 9,
+      "content_sha256": "d91c113b7a445e633006985bdd6a6838fda263f1e2196cd83ad9385529f341a5",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Distance is the area under the speed-time graph. The first triangular section has base \\(2\\) h and height \\(30\\) km/h, giving \\(\\frac12(2)(30)=30\\) km. The second has base \\(7-3=4\\) h and height \\(25\\) km/h, giving \\(50\\) km. Total distance is \\(30+50=80\\) km, option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v8.1_afcdce098c0afed634b5_q009",
+          "content_sha256": "d91c113b7a445e633006985bdd6a6838fda263f1e2196cd83ad9385529f341a5"
+        }
+      }
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q012",
+      "source_pdf": "math_8.pdf",
+      "question_number": 12,
+      "content_sha256": "8b759d13c1d0e3691d62820543b0da31e5fd4ad6c6ef0f93fddb31a279a75a21",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The square has area \\(12^2=144\\text{ cm}^2\\). The inscribed circle has diameter \\(12\\) cm and radius \\(6\\) cm, so its area is \\(36\\pi\\text{ cm}^2\\). The shaded area is \\(144-36\\pi=36(4-\\pi)\\text{ cm}^2\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v8.1_afcdce098c0afed634b5_q012",
+          "content_sha256": "8b759d13c1d0e3691d62820543b0da31e5fd4ad6c6ef0f93fddb31a279a75a21"
+        }
+      }
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q014",
+      "source_pdf": "math_8.pdf",
+      "question_number": 14,
+      "content_sha256": "69ba4f04d9d4c3cf316d31b9cfac1d24c4e4708306efb4ed5a912f154508f842",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The diagram gives \\(OA=5x,\\ OC=4x,\\ OB=5,\\ OD=5+2x\\). The ladder has the same length in both positions, so \\(25x^2+25=16x^2+(5+2x)^2\\). Expanding gives \\(5x^2=20x\\); with \\(x>0\\), \\(x=4\\). Its length is \\(\\sqrt{(5x)^2+5^2}=\\sqrt{425}=5\\sqrt{17}\\approx20.6\\) m, option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v8.1_afcdce098c0afed634b5_q014",
+          "content_sha256": "69ba4f04d9d4c3cf316d31b9cfac1d24c4e4708306efb4ed5a912f154508f842"
+        }
+      }
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q025",
+      "source_pdf": "math_8.pdf",
+      "question_number": 25,
+      "content_sha256": "9402231a80cffcfd1effd9d2c75ae2f0ee153ebedab617027066b79823af5925",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Since \\(AC\\) is a diameter, \\(\\angle ABC=90^\\circ\\). Therefore \\((x+35)+(2x-17)=90\\), giving \\(3x+18=90\\). Hence \\(x=24\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v8.1_afcdce098c0afed634b5_q025",
+          "content_sha256": "9402231a80cffcfd1effd9d2c75ae2f0ee153ebedab617027066b79823af5925"
+        }
+      }
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q028",
+      "source_pdf": "math_8.pdf",
+      "question_number": 28,
+      "content_sha256": "b13b082235e03b8d9796d9c5a3405e93c707948d229c1f106927f4328e214513",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Since \\(ABCE\\) is a parallelogram, \\(AE=BC=11\\) cm. Thus \\(ED=15-11=4\\) cm. From \\([ECD]=\\frac12(4)h=7\\), the common height is \\(h=3.5\\) cm. The trapezium's area is \\(\\frac12(11+15)(3.5)=45.5\\text{ cm}^2\\), option C. In square metres this is \\(0.00455\\text{ m}^2\\)."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v8.1_afcdce098c0afed634b5_q028",
+          "content_sha256": "b13b082235e03b8d9796d9c5a3405e93c707948d229c1f106927f4328e214513"
+        }
+      }
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q029",
+      "source_pdf": "math_8.pdf",
+      "question_number": 29,
+      "content_sha256": "fc02f23691b6ffb88a4f9948fad5fcd062a76a3a365718e17ccea77f25df3b83",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The radius \\(OD\\) is perpendicular to the tangent \\(AD\\). In triangle \\(AOD\\), \\(\\angle AOD=90^\\circ-60^\\circ=30^\\circ\\). Since \\(A,O,C\\) are collinear, \\(\\angle DOC=150^\\circ\\). The isosceles triangle \\(DOC\\) has base angle \\(\\angle ODC=(180^\\circ-150^\\circ)/2=15^\\circ\\). Therefore \\(\\angle CDE=90^\\circ-15^\\circ=75^\\circ\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v8.1_afcdce098c0afed634b5_q029",
+          "content_sha256": "fc02f23691b6ffb88a4f9948fad5fcd062a76a3a365718e17ccea77f25df3b83"
+        }
+      }
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q030",
+      "source_pdf": "math_8.pdf",
+      "question_number": 30,
+      "content_sha256": "c07eea0a963e342dba87e5e007d46904ca5aad4bd0eb38245a96403af8ed5fba",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Distance is the area under the speed-time graph. From \\(10{:}00\\) to \\(10{:}15\\), the triangular area is \\(\\frac12(\\frac14)(70)=8.75\\) km. The next \\(15\\) minutes at \\(70\\) km/h contribute \\(17.5\\) km. From \\(10{:}30\\) to \\(11{:}00\\), the trapezium contributes \\(\\frac{70+110}{2}(\\frac12)=45\\) km. Total distance is \\(8.75+17.5+45=71.25\\) km, option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v8.1_afcdce098c0afed634b5_q030",
+          "content_sha256": "c07eea0a963e342dba87e5e007d46904ca5aad4bd0eb38245a96403af8ed5fba"
+        }
+      }
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q003",
+      "source_pdf": "math_9.pdf",
+      "question_number": 3,
+      "content_sha256": "9b1600382b653c2e95cfc656bc8113e8bca2501da25792bb8907e7d8ac802eba",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The trapezium has parallel sides \\(18x\\) and \\(10x\\), separated by height \\(3x\\). Its area is \\(\\frac12(18x+10x)(3x)=\\frac12(28x)(3x)=42x^2\\text{ cm}^2\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v9.1_e56851a8a2b3984effce_q003",
+          "content_sha256": "9b1600382b653c2e95cfc656bc8113e8bca2501da25792bb8907e7d8ac802eba"
+        }
+      }
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q005",
+      "source_pdf": "math_9.pdf",
+      "question_number": 5,
+      "content_sha256": "819b1560d3590f0bf00233f91b15524dbb7dba114332e8cab035249e35482d76",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The box has square base \\(x\\) by \\(x\\) and height \\(y\\). Its volume gives \\(x^2y=40\\), so \\(y=40/x^2\\). The metal needed comprises the base and four side walls: \\(S=x^2+4xy=x^2+4x(40/x^2)=x^2+160/x\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v9.1_e56851a8a2b3984effce_q005",
+          "content_sha256": "819b1560d3590f0bf00233f91b15524dbb7dba114332e8cab035249e35482d76"
+        }
+      }
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q006",
+      "source_pdf": "math_9.pdf",
+      "question_number": 6,
+      "content_sha256": "7882972a39d446b65e033aee996f7f4ac99ff68d55007ca01401bee6a072d4b6",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Use the intersecting-secant theorem from \\(F\\). On the lower secant, \\(FE=FD+DE=18+14=32\\). On the diameter secant, \\(FC=16\\) and \\(FA=16+2r\\). Thus \\(18(32)=16(16+2r)\\). Dividing by \\(16\\) gives \\(36=16+2r\\), hence \\(r=10\\) cm, option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v9.1_e56851a8a2b3984effce_q006",
+          "content_sha256": "7882972a39d446b65e033aee996f7f4ac99ff68d55007ca01401bee6a072d4b6"
+        }
+      }
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q007",
+      "source_pdf": "math_9.pdf",
+      "question_number": 7,
+      "content_sha256": "19cc91bc3d714c113c814a2dff0d5a36201dc4f2e31275577feccfddb0a78c73",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Because \\(DE\\parallel BC\\) and \\(A,E,C\\) are collinear, \\(\\angle BCA=\\angle DEA=50^\\circ\\). The diagonal \\(CD\\) divides this angle into \\(\\angle BCD\\) and \\(\\angle DCA=30^\\circ\\). Therefore \\(\\angle BCD=50^\\circ-30^\\circ=20^\\circ\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v9.1_e56851a8a2b3984effce_q007",
+          "content_sha256": "19cc91bc3d714c113c814a2dff0d5a36201dc4f2e31275577feccfddb0a78c73"
+        }
+      }
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q011",
+      "source_pdf": "math_9.pdf",
+      "question_number": 11,
+      "content_sha256": "69dfec5b755fd97e8d82d5ed96b011a681f46788b5cf9d090957b77701fbc71c",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The shaded shape is a square of side \\(a\\) with one outward semicircle on each side. Each semicircle has radius \\(a/2\\) and area \\(\\frac12\\pi(a/2)^2=\\pi a^2/8\\). Their interiors do not overlap. Total area is \\(a^2+4(\\pi a^2/8)=a^2+\\frac12\\pi a^2\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v9.1_e56851a8a2b3984effce_q011",
+          "content_sha256": "69dfec5b755fd97e8d82d5ed96b011a681f46788b5cf9d090957b77701fbc71c"
+        }
+      }
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q012",
+      "source_pdf": "math_9.pdf",
+      "question_number": 12,
+      "content_sha256": "1904a792a78cc9260b6cc103ecf85493e92241c379a7fba5a0b523e122f9ac9f",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The yellow sector represents \\(50/360\\) of the \\(180\\) cars, giving \\(180(50/360)=25\\) yellow cars. The question states that the numbers of yellow and black cars are equal. Hence there are \\(25\\) black cars, option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v9.1_e56851a8a2b3984effce_q012",
+          "content_sha256": "1904a792a78cc9260b6cc103ecf85493e92241c379a7fba5a0b523e122f9ac9f"
+        }
+      }
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q021",
+      "source_pdf": "math_9.pdf",
+      "question_number": 21,
+      "content_sha256": "d2ac44c3b5151004a569424c36f6b218378f59bd39cd391ee186ff7c6d35d23b",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The rectangular part contributes the bottom \\(10\\) and two vertical sides of \\(8\\), totalling \\(26\\). The roof is an isosceles right triangle with hypotenuse \\(10\\), so each sloping side is \\(10/\\sqrt2=5\\sqrt2\\). The outside perimeter is \\(26+2(5\\sqrt2)=26+10\\sqrt2\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v9.1_e56851a8a2b3984effce_q021",
+          "content_sha256": "d2ac44c3b5151004a569424c36f6b218378f59bd39cd391ee186ff7c6d35d23b"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q002",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 2,
+      "content_sha256": "eca82776672fad366663fbabe9c16c6c84491212cbeb83be92a242d5f164dd5d",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Let \\(\\angle ABP=\\angle PCB=a\\) and \\(\\angle PBC=b\\). The marked \\(50^\\circ\\) is the exterior angle at \\(P\\) of triangle \\(BPC\\), so \\(a+b=50^\\circ\\). But the complete angle \\(\\angle ABC=\\angle ABP+\\angle PBC=a+b\\). Therefore \\(\\angle B=50^\\circ\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v1_ff5b79152aaa929e40fc_q002",
+          "content_sha256": "eca82776672fad366663fbabe9c16c6c84491212cbeb83be92a242d5f164dd5d"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q011",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 11,
+      "content_sha256": "ae8b852ce13226db60321574cde48019cff9b9956c3961460b1ea96c313c455c",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The quarter-circle centres are \\(A,B\\), with radii \\(AP=BP=2\\) cm. Since \\(AB=2\\) as well, triangle \\(APB\\) is equilateral. The perpendicular \\(PH\\) bisects \\(AB\\), so \\(AH=1\\). Pythagoras gives \\(PH=\\sqrt{AP^2-AH^2}=\\sqrt{4-1}=\\sqrt3\\) cm, shown in option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v1_ff5b79152aaa929e40fc_q011",
+          "content_sha256": "ae8b852ce13226db60321574cde48019cff9b9956c3961460b1ea96c313c455c"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q016",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 16,
+      "content_sha256": "0476bd551999f931709265b58d4465341f48fef40bfdfe7afac95e09f3a280df",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The diagonal \\(BD=d\\) belongs to triangles with side pairs \\(9,4\\) and \\(6,5\\). The triangle inequalities require \\(|9-4|<d<9+4\\) and \\(|6-5|<d<6+5\\). Together these give \\(5<d<11\\). Among \\(4,7,11,12,13\\), only \\(7\\) satisfies both strict inequalities. Choose B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v1_ff5b79152aaa929e40fc_q016",
+          "content_sha256": "0476bd551999f931709265b58d4465341f48fef40bfdfe7afac95e09f3a280df"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q020",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 20,
+      "content_sha256": "475e493d9c2059a78fe4b9fff9fbacc613315d1051843bc088c0acaab43a9a11",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The equal angles make triangles \\(ABC\\) and \\(EBD\\) similar, with corresponding sides \\(AB:EB=5:1\\). Their areas are in ratio \\(25:1\\). Therefore \\([ABC]=25(5a^2+10)=125a^2+250\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v1_ff5b79152aaa929e40fc_q020",
+          "content_sha256": "475e493d9c2059a78fe4b9fff9fbacc613315d1051843bc088c0acaab43a9a11"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q023",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 23,
+      "content_sha256": "ec1282638c4d73725dd73750bcee1cc4291e2fee8002a670fccf0f1ef5f8fc94",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Let the square's side be \\(s\\). The centres of the two tangent circles differ by \\(s-2r\\) horizontally and vertically. Thus their distance is \\(\\sqrt2(s-2r)=2r\\). Rearranging gives the square's diagonal \\(s\\sqrt2=2r+2r\\sqrt2=2r(1+\\sqrt2)\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v1_ff5b79152aaa929e40fc_q023",
+          "content_sha256": "ec1282638c4d73725dd73750bcee1cc4291e2fee8002a670fccf0f1ef5f8fc94"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q025",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 25,
+      "content_sha256": "c38b01dc726cb901e873ef96668dc3429aab97f04f9a5f500a6c1b740a0d0895",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The triangle has perpendicular legs \\(2r,2r\\), so its area is \\(2r^2\\); the semicircle has area \\(\\pi r^2/2\\). Their common region consists of a right triangle with legs \\(r,r\\), plus a quarter-circle of radius \\(r\\), giving \\(r^2/2+\\pi r^2/4\\). The two shaded non-overlap regions therefore total \\(2r^2+\\pi r^2/2-2(r^2/2+\\pi r^2/4)=r^2\\). Thus \\(r^2=54\\), so \\(r=3\\sqrt6\\), option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v1_ff5b79152aaa929e40fc_q025",
+          "content_sha256": "c38b01dc726cb901e873ef96668dc3429aab97f04f9a5f500a6c1b740a0d0895"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q004",
+      "source_pdf": "Test_2.pdf",
+      "question_number": 4,
+      "content_sha256": "6370168a0462e9aa5431d52d229b550c9168ebb41e539f1f90087f1fb00ecdce",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Write \\(\\angle B=\\beta,\\angle C=\\gamma\\). Since \\(BD=BF\\), \\(\\angle BDF=(180^\\circ-\\beta)/2\\). Since \\(DC=EC\\), \\(\\angle EDC=(180^\\circ-\\gamma)/2\\). These two angles and \\(\\angle FDE=50^\\circ\\) form a straight angle at \\(D\\), so \\(180^\\circ-(\\beta+\\gamma)/2+50^\\circ=180^\\circ\\). Hence \\(\\beta+\\gamma=100^\\circ\\), and \\(\\angle BAC=80^\\circ\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v2_9a89cc2f265b47a40936_q004",
+          "content_sha256": "6370168a0462e9aa5431d52d229b550c9168ebb41e539f1f90087f1fb00ecdce"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q007",
+      "source_pdf": "Test_2.pdf",
+      "question_number": 7,
+      "content_sha256": "b0e219b900e776ea0a8aa36227b709f23c0f6a86307b38b3aa789df5edcdd054",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The tunnel has diameter \\(20\\) ft, hence radius \\(10\\) ft. The lane edges are \\(6\\) ft from the centre. The roof height there is \\(\\sqrt{10^2-6^2}=\\sqrt{64}=8\\) ft, the lowest clearance across the lane. Subtract the required half-foot safety gap: \\(8-\\frac12=7\\frac12\\) ft, option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v2_9a89cc2f265b47a40936_q007",
+          "content_sha256": "b0e219b900e776ea0a8aa36227b709f23c0f6a86307b38b3aa789df5edcdd054"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q010",
+      "source_pdf": "Test_2.pdf",
+      "question_number": 10,
+      "content_sha256": "1e1eaa466db22aad6899ef18ce97219282434c307478a1e41350a4b366004463",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The large circle has radius \\(2\\), so its area is \\(4\\pi\\). The upper unshaded circle has radius \\(1\\), area \\(\\pi\\). The two lower unshaded semicircles also have radius \\(1\\), and together have area \\(\\pi\\). The shaded area is \\(4\\pi-\\pi-\\pi=2\\pi\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v2_9a89cc2f265b47a40936_q010",
+          "content_sha256": "1e1eaa466db22aad6899ef18ce97219282434c307478a1e41350a4b366004463"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q021",
+      "source_pdf": "Test_2.pdf",
+      "question_number": 21,
+      "content_sha256": "ab26b32ddffc765a8cc2d3b61e510eef36832f7a9a49329a78ce96f993b3a695",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Depth equals surface altitude minus bottom altitude. The depths are Superior \\(600-(-733)=1333\\), Michigan \\(579-(-344)=923\\), Huron \\(579-(-171)=750\\), Erie \\(570-360=210\\), and Ontario \\(245-(-577)=822\\) feet. In descending order they are Superior, Michigan, Ontario, Huron, Erie. The third is Ontario, option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v2_9a89cc2f265b47a40936_q021",
+          "content_sha256": "ab26b32ddffc765a8cc2d3b61e510eef36832f7a9a49329a78ce96f993b3a695"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q025",
+      "source_pdf": "Test_2.pdf",
+      "question_number": 25,
+      "content_sha256": "8f501dfbe7611da546f083644eef83d2afc3f23b33c94019f5a051ff014739c7",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Apply Stewart's theorem to triangle \\(ABC\\) with \\(BD=2,\\ DC=4,\\ AD=4,\\ AB=5,\\ AC=x\\): \\(4(5^2)+2x^2=6(4^2+2\\cdot4)\\). Thus \\(100+2x^2=144\\), giving \\(x^2=22\\). Therefore \\(AC=\\sqrt{22}\\) cm, option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v2_9a89cc2f265b47a40936_q025",
+          "content_sha256": "8f501dfbe7611da546f083644eef83d2afc3f23b33c94019f5a051ff014739c7"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q002",
+      "source_pdf": "Test_3.pdf",
+      "question_number": 2,
+      "content_sha256": "484656676e1fbeba4203fdc9b8ad6230660afa1d09deba24ff987c2a6a460724",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Let each angle made by the bisector \\(BE\\) at \\(B\\) be \\(b\\). Since \\(\\angle A=20^\\circ\\), \\(\\angle C=160^\\circ-2b\\). Triangle \\(BEC\\) gives \\(\\angle BEC=20^\\circ+b\\), so \\(\\angle BED=30^\\circ+b\\). Since \\(BE=DE\\), triangle \\(BDE\\) has equal base angles \\(b\\), giving \\(\\angle BED=180^\\circ-2b\\). Equating yields \\(3b=150^\\circ\\), so \\(\\angle ACB=160^\\circ-100^\\circ=60^\\circ\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v3_4807a29b9e04499e5859_q002",
+          "content_sha256": "484656676e1fbeba4203fdc9b8ad6230660afa1d09deba24ff987c2a6a460724"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q009",
+      "source_pdf": "Test_3.pdf",
+      "question_number": 9,
+      "content_sha256": "332f09ba81cdc328858af38e5e96b94e6bafba287a5b71491f4a432712e6c379",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The rectangle has diagonal \\(AC=\\sqrt{6^2+4^2}=2\\sqrt{13}\\). Triangle \\(ADC\\) is right-angled at \\(D\\), and \\(DE\\) is its altitude to the hypotenuse. By similarity, the projection of side \\(DC\\) onto the hypotenuse satisfies \\(DC^2=CE\\cdot CA\\). Hence \\(CE=6^2/(2\\sqrt{13})=18/\\sqrt{13}\\), the value assembled from option E's numerator and fraction asset."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v3_4807a29b9e04499e5859_q009",
+          "content_sha256": "332f09ba81cdc328858af38e5e96b94e6bafba287a5b71491f4a432712e6c379"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q011",
+      "source_pdf": "Test_3.pdf",
+      "question_number": 11,
+      "content_sha256": "749c435436ae0e170f57174410e8cdcbf0feed74978cb14b34875335c784e2fb",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The triangle \\(AFG\\) is equilateral because \\(FG\\parallel BC\\). If the square's side is \\(s=FG\\), its area is \\(s^2\\), while \\([AFG]=\\sqrt3s^2/4=5\\sqrt3\\). Cancelling \\(\\sqrt3\\) gives \\(s^2/4=5\\), so the square's area is \\(20\\text{ cm}^2\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v3_4807a29b9e04499e5859_q011",
+          "content_sha256": "749c435436ae0e170f57174410e8cdcbf0feed74978cb14b34875335c784e2fb"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q012",
+      "source_pdf": "Test_3.pdf",
+      "question_number": 12,
+      "content_sha256": "c31ccf9c66e5e2f535f1e573decd4ce33669a04b70064ac9806b2b6a752c650d",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The repeating colour pattern has period \\(5\\). The left piece ends at the eighth link, green. After removing \\(m\\) links, the next visible link is yellow, which occupies positions congruent to \\(2\\) modulo \\(5\\). Thus \\(9+m\\equiv2\\pmod5\\), so \\(m\\equiv3\\pmod5\\). Of \\(60,61,62,63,64\\), only \\(63\\) works. Choose D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v3_4807a29b9e04499e5859_q012",
+          "content_sha256": "c31ccf9c66e5e2f535f1e573decd4ce33669a04b70064ac9806b2b6a752c650d"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q013",
+      "source_pdf": "Test_3.pdf",
+      "question_number": 13,
+      "content_sha256": "c98a2697c3342fc5aca2b53dd6d8ddc15094e4b5581891b8888fbe8f6c343997",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Let the height between the parallel bases be \\(h\\). The trapezoid has area \\((a+c)h/2\\), while triangle \\(DCE\\), with base \\(c\\) and its vertex on the other base, has area \\(ch/2\\). Their ratio is \\((a+c)/c\\). Since \\(a=5c\\), this is \\(6c/c=6\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v3_4807a29b9e04499e5859_q013",
+          "content_sha256": "c98a2697c3342fc5aca2b53dd6d8ddc15094e4b5581891b8888fbe8f6c343997"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q016",
+      "source_pdf": "Test_3.pdf",
+      "question_number": 16,
+      "content_sha256": "74b1d5f6060f9aa57c1eaa8b8ff7b3c4a2970d1e685ebddaaa1a892b28b8ea00",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "A semicircle whose diameter is \\(d\\) has area \\(\\pi d^2/8\\). Let the triangle's legs be \\(a,b\\). Pythagoras gives \\(a^2+b^2=AB^2=16\\). Thus the sum of the semicircle areas is \\(\\pi(a^2+b^2)/8=16\\pi/8=2\\pi\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v3_4807a29b9e04499e5859_q016",
+          "content_sha256": "74b1d5f6060f9aa57c1eaa8b8ff7b3c4a2970d1e685ebddaaa1a892b28b8ea00"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q025",
+      "source_pdf": "Test_3.pdf",
+      "question_number": 25,
+      "content_sha256": "2b5a872966aef0d43173b5aed0a03b91bb29ced2401e5d6a8a189922431c262e",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The figure shows the large circle's centre \\(O_2\\) on the small circle, while both circles touch at \\(A\\). If the small radius is \\(r\\), then \\(O_2O_1=O_1A=r\\), so the large radius \\(O_2A=2r\\). The shaded area is \\(\\pi(2r)^2-\\pi r^2=3\\pi r^2\\). Dividing by the small circle's area gives \\(3\\), option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v3_4807a29b9e04499e5859_q025",
+          "content_sha256": "2b5a872966aef0d43173b5aed0a03b91bb29ced2401e5d6a8a189922431c262e"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q029",
+      "source_pdf": "Test_3.pdf",
+      "question_number": 29,
+      "content_sha256": "7060fb671b61a199e768da998614c857fc10e2520479fd6d8c7562f6255235cd",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The dial has six states, \\(0,1,2,3,4,5\\), and repeats after every six increments. Therefore its reading is the remainder when the digital count is divided by \\(6\\). Since \\(2000=6(333)+2\\), it reads \\(2\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v3_4807a29b9e04499e5859_q029",
+          "content_sha256": "7060fb671b61a199e768da998614c857fc10e2520479fd6d8c7562f6255235cd"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q002",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 2,
+      "content_sha256": "f7c06a8bf64e2f8e2a8b1f9f3dbb8ff3e968aa8319eac07f67f8a17bc12a35f7",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Write the triangle's angles as \\(A,B,C\\). The bisector gives \\(\\angle BAD=A/2\\). Thus \\(\\angle BDA=180^\\circ-B-A/2\\). Substituting \\(A=180^\\circ-B-C\\) gives \\(\\angle BDA=90^\\circ-(B-C)/2=90^\\circ-10^\\circ=80^\\circ\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v4_bc012afd538ad180abd3_q002",
+          "content_sha256": "f7c06a8bf64e2f8e2a8b1f9f3dbb8ff3e968aa8319eac07f67f8a17bc12a35f7"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q003",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 3,
+      "content_sha256": "b0be8b160e18025c5cabf4662afe52c89ebe5c724c7ea3f0d06372991d88ce57",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The image supplies the base \\(\\sqrt{10}\\). Using decimal logarithms, \\((\\sqrt{10})^{2-\\lg4}=10^{1-\\frac12\\lg4}=10/\\sqrt4=10/2=5\\). Thus the result is \\(5\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v4_bc012afd538ad180abd3_q003",
+          "content_sha256": "b0be8b160e18025c5cabf4662afe52c89ebe5c724c7ea3f0d06372991d88ce57"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q004",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 4,
+      "content_sha256": "387b02103c1156c869d21f4a179ab1ac9f723e46f1b47343593fcfc7096d3696",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The table awards \\(8,4,2\\) points per game. Starting from \\(4\\), one win would bring C only to \\(12\\), while A and B would both gain points beyond their current \\(12\\). With two wins, C reaches \\(20\\). If A and B each finish second once and third once, both finish at \\(12+4+2=18\\). Therefore two games are sufficient and necessary, option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v4_bc012afd538ad180abd3_q004",
+          "content_sha256": "387b02103c1156c869d21f4a179ab1ac9f723e46f1b47343593fcfc7096d3696"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q008",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 8,
+      "content_sha256": "66505ff498f598974e7e9a617f57dc2d4754c6bb45f96922243a30bc038e9458",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Joining side midpoints divides each square's side by \\(\\sqrt2\\). The ninth square follows eight such reductions, so its side is \\(6/(\\sqrt2)^8=6/16=3/8\\). Its perimeter is \\(4(3/8)=3/2\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v4_bc012afd538ad180abd3_q008",
+          "content_sha256": "66505ff498f598974e7e9a617f57dc2d4754c6bb45f96922243a30bc038e9458"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q009",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 9,
+      "content_sha256": "18d6eeae7a9bcb11bdba23df0ab3f16c3c3af5240461d304c3f84a77a486fe98",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The dividing wall has length \\(13\\) cm in plan and area \\(39\\text{ cm}^2\\), so the box's height is \\(39/13=3\\) cm. Its base has area \\(15(12)=180\\text{ cm}^2\\). The smaller triangular compartment has base area \\(\\frac12(5)(12)=30\\text{ cm}^2\\). The larger compartment therefore has volume \\((180-30)(3)=450\\text{ cm}^3\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v4_bc012afd538ad180abd3_q009",
+          "content_sha256": "18d6eeae7a9bcb11bdba23df0ab3f16c3c3af5240461d304c3f84a77a486fe98"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q012",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 12,
+      "content_sha256": "8e1269409db5aecc628b93547b46e0c38df613881c813858abbf9eb1da7903d7",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The submerged solid displaces \\(1\\cdot1\\cdot2=2\\text{ ft}^3\\) of water. The tank's horizontal area is \\(2\\cdot6=12\\text{ ft}^2\\), so the rise is \\(2/12=1/6\\) ft. Converting to inches gives \\((1/6)(12)=2\\) inches, option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v4_bc012afd538ad180abd3_q012",
+          "content_sha256": "8e1269409db5aecc628b93547b46e0c38df613881c813858abbf9eb1da7903d7"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q013",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 13,
+      "content_sha256": "77a9202253855504e0309a4eb82945629efaa3d2baf5b65c5d7fc234b0949cf1",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The process conserves all \\(25\\text{ cm}^3\\) of flour. At the end, \\(1\\text{ cm}^3\\) remains in the smallest container, so \\(24\\text{ cm}^3\\) is in the \\(50\\text{ cm}^3\\) container. Its empty volume is \\(50-24=26\\text{ cm}^3\\), or \\((26/50)100\\%=52\\%\\). Choose D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v4_bc012afd538ad180abd3_q013",
+          "content_sha256": "77a9202253855504e0309a4eb82945629efaa3d2baf5b65c5d7fc234b0949cf1"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q014",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 14,
+      "content_sha256": "4e302f2361f6de5823e33b378cc9c25a7e3af4e0593f80c33657e5c4d4aaa582",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Draw the common tangent at \\(B\\), meeting the bottom tangent at \\(X\\). The tangent-chord theorem in the small circle gives \\(\\angle XBT=\\angle BAT=48^\\circ\\). Equal tangents \\(XB=XT\\) imply \\(\\angle BXT=84^\\circ\\). Since \\(P,X,T\\) are collinear, \\(\\angle BXP=96^\\circ\\). In the large circle, \\(XB=XP\\), so \\(\\angle BPX=(180^\\circ-96^\\circ)/2=42^\\circ\\). The tangent-chord theorem then gives \\(\\angle PCB=42^\\circ\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v4_bc012afd538ad180abd3_q014",
+          "content_sha256": "4e302f2361f6de5823e33b378cc9c25a7e3af4e0593f80c33657e5c4d4aaa582"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q016",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 16,
+      "content_sha256": "517ec364e5cbdfdadc5c3b0aca2d01667f9173e9dc927519452cebcb225faf88",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The lower-left shaded rectangle has width \\(3\\) and height \\(5\\), area \\(15\\). The upper-right shaded rectangle extends from \\((3,5)\\) to \\((8,9)\\), so its area is \\((8-3)(9-5)=5(4)=20\\). Their combined area is \\(15+20=35\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v4_bc012afd538ad180abd3_q016",
+          "content_sha256": "517ec364e5cbdfdadc5c3b0aca2d01667f9173e9dc927519452cebcb225faf88"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q024",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 24,
+      "content_sha256": "99ed37b878f90141ba91c1418c6440d9a53895ab3036083939ea6476ab5dd412",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Read the graph in two stages. At \\(x=0\\), the function has value \\(-1\\), so \\(f(0)=-1\\). At \\(x=-1\\), the marked minimum has value \\(-2\\). Hence \\(f(f(0))=f(-1)=-2\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v4_bc012afd538ad180abd3_q024",
+          "content_sha256": "99ed37b878f90141ba91c1418c6440d9a53895ab3036083939ea6476ab5dd412"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q025",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 25,
+      "content_sha256": "20c7789749144253e29ebcc6635f27bc70e024b8c6caa1a6bdd7e0226ac05a0b",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The rectangle extends horizontally from \\(-a\\) to \\(a\\), so its width is \\(2a\\). Its vertical limits are \\(-b\\) and \\(3b\\), giving height \\(4b\\). Thus its area is \\((2a)(4b)=8ab\\) square units, option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v4_bc012afd538ad180abd3_q025",
+          "content_sha256": "20c7789749144253e29ebcc6635f27bc70e024b8c6caa1a6bdd7e0226ac05a0b"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q002",
+      "source_pdf": "Test_5.pdf",
+      "question_number": 2,
+      "content_sha256": "5f11b4926390e911d59e95f3bd0ee77cd16ae8b56f13d36a1fce913eaa9f4a1d",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "For option D, factor the denominator: \\(A^2+B^2+2AB=(A+B)^2\\). Thus \\(\\frac{A+B}{A^2+B^2+2AB}=\\frac1{A+B}\\). Since \\(A,B\\) are positive integers, \\(A+B\\ge2\\), so this number lies strictly between \\(0\\) and \\(1\\) and cannot be an integer. Choose D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v5_ce7ef44f86f3750d5514_q002",
+          "content_sha256": "5f11b4926390e911d59e95f3bd0ee77cd16ae8b56f13d36a1fce913eaa9f4a1d"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q008",
+      "source_pdf": "Test_5.pdf",
+      "question_number": 8,
+      "content_sha256": "dc2854c9ebe6880eb46e7a5344f2d2b0f236dbf4cc29ab8b72b0f2b40dfad44a",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The grid uses one unit per square. At \\(x=5\\), the plotted value is \\(5\\), so \\(k=h(5)=5\\). Therefore \\(2k=10\\). Reading the point at \\(x=10\\) gives \\(h(10)=7\\). Hence \\(h(2k)=7\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v5_ce7ef44f86f3750d5514_q008",
+          "content_sha256": "dc2854c9ebe6880eb46e7a5344f2d2b0f236dbf4cc29ab8b72b0f2b40dfad44a"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q011",
+      "source_pdf": "Test_5.pdf",
+      "question_number": 11,
+      "content_sha256": "3438cade5bee1732e321f881e4d5337b6bcd4bc1781c6899ea954097b9537f9a",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "There are two shaded cubbyholes among five. The red jacket has probability \\(2/5\\) of occupying one of them. Once it does, one shaded position remains among four available positions, so the brown jacket has conditional probability \\(1/4\\). Thus \\(P=(2/5)(1/4)=1/10\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v5_ce7ef44f86f3750d5514_q011",
+          "content_sha256": "3438cade5bee1732e321f881e4d5337b6bcd4bc1781c6899ea954097b9537f9a"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q020",
+      "source_pdf": "Test_5.pdf",
+      "question_number": 20,
+      "content_sha256": "d22f449a793d052260a7c4fcb139256e310afb13289180b4a4cb2afc2e67deac",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Each semicircle has radius \\(1/2\\), so the sum of their four areas is \\(4\\cdot\\frac12\\pi(1/2)^2=\\pi/2\\). Together they cover the unit square; the shaded lenses are exactly the regions counted twice in this sum. Subtracting the square's area once therefore gives the total shaded area \\(\\pi/2-1\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v5_ce7ef44f86f3750d5514_q020",
+          "content_sha256": "d22f449a793d052260a7c4fcb139256e310afb13289180b4a4cb2afc2e67deac"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q022",
+      "source_pdf": "Test_5.pdf",
+      "question_number": 22,
+      "content_sha256": "69ab9098a065c089c0ecff5270ad54076c9b0ff9f35acba55e56b9c7f749274e",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "At the marked point \\(c\\), the graph has a local minimum and is concave upwards, so its second derivative is positive there, not zero. Thus \\(f''(c)=0\\) is the false statement. The other markings show a horizontal tangent at \\(a\\), positive slope at \\(b\\), negative slope at \\(0\\), and positive value at \\(d\\). Choose D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v5_ce7ef44f86f3750d5514_q022",
+          "content_sha256": "69ab9098a065c089c0ecff5270ad54076c9b0ff9f35acba55e56b9c7f749274e"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q028",
+      "source_pdf": "Test_5.pdf",
+      "question_number": 28,
+      "content_sha256": "45c80fe16f6edcbfba675467ef63d60b4e92757fb10aec57714f7a2a0b768a1c",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The three centres form an equilateral triangle of side \\(2r\\), whose area is \\(\\sqrt3r^2\\). Inside it, the three circles occupy three \\(60^\\circ\\) sectors, totalling \\(3(60/360)\\pi r^2=\\pi r^2/2\\). The gap has area \\(r^2(\\sqrt3-\\pi/2)\\). Equating this to \\(\\sqrt3-\\pi/2\\) gives \\(r^2=1\\), so \\(r=1\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v5_ce7ef44f86f3750d5514_q028",
+          "content_sha256": "45c80fe16f6edcbfba675467ef63d60b4e92757fb10aec57714f7a2a0b768a1c"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q003",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 3,
+      "content_sha256": "707fe6cc32edb2d15bc0185df2344b8f3aff71edeaca2c514912940f9b4f4479",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "In triangle \\(CED\\), \\(CE=DE\\) and the angle between them is \\(y=45^\\circ\\). The other two angles are therefore \\((180^\\circ-45^\\circ)/2=67.5^\\circ\\). Since \\(AB\\parallel CE\\), triangle \\(ABD\\) has angle \\(A=45^\\circ\\), while its angle at \\(D\\) is \\(67.5^\\circ\\). Hence \\(x=180^\\circ-45^\\circ-67.5^\\circ=67.5^\\circ\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v6_1d7a2c1fa760628a023e_q003",
+          "content_sha256": "707fe6cc32edb2d15bc0185df2344b8f3aff71edeaca2c514912940f9b4f4479"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q008",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 8,
+      "content_sha256": "241599ca035eb481e9de3359458f608dae3e74631c7c88e26333c310a0110255",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The small semicircle diameters fill the large diameter, so its radius is \\(1+2+3+4=10\\). The shaded boundary consists of the large semicircular arc and all four small semicircular arcs. Its length is \\(\\pi(10)+\\pi(1+2+3+4)=20\\pi\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v6_1d7a2c1fa760628a023e_q008",
+          "content_sha256": "241599ca035eb481e9de3359458f608dae3e74631c7c88e26333c310a0110255"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q010",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 10,
+      "content_sha256": "1b9420fa0ed52dbd5706372186cdc641c78ff91bf31e8b452c5f9e27f320c0e0",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The marked centres are diagonally opposite in the four-circle arrangement. Their horizontal and vertical separations are both \\(2r\\), so \\(2r\\sqrt2=4\\sqrt2\\), giving \\(r=2\\). The outer square has side \\(4r=8\\). Its area minus the four circle areas is \\(8^2-4\\pi(2^2)=64-16\\pi\\), option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v6_1d7a2c1fa760628a023e_q010",
+          "content_sha256": "1b9420fa0ed52dbd5706372186cdc641c78ff91bf31e8b452c5f9e27f320c0e0"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q018",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 18,
+      "content_sha256": "0e4d37c3093d33c96afc7d1015f53c8973f575b1af6919f47ebce8619e07403e",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The graph has vertical intercept \\(1\\), is increasing at \\(x=0\\), has amplitude \\(\\sqrt2\\), and has period \\(2\\pi\\). The identity \\(\\sin x+\\cos x=\\sqrt2\\sin(x+\\pi/4)\\) gives all four features. In particular its maximum occurs at \\(x=\\pi/4\\), matching the plot. Choose A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v6_1d7a2c1fa760628a023e_q018",
+          "content_sha256": "0e4d37c3093d33c96afc7d1015f53c8973f575b1af6919f47ebce8619e07403e"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q021",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 21,
+      "content_sha256": "0b8cfc0767dd99e15ace299e000a82e66de351a6cfb1e2aeb94aa3d3f0885ef0",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The two quarter-circles have radius \\(1\\), so \\(AD=BC=1\\) and \\(AB=2\\). The rectangle has area \\(2\\). The upper semicircle has radius \\(1\\) and area \\(\\pi/2\\), while the two unshaded quarter-circles also total \\(\\pi/2\\). Thus the shaded area is \\(2+\\pi/2-\\pi/2=2\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v6_1d7a2c1fa760628a023e_q021",
+          "content_sha256": "0b8cfc0767dd99e15ace299e000a82e66de351a6cfb1e2aeb94aa3d3f0885ef0"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q023",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 23,
+      "content_sha256": "b8340ca6cbbf77ea0933b515924ab0de3507c9f76cacefaaf22ec524832a4c12",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Using the logarithm quotient rule, \\(\\log x-\\log y=\\log(x/y)=1\\). With decimal logarithms, \\(x/y=10\\), hence \\(y=x/10\\). Both logarithms require \\(x,y>0\\), so the graph is a straight ray of positive slope in the first quadrant, with the origin excluded from its domain. This is graph C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v6_1d7a2c1fa760628a023e_q023",
+          "content_sha256": "b8340ca6cbbf77ea0933b515924ab0de3507c9f76cacefaaf22ec524832a4c12"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q028",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 28,
+      "content_sha256": "ffcecd2b9e595aacccd21be619c1be5e850dd4033cd65b7d55c81affab585601",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The small top cone has half the original height. By similarity, every length is halved, so its volume is \\((1/2)^3=1/8\\) of the whole. The bottom frustum occupies the remaining \\(7/8\\). Their volume ratio is \\((1/8):(7/8)=1:7\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v6_1d7a2c1fa760628a023e_q028",
+          "content_sha256": "ffcecd2b9e595aacccd21be619c1be5e850dd4033cd65b7d55c81affab585601"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q004",
+      "source_pdf": "Test_7.pdf",
+      "question_number": 4,
+      "content_sha256": "5e321ab786fe0701b94d690f042681ab1c701125d29eb5dfa8635c5234b6dc98",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The angle at \\(B\\) is \\(37^\\circ+z^\\circ\\), and the angle at \\(C\\) is \\(70^\\circ\\). The triangle's angle sum gives \\(x+37+z+70=180\\). Thus \\(x=73-z\\), option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v7_f24d912481931ad90d8d_q004",
+          "content_sha256": "5e321ab786fe0701b94d690f042681ab1c701125d29eb5dfa8635c5234b6dc98"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q016",
+      "source_pdf": "Test_7.pdf",
+      "question_number": 16,
+      "content_sha256": "f0d70ed4387610b33becc6730d0e0026643444c4d15d0629f41b0af9375d7d20",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "If the middle term is \\(m\\), a geometric progression satisfies \\(m^2=(3-2\\sqrt2)(3+2\\sqrt2)=9-8=1\\). Thus \\(m=\\pm1\\). Both endpoints are positive, and the middle number must lie between them, so \\(m=1\\), option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v7_f24d912481931ad90d8d_q016",
+          "content_sha256": "f0d70ed4387610b33becc6730d0e0026643444c4d15d0629f41b0af9375d7d20"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q020",
+      "source_pdf": "Test_7.pdf",
+      "question_number": 20,
+      "content_sha256": "43e186c2bcbf45e4d05f935354621f2d4ac7afa4cc2b3b28b24fb9c0be07162c",
+      "correct_answer": "A",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Let each three-hour growth factor be \\(g>0\\). The table gives \\(10g^2=14.4\\), so \\(g^2=1.44\\) and \\(g=1.2\\). At \\(4{:}00\\) P.M., after one interval, the amount is \\(10g=12.0\\) grams, option A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v7_f24d912481931ad90d8d_q020",
+          "content_sha256": "43e186c2bcbf45e4d05f935354621f2d4ac7afa4cc2b3b28b24fb9c0be07162c"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q009",
+      "source_pdf": "Test_7.pdf",
+      "question_number": 9,
+      "content_sha256": "7df7600ce2776c93778568d5fbef58ce28df9bcacc73b0e835362abc1e370ae8",
+      "correct_answer": "B",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The pictogram shows \\(9\\) thousand model-A units and \\(10\\) thousand model-B units. Let A's unit price be \\(p\\); B's is \\(1.6p\\). Their revenues are proportional to \\(9p\\) and \\(10(1.6p)=16p\\). Model A's share is \\(\\frac9{9+16}\\cdot100\\%=36\\%\\), option B."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v7_f24d912481931ad90d8d_q009",
+          "content_sha256": "7df7600ce2776c93778568d5fbef58ce28df9bcacc73b0e835362abc1e370ae8"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q012",
+      "source_pdf": "Test_7.pdf",
+      "question_number": 12,
+      "content_sha256": "c90ea33c2617007af477a8b4a4eb074b93562edcdd4bac8c03cd22c73bd78560",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Let the outer square's side be \\(s\\). Then \\(DH=s/2\\) and \\(BE=DH/2=s/4\\). The two unshaded squares occupy areas \\(s^2/4\\) and \\(s^2/16\\). The shaded fraction is \\(1-\\frac14-\\frac1{16}=\\frac{11}{16}\\), option D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v7_f24d912481931ad90d8d_q012",
+          "content_sha256": "c90ea33c2617007af477a8b4a4eb074b93562edcdd4bac8c03cd22c73bd78560"
+        }
+      }
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q016",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 16,
+      "content_sha256": "ead863708a3f95c4e37025752ff19f59b9fe8300ac284fc47a2b91aa703605a8",
+      "correct_answer": "D",
+      "explanation_origin": "assistant_direct",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The condition is \\(a^2-2ab+b=0\\). Regarding this as a quadratic in real \\(a\\), its discriminant must satisfy \\(\\Delta=(-2b)^2-4b=4b(b-1)\\ge0\\). Therefore \\(b\\le0\\) or \\(b\\ge1\\). The offered value \\(b=\\frac12\\) lies in neither interval; indeed the equation becomes \\((a-\\frac12)^2+\\frac14=0\\), which has no real solution. Choose D."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "sky_trial_v6_1d7a2c1fa760628a023e_q016",
+          "content_sha256": "ead863708a3f95c4e37025752ff19f59b9fe8300ac284fc47a2b91aa703605a8"
+        }
+      }
+    },
+    {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q005",
+      "source_pdf": "math_1.pdf",
+      "question_number": 5,
+      "content_sha256": "d61d4d7fac53256448b581a82da9159270aa16ec82313f700de3628681bc6491",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_corrected_invalid_prior",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "For the two equations to have no solution, their lines must be parallel and distinct. Doubling \\(x+ay=2\\) gives \\(2x+2ay=4\\). Its left side matches \\(2x+3y=5\\) when \\(2a=3\\), so \\(a=\\frac32=1.5\\). The resulting identical left sides equal different constants, \\(4\\) and \\(5\\), so the system is inconsistent. Choose C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q005",
+          "content_sha256": "d61d4d7fac53256448b581a82da9159270aa16ec82313f700de3628681bc6491"
+        }
+      }
+    },
+    {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q006",
+      "source_pdf": "math_1.pdf",
+      "question_number": 6,
+      "content_sha256": "4b84d2ea56928fb927322299610967feb47a570f756e44ec37a714a8e43c789c",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_corrected_invalid_prior",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Check the positive expression \\(1+2\\sqrt2\\): \\((1+2\\sqrt2)^2=1+4\\sqrt2+8=9+4\\sqrt2\\). Since the principal square root is nonnegative, \\(\\sqrt{9+4\\sqrt2}=1+2\\sqrt2\\). This is option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q006",
+          "content_sha256": "4b84d2ea56928fb927322299610967feb47a570f756e44ec37a714a8e43c789c"
+        }
+      }
+    },
+    {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q014",
+      "source_pdf": "math_1.pdf",
+      "question_number": 14,
+      "content_sha256": "777fc781f20fb3e40c038c2b7fedd2fd087091b10eaf8d2c04c392a73f28d8e8",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_corrected_invalid_prior",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "There are \\(6\\cdot6=36\\) equally likely ordered dice outcomes. A product of at least \\(25\\) occurs precisely for \\((5,5),(5,6),(6,5),(6,6)\\). Thus the probability is \\(4/36=1/9\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q014",
+          "content_sha256": "777fc781f20fb3e40c038c2b7fedd2fd087091b10eaf8d2c04c392a73f28d8e8"
+        }
+      }
+    },
+    {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q015",
+      "source_pdf": "math_1.pdf",
+      "question_number": 15,
+      "content_sha256": "7188071489be2a614a8ebb762f6731ed795cacf632d8bd6adfa6391dff7499db",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_corrected_invalid_prior",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "A triangle is determined by choosing \\(3\\) of the \\(10\\) points, giving \\(\\binom{10}{3}=120\\). A heptagon is determined by choosing \\(7\\) points, giving \\(\\binom{10}{7}=\\binom{10}{3}=120\\). The requested difference is \\(120-120=0\\), option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q015",
+          "content_sha256": "7188071489be2a614a8ebb762f6731ed795cacf632d8bd6adfa6391dff7499db"
+        }
+      }
+    }
+  ]
+}

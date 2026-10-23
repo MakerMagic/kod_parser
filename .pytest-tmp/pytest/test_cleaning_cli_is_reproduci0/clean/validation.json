@@ -1,0 +1,17 @@
+{
+  "domain": "mathematics",
+  "stage": "mathematics_clean_validation",
+  "summary": {
+    "total": 2,
+    "eligible": 2,
+    "cleaned": 2,
+    "review": 0,
+    "excluded": 0,
+    "excluded_raw_issues": 0,
+    "issues_by_code": {},
+    "with_main_question": 2,
+    "without_separate_main_question": 0
+  },
+  "excluded": [],
+  "issues": []
+}

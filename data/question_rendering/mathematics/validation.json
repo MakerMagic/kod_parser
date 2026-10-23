@@ -1,0 +1,41 @@
+{
+  "domain": "mathematics",
+  "stage": "mathematics_question_rendering_validation",
+  "schema_version": "1",
+  "input": "data/pre_final/mathematics/questions.json",
+  "summary": {
+    "pre_final_questions": 519,
+    "renderable": 519,
+    "issues": 0,
+    "ready_for_website_review": true,
+    "content_blocks_by_type": {
+      "list": 2,
+      "math": 3612,
+      "text": 3426,
+      "visual": 185
+    },
+    "questions_by_source": {
+      "Test_1.pdf": 22,
+      "Test_2.pdf": 25,
+      "Test_3.pdf": 27,
+      "Test_4.pdf": 27,
+      "Test_5.pdf": 27,
+      "Test_6.pdf": 24,
+      "Test_7.pdf": 24,
+      "Test_8.pdf": 4,
+      "math_1.pdf": 28,
+      "math_10.pdf": 30,
+      "math_11.pdf": 28,
+      "math_12.pdf": 29,
+      "math_2.pdf": 26,
+      "math_3.pdf": 26,
+      "math_4.pdf": 29,
+      "math_5.pdf": 29,
+      "math_6.pdf": 27,
+      "math_7.pdf": 29,
+      "math_8.pdf": 30,
+      "math_9.pdf": 28
+    }
+  },
+  "issues": []
+}

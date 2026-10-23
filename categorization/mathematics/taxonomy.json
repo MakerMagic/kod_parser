@@ -1,0 +1,422 @@
+{
+  "source": {
+    "path": "C:\\Users\\user\\Desktop\\NUET\\Preparation\\Темы НУЕТ 2026-2027\\NUET 2026 Math Specification.pdf",
+    "sha256": "a1d01c66882e5e9c546c29b0121e927582523caceab57effe4a4e6a88c7c580a",
+    "title": "Nazarbayev University Entrance Test MATHEMATICS SPECIFICATION",
+    "copyright": "UCLES 2023"
+  },
+  "categories": [
+    {
+      "id": "M1",
+      "name": "Units"
+    },
+    {
+      "id": "M2",
+      "name": "Number"
+    },
+    {
+      "id": "M3",
+      "name": "Ratio and proportion"
+    },
+    {
+      "id": "M4",
+      "name": "Algebra"
+    },
+    {
+      "id": "M5",
+      "name": "Geometry"
+    }
+  ],
+  "subcategories": [
+    {
+      "id": "M1.1",
+      "category_id": "M1",
+      "description": "Use standard units of mass, length, time, money and other measures. Use compound units such as speed, rates of pay, unit pricing, density and pressure, including using decimal quantities where appropriate.",
+      "source_page": 2
+    },
+    {
+      "id": "M1.2",
+      "category_id": "M1",
+      "description": "Change freely between related standard units (e.g. time, length, area, volume/capacity, mass) and compound units (e.g. speed, rates of pay, prices, density, pressure) in numerical and algebraic contexts.",
+      "source_page": 2
+    },
+    {
+      "id": "M2.1",
+      "category_id": "M2",
+      "description": "Order positive and negative integers, decimals and fractions. Understand and use the symbols: = , ≠ , < , > , ≤ , ≥ .",
+      "source_page": 2
+    },
+    {
+      "id": "M2.2",
+      "category_id": "M2",
+      "description": "Apply the four operations (addition, subtraction, multiplication and division) to integers, decimals, simple fractions (proper and improper) and mixed numbers – any of which could be positive and negative. Understand and use place value.",
+      "source_page": 2
+    },
+    {
+      "id": "M2.3",
+      "category_id": "M2",
+      "description": "Use the concepts and vocabulary of prime numbers, factors (divisors), multiples, common factors, common multiples, highest common factor, lowest common multiple, and prime factorisation (including use of product notation and the unique factorisation theorem).",
+      "source_page": 2
+    },
+    {
+      "id": "M2.4",
+      "category_id": "M2",
+      "description": "Recognise and use relationships between operations, including inverse operations. Use cancellation to simplify calculations and expressions. Understand and use the convention for priority of operations, including brackets, powers, roots and reciprocals.",
+      "source_page": 2
+    },
+    {
+      "id": "M2.5",
+      "category_id": "M2",
+      "description": "Apply systematic listing strategies. (For instance, if there are m ways of doing one task and for each of these tasks there are n ways of doing another task, then the total number of ways the two tasks can be done in order is m× n ways.)",
+      "source_page": 2
+    },
+    {
+      "id": "M2.6",
+      "category_id": "M2",
+      "description": "Use and understand the terms: square, positive and negative square root, cube and cube root.",
+      "source_page": 2
+    },
+    {
+      "id": "M2.7",
+      "category_id": "M2",
+      "description": "Use index laws to simplify numerical expressions, and for multiplication and division of integer, fractional and negative powers.",
+      "source_page": 2
+    },
+    {
+      "id": "M2.8",
+      "category_id": "M2",
+      "description": "Interpret, order and calculate with numbers written in standard index form (standard form); numbers are written in standard form as a × 10ⁿ, where 1 ≤ a < 10 and n is an integer.",
+      "source_page": 2
+    },
+    {
+      "id": "M2.9",
+      "category_id": "M2",
+      "description": "Convert between terminating decimals, percentages and fractions. Convert between recurring decimals and their corresponding fractions.",
+      "source_page": 2
+    },
+    {
+      "id": "M2.10",
+      "category_id": "M2",
+      "description": "Use fractions, decimals and percentages interchangeably in calculations. Understand equivalent fractions.",
+      "source_page": 2
+    },
+    {
+      "id": "M2.11",
+      "category_id": "M2",
+      "description": "Calculate exactly with fractions, surds and multiples of π. Simplify surd expressions involving squares, e.g. √12 = √(4×3) = √4√3 = 2√3, and rationalise denominators; for example, candidates could be asked to rationalise expressions such as: 3/√7, 5/(3+2√5), 7/(2−√3), 3/(√5−√2).",
+      "source_page": 3
+    },
+    {
+      "id": "M2.12",
+      "category_id": "M2",
+      "description": "Calculate with upper and lower bounds and use in contextual problems.",
+      "source_page": 3
+    },
+    {
+      "id": "M2.13",
+      "category_id": "M2",
+      "description": "Round numbers and measures to an appropriate degree of accuracy, e.g., to a specified number of decimal places or significant figures. Use inequality notation to specify simple error intervals due to truncation or rounding.",
+      "source_page": 3
+    },
+    {
+      "id": "M2.14",
+      "category_id": "M2",
+      "description": "Use approximation to produce estimates of calculations, including expressions involving π or surds.",
+      "source_page": 3
+    },
+    {
+      "id": "M3.1",
+      "category_id": "M3",
+      "description": "Understand and use scale factors, scale diagrams and maps.",
+      "source_page": 3
+    },
+    {
+      "id": "M3.2",
+      "category_id": "M3",
+      "description": "Express a quantity as a fraction of another, where the fraction is less than 1 or greater than 1.",
+      "source_page": 3
+    },
+    {
+      "id": "M3.3",
+      "category_id": "M3",
+      "description": "Understand and use ratio notation.",
+      "source_page": 3
+    },
+    {
+      "id": "M3.4",
+      "category_id": "M3",
+      "description": "Divide a given quantity into two (or more) parts in a given part:part ratio. Express the division of a quantity into two parts as a ratio.",
+      "source_page": 3
+    },
+    {
+      "id": "M3.5",
+      "category_id": "M3",
+      "description": "Apply ratio to real contexts and problems, such as those involving conversion, comparison, scaling, mixing and concentrations. Express a multiplicative relationship between two quantities as a ratio or a fraction.",
+      "source_page": 3
+    },
+    {
+      "id": "M3.6",
+      "category_id": "M3",
+      "description": "Understand and use proportion. Relate ratios to fractions and to linear functions.",
+      "source_page": 3
+    },
+    {
+      "id": "M3.7",
+      "category_id": "M3",
+      "description": "Identify and work with fractions in ratio problems.",
+      "source_page": 3
+    },
+    {
+      "id": "M3.8",
+      "category_id": "M3",
+      "description": "Define percentage as ‘number of parts per hundred’. Interpret percentages and percentage changes as a fraction or a decimal and interpret these multiplicatively. Express one quantity as a percentage of another. Compare two quantities using percentages. Work with percentages greater than 100%. Solve problems involving percentage change, including percentage increase/decrease, original value problems and simple interest calculations.",
+      "source_page": 3
+    },
+    {
+      "id": "M3.9",
+      "category_id": "M3",
+      "description": "Understand and use direct and inverse proportion, including algebraic representations. Recognise and interpret graphs that illustrate direct and inverse proportion. Set up, use and interpret equations to solve problems involving direct and inverse proportion (including questions involving integer and fractional powers). Understand that x is inversely proportional to y is equivalent to x is proportional to 1/y.",
+      "source_page": 4
+    },
+    {
+      "id": "M3.10",
+      "category_id": "M3",
+      "description": "Compare lengths, areas and volumes using ratio notation. Understand and make links to similarity (including trigonometric ratios) and scale factors.",
+      "source_page": 4
+    },
+    {
+      "id": "M3.11",
+      "category_id": "M3",
+      "description": "Set up, solve and interpret the answers in growth and decay problems, including compound interest, and work with general iterative processes.",
+      "source_page": 4
+    },
+    {
+      "id": "M4.1",
+      "category_id": "M4",
+      "description": "Understand, use and interpret algebraic notation; for instance: ab in place of a×b; 3y in place of y+y+y and 3×y; a² in place of a×a; a³ in place of a×a×a; a²b in place of a×a×b; a/b in place of a÷b.",
+      "source_page": 4
+    },
+    {
+      "id": "M4.2",
+      "category_id": "M4",
+      "description": "Use index laws in algebra for multiplication and division of integer, fractional, and negative powers.",
+      "source_page": 4
+    },
+    {
+      "id": "M4.3",
+      "category_id": "M4",
+      "description": "Substitute numerical values into formulae and expressions, including scientific formulae. Understand and use the concepts and vocabulary: expressions, equations, formulae, identities, inequalities, terms and factors.",
+      "source_page": 4
+    },
+    {
+      "id": "M4.4",
+      "category_id": "M4",
+      "description": "Collect like terms, multiply a single term over a bracket, take out common factors, and expand products of two or more binomials.",
+      "source_page": 4
+    },
+    {
+      "id": "M4.5",
+      "category_id": "M4",
+      "description": "Factorise quadratic expressions of the form x²+bx+c, including the difference of two squares. Factorise quadratic expressions of the form ax²+bx+c, including the difference of two squares.",
+      "source_page": 4
+    },
+    {
+      "id": "M4.6",
+      "category_id": "M4",
+      "description": "Simplify expressions involving sums, products and powers, including the laws of indices. Simplify rational expressions by cancelling, or factorising and cancelling. Use the four rules on algebraic rational expressions.",
+      "source_page": 4
+    },
+    {
+      "id": "M4.7",
+      "category_id": "M4",
+      "description": "Rearrange formulae to change the subject.",
+      "source_page": 4
+    },
+    {
+      "id": "M4.8",
+      "category_id": "M4",
+      "description": "Understand the difference between an equation and an identity. Argue mathematically to show that algebraic expressions are equivalent.",
+      "source_page": 4
+    },
+    {
+      "id": "M4.9",
+      "category_id": "M4",
+      "description": "Work with coordinates in all four quadrants.",
+      "source_page": 4
+    },
+    {
+      "id": "M4.10",
+      "category_id": "M4",
+      "description": "Identify and interpret gradients and intercepts of linear functions (y = mx + c) graphically and algebraically. Identify pairs of parallel lines and identify pairs of perpendicular lines, including the relationships between gradients. Find the equation of the line through two given points, or through one point with a given gradient.",
+      "source_page": 4
+    },
+    {
+      "id": "M4.11",
+      "category_id": "M4",
+      "description": "Identify and interpret roots, intercepts and turning points of quadratic functions graphically. Deduce roots algebraically, and turning points by completing the square.",
+      "source_page": 5
+    },
+    {
+      "id": "M4.12",
+      "category_id": "M4",
+      "description": "Recognise, sketch and interpret graphs of: a. linear functions b. quadratic functions c. simple cubic functions d. the reciprocal function: y = 1/x with x≠0 e. the exponential function: y = kˣ for positive values of k f. trigonometric functions (with arguments in degrees): y = sin x, y = cos x, y = tan x for angles of any size",
+      "source_page": 5
+    },
+    {
+      "id": "M4.13",
+      "category_id": "M4",
+      "description": "Interpret graphs (including reciprocal graphs and exponential graphs) and graphs of non-standard functions in real contexts to find approximate solutions to problems, such as simple kinematic problems involving distance, speed and acceleration.",
+      "source_page": 5
+    },
+    {
+      "id": "M4.14",
+      "category_id": "M4",
+      "description": "Calculate or estimate gradients of graphs and areas under graphs (including quadratic and other non-linear graphs), and interpret results in cases such as distance–time graphs, speed–time graphs and graphs in financial contexts.",
+      "source_page": 5
+    },
+    {
+      "id": "M4.15",
+      "category_id": "M4",
+      "description": "Set up and solve, both algebraically and graphically, simple equations including simultaneous equations involving two unknowns; this may include one linear and one quadratic equation. Solve two simultaneous equations in two variables (linear/linear or linear/quadratic) algebraically. Find approximate solutions using a graph. Translate simple situations or procedures into algebraic expressions or formulae; for example, derive an equation (or two simultaneous equations), solve the equation(s) and interpret the solution.",
+      "source_page": 5
+    },
+    {
+      "id": "M4.16",
+      "category_id": "M4",
+      "description": "Solve quadratic equations (including those that require rearrangement) algebraically by factorising, by completing the square, and by using the quadratic formula. Know the quadratic formula: x = (−b ± √(b² − 4ac))/(2a). Find approximate solutions of quadratic equations using a graph.",
+      "source_page": 5
+    },
+    {
+      "id": "M4.17",
+      "category_id": "M4",
+      "description": "Solve linear inequalities in one or two variables. Represent the solution set on a number line, or on a graph, or in words.",
+      "source_page": 5
+    },
+    {
+      "id": "M4.18",
+      "category_id": "M4",
+      "description": "Generate terms of a sequence using term-to-term or position-to-term rules.",
+      "source_page": 5
+    },
+    {
+      "id": "M4.19",
+      "category_id": "M4",
+      "description": "Deduce expressions to calculate the nth term of linear or quadratic sequences.",
+      "source_page": 5
+    },
+    {
+      "id": "M5.1",
+      "category_id": "M5",
+      "description": "Use conventional terms and notation: points, lines, line segments, vertices, edges, planes, parallel lines, perpendicular lines, right angles, subtended angles, polygons, regular polygons and polygons with reflection and/or rotational symmetries.",
+      "source_page": 6
+    },
+    {
+      "id": "M5.2",
+      "category_id": "M5",
+      "description": "Recall and use the properties of angles at a point, angles on a straight line, perpendicular lines and opposite angles at a vertex. Understand and use the angle properties of parallel lines, intersecting lines, triangles and quadrilaterals. Calculate and use the sum of the interior angles, and the sum of the exterior angles, of polygons.",
+      "source_page": 6
+    },
+    {
+      "id": "M5.3",
+      "category_id": "M5",
+      "description": "Derive and apply the properties and definitions of special types of quadrilaterals, including square, rectangle, parallelogram, trapezium, kite and rhombus. Derive and apply the properties and definitions of various types of triangle and other plane figures using appropriate language.",
+      "source_page": 6
+    },
+    {
+      "id": "M5.4",
+      "category_id": "M5",
+      "description": "Understand and use the basic congruence criteria for triangles (SSS, SAS, ASA, RHS).",
+      "source_page": 6
+    },
+    {
+      "id": "M5.5",
+      "category_id": "M5",
+      "description": "Apply angle facts, triangle congruence, similarity, and properties of quadrilaterals to results about angles and sides.",
+      "source_page": 6
+    },
+    {
+      "id": "M5.6",
+      "category_id": "M5",
+      "description": "Identify, describe and construct congruent and similar shapes, including on coordinate axes, by considering rotation, reflection, translation and enlargement (including fractional and negative scale factors). Describe the changes and invariance achieved by combinations of rotations, reflections and translations. Describe translations as 2-dimensional vectors.",
+      "source_page": 6
+    },
+    {
+      "id": "M5.7",
+      "category_id": "M5",
+      "description": "Know and use the formula for Pythagoras’ theorem: a² + b² = c². Use Pythagoras’ theorem in both 2 and 3 dimensions.",
+      "source_page": 6
+    },
+    {
+      "id": "M5.8",
+      "category_id": "M5",
+      "description": "Identify and use conventional circle terms: centre, radius, chord, diameter, circumference, tangent, arc, sector and segment (including the use of the terms minor and major for arcs, sectors and segments).",
+      "source_page": 6
+    },
+    {
+      "id": "M5.9",
+      "category_id": "M5",
+      "description": "Apply the standard circle theorems concerning angles, radii, tangents and chords, and use them to prove related results: a. angle subtended at the centre is twice the angle subtended at the circumference b. angle in a semicircle is 90° c. angles in the same segment are equal d. angle between a tangent and a chord (alternate segment theorem) e. angle between a radius and a tangent is 90° f. properties of cyclic quadrilaterals",
+      "source_page": 6
+    },
+    {
+      "id": "M5.10",
+      "category_id": "M5",
+      "description": "Solve geometrical problems on 2-dimensional coordinate axes.",
+      "source_page": 6
+    },
+    {
+      "id": "M5.11",
+      "category_id": "M5",
+      "description": "Know the terminology faces, surfaces, edges and vertices when applied to cubes, cuboids, prisms, cylinders, pyramids, cones, spheres and hemispheres.",
+      "source_page": 6
+    },
+    {
+      "id": "M5.12",
+      "category_id": "M5",
+      "description": "Interpret plans and elevations of 3-dimensional shapes.",
+      "source_page": 7
+    },
+    {
+      "id": "M5.13",
+      "category_id": "M5",
+      "description": "Use and interpret maps and scale drawings. Understand and use three-figure bearings.",
+      "source_page": 7
+    },
+    {
+      "id": "M5.14",
+      "category_id": "M5",
+      "description": "Know and apply formulae to calculate: a. the area of triangles, parallelograms, trapezia b. the volume of cuboids and other right prisms.",
+      "source_page": 7
+    },
+    {
+      "id": "M5.15",
+      "category_id": "M5",
+      "description": "Know the formulae: a. circumference of a circle = 2πr = πd b. area of a circle = πr² c. volume of a right circular cylinder = πr²h Formulae relating to spheres, pyramids and cones will be given if needed. Use formulae to calculate: a. perimeters of 2-dimensional shapes, including circles b. areas of circles and composite shapes c. surface area and volume of spheres, pyramids, cones and composite solids",
+      "source_page": 7
+    },
+    {
+      "id": "M5.16",
+      "category_id": "M5",
+      "description": "Calculate arc lengths, angles and areas of sectors of circles.",
+      "source_page": 7
+    },
+    {
+      "id": "M5.17",
+      "category_id": "M5",
+      "description": "Apply the concepts of congruence and similarity in simple figures, including the relationships between lengths, areas and volumes.",
+      "source_page": 7
+    },
+    {
+      "id": "M5.18",
+      "category_id": "M5",
+      "description": "Know and use the trigonometric ratios: sin θ = opposite/hypotenuse cos θ = adjacent/hypotenuse tan θ = opposite/adjacent Apply these to find angles and lengths in right-angled triangles and, where possible, general triangles in 2- and 3-dimensional figures. Know the exact values of sin θ and cos θ for θ = 0°, 30°, 45°, 60°, 90°. Know the exact values of tan θ for θ = 0°, 30°, 45°, 60°. Candidates are not expected to recall or use the sine or cosine rules.",
+      "source_page": 7
+    },
+    {
+      "id": "M5.19",
+      "category_id": "M5",
+      "description": "Apply addition and subtraction of vectors, multiplication of vectors by a scalar, and diagrammatic and column representations of vectors. Use vectors to construct geometric arguments and proofs.",
+      "source_page": 7
+    }
+  ]
+}

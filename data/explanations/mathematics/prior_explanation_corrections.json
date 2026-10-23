@@ -1,0 +1,254 @@
+[
+  {
+    "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q005",
+    "original": {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q005",
+      "source_pdf": "math_1.pdf",
+      "question_number": 5,
+      "content_sha256": "d61d4d7fac53256448b581a82da9159270aa16ec82313f700de3628681bc6491",
+      "correct_answer": "C",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "The two equations have no solution when they represent distinct parallel lines. Their \\(\\frac{2}{1}=frac{3}{a}\\), so \\(2a=3\\) and \\(a=frac{3}{2}=1.5\\). The constants do not have the same ratio, since \\(\\frac{5}{2}ne2\\), so the lines are distinct rather than coincident. Choose C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q005",
+          "content_sha256": "d61d4d7fac53256448b581a82da9159270aa16ec82313f700de3628681bc6491"
+        }
+      }
+    },
+    "corrected": {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q005",
+      "source_pdf": "math_1.pdf",
+      "question_number": 5,
+      "content_sha256": "d61d4d7fac53256448b581a82da9159270aa16ec82313f700de3628681bc6491",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_corrected_invalid_prior",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "For the two equations to have no solution, their lines must be parallel and distinct. Doubling \\(x+ay=2\\) gives \\(2x+2ay=4\\). Its left side matches \\(2x+3y=5\\) when \\(2a=3\\), so \\(a=\\frac32=1.5\\). The resulting identical left sides equal different constants, \\(4\\) and \\(5\\), so the system is inconsistent. Choose C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q005",
+          "content_sha256": "d61d4d7fac53256448b581a82da9159270aa16ec82313f700de3628681bc6491"
+        }
+      }
+    },
+    "reason": "Prior mathematical notation was invalid: math commands outside delimiters or missing command backslashes; solution directly re-authored and checked."
+  },
+  {
+    "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q006",
+    "original": {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q006",
+      "source_pdf": "math_1.pdf",
+      "question_number": 6,
+      "content_sha256": "4b84d2ea56928fb927322299610967feb47a570f756e44ec37a714a8e43c789c",
+      "correct_answer": "E",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Write \\sqrt{9+4\\sqrt2}=a+b\\sqrt2. Squaring gives \\a^2+2b^2+2ab\\sqrt2=9+4\\sqrt2, so \\ab=2 and \\a^2+2b^2=9. The positive pair \\a=1, b=2 satisfies both equations. Thus \\sqrt{9+4\\sqrt2}=1+2\\sqrt2, which is option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q006",
+          "content_sha256": "4b84d2ea56928fb927322299610967feb47a570f756e44ec37a714a8e43c789c"
+        }
+      }
+    },
+    "corrected": {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q006",
+      "source_pdf": "math_1.pdf",
+      "question_number": 6,
+      "content_sha256": "4b84d2ea56928fb927322299610967feb47a570f756e44ec37a714a8e43c789c",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_corrected_invalid_prior",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Check the positive expression \\(1+2\\sqrt2\\): \\((1+2\\sqrt2)^2=1+4\\sqrt2+8=9+4\\sqrt2\\). Since the principal square root is nonnegative, \\(\\sqrt{9+4\\sqrt2}=1+2\\sqrt2\\). This is option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q006",
+          "content_sha256": "4b84d2ea56928fb927322299610967feb47a570f756e44ec37a714a8e43c789c"
+        }
+      }
+    },
+    "reason": "Prior mathematical notation was invalid: math commands outside delimiters or missing command backslashes; solution directly re-authored and checked."
+  },
+  {
+    "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q014",
+    "original": {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q014",
+      "source_pdf": "math_1.pdf",
+      "question_number": 14,
+      "content_sha256": "777fc781f20fb3e40c038c2b7fedd2fd087091b10eaf8d2c04c392a73f28d8e8",
+      "correct_answer": "C",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "There are \\(6\\times6=36\\) equally likely ordered outcomes when two fair dice are tossed. A product of at least \\(25\\) occurs only for \\((5,5),(5,6),(6,5),(6,6)\\), giving \\(4\\) outcomes. Hence the probability is \\(\\frac{4}{36}=frac{1}{9}\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q014",
+          "content_sha256": "777fc781f20fb3e40c038c2b7fedd2fd087091b10eaf8d2c04c392a73f28d8e8"
+        }
+      }
+    },
+    "corrected": {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q014",
+      "source_pdf": "math_1.pdf",
+      "question_number": 14,
+      "content_sha256": "777fc781f20fb3e40c038c2b7fedd2fd087091b10eaf8d2c04c392a73f28d8e8",
+      "correct_answer": "C",
+      "explanation_origin": "assistant_corrected_invalid_prior",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "There are \\(6\\cdot6=36\\) equally likely ordered dice outcomes. A product of at least \\(25\\) occurs precisely for \\((5,5),(5,6),(6,5),(6,6)\\). Thus the probability is \\(4/36=1/9\\), option C."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q014",
+          "content_sha256": "777fc781f20fb3e40c038c2b7fedd2fd087091b10eaf8d2c04c392a73f28d8e8"
+        }
+      }
+    },
+    "reason": "Prior mathematical notation was invalid: math commands outside delimiters or missing command backslashes; solution directly re-authored and checked."
+  },
+  {
+    "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q015",
+    "original": {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q015",
+      "source_pdf": "math_1.pdf",
+      "question_number": 15,
+      "content_sha256": "7188071489be2a614a8ebb762f6731ed795cacf632d8bd6adfa6391dff7499db",
+      "correct_answer": "E",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "Each triangle is determined by choosing \\3 of the \\10 points, so there are \\binom{10}{3}=120. Each heptagon is determined by choosing \\7 points, so there are \\binom{10}{7}=120. Their difference is \\120-120=0, option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q015",
+          "content_sha256": "7188071489be2a614a8ebb762f6731ed795cacf632d8bd6adfa6391dff7499db"
+        }
+      }
+    },
+    "corrected": {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q015",
+      "source_pdf": "math_1.pdf",
+      "question_number": 15,
+      "content_sha256": "7188071489be2a614a8ebb762f6731ed795cacf632d8bd6adfa6391dff7499db",
+      "correct_answer": "E",
+      "explanation_origin": "assistant_corrected_invalid_prior",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "A triangle is determined by choosing \\(3\\) of the \\(10\\) points, giving \\(\\binom{10}{3}=120\\). A heptagon is determined by choosing \\(7\\) points, giving \\(\\binom{10}{7}=\\binom{10}{3}=120\\). The requested difference is \\(120-120=0\\), option E."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q015",
+          "content_sha256": "7188071489be2a614a8ebb762f6731ed795cacf632d8bd6adfa6391dff7499db"
+        }
+      }
+    },
+    "reason": "Prior mathematical notation was invalid: math commands outside delimiters or missing command backslashes; solution directly re-authored and checked."
+  }
+]

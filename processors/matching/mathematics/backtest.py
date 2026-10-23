@@ -167,7 +167,10 @@ def render_question(q, source, *, position=1, count=1):
             "",
             choices,
             source=source["filename"],
-            heading="Mathematics · matdev " + source["version"],
+            heading="Mathematics · "
+            + source.get("source", "matdev")
+            + " "
+            + source["version"],
             question_number=q["question_number"],
             report_prefix=prefix,
             position=position,

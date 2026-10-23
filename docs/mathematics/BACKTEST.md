@@ -3,6 +3,28 @@
 Read canonical JSON directly during development. Generate HTML only on request or
 for the small representative acceptance sample required by the mathematics task.
 
+## RAW-only inspection
+
+The RAW entry point reads stored `mathematics_raw` JSON directly and reuses the
+same report adapter and shared HTML components. It does not invoke matching.
+
+```powershell
+python -m parsers.mathematics.backtest --test 3 --question 12 --output inspections/mathematics/raw-chain.html
+python -m parsers.mathematics.backtest --test 1 --question 24 --width 1350 --output inspections/mathematics/raw-roots.html
+python -m parsers.mathematics.backtest --issues --sample 3 --seed 7 --output inspections/mathematics/raw-review.html
+python -m parsers.mathematics.backtest --id <stable-id> --output inspections/mathematics/raw-selected.html
+```
+
+`--raw-json` accepts stored RAW files/directories (default `data/raw/mathematics`).
+`--test` selects the content-derived trial-set number; `--source`, `--question`,
+`--id`, `--issues`, `--issue-code`, `--sample`, `--seed` and the existing width
+presets are available. At least one selector is required. A test-only selection
+previews that test, not the full corpus. Output is disposable and must be a fresh
+path outside canonical data. Raster text/formulas without verified transcription
+appear as unresolved diagnostic evidence, rather than accepted image answers.
+
+## Existing matched-data inspection
+
 ```powershell
 python -m processors.matching.mathematics inspect --source math_1 --question 4 --output inspections/mathematics/example.html
 python -m processors.matching.mathematics inspect --id <stable-id> --output inspections/mathematics/selected.html

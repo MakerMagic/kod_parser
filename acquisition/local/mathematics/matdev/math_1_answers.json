@@ -1,0 +1,17 @@
+{
+  "authority": "User-supplied math_1 answer-key screenshot",
+  "source_document_id": "matdev_v1.1_9e6cc3f6b418fa0db4a7",
+  "source_pdf": "math_1.pdf",
+  "image": {
+    "path": "acquisition/local/mathematics/matdev/math_1_answers.png",
+    "sha256": "b0c3afaa9efb113597ef5241ddfcd1f8419303ac5b90eb38c5e011f8e93fbd62"
+  },
+  "answers": {
+    "1": "B", "2": "D", "3": "B", "4": "E", "5": "C",
+    "6": "E", "7": "B", "8": "B", "9": "D", "10": "E",
+    "11": "C", "12": "B", "13": "D", "14": "C", "15": "E",
+    "16": "D", "17": "C", "18": "E", "19": "C", "20": "C",
+    "21": "D", "22": "C", "23": "A", "24": "C", "25": "A",
+    "26": "C", "27": "B", "28": "B", "29": "E", "30": "B"
+  }
+}

@@ -19,6 +19,13 @@ def recognize(path, layout=11):
         )
     )
     node = shutil.which("node")
+    bundled = (
+        Path.home() / ".cache/codex-runtimes/codex-primary-runtime/dependencies/node"
+    )
+    if (bundled / "node_modules/tesseract.js").is_dir() and (
+        bundled / "bin/node.exe"
+    ).is_file():
+        node = str(bundled / "bin/node.exe")
     if node and (model / "eng.traineddata").is_file():
         result = subprocess.run(
             [

@@ -30,6 +30,10 @@ const { chromium } = require('playwright');
           roots: document.querySelectorAll('msqrt,mroot').length,
           scripts: document.querySelectorAll('msup,msub').length,
           displayMath: document.querySelectorAll('math[display="block"]').length,
+          systemRowsAligned: [...document.querySelectorAll('mtable')].every(table => {
+            const lefts = [...table.querySelectorAll('mtd')].map(cell => cell.firstElementChild.getBoundingClientRect().left);
+            return Math.max(...lefts) - Math.min(...lefts) < 1;
+          }),
           rawDelimiters: /\\\(|\\\[/.test(document.querySelector('.website').innerText),
           answerScrollbars: [...document.querySelectorAll('.question-pane,.answer-options,.answer-option,.option-content')].some(p => {
             p.scrollTop = 20;
@@ -46,6 +50,7 @@ const { chromium } = require('playwright');
       });
       assert(result.articles > 0 && result.articles <= 10);
       assert(result.fractions && result.roots && result.scripts && result.displayMath && result.mathRendered);
+      assert(result.systemRowsAligned, 'System rows must retain their shared left alignment');
       assert(!result.rawDelimiters && !result.documentOverflow && !result.answerScrollbars && result.optionMathFits);
       assert(result.images.every(i => i.loaded && i.ratioError < 0.02 && !i.overflow));
       console.log(JSON.stringify({ width, ...result, images: result.images.length }));

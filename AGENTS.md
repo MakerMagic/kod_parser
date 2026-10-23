@@ -16,13 +16,23 @@ after it; consult schemas/taxonomies only when the task needs them.
 - When extraction changes, test question numbering, option boundaries, required
   fields and raw-text preservation.
 - Use canonical structured data as the source of truth. Open referenced assets
-  directly. Generate inspection output only on user request or for a concrete,
+  directly. Generate per-question inspection output only on user request or for a concrete,
   evidenced diagnostic need that source data/assets cannot resolve.
 - Preserve user changes. Do not use destructive repository-wide recovery commands.
 
 ## Current domain and stage
 
-The active domain is mathematics: RAW extraction is followed by issue-free
+Active work is MATHEMATICS EXPLANATIONS from read-only canonical PRE-FINAL.
+Read `docs/mathematics/EXPLANATIONS.md`. Explanation records are a separate,
+content-hash-bound projection and may not alter questions, matching, categories,
+pre-final or rendering. Explanation text is authored directly by the active
+assistant; no external LLM/provider is permitted. The established
+`explanation_by_ai` provenance flag is true for assistant-authored text. No
+website integration or database import.
+RAW, CLEAN, matching and categorization are read-only dependencies. Never repair
+stale upstream references inside assembly. Stop before rendering if blocked.
+No database import or website integration. RAW inspection uses
+`python -m parsers.mathematics.backtest`. The established pipeline is RAW extraction followed by issue-free
 cleaning and stored answer-key matching. Cleaning consumes only completed,
 RAW-issue-free records and writes a separate `data/clean/mathematics` projection.
 Retry matching only for records without a validated matched answer; preserve all
@@ -56,6 +66,11 @@ trees.
   `.agents/skills/token-saver-codex/SKILL.md`.
 - Run focused tests and validators for changed behavior. Do not regenerate
   unrelated datasets or reports.
+- Every executed/regenerated stage MUST generate its own `<STAGE>_BACKTESTING.md`
+  and `<STAGE>_ISSUES.md` from canonical structured outputs, including zero-issue
+  stages. Multi-stage tasks repeat separately for every stage; validate counts,
+  complete coverage and determinism. Never merge stages or hand-maintain these
+  artifacts. See `docs/general/DEVELOPMENT_RULES.md`.
 
 ## Reference guides
 

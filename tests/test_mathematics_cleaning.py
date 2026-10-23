@@ -43,6 +43,7 @@ def stored(tmp_path, questions=None):
         "schema_version": "2",
         "source_document": {
             "id": "source",
+            "source": "matdev",
             "filename": "paper.pdf",
             "sha256": "stable-source-sha",
         },
@@ -133,8 +134,16 @@ def test_cleaning_cli_is_reproducible_and_cannot_overwrite_raw(tmp_path):
     args = ["--raw-json", str(path), "--output-dir", str(target)]
     assert clean_main(args) == 0
     first = (target / "questions.json").read_bytes()
+    artifacts = {
+        name: (target / name).read_bytes()
+        for name in ("CLEANING_BACKTESTING.md", "CLEANING_ISSUES.md")
+    }
+    assert b"Total issues: 0" in artifacts["CLEANING_ISSUES.md"]
     assert clean_main(args) == 0
     assert (target / "questions.json").read_bytes() == first
+    assert all(
+        (target / name).read_bytes() == content for name, content in artifacts.items()
+    )
     input_named_like_output = tmp_path / "questions.json"
     input_named_like_output.write_bytes(path.read_bytes())
     with pytest.raises(ValueError, match="cannot overwrite RAW"):
@@ -207,8 +216,8 @@ def test_current_clean_output_covers_exact_eligible_raw_set_without_pdf_access(
     if not paths:
         pytest.skip("Local mathematics data unavailable")
     before = {p: sha256(p.read_bytes()).hexdigest() for p in paths}
-    result, validation = clean_dataset(paths)
     saved = load("data/clean/mathematics/questions.json")
+    result, validation = clean_dataset(paths, existing=saved)
     assert result == saved
     eligible = {
         q["id"]
@@ -242,9 +251,125 @@ def test_current_clean_output_covers_exact_eligible_raw_set_without_pdf_access(
         for before_block, after_block in zip(before_blocks, after_blocks, strict=True):
             assert before_block["type"] == after_block["type"]
             if before_block["type"] not in {"text", "list"}:
-                assert before_block == after_block
+                assert {
+                    k: v for k, v in before_block.items() if k != "break_before"
+                } == {k: v for k, v in after_block.items() if k != "break_before"}
+        assert q["main_question"] is None or q["main_question"]
+        from processors.normalization.mathematics.structure import (
+            projection_is_lossless,
+        )
+
+        assert projection_is_lossless(q["content"], q["main_body"], q["main_question"])
     assert result["summary"]["cleaned"] + result["summary"]["review"] == len(eligible)
     assert {q["id"] for q in result["questions"] if q["cleaning_issues"]} == {
         q["id"] for q in validation["issues"]
     }
     assert all(sha256(p.read_bytes()).hexdigest() == h for p, h in before.items())
+
+
+@pytest.mark.parametrize(
+    "latex,display",
+    [
+        (r"\frac{x+1}{y-2}", False),
+        (r"\sqrt[3]{\sqrt{x^{2}+1}}", True),
+        (r"a_{n+1}^{2}\geq\pi", False),
+        (r"\begin{cases}x+y=3\\x-y=1\end{cases}", True),
+        (r"\sin(x)+f(2,3)=25\%", False),
+    ],
+)
+def test_cleaning_never_rewrites_math_or_joins_formula_blocks(latex, display):
+    raw = question()
+    formula = {"type": "math", "latex": latex, "display": display}
+    raw["content"] = [
+        {"type": "text", "text": " Let  "},
+        deepcopy(formula),
+        {"type": "text", "text": "  be given.\n\n\nThen:\n"},
+        {**deepcopy(formula), "break_before": True},
+    ]
+    raw["options"][0]["content"] = [deepcopy(formula)]
+    cleaned = clean_question(raw, {})
+    assert not cleaned["cleaning_issues"]
+    assert cleaned["content"][0]["text"] == " Let "
+    assert cleaned["content"][2]["text"] == " be given.\n\nThen:\n"
+    assert cleaned["content"][1] == raw["content"][1]
+    assert cleaned["content"][3] == raw["content"][3]
+    assert cleaned["options"] == raw["options"]
+    again = clean_question({k: cleaned[k] for k in raw}, {})
+    assert again["content"] == cleaned["content"]
+
+
+def test_shared_prose_normalization_preserves_numeric_columns_and_lists():
+    raw = question()
+    raw["content"] = [
+        {"type": "text", "text": "  First\u00a0\u00a0line.\r\n\r\n\r\nNext\tline.  "}
+    ]
+    assert clean_question(raw, {})["content"][0]["text"] == "First line.\n\nNext line."
+    raw["content"][0]["text"] = "1  2  3\n4  5  6"
+    assert clean_question(raw, {})["content"] == raw["content"]
+    raw["content"] = [
+        {
+            "type": "list",
+            "ordered": True,
+            "items": [
+                {"content": [{"type": "text", "text": "  one  item  "}]},
+                {"content": [{"type": "math", "latex": "x_{1}", "display": False}]},
+            ],
+        }
+    ]
+    result = clean_question(raw, {})
+    assert result["content"][0]["items"][0]["content"][0]["text"] == "one item"
+    assert result["content"][0]["items"][1] == raw["content"][0]["items"][1]
+
+
+def test_unknown_text_encoding_creates_located_issue_without_guessing():
+    raw = question()
+    raw["content"][0]["text"] = "Let (cid:99) be given."
+    result = clean_question(raw, {})
+    assert result["content"] == raw["content"]
+    assert result["cleaning_issues"] == [
+        {
+            "code": "encoding_artifact_unresolved",
+            "reason": "Encoding tokens/control glyphs have no verified replacement; content retained.",
+            "field": "content[0]",
+        }
+    ]
+
+
+def test_incremental_cleaning_reuses_valid_rows_and_processes_only_new(
+    tmp_path, monkeypatch
+):
+    from processors.normalization.mathematics import cleaner
+
+    first = question(1)
+    path = stored(tmp_path, [first])
+    previous, _ = clean_dataset([path])
+    original_cleaned = deepcopy(previous["questions"][0])
+    path = stored(tmp_path, [first, question(2)])
+    actual = cleaner.clean_question
+    seen = []
+
+    def track(raw, reference, **kwargs):
+        seen.append(raw["id"])
+        return actual(raw, reference, **kwargs)
+
+    monkeypatch.setattr(cleaner, "clean_question", track)
+    stats = {}
+    result, _ = clean_dataset([path], previous, run_stats=stats)
+    assert seen == ["source_q2"]
+    assert stats == {
+        "reused_valid": 1,
+        "processed_new": 1,
+        "retried_review_or_stale": 0,
+    }
+    reused = deepcopy(result["questions"][0])
+    assert reused.pop("raw_reference") != original_cleaned.pop("raw_reference")
+    assert reused == original_cleaned
+    seen.clear()
+    rerun, _ = clean_dataset([path], result)
+    assert rerun == result and seen == []
+    changed = deepcopy(first)
+    changed["options"][0]["content"][0]["latex"] = "x+3"
+    stored(tmp_path, [changed, question(2)])
+    refreshed, _ = clean_dataset([path], result)
+    assert seen == ["source_q1"]
+    assert refreshed["questions"][0]["options"] == changed["options"]

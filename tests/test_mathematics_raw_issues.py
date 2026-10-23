@@ -13,12 +13,12 @@ RAW = ROOT / "data/raw/mathematics"
 def test_raw_issue_report_covers_each_structured_issue():
     findings = collect(RAW.glob("*.raw.json"))
     report = render(findings)
-    expected = Counter(
-        i["code"]
-        for path in RAW.glob("*.raw.json")
-        for q in json.loads(path.read_text(encoding="utf8"))["questions"]
-        for i in q["issues"]
-    )
+    expected = Counter()
+    for path in RAW.glob("*.raw.json"):
+        data = json.loads(path.read_text(encoding="utf8"))
+        expected.update(i["code"] for q in data["questions"] for i in q["issues"])
+        expected.update(i["code"] for i in data.get("issues", []))
+        expected.update(i["code"] for i in data.get("answer_key", {}).get("issues", []))
     assert len(findings) == sum(expected.values())
     assert Counter(item["category"] for item in findings) == expected
     assert report.count("\n- **") == len(findings)

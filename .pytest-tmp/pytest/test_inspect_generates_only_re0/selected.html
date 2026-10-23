@@ -1,0 +1,85 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><meta http-equiv='Content-Security-Policy' content="default-src 'none'; img-src data:; style-src 'unsafe-inline'"><title>Question rendering preview</title><style>*{box-sizing:border-box}
+body{margin:0;background:#f5f5f6;color:#171717;font:16px/1.5 Arial,Helvetica,sans-serif}
+.preview-note{font-size:13px;color:#666;margin:14px 20px}
+.question-preview{margin:0 auto 40px}
+.preview-scroll{width:100%;overflow-x:auto}
+.website{width:var(--preview-width);margin:0 auto;background:#fff;border:1px solid #e4e4e7;border-radius:3px}
+.exam-header{height:56px;padding:10px 30px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;border-bottom:1px solid #eee}
+.exam-source{font-size:13px;color:#616161}
+.preview-pill{font-size:12px;border:1px solid #777;border-radius:30px;padding:4px 12px;white-space:nowrap}
+.category-badge{justify-self:end;max-width:100%;font-size:10px;font-weight:700;line-height:1.2;text-transform:uppercase;background:#e21d29;color:white;border-radius:4px;padding:7px 9px;text-align:center}
+.simulation-grid{display:grid;grid-template-columns:52% minmax(0,1fr);min-height:560px;align-items:start}
+.body-pane,.question-pane{min-width:0;overflow-wrap:anywhere}
+.body-pane{height:560px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:28px 30px;border-right:1px solid #eee}
+.question-pane{padding:14px 30px 26px 24px}
+.body-pane:focus-visible,.question-pane:focus-visible{outline:2px solid #8087b8;outline-offset:-3px}
+.eyebrow{margin:0 0 12px;font-size:11px;font-weight:500;color:#555}
+.text{white-space:pre-wrap;overflow-wrap:anywhere}
+p.text{margin:0 0 14px}
+.question-stem{font-size:17px;line-height:1.42;margin:0 0 28px}
+.answer-options{padding:0;margin:0;border:0;min-width:0;display:flex;flex-direction:column;gap:12px}
+.answer-option{position:relative;display:flex;align-items:flex-start;gap:14px;width:100%;min-width:0;min-height:60px;padding:12px 14px;border:1px solid #e5e5e5;border-radius:8px;background:#fff;cursor:pointer;font-size:15px;line-height:1.35}
+.answer-option:hover{border-color:#acacac}
+.answer-option input{position:absolute;opacity:0;width:1px;height:1px}
+.option-badge{flex:0 0 21px;width:21px;height:21px;border:1px solid #888;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;font-size:12px;color:#666}
+.answer-option:has(input:checked){border-color:#d74a54;background:#fff7f7}
+.answer-option input:checked+.option-badge{background:#e35860;border-color:#e35860;color:#fff}
+.answer-option:has(input:focus-visible){outline:2px solid #8087b8;outline-offset:2px}
+.option-content{min-width:0;flex:1}
+.option-content p.text{margin:0}
+figure{margin:16px 0;max-width:100%;min-width:0}
+figure img{display:block;max-width:100%;width:auto;height:auto;object-fit:contain}
+.option-content figure{margin:10px 0 0}
+.option-content figure:first-child{margin-top:0}
+.option-content img{max-width:100%;width:auto;height:auto;object-fit:contain}
+figcaption{font-size:12px;color:#676767;margin:6px 0}
+.exam-footer{height:66px;border-top:1px solid #eee;padding:12px 30px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.explanation-link,.check-button{font:600 14px Arial,sans-serif;border:1px solid #555;border-radius:4px;padding:7px 18px;text-decoration:none;color:#171717;background:#fff}
+.check-button{background:#171717;color:#fff;border-color:#171717;min-width:112px;cursor:not-allowed}
+.question-counter{font-size:12px;text-align:center;border:1px solid #555;border-radius:4px;padding:4px 14px;font-weight:600}
+.detailed-report{width:calc(100% - 40px);max-width:var(--preview-width);margin:28px auto 0;background:#fff;border:1px solid #e4e4e7;padding:24px 30px;overflow-wrap:anywhere}
+.detailed-report h2{margin:0 0 18px;font-size:22px}
+.detailed-report h3{font-size:16px;margin:0 0 10px}
+.detailed-report section{margin:0 0 24px}
+.report-answer{padding:8px 0}
+.detailed-report details{margin:18px 0}
+summary{cursor:pointer;font-weight:600}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 Consolas,monospace;background:#f7f7f8;padding:12px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media print{body{background:white}.website{width:100%}.body-pane{height:auto;overflow:visible}.preview-note{display:none}}
+.math-stream{min-width:0;overflow-wrap:anywhere}.math-text{white-space:pre-wrap;overflow-wrap:anywhere}.math-inline{display:inline-block;max-width:100%;vertical-align:middle;font-family:'Cambria Math',STIX Two Math,serif}.math-display{display:block;max-width:100%;margin:10px 0;font-family:'Cambria Math',STIX Two Math,serif}.math-stream figure{display:block}.math-stream figure img{max-width:100%;width:auto;height:auto;object-fit:contain}.source-list{margin:8px 0;padding-left:24px}.answer-option math{max-width:100%;font-size:1em}.answer-option .math-display{margin:2px 0}.math-report-body{line-height:1.6}</style></head><body style='--preview-width:1166px'><main><p class='preview-note'>1166 px preview · rendering only · answers are selectable, not scored</p><article class='question-preview' data-question-id='matdev_v1.1_9e6cc3f6b418fa0db4a7_q001'><div class='preview-scroll'><section class='website' aria-label='Question simulation'><header class='exam-header'><span class='exam-source'>Mathematics · math_1.pdf</span><span class='preview-pill'>Question preview</span><span class='category-badge'>Ratio and proportion</span></header><div class='simulation-grid'><section class='body-pane' tabindex='0' aria-label='Passage'><h2 class='eyebrow'>MAIN BODY</h2><div class='math-stream'><span class='math-text'>The length of each side of square A is increased by 100 percent to make square B. If the length of the side of square B is increased by 50 percent to make square C, </span></div></section><section class='question-pane' tabindex='0' aria-label='Question and answers'><div class='question-stem text'><div class='math-stream'><span class='math-text'>by what percent is the area of square C greater than the sum of the areas of squares A and B?</span></div></div><fieldset class='answer-options'><legend class='sr-only'>Select an answer for preview</legend><label class='answer-option' data-option='A'><input type='radio' name='answer-1' value='A' aria-label='Option A'><span class='option-badge' aria-hidden='true'>A</span><span class='option-content'><div class='math-stream'><span class='math-text'>75%</span></div></span></label><label class='answer-option' data-option='B'><input type='radio' name='answer-1' value='B' aria-label='Option B'><span class='option-badge' aria-hidden='true'>B</span><span class='option-content'><div class='math-stream'><span class='math-text'>80%</span></div></span></label><label class='answer-option' data-option='C'><input type='radio' name='answer-1' value='C' aria-label='Option C'><span class='option-badge' aria-hidden='true'>C</span><span class='option-content'><div class='math-stream'><span class='math-text'>100%</span></div></span></label><label class='answer-option' data-option='D'><input type='radio' name='answer-1' value='D' aria-label='Option D'><span class='option-badge' aria-hidden='true'>D</span><span class='option-content'><div class='math-stream'><span class='math-text'>150%</span></div></span></label><label class='answer-option' data-option='E'><input type='radio' name='answer-1' value='E' aria-label='Option E'><span class='option-badge' aria-hidden='true'>E</span><span class='option-content'><div class='math-stream'><span class='math-text'>180%</span></div></span></label></fieldset></section></div><footer class='exam-footer'><a class='explanation-link' href='#explanation'>Explanation</a><span class='question-counter'>Question 1 · Preview 1/1</span><button class='check-button' type='button' disabled title='Rendering preview only; no scoring'>Check</button></footer></section></div><section class='detailed-report' aria-label='Detailed question report'><h2>Detailed report</h2><section id='source'><h3>Source</h3><p class='text'>Mathematics · math_1.pdf</p></section><section id='category'><h3>Category</h3><p class='text'>Ratio and proportion</p></section><section id='main-body'><h3>Main Body</h3><div class='math-report-body'><div class='math-stream'><span class='math-text'>The length of each side of square A is increased by 100 percent to make square B. If the length of the side of square B is increased by 50 percent to make square C, </span></div></div></section><section id='main-question'><h3>Main Question</h3><div class='math-stream'><span class='math-text'>by what percent is the area of square C greater than the sum of the areas of squares A and B?</span></div></section><section id='main-answers'><h3>Main Answers</h3><div class='report-answer' data-option='A'><strong>A:</strong><div class='math-stream'><span class='math-text'>75%</span></div></div><div class='report-answer' data-option='B'><strong>B:</strong><div class='math-stream'><span class='math-text'>80%</span></div></div><div class='report-answer' data-option='C'><strong>C:</strong><div class='math-stream'><span class='math-text'>100%</span></div></div><div class='report-answer' data-option='D'><strong>D:</strong><div class='math-stream'><span class='math-text'>150%</span></div></div><div class='report-answer' data-option='E'><strong>E:</strong><div class='math-stream'><span class='math-text'>180%</span></div></div></section><section id='correct-answer'><h3>Correct Answer</h3><p class='text'>B</p></section><section id='traceability'><h3>Question identity / provenance</h3><pre>{
+  &quot;id&quot;: &quot;matdev_v1.1_9e6cc3f6b418fa0db4a7_q001&quot;,
+  &quot;source_document_id&quot;: &quot;matdev_v1.1_9e6cc3f6b418fa0db4a7&quot;,
+  &quot;source_pdf&quot;: &quot;math_1.pdf&quot;,
+  &quot;question_number&quot;: 1,
+  &quot;content_layout&quot;: &quot;body_and_question&quot;,
+  &quot;category_id&quot;: &quot;M3&quot;,
+  &quot;subcategory_id&quot;: &quot;M3.10&quot;,
+  &quot;provenance&quot;: {
+    &quot;raw_reference&quot;: {
+      &quot;path&quot;: &quot;C:/Users/user/Desktop/kod_parser/data/raw/mathematics/math_1_9e6cc3f6b418.raw.json&quot;,
+      &quot;sha256&quot;: &quot;7d3af824e39513851f27f0424e9fd72b2f9f48cc596e61dcfe2bf5419c30616f&quot;,
+      &quot;json_pointer&quot;: &quot;/questions/0&quot;
+    },
+    &quot;clean_reference&quot;: {
+      &quot;path&quot;: &quot;C:\\Users\\user\\Desktop\\kod_parser\\data\\clean\\mathematics\\questions.json&quot;,
+      &quot;sha256&quot;: &quot;0237b7103e23b1392b8360fff49947618406ab285d740d56311def276251c2d0&quot;,
+      &quot;json_pointer&quot;: &quot;/questions/88&quot;
+    },
+    &quot;categorization_reference&quot;: {
+      &quot;path&quot;: &quot;data/categorized/mathematics/questions.json&quot;,
+      &quot;sha256&quot;: &quot;55bd642e1b8ad704af4cd2fdea8b8ceaeb731a5f9e62d04c1d61e757f58170b7&quot;,
+      &quot;json_pointer&quot;: &quot;/questions/88&quot;
+    },
+    &quot;matching_reference&quot;: {
+      &quot;path&quot;: &quot;data/merged/mathematics/questions.json&quot;,
+      &quot;sha256&quot;: &quot;c2b8b7fde5c6702b3bc7399c0e3ef25ce1665357abe5ff8bca6ae3915779794c&quot;,
+      &quot;json_pointer&quot;: &quot;/questions/90&quot;
+    },
+    &quot;answer_reference&quot;: {
+      &quot;path&quot;: &quot;C:/Users/user/Desktop/kod_parser/data/raw/mathematics/math_1_9e6cc3f6b418.raw.json&quot;,
+      &quot;sha256&quot;: &quot;7d3af824e39513851f27f0424e9fd72b2f9f48cc596e61dcfe2bf5419c30616f&quot;,
+      &quot;json_pointer&quot;: &quot;/answer_key/entries/0&quot;
+    }
+  }
+}</pre></section></section></article></main></body></html>

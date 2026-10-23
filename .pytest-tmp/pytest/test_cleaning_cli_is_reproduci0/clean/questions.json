@@ -1,0 +1,162 @@
+{
+  "domain": "mathematics",
+  "stage": "mathematics_clean",
+  "schema_version": "3",
+  "inputs": [
+    {
+      "path": "C:/Users/user/Desktop/kod_parser/.pytest-tmp/pytest/test_cleaning_cli_is_reproduci0/paper.raw.json",
+      "sha256": "5c412a3c7722ec1983509d46698ae2f9025a831d655c215b90c0ea340efca929"
+    }
+  ],
+  "sources": {
+    "source": {
+      "id": "source",
+      "source": "matdev",
+      "filename": "paper.pdf",
+      "sha256": "stable-source-sha"
+    }
+  },
+  "questions": [
+    {
+      "id": "source_q1",
+      "source_document_id": "source",
+      "question_number": 1,
+      "issues": [],
+      "extraction_status": "extracted",
+      "assets": [],
+      "content": [
+        {
+          "type": "text",
+          "text": "Find x.\nKeep this line."
+        }
+      ],
+      "options": [
+        {
+          "label": "A",
+          "content": [
+            {
+              "type": "math",
+              "latex": "\\sqrt{\\frac{3}{2}}",
+              "display": false
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "content": [
+            {
+              "type": "math",
+              "latex": "x^{2}",
+              "display": false
+            }
+          ]
+        }
+      ],
+      "raw": {
+        "text": "untouched original"
+      },
+      "regions": [],
+      "raw_reference": {
+        "path": "C:/Users/user/Desktop/kod_parser/.pytest-tmp/pytest/test_cleaning_cli_is_reproduci0/paper.raw.json",
+        "sha256": "5c412a3c7722ec1983509d46698ae2f9025a831d655c215b90c0ea340efca929",
+        "json_pointer": "/questions/0"
+      },
+      "main_body": [],
+      "main_question": [
+        {
+          "type": "text",
+          "text": "Find x.\nKeep this line."
+        }
+      ],
+      "content_structure": {
+        "method": "source_geometry_and_request_grammar",
+        "version": "4",
+        "decision": "explicit_request"
+      },
+      "cleaning_issues": [],
+      "cleaning": {
+        "processor": "mathematics",
+        "version": "4",
+        "input_sha256": "1e3f64f3e900e890e23f173d3d74e142dcc27df6b1bbded11c345439d9ecfde8",
+        "layout_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "status": "cleaned"
+      }
+    },
+    {
+      "id": "source_q2",
+      "source_document_id": "source",
+      "question_number": 2,
+      "issues": [],
+      "extraction_status": "extracted",
+      "assets": [],
+      "content": [
+        {
+          "type": "text",
+          "text": "Find x.\nKeep this line."
+        }
+      ],
+      "options": [
+        {
+          "label": "A",
+          "content": [
+            {
+              "type": "math",
+              "latex": "\\sqrt{\\frac{3}{2}}",
+              "display": false
+            }
+          ]
+        },
+        {
+          "label": "B",
+          "content": [
+            {
+              "type": "math",
+              "latex": "x^{2}",
+              "display": false
+            }
+          ]
+        }
+      ],
+      "raw": {
+        "text": "untouched original"
+      },
+      "regions": [],
+      "raw_reference": {
+        "path": "C:/Users/user/Desktop/kod_parser/.pytest-tmp/pytest/test_cleaning_cli_is_reproduci0/paper.raw.json",
+        "sha256": "5c412a3c7722ec1983509d46698ae2f9025a831d655c215b90c0ea340efca929",
+        "json_pointer": "/questions/1"
+      },
+      "main_body": [],
+      "main_question": [
+        {
+          "type": "text",
+          "text": "Find x.\nKeep this line."
+        }
+      ],
+      "content_structure": {
+        "method": "source_geometry_and_request_grammar",
+        "version": "4",
+        "decision": "explicit_request"
+      },
+      "cleaning_issues": [],
+      "cleaning": {
+        "processor": "mathematics",
+        "version": "4",
+        "input_sha256": "de6876a5ee8fb58370e59e33646ec4fde330e6198b3c7ea44fc2d703923d7a01",
+        "layout_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "status": "cleaned"
+      }
+    }
+  ],
+  "summary": {
+    "total": 2,
+    "eligible": 2,
+    "cleaned": 2,
+    "review": 0,
+    "excluded": 0,
+    "excluded_raw_issues": 0,
+    "issues_by_code": {},
+    "with_main_question": 2,
+    "without_separate_main_question": 0
+  }
+}

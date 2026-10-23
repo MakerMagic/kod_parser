@@ -1,0 +1,47 @@
+{
+  "domain": "mathematics",
+  "stage": "mathematics_explanations",
+  "schema_version": "1",
+  "input": "data/pre_final/mathematics/questions.json",
+  "questions": [
+    {
+      "id": "math_q001",
+      "source_pdf": "math_1.pdf",
+      "question_number": 1,
+      "content_sha256": "question-hash",
+      "correct_answer": "A",
+      "final_explanation": {
+        "status": "available",
+        "ordering": "ai_generated_block_order",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "role": "main",
+            "order": 1,
+            "text": "\\(2+3=5\\), so choose A."
+          }
+        ],
+        "unplaced_components": [],
+        "omitted_artifacts": [],
+        "issues": [],
+        "source_type": "ai_generated_text_only",
+        "explanation_by_ai": true,
+        "source_reference": {
+          "stage": "mathematics_pre_final",
+          "question_id": "math_q001",
+          "content_sha256": "question-hash"
+        }
+      }
+    }
+  ],
+  "issues": [],
+  "summary": {
+    "input_questions": 1,
+    "eligible_questions": 1,
+    "explanations_authored": 1,
+    "explanations_missing_or_invalid": 0,
+    "issues_by_code": {},
+    "average_characters": 23.0,
+    "maximum_characters": 23
+  }
+}

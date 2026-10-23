@@ -1,4 +1,7 @@
 .venv/
+.venv-math-ocr/
+.venv-math-verify/
+.venv-math-formula/
 .pytest_cache/
 .test_tmp/
 __pycache__/

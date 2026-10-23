@@ -24,7 +24,7 @@ def main(argv=None):
         {
             p.resolve()
             for x in a.inputs
-            for p in (x.glob("math_*.pdf") if x.is_dir() else [x])
+            for p in (x.glob("*.pdf") if x.is_dir() else [x])
         },
         key=lambda p: p.name,
     )
@@ -50,6 +50,20 @@ def main(argv=None):
             old["questions"] = [
                 replacements.get(q["question_number"], q) for q in old["questions"]
             ]
+            selected_glyphs = {
+                gid for q in updated["questions"] for gid in q["raw"]["glyph_ids"]
+            }
+            advances = {
+                c["id"]: c
+                for page in updated["pages"]
+                for c in page["glyphs"]
+                if c["id"] in selected_glyphs and "pdf_text_x0" in c
+            }
+            for page in old["pages"]:
+                for c in page["glyphs"]:
+                    if c["id"] in advances:
+                        for key in ("pdf_text_x0", "pdf_text_x1"):
+                            c[key] = advances[c["id"]][key]
             old["schema_version"] = updated["schema_version"]
             updates = old["extraction"].setdefault("question_updates", {})
             for number in sorted(requested):

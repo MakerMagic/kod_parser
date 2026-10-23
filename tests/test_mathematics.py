@@ -165,6 +165,47 @@ def test_matching_is_exact_by_source_and_number_and_reports_bad_keys():
         match_document(raw, {})
 
 
+def test_matching_output_identifies_mixed_source_sets(tmp_path):
+    paths = []
+    for source, number in (("matdev", 1), ("sky_trial", 2)):
+        raw = {
+            "domain": "mathematics",
+            "stage": "mathematics_raw",
+            "source_document": {
+                "id": f"{source}_v1",
+                "source": source,
+                "filename": f"{source}.pdf",
+            },
+            "pages": [{"page": 1, "role": "cover"}],
+            "questions": [
+                {
+                    "id": f"{source}_q{number:03}",
+                    "source_document_id": f"{source}_v1",
+                    "question_number": number,
+                    "options": [
+                        {"label": "A", "content": [{"type": "text", "text": "a"}]},
+                        {"label": "B", "content": [{"type": "text", "text": "b"}]},
+                    ],
+                    "issues": [],
+                }
+            ],
+            "answer_key": {"entries": [], "issues": []},
+            "issues": [],
+        }
+        path = tmp_path / f"{source}.raw.json"
+        path.write_text(json.dumps(raw), encoding="utf8")
+        paths.append(path)
+
+    result = build(paths)
+
+    assert result["source"] == "multiple"
+    assert result["summary"]["questions"] == 2
+    assert {source["source"] for source in result["sources"].values()} == {
+        "matdev",
+        "sky_trial",
+    }
+
+
 @pytest.fixture(scope="module")
 def pilot(tmp_path_factory):
     if not (INPUTS / "math_1.pdf").exists():
@@ -216,7 +257,11 @@ def test_actual_fraction_powers_radical_and_image_options(pilot):
     assert all(
         any(b["type"] == "visual" for b in o["content"]) for o in qq[6]["options"]
     )
-    assert any(i["code"] == "uncertain_formula" for i in qq[4]["issues"])
+    assert not qq[4]["issues"]
+    assert any(
+        b.get("latex") == r"\begin{cases}2x+3y=5\\x+ay=2\end{cases}"
+        for b in qq[4]["content"]
+    )
     # The source really prints 910 on one baseline; never infer an exponent.
     assert any(b.get("latex") == "910" for b in raws[12]["questions"][5]["content"])
 
@@ -372,31 +417,45 @@ def test_persisted_full_corpus_coverage_and_honest_unresolved_cases(monkeypatch)
         lambda *a, **k: pytest.fail("Matching/validation reopened PDF"),
     )
     current = json.loads(path.read_text(encoding="utf8"))
-    again = build(Path(ref["path"]) for ref in current["inputs"])
+    from processors.matching.mathematics import supplied
+
+    raw_paths = sorted((ROOT / "data/raw/mathematics").glob("Test_*.raw.json"))
+    rebuilt = supplied.replace_test_sources(current, build(raw_paths))
+    key_path = ROOT / "data/merged/mathematics/second_set_answer_key.json"
+    key_data = supplied.load(key_path)
+    again, scoped_validation = supplied.update_matching(rebuilt, key_data, key_path)
+    assert supplied.validate_update(
+        again, scoped_validation, key_data, key_path, raw_paths
+    )
     assert current == again
-    assert (
-        current["summary"]["questions"]
-        == current["summary"]["answer_key_entries"]
-        == 360
-    )
-    assert current["summary"]["sources"] == 12
-    assert current["summary"]["matched"] == 358
+    assert current["source"] == "multiple"
+    assert current["summary"]["questions"] == 600
+    assert current["summary"]["answer_key_entries"] == 384
+    assert current["summary"]["sources"] == 20
+    assert current["summary"]["matched"] == 568
     result = validate_data(current)
-    assert not result["duplicate_ids"] and not result["source_issues"]
-    assert {(p["question_id"], p["code"]) for p in result["problems"]} == {
-        (q["id"], "option_structure") for q in current["questions"] if not q["options"]
+    assert not result["duplicate_ids"]
+    assert result["source_issues"]
+    assert {
+        code: sum(problem["code"] == code for problem in result["problems"])
+        for code in {problem["code"] for problem in result["problems"]}
+    } == {
+        "option_structure": 32,
+        "source_count_mismatch": 8,
+        "source_coverage": 8,
     }
-    assert len(result["problems"]) == 2
-    for source in result["by_source"].values():
-        assert source["questions"] == source["key_entries"] == 30
-        assert source["cover_skipped"] and source["key_excluded"]
-    assert all(
-        not c["unassigned_glyph_ids"]
-        and not c["duplicated_glyph_ids"]
-        and not c["question_numbers_without_key"]
-        and not c["key_numbers_without_question"]
-        for c in result["source_coverage"].values()
-    )
+    matdev = [
+        s
+        for s in result["by_source"].values()
+        if s["questions"] == 30 and s["key_entries"] == 30
+    ]
+    trial = [
+        s for s in result["by_source"].values() if s["key_entries"] < s["questions"]
+    ]
+    assert len(matdev) == 12 and sum(s["matched"] for s in matdev) == 358
+    assert len(trial) == 8 and sum(s["questions"] for s in trial) == 240
+    assert sum(s["key_entries"] for s in trial) == 24
+    assert sum(s["matched"] for s in trial) == 210
     for q in current["questions"]:
         assets = {a["id"]: a for a in q["assets"]}
         for i in q["issues"]:

@@ -10,7 +10,16 @@ from pathlib import Path
 import pdfplumber
 import pypdfium2 as pdfium
 
-from .formulas import SUBS, SUPERS, bounds, formula_bounds, recover
+from .formulas import SUBS, SUPERS, bounds, formula_bounds, recover, rule_contains
+from .layout import (
+    condition_figures,
+    leading_figure_cuts,
+    math_hints,
+    numbered_marks,
+    profile,
+    vector_radicals,
+    white_background,
+)
 from .structure import walk
 
 VERSION = "2"
@@ -31,6 +40,9 @@ def implementation_hash():
         "raster_ocr.cjs",
         "ocr_words.ps1",
         "structure.py",
+        "layout.py",
+        "raster.py",
+        "raster_worker.py",
     )
     return sha256(
         b"".join(Path(__file__).with_name(n).read_bytes() for n in names)
@@ -45,7 +57,8 @@ def is_math(c):
     if c["text"] in {"$", "£", "€"}:
         return False
     return (
-        "math" in c["fontname"].lower()
+        c.get("math_hint", False)
+        or "math" in c["fontname"].lower()
         or "symbol" in c["fontname"].lower()
         or any(ord(x) > 0x1D400 for x in c["text"])
     )
@@ -106,9 +119,16 @@ def row_start(word, ink, *, split_tall=False):
 def option_anchors(words):
     candidates = []
     for w in words:
-        m = LABEL.fullmatch(w["text"]) or re.match(r"^\(([A-Z])\)", w["text"])
+        m = re.fullmatch(LABEL.pattern, w["text"], re.IGNORECASE) or re.match(
+            r"^(?:\(([A-Z])\)|([A-Z])[.)](?=[^A-Za-z]|$))", w["text"], re.IGNORECASE
+        )
+        if m and m.lastindex == 2:
+            # Keep the existing single-group label contract for joined A.-12.
+            m = re.match(r"^([A-Z])[.)]", w["text"], re.IGNORECASE)
+        if m and m[1].islower() and not any(s in w["text"] for s in "()."):
+            continue
         if m and not "math" in w["fontname"].lower():
-            a = {**w, "label": m[1]}
+            a = {**w, "label": m[1].upper()}
             if len(m[0]) < len(w["text"]) and w.get("chars"):
                 a.update(
                     dict(
@@ -137,6 +157,10 @@ def option_anchors(words):
                     a["x1"] = closing["x1"]
                     a["text"] += " )"
             candidates.append(a)
+    punctuated = [w for w in candidates if any(c in w["text"] for c in "().")]
+    labels = {w["label"] for w in punctuated}
+    if set("ABCD") <= labels:
+        candidates = punctuated
     rows = []
     for w in sorted(candidates, key=lambda w: (w["page"], w["top"], w["x0"])):
         if (
@@ -189,7 +213,7 @@ def option_anchors(words):
     )
 
 
-def option_top(anchor, ink, figures, anchors):
+def option_top(anchor, ink, figures, anchors, chars=(), rules=()):
     """Word inline pictures can extend well above their adjacent option label."""
     top = row_start(anchor, ink, split_tall=True)
     right = min(
@@ -208,6 +232,36 @@ def option_top(anchor, ink, figures, anchors):
             and sum(inside(a, box) for a in anchors) < 2
         ):
             top = min(top, box[1] - 1)
+    # Fraction ink can sit above the label's ordinary line box. Use the source
+    # separator and its adjacent operands, bounded by the current answer cell.
+    height = anchor["bottom"] - anchor["top"]
+    middle = (anchor["top"] + anchor["bottom"]) / 2
+    for rule in rules:
+        y = (rule["top"] + rule["bottom"]) / 2
+        if any(
+            c.get("method") == "connected_vector_radical"
+            and abs(c["x1"] - rule["x0"]) < 0.8
+            and abs(c["top"] - rule["top"]) < 0.8
+            for c in chars
+        ):
+            continue
+        if not (
+            anchor["x1"] - 2 <= rule["x0"] < right
+            and rule["x1"] <= right
+            and abs(y - middle) <= height * 0.9
+        ):
+            continue
+        cc = [
+            c
+            for c in chars
+            if c["text"].strip()
+            and rule_contains(c, rule)
+            and abs((c["top"] + c["bottom"]) / 2 - middle) <= height * 1.6
+        ]
+        if any(c.get("pdf_baseline", c["bottom"]) <= y + 0.8 for c in cc) and any(
+            c["top"] >= y - 0.8 for c in cc
+        ):
+            top = min(top, formula_bounds(cc, rules)[1] - 1)
     return top
 
 
@@ -276,6 +330,8 @@ def project(
     option=None,
     *,
     math_context=False,
+    raster_text=False,
+    source_order=False,
 ):
     # Actual bullet glyphs at aligned source line starts are structure, not
     # unknown mathematical symbols. Split before/after the indented item run.
@@ -332,6 +388,8 @@ def project(
                 field,
                 option,
                 math_context=math_context,
+                raster_text=raster_text,
+                source_order=source_order,
             )
             saved.extend(aa)
             issues.extend(ii)
@@ -368,7 +426,20 @@ def project(
         asset = assets.crop(page, fig, "option" if option else "body", question, option)
         saved.append(asset)
         owned_figures.append((fig, asset))
-        if (
+        if raster_text and fig[0] < 100 and fig[2] - fig[0] > 20:
+            issues.append(
+                issue(
+                    "raster_math_unverified",
+                    "Raster question text/formulas have no native glyph layer; mathematical transcription is not verified",
+                    question_number=question,
+                    page=page,
+                    field=field,
+                    option_label=option,
+                    asset_id=asset["id"],
+                    method="source_raster_text_preservation",
+                )
+            )
+        elif (
             math_context
             and fig[3] - fig[1] <= 60
             and fig[2] - fig[0] > (fig[3] - fig[1]) * 1.5
@@ -394,11 +465,14 @@ def project(
         if i:
             prev = chars[i - 1]
             script |= (
-                not is_math(prev)
-                and not c["text"].isspace()
+                not c["text"].isspace()
                 and not prev["text"].isspace()
                 and c["size"] < prev["size"] * 0.87
-                and abs(c["top"] - prev["top"]) > prev["size"] * 0.15
+                and abs(
+                    c.get("pdf_baseline", c["top"])
+                    - prev.get("pdf_baseline", prev["top"])
+                )
+                > prev["size"] * 0.15
                 and -1 < c["x0"] - prev["x1"] < prev["size"] * 0.4
             )
         if script:
@@ -419,11 +493,15 @@ def project(
             forced.update(range(lo, hi))
     chunks = []
     line_starts = set()
+    previous_ink = None
     for index, c in enumerate(chars):
         math = is_math(c) or index in forced
-        previous = chars[index - 1] if index else None
+        previous = previous_ink
+        if c["text"].strip():
+            previous_ink = c
         separate_line = (
-            previous
+            c["text"].strip()
+            and previous
             and c["top"] - previous["bottom"] > max(c["size"], previous["size"]) * 0.3
             and c["x0"] < previous["x1"]
         )
@@ -535,7 +613,12 @@ def project(
     for box, asset in owned_figures:
         unresolved = any(i.get("asset_id") == asset["id"] for i in issues)
         at = next(
-            (i for i, b in enumerate(blocks) if b["source"]["bbox"][1] > box[3]),
+            (
+                i
+                for i, b in enumerate(blocks)
+                if b["source"]["bbox"][1]
+                > ((box[1] + box[3]) / 2 if source_order else box[3])
+            ),
             len(blocks),
         )
         blocks.insert(
@@ -563,7 +646,7 @@ def project(
 def read_key(page, raw_text, number):
     entries = []
     issues = []
-    if not re.search(r"Answer\s*key", raw_text, re.IGNORECASE):
+    if not re.search(r"Answer\s*key|(?:Right\s+)?Answers\s*:", raw_text, re.IGNORECASE):
         issues.append(
             issue(
                 "answer_key_structure",
@@ -572,7 +655,7 @@ def read_key(page, raw_text, number):
             )
         )
     for line in page.extract_text_lines():
-        match = re.fullmatch(r"\s*(\d+)\s+([A-Z])\s*", line["text"])
+        match = re.fullmatch(r"\s*(\d+)[.)]?\s+([A-Z])\s*", line["text"])
         if match:
             entries.append(
                 {
@@ -584,12 +667,14 @@ def read_key(page, raw_text, number):
                     "method": "native_key_row",
                 }
             )
-        elif re.match(r"^\d+\s", line["text"]):
+        elif row_number := re.match(r"^(\d+)(?:[.)]|\s)", line["text"]):
             issues.append(
                 issue(
                     "answer_key_structure",
-                    "Ambiguous answer-key row preserved",
+                    "Answer-key row has no unambiguous native answer label",
                     page=number,
+                    question_number=int(row_number[1]),
+                    field="answer_key",
                     raw_text=line["text"],
                 )
             )
@@ -615,7 +700,6 @@ def parse_pdf(
         "path": path.as_posix(),
         "filename": path.name,
         "sha256": digest,
-        "source": "matdev",
     }
     pages = []
     questions = []
@@ -625,13 +709,32 @@ def parse_pdf(
         if len(pdf.pages) < 3:
             raise ValueError("A combined source needs cover, questions and key")
         cover = pdf.pages[0].extract_text() or ""
-        version = re.search(
-            r"NUFYPET\s+Math\s+v\s*(\d+(?:\.\d+)*)", cover, re.IGNORECASE
+        source.update(profile(cover, digest))
+        trial = source["source"] == "sky_trial"
+        key_page = (
+            len(pdf.pages)
+            if not trial
+            or re.search(
+                r"(?im)^\s*(?:Right answers|Answers)\s*:",
+                pdf.pages[-1].extract_text() or "",
+            )
+            else None
         )
-        if not version:
-            raise ValueError("Unrecognized mathematics source; no version identity")
-        source["version"] = version[1]
-        source["id"] = f"matdev_v{version[1]}_{digest[:20]}"
+        key = {
+            "page": None,
+            "entries": [],
+            "issues": [],
+            "raw_text": "",
+            "status": "not_supplied",
+        }
+        raster_heavy = (
+            trial
+            and sum(
+                len((p.extract_text() or "").strip()) < 80 and bool(p.images)
+                for p in pdf.pages[1:]
+            )
+            >= 2
+        )
         source["pdf_metadata"] = dict(pdf.metadata or {})
         assets = Assets(rendered, asset_dir, source)
         current = None
@@ -644,14 +747,19 @@ def parse_pdf(
                     for k in ("text", "fontname", "size", "x0", "x1", "top", "bottom")
                 }
                 | {"id": f"p{pi}_g{i}"}
+                | (
+                    {
+                        "pdf_baseline": page.height - c["matrix"][5],
+                        "pdf_text_x0": c["matrix"][4],
+                        "pdf_text_x1": c["matrix"][4] + c["adv"] * c["matrix"][0],
+                    }
+                    if trial and abs(c["matrix"][1]) < 0.001 and c["matrix"][0] > 0
+                    else {}
+                )
                 for i, c in enumerate(page.chars)
             ]
             role = (
-                "cover"
-                if pi == 1
-                else "answer_key"
-                if pi == len(pdf.pages)
-                else "questions"
+                "cover" if pi == 1 else "answer_key" if pi == key_page else "questions"
             )
             exclusions = [
                 {
@@ -684,6 +792,22 @@ def parse_pdf(
             if role == "answer_key":
                 key = read_key(page, raw, pi)
                 continue
+            if trial:
+                vector_roots, root_lines = vector_radicals(page.lines, chars, pi)
+                for root in vector_roots:
+                    at = next(
+                        (
+                            i
+                            for i, c in enumerate(chars)
+                            if c["text"].strip()
+                            and c["x0"] >= root["x1"] - 0.8
+                            and c["x0"] < root["x1"] + 3
+                            and root["top"] - 1 <= c["top"] < root["bottom"]
+                        ),
+                        len(chars),
+                    )
+                    chars.insert(at, root)
+                math_hints(chars)
             body = [
                 c for c in chars if not any(inside(c, x["bbox"]) for x in exclusions)
             ]
@@ -705,13 +829,15 @@ def parse_pdf(
                 and "bold" in w["fontname"].lower()
             ]
             marks.sort(key=lambda m: (m["top"], m["x0"]))
+            if trial:
+                marks = numbered_marks(words, body, next_number)
             for mark in marks:
                 dot = next(
                     (
                         c
                         for c in body
                         if c["text"] in {".", ")"}
-                        and abs(c["top"] - mark["top"]) < 1
+                        and abs(c["top"] - mark["top"]) < (5 if trial else 1)
                         and 0 <= c["x0"] - mark["x1"] < 2
                     ),
                     None,
@@ -723,6 +849,50 @@ def parse_pdf(
             figures = [
                 [o[k] for k in ("x0", "top", "x1", "bottom")] for o in page.images
             ]
+            if trial and marks:
+                # A source number embedded in raster text can only become an
+                # anchor through observed OCR evidence, never inferred sequence.
+                last = marks[-1]
+                for fig in figures:
+                    preceding = [m for m in marks if m["top"] < fig[1]]
+                    following = [m for m in marks if m["top"] >= fig[1]]
+                    before_number = (
+                        preceding[-1]["number"] if preceding else next_number - 1
+                    )
+                    gap = following and following[0]["number"] > before_number + 1
+                    trailing = raster_heavy and fig[1] > last["bottom"] + 100
+                    if fig[0] < 100 and (gap or trailing):
+                        from .ocr import words as raster_words
+
+                        diagnostic = assets.crop(
+                            pi,
+                            [
+                                fig[0],
+                                fig[1],
+                                min(fig[2], fig[0] + 110),
+                                fig[3],
+                            ],
+                            "number_anchor",
+                            last["number"],
+                        )
+                        evidence = raster_words(diagnostic)
+                        observed = [
+                            m
+                            for m in numbered_marks(evidence, [], before_number + 1)
+                            if m["number"] == before_number + 1
+                            and (not following or m["number"] < following[0]["number"])
+                        ]
+                        if observed:
+                            marks.extend(
+                                dict(
+                                    m,
+                                    method="ocr_question_number",
+                                    source_asset_id=diagnostic["id"],
+                                    diagnostic=diagnostic,
+                                )
+                                for m in observed
+                            )
+                marks.sort(key=lambda m: (m["top"], m["x0"]))
             # Filled thin rectangles are Word's native fraction/radical bars.
             rules = [
                 {k: r[k] for k in ("x0", "x1", "top", "bottom")}
@@ -745,12 +915,40 @@ def parse_pdf(
                 )
                 for j, o in enumerate(objects)
             ]
+            radical_outlines = (
+                [
+                    [
+                        root["x0"],
+                        root["top"],
+                        page.lines[root["line_ids"][-1]]["x1"],
+                        root["bottom"],
+                    ]
+                    for root in vector_roots
+                ]
+                if trial
+                else []
+            )
             complex_vectors = [
                 o
                 for o in pages[-1]["native_objects"]
-                if o["type"] in {"line", "curve"}
+                if (
+                    o["type"] in {"line", "curve"}
+                    and (
+                        not trial
+                        or o["type"] != "line"
+                        or o["object_id"] not in root_lines
+                    )
+                    and not (
+                        o["type"] == "curve"
+                        and any(
+                            all(abs(a - b) < 0.8 for a, b in zip(o["bbox"], extent))
+                            for extent in radical_outlines
+                        )
+                    )
+                )
                 or o["type"] == "rect"
                 and o["bbox"][3] - o["bbox"][1] > 1.6
+                and (not trial or not white_background(page.rects[o["object_id"]]))
             ]
             if complex_vectors:
                 from parsers.blackstone.visuals import _regions
@@ -772,6 +970,8 @@ def parse_pdf(
             # complete native figures retain independent source bounds below.
             ink = bands(body, [])
             cuts = [(row_start(w, ink), w) for w in marks]
+            if trial:
+                cuts = leading_figure_cuts(cuts, figures, words, option_anchors)
             if (
                 current is not None
                 and cuts
@@ -790,7 +990,11 @@ def parse_pdf(
                     )
                 )
             for i, (top, anchor) in enumerate(cuts):
-                bottom = cuts[i + 1][0] if i + 1 < len(cuts) else page.height - 35
+                bottom = (
+                    cuts[i + 1][0]
+                    if i + 1 < len(cuts)
+                    else page.height - (15 if trial else 35)
+                )
                 if anchor is not None:
                     n = anchor["number"]
                     if n != next_number:
@@ -814,6 +1018,19 @@ def parse_pdf(
                         "options": [],
                     }
                     questions.append(current)
+                    if anchor.get("method") == "ocr_question_number":
+                        current["assets"].append(anchor["diagnostic"])
+                        current["issues"].append(
+                            issue(
+                                "ocr_question_number",
+                                "Question number is observed in raster OCR; source number requires review",
+                                question_number=n,
+                                page=pi,
+                                field="question_number",
+                                method="local_raster_label_recognition",
+                                asset_id=anchor["diagnostic"]["id"],
+                            )
+                        )
                 if current is None:
                     continue
                 region = {
@@ -830,6 +1047,8 @@ def parse_pdf(
                         b for b in figures if top <= (b[1] + b[3]) / 2 < bottom
                     ],
                     "anchor": anchor,
+                    "raster_text": raster_heavy
+                    or bool(anchor and anchor.get("method") == "ocr_question_number"),
                 }
                 current["regions"].append({"page": pi, "bbox": region["bbox"]})
                 all_regions.append((current, region))
@@ -857,7 +1076,11 @@ def parse_pdf(
             )
             all_words = [w for r in regions for w in r["words"]]
             anchors = option_anchors(all_words)
-            if not anchors and any(r["figures"] for r in regions):
+            if (
+                not anchors
+                and not any(r["raster_text"] for r in regions)
+                and any(r["figures"] for r in regions)
+            ):
                 from .ocr import words as raster_words
 
                 evidence = []
@@ -922,9 +1145,29 @@ def parse_pdf(
             ]
             for r in regions:
                 local = [a for a in anchors if a["page"] == r["page"]]
-                ink = bands(r["chars"], [])
+                body_figures, answer_figures = (
+                    condition_figures(r["figures"], r["chars"], local)
+                    if trial
+                    else ([], r["figures"])
+                )
+                ink = bands(
+                    [
+                        c
+                        for c in r["chars"]
+                        if not any(inside(c, fig) for fig in body_figures)
+                    ],
+                    [],
+                )
                 starts = {
-                    a["label"]: option_top(a, ink, r["figures"], local) for a in local
+                    a["label"]: option_top(
+                        a,
+                        ink,
+                        answer_figures,
+                        local,
+                        r["chars"] if trial else (),
+                        r["rules"] if trial else (),
+                    )
+                    for a in local
                 }
                 for a in local:
                     row = [
@@ -966,10 +1209,11 @@ def parse_pdf(
                         c
                         for c in owned
                         if inside(c, box)
+                        and not any(inside(c, fig) for fig in body_figures)
                         and not inside(c, [a[k] for k in ("x0", "top", "x1", "bottom")])
                     ]
                     assigned.update(c["id"] for c in cc)
-                    ff = figures_in_box(r["figures"], box, local)
+                    ff = figures_in_box(answer_figures, box, local)
                     blocks, saved, issues = project(
                         cc,
                         r["rules"],
@@ -980,6 +1224,7 @@ def parse_pdf(
                         "option",
                         opt["label"],
                         math_context=math_context,
+                        source_order=trial,
                     )
                     opt["content"].extend(blocks)
                     q["assets"].extend(saved)
@@ -987,11 +1232,14 @@ def parse_pdf(
                 main = [
                     c
                     for c in owned
-                    if (c["top"] + c["bottom"]) / 2 < opt_top
+                    if (
+                        (c["top"] + c["bottom"]) / 2 < opt_top
+                        or any(inside(c, fig) for fig in body_figures)
+                    )
                     and c["id"] not in assigned
                 ]
-                figures = figures_in_box(
-                    r["figures"],
+                figures = body_figures + figures_in_box(
+                    answer_figures,
                     [r["bbox"][0], r["bbox"][1], r["bbox"][2], opt_top],
                     local,
                 )
@@ -1013,6 +1261,8 @@ def parse_pdf(
                     "option" if previous_option else "question",
                     previous_option["label"] if previous_option else None,
                     math_context=math_context,
+                    raster_text=r["raster_text"],
+                    source_order=trial,
                 )
                 (
                     previous_option["content"] if previous_option else q["content"]
@@ -1095,9 +1345,18 @@ def parse_pdf(
                         )
                     )
             q["extraction_status"] = "review" if q["issues"] else "extracted"
+            if trial:
+                for finding in q["issues"]:
+                    finding.setdefault(
+                        "field",
+                        "options"
+                        if finding["code"]
+                        in {"option_boundary", "ocr_unavailable", "ocr_option_labels"}
+                        else "content",
+                    )
     data = {
         "domain": "mathematics",
-        "source": "matdev",
+        "source": source["source"],
         "stage": "mathematics_raw",
         "schema_version": "2",
         "extraction": {
@@ -1105,7 +1364,7 @@ def parse_pdf(
             "implementation_sha256": implementation_hash(),
             "method": "native_text_and_glyph_geometry",
             "first_page_skipped": True,
-            "answer_key_page_excluded": True,
+            "answer_key_page_excluded": key_page is not None,
         },
         "source_document": source,
         "pages": pages,
@@ -1117,6 +1376,10 @@ def parse_pdf(
         "answer_key": key,
         "issues": findings,
     }
+    from .raster import restore_cached
+
+    if restore_cached(data, asset_dir):
+        data["extraction"]["method"] = "native_geometry_with_cached_local_raster_recognition"
     validate_raw(data)
     return data
 

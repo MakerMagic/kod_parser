@@ -136,9 +136,10 @@ def build(paths):
         ),
         "orphan_key_entries": len(orphans),
     }
+    source_names = {source["source"] for source in sources.values()}
     data = {
         "domain": "mathematics",
-        "source": "matdev",
+        "source": next(iter(source_names)) if len(source_names) == 1 else "multiple",
         "stage": "mathematics_matched",
         "schema_version": "2",
         "inputs": inputs,

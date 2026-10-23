@@ -1,6 +1,7 @@
 """Source glyph accounting with explicit fraction, radical and script geometry."""
 
 import unicodedata
+from itertools import pairwise
 
 from .latex import SYMBOLS, validate
 
@@ -36,7 +37,7 @@ def glyph(text):
         return "_{" + SUBS[text] + "}"
     if text in {"%", "{", "}"}:
         return "\\" + text
-    if text == "−":
+    if text in {"−", "–"}:
         return "-"
     if text in {"√", "∛", "∜"} or "(cid:" in text or "�" in text:
         raise UncertainFormula("Unresolved radical/glyph mapping")
@@ -79,11 +80,16 @@ def radical_bar(root, chars, rules):
 def formula_bounds(chars, rules):
     """Include supported rules outside font metrics in crops and stored geometry."""
     box = bounds(chars)
+    padding = (
+        max(1, max(c["size"] for c in chars) * 0.3)
+        if any(c.get("geometry_order") for c in chars)
+        else 1
+    )
     supported = [
         r
         for r in rules
-        if box[0] - 1 <= r["x0"]
-        and r["x1"] <= box[2] + 1
+        if box[0] - padding <= r["x0"]
+        and r["x1"] <= box[2] + padding
         and box[1] <= r["top"] <= box[3]
     ]
     for c in chars:
@@ -95,6 +101,17 @@ def formula_bounds(chars, rules):
     if supported:
         box = bounds([*chars, *supported])
     return box
+
+
+def rule_contains(c, rule):
+    """Legacy font side bearings may overhang the actual fraction-rule ink."""
+    if "pdf_text_x0" in c:
+        return (
+            rule["x0"] - 0.8 <= c["pdf_text_x0"]
+            and c["pdf_text_x1"] <= rule["x1"] + 0.8
+        )
+    padding = max(0.8, c["size"] * 0.18) if c.get("geometry_order") else 0.8
+    return rule["x0"] - padding <= c["x0"] and c["x1"] <= rule["x1"] + padding
 
 
 def literal_radicand(root_index, chars):
@@ -136,10 +153,101 @@ def literal_radicand(root_index, chars):
     raise UncertainFormula("Literal radical scope is not explicitly supported")
 
 
+def assembled_delimiters(chars):
+    """Assemble evidenced Adobe Symbol delimiter pieces, including extensions."""
+    result = list(chars)
+    for pieces, value in (
+        (("\uf8f1", "\uf8f2", "\uf8f3"), "{"),
+        (("\uf8fc", "\uf8fd", "\uf8fe"), "}"),
+        (("\uf8eb", "\uf8ec", "\uf8ed"), "("),
+        (("\uf8f6", "\uf8f7", "\uf8f8"), ")"),
+    ):
+        for top in [c for c in result if c["text"] == pieces[0]]:
+            bottoms = [
+                c
+                for c in result
+                if c["text"] == pieces[2]
+                and abs(c["x0"] - top["x0"]) < 1
+                and c["top"] > top["top"]
+            ]
+            if not bottoms:
+                continue
+            bottom = min(bottoms, key=lambda c: c["top"])
+            middle = sorted(
+                (
+                    c
+                    for c in result
+                    if c["text"] == pieces[1]
+                    and abs(c["x0"] - top["x0"]) < 1
+                    and top["top"] < c["top"] < bottom["top"]
+                ),
+                key=lambda c: c["top"],
+            )
+            group = [top, *middle, bottom]
+            if not middle or any(
+                b["top"] > a["bottom"] + a["size"] * 0.3 for a, b in pairwise(group)
+            ):
+                continue
+            box = bounds(group)
+            delimiter = {
+                **top,
+                "text": value,
+                "x0": box[0],
+                "top": box[1],
+                "x1": box[2],
+                "bottom": box[3],
+                "assembled_delimiter": True,
+                "pdf_baseline": middle[len(middle) // 2].get(
+                    "pdf_baseline", middle[len(middle) // 2]["bottom"]
+                ),
+            }
+            at = min(result.index(c) for c in group)
+            result = [c for c in result if c not in group]
+            result.insert(at, delimiter)
+    return result
+
+
+def equation_system(chars, rules, depth):
+    braces = [c for c in chars if c["text"] == "{"]
+    if len(braces) != 1 or any(c["text"] == "}" for c in chars):
+        return None
+    brace = braces[0]
+    relations = sorted(
+        (c for c in chars if c["text"] in "=<>≤≥"), key=lambda c: c["top"]
+    )
+    rows = []
+    for relation in relations:
+        baseline = relation.get("pdf_baseline", relation["bottom"])
+        if not rows or baseline - rows[-1] > relation["size"] * 0.8:
+            rows.append(baseline)
+    if len(rows) < 2:
+        return None
+    if not all(c["x0"] >= brace["x0"] for c in chars):
+        raise UncertainFormula("System brace does not enclose a unique row group")
+    cuts = [(a + b) / 2 for a, b in pairwise(rows)]
+    groups = [[] for _ in rows]
+    for c in chars:
+        if c is brace:
+            continue
+        middle = (c["top"] + c["bottom"]) / 2
+        groups[sum(middle > cut for cut in cuts)].append(c)
+    if any(not any(c["text"] in "=<>≤≥" for c in group) for group in groups):
+        raise UncertainFormula("System rows do not each have an observed relation")
+    return (
+        r"\begin{cases}"
+        + r"\\".join(reconstruct(group, rules, depth + 1) for group in groups)
+        + r"\end{cases}"
+    )
+
+
 def reconstruct(chars, rules, depth=0):
     chars = [c for c in chars if c["text"].strip()]
     if not chars or depth > 10:
         raise UncertainFormula("Empty or excessively nested expression")
+    chars = assembled_delimiters(chars)
+    system = equation_system(chars, rules, depth)
+    if system:
+        return system
     box = bounds(chars)
     scale = max(c["size"] for c in chars)
     structures = []
@@ -175,17 +283,17 @@ def reconstruct(chars, rules, depth=0):
         )
     for rule in rules:
         y = (rule["top"] + rule["bottom"]) / 2
-        if not (box[0] - 1 <= rule["x0"] and rule["x1"] <= box[2] + 1):
+        padding = (
+            max(1, scale * 0.3) if any(c.get("geometry_order") for c in chars) else 1
+        )
+        if not (box[0] - padding <= rule["x0"] and rule["x1"] <= box[2] + padding):
             continue
-        inside = [
-            (i, c)
-            for i, c in enumerate(chars)
-            if rule["x0"] - 0.8 <= c["x0"] and c["x1"] <= rule["x1"] + 0.8
-        ]
+        inside = [(i, c) for i, c in enumerate(chars) if rule_contains(c, rule)]
         num = [
             i
             for i, c in inside
-            if c["bottom"] <= y + 0.8 and 0 < y - c["top"] < scale * 3
+            if c.get("pdf_baseline", c["bottom"]) <= y + 0.8
+            and 0 < y - c["top"] < scale * 3
         ]
         den = [
             i
@@ -228,8 +336,7 @@ def reconstruct(chars, rules, depth=0):
             j
             for j, x in enumerate(chars)
             if j != i
-            and r["x0"] - 0.8 <= x["x0"]
-            and x["x1"] <= r["x1"] + 0.8
+            and rule_contains(x, r)
             and r["bottom"] - 1 <= x["top"]
             and x["bottom"] <= lower + 0.8
         ]
@@ -239,14 +346,23 @@ def reconstruct(chars, rules, depth=0):
             if j != i
             and x["size"] < c["size"] * 0.87
             and c["x0"] - c["size"] * 0.5 <= x["x0"]
-            and x["x1"] < r["x0"] + 0.5
-            and x["top"] < c["top"]
-            and x["bottom"] < c["bottom"] - c["size"] * 0.4
+            and x.get("pdf_text_x1", x["x1"]) < r["x0"] + 0.5
+            and x["top"]
+            < (
+                c["bottom"] - c["size"] * 0.5
+                if c.get("method") == "connected_vector_radical"
+                else c["top"]
+            )
+            and x.get("pdf_baseline", x["bottom"]) < c["bottom"] - c["size"] * 0.4
         ]
         if not rad:
             raise UncertainFormula("No glyph-supported radicand")
         delimiter_stack = []
-        for j in rad:
+        for j in (
+            sorted(rad, key=lambda j: chars[j]["x0"])
+            if any(x.get("geometry_order") for x in chars)
+            else rad
+        ):
             value = chars[j]["text"]
             if value in {"(", "["}:
                 delimiter_stack.append(value)
@@ -285,7 +401,9 @@ def reconstruct(chars, rules, depth=0):
         token_scale = max(chars[i]["size"] for i in owned)
         y = (rule["top"] + rule["bottom"]) / 2
         baseline = (
-            chars[owned[0]]["bottom"] if kind == "root" else y + token_scale * 0.5
+            chars[owned[0]].get("baseline", chars[owned[0]]["bottom"])
+            if kind == "root"
+            else y + token_scale * 0.5
         )
         tokens.append(
             {
@@ -302,29 +420,46 @@ def reconstruct(chars, rules, depth=0):
     for i, c in enumerate(chars):
         if i not in used:
             tokens.append({**c, "value": glyph(c["text"]), "order": i})
-    tokens.sort(key=lambda t: t["order"])
+    tokens.sort(
+        key=lambda t: (
+            (t["x0"], t["top"])
+            if any(c.get("geometry_order") for c in chars)
+            else (t["order"],)
+        )
+    )
     result = []
     i = 0
     baselines = []
     while i < len(tokens):
         base = tokens[i]
         value = base["value"]
-        baselines.append(base["bottom"])
+        if not base.get("assembled_delimiter") and value != "∫":
+            baselines.append(base.get("pdf_baseline", base["bottom"]))
         j = i + 1
         for kind in ("^", "_"):
             script = []
-            while j < len(tokens):
+            while j < len(tokens) and base["value"] != "∫":
                 t = tokens[j]
+                if t["value"] in {",", ";"}:
+                    break
                 shifted = (
                     t["bottom"] < base["bottom"] - base["size"] * 0.2
                     and t["top"] <= base["top"] + base["size"] * 0.15
                     if kind == "^"
                     else t["bottom"] > base["bottom"] + base["size"] * 0.15
                 )
+                if "pdf_baseline" in t and "pdf_baseline" in base:
+                    shifted = (
+                        t["pdf_baseline"] < base["pdf_baseline"] - base["size"] * 0.15
+                        if kind == "^"
+                        else t["pdf_baseline"]
+                        > base["pdf_baseline"] + base["size"] * 0.15
+                    )
                 if not (
                     t["size"] <= base["size"] * 0.87
                     and shifted
-                    and t["x0"] >= base["x1"] - 1
+                    and t.get("pdf_text_x0", t["x0"])
+                    >= base.get("pdf_text_x1", base["x1"]) - 1
                 ):
                     break
                 script.append(t["value"])
@@ -334,6 +469,10 @@ def reconstruct(chars, rules, depth=0):
         result.append(value)
         i = j
     if len(baselines) > 1 and max(baselines) - min(baselines) > scale * 0.45:
+        if any(c["text"] == "∫" for c in chars):
+            raise UncertainFormula(
+                "Native integral limits and integrand require unsupported multi-baseline grouping"
+            )
         raise UncertainFormula(
             "Unexplained multiple baselines / possible system or matrix"
         )

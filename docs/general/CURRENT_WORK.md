@@ -2,9 +2,35 @@
 
 ## Current milestone
 
-Mathematics: stored RAW → issue-free cleaning and bounded stored-key matching.
+Mathematics Question Rendering consumes 519 ready canonical pre-final questions
+from both source sets. See `../mathematics/QUESTION_RENDERING.md`. CLEAN owns
+prose reflow and Main Body/Main Question separation; pre-final v2 copies those
+ordered fields and permits a genuine null task. The structural correction
+preserves mathematical content, options, assets, IDs and reviewed categories;
+RAW and validated matching remain unchanged. Current counts/findings are in the
+generated CLEANING, CATEGORIZATION, PRE_FINAL and QUESTION_RENDERING MD pairs.
+No website integration or database import has begun.
+
+Previous categorization milestone:
+Categorization output covers 556 eligible CLEAN questions: 454 official NUET
+classifications unchanged, 65 approved Other classifications (31 probability,
+10 statistics, 17 calculus, 7 logarithms), and 37 explicit unresolved cases.
+Other has no subcategory and never represents uncertainty. Canonical
+decisions/results are in `data/categorized/mathematics`; 51 focused
+tests pass. RAW, CLEAN and merged data were not modified.
 
 ## Already completed
+
+- RAW correction review covered 46 existing issue-bearing questions: 33 updated,
+  32 fully resolved and one partially resolved (native integral limits remain
+  unsupported). All seven supplied regressions are resolved. 59 RAW findings
+  removed; current RAW index: 91 findings on 43 questions. All 567 other question
+  records, stable IDs, original source glyphs and stored key data were preserved.
+  Cleaning/matching files were not regenerated; their changed RAW dependencies
+  require a separately authorized downstream refresh before reuse.
+  RAW regressions: 120 passed; the matching-snapshot test is outside this RAW
+  task. Existing Edge backtesting passes at 1166/1350 px, including fraction/root
+  containment and source-aligned system rows; final system-specific checks pass.
 
 - TSA/BMAT pre-final/rendering; historical work is preserved at
   `../critical_thinking_problem_solving/CURRENT_WORK.md`.
@@ -33,7 +59,16 @@ Mathematics: stored RAW → issue-free cleaning and bounded stored-key matching.
 
 ## In progress
 
-- Cleaning processed all 351 eligible mathematics RAW records: 350 cleaned and
+- Eight trial PDFs have 240 RAW questions (30 each), with page 1 excluded and all
+  21 leading-image regression cases verified. Their merged output now contains
+  600 questions from 20 source PDFs: all 358 existing matdev matches are
+  preserved, and 5 trial answers match the embedded RAW key. The remaining 235
+  trial questions lack a complete validated embedded key/option match. This merged
+  dataset is an earlier RAW snapshot. Current trial RAW findings are 72 on 35
+  questions (91 combined). RAW inspection uses
+  `python -m parsers.mathematics.backtest`; guide: mathematics/BACKTEST.md.
+  Focused mathematics and trial regression tests: 73 passed.
+- The stored cleaning snapshot processed 351 eligible mathematics RAW records: 350 cleaned and
   1 review (math_9 Q1: empty stored main content); 9 RAW-issue questions excluded.
   Canonical output: `data/clean/mathematics/questions.json`, with separate
   cleaning/exclusion findings in its `validation.json`. RAW remains unchanged.
@@ -41,7 +76,7 @@ Mathematics: stored RAW → issue-free cleaning and bounded stored-key matching.
   missing-option validation issues. All 358 existing valid matches were preserved.
   Retry details: `data/merged/mathematics/retry_validation.json`. Focused cleaning,
   stored matching and RAW-issue regressions: 13 passed; Ruff checks pass.
-- 9 mathematics questions retain explicit RAW findings: 12 uncertain native
+- First matdev set: 8 questions retain explicit RAW findings: 11 uncertain native
   formula blocks, 6 unverified raster formulas in one question, and two graph
   option sets without reliable separate labels. See `../mathematics/RAW_ISSUES.md`.
 - Native inequality/fraction and stretched-radical corrections updated 10 bounded

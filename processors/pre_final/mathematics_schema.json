@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mathematics pre-final v2",
+  "type": "object",
+  "required": ["owner", "domain", "stage", "schema_version", "inputs", "sources", "summary", "questions", "taxonomy_reference"],
+  "properties": {
+    "owner": {"const": "pre_final_v1"}, "domain": {"const": "mathematics"},
+    "stage": {"const": "mathematics_pre_final"}, "schema_version": {"const": "2"},
+    "sources": {"type": "object"}, "inputs": {"type": "array"},
+    "summary": {"type": "object", "required": ["included", "blocking_issues", "ready_for_rendering"], "properties": {"included": {"type": "integer", "minimum": 0}, "blocking_issues": {"type": "integer", "minimum": 0}, "ready_for_rendering": {"type": "boolean"}}},
+    "questions": {"type": "array", "items": {"$ref": "#/$defs/question"}}
+  },
+  "$defs": {
+    "block": {"type": "object", "required": ["type"], "properties": {
+      "type": {"enum": ["text", "math", "visual", "list"]},
+      "text": {"type": "string"}, "latex": {"type": "string", "minLength": 1},
+      "asset_id": {"type": "string"}, "items": {"type": "array", "items": {"type": "object", "required": ["content"], "properties": {"content": {"type": "array", "items": {"$ref": "#/$defs/block"}}}}}
+    }, "allOf": [
+      {"if": {"properties": {"type": {"const": "text"}}}, "then": {"required": ["text"]}},
+      {"if": {"properties": {"type": {"const": "math"}}}, "then": {"required": ["latex", "display"]}},
+      {"if": {"properties": {"type": {"const": "visual"}}}, "then": {"required": ["asset_id"]}},
+      {"if": {"properties": {"type": {"const": "list"}}}, "then": {"required": ["items"]}}
+    ]},
+    "question": {"type": "object", "required": ["id", "source", "source_document_id", "source_pdf", "question_number", "content_layout", "main_body", "main_question", "main_answers", "correct_answer", "category", "subcategory", "categorization_evidence", "assets", "provenance", "content_sha256"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1}, "source": {"const": "Mathematics"},
+        "question_number": {"type": "integer", "minimum": 1}, "content_layout": {"const": "body_and_question"},
+        "main_body": {"type": "array", "items": {"$ref": "#/$defs/block"}},
+        "main_question": {"type": ["array", "null"], "minItems": 1, "items": {"$ref": "#/$defs/block"}},
+        "main_answers": {"type": "array", "minItems": 2, "items": {"type": "object", "required": ["label", "content"], "properties": {"label": {"type": "string", "pattern": "^[A-Z]$"}, "content": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/block"}}}}},
+        "correct_answer": {"type": "string", "pattern": "^[A-Z]$"},
+        "category": {"type": "object", "required": ["id", "name"], "properties": {"id": {"enum": ["M1", "M2", "M3", "M4", "M5", "Other"]}}},
+        "subcategory": {"type": ["object", "null"]}, "assets": {"type": "array"}, "provenance": {"type": "object"}
+      },
+      "allOf": [{"if": {"properties": {"category": {"properties": {"id": {"const": "Other"}}}}}, "then": {"properties": {"subcategory": {"type": "null"}}}, "else": {"properties": {"subcategory": {"type": "object", "required": ["id", "category_id", "description"]}}}}]
+    }
+  }
+}

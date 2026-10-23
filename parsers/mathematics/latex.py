@@ -16,6 +16,8 @@ SYMBOLS = {
     "alpha": "α",
     "beta": "β",
     "theta": "θ",
+    "Phi": "Φ",
+    "phi": "φ",
     "gamma": "γ",
     "Delta": "Δ",
     "delta": "δ",
@@ -33,6 +35,8 @@ SYMBOLS = {
     "subseteq": "⊆",
     "approx": "≈",
     "to": "→",
+    "Uparrow": "⇑",
+    "uparrow": "↑",
     "ldots": "…",
     "parallel": "∥",
     "perp": "⊥",
@@ -95,6 +99,36 @@ class Reader:
 
     def atom(self):
         t = self.take()
+        if t == r"\begin":
+            expected = ["{", *"cases", "}"]
+            if [self.take() for _ in expected] != expected:
+                raise InvalidLatex("Unsupported mathematical environment")
+            rows, row = [], []
+            while self.i < len(self.tokens) and self.tokens[self.i] != r"\end":
+                token = self.take()
+                if token == r"\\":
+                    rows.append(row)
+                    row = []
+                else:
+                    row.append(token)
+            rows.append(row)
+            if self.take() != r"\end" or [self.take() for _ in expected] != expected:
+                raise InvalidLatex("Unbalanced cases environment")
+            if len(rows) < 2 or any(not row for row in rows):
+                raise InvalidLatex("A system requires complete mathematical rows")
+            node = Element("mrow")
+            brace = Element("mo", stretchy="true")
+            brace.text = "{"
+            node.append(brace)
+            table = Element("mtable", columnalign="left")
+            for row in rows:
+                tr = Element("mtr")
+                cell = Element("mtd", columnalign="left", style="text-align:left")
+                cell.append(Reader(" ".join(row)).row())
+                tr.append(cell)
+                table.append(tr)
+            node.append(table)
+            return node
         if t == "{":
             return self.row("}")
         if t in {"}", "^", "_", "$"}:

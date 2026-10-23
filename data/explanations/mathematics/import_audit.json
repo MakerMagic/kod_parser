@@ -1,0 +1,3233 @@
+{
+  "source": {
+    "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+    "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+  },
+  "summary": {
+    "content_conflict": 12,
+    "no_explanation_supplied": 31,
+    "imported": 281,
+    "validation_failed": 1
+  },
+  "records": [
+    {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "908fb9f8dab049330ae8fac8532c75e1dd0e21314fdfae9a34899e7dadcbb7dd",
+      "status": "content_conflict",
+      "reason": "Canonical numerator/denominator use Cyrillic small es, while the premise and options use Latin c. The supplied explanation silently identifies these symbols despite the existing source-notation blocker."
+    },
+    {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v1.1_9e6cc3f6b418fa0db4a7_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "3e4f51d9341198908e3ac8736c522f7e1019b24655e8d6acb3bad37ab7119f25",
+      "status": "content_conflict",
+      "reason": "The supplied text divides by 3s+1 without a stated nonzero condition. For s=-1/3,n=0 the original relation holds for any nonzero p, so it cannot establish the stored answer for all allowed inputs."
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "e057837a8de2a502d4795c47060549e0b942695ebf0bdc4c9fdf65a812af269d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b2718bba255576ae236e5ee385b7ab3f5dae748509908687db6bcc2e70b92d3c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4aea92eb9d98ee01c712f06a2e10655506a973dfa3a55e426f37f69ea4e210cd",
+      "status": "content_conflict",
+      "reason": "The equality alone does not imply rational a,b or a+b=0.3. Both (a,b)=(0.1,0.2) and a=b=(0.3+sqrt(0.08))/4 satisfy it but give different reciprocal sums. The explanation assumes an unstated decomposition constraint."
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "a7b7334c47d4a3c462b7aa6fba97542185894f6a35b3acf1e31acc6968c73609",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q013",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "154c966fdb5da922120409969ab869991c701d25cfdfb9af5c6ae5142a2fa413",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7ab026fd9a152efb80c359def3ce2fc48d7dcac603cc23140b31c9a767010025",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "ec70adcf6b4723be240b876446f97dd493f543057fc6a6f7ad4131a6f3350b12",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v10.1_3d5046fccc04dca08099_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "388afd9a1f9e15b09b7a3734f0b23b78887dd2dd20b1ade80184f9ef59f14228",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "2f63638ec203390b729d733761c9656e51af6b21d92edaf84a07300ca1e18152",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f40eb4054d2a33e958493e779735587e39f9fe84f403ba086b9170d4d4612f0e",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q013",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b1613ece680caf673f8a06a6d8e4f9b30c32fab711d77d9f30a0d183ddc87dbc",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "90ad6167c269f93d4664c401dd32e6a26046df7e958cf6d6873cc501cd226302",
+      "status": "content_conflict",
+      "reason": "The supplied solution derives 360 rectangles, whereas stored correct option C is 240. It cannot be imported as a solution to the stored answer."
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5af29a2da16c3fc50795fca81351b7340c5fb2205d81d16090524855d83b814a",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v11.1_b246fe094d784eb70752_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "2dcc28516adb048658705b1ae2f51761af9ca8de8291c72c2656f641adf1a8d8",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v12.1_6c8a6ddff0414bd51a85_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "3270939807f8bf3e65c94e39f901ae92d7c6ab0770f3b615ae313de646efed6e",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v12.1_6c8a6ddff0414bd51a85_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v12.1_6c8a6ddff0414bd51a85_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v12.1_6c8a6ddff0414bd51a85_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "444a8ab9627282b495a5968d5c05b7ea20ae71c0d82ded179638233df1719ec1",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "8acf22402db34794c0487487157ed74dff4ababccc4fb0627a9134f74fed1d59",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "bc0d939df92f995f411c99adf7f98f99c2b1d81764e44725bcb0fa79fb3e902a",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q003",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5d7fe551e6326b3261f8bb2b3754b5c4c05494a42424a15f2e0f1651ea3f885b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "01644b1a9a5f04f76b7e7fe930ba4b2f751494b31aceac3199daccf62ff62935",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "6144a30136470712ab7f3bab6b834656ba950808192bba5d5fd1dce294d90f3b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q009",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q010",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q011",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "2a8316d717e883a0e4ed3fe2756cc15bef16c4485edbab9b7ff65f650fca2714",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q012",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b3dc19a50a578fa0bc962c8f547650ba9c450fc7b85f89a62af58c51f6013e74",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q014",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "46e348c9c8bc47b43be16d7ed5a93cbbb6efeccab018acaca5e087e21b4ec9b1",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "9ad760fc2945b5407354575dbb1bd00419d5841415e79f908a7bfd8034fa3b76",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1898af0370b0f56fdeb1add4fee53d719597ef080d2398ed5d5dd3c65bc9f5f9",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c295b35f28d6df09fdc25a67ac7452199b9732585064f63d3d35204f7bb94444",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q019",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f85ff8fb8d266a25996618522bd20b3dd4c76947d9ccde1eb1753967a2f95c4d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q020",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "af56a9d07fc4e0a044932de3bb3bf77951e0a4e0abddfedba65ee67978b36a4a",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q022",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "8101ac80df263180540e2cd987431d3699a265a7cfeea14c2c0d12860d53ab54",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "0a2f1c78065f5fb345f22b62eb6b7f03afacce6c8896d3f1183a7e3b111844b7",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q028",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "ad450314837e59690cc235f26295c9125c6cfbebce6baa2d0777b2ff846d2625",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v2.1_83f1de0e7bcdd8dbea9f_q030",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "18127b22816ae2f7da5880b31394ba7bbd858d2cda26b57af18a1fc5c9637a8b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q003",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "cd46bf19d6414fe6d7cfc7564b044b4bbfddafa53e5d04b5243d6293154cadfb",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "36ed3ed7ffc69e42d81566233341f20158da69530fa7ac572ccbd5f822021128",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "6e921ff6e40bf0c4d896d5ab1cdea9ef765e8cef789071d92341dadf3111963b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q010",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "e3bf2f4252586d7883d1aeaa0d8fd2cd882568cc294f817b8f6b4f3a181d69ea",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q011",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "d07e2ac66135206cf573381b8e6446c4ac32b47610b07fc85fb3529afa8bf74f",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q012",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "3ede9cb3870a30af331b2189abada599759d47dcb47e69c9c1e007f86e184c04",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q013",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "9bbdb192a67f9034bf315f1362775f883cf2fab6fe75400b1a242a20639db598",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q014",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "67bfe3728a67350869d0a0e305a0103cdd36dc25fd57e5ba7da4dec402cc783b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1d289bb74f9dce6ebcded5609835d00ded8b0aa0e693e83523fb7eac31da597d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5cd18351a9368d142da524e6ad392f8159e9955bdca6c0ea603842d89b9fc34a",
+      "status": "content_conflict",
+      "reason": "The supplied derivation correctly gives d=2x/(x-2sqrt(3)), but the stored answer is 2x/(x-sqrt(3)). The derivation and stored answer conflict."
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q020",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7447360c44886b52efecfc2f01263d836b6fd756e43891d9769e340a2ac73f1f",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "003ca5b3652128a0dd09d75ddcf47fbd21e2f615635f26b23a22c244bbd77aa9",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q022",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "9156a883d859091cea466ba87e6654601783a7ed5f1c6c63350f9085863e11f4",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q023",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "a1d0bec5ae600a4f8c27a80b9b189c61e037470dfebd3f3c297bc0792edf8d90",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "9707dfe7897c60abddbd8ab2be5dc76aabe58e831c8dd383b1a53c2d712e5cb8",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v3.1_5ff09cf01df7cf5bc0f8_q028",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "bb46d08b7d11e1ae530a962b5b6644879d4e38160ab602684a27b8b2f6dc5fc2",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "355810c04ca94805723ae8209b15fe44ceac0941b5b47596d85728fd2e0a2dcd",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7292a0bbbc79b9966ce0a7eaa35765539cdd07f6398bcd2445e36821bc2d4c5c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q003",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "27b61531e55c866b2aae4af72b0a4923414bbc5249312dade9378ca37ec7f43e",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "a487bf2d15cbc21aaf1411fd3d5d2acb617ec4d1e35e19b9450207cd1c62a241",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "26f8b8e9f127c8b0d552b4679a18088211740b106cf5a76bd1953c51fc507ef6",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4da1d327a173e5f7556421decc9084bba036736125e9813f50810359b95bf833",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "0b6232dd8a109a1a33ddb5a5ae61132370e7f31b2412a553246fe6ab8f077e71",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q009",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "47dcd3a4508136776e29988c7ccfef6d637f2fc5a280ea1699f0a7ccfc01d4de",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q011",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1a1d9b168b31c3f4f3c1535238c862f02fe7eaa6f4d7e05cb915f03acdd651f1",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q013",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q014",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7e2bd6b83efbbc6fd8cdb1cc43259f14301001b2953ce8d40fbbc8b1454382c1",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "a0919c3cfd368e032928f31feb5a8d40f9fe0c43297d28df76649e7a6e2a4579",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c11e32c7b1e68913c45bddd085af713eca2044f377bdcf77734f03e18735448a",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1815879c0066ccefc383692e98625afbdd4497d3c3ae6910722f843cf36c0a19",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q019",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "0c41523baeb554eedcc698804fb6527b72d87271dd29f93375b5089dff0edb4f",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q022",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "fcf7eb41ac5df627cbce3b4d59766af7bcf4a600cf82bd7f2167eefd39ade71e",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q023",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "8bd414f97415368aeb52392faa44c38187728fdc234e624d1e082731ff345c14",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q025",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "450602b20a62000038a222c9b5888bf810237d729c2fc4be9f7bbab6dbac6647",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c191cc61e66faa52b85de0bbbfed64c2e4b1982504083baa2a053563b8e03987",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1399a46d66dc425f7c2e92983ce5d449b11072e2e7945a072c78e44ae92b0e24",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v4.1_d9d3b5564d35e43d7192_q030",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "ddfc21cbf80adb56f5617df4567993cb726af8acac76f28f3cadc18adc50ab2a",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "03e1bc155663bfbee1f2dc6dba00f5f9377450207cb08b3cd3c3637afc3cccd6",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "07c6bbb79f3e929be86623a87eea6238253fbfb031549d54fe42d8258d39fd6e",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c01baf6dd8eb369c1b687c8f90f92b5574cb1d0e5afe0985a55e9d4f97a9970a",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "96cebee36521154079b91a8f896e4e23f81d860da19c9986ad6fe5b3b9239d0d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c71c9762ec82a2b60b9f2a95f08a46c1f0ce53a0ac738aa8860937742e503d8b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q010",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f7de20da7dcac1380d6c6533650d924d176de9054a3e1bce445d1b66874d89ff",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q011",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "875e947759ee5fd398ea35485896bd7f5b9fe307df8a39b6580c47c8ff9b8abe",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q012",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "0f06e859a9bd33856f2b5204cc100e4594ea29a0352ca7d5112a73ea930ccf91",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q013",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5d8b8196b6578fd0beac6044516ae3d875a182b2a974eaa5002f703479006af4",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q014",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7413d33a45970e9a8321623571b54b9c011ac85d88db8600a44f983ee13afefb",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "438ef174d20609cabfae7d26ce2e73a5a329f7ab78ced173fa15f5a6c328a7fb",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f9f9fe325cb9872e3c01374ad54dabba6b71ee2f44bbf7bb87ad7a3bad6d5217",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q022",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f150abb1735be551872988999a4c05a38b736ddc1f472426ac08ba40b31db0a6",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q025",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "9a6dec786b08dd0f9e611fab09b2d006133046cb98f3865fa56fe84f665ad142",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "e59753bd73c406c41125c4d825acf426df24e204d8d81ce30df7d1f925978528",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q028",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "8ec4aee0e53b2eb6454d4701c4deab355f89c6f32096d3475874897ad4712472",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "18e92582df7e981e3cd6cadf23e88dd638223cf67156ca1b8e568ce8e9eea318",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v5.1_46af027e8d6aa5fbb18f_q030",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1ff3e62f2e03b95141cf36a2739f4572c99cd66b8fdbc45863fc7cdebe021973",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7f48cb6f801b35730002d7aeafb3d36e1ae071eb4d694c2cf428f5edfe16cfda",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "323c362b5f49d4141e6c2ec484769fa9681f15d0cc6a4343b586996e295f5f81",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "3001624734531a6ce1843896f32ea6a6ddb624e1330db1f03e5dc25564cb127b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "844d35f1ad1208104c8532ee5434b52e99d42c05157219bc42b2dd480f2bea6a",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "ff414175cfb1a5f4ce62862e8cdd5b51c744b52c06e14808c6e8043791e71829",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q009",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4c7b71f9dcebc72226fde1a58461c7cb3abf92b1412274ccf7c0ff8e7448c6a6",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q011",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "3655694e27aeb85e2035f7b6c9dec0e0563ced7d3dfd94f4a25b28afcfce82a3",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q012",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "119a877a4e5e25962afa6e935124ec43e60e382d14ebed4af9fb0a56cc644769",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q014",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "85075128263388d3608e6ad6b5fcd007933a5b3cfaa2e093b63e8903b501661d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "be2d5c9d1614eb0652d0c03d715ec6e05429442c798f56f312c6764e63658999",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "ef57b4e1fa76db83b8c77897acd994f9deb754f809e9586a6a2ff1605c0be3d3",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "9a4ab4468ca5c0bf7e4890b4d777ef8cb73ab829fdc91e59e42a793e734d6c79",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "a5e5259b67e7ce9f0d4298000f3b9ea69b9cec8eba74ebf32482e005805046c2",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q022",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c46fa90ba9000cc314883fcd2174c706f7c149bdd7a8c8337c14b5adb018a5ba",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q023",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "2ea1675df183cb04f1616190d8e4ed4887141f2f6cfe468358f77922ef40ff88",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q024",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "af08d2f8bd2a7045cc650f972b8c01556791d271b21f0ea87b7f312e806ccf31",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q025",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "2f00e52e212ecf829717461eeb32b3d92d763d37005b1f4d573ce03f42a4d402",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q028",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "6a37968a513373c6d0c0d88cc79accb8eb8b5ee4f72abf9d47e4a01537daccad",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "32b20a9ca414f396cd05977bb23c0f8494ca9ee6f319f9e7747206e4422b47c8",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v6.1_17589c9d9de3f79684bf_q030",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1d0d63ecf055396c4431655dbe742e42754f1b42805629a16c2639951d7b5c92",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "76f3c09a36338993b6fcefde373849dd464b773515305e0080f642f939796f51",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q003",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4d8f87512336674bb2ed4905e0a52ceb8263c8c6fdf3e58e3ce5ea053784d4be",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f98275191e34066dd3f59dee780ebbd527ca6883bb026df7421ff65667b349fb",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "96182d3f5d0876dc31d956863684b2534960da576c503007af00323a1d11e69b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "6787aad6242acd1810cf11a4d5a65def55d567334416683a0e654dd4941e2c37",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q010",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "702d25f5f1e7a3ce91da9b4552d796916d259950bd8be456e9cfbe249e1b2866",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q011",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4840fcfe40292087df6f4c50ddbfa69930f4ee23fa0de8da7a5a57e98ee56f4f",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q012",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4c519701b9b453a7f55259e1da94793e6fad2d137c087dbbc0cbdba2c3dacc0c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q013",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f651eda77d98b8e076ab2589bfb1fec464331b72e7cdfa2e5a61754fcbd80533",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q014",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b9400feccfec72b7c5d6f9940335cf583c99c63f0f01af72b49d87dd2f2af81a",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "8df337d2defe2eaf7990329d165997b0b8f4bdd77e7fd33dfa882799c55d0339",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b1284eb9c46799f5181bae3cf2b575be1473d6680422b21368841d3ab1e7eeed",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q019",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "031912af7f4c0de810281dad9b2f42cc3acbcb0618157399ea49f7919a1dd201",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q020",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "49e4716af42bd0d37dacff0b346052307bf599913eca1c399893b3422f2268c4",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7e1cbf9aebe569102d864bee716c0f1c2d801691287ee810a8ad5c825567fd2a",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q022",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "9f2b503bb879775e02597496035bb36b35934f9b3f36860b4b17030bb14bf4be",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q023",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b417e56077d2af1ca865932e10a6057dbed424e6746a988417171cdf930a49a0",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q024",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "52969e8dc9885680afac242bfb46b55d6e3a4f49aa66b8f67eecba6cf28c02c6",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q025",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c7220a24d3e8e74c4f8fff6f1a4c83ce5108a28d64f04071c160678ee8ec5e22",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7b8a3b13b73c682b591b04fa2d253f44903afa5e633831d95594ced423c981ec",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "a75a0bdd573d406e4041b38a020a9deb195886d7449624d6f466f8c0c08b8848",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q028",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "090fb07f50235dba41be10f3912b0c8fc4d81691daff391a7ced4ffe40566c19",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7ce05fd7a5ac4eb6f76eeec39328a6c2c7c0c7d8e8161458345f14248737ca65",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v7.1_a5015e33f742c966b3c9_q030",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "640899c95dd162c5e8e33b61b48dbe9dad042519fd511c373db468c83d6d20b6",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "76b70f70a5688f0ec82417807cc530d0cc02bd813b87af36b3f7f909aba9db83",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "aecc3f968234d40238cff48c17b6b35d3382ed8ce3a5d75a48f06385607bcffb",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q003",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "e527ea7ebb49a3d8cb5f500f980f797caca705c765f64deb15395a9cf126bfbf",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "d40e8ceb2343e1dcff1c16a963466c8e0673b9500d7ead9c4bc5054b11785dbb",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "2d243f57384720d2020581e6237f522c4029d2a5b9d1f42ae656856958ee3a70",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "d5269a65f70b423c14c2fc3ad4979f56c038f0d902f1edccd15dc8a9c1a075c9",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "dcf889723da0cc24929d32a1787475d7fb76975328e4324a0d1c0453ca065b70",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b3d3689531189caa5759959255a1db85989db07a6090476b2b2611b78bc786d3",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q010",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c40e99fcfa353fb8a87afc1e5e43d5efab9f340716ea6dcbda01372c919875e5",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q011",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c82d1caa082386026125bf0725eb21e196295e5f998b9b3cb473f9de8f9a2170",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q013",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "a5f0a3566bbd6b461adf6b8999d44018b67fe6beae92699438c4f6dc230778c3",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b79859a0440ec488801d0fec18e6a78ffe4e687250a51431893d5a4a0cb28842",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "37aed570ba924c46b086b754c753c41962393f39832d96d50808003dab0fae63",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "bfadcad8c2ee8a3cea5b93f16b7a777f62d5c0e086c5832735d79ee4d21d746d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "961bfbc4b3b0d032636c60e884434bfd91d4d2fb0e054a9620c2535216fc7ec4",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q019",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "efcd8e9c6314e809a5987c1bf713c354d44e491efa6805468de5efe8b8c4e074",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q020",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4cbd312ebbd8f2107d493e85ce49f403dd7a00a78791a50054778087e2482336",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "47bceb6db5d5a98896b96d0fa5817d1ee723a2b5245f6d1561b4f5b72e140a0c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q022",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "ce3fbb5e4cfbcc4fdbde22873d980f5885d3e3f2205a92d78129c40f38bbbee7",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q023",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4905679c93b02bc5fe7789584c67604b86f3dd1c06b49627ec3cd07bad6df646",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q024",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5b6e414c6117696aaa14e900c60c66ed4517fcaa25254d6c114c910fb7c32748",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4d6ef686ec14edd384ef43045f18729005270b8dc0de4314549a81a9f449b622",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v8.1_afcdce098c0afed634b5_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "349decc642864eec3700327643156e2cd41807049c60c352191036609e166970",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f7196020589b5774a956c7aa7970583cc720020be9e51456626a4f0bd7d08579",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "cbdb00e13beadbd3cc4afc17eeb0de03c60aa4cc6bb25418ac454cb6c75ac662",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q009",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "d71c1ed0e387c5adf49c4749c10f98e239eb9f1446332e820d68a808b0857fd7",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q010",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b1018cdf8ac91422963fb61468704a948f779df27ceb5922814da7fda999711b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q013",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "ae8bb9050a4acad7ff5d9cfcc821d679fb851c4dc144862cb830386ffcfcd4e4",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q014",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c3b46d3bd7a7f0c9acab34b4808d372d5424ef35f645b252919db8896ba8b90d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "30b9ee687ea2bf9612fc0037ee6a74fdff43244c36c996973c9bce5ef0bc2a0d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "86b3cb1d7b4e2dade9371d3d903d1221cb29162a4ba3193713c075c17ddd2eba",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "d709c934a3dbe7f9bbf785d74fbd9d5c6300dff715106c1dca8fa8d351b10de6",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q019",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b93087815a9aca1b950709b98858924145e5d8b54aa23775a359a9705da50988",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q020",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "61b7a9d2b7ec00d5ca4c771e97cde2d16022fb03cdfdbf3204cd0d5f7dab8ce4",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q022",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "a56c482a452db32a0c35d3a6d00f129843a7922316abaa99ae6ffdb0c940423b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q023",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q024",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "62723a19c08a47b1395d241fb2169584cdf60f7da4dbcc65cdd2376e580aea94",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q025",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "ddaf640edf261069101f8fcda4a2078dc20a6cfbd35c79ae1fceeb26f4a5768c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "ce88e7fc53193c4c5c70285aecc56096637cacbdb82eb7eb36b84a43d8e53aaf",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "6ae23a29073277bd1b421cd98a13406f870f26c93dd0b43c8a9915d66f72504d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q028",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5d3d30b6114c24d1f96d4e5350defac6e677086c553a13230915ffc4e2ca46e3",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "305efbdb9faabb2ee71b087e74ea7bad01848d9e85e7ea8573976853c2dd0f13",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "matdev_v9.1_e56851a8a2b3984effce_q030",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "d1f28552398fea2e9e1ccb0984e33fcb6a544acb88044a3a9b8fbb57de80c43e",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c687b4212a0fcdb426ef0d9f3b90bc7ba3f8f910960daea8a35e0ddab4f1399e",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q003",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "379e16407a4d12ceae4e1ac6ce28f7cd20b4de9ea0d54957c20827c278e5e30a",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "6d0be6d239fae82ba706933d6483cdb384728aa902fd087e37d7c5eda57c0bf2",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7b75e621c0dd6414fc05ae902846e1a9959cc9036c06e9e88ca40e99e722a76e",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7251e88257efd076ad44dc822a3f0ae82cb5c0d7d89f7b25c6a944c63700cf93",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q009",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "23146377d5e029eb89edc656e2cdf1ff7b0f007198353e5c51368aa9c9109b32",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q012",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1a19b6e1cdc96abad5257494cf8d40bc778f04bcf95ef19364cd9c2bb0e0abaf",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q013",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f04882d80014e2fab86870fdd1b6e0c1b5fa28a2ab144aa9ef220a15aee39057",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "bcb588ab73d4ed5e32a2263f6bcd631f2174bd65b677344e1e858c5da0b34710",
+      "status": "content_conflict",
+      "reason": "Two of the five left-handed players are below 2 m, but the other three may be exactly 2 m, not necessarily taller. The number taller than 2 m can therefore range from 8 to 11; the supplied solution assumes no height equals 2 m without that restriction in the question."
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f82f709dbcf5c7377f2fe6954d488fe40b8753522e4578e4a5d55edd6ad305df",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "8bd81d474adb2e2a0b8104c6534f4b5897b21b16a8d58ea458fa81f5ac3c067b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q022",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "bddb5e68beb7050a74d7ff9ca33ff4258dc492de294db58b8b9ff1c957cf7c03",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q024",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5ebd7f24f5e505ed2b98e7aa24330b58efe0e2ce69516d572dbe18b2e15b5567",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4e28d8320e429889745d7ef39a378e7f2818ec2cda4eab578fef9cf15ae5f092",
+      "status": "content_conflict",
+      "reason": "The stored function is sin 2(x^3) without an exponent on sin. The supplied explanation explicitly interprets it as sin^2(x^3), repairing missing mathematical structure."
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "3dc29c86b2462bb1fbb12c9769d330680527b71fcece1c1fc5d5eef2bee46321",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1ffcd1672dbe794adaa47428ee664562a7a77cb0d12ecb0b856934c04ed3846d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "187ac5098cf2dc39360f827bb3dfcad86837b97a30a602f3304b1909e8e5e98f",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q003",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "41694a24b1bd8c436e266f07667f429c54bc6c4f2eac0df9b8dbf20cfee38f6d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "dfc4c58fb05bb8904915d0f0efa46d46211d7b4ca01ee04b56f0307a0715a045",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f1a74541eb83f3d6d7a1ceebb258f12caa86bbe42228c614fe0f73c8de571f19",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q009",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f0b2d42cc305dfa4f27431934bd348a4190b4c8b119bd8673dc769a4e540875c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q011",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "9aa910da9d21b4b87cf94863da3a99723639cefcfd46f0966994327750bb561c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q014",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5bbe7a60ba694fa0e2af216f7eb144292657fd2f9b7bb1f23826806239637076",
+      "status": "content_conflict",
+      "reason": "Repaying 4.5% of the original principal every two weeks requires 23 payments, reaching payoff after 46 weeks. The supplied 12-month answer assumes exactly two fortnightly periods per month, which is not stated and does not hold for calendar months."
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "9a784b5929161eec72062bf7e336131090a019f741f6dc208c660d9cbbd1c418",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "fb8e589bfd75d7a2cb938e414627534dbf3ad6fc32e56fc1da2d47ed6ebf1418",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "a7224dc806d6dcc8a17d4df096031f63f9a9cc4fc0d474c00d57ce7a704cedef",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q019",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "03a5bb1fb014af1f37c2a3b4dae2e21a3ef0d6dbc6fe7eb957989f6e779814d0",
+      "status": "content_conflict",
+      "reason": "The canonical requested expression ends with a standalone 2, not an attached power. The supplied solution assumes a square; that lost structure cannot be restored by the explanation."
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q022",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "6ef75219f669450cf7dc003b4345ab9afff1863c1c4e0eb8d59aaaeac770f07b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q023",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "8670d0e09066da5281bc87346d326071ba16065deaa9fdf886d30dd1ebf0259c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "eca33de8ed9fa7e6595c3685a3f926b1f84ef19424c2c0fd62476020f9c8a92c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "028105ba7634d53fce577b8076ecfa60a36eadf21f268508c258096d849ad847",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q028",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q030",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "6d62476c421e2f1547b98927cc7aaf22b2b638b54e78d7b2cf14216eee22091c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "77284e7aa3989529ba0cc0d3cd18de3030ff510a885cb6947aabfb592efe787b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q003",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "63d72b6e3164cd3bb65cfe3e34b1705d7452bf2961a8e0101fb5e7ae578048bb",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "6a2144d735b15f591f32943647037032db7574922302d07127032b87cfbbb222",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "132ce08ff5d189d92139cacc80edc7e11567299419ce3788ee7e8954df1b3f4c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "dd8c30d4b66d52dced65d645d8110d0bae41a97a51c6ed53920dbe8fa3a837f4",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1ab776ce6acf85090e993bd1178fb19665da86cd15208f3cd4154890038d6f63",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "82d536170b3cc0dd95f56544be26b45bbda8e2ce6246130b2126a843649be853",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q014",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4e334afc05aa1c464749aaf661ef18aa9b8c150b59da47dc5433d8b01ea3a957",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "eb6655c277910509d94dbf42cccf02aedbb1a091c005ecf7eaf6699c5679af23",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "bb77cde3acbe2cfabb3e6fb360d741dfd70caa055682ce5134329a117cd6b72b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q019",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q020",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "8dd5f73b0b14d50d17f830f4094a5c9bc71bc97c1d78409d2ea2d13093072447",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "859acb6bdf564d8cc48e18cb7333fa2a13d668205a9e8387c01fb6cc02601152",
+      "status": "content_conflict",
+      "reason": "The canonical expression is y=e-x in plain text without an exponent. The supplied explanation uses y=e^(-x); the nonlinear interpretation is not recorded in the stored mathematics."
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q023",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "23f6b1dfb3a8f7e75620baa99e5ca82ac63785c224777781078c2ade3ff69331",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q024",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5e5baa1c473b22933fa75133c002f225c54506436efa0a0fcc8e287ae55472b6",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "d4b43dac02ccd042b816364fa09b27072b60adf7b8ece012a4b2da3d4fc80526",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "e53212c4cdc1ca2e20ab59f62e41c97d5f3bdcc19d45f7f6133a17ba8821301b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q028",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5751861b84a2ae0fca79b094be50d7f646f90169de67dab4ca300763225f3505",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "edd23435d839c49a30aadf1b5e21e2de5a66494b566c79fcef73f91a166f53f4",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "252abf4c4744597757f80daec24c914225fa1f2ec09622fd1b7aee12f7572fd3",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "2d40b2f32f9a917534b9ef04fb67fba6467e653cd63160a9c7d7d64e45550157",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "101f63c0fe74ee30c53432a0558f616d808d373cc4bcae69fbd3d6e5e188c5ea",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q010",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "880c98211f79371a9d56e3c172878f7d0e3c4cbed4d65ffd5bd47c5b39c91245",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q011",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "6a8727bfa898e3e1207aecfe24345612cdbca3e60daa5a67e1ea9be038531f98",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "801ecc3046466f198fec1c1aeafb09d26d007d522772ea697aa0479488b71878",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "09ae788ee0385559b5fd267e39bd33485fbde19ad7fc4ad23accfb6c88d32897",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "854d794f44e55a446aafb138d3fc1d511b4e8d66f08fbc9338b56af15a6d7130",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q019",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "fcccc6176d925f2bd595cb839b35e527e0c06640ee52abec58fb76246fb4f64b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "a91badc2c721a980e76b3dad9970e9a988f91778926614ba6cc572e5d9f41f95",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q022",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "778fb276f921d1e91a5d6a0d37914677ec13e1414cda289ec7ceb099257ba1f2",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "bc66c987c3b5b6a472f630eb4dbe1913690a3544faef58df2792a83ea08aabef",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q028",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "913cac716afec163e9808c1aa624a2206d6bf1547f681be8f15b3fa0ea3c6daf",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7a1970ccc95f5d8ae4f4cf2417ab7ad2d6186c205d76a01b4f7de0439358bc9c",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q003",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "db3cc0ded1369c5c9fee6d0625e25d82b65c3b2d62153b3c13ea093b8f010c67",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "d72522b33573c7126235bf57eb11f146d5a95c7e709a9d0b3271da78edfa8e6d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "e4b2e4540a3df2bfbe6643e582818c9ee796a573e93a12815f9e8b0dd38d4853",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "8a108c1de1f12f4739baa1c1c1b044972a5742341d152274615928eec1608e5a",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q010",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "56893245d716e99dae34a0b8b24294011e11507fd07956b8788b9bf71cef8de1",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q012",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c6c3ae7e89df8e6b1ec2bb7486ef49e0fd4cb635710d4dd3a22681f32778a3b9",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7a363a9c3a1aebe1f05f36bb9ec47221e2cd0cab6690694420e951b7e807f123",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "da7260e40a97e7d436f32c0c7ed295ce8252b783040c0c6946e3fb6599a5061d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b23bac6a5dfc1e179f4bdc7c8801934de1248b206e0618f4c1b371891729b2e0",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "87552f0b61efb38a3352476a514f55e457e307564eff1b9b373e2abe3698770b",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q019",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "8ba22c9a52fe13067f3fcf881f3648a486ff1dfd7d9c98b800bbdf9ce8631b4d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q023",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "51b4282d06e3dfe9a2b40bfdbf7adf503d186a88e8e07d23d8e9a3b5c477994e",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q024",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5936fda8ef101f0548fdeb47f09db27ad9480673a94eb21b57e5f268a3a4000e",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q025",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4258cd24288b950e1ab1ca65757d622b6f25f8c3728bb54896af4a90d78f5a61",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "b891e70a89d623a771f0614b154bdd881a5c29d965c296b270950c8e316be69d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "ab9e072a12b0c593e907c58d09dbf660f3f3d24627bdd39f4117a77c03291150",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "2a943b56a4885a33ea82c85eda40f57304388e94d6e10a3fd108aa5630758165",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q030",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "43a48db54e0b132e220994cc71352032a3889896b3c92f93b90f37afb4581c54",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "2b4778097543b638037293cfe0d2a70b17c46352b8f2f6678ff8a4ae7dfb6e46",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5a26e53ce4c0bab66b71c0856b196b048213258591373eb8d04b1a1e50afe023",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q004",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "ce53c853c66eb38195315c163d3d41e40f96399b3a7f95496285dfc293fca21f",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "38644b3f35b280b760b84ec55625e6091bbaf31d679250b5ca7e2a3fba7b7a89",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "0ab4d2810678310789982a2f7341407c48161271517941eb31feb27207aa0ab9",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1b5006d1c00e353193fa57ece01ac593554c3bb12c49f478d8350a3c187862b2",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q009",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "16beabbf903270e27dee2399a68c10a964434e5c150a12eb1266a3d5d13fe827",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q011",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1f57e5ac37e9eb7e13a16f2eaabe128e1f055bd56773c4b1df9d3eeb612e1f53",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q012",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "df1048182e44c93995e3b3cd506583cbb6d246115e0b1425963e1382e1b3c347",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q015",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "7c10a596802378a3f21a31e3db0cf5cab96afc12c838b78e8900728f2ad8ff48",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q016",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "229fb4024cfc361d1797fac38ff39be284fe12414fd176183e240fcc2694e008",
+      "status": "validation_failed",
+      "reason": "invalid_latex:Unsupported command: ♪"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q019",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "deaaeb449b311d0d5aeafc5e3f4b8ea2b7a9c542939fd49ce964529c56d7a501",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q020",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "2b4b3cf0c2f3d148f4a88fd8ff43bb2db21d5568ca322c2046311566a6f90771",
+      "status": "content_conflict",
+      "reason": "Q(x) is stored as 'ax 4 –bx 2+6x+c' with unattached powers. The supplied coefficient comparison assumes x^4 and x^2, which would reconstruct missing notation."
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q024",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "96c44edd82569bbf2df2dc71be4f28e851c595b54da8aa717e6c326c658f1e1f",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q025",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "74bbfdbcb03f2b0f5df49c8d2f12b91b3076aac269d515f544757ca9c5bec117",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q001",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "e29b4f928c240a3b936f32d96c1985ed48dfdcc74c875e245558a77d25d68215",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q002",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "9d7be4a7a789fb15d9f55fb7578215a443ccb8b787bbf98739a6fea68a2c9020",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q003",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "4e35b507890001942e7b431bd4e9dc3e4bed1bf27c6dfd00c5e6dc3c8b64e6a9",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q005",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "d44653365c3a859f48f22a9e6d9eb7f62c35483ef9c4dfb089cb78548fb2acb0",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q006",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "5220876814b9d7bb365b4c4e90381d3375700e0bbe3662bf0d5f6bdca1bd9368",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q007",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "11b88a544895b5ed40479aedd3ea93425945c49311e3c878658e6cc453d406c5",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q008",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "status": "no_explanation_supplied",
+      "reason": "Supplied explanation is null"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q011",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "0d129c50a14488c69e5f7703c5b079331a307a19794e5473cee0ef913caa8fb0",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q013",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "67fdb8ef9cb68708370b6e679a60b748c0c7e636ea7f51298c1a56e1552ebe21",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q014",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "0a5f5ed0bb69a5315ee9e16ecec5ec75e3fbe8c552d08623eb88ff3a21e54f12",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q017",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "45cc9b90501cb4b8323c27bd3894b6b7922d35a1e00c44418316a85bb3724421",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q018",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "15bc5b6ee90ba8afc69c972088f63b891cf502b471b42718d31a37f9509d58f4",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "726b1caefeef9a5cd92b4d3ad954147dc271f385aa764b599f73d7bf0b4a5547",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q023",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "e3f5ef232339c983cd16ecbe9b70256f8c6cb997ba0867fa0e7b74e64e107cea",
+      "status": "content_conflict",
+      "reason": "The supplied solution counts only selections filling the bag exactly. The question states available space but does not require filling it. Smaller selections also fit: including these gives 449 subsets (448 nonempty), not stored 127."
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q026",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1339ab345575fca53ae8a7530b296fb6f0c2094b79b61737d4243d97b2ac300d",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "1dfec3c66708a7ef07d8bee18da3c454b1f43d80aaebe140944cf048c4a2ea11",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q028",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "c2ef2e672e675ecfe81f58541a1784d9dc2083800c663b86ea86e8a9e7a68f62",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "9706b71c7d42bfb78271d621a46278373263b51c06cdd8b9b7380222863ce5d4",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q030",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "2218ab62a2703c4a289007ebde04c4eb97f7fccfbfea22333c99368fb523a0bf",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v8_fdfdc1303f5ec04d7a97_q021",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "f5bd4f40a7e67ad14ce96049e03c2b4fb9b359def1e32abd1de6a59e34413008",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v8_fdfdc1303f5ec04d7a97_q027",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "27bcaa89f6a72baff6c3b497521fd259cd74d7a730dfe3f893582f57c711f953",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v8_fdfdc1303f5ec04d7a97_q028",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "3b22f45a79d123d3730543b5aad7a7a1da9ca90022f12b5b8e49b9f42cc170f6",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    },
+    {
+      "id": "sky_trial_v8_fdfdc1303f5ec04d7a97_q029",
+      "source": {
+        "path": "inspections/mathematics/TEXT_ONLY_QUESTIONS_AI_MATH_EXPLANATIONS",
+        "sha256": "6f0bdd9af3f07fc74475d136e1141bb7eae2808822245e076b5afbe831040705"
+      },
+      "explanation_sha256": "66b5b8fe6c956fca541480e2d11821c539e014053d10fcd729363eb72e7b3586",
+      "status": "imported",
+      "reason": "ID, source content, derivation and stored option reviewed"
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "owner": "pre_final_v1",
+  "domain": "mathematics",
+  "stage": "mathematics_pre_final_validation",
+  "schema_version": "1",
+  "summary": {
+    "categorized_candidates": 180,
+    "matched_candidates": 180,
+    "included": 180,
+    "blocked_questions": 0,
+    "blocking_issues": 0,
+    "upstream_exclusions": 24,
+    "excluded_by_reason": {
+      "categorization_not_eligible": 24
+    },
+    "by_source": {
+      "Test_1.pdf": 22,
+      "Test_2.pdf": 25,
+      "Test_3.pdf": 27,
+      "Test_4.pdf": 27,
+      "Test_5.pdf": 27,
+      "Test_6.pdf": 24,
+      "Test_7.pdf": 24,
+      "Test_8.pdf": 4
+    },
+    "ready_for_rendering": true,
+    "source_document_ids": [
+      "sky_trial_v1_ff5b79152aaa929e40fc",
+      "sky_trial_v2_9a89cc2f265b47a40936",
+      "sky_trial_v3_4807a29b9e04499e5859",
+      "sky_trial_v4_bc012afd538ad180abd3",
+      "sky_trial_v5_ce7ef44f86f3750d5514",
+      "sky_trial_v6_1d7a2c1fa760628a023e",
+      "sky_trial_v7_f24d912481931ad90d8d",
+      "sky_trial_v8_fdfdc1303f5ec04d7a97"
+    ]
+  },
+  "issues": [],
+  "exclusions": [
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q006",
+      "source_document_id": "sky_trial_v1_ff5b79152aaa929e40fc",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 6,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q010",
+      "source_document_id": "sky_trial_v1_ff5b79152aaa929e40fc",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 10,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q019",
+      "source_document_id": "sky_trial_v1_ff5b79152aaa929e40fc",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 19,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q021",
+      "source_document_id": "sky_trial_v1_ff5b79152aaa929e40fc",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 21,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q027",
+      "source_document_id": "sky_trial_v1_ff5b79152aaa929e40fc",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 27,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q028",
+      "source_document_id": "sky_trial_v1_ff5b79152aaa929e40fc",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 28,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v1_ff5b79152aaa929e40fc_q030",
+      "source_document_id": "sky_trial_v1_ff5b79152aaa929e40fc",
+      "source_pdf": "Test_1.pdf",
+      "question_number": 30,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q005",
+      "source_document_id": "sky_trial_v2_9a89cc2f265b47a40936",
+      "source_pdf": "Test_2.pdf",
+      "question_number": 5,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q012",
+      "source_document_id": "sky_trial_v2_9a89cc2f265b47a40936",
+      "source_pdf": "Test_2.pdf",
+      "question_number": 12,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q013",
+      "source_document_id": "sky_trial_v2_9a89cc2f265b47a40936",
+      "source_pdf": "Test_2.pdf",
+      "question_number": 13,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v2_9a89cc2f265b47a40936_q029",
+      "source_document_id": "sky_trial_v2_9a89cc2f265b47a40936",
+      "source_pdf": "Test_2.pdf",
+      "question_number": 29,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v3_4807a29b9e04499e5859_q030",
+      "source_document_id": "sky_trial_v3_4807a29b9e04499e5859",
+      "source_pdf": "Test_3.pdf",
+      "question_number": 30,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v4_bc012afd538ad180abd3_q029",
+      "source_document_id": "sky_trial_v4_bc012afd538ad180abd3",
+      "source_pdf": "Test_4.pdf",
+      "question_number": 29,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q009",
+      "source_document_id": "sky_trial_v5_ce7ef44f86f3750d5514",
+      "source_pdf": "Test_5.pdf",
+      "question_number": 9,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q013",
+      "source_document_id": "sky_trial_v5_ce7ef44f86f3750d5514",
+      "source_pdf": "Test_5.pdf",
+      "question_number": 13,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v5_ce7ef44f86f3750d5514_q014",
+      "source_document_id": "sky_trial_v5_ce7ef44f86f3750d5514",
+      "source_pdf": "Test_5.pdf",
+      "question_number": 14,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q013",
+      "source_document_id": "sky_trial_v6_1d7a2c1fa760628a023e",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 13,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q014",
+      "source_document_id": "sky_trial_v6_1d7a2c1fa760628a023e",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 14,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q022",
+      "source_document_id": "sky_trial_v6_1d7a2c1fa760628a023e",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 22,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q027",
+      "source_document_id": "sky_trial_v6_1d7a2c1fa760628a023e",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 27,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q029",
+      "source_document_id": "sky_trial_v6_1d7a2c1fa760628a023e",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 29,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v6_1d7a2c1fa760628a023e_q030",
+      "source_document_id": "sky_trial_v6_1d7a2c1fa760628a023e",
+      "source_pdf": "Test_6.pdf",
+      "question_number": 30,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q024",
+      "source_document_id": "sky_trial_v7_f24d912481931ad90d8d",
+      "source_pdf": "Test_7.pdf",
+      "question_number": 24,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    },
+    {
+      "id": "sky_trial_v7_f24d912481931ad90d8d_q025",
+      "source_document_id": "sky_trial_v7_f24d912481931ad90d8d",
+      "source_pdf": "Test_7.pdf",
+      "question_number": 25,
+      "code": "categorization_not_eligible",
+      "reason": "No successful issue-free categorization",
+      "blocking": false
+    }
+  ]
+}
